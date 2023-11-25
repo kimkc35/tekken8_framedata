@@ -593,12 +593,55 @@ class CommandList extends StatefulWidget {
 
 class _CommandListState extends State<CommandList> with AutomaticKeepAliveClientMixin{
 
+
+
   @override
   bool get wantKeepAlive => true;
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
+  var tem;
+
+  @override
+  void initState() {
+    setState(() {
+      tem = widget.commands;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
+
+    if(searchText.isNotEmpty) {
+      setState(() {
+        tem = widget.commands;
+      });
+      // debugPrint("템프 : $tem / 커맨드 : ${widget.commands}");
+      // for (int j = 0; j < types.length; j++) {
+      //   if (types[j][widget.commands[j]["type"]] == true) {
+      //     for (int i = 0; i < widget.commands[j]["commands"].length; i++) {
+      //       if (!widget.commands[j]["commands"][i]
+      //               .toString()
+      //               .toLowerCase()
+      //               .contains(searchText.toLowerCase())) {
+      //         setState(() {
+      //           tem[j]["commands"][i].removeRange(0, 9);
+      //         });
+      //       }
+      //     }
+      //   }
+      //   debugPrint("템프 : $tem / 커맨드 : ${widget.commands}");
+      // }
+    }
+
+    // if(searchText.isEmpty){
+    //   setState(() {
+    //     tem = widget.commands;
+    //     print("tem : $tem / commands : ${widget.commands}");
+    //   });
+    // }
+
     super.build(context);
     return ListView(
         children: [
@@ -620,67 +663,72 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
-                    headingTextStyle: headingStyle,
-                    // headingRowColor: MaterialStateProperty.all(Color(0xffd24468)),
-                    dataRowMaxHeight: double.infinity,
-                    dataRowMinHeight: 48,
-                    border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                    horizontalMargin: 10,
-                    columnSpacing: 20,
-                    columns: [
-                      DataColumn(label: SizedBox(
-                        width: 150,
-                        height: 100,
-                        child: MenuAnchor( // 커맨드 체크박스
-                          alignmentOffset: Offset(20, 0),
-                          menuChildren: [
-                            for(int i = 0; i < types.length; i++)...[
-                              CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
-                                setState(() {
-                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                  }else{
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                  }
-                                });
-                              }, closeOnActivate: false, child: Text(types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString().tr())),
-                            ],
-                          ],
-                          builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
-                            if (controller.isOpen) {
-                              controller.close();
-                            } else {
-                              controller.open();
-                            }
-                          }, child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(Icons.arrow_drop_down, color: Colors.black,),
-                              Text("기술명\n커맨드", style: TextStyle(height: 1.2, color: Colors.black), textAlign: TextAlign.center,),
-                            ],
-                          ),),
-                        ),
-                      )), // 헤딩
-                      DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada"),))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('가드',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('히트',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('카운터',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    ],
-                    rows: [
-                      if(searchText.isEmpty || "Big Bang Phoenix Smasher ${main.sticks["c3"]}AP 20 -15 D D 중단 55 레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰".toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
-                        DataRow(cells : (creatCommand("Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"))),
-                      for(int j = 0; j < types.length; j++)...[
-                        if(types[j][widget.commands[j]["type"]] == true)...[
-                          for(int i = 0; i < widget.commands[j]["commands"].length; i ++)...[
-                            if(searchText.isEmpty || widget.commands[j]["commands"][i].toString().toLowerCase().contains(searchText.toLowerCase()))
-                              DataRow(cells : (creatCommand(widget.commands[j]["commands"][i][0], widget.commands[j]["commands"][i][1], widget.commands[j]["commands"][i][2], widget.commands[j]["commands"][i][3], widget.commands[j]["commands"][i][4], widget.commands[j]["commands"][i][5], widget.commands[j]["commands"][i][6], widget.commands[j]["commands"][i][7], widget.commands[j]["commands"][i][8])))
+                  headingTextStyle: headingStyle,
+                  // headingRowColor: MaterialStateProperty.all(Color(0xffd24468)),
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 48,
+                  border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
+                  horizontalMargin: 10,
+                  columnSpacing: 20,
+                  columns: [
+                    DataColumn(label: SizedBox(
+                      width: 150,
+                      height: 100,
+                      child: MenuAnchor( // 커맨드 체크박스
+                        alignmentOffset: Offset(20, 0),
+                        menuChildren: [
+                          for(int i = 0; i < types.length; i++)...[
+                            CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
+                              setState(() {
+                                if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
+                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
+                                }else{
+                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
+                                }
+                              });
+                            }, closeOnActivate: false, child: Text(types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString().tr())),
                           ],
                         ],
-                      ]
+                        builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
+                          if (controller.isOpen) {
+                            controller.close();
+                          } else {
+                            controller.open();
+                          }
+                        }, child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.arrow_drop_down, color: Colors.black,),
+                            Text("기술명\n커맨드", style: TextStyle(height: 1.2, color: Colors.black), textAlign: TextAlign.center,),
+                          ],
+                        ),),
+                      ),
+                    )), // 헤딩
+                    DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada"),))),
+                    DataColumn(label: SizedBox(width: 50, child: Text('가드',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    DataColumn(label: SizedBox(width: 50, child: Text('히트',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    DataColumn(label: SizedBox(width: 50, child: Text('카운터',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                  ],
+                  rows: [
+                    if(searchText.isEmpty || "Big Bang Phoenix Smasher ${main.sticks["c3"]}AP 20 -15 D D 중단 55 레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰".toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
+                      DataRow(cells : (creatCommand("Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"))),
+                    for(int i = 0; i < types.length; i++)...[
+                      if(types[i][widget.commands[i]["type"]] == true)...[
+                        for(int j = 0; j < widget.commands[i]["commands"].length; j ++)...[
+                          // if(searchText.isEmpty || widget.commands[i]["commands"][j].toString().toLowerCase().contains(searchText.toLowerCase()))
+                            // if( % 2 == 0)...[
+                            //   DataRow(cells : (creatCommand(widget.commands[i]["commands"][j][0], widget.commands[i]["commands"][j][1], widget.commands[i]["commands"][j][2], widget.commands[i]["commands"][j][3], widget.commands[i]["commands"][j][4], widget.commands[i]["commands"][j][5], widget.commands[i]["commands"][j][6], widget.commands[i]["commands"][j][7], widget.commands[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Colors.grey))
+                            // ]else...[
+                            //   DataRow(cells : (creatCommand(widget.commands[i]["commands"][j][0], widget.commands[i]["commands"][j][1], widget.commands[i]["commands"][j][2], widget.commands[i]["commands"][j][3], widget.commands[i]["commands"][j][4], widget.commands[i]["commands"][j][5], widget.commands[i]["commands"][j][6], widget.commands[i]["commands"][j][7], widget.commands[i]["commands"][j][8])))
+                            // ]
+                            DataRow(cells: (creatCommand(tem[i]["commands"][j][0], tem[i]["commands"][j][1], tem[i]["commands"][j][2], tem[i]["commands"][j][3], tem[i]["commands"][j][4], tem[i]["commands"][j][5], tem[i]["commands"][j][6], tem[i]["commands"][j][7], tem[i]["commands"][j][8])))
+                        ],
+                      ],
                     ]
+                  ]
                 ),
               ),
             ],
@@ -741,9 +789,6 @@ class _ThrowListState extends State<ThrowList> with AutomaticKeepAliveClientMixi
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
-                // dataRowColor: MaterialStateColor.resolveWith((states) => {
-                //   return Colors.red;
-                // }),
                 dataRowMaxHeight: double.infinity,
                 dataRowMinHeight: 48,
                 border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
@@ -760,7 +805,11 @@ class _ThrowListState extends State<ThrowList> with AutomaticKeepAliveClientMixi
                 ],
                 rows: [
                   for(int i = 0; i < widget.throws.length; i++)...[
-                    DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
+                    if(i % 2 == 0)...[
+                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => Colors.grey))
+                    ]else...[
+                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
+                    ]
                   ]
                 ],
               ),
