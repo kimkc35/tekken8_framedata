@@ -599,48 +599,42 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
   bool get wantKeepAlive => true;
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
-  var tem;
+  var filtered;
 
   @override
   void initState() {
     setState(() {
-      tem = widget.commands;
+      filtered = Map.from(widget.commands);
     });
     super.initState();
+  }
+
+  void filter(String text){
+    setState(() {
+      // Filter the items based on the query
+      for (int i = 0; i < types.length; i++) {
+        if (types[i][widget.commands[i]["type"]] == true) {
+          for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
+            filtered[i]["commands"][j] = widget.commands[i]["commands"][j]
+                .where((item) => item.toString().toLowerCase().contains(text.toLowerCase()))
+                .toList();
+            debugPrint(filtered);
+          }
+        }
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
 
-
     if(searchText.isNotEmpty) {
+      filter(searchText);
+    }else{
       setState(() {
-        tem = widget.commands;
+        filtered = List.from(widget.commands);
       });
-      // debugPrint("템프 : $tem / 커맨드 : ${widget.commands}");
-      // for (int j = 0; j < types.length; j++) {
-      //   if (types[j][widget.commands[j]["type"]] == true) {
-      //     for (int i = 0; i < widget.commands[j]["commands"].length; i++) {
-      //       if (!widget.commands[j]["commands"][i]
-      //               .toString()
-      //               .toLowerCase()
-      //               .contains(searchText.toLowerCase())) {
-      //         setState(() {
-      //           tem[j]["commands"][i].removeRange(0, 9);
-      //         });
-      //       }
-      //     }
-      //   }
-      //   debugPrint("템프 : $tem / 커맨드 : ${widget.commands}");
-      // }
     }
-
-    // if(searchText.isEmpty){
-    //   setState(() {
-    //     tem = widget.commands;
-    //     print("tem : $tem / commands : ${widget.commands}");
-    //   });
-    // }
 
     super.build(context);
     return ListView(
@@ -724,7 +718,7 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
                             // ]else...[
                             //   DataRow(cells : (creatCommand(widget.commands[i]["commands"][j][0], widget.commands[i]["commands"][j][1], widget.commands[i]["commands"][j][2], widget.commands[i]["commands"][j][3], widget.commands[i]["commands"][j][4], widget.commands[i]["commands"][j][5], widget.commands[i]["commands"][j][6], widget.commands[i]["commands"][j][7], widget.commands[i]["commands"][j][8])))
                             // ]
-                            DataRow(cells: (creatCommand(tem[i]["commands"][j][0], tem[i]["commands"][j][1], tem[i]["commands"][j][2], tem[i]["commands"][j][3], tem[i]["commands"][j][4], tem[i]["commands"][j][5], tem[i]["commands"][j][6], tem[i]["commands"][j][7], tem[i]["commands"][j][8])))
+                            DataRow(cells: (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
                         ],
                       ],
                     ]
