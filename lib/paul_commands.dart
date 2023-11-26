@@ -142,7 +142,6 @@ class _PAULState extends State<PAUL> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     setState(() {
       searchText = "";
     });
@@ -603,22 +602,17 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
 
   @override
   void initState() {
-    setState(() {
-      filtered = Map.from(widget.commands);
-    });
+    filtered = widget.commands;
     super.initState();
   }
 
   void filter(String text){
     setState(() {
-      // Filter the items based on the query
+      filtered = widget.commands;
       for (int i = 0; i < types.length; i++) {
         if (types[i][widget.commands[i]["type"]] == true) {
           for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
-            filtered[i]["commands"][j] = widget.commands[i]["commands"][j]
-                .where((item) => item.toString().toLowerCase().contains(text.toLowerCase()))
-                .toList();
-            debugPrint(filtered);
+            filtered[i]["commands"] = filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList();
           }
         }
       }
@@ -630,10 +624,14 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
 
     if(searchText.isNotEmpty) {
       filter(searchText);
+      print("필터링");
     }else{
       setState(() {
-        filtered = List.from(widget.commands);
+        filtered = widget.commands;
+        debugPrint("초기화인데 이거 왜이럼 : $filtered");
       });
+      print("초기화");
+      debugPrint("초기 목록인데 이거 왜이럼 : ${widget.commands}");
     }
 
     super.build(context);
@@ -710,15 +708,13 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
                     if(searchText.isEmpty || "Big Bang Phoenix Smasher ${main.sticks["c3"]}AP 20 -15 D D 중단 55 레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰".toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
                       DataRow(cells : (creatCommand("Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"))),
                     for(int i = 0; i < types.length; i++)...[
-                      if(types[i][widget.commands[i]["type"]] == true)...[
-                        for(int j = 0; j < widget.commands[i]["commands"].length; j ++)...[
-                          // if(searchText.isEmpty || widget.commands[i]["commands"][j].toString().toLowerCase().contains(searchText.toLowerCase()))
-                            // if( % 2 == 0)...[
-                            //   DataRow(cells : (creatCommand(widget.commands[i]["commands"][j][0], widget.commands[i]["commands"][j][1], widget.commands[i]["commands"][j][2], widget.commands[i]["commands"][j][3], widget.commands[i]["commands"][j][4], widget.commands[i]["commands"][j][5], widget.commands[i]["commands"][j][6], widget.commands[i]["commands"][j][7], widget.commands[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Colors.grey))
-                            // ]else...[
-                            //   DataRow(cells : (creatCommand(widget.commands[i]["commands"][j][0], widget.commands[i]["commands"][j][1], widget.commands[i]["commands"][j][2], widget.commands[i]["commands"][j][3], widget.commands[i]["commands"][j][4], widget.commands[i]["commands"][j][5], widget.commands[i]["commands"][j][6], widget.commands[i]["commands"][j][7], widget.commands[i]["commands"][j][8])))
-                            // ]
-                            DataRow(cells: (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
+                      if(types[i][filtered[i]["type"]] == true)...[
+                        for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
+                            if(j % 2 == 0)...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Colors.grey))
+                            ]else...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
+                            ]
                         ],
                       ],
                     ]
