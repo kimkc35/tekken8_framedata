@@ -710,11 +710,19 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
                     for(int i = 0; i < types.length; i++)...[
                       if(types[i][filtered[i]["type"]] == true)...[
                         for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
-                            if(j % 2 == 0)...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Colors.grey))
+                          if(i != 0 && filtered[i-1]["commands"].length % 2 != 0)...[
+                            if(j % 2 != 0)...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
                             ]else...[
                               DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
                             ]
+                          ]else...[
+                            if(j % 2 == 0)...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
+                            ]else...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
+                            ]
+                          ]
                         ],
                       ],
                     ]
