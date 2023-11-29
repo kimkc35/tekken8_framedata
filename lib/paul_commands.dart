@@ -654,9 +654,8 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
                 SizedBox(child: heatSystemContexts(["파워가 상승한 Phoenix Smasher", "파워가 상승한 홀드기 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: DataTable(
+                child: DataTable( // 무브 리스트
                   headingTextStyle: headingStyle,
-                  // headingRowColor: MaterialStateProperty.all(Color(0xffd24468)),
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 48,
                   border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
