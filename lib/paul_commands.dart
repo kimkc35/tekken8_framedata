@@ -129,7 +129,7 @@ class PAUL extends StatefulWidget {
   State<PAUL> createState() => _PAULState();
 }
 
-class _PAULState extends State<PAUL> {
+class _PAULState extends State<PAUL> with SingleTickerProviderStateMixin {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -590,33 +590,42 @@ class CommandList extends StatefulWidget {
 }
 
 
-class _CommandListState extends State<CommandList>{
+class _CommandListState extends State<CommandList> with AutomaticKeepAliveClientMixin{
 
 
 
+  @override
+  bool get wantKeepAlive => true;
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
-  var filtered;
+  var filtered, init;
 
-  List copy(){
-    var obj = List.from(widget.commands);
-    return obj;
+  List<Map<String, dynamic>> deepCopyList(List source) {
+    return source.map((item) {
+      return Map<String, dynamic>.from(item);
+    }).toList();
   }
 
   @override
   void initState() {
+    print("필터 해쉬2 : ${filtered.hashCode} | 원본 해쉬 : ${widget.commands.hashCode}");
+    setState(() {
+      init = deepCopyList(widget.commands);
+      filtered = deepCopyList(widget.commands);
+    });
     super.initState();
-    filtered = copy();
   }
 
   void filter(String text){
     setState(() {
-      debugPrint("필터 안됨. 필터 : $filtered, 기본 : ${widget.commands}");
       for (int i = 0; i < types.length; i++) {
-        for (int j = 0; j < filtered[i]["commands"].length; j++) {
-          filtered[i]["commands"] = filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList();
+        if (types[i][widget.commands[i]["type"]] == true) {
+          for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
+            filtered[i]["commands"] = List.from(init[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
+          }
         }
       }
+      debugPrint("필터 : $filtered, 초기 : ${widget.commands}, 이닛 : $init");
     });
   }
 
@@ -625,8 +634,17 @@ class _CommandListState extends State<CommandList>{
 
     if(searchText.isNotEmpty) {
       filter(searchText);
+      print("필터링");
+    }else{
+      setState(() {
+        filtered = deepCopyList(widget.commands);
+        debugPrint("초기화인데 이거 왜이럼 : $filtered");
+      });
+      print("초기화");
+      debugPrint("초기 목록인데 이거 왜이럼 : ${widget.commands}");
     }
 
+    super.build(context);
     return ListView(
         children: [
           Column(
@@ -646,8 +664,9 @@ class _CommandListState extends State<CommandList>{
                 SizedBox(child: heatSystemContexts(["파워가 상승한 Phoenix Smasher", "파워가 상승한 홀드기 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: DataTable( // 무브 리스트
+                child: DataTable(
                   headingTextStyle: headingStyle,
+                  // headingRowColor: MaterialStateProperty.all(Color(0xffd24468)),
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 48,
                   border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
@@ -702,13 +721,19 @@ class _CommandListState extends State<CommandList>{
                       if(types[i][filtered[i]["type"]] == true)...[
                         for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
                           if(i != 0 && filtered[i-1]["commands"].length % 2 != 0)...[
+                            if(j % 2 == 0)...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
+                            ]else...[
+                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
+                            ]
+                          ]else if(i != 0 && filtered[i-1]["commands"].length % 2 == 0)...[
                             if(j % 2 != 0)...[
                               DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
                             ]else...[
                               DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
                             ]
-                          ]else...[
-                            if(j % 2 == 0)...[
+                          ]else if(i == 0)...[
+                            if(j % 2 != 0)...[
                               DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
                             ]else...[
                               DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
