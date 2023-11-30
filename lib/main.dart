@@ -35,15 +35,15 @@ final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", 
 
 class GetList{
   Future test(String character) async{
-    var list;
-    list = await characterGetList[character];
-    return await list;
+    var moveList;
+    moveList = await characterGetList[character];
+    return await moveList;
   }
 
   Future test2(String character) async{
-    var list;
-    list = await characterGetThrowList[character];
-    return await list;
+    var throwList;
+    throwList = await characterGetThrowList[character];
+    return await throwList;
   }
 }
 
@@ -66,17 +66,13 @@ class _MyAppState extends State<MyApp> {
       widget.getList.test(characterList[i].toString().toLowerCase()).then((
           value) =>
       {
-        setState(() {
-          commands[characterList[i].toString().toLowerCase()] = value;
-        })
+        commands[characterList[i].toString().toLowerCase()] = value
       });
       widget.getList.test2(characterList[i].toString().toLowerCase()).then((
           value) =>
       {
-        setState(() {
-          throws[characterList[i].toString().toLowerCase()] = value;
-          isLoaded = true;
-        }),
+        throws[characterList[i].toString().toLowerCase()] = value,
+        isLoaded = true
       });
     }
   }

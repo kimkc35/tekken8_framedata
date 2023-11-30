@@ -129,7 +129,7 @@ class PAUL extends StatefulWidget {
   State<PAUL> createState() => _PAULState();
 }
 
-class _PAULState extends State<PAUL> with SingleTickerProviderStateMixin {
+class _PAULState extends State<PAUL> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -590,30 +590,31 @@ class CommandList extends StatefulWidget {
 }
 
 
-class _CommandListState extends State<CommandList> with AutomaticKeepAliveClientMixin{
+class _CommandListState extends State<CommandList>{
 
 
 
-  @override
-  bool get wantKeepAlive => true;
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
   var filtered;
 
+  List copy(){
+    var obj = List.from(widget.commands);
+    return obj;
+  }
+
   @override
   void initState() {
-    filtered = widget.commands;
     super.initState();
+    filtered = copy();
   }
 
   void filter(String text){
     setState(() {
-      filtered = widget.commands;
+      debugPrint("필터 안됨. 필터 : $filtered, 기본 : ${widget.commands}");
       for (int i = 0; i < types.length; i++) {
-        if (types[i][widget.commands[i]["type"]] == true) {
-          for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
-            filtered[i]["commands"] = filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList();
-          }
+        for (int j = 0; j < filtered[i]["commands"].length; j++) {
+          filtered[i]["commands"] = filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList();
         }
       }
     });
@@ -624,17 +625,8 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
 
     if(searchText.isNotEmpty) {
       filter(searchText);
-      print("필터링");
-    }else{
-      setState(() {
-        filtered = widget.commands;
-        debugPrint("초기화인데 이거 왜이럼 : $filtered");
-      });
-      print("초기화");
-      debugPrint("초기 목록인데 이거 왜이럼 : ${widget.commands}");
     }
 
-    super.build(context);
     return ListView(
         children: [
           Column(
