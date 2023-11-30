@@ -9,7 +9,7 @@ import 'package:string_validator/string_validator.dart';
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
-//kazuya extra list
+//paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "sway", "sway" : "${main.sticks["c4"]}~입력 시 스웨이 이행\n()는 스웨이 이행 시 프레임"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
@@ -586,19 +586,16 @@ class CommandList extends StatefulWidget {
   const CommandList({super.key, required this.commands});
 
   @override
-  State<CommandList> createState() => _CommandListState();
+  State<CommandList> createState() => CommandListState();
 }
 
 
-class _CommandListState extends State<CommandList> with AutomaticKeepAliveClientMixin{
+class CommandListState extends State<CommandList>{
 
-
-
-  @override
-  bool get wantKeepAlive => true;
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
-  var filtered, init;
+  var filtered;
+  int listLength = 0;
 
   List<Map<String, dynamic>> deepCopyList(List source) {
     return source.map((item) {
@@ -608,10 +605,14 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
 
   @override
   void initState() {
-    print("필터 해쉬2 : ${filtered.hashCode} | 원본 해쉬 : ${widget.commands.hashCode}");
+    print("필터 해쉬2 : ${filtered.hashCode} | 원본 해쉬 : ${widget.commands.hashCode}"); //디버그
     setState(() {
-      init = deepCopyList(widget.commands);
       filtered = deepCopyList(widget.commands);
+      for (int i = 0; i < types.length; i++) {
+        if (types[i][widget.commands[i]["type"]] == true) {
+          listLength = int.parse(filtered[i]["commands"].length.toString());
+        }
+      }
     });
     super.initState();
   }
@@ -621,11 +622,10 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
       for (int i = 0; i < types.length; i++) {
         if (types[i][widget.commands[i]["type"]] == true) {
           for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
-            filtered[i]["commands"] = List.from(init[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
+            filtered[i]["commands"] = List.from(filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
           }
         }
       }
-      debugPrint("필터 : $filtered, 초기 : ${widget.commands}, 이닛 : $init");
     });
   }
 
@@ -633,18 +633,13 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
   Widget build(BuildContext context) {
 
     if(searchText.isNotEmpty) {
-      filter(searchText);
-      print("필터링");
+      filter(searchText); //필터링
     }else{
       setState(() {
-        filtered = deepCopyList(widget.commands);
-        debugPrint("초기화인데 이거 왜이럼 : $filtered");
+        filtered = deepCopyList(widget.commands); //초기화
       });
-      print("초기화");
-      debugPrint("초기 목록인데 이거 왜이럼 : ${widget.commands}");
     }
 
-    super.build(context);
     return ListView(
         children: [
           Column(
@@ -720,24 +715,16 @@ class _CommandListState extends State<CommandList> with AutomaticKeepAliveClient
                     for(int i = 0; i < types.length; i++)...[
                       if(types[i][filtered[i]["type"]] == true)...[
                         for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
-                          if(i != 0 && filtered[i-1]["commands"].length % 2 != 0)...[
-                            if(j % 2 == 0)...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
-                            ]else...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
-                            ]
-                          ]else if(i != 0 && filtered[i-1]["commands"].length % 2 == 0)...[
-                            if(j % 2 != 0)...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
-                            ]else...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
-                            ]
-                          ]else if(i == 0)...[
-                            if(j % 2 != 0)...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) => Color(0xffb7b7b7)))
-                            ]else...[
-                              DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
-                            ]
+                          if(listLength % 2 == 0)...[
+                                DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                                    // Color(0xffb7b7b7)
+                                  Colors.red
+                                ))
+                          ]else if(listLength % 2 == 1)...[
+                                DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                                    // Color(0xffb7b7b7)
+                                  Colors.blue
+                                ))
                           ]
                         ],
                       ],
@@ -786,14 +773,9 @@ class ThrowList extends StatefulWidget {
   State<ThrowList> createState() => _ThrowListState();
 }
 
-class _ThrowListState extends State<ThrowList> with AutomaticKeepAliveClientMixin{
-
-  @override
-  bool get wantKeepAlive => true;
-
+class _ThrowListState extends State<ThrowList>{
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return ListView(
       children: [
         Column(
