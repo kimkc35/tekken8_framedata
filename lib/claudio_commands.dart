@@ -24,7 +24,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
 ];
 
-const character = "kazuya"; //변경해야될것
+const character = "claudio"; //변경해야될것
 
 List files = [
   "command_names", "commands", "command_start_frames", "command_guard_frames", "command_hit_frames", "command_counter_frames", "command_ranges", "command_damages", "command_extras"
@@ -35,7 +35,7 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"step" : true}, {"devil" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"step" : true}
 ];
 
 bool heatSystemMenu = true, heatCommands = true;
@@ -120,17 +120,17 @@ class GetContents { // 리스트 구성
 }
 
 
-class KAZUYA extends StatefulWidget {
+class CLAUDIO extends StatefulWidget {
 
   final commands, throws;
 
-  const KAZUYA({super.key, required this.commands, required this.throws});
+  const CLAUDIO({super.key, required this.commands, required this.throws});
 
   @override
-  State<KAZUYA> createState() => _KAZUYAState();
+  State<CLAUDIO> createState() => _CLAUDIOState();
 }
 
-class _KAZUYAState extends State<KAZUYA> {
+class _CLAUDIOState extends State<CLAUDIO> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

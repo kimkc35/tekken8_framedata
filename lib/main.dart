@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'jin_commands.dart' as jin;
 import 'kazuya_commands.dart' as kazuya;
 import 'paul_commands.dart' as paul;
+import 'claudio_commands.dart' as claudio;
 import 'package:easy_localization/easy_localization.dart';
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
 bool isLoaded = false;
 
-final commands = {"kazuya" : [], "jin" : [], "paul" : []};
-final throws = {"kazuya" : [], "jin" : [], "paul" : []};
+final commands = {"kazuya" : [], "jin" : [], "paul" : [], "claudio" : []};
+final throws = {"kazuya" : [], "jin" : [], "paul" : [], "claudio" : []};
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,18 +30,18 @@ void main() async {
 final characterGetList = {"kazuya" : kazuya.GetContents().getList(), "jin" : jin.GetContents().getList(), "paul" : paul.GetContents().getList()};
 final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList()};
 
-Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(commands: commands["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(commands: commands["jin"], throws: throws["jin"]),  "PAUL" : paul.PAUL(commands: commands["paul"], throws: throws["paul"])};
+Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(commands: commands["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(commands: commands["jin"], throws: throws["jin"]),  "PAUL" : paul.PAUL(commands: commands["paul"], throws: throws["paul"]), "CLAUDIO" : claudio.CLAUDIO(commands: commands["claudio"], throws: throws["claudio"])};
 
 final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", "LARS", "XIAOYU", "NINA", "LEROY", "ASUKA", "LILI", "BRYAN", "HWORANG", "CLAUDIO", "AZUCENA", "RAVEN"];
 
 class GetList{
-  Future test(String character) async{
+  Future getCommandList(String character) async{
     var moveList;
     moveList = await characterGetList[character];
     return await moveList;
   }
 
-  Future test2(String character) async{
+  Future getThrowList(String character) async{
     var throwList;
     throwList = await characterGetThrowList[character];
     return await throwList;
@@ -63,12 +64,12 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     for (int i = 0; i < characterList.length; i++) {
-      widget.getList.test(characterList[i].toString().toLowerCase()).then((
+      widget.getList.getCommandList(characterList[i].toString().toLowerCase()).then((
           value) =>
       {
         commands[characterList[i].toString().toLowerCase()] = value
       });
-      widget.getList.test2(characterList[i].toString().toLowerCase()).then((
+      widget.getList.getThrowList(characterList[i].toString().toLowerCase()).then((
           value) =>
       {
         throws[characterList[i].toString().toLowerCase()] = value,
