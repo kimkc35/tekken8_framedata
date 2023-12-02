@@ -9,6 +9,9 @@ import 'package:string_validator/string_validator.dart';
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
+//레이지 아츠
+List rageArts = ["Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "sway", "sway" : "${main.sticks["c4"]}~입력 시 스웨이 이행\n()는 스웨이 이행 시 프레임"},
@@ -521,6 +524,7 @@ class _PAULState extends State<PAUL> with SingleTickerProviderStateMixin {
 }
 
 const TextScaler scale = TextScaler.linear(0.8);
+int listLength = 0;
 
 TextStyle commandStyle = TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
     commandStylePlus = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Colors.green),
@@ -528,6 +532,7 @@ TextStyle commandStyle = TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
     commandStylePunish = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Colors.red);
 
 List<DataCell> creatCommand(String name, command, start, guard, hit, counter, range, damage, extra){
+  listLength = listLength - 1;
   return [
     DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: scale, style: commandStyle,))), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //발생
@@ -595,7 +600,6 @@ class CommandListState extends State<CommandList>{
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
   var filtered;
-  int listLength = 0;
 
   List<Map<String, dynamic>> deepCopyList(List source) {
     return source.map((item) {
@@ -605,7 +609,6 @@ class CommandListState extends State<CommandList>{
 
   @override
   void initState() {
-    print("필터 해쉬2 : ${filtered.hashCode} | 원본 해쉬 : ${widget.commands.hashCode}"); //디버그
     setState(() {
       filtered = deepCopyList(widget.commands);
       for (int i = 0; i < types.length; i++) {
@@ -619,8 +622,10 @@ class CommandListState extends State<CommandList>{
 
   void filter(String text){
     setState(() {
+      filtered = deepCopyList(widget.commands);
       for (int i = 0; i < types.length; i++) {
         if (types[i][widget.commands[i]["type"]] == true) {
+          listLength = int.parse(filtered[i]["commands"].length.toString());
           for (int j = 0; j < widget.commands[i]["commands"].length; j++) {
             filtered[i]["commands"] = List.from(filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
           }
@@ -637,6 +642,11 @@ class CommandListState extends State<CommandList>{
     }else{
       setState(() {
         filtered = deepCopyList(widget.commands); //초기화
+        for (int i = 0; i < types.length; i++) {
+          if (types[i][widget.commands[i]["type"]] == true) {
+            listLength = int.parse(filtered[i]["commands"].length.toString());
+          }
+        }
       });
     }
 
@@ -710,21 +720,18 @@ class CommandListState extends State<CommandList>{
                     DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
                   ],
                   rows: [
-                    if(searchText.isEmpty || "Big Bang Phoenix Smasher ${main.sticks["c3"]}AP 20 -15 D D 중단 55 레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰".toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
-                      DataRow(cells : (creatCommand("Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"))),
+                    if(searchText.isEmpty || rageArts.toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
+                      DataRow(cells : (creatCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))),
                     for(int i = 0; i < types.length; i++)...[
                       if(types[i][filtered[i]["type"]] == true)...[
                         for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
                           if(listLength % 2 == 0)...[
                                 DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
-                                    // Color(0xffb7b7b7)
-                                  Colors.red
+                                    Color(0xffd5d5d5)
                                 ))
                           ]else if(listLength % 2 == 1)...[
-                                DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
-                                    // Color(0xffb7b7b7)
-                                  Colors.blue
-                                ))
+                                DataRow(cells : (creatCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8]))
+                                )
                           ]
                         ],
                       ],
@@ -802,7 +809,7 @@ class _ThrowListState extends State<ThrowList>{
                 rows: [
                   for(int i = 0; i < widget.throws.length; i++)...[
                     if(i % 2 == 0)...[
-                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => Colors.grey))
+                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)))
                     ]else...[
                       DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
                     ]
