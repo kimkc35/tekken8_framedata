@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'defalut_heat_system.dart';
+import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
 import 'package:easy_localization/easy_localization.dart';

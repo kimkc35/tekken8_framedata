@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'defalut_heat_system.dart';
+import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
 import 'package:easy_localization/easy_localization.dart';
@@ -28,7 +28,7 @@ const character = "paul"; //변경해야될것
 
 List files = [
   "command_names", "commands", "command_start_frames", "command_guard_frames", "command_hit_frames", "command_counter_frames", "command_ranges", "command_damages", "command_extras"
-];
+]; 
 
 List throwFiles = [
   "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
