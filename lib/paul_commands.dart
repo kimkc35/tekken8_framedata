@@ -134,31 +134,54 @@ class _PAULState extends State<PAUL> {
 
   final TextEditingController _searchController = TextEditingController();
 
-  Widget keyboardButton(dynamic content, {searchText}){
+  //키보드 버튼 제작 함수
+  Widget keyboardButton(String content, {String searchText = ""}){
     if(content == "delete"){
       return Expanded(
         flex: 1,
         child: Padding(
           padding: const EdgeInsets.all(4.0),
-          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
-            _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
-            setState(() {
-              searchText = _searchController.text;
-            });
-          }, child: Icon(CupertinoIcons.arrow_left_to_line, size: 15, color: Colors.white,), ),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
+                searchText = _searchController.text;
+              });
+            }, child: Icon(CupertinoIcons.arrow_left_to_line, size: 15, color: Colors.white,), ),
+          ),
         ),
       );
-    }else if(searchText != null){
+    }else if(searchText != ""){
       return Expanded(
         flex: 1,
         child: Padding(
           padding: const EdgeInsets.all(4.0),
-          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
-            _searchController.text = "${_searchController.text}$searchText";
-            setState(() {
-              searchText = _searchController.text;
-            });
-          }, child: Text(content, style: TextStyle(color: Colors.white,), textScaler: TextScaler.linear(0.8),)),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = "${_searchController.text}$searchText";
+                searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white,), textScaler: TextScaler.linear(0.8),)),
+          ),
+        ),
+      );
+    }else if(content == "AC"){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = "";
+                searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white,), textScaler: TextScaler.linear(0.8),)),
+          ),
         ),
       );
     }
@@ -166,22 +189,17 @@ class _PAULState extends State<PAUL> {
       flex: 1,
       child: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
-          _searchController.text = "${_searchController.text}$content";
-          setState(() {
-            searchText = _searchController.text;
-          });
-        }, child: Text(content, style: TextStyle(color: Colors.white,), textScaler: TextScaler.linear(0.8),)),
+        child: SizedBox(
+          height: 40,
+          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+            setState(() {
+              _searchController.text = "${_searchController.text}$content";
+              searchText = _searchController.text;
+            });
+          }, child: Text(content, style: TextStyle(color: Colors.white,), textScaler: TextScaler.linear(0.8),)),
+        ),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    setState(() {
-      searchText = "";
-    });
-    super.initState();
   }
 
   @override
@@ -241,9 +259,9 @@ class _PAULState extends State<PAUL> {
                           Expanded(
                             child: TextField(controller: _searchController, decoration: InputDecoration(
                                 labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
-                            ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),onChanged: (value) {
+                            ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
                               setState((){
-                                searchText = value;
+                                searchText = _searchController.text;
                               });
                             },),
                           ),
@@ -255,80 +273,79 @@ class _PAULState extends State<PAUL> {
                                 return Theme(
                                   data: themeData,
                                   child: Container(
-                                    height: 200,
+                                    height: 288,
                                     color: Colors.black,
                                     child: Center(
-                                        child:
-                                        Column(
-                                          children: [
-                                            Row( //1번째 줄
-                                              children: [
-                                                keyboardButton("↖"),
-                                                keyboardButton("↑"),
-                                                keyboardButton("↗"),
-                                                keyboardButton("LP"),
-                                                keyboardButton("RP"),
-                                                keyboardButton("AP"),
-                                                keyboardButton("delete"),
-                                              ],
-                                            ),
-                                            Row( //2번째 줄
-                                              children: [
-                                                keyboardButton("←"),
-                                                keyboardButton("N"),
-                                                keyboardButton("→"),
-                                                keyboardButton("LK"),
-                                                keyboardButton("RK"),
-                                                keyboardButton("AK"),
-                                                keyboardButton("토네\n이도", searchText: "토네이도"),
-                                              ],
-                                            ),
-                                            Row( //3번째 줄
-                                              children: [
-                                                keyboardButton("↙"),
-                                                keyboardButton("↓"),
-                                                keyboardButton("↘"),
-                                                keyboardButton("AL"),
-                                                keyboardButton("AR"),
-                                                keyboardButton("~"),
-                                                keyboardButton("히트"),
-                                              ],
-                                            ),
-                                            Row( //4번째 줄
-                                              children: [
-                                                keyboardButton("상단"),
-                                                keyboardButton("중단"),
-                                                keyboardButton("하단"),
-                                                keyboardButton("파크", searchText: "파워 크래시"),
-                                                keyboardButton("호밍기"),
-                                                keyboardButton("+"),
-                                                keyboardButton("-"),
-                                              ],
-                                            ),
-                                            Row( //5번째 줄
-                                              children: [
-                                                keyboardButton("1"),
-                                                keyboardButton("2"),
-                                                keyboardButton("3"),
-                                                keyboardButton("4"),
-                                                keyboardButton("5"),
-                                                keyboardButton("6"),
-                                                keyboardButton("7"),
-                                              ],
-                                            ),
-                                            Row( //6번째 줄
-                                              children: [
-                                                keyboardButton("8"),
-                                                keyboardButton("9"),
-                                                keyboardButton("0"),
-                                                keyboardButton(""),
-                                                keyboardButton(""),
-                                                keyboardButton(""),
-                                                keyboardButton(""),
-                                              ],
-                                            ),
-                                          ],
-                                        )
+                                      child: Column(
+                                        children: [
+                                          Row( //1번째 줄
+                                            children: [
+                                              keyboardButton("↖"),
+                                              keyboardButton("↑"),
+                                              keyboardButton("↗"),
+                                              keyboardButton("LP"),
+                                              keyboardButton("RP"),
+                                              keyboardButton("AP"),
+                                              keyboardButton("delete"),
+                                            ],
+                                          ),
+                                          Row( //2번째 줄
+                                            children: [
+                                              keyboardButton("←"),
+                                              keyboardButton("N"),
+                                              keyboardButton("→"),
+                                              keyboardButton("LK"),
+                                              keyboardButton("RK"),
+                                              keyboardButton("AK"),
+                                              keyboardButton("토네\n이도", searchText: "토네이도"),
+                                            ],
+                                          ),
+                                          Row( //3번째 줄
+                                            children: [
+                                              keyboardButton("↙"),
+                                              keyboardButton("↓"),
+                                              keyboardButton("↘"),
+                                              keyboardButton("AL"),
+                                              keyboardButton("AR"),
+                                              keyboardButton("~"),
+                                              keyboardButton("히트"),
+                                            ],
+                                          ),
+                                          Row( //4번째 줄
+                                            children: [
+                                              keyboardButton("상단"),
+                                              keyboardButton("중단"),
+                                              keyboardButton("하단"),
+                                              keyboardButton("+"),
+                                              keyboardButton("-"),
+                                              keyboardButton("가댐", searchText: "가드 대미지"),
+                                              keyboardButton("파크", searchText: "파워 크래시"),
+                                            ],
+                                          ),
+                                          Row( //5번째 줄
+                                            children: [
+                                              keyboardButton("1"),
+                                              keyboardButton("2"),
+                                              keyboardButton("3"),
+                                              keyboardButton("4"),
+                                              keyboardButton("5"),
+                                              keyboardButton("6"),
+                                              keyboardButton("호밍기"),
+                                            ],
+                                          ),
+                                          Row( //6번째 줄
+                                            children: [
+                                              keyboardButton("7"),
+                                              keyboardButton("8"),
+                                              keyboardButton("9"),
+                                              keyboardButton("0"),
+                                              keyboardButton(""),
+                                              keyboardButton(""),
+                                              keyboardButton("AC"),
+                                            ],
+                                          ),
+                                        ],
+                                      )
                                     ),
                                   ),
                                 );
@@ -361,6 +378,7 @@ TextStyle commandStyle = TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
   commandStyleMinus = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Color(0xff1a74b2)),
   commandStylePunish = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Colors.red);
 
+//무브 리스트 생성
 List<DataCell> createCommand(String name, command, start, guard, hit, counter, range, damage, extra){
   listLength = listLength - 1;
   return [

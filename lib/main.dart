@@ -21,7 +21,7 @@ void main() async {
         supportedLocales: [Locale('en', 'US'), Locale('ko', 'KR')],
         path: 'assets/translations', // <-- change the path of the translation files
         fallbackLocale: Locale('en', 'US'),
-        child: MyApp(getList: GetList(),)
+        child:MyApp(getList: GetList(),)
     ),
   );
 }
