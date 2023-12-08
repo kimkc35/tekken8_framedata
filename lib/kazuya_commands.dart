@@ -141,12 +141,71 @@ class _KAZUYAState extends State<KAZUYA> {
 
   final TextEditingController _searchController = TextEditingController();
 
-  @override
-  void initState() {
-    setState(() {
-      searchText = "";
-    });
-    super.initState();
+  Widget keyboardButton(String content, {String inputText = ""}){
+    if(content == "delete"){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
+                searchText = _searchController.text;
+              });
+            }, child: Icon(CupertinoIcons.arrow_left_to_line, size: 20, color: Colors.white,), ),
+          ),
+        ),
+      );
+    }else if(inputText != ""){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = _searchController.text + inputText;
+                searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white,),)),
+          ),
+        ),
+      );
+    }else if(content == "AC"){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = "";
+                searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white,),)),
+          ),
+        ),
+      );
+    }
+    return Expanded(
+      flex: 1,
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: SizedBox(
+          height: 40,
+          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+            setState(() {
+              _searchController.text = _searchController.text + content;
+              searchText = _searchController.text;
+            });
+          }, child: Text(content, style: TextStyle(color: Colors.white,),)),
+        ),
+      ),
+    );
   }
 
   @override
@@ -204,11 +263,11 @@ class _KAZUYAState extends State<KAZUYA> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: TextField(controller: _searchController, decoration: InputDecoration(
+                              child: TextFormField(controller: _searchController, decoration: InputDecoration(
                                   labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
-                              ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),onChanged: (value) {
+                              ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
                                 setState((){
-                                  searchText = value;
+                                  searchText = _searchController.text;
                                 });
                               },),
                             ),
@@ -220,279 +279,75 @@ class _KAZUYAState extends State<KAZUYA> {
                                   return Theme(
                                     data: themeData,
                                     child: Container(
-                                      height: 200,
-                                      color: Colors.grey,
+                                      height: 288,
+                                      color: Colors.black,
                                       child: Center(
-                                          child:
-                                          Column(
+                                          child: Column(
                                             children: [
                                               Row( //1번째 줄
                                                 children: [
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c7"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_up_left)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c8"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_up)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c9"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_up_right)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}LP";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("LP")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}RP";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("RP")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}AP";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("AP")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_left_to_line),),
-                                                  ),
+                                                  keyboardButton("↖"),
+                                                  keyboardButton("↑"),
+                                                  keyboardButton("↗"),
+                                                  keyboardButton("LP"),
+                                                  keyboardButton("RP"),
+                                                  keyboardButton("AP"),
+                                                  keyboardButton("delete"),
                                                 ],
                                               ),
                                               Row( //2번째 줄
                                                 children: [
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c4"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_left)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c5"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("${main.sticks["c5"]}")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c6"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_right)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(
-                                                        onPressed: (){
-                                                          _searchController.text = "${_searchController.text}LK";
-                                                          setState(() {
-                                                            searchText = _searchController.text;
-                                                          });
-                                                        }, child: Text("LK")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}RK";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("RK")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}AK";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("AK")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}토네이도";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("토네\n이도")),
-                                                  ),
+                                                  keyboardButton("←"),
+                                                  keyboardButton("N"),
+                                                  keyboardButton("→"),
+                                                  keyboardButton("LK"),
+                                                  keyboardButton("RK"),
+                                                  keyboardButton("AK"),
+                                                  keyboardButton("토네\n이도", inputText: "토네이도"),
                                                 ],
                                               ),
                                               Row( //3번째 줄
                                                 children: [
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c1"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_down_left)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c2"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_down)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: IconButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c3"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, icon: Icon(CupertinoIcons.arrow_down_right)),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}AL";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("AL")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}AR";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("AR")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}~";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("~")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}히트 발동기";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("히트")),
-                                                  ),
+                                                  keyboardButton("↙"),
+                                                  keyboardButton("↓"),
+                                                  keyboardButton("↘"),
+                                                  keyboardButton("AL"),
+                                                  keyboardButton("AR"),
+                                                  keyboardButton("~"),
+                                                  keyboardButton("히트", inputText: "히트 발동기"),
                                                 ],
                                               ),
                                               Row( //4번째 줄
                                                 children: [
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}상단";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("상단")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}중단";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("중단")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}하단";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("하단")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}파워 크래시";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("파크")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}호밍기";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("호밍기")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c3"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("")),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 1,
-                                                    child: TextButton(onPressed: (){
-                                                      _searchController.text = "${_searchController.text}${main.sticks["c3"]}";
-                                                      setState(() {
-                                                        searchText = _searchController.text;
-                                                      });
-                                                    }, child: Text("")),
-                                                  ),
+                                                  keyboardButton("상단"),
+                                                  keyboardButton("중단"),
+                                                  keyboardButton("하단"),
+                                                  keyboardButton("+"),
+                                                  keyboardButton("-"),
+                                                  keyboardButton("가댐", inputText: "가드 대미지"),
+                                                  keyboardButton("파크", inputText: "파워 크래시"),
+                                                ],
+                                              ),
+                                              Row( //5번째 줄
+                                                children: [
+                                                  keyboardButton("1"),
+                                                  keyboardButton("2"),
+                                                  keyboardButton("3"),
+                                                  keyboardButton("4"),
+                                                  keyboardButton("5"),
+                                                  keyboardButton("6"),
+                                                  keyboardButton("호밍기"),
+                                                ],
+                                              ),
+                                              Row( //6번째 줄
+                                                children: [
+                                                  keyboardButton("7"),
+                                                  keyboardButton("8"),
+                                                  keyboardButton("9"),
+                                                  keyboardButton("0"),
+                                                  keyboardButton(""),
+                                                  keyboardButton(""),
+                                                  keyboardButton("AC"),
                                                 ],
                                               ),
                                             ],

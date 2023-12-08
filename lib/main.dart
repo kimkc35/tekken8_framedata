@@ -126,17 +126,17 @@ class _MyAppState extends State<MyApp> {
                   child: ListView.builder(
                       itemCount: 1,
                       itemBuilder: (BuildContext ctx, int idx) {
-                        return Column(
-                          children: [
-                            for(int i = 0; i < characterList.length /
-                                2; i++)...[
-                              CharacterButton(
-                                character1: characterList[2 * i],
-                                character2: characterList[2 * i + 1])
-                            ]
-                          ],
-                        );
-                      }
+                      return Column(
+                        children: [
+                          for(int i = 0; i < characterList.length /
+                              2; i++)...[
+                            CharacterButton(
+                              character1: characterList[2 * i],
+                              character2: characterList[2 * i + 1])
+                          ]
+                        ],
+                      );
+                    }
                   ),
                 ),
               ),
@@ -152,6 +152,7 @@ class _MyAppState extends State<MyApp> {
     }
   }
 }
+
 class CharacterButton extends StatelessWidget {
 
   final String character1, character2;
@@ -173,8 +174,10 @@ class CharacterButton extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all(Colors.transparent)
             ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
-              },
+              if(characterFunctionList[character1] != null) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
+              }
+            },
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
@@ -193,7 +196,9 @@ class CharacterButton extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.transparent)
               ),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character2]!));
+                if(characterFunctionList[character2] != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character2]!));
+                }
               },
             child: Stack(
               alignment: Alignment.bottomCenter,
