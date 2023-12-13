@@ -10,7 +10,7 @@ import 'package:string_validator/string_validator.dart';
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["La Luce Di Sirio", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Total Vandalization", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -24,9 +24,9 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-const character = "claudio"; //변경해야될것
+const character = "bryan"; //변경해야될것
 
-List files = [
+List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
 ];
 
@@ -55,7 +55,7 @@ class GetContents { // 리스트 구성
     return text.split(" | ");
   }
 
-  Future<List> getList() async {
+  Future<List> getMoveList() async {
     var list = [];
     var temp;
     for(int j = 0; j < types.length; j++) {
@@ -68,10 +68,10 @@ class GetContents { // 리스트 구성
             }
           }
       );
-      for (int i = 0; i < files.length; i++) {
-        await _loadList(files[i]).then((value) =>
+      for (int i = 0; i < moveFiles.length; i++) {
+        await _loadList(moveFiles[i]).then((value) =>
         {
-          print("클라우디오, ${files[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -115,17 +115,17 @@ class GetContents { // 리스트 구성
 
 
 //변경해야될것
-class CLAUDIO extends StatefulWidget {
+class BRYAN extends StatefulWidget {
 
   final moves, throws;
 
-  const CLAUDIO({super.key, required this.moves, required this.throws});
+  const BRYAN({super.key, required this.moves, required this.throws});
 
   @override
-  State<CLAUDIO> createState() => _CLAUDIOState();
+  State<BRYAN> createState() => _BRYANState();
 }
 
-class _CLAUDIOState extends State<CLAUDIO> {
+class _BRYANState extends State<BRYAN> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -509,7 +509,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["Starburst 상태의 기술 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["Snake Eyes 보유 시의 기술 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(

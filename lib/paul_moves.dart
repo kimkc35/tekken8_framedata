@@ -26,7 +26,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
 
 const character = "paul"; //변경해야될것
 
-List files = [
+List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
 ]; 
 
@@ -55,7 +55,7 @@ class GetContents { // 리스트 구성
     return text.split(" | ");
   }
 
-  Future<List> getList() async {
+  Future<List> getMoveList() async {
     var list = [];
     var temp;
     for(int j = 0; j < types.length; j++) {
@@ -68,8 +68,8 @@ class GetContents { // 리스트 구성
             }
           }
       );
-      for (int i = 0; i < files.length; i++) {
-        await _loadList(files[i]).then((value) =>
+      for (int i = 0; i < moveFiles.length; i++) {
+        await _loadList(moveFiles[i]).then((value) =>
         {
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){

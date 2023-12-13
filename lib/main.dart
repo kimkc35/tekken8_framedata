@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'jin_commands.dart' as jin;
-import 'kazuya_commands.dart' as kazuya;
-import 'paul_commands.dart' as paul;
-import 'claudio_commands.dart' as claudio;
+import 'jin_moves.dart' as jin;
+import 'kazuya_moves.dart' as kazuya;
+import 'paul_moves.dart' as paul;
+import 'claudio_moves.dart' as claudio;
+import 'bryan_moves.dart' as bryan;
 import 'package:easy_localization/easy_localization.dart';
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
-final moves = {"kazuya" : [], "jin" : [], "paul" : [], "claudio" : []};
-final throws = {"kazuya" : [], "jin" : [], "paul" : [], "claudio" : []};
+final moves = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], "jack-8" : [], "lars" : [], "xiaoyu" : [], "nina" : [], "leroy" : [], "asuka" : [], "lili" : [], "bryan" : [], "hworang" : [], "claudio" : [], "azucena" : [], "raven" : []};
+final throws = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], "jack-8" : [], "lars" : [], "xiaoyu" : [], "nina" : [], "leroy" : [], "asuka" : [], "lili" : [], "bryan" : [], "hworang" : [], "claudio" : [], "azucena" : [], "raven" : []};
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +26,8 @@ void main() async {
 }
 
 
-final characterGetList = {"kazuya" : kazuya.GetContents().getList(), "jin" : jin.GetContents().getList(), "paul" : paul.GetContents().getList(), "claudio" : claudio.GetContents().getList()};
-final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList()};
+final characterGetMoveList = {"kazuya" : kazuya.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList()};
+final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList()};
 
 Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]),  "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"])};
 
@@ -35,7 +36,7 @@ final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", 
 class GetList{
   Future getCommandList(String character) async{
     var moveList;
-    moveList = await characterGetList[character];
+    moveList = await characterGetMoveList[character];
     return await moveList;
   }
 
@@ -204,4 +205,3 @@ class CharacterButton extends StatelessWidget {
     );
   }
 }
-
