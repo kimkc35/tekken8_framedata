@@ -27,7 +27,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
 const character = "kazuya"; //변경해야될것
 
 List files = [
-  "command_names", "commands", "command_start_frames", "command_guard_frames", "command_hit_frames", "command_counter_frames", "command_ranges", "command_damages", "command_extras"
+  "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
 ];
 
 List throwFiles = [
@@ -122,9 +122,9 @@ class GetContents { // 리스트 구성
 
 class KAZUYA extends StatefulWidget {
 
-  final commands, throws;
+  final moves, throws;
 
-  const KAZUYA({super.key, required this.commands, required this.throws});
+  const KAZUYA({super.key, required this.moves, required this.throws});
 
   @override
   State<KAZUYA> createState() => _KAZUYAState();
@@ -366,7 +366,7 @@ class _KAZUYAState extends State<KAZUYA> {
               ),
               body: TabBarView(
                 children: [
-                  CommandList(commands: widget.commands),
+                  MoveList(moves: widget.moves),
                   ThrowList(throws: widget.throws)
                 ],
               )
@@ -437,18 +437,18 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
   ];
 }
 
-class CommandList extends StatefulWidget {
+class MoveList extends StatefulWidget {
 
-  final commands;
+  final moves;
 
-  const CommandList({super.key, required this.commands});
+  const MoveList({super.key, required this.moves});
 
   @override
-  State<CommandList> createState() => _CommandListState();
+  State<MoveList> createState() => _MoveListState();
 }
 
 
-class _CommandListState extends State<CommandList> {
+class _MoveListState extends State<MoveList> {
 
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
@@ -463,7 +463,7 @@ class _CommandListState extends State<CommandList> {
   @override
   void initState() {
     setState(() {
-      filtered = deepCopyList(widget.commands);
+      filtered = deepCopyList(widget.moves);
     });
     super.initState();
   }
@@ -475,7 +475,7 @@ class _CommandListState extends State<CommandList> {
   void filter(String text){
     setState(() {
       resetLength();
-      filtered = deepCopyList(widget.commands);
+      filtered = deepCopyList(widget.moves);
       for (int i = 0; i < types.length; i++) {
         if (types[i][filtered[i]["type"]] == true) {
           for (int j = 0; j < filtered[i]["commands"].length; j++) {
@@ -494,7 +494,7 @@ class _CommandListState extends State<CommandList> {
     }else{
       setState(() {
         resetLength();
-        filtered = deepCopyList(widget.commands); //초기화
+        filtered = deepCopyList(widget.moves); //초기화
       });
     }
 

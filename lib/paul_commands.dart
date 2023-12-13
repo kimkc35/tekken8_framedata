@@ -27,7 +27,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
 const character = "paul"; //변경해야될것
 
 List files = [
-  "command_names", "commands", "command_start_frames", "command_guard_frames", "command_hit_frames", "command_counter_frames", "command_ranges", "command_damages", "command_extras"
+  "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
 ]; 
 
 List throwFiles = [
@@ -64,7 +64,7 @@ class GetContents { // 리스트 구성
             {
               "type": types[j].keys.firstWhere(
                       (k) => types[j][k] == true || types[j][k] == false),
-              "commands": []
+              "contents": []
             }
           }
       );
@@ -73,7 +73,7 @@ class GetContents { // 리스트 구성
         {
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
-              list[j]["commands"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
+              list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
@@ -84,9 +84,9 @@ class GetContents { // 리스트 구성
                 temp = temp.toString().replaceAll("\\n", "\n"),
                 temp = temp.toString().replaceAll("-", "")
               },
-              list[j]["commands"][k].add(temp.split(", ")[k]),
+              list[j]["contents"][k].add(temp.split(", ")[k]),
             }else{
-              list[j]["commands"][k].add(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k]),
+              list[j]["contents"][k].add(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k]),
             },
           }
         }
@@ -117,9 +117,9 @@ class GetContents { // 리스트 구성
 
 class PAUL extends StatefulWidget {
 
-  final commands, throws;
+  final moves, throws;
 
-  const PAUL({super.key, required this.commands, required this.throws});
+  const PAUL({super.key, required this.moves, required this.throws});
 
   @override
   State<PAUL> createState() => _PAULState();
@@ -360,7 +360,7 @@ class _PAULState extends State<PAUL> {
           ),
           body: TabBarView(
             children: [
-              CommandList(commands: widget.commands),
+              MoveList(moves: widget.moves),
               ThrowList(throws: widget.throws)
             ],
           )
@@ -432,18 +432,18 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
   ];
 }
 
-class CommandList extends StatefulWidget {
+class MoveList extends StatefulWidget {
 
-  final commands;
+  final moves;
 
-  const CommandList({super.key, required this.commands});
+  const MoveList({super.key, required this.moves});
 
   @override
-  State<CommandList> createState() => _CommandListState();
+  State<MoveList> createState() => _MoveListState();
 }
 
 
-class _CommandListState extends State<CommandList> {
+class _MoveListState extends State<MoveList> {
 
   TextStyle headingStyle = TextStyle(color: Colors.black);
 
@@ -458,7 +458,7 @@ class _CommandListState extends State<CommandList> {
   @override
   void initState() {
     setState(() {
-      filtered = deepCopyList(widget.commands);
+      filtered = deepCopyList(widget.moves);
     });
     super.initState();
   }
@@ -470,11 +470,11 @@ class _CommandListState extends State<CommandList> {
   void filter(String text){
     setState(() {
       resetLength();
-      filtered = deepCopyList(widget.commands);
+      filtered = deepCopyList(widget.moves);
       for (int i = 0; i < types.length; i++) {
         if (types[i][filtered[i]["type"]] == true) {
-          for (int j = 0; j < filtered[i]["commands"].length; j++) {
-            filtered[i]["commands"] = List.from(filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
+          for (int j = 0; j < filtered[i]["contents"].length; j++) {
+            filtered[i]["contents"] = List.from(filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
           }
         }
       }
@@ -489,7 +489,7 @@ class _CommandListState extends State<CommandList> {
     }else{
       setState(() {
         resetLength();
-        filtered = deepCopyList(widget.commands); //초기화
+        filtered = deepCopyList(widget.moves); //초기화
       });
     }
 
@@ -566,12 +566,12 @@ class _CommandListState extends State<CommandList> {
                       DataRow(color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
                     for(int i = 0; i < types.length; i++)...[
                       if(types[i][filtered[i]["type"]] == true)...[
-                        for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
+                        for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
                           if(listLength % 2 == 1)...[
-                            DataRow(cells : (createCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                            DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
                                 Color(0xffd5d5d5)))
                           ]else if(listLength % 2 == 0)...[
-                            DataRow(cells : (createCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
+                            DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
                           ]
                         ],
                       ],
