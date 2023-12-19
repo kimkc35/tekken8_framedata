@@ -4,7 +4,8 @@ import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
 import 'claudio_moves.dart' as claudio;
 import 'bryan_moves.dart' as bryan;
-import 'package:easy_localization/easy_localization.dart';
+import 'hwoarang_moves.dart' as hwoarang;
+import 'king_moves.dart' as king;
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
@@ -12,26 +13,18 @@ final moves = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], 
 final throws = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], "jack-8" : [], "lars" : [], "xiaoyu" : [], "nina" : [], "leroy" : [], "asuka" : [], "lili" : [], "bryan" : [], "hworang" : [], "claudio" : [], "azucena" : [], "raven" : []};
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
   runApp(
-    EasyLocalization(
-        supportedLocales: [Locale('en', 'US'), Locale('ko', 'KR')],
-        path: 'assets/translations', // <-- change the path of the translation files
-        fallbackLocale: Locale('en', 'US'),
-        child:MyApp(getList: GetList(),)
-    ),
+    MyApp(getList: GetList(),)
   );
 }
 
 
-final characterGetMoveList = {"kazuya" : kazuya.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList()};
-final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList()};
+final characterGetMoveList = {"kazuya" : kazuya.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList()};
+final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList()};
 
-Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]),  "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"])};
+Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"])};
 
-final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", "LARS", "XIAOYU", "NINA", "LEROY", "ASUKA", "LILI", "BRYAN", "HWORANG", "CLAUDIO", "AZUCENA", "RAVEN"];
+final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", "LARS", "XIAOYU", "NINA", "LEROY", "ASUKA", "LILI", "BRYAN", "HWOARANG", "CLAUDIO", "AZUCENA", "RAVEN"];
 
 class GetList{
   Future getCommandList(String character) async{
@@ -168,6 +161,8 @@ class CharacterButton extends StatelessWidget {
             onPressed: (){
               if(characterFunctionList[character1] != null) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
+              }else{
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
               }
             },
             child: Stack(

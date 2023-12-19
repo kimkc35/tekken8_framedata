@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
-import 'package:easy_localization/easy_localization.dart';
 import 'package:string_validator/string_validator.dart';
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
@@ -37,6 +36,11 @@ List throwFiles = [
 List types = [ //변경해야될것
   {"heat" : true}, {"general" : true}, {"standing" : true}, {"starburst" : true}
 ];
+
+Map<String, String> typesKo = {
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "starburst" : "스타버스트"
+};
+
 
 bool heatSystemMenu = true;
 
@@ -205,8 +209,6 @@ class _CLAUDIOState extends State<CLAUDIO> {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: themeData,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
         home: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -534,7 +536,7 @@ class _MoveListState extends State<MoveList> {
                                     types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
                                   }
                                 });
-                              }, closeOnActivate: false, child: Text(types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString().tr())),
+                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
                             ],
                           ],
                           builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {

@@ -4,13 +4,12 @@ import 'package:flutter/services.dart';
 import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
-import 'package:easy_localization/easy_localization.dart';
 import 'package:string_validator/string_validator.dart';
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Big Bang Phoenix Smasher", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
@@ -37,6 +36,11 @@ List throwFiles = [
 List types = [ //변경해야될것
   {"heat" : true}, {"general" : true}, {"standing" : true}, {"step" : true}, {"sway" : true}
 ];
+
+Map<String, String> typesKo = {
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "step" : "스텝", "sway" : "스웨이"
+};
+
 
 bool heatSystemMenu = true, heatCommands = true;
 
@@ -206,8 +210,6 @@ class _PAULState extends State<PAUL> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: themeData,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -535,7 +537,7 @@ class _MoveListState extends State<MoveList> {
                                   types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
                                 }
                               });
-                            }, closeOnActivate: false, child: Text(types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString().tr())),
+                            }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
                           ],
                         ],
                         builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {

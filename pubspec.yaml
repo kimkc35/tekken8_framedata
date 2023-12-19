@@ -66,6 +66,9 @@ flutter:
     - assets/kazuya/
     - assets/paul/
     - assets/claudio/
+    - assets/bryan/
+    - assets/hwoarang/
+    - assets/king/
     - assets/translations/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

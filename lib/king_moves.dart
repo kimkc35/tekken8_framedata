@@ -9,21 +9,20 @@ import 'package:string_validator/string_validator.dart';
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Demonic", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Anger Of The Beast", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
-//kazuya extra list
-List<Map<String, String>> extraInitials = [ //변경해야될것
-  {"name" : "step", "step" : "${main.sticks["c3"]}~입력 시 Wind God Step으로 이행\n()는 이행 시 프레임"},
-  {"name" : "damageUp", "damageUp" : "상대 공격을 받아내면 대미지 증가"},
+//paul extra list
+List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
+  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-const character = "kazuya"; //변경해야될것
+const character = "king"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -34,17 +33,18 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"step" : true}, {"devil" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"beast step" : true}, {"jaguar step" : true}, {"jaguar sprint" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "step" : "스텝", "devil" : "데빌"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "beast step" : "비스트 스텝", "jaguar step" : "재규어 스텝", "jaguar sprint" : "재규어 스프린트"
 };
 
-
-bool heatSystemMenu = true, heatCommands = true;
+bool heatSystemMenu = true;
 
 String searchText = "";
+
+final TextEditingController _searchController = TextEditingController();
 
 class GetContents { // 리스트 구성
 
@@ -66,38 +66,35 @@ class GetContents { // 리스트 구성
             {
               "type": types[j].keys.firstWhere(
                       (k) => types[j][k] == true || types[j][k] == false),
-              "commands": []
+              "contents": []
             }
           }
       );
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
-          // print("$character, ${moveFiles[i]}, ${types[j]} : ${value.toString().split(",").length}"), // 디버그
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
-            // print("value : ${value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k]}, ${types[j]} length : ${value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length}"), //디버그
             if (i == 0){
-              list[j]["commands"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
+              list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
-                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
+                temp = temp.toString().replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
-                temp = temp.toString().replaceAll("\\n", "\n"),
+                temp = temp.toString().replaceAll("/", "\n"),
                 temp = temp.toString().replaceAll("-", "")
               },
-              list[j]["commands"][k].add(temp.split(", ")[k]),
+              list[j]["contents"][k].add(temp.split(", ")[k]),
             }else{
-              list[j]["commands"][k].add(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k]),
+              list[j]["contents"][k].add(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k]),
             },
           }
-        }
-        );
+        });
       }
     }
-    // print(list);//디버그
     return list;
   }
 
@@ -106,16 +103,10 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
-      // print("valueToList : $valueToList");//디버그
       for (int j = 0; j < valueToList.length; j++){
         if (i == 0){
           throwList.addAll([[valueToList[j]]]);
-          // print("throwList : $throwList");//디버그
-          // print("value : ${valueToList[j]}");//디버그
         }else{
-          // print("throwList : $throwList");//디버그
-          // print("throwList[j] : ${throwList[j]}");//디버그
-          // print("value2 : ${valueToList[j]}");//디버그
           throwList[j].add(valueToList[j]);
         }}
     }
@@ -124,17 +115,19 @@ class GetContents { // 리스트 구성
 }
 
 
-class KAZUYA extends StatefulWidget {
+
+//변경해야될것
+class KING extends StatefulWidget {
 
   final moves, throws;
 
-  const KAZUYA({super.key, required this.moves, required this.throws});
+  const KING({super.key, required this.moves, required this.throws});
 
   @override
-  State<KAZUYA> createState() => _KAZUYAState();
+  State<KING> createState() => _KINGState();
 }
 
-class _KAZUYAState extends State<KAZUYA> {
+class _KINGState extends State<KING> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -143,8 +136,7 @@ class _KAZUYAState extends State<KAZUYA> {
       primarySwatch: Colors.pink
   );
 
-  final TextEditingController _searchController = TextEditingController();
-
+  //키보드 버튼 제작 함수
   Widget keyboardButton(String content, {String inputText = ""}){
     if(content == "delete"){
       return Expanded(
@@ -386,6 +378,7 @@ TextStyle commandStyle = TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
     commandStyleMinus = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Color(0xff1a74b2)),
     commandStylePunish = TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Colors.red);
 
+//무브 리스트 생성
 List<DataCell> createCommand(String name, command, start, guard, hit, counter, range, damage, extra){
   listLength = listLength - 1;
   return [
@@ -480,8 +473,8 @@ class _MoveListState extends State<MoveList> {
       filtered = deepCopyList(widget.moves);
       for (int i = 0; i < types.length; i++) {
         if (types[i][filtered[i]["type"]] == true) {
-          for (int j = 0; j < filtered[i]["commands"].length; j++) {
-            filtered[i]["commands"] = List.from(filtered[i]["commands"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
+          for (int j = 0; j < filtered[i]["contents"].length; j++) {
+            filtered[i]["contents"] = List.from(filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList());
           }
         }
       }
@@ -516,75 +509,74 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 Electric Wind God Fist 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["파워가 상승한 Jaguar Sprint 사용 가능", "특정 잡기 기술로 히트 상태의 남은 시간 회복 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
-                  headingTextStyle: headingStyle,
-                  // headingRowColor: MaterialStateProperty.all(Color(0xffd24468)),
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 48,
-                  border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                  horizontalMargin: 10,
-                  columnSpacing: 20,
-                  columns: [
-                    DataColumn(label: SizedBox(
-                      width: 150,
-                      height: 100,
-                      child: MenuAnchor( // 커맨드 체크박스
-                        alignmentOffset: Offset(20, 0),
-                        menuChildren: [
-                          for(int i = 0; i < types.length; i++)...[
-                            CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
-                              setState(() {
-                                if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                }else{
-                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                }
-                              });
-                            }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
+                    headingTextStyle: headingStyle,
+                    dataRowMaxHeight: double.infinity,
+                    dataRowMinHeight: 48,
+                    border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
+                    horizontalMargin: 10,
+                    columnSpacing: 20,
+                    columns: [
+                      DataColumn(label: SizedBox(
+                        width: 150,
+                        height: 100,
+                        child: MenuAnchor( // 커맨드 체크박스
+                          alignmentOffset: Offset(20, 0),
+                          menuChildren: [
+                            for(int i = 0; i < types.length; i++)...[
+                              CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
+                                setState(() {
+                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
+                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
+                                  }else{
+                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
+                                  }
+                                });
+                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)]!)),
+                            ],
+                          ],
+                          builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
+                            if (controller.isOpen) {
+                              controller.close();
+                            } else {
+                              controller.open();
+                            }
+                          }, child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.arrow_drop_down, color: Colors.black,),
+                              Text("기술명\n커맨드", style: TextStyle(height: 1.2, color: Colors.black), textAlign: TextAlign.center,),
+                            ],
+                          ),),
+                        ),
+                      )), // 헤딩
+                      DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada"),))),
+                      DataColumn(label: SizedBox(width: 50, child: Text('가드',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: SizedBox(width: 50, child: Text('히트',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: SizedBox(width: 50, child: Text('카운터',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                    ],
+                    rows: [
+                      if(searchText.isEmpty || rageArts.toString().toLowerCase().contains(searchText.toLowerCase()))
+                        DataRow(color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
+                      for(int i = 0; i < types.length; i++)...[
+                        if(types[i][filtered[i]["type"]] == true)...[
+                          for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
+                            if(listLength % 2 == 1)...[
+                              DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                                  Color(0xffd5d5d5)))
+                            ]else if(listLength % 2 == 0)...[
+                              DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
+                            ]
                           ],
                         ],
-                        builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
-                          if (controller.isOpen) {
-                            controller.close();
-                          } else {
-                            controller.open();
-                          }
-                        }, child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(Icons.arrow_drop_down, color: Colors.black,),
-                            Text("기술명\n커맨드", style: TextStyle(height: 1.2, color: Colors.black), textAlign: TextAlign.center,),
-                          ],
-                        ),),
-                      ),
-                    )), // 헤딩
-                    DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada"),))),
-                    DataColumn(label: SizedBox(width: 50, child: Text('가드',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    DataColumn(label: SizedBox(width: 50, child: Text('히트',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    DataColumn(label: SizedBox(width: 50, child: Text('카운터',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                    DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                  ],
-                  rows: [
-                    if(searchText.isEmpty || rageArts.toString().toLowerCase().contains(searchText.toLowerCase())) //변경해야될것
-                      DataRow(color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
-                    for(int i = 0; i < types.length; i++)...[
-                      if(types[i][filtered[i]["type"]] == true)...[
-                        for(int j = 0; j < filtered[i]["commands"].length; j ++)...[
-                          if(listLength % 2 == 1)...[
-                            DataRow(cells : (createCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])), color: MaterialStateColor.resolveWith((states) =>
-                                Color(0xffd5d5d5)))
-                          ]else if(listLength % 2 == 0)...[
-                            DataRow(cells : (createCommand(filtered[i]["commands"][j][0], filtered[i]["commands"][j][1], filtered[i]["commands"][j][2], filtered[i]["commands"][j][3], filtered[i]["commands"][j][4], filtered[i]["commands"][j][5], filtered[i]["commands"][j][6], filtered[i]["commands"][j][7], filtered[i]["commands"][j][8])))
-                          ]
-                        ],
-                      ],
+                      ]
                     ]
-                  ]
                 ),
               ),
             ],
@@ -614,7 +606,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", ""), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 

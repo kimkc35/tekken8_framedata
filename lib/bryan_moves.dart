@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
-import 'package:easy_localization/easy_localization.dart';
 import 'package:string_validator/string_validator.dart';
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
@@ -14,14 +13,16 @@ final List rageArts = ["Total Vandalization", "${main.sticks["c3"]}AP", "20", "-
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "starburst", "starburst" : "히트 시 Starburst 상태로"},
+  {"name" : "snakeEyes", "snakeEyes" : "히트 발동 시 Snake Eyes를 획득"},
+  {"name" : "useSnakeEyes", "useSnakeEyes" : "Snake Eyes를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
+  {"name" : "sway", "sway" : "${main.sticks["c4"]}~입력 시 Sway로 이행\n()는 이행 시 프레임"},
+  {"name" : "slitherStep", "slitherStep" : "${main.sticks["c6"]}~입력 시 Slither Step으로 이행\n()는 이행 시 프레임"}
 ];
 
 const character = "bryan"; //변경해야될것
@@ -35,8 +36,12 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"starburst" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"snake eyes" : true}, {"slither step" : true}, {"sway" : true}
 ];
+
+Map<String, String> typesKo = {
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "snake eyes" : "스네이크 아이즈", "slither step" : "슬리더 스텝", "sway" : "스웨이"
+};
 
 bool heatSystemMenu = true;
 
@@ -78,11 +83,11 @@ class GetContents { // 리스트 구성
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
-                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
+                temp = temp.toString().replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
-                temp = temp.toString().replaceAll("\\n", "\n"),
+                temp = temp.toString().replaceAll("/", "\n"),
                 temp = temp.toString().replaceAll("-", "")
               },
               list[j]["contents"][k].add(temp.split(", ")[k]),
@@ -206,8 +211,6 @@ class _BRYANState extends State<BRYAN> {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: themeData,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
         home: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -535,7 +538,7 @@ class _MoveListState extends State<MoveList> {
                                     types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
                                   }
                                 });
-                              }, closeOnActivate: false, child: Text(types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString().tr())),
+                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
                             ],
                           ],
                           builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
@@ -606,7 +609,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", ""), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 
