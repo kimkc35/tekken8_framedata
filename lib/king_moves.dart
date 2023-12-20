@@ -73,7 +73,6 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
-          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -103,12 +102,20 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
+      List temp = List.from(valueToList);
+      for (int l = 1; l < 10; l++) {
+        temp = temp
+            .toString()
+            .replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("[", "").replaceAll("]", "").split(", ");
+      }
       for (int j = 0; j < valueToList.length; j++){
         if (i == 0){
-          throwList.addAll([[valueToList[j]]]);
+          throwList.addAll([[temp[j]]]);
         }else{
-          throwList[j].add(valueToList[j]);
-        }}
+          throwList[j].add(temp[j]);
+        }
+      }
+      print("$character, ${throwFiles[i]} : ${valueToList.length}"); //디버그
     }
     return throwList;
   }
@@ -588,7 +595,11 @@ class _MoveListState extends State<MoveList> {
 
 List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBreak, damage, range, extra){
   return [
-    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: scale, style: commandStyle,))), //기술명, 커맨드
+    if(command == "delete")...[
+      DataCell(SizedBox(width: 150, child: Text(name, textAlign: TextAlign.center, textScaler: scale, style: commandStyle,))), //기술명, 커맨드
+    ]else...[
+      DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: scale, style: commandStyle,))), //기술명, 커맨드
+    ],
     DataCell(SizedBox(width: 30, child: Text(start, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //발생
     DataCell(SizedBox(width: 40, child: Text(breakThrow, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //풀기
     if(frameAfterBreak.contains("+") && frameAfterBreak.contains("-") && frameAfterBreak != "-")...[ //풀기 후 F

@@ -9,8 +9,8 @@ import 'king_moves.dart' as king;
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
-final moves = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], "jack-8" : [], "lars" : [], "xiaoyu" : [], "nina" : [], "leroy" : [], "asuka" : [], "lili" : [], "bryan" : [], "hworang" : [], "claudio" : [], "azucena" : [], "raven" : []};
-final throws = {"kazuya" : [], "jin" : [], "king" : [], "paul" : [], "law" : [], "jack-8" : [], "lars" : [], "xiaoyu" : [], "nina" : [], "leroy" : [], "asuka" : [], "lili" : [], "bryan" : [], "hworang" : [], "claudio" : [], "azucena" : [], "raven" : []};
+final moves = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
+final throws = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 
 void main() async {
   runApp(
@@ -19,12 +19,12 @@ void main() async {
 }
 
 
-final characterGetMoveList = {"kazuya" : kazuya.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList()};
-final characterGetThrowList = {"kazuya" : kazuya.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList()};
+final characterGetMoveList = {"bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList()};
+final characterGetThrowList = {"bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList()};
 
-Map<String, Widget> characterFunctionList = {"KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"])};
+Map<String, Widget> characterFunctionList = {"BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"])};
 
-final characterList = ["KAZUYA", "JIN", "KING", "JUN", "PAUL", "LAW", "JACK-8", "LARS", "XIAOYU", "NINA", "LEROY", "ASUKA", "LILI", "BRYAN", "HWOARANG", "CLAUDIO", "AZUCENA", "RAVEN"];
+final characterList = ["ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "LARS", "LAW", "LEROY", "LILI", "NINA", "PAUL", "RAVEN", "XIAOYU", ""];
 
 class GetList{
   Future getCommandList(String character) async{
@@ -120,8 +120,7 @@ class _MyAppState extends State<MyApp> {
                     itemBuilder: (BuildContext ctx, int idx) {
                     return Column(
                       children: [
-                        for(int i = 0; i < characterList.length /
-                            2; i++)...[
+                        for(int i = 0; i < characterList.length / 2; i++)...[
                           CharacterButton(
                             character1: characterList[2 * i],
                             character2: characterList[2 * i + 1])
@@ -154,24 +153,23 @@ class CharacterButton extends StatelessWidget {
           width: 200,
           height: 100,
           child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))),
-              backgroundColor: MaterialStateProperty.all(Colors.transparent)
-            ),
-            onPressed: (){
-              if(characterFunctionList[character1] != null) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
-              }else{
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
-              }
-            },
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                // Image.asset("assets/$character1.png", fit: BoxFit.fill, isAntiAlias: true,),
-                Text(character1,  textAlign: TextAlign.center,)
-              ],
-            )
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.transparent)
+              ),
+              onPressed: (){
+                if(characterFunctionList[character1] != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
+                }
+              },
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
+                  Text(character1, textAlign: TextAlign.center,)
+                ],
+              )
           ),
         ),
         Container(
@@ -185,6 +183,8 @@ class CharacterButton extends StatelessWidget {
               onPressed: (){
                 if(characterFunctionList[character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character2]!));
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
                 }
               },
             child: Stack(
