@@ -115,7 +115,6 @@ class GetContents { // 리스트 구성
           throwList[j].add(temp[j]);
         }
       }
-      print("$character, ${throwFiles[i]} : ${valueToList.length}"); //디버그
     }
     return throwList;
   }

@@ -106,18 +106,20 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
-      // print("valueToList : $valueToList");//디버그
+      print("$character, ${throwFiles[i]} : ${valueToList.length}"); //디버그
+      List temp = List.from(valueToList);
+      for (int l = 1; l < 10; l++) {
+        temp = temp
+            .toString()
+            .replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("[", "").replaceAll("]", "").split(", ");
+      }
       for (int j = 0; j < valueToList.length; j++){
         if (i == 0){
-          throwList.addAll([[valueToList[j]]]);
-          // print("throwList : $throwList");//디버그
-          // print("value : ${valueToList[j]}");//디버그
+          throwList.addAll([[temp[j]]]);
         }else{
-          // print("throwList : $throwList");//디버그
-          // print("throwList[j] : ${throwList[j]}");//디버그
-          // print("value2 : ${valueToList[j]}");//디버그
-          throwList[j].add(valueToList[j]);
-        }}
+          throwList[j].add(temp[j]);
+        }
+      }
     }
     return throwList;
   }
