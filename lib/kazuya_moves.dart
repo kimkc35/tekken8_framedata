@@ -106,7 +106,6 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
-      print("$character, ${throwFiles[i]} : ${valueToList.length}"); //디버그
       List temp = List.from(valueToList);
       for (int l = 1; l < 10; l++) {
         temp = temp

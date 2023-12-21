@@ -9,11 +9,10 @@ import 'package:string_validator/string_validator.dart';
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["La Luce Di Sirio", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Enlightened Yellow Dragon Palm", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
-List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "starburst", "starburst" : "히트 시 Starburst 상태로"},
+List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
@@ -23,7 +22,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-const character = "claudio"; //변경해야될것
+const character = "peng"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -34,11 +33,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"starburst" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"lingering shadow" : true}, {"shifting clouds" : true}, {"deceptive step" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "starburst" : "스타버스트"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "lingering shadow" : "링거링 쉐도우", "shifting clouds" : "쉬프팅 클라우드", "deceptive step" : "디셉티브 스텝"
 };
 
 
@@ -75,13 +74,14 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
-                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
+                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l "]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
@@ -125,17 +125,17 @@ class GetContents { // 리스트 구성
 
 
 //변경해야될것
-class CLAUDIO extends StatefulWidget {
+class FENG extends StatefulWidget {
 
   final moves, throws;
 
-  const CLAUDIO({super.key, required this.moves, required this.throws});
+  const FENG({super.key, required this.moves, required this.throws});
 
   @override
-  State<CLAUDIO> createState() => _CLAUDIOState();
+  State<FENG> createState() => _FENGState();
 }
 
-class _CLAUDIOState extends State<CLAUDIO> {
+class _FENGState extends State<FENG> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -517,7 +517,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["Starburst 상태의 기술 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["Essence of Iron Palm 사용 가능", "Essence of Nian Zhang Mia Ba사용 가능", "Yinglong Sea Splitter 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
