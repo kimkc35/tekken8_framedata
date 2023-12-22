@@ -9,7 +9,7 @@ import 'package:string_validator/string_validator.dart';
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Alegría del café", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
+final List rageArts = ["Terraforming Cannon", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -22,7 +22,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-const character = "azucena"; //변경해야될것
+const character = "jack-8"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -33,11 +33,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"libertador" : true}
+  {"heat" : true}, {"general" : true}, {"sit down" : true}, {"gamma howl" : true}, {"gamma charge" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "libertador" : "리베르타도르",
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "sit down" : "싯 다운", "gamma howl" : "감마 하울", "gamma charge" : "감마 차지"
 };
 
 
@@ -125,17 +125,17 @@ class GetContents { // 리스트 구성
 
 
 //변경해야될것
-class AZUCENA extends StatefulWidget {
+class JACK extends StatefulWidget {
 
   final moves, throws;
 
-  const AZUCENA({super.key, required this.moves, required this.throws});
+  const JACK({super.key, required this.moves, required this.throws});
 
   @override
-  State<AZUCENA> createState() => _AZUCENAState();
+  State<JACK> createState() => _JACKState();
 }
 
-class _AZUCENAState extends State<AZUCENA> {
+class _JACKState extends State<JACK> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -517,7 +517,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["Libertador Revolución 사용 가능", "Nuevo Libertador 사용 가능", "파워가 상승한 Libertador 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["Gamma Charge 보유 시의 기술 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
