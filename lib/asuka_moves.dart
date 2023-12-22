@@ -9,7 +9,7 @@ import 'package:string_validator/string_validator.dart';
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Enlightened Yellow Dragon Palm", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Naniwa Peacemaker Knuckle", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -22,7 +22,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-const character = "feng"; //변경해야될것
+const character = "asuka"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -33,11 +33,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"lingering shadow" : true}, {"shifting clouds" : true}, {"deceptive step" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"naniwa gusto" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "lingering shadow" : "링거링 쉐도우", "shifting clouds" : "쉬프팅 클라우드", "deceptive step" : "디셉티브 스텝"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "naniwa gusto" : "나니와 구스토"
 };
 
 
@@ -125,17 +125,17 @@ class GetContents { // 리스트 구성
 
 
 //변경해야될것
-class FENG extends StatefulWidget {
+class ASUKA extends StatefulWidget {
 
   final moves, throws;
 
-  const FENG({super.key, required this.moves, required this.throws});
+  const ASUKA({super.key, required this.moves, required this.throws});
 
   @override
-  State<FENG> createState() => _FENGState();
+  State<ASUKA> createState() => _ASUKAState();
 }
 
-class _FENGState extends State<FENG> {
+class _ASUKAState extends State<ASUKA> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -517,7 +517,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["Essence of Iron Palm 사용 가능", "Essence of Nian Zhang Mia Ba사용 가능", "Yinglong Sea Splitter 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["Naniwa Gusto 보유 시의 기술 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
