@@ -153,9 +153,9 @@ class CharacterButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          padding: EdgeInsets.all(10),
-          width: 200,
-          height: 100,
+          padding: EdgeInsets.all(5),
+          width: 150,
+          height: 80,
           child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.transparent)
@@ -177,9 +177,9 @@ class CharacterButton extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.all(10),
-          width: 200,
-          height: 100,
+          padding: EdgeInsets.all(5),
+          width: 150,
+          height: 80,
           child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.transparent)
