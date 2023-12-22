@@ -20,6 +20,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
+  {"name" : "howl", "howl" : "2 ~입력 시 Gamma Howl로\n()는 이행 시 프레임"}
 ];
 
 const character = "jack-8"; //변경해야될것
@@ -33,7 +34,7 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit down" : true}, {"gamma howl" : true}, {"gamma charge" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"sit down" : true}, {"gamma howl" : true}, {"gamma charge" : true}
 ];
 
 Map<String, String> typesKo = {
