@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'keyboard.dart' as keyboard;
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
@@ -14,6 +15,7 @@ import 'jun_moves.dart' as jun;
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
+var searchTexts = {"asuka" : asuka.searchText, "azucena" : azucena.searchText, "bryan" : bryan.searchText, "claudio" : claudio.searchText, "feng" : feng.searchText, "hwoarang" : hwoarang.searchText, "jack-8" : jack.searchText, "jin" : jin.searchText, "jun" : jun.searchText, "kazuya" : kazuya.searchText, "king" : king.searchText, "paul" : paul.searchText};
 final moves = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 final throws = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 
@@ -23,6 +25,12 @@ void main() async {
   );
 }
 
+final themeData = ThemeData(
+    buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
+    fontFamily: 'Tenada',
+    useMaterial3: false,
+    primarySwatch: Colors.pink
+);
 
 final characterGetMoveList = {"asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList()};
 final characterGetThrowList = {"asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList()};
@@ -79,10 +87,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-            fontFamily: 'Tenada',
-            useMaterial3: false,
-        ),
+        theme: themeData,
         home: Scaffold(
           appBar: AppBar(
             elevation: 0.0,
@@ -142,12 +147,17 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class CharacterButton extends StatelessWidget {
+class CharacterButton extends StatefulWidget {
 
   final String character1, character2;
 
   const CharacterButton({super.key, required this.character1, required this.character2});
 
+  @override
+  State<CharacterButton> createState() => _CharacterButtonState();
+}
+
+class _CharacterButtonState extends State<CharacterButton> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -162,8 +172,12 @@ class CharacterButton extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.transparent)
               ),
               onPressed: (){
-                if(characterFunctionList[character1] != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character1]!));
+                if(characterFunctionList[widget.character1] != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
+                  setState(() {
+                    keyboard.searchController.text = "";
+                    searchTexts[widget.character1] = "";
+                  });
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
                 }
@@ -172,7 +186,7 @@ class CharacterButton extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 children: [
                   // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
-                  Text(character1, textAlign: TextAlign.center,)
+                  Text(widget.character1, textAlign: TextAlign.center,)
                 ],
               )
           ),
@@ -186,8 +200,12 @@ class CharacterButton extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.transparent)
               ),
               onPressed: (){
-                if(characterFunctionList[character2] != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[character2]!));
+                if(characterFunctionList[widget.character2] != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character2]!));
+                  setState(() {
+                    keyboard.searchController.text = "";
+                    searchTexts[widget.character2] = "";
+                  });
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
                 }
@@ -196,7 +214,7 @@ class CharacterButton extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
-                Text(character2, textAlign: TextAlign.center,)
+                Text(widget.character2, textAlign: TextAlign.center,)
               ],
             )
           ),
