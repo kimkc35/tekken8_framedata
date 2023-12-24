@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'keyboard.dart' as keyboard;
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
@@ -15,7 +14,6 @@ import 'jun_moves.dart' as jun;
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
-var searchTexts = {"asuka" : asuka.searchText, "azucena" : azucena.searchText, "bryan" : bryan.searchText, "claudio" : claudio.searchText, "feng" : feng.searchText, "hwoarang" : hwoarang.searchText, "jack-8" : jack.searchText, "jin" : jin.searchText, "jun" : jun.searchText, "kazuya" : kazuya.searchText, "king" : king.searchText, "paul" : paul.searchText};
 final moves = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 final throws = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 
@@ -174,10 +172,6 @@ class _CharacterButtonState extends State<CharacterButton> {
               onPressed: (){
                 if(characterFunctionList[widget.character1] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
-                  setState(() {
-                    keyboard.searchController.text = "";
-                    searchTexts[widget.character1] = "";
-                  });
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
                 }
@@ -202,10 +196,6 @@ class _CharacterButtonState extends State<CharacterButton> {
               onPressed: (){
                 if(characterFunctionList[widget.character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character2]!));
-                  setState(() {
-                    keyboard.searchController.text = "";
-                    searchTexts[widget.character2] = "";
-                  });
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
                 }
@@ -221,5 +211,13 @@ class _CharacterButtonState extends State<CharacterButton> {
         ),
       ],
     );
+  }
+}
+
+class NavigatorObserverMine extends NavigatorObserver {
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    super.didPush(route, previousRoute);
+    debugPrint("창뜸!");
   }
 }

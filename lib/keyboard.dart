@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'main.dart' as main;
 
-final TextEditingController searchController = TextEditingController();
 
 String searchText = "";
 
 class Keyboard extends StatefulWidget {
   final searchText = "";
-  const Keyboard({super.key, required searchText});
+  final TextEditingController searchController = TextEditingController();
+  Keyboard({super.key, required searchText, required searchController});
 
   @override
   State<Keyboard> createState() => _KeyboardState();
@@ -32,8 +32,8 @@ class _KeyboardState extends State<Keyboard> {
             height: 40,
             child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
-                searchController.text = searchController.text.substring(0, searchController.text.length - 1);
-                searchText = searchController.text;
+                widget.searchController.text = widget.searchController.text.substring(0, widget.searchController.text.length - 1);
+                searchText = widget.searchController.text;
               });
             }, child: Icon(CupertinoIcons.arrow_left_to_line, size: 20, color: Colors.white,), ),
           ),
@@ -48,8 +48,8 @@ class _KeyboardState extends State<Keyboard> {
             height: 40,
             child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
-                searchController.text = searchController.text + inputText;
-                searchText = searchController.text;
+                widget.searchController.text = widget.searchController.text + inputText;
+                searchText = widget.searchController.text;
               });
             }, child: Text(content, style: TextStyle(color: Colors.white,),)),
           ),
@@ -64,8 +64,8 @@ class _KeyboardState extends State<Keyboard> {
             height: 40,
             child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
-                searchController.text = "";
-                searchText = searchController.text;
+                widget.searchController.text = "";
+                searchText = widget.searchController.text;
               });
             }, child: Text(content, style: TextStyle(color: Colors.white,),)),
           ),
@@ -80,8 +80,8 @@ class _KeyboardState extends State<Keyboard> {
           height: 40,
           child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
             setState(() {
-              searchController.text = searchController.text + content;
-              searchText = searchController.text;
+              widget.searchController.text = widget.searchController.text + content;
+              searchText = widget.searchController.text;
             });
           }, child: Text(content, style: TextStyle(color: Colors.white,),)),
         ),

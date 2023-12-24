@@ -6,6 +6,8 @@ import 'main.dart' as main;
 import 'package:string_validator/string_validator.dart';
 import 'keyboard.dart' as keyboard;
 
+final TextEditingController _searchController = TextEditingController();
+
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
@@ -44,7 +46,7 @@ Map<String, String> typesKo = {
 
 bool heatSystemMenu = true;
 
-String searchText = "";
+String _searchText = "";
 
 class GetContents { // 리스트 구성
 
@@ -145,84 +147,92 @@ class _JUNState extends State<JUN> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: themeData,
-        home: DefaultTabController(
-          length: 2,
-          child: Scaffold(
-              appBar: AppBar(
-                title: Text(character.toUpperCase()),
-                centerTitle: true,
-                leadingWidth: 120,
-                leading: GestureDetector(
-                  onTap: (){
-                    Navigator.pop(context);
-                  },
-                  child: (
-                      ButtonBar(
-                        children: [
-                          Image.asset("assets/logo.png", isAntiAlias: true,)
-                        ],
-                      )
-                  ),
-                ),
-                actionsIconTheme: IconThemeData(size: 40),
-                actions: [
-                  GestureDetector(
-                    onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
-                      content: Text("LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능"),
-                      actions: [
-                        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-                      ],
-                    )),
-                    child: Icon(Icons.abc),
-                  )
-                ],
-                backgroundColor: Colors.black,
-                bottom: PreferredSize(
-                  preferredSize: Size(0, 100),
-                  child: Column(
-                    children: [
-                      TabBar(
-                        automaticIndicatorColorAdjustment: true,
-                        isScrollable: true,
-                        tabs: [
-                          Tab(text: "Move List"),
-                          Tab(text: "Throw")
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(2.0), //검색기능
-                        child: Row(
+    return PopScope(
+      onPopInvoked: (didPop) {
+        _searchText = "";
+        _searchController.text = "";
+      },
+      child: MaterialApp(
+          theme: themeData,
+          home: DefaultTabController(
+            length: 2,
+            child: Scaffold(
+                appBar: AppBar(
+                  title: Text(character.toUpperCase()),
+                  centerTitle: true,
+                  leadingWidth: 120,
+                  leading: GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: (
+                        ButtonBar(
                           children: [
-                            Expanded(
-                              child: TextFormField(controller: keyboard.searchController, decoration: InputDecoration(
-                                  labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
-                              ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
-                                setState((){
-                                  searchText = keyboard.searchController.text;
-                                });
-                              },),
-                            ),
-                            keyboard.Keyboard(searchText: searchText,)
+                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                          ],
+                        )
+                    ),
+                  ),
+                  actionsIconTheme: IconThemeData(size: 40),
+                  actions: [
+                    GestureDetector(
+                      onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                        content: Text("LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능"),
+                        actions: [
+                          TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                        ],
+                      )),
+                      child: Icon(Icons.abc),
+                    )
+                  ],
+                  backgroundColor: Colors.black,
+                  bottom: PreferredSize(
+                    preferredSize: Size(0, 100),
+                    child: Column(
+                      children: [
+                        TabBar(
+                          automaticIndicatorColorAdjustment: true,
+                          isScrollable: true,
+                          tabs: [
+                            Tab(text: "Move List"),
+                            Tab(text: "Throw")
                           ],
                         ),
-                      )
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.all(2.0), //검색기능
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(controller: _searchController, decoration: InputDecoration(
+                                    labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
+                                ), style: TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
+                                  setState((){
+                                    _searchText = _searchController.text;
+                                  });
+                                },),
+                              ),
+                              //키보드
+                              keyboard.Keyboard(searchText: _searchText, searchController: _searchController,)
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              body: TabBarView(
-                children: [
-                  MoveList(moves: widget.moves),
-                  ThrowList(throws: widget.throws)
-                ],
-              )
-          ),
-        )
+                body: TabBarView(
+                  children: [
+                    MoveList(moves: widget.moves),
+                    ThrowList(throws: widget.throws)
+                  ],
+                )
+            ),
+          )
+      ),
     );
   }
 }
+
 
 const TextScaler scale = TextScaler.linear(0.8);
 int listLength = 1;
@@ -338,8 +348,8 @@ class _MoveListState extends State<MoveList> {
   @override
   Widget build(BuildContext context) {
 
-    if(searchText.isNotEmpty) {
-      filter(searchText); //필터링
+    if(_searchText.isNotEmpty) {
+      filter(_searchText); //필터링
     }else{
       setState(() {
         resetLength();
@@ -416,7 +426,7 @@ class _MoveListState extends State<MoveList> {
                       DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
                     ],
                     rows: [
-                      if(searchText.isEmpty || rageArts.toString().toLowerCase().contains(searchText.toLowerCase()))
+                      if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
                         DataRow(color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
                       for(int i = 0; i < types.length; i++)...[
                         if(types[i][filtered[i]["type"]] == true)...[
