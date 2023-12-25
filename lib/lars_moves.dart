@@ -9,11 +9,10 @@ import 'keyboard.dart' as keyboard;
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Amatsu Izanami", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Zeus Unlimited", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "horizon", "horizon" : "${main.sticks["c2"]}~ or ${main.sticks["c8"]}~을 입력하면 횡이동으로"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
@@ -23,7 +22,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지, 프레임"},
 ];
 
-const character = "jun"; //변경해야될것
+const character = "lars"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -34,11 +33,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"izumo" : true}, {"genjitsu" : true}, {"miare" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"dynamic entry" : true}, {"silent entry" : true}, {"limited entry" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "izumo" : "이즈모", "genjitsu" : "겐지츠", "miare" : "미아레"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "dynamic entry" : "다이나믹 엔트리", "silent entry" : "사일런트 엔트리", "limited entry" : "리미티드 엔트리"
 };
 
 
@@ -75,6 +74,7 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -125,17 +125,17 @@ class GetContents { // 리스트 구성
 
 
 //변경해야될것
-class JUN extends StatefulWidget {
+class LARS extends StatefulWidget {
 
   final moves, throws;
 
-  const JUN({super.key, required this.moves, required this.throws});
+  const LARS({super.key, required this.moves, required this.throws});
 
   @override
-  State<JUN> createState() => _JUNState();
+  State<LARS> createState() => _LARSState();
 }
 
-class _JUNState extends State<JUN> {
+class _LARSState extends State<LARS> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
@@ -372,7 +372,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["체력을 소비하지 않고 카자마의 힘(체력 소비 기술) 사용 가능", "파워가 상승한 Inner Peace 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["파워가 상승한 Limited Entry 사용 가능", "새로운"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
