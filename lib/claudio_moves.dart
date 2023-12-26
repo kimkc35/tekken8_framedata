@@ -167,7 +167,7 @@ class _CLAUDIOState extends State<CLAUDIO> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),

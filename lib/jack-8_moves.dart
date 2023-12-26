@@ -168,7 +168,7 @@ class _JACKState extends State<JACK> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),

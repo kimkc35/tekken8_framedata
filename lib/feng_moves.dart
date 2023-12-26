@@ -166,7 +166,7 @@ class _FENGState extends State<FENG> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),

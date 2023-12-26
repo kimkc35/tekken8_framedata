@@ -170,7 +170,7 @@ class _KAZUYAState extends State<KAZUYA> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),

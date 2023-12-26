@@ -167,7 +167,7 @@ class _LARSState extends State<LARS> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),

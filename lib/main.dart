@@ -94,7 +94,7 @@ class _MyAppState extends State<MyApp> {
             leading: (
                 ButtonBar(
                   children: [
-                    Image.asset("assets/logo.png", isAntiAlias: true,)
+                    Text("TEKKN8")
                   ],
                 )
             ),

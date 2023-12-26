@@ -168,7 +168,7 @@ class _PAULState extends State<PAUL> {
                 child: (
                     ButtonBar(
                       children: [
-                        Image.asset("assets/logo.png", isAntiAlias: true,)
+                        Text("TEKKN8")
                       ],
                     )
                 ),

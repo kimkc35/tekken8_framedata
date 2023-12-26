@@ -169,7 +169,7 @@ class _HWOARANGState extends State<HWOARANG> {
                     child: (
                         ButtonBar(
                           children: [
-                            Image.asset("assets/logo.png", isAntiAlias: true,)
+                            Text("TEKKN8")
                           ],
                         )
                     ),
