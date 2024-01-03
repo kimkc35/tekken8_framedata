@@ -74,6 +74,7 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),

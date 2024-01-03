@@ -13,14 +13,18 @@ final List rageArts = ["Amatsu Izanami", "${main.sticks["c3"]}AP", "20", "-15", 
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
+<<<<<<< HEAD
   {"name" : "horizon", "horizon" : "${main.sticks["c2"]}~ or ${main.sticks["c8"]}~을 입력하면 횡이동으로"},
+=======
+  {"name" : "starburst", "starburst" : "히트 시 Starburst 상태로"},
+>>>>>>> parent of ce50f30 (준 작업 끝)
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지, 프레임"},
+  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
 const character = "jun"; //변경해야될것
@@ -34,11 +38,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"izumo" : true}, {"genjitsu" : true}, {"miare" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"starburst" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "izumo" : "이즈모", "genjitsu" : "겐지츠", "miare" : "미아레"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "starburst" : "스타버스트"
 };
 
 
@@ -81,7 +85,7 @@ class GetContents { // 리스트 구성
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
-                temp = temp.toString().replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
+                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
@@ -290,7 +294,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
     DataCell(SizedBox(width: 50, child: Text(damage,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: SizedBox(child: Text(extra.toString().replaceAll("/", "\n"),textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
+      child: SizedBox(child: Text(extra,textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
     )), //비고
   ];
 }
@@ -469,7 +473,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().replaceAll("-", ""), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 
