@@ -10,11 +10,8 @@ import 'feng_moves.dart' as feng;
 import 'asuka_moves.dart' as asuka;
 import 'azucena_moves.dart' as azucena;
 import 'jack-8_moves.dart' as jack;
-<<<<<<< HEAD
 import 'jun_moves.dart' as jun;
 import 'lars_moves.dart' as lars;
-=======
->>>>>>> parent of ce50f30 (준 작업 끝)
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
@@ -34,17 +31,12 @@ final themeData = ThemeData(
     primarySwatch: Colors.pink
 );
 
-<<<<<<< HEAD
+const double keyboardFontSize = 10;
+
 final characterGetMoveList = {"asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "lars" : lars.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList()};
 final characterGetThrowList = {"asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "lars" : lars.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList()};
 
 Map<String, Widget> characterFunctionList = {"ASUKA" : asuka.ASUKA(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.AZUCENA(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "FENG" : feng.FENG(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.JACK(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "JUN" : jun.JUN(moves: moves["jun"], throws: throws["jun"]), "KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "LARS" : lars.LARS(moves: moves["lars"], throws: throws["lars"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"])};
-=======
-final characterGetMoveList = {"asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList()};
-final characterGetThrowList = {"asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList()};
-
-Map<String, Widget> characterFunctionList = {"ASUKA" : asuka.ASUKA(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.AZUCENA(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "FENG" : feng.FENG(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.JACK(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"])};
->>>>>>> parent of ce50f30 (준 작업 끝)
 
 final characterList = ["ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "LARS", "LAW", "LEROY", "LILI", "NINA", "PAUL", "RAVEN", "XIAOYU", ""];
 
@@ -101,13 +93,8 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             elevation: 0.0,
             leadingWidth: 120,
-            leading: (
-                ButtonBar(
-                  children: [
-                    Text("TEKKN8")
-                  ],
-                )
-            ),
+            title: Text("FRAMEDATA"),
+            centerTitle: true,
             actionsIconTheme: IconThemeData(size: 40),
             actions: [
               Builder(
@@ -177,23 +164,21 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 80,
           child: ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.transparent)
-              ),
-              onPressed: (){
-                if(characterFunctionList[widget.character1] != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
-                }else{
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
-                }
-              },
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
-                  Text(widget.character1, textAlign: TextAlign.center,)
-                ],
-              )
+            style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
+            onPressed: (){
+              if(characterFunctionList[widget.character1] != null) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
+              }else{
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
+              }
+            },
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
+                Text(widget.character1, textAlign: TextAlign.center,)
+              ],
+            )
           ),
         ),
         Container(
@@ -201,9 +186,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 80,
           child: ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.transparent)
-              ),
+              style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
                 if(characterFunctionList[widget.character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character2]!));
@@ -214,7 +197,6 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                // Image.asset("assets/$character2.png", fit: BoxFit.fill, isAntiAlias: true,),
                 Text(widget.character2, textAlign: TextAlign.center,)
               ],
             )

@@ -1,10 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
 import 'package:string_validator/string_validator.dart';
-import 'keyboard.dart' as keyboard;
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
@@ -13,18 +13,14 @@ final List rageArts = ["Amatsu Izanami", "${main.sticks["c3"]}AP", "20", "-15", 
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-<<<<<<< HEAD
-  {"name" : "horizon", "horizon" : "${main.sticks["c2"]}~ or ${main.sticks["c8"]}~을 입력하면 횡이동으로"},
-=======
-  {"name" : "starburst", "starburst" : "히트 시 Starburst 상태로"},
->>>>>>> parent of ce50f30 (준 작업 끝)
+  {"name" : "horizon", "horizon" : "2 ~ or 8 ~을 입력하면 횡이동으로"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
+  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지, 프레임"},
 ];
 
 const character = "jun"; //변경해야될것
@@ -38,11 +34,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"starburst" : true}
+  {"heat" : true}, {"general" : true}, {"standing" : true}, {"izumo" : true}, {"genjitsu" : true}, {"miare" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "starburst" : "스타버스트"
+  "heat" : "히트", "general" : "일반", "standing" : "기상", "izumo" : "이즈모", "genjitsu" : "겐지츠", "miare" : "미아레"
 };
 
 
@@ -79,13 +75,14 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
             }else if (i == 1 || i == 8){
               temp = value[j],
               for (int l = 1; l < 10; l++)
-                temp = temp.toString().replaceAll(l.toString(), "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
+                temp = temp.toString().replaceAll("$l ", "${main.sticks["c$l"]}").replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", ""),
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
@@ -148,6 +145,74 @@ class _JUNState extends State<JUN> {
       primarySwatch: Colors.pink
   );
 
+  //키보드 버튼 제작 함수
+  Widget keyboardButton(String content, {String inputText = ""}){
+    if(content == "delete"){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
+                _searchText = _searchController.text;
+              });
+            }, child: Icon(CupertinoIcons.arrow_left_to_line, size: 20, color: Colors.white,), ),
+          ),
+        ),
+      );
+    }else if(inputText != ""){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = _searchController.text + inputText;
+                _searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white, fontSize: main.keyboardFontSize),)),
+          ),
+        ),
+      );
+    }else if(content == "AC"){
+      return Expanded(
+        flex: 1,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+            height: 40,
+            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+              setState(() {
+                _searchController.text = "";
+                _searchText = _searchController.text;
+              });
+            }, child: Text(content, style: TextStyle(color: Colors.white, fontSize: main.keyboardFontSize),)),
+          ),
+        ),
+      );
+    }
+    return Expanded(
+      flex: 1,
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: SizedBox(
+          height: 40,
+          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => BorderSide(color: Colors.pink))),onPressed: (){
+            setState(() {
+              _searchController.text = _searchController.text + content;
+              _searchText = _searchController.text;
+            });
+          }, child: Text(content, style: TextStyle(color: Colors.white, fontSize: main.keyboardFontSize),)),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -163,7 +228,7 @@ class _JUNState extends State<JUN> {
                 appBar: AppBar(
                   title: Text(character.toUpperCase()),
                   centerTitle: true,
-                  leadingWidth: 120,
+                  leadingWidth: 80,
                   leading: GestureDetector(
                     onTap: (){
                       Navigator.pop(context);
@@ -171,7 +236,7 @@ class _JUNState extends State<JUN> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("TEKKN8")
+                            Text("FRAMEDATA")
                           ],
                         )
                     ),
@@ -215,7 +280,91 @@ class _JUNState extends State<JUN> {
                                 },),
                               ),
                               //키보드
-                              keyboard.Keyboard(searchText: _searchText, searchController: _searchController,)
+                              IconButton(onPressed: (){
+                                showModalBottomSheet<void>(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return Theme(
+                                      data: themeData,
+                                      child: Container(
+                                        height: 288,
+                                        color: Colors.black,
+                                        child: Center(
+                                            child: Column(
+                                              children: [
+                                                Row( //1번째 줄
+                                                  children: [
+                                                    keyboardButton("↖"),
+                                                    keyboardButton("↑"),
+                                                    keyboardButton("↗"),
+                                                    keyboardButton("LP"),
+                                                    keyboardButton("RP"),
+                                                    keyboardButton("AP"),
+                                                    keyboardButton("delete"),
+                                                  ],
+                                                ),
+                                                Row( //2번째 줄
+                                                  children: [
+                                                    keyboardButton("←"),
+                                                    keyboardButton("N"),
+                                                    keyboardButton("→"),
+                                                    keyboardButton("LK"),
+                                                    keyboardButton("RK"),
+                                                    keyboardButton("AK"),
+                                                    keyboardButton("토네\n이도", inputText: "토네이도"),
+                                                  ],
+                                                ),
+                                                Row( //3번째 줄
+                                                  children: [
+                                                    keyboardButton("↙"),
+                                                    keyboardButton("↓"),
+                                                    keyboardButton("↘"),
+                                                    keyboardButton("AL"),
+                                                    keyboardButton("AR"),
+                                                    keyboardButton("~"),
+                                                    keyboardButton("히트", inputText: "히트 발동기"),
+                                                  ],
+                                                ),
+                                                Row( //4번째 줄
+                                                  children: [
+                                                    keyboardButton("상단"),
+                                                    keyboardButton("중단"),
+                                                    keyboardButton("하단"),
+                                                    keyboardButton("+"),
+                                                    keyboardButton("-"),
+                                                    keyboardButton("가댐", inputText: "가드 대미지"),
+                                                    keyboardButton("파크", inputText: "파워 크래시"),
+                                                  ],
+                                                ),
+                                                Row( //5번째 줄
+                                                  children: [
+                                                    keyboardButton("1"),
+                                                    keyboardButton("2"),
+                                                    keyboardButton("3"),
+                                                    keyboardButton("4"),
+                                                    keyboardButton("5"),
+                                                    keyboardButton("6"),
+                                                    keyboardButton("호밍기"),
+                                                  ],
+                                                ),
+                                                Row( //6번째 줄
+                                                  children: [
+                                                    keyboardButton("7"),
+                                                    keyboardButton("8"),
+                                                    keyboardButton("9"),
+                                                    keyboardButton("0"),
+                                                    keyboardButton(""),
+                                                    keyboardButton(""),
+                                                    keyboardButton("AC"),
+                                                  ],
+                                                ),
+                                              ],
+                                            )
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );}, icon: Icon(Icons.keyboard_alt_outlined), color: Colors.white, iconSize: 30,)
                             ],
                           ),
                         )
@@ -235,7 +384,6 @@ class _JUNState extends State<JUN> {
     );
   }
 }
-
 
 const TextScaler scale = TextScaler.linear(0.8);
 int listLength = 1;
@@ -294,7 +442,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
     DataCell(SizedBox(width: 50, child: Text(damage,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: SizedBox(child: Text(extra,textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
+      child: SizedBox(child: Text(extra.toString().replaceAll("/", "\n"),textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
     )), //비고
   ];
 }
@@ -473,7 +621,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", ""), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 
