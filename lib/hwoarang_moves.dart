@@ -237,7 +237,7 @@ class _HWOARANGState extends State<HWOARANG> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

@@ -236,7 +236,7 @@ class _JACKState extends State<JACK> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

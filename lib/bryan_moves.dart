@@ -237,7 +237,7 @@ class _BRYANState extends State<BRYAN> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

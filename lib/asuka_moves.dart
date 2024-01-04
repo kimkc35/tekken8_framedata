@@ -235,7 +235,7 @@ class _ASUKAState extends State<ASUKA> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

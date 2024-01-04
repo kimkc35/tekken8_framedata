@@ -236,7 +236,7 @@ class _PAULState extends State<PAUL> {
                 child: (
                     ButtonBar(
                       children: [
-                        Text("FRAMEDATA")
+                        Text("FRAME\nDATA")
                       ],
                     )
                 ),

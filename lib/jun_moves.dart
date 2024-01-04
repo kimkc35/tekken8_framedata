@@ -236,7 +236,7 @@ class _JUNState extends State<JUN> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

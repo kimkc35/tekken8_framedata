@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:flutter/foundation.dart';
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
@@ -15,10 +17,23 @@ import 'lars_moves.dart' as lars;
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 
+const Map<String, String> unitId = kReleaseMode
+    ? {
+  'ios': '[YOUR iOS AD UNIT ID]',
+  'android': 'ca-app-pub-3256415400287290/4169383092',
+}
+    : {
+  'ios': 'ca-app-pub-3940256099942544/2934735716',
+  'android': 'ca-app-pub-3940256099942544/6300978111',
+};
+
 final moves = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 final throws = {"asuka" : [], "azucena" : [], "bryan" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 
-void main() async {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+
   runApp(
     MyApp(getList: GetList())
   );
@@ -87,6 +102,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    TargetPlatform os = Theme.of(context).platform;
+
+    BannerAd banner = BannerAd(
+      listener: BannerAdListener(
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {},
+        onAdLoaded: (_) {},
+      ),
+      size: AdSize.banner,
+      adUnitId: unitId[os == TargetPlatform.iOS ? 'ios' : 'android']!,
+      request: AdRequest(),
+    )..load();
+
     return MaterialApp(
         theme: themeData,
         home: Scaffold(
@@ -137,6 +164,11 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
+          ),
+          bottomSheet: Container(
+            width: double.infinity,
+            height: 20,
+            child: AdWidget(ad: banner),
           ),
         )
     );

@@ -235,7 +235,7 @@ class _AZUCENAState extends State<AZUCENA> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

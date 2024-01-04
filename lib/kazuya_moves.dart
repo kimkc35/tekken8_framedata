@@ -236,7 +236,7 @@ class _KAZUYAState extends State<KAZUYA> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),

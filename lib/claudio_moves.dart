@@ -235,7 +235,7 @@ class _CLAUDIOState extends State<CLAUDIO> {
                     child: (
                         ButtonBar(
                           children: [
-                            Text("FRAMEDATA")
+                            Text("FRAME\nDATA")
                           ],
                         )
                     ),
