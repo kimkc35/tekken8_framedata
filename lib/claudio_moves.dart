@@ -5,6 +5,29 @@ import 'default_heat_system.dart';
 import 'dart:async';
 import 'main.dart' as main;
 import 'package:string_validator/string_validator.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+final BannerAd _banner = BannerAd(
+    adUnitId: 'ca-app-pub-3256415400287290/4169383092',
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(
+      // Called when an ad is successfully received.
+      onAdLoaded: (Ad ad) => print('Ad loaded.'),
+      // Called when an ad request failed.
+      onAdFailedToLoad: (Ad ad, LoadAdError error) {
+        // Dispose the ad here to free resources.
+        ad.dispose();
+        print('Ad failed to load: $error');
+      },
+      // Called when an ad opens an overlay that covers the screen.
+      onAdOpened: (Ad ad) => print('Ad opened.'),
+      // Called when an ad removes an overlay that covers the screen.
+      onAdClosed: (Ad ad) => print('Ad closed.'),
+      // Called when an impression occurs on the ad.
+      onAdImpression: (Ad ad) => print('Ad impression.'),
+    )
+)..load();
 
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
@@ -321,7 +344,7 @@ class _CLAUDIOState extends State<CLAUDIO> {
                                                     keyboardButton("AL"),
                                                     keyboardButton("AR"),
                                                     keyboardButton("~"),
-                                                    keyboardButton("히트", inputText: "히트 발동기"),
+                                                    keyboardButton("가댐", inputText: "가드 대미지"),
                                                   ],
                                                 ),
                                                 Row( //4번째 줄
@@ -329,31 +352,31 @@ class _CLAUDIOState extends State<CLAUDIO> {
                                                     keyboardButton("상단"),
                                                     keyboardButton("중단"),
                                                     keyboardButton("하단"),
-                                                    keyboardButton("+"),
-                                                    keyboardButton("-"),
-                                                    keyboardButton("가댐", inputText: "가드 대미지"),
+                                                    keyboardButton("D"),
+                                                    keyboardButton("A"),
+                                                    keyboardButton("T"),
                                                     keyboardButton("파크", inputText: "파워 크래시"),
                                                   ],
                                                 ),
                                                 Row( //5번째 줄
                                                   children: [
+                                                    keyboardButton("+"),
                                                     keyboardButton("1"),
                                                     keyboardButton("2"),
                                                     keyboardButton("3"),
                                                     keyboardButton("4"),
                                                     keyboardButton("5"),
-                                                    keyboardButton("6"),
                                                     keyboardButton("호밍기"),
                                                   ],
                                                 ),
                                                 Row( //6번째 줄
                                                   children: [
+                                                    keyboardButton("-"),
+                                                    keyboardButton("6"),
                                                     keyboardButton("7"),
                                                     keyboardButton("8"),
                                                     keyboardButton("9"),
                                                     keyboardButton("0"),
-                                                    keyboardButton(""),
-                                                    keyboardButton(""),
                                                     keyboardButton("AC"),
                                                   ],
                                                 ),
@@ -376,6 +399,12 @@ class _CLAUDIOState extends State<CLAUDIO> {
                     MoveList(moves: widget.moves),
                     ThrowList(throws: widget.throws)
                   ],
+                ),
+                bottomNavigationBar: Container(
+                  color: Colors.black,
+                  width: _banner.size.width.toDouble(),
+                  height: _banner.size.height.toDouble(),
+                  child: AdWidget(ad: _banner,),
                 )
             ),
           )
