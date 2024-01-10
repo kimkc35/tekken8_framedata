@@ -7,6 +7,8 @@ import 'main.dart' as main;
 import 'package:string_validator/string_validator.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+const double listWidth = 35;
+
 final BannerAd _banner = BannerAd(
     adUnitId: 'ca-app-pub-3256415400287290/4169383092',
     size: AdSize.banner,
@@ -56,11 +58,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"standing" : true}, {"lingering shadow" : true}, {"shifting clouds" : true}, {"deceptive step" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"lingering shadow" : true}, {"shifting clouds" : true}, {"deceptive step" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "standing" : "기상", "lingering shadow" : "링거링 쉐도우", "shifting clouds" : "쉬프팅 클라우드", "deceptive step" : "디셉티브 스텝"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "lingering shadow" : "링거링 쉐도우", "shifting clouds" : "쉬프팅 클라우드", "deceptive step" : "디셉티브 스텝"
 };
 
 
@@ -427,43 +429,43 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
     DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: scale, style: commandStyle,))), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //발생
     if(guard.contains("+") && guard.contains("-") && guard != "-")...[
-      DataCell(SizedBox(width: 50, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ]else if(guard.contains("-") && guard != "-")...[
       if(isFloat(guard) && int.parse(guard) <= -10)...[
-        DataCell(SizedBox(width: 50, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
+        DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: 50, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
       ]
     ]else if(guard.contains("+"))...[
-      DataCell(SizedBox(width: 50, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
+      DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: 50, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ],
     if(hit.contains("+") && hit.contains("-") && hit != "-")...[
-      DataCell(SizedBox(width: 50, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ]else if(hit.contains("-") && hit != "-")...[
       if(isFloat(hit) && int.parse(hit) <= -10)...[
-        DataCell(SizedBox(width: 50, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
+        DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: 50, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
       ]
     ]else if(hit.contains("+"))...[
-      DataCell(SizedBox(width: 50, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
+      DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: 50, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ],
     if(counter.contains("+") && counter.contains("-") && counter != "-")...[
-      DataCell(SizedBox(width: 50, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ]else if(counter.contains("-") && counter != "-")...[
       if(isFloat(counter) && int.parse(counter) <= -10)...[
-        DataCell(SizedBox(width: 50, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
+        DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: 50, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyleMinus)))
       ]
     ]else if(counter.contains("+"))...[
-      DataCell(SizedBox(width: 50, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
+      DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: 50, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
+      DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: scale, style: commandStyle)))
     ],
     DataCell(SizedBox(width: 30, child: Text(range,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
     DataCell(SizedBox(width: 50, child: Text(damage,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
@@ -473,6 +475,8 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
     )), //비고
   ];
 }
+
+const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 10);
 
 class MoveList extends StatefulWidget {
 
@@ -486,8 +490,6 @@ class MoveList extends StatefulWidget {
 
 
 class _MoveListState extends State<MoveList> {
-
-  TextStyle headingStyle = TextStyle(color: Colors.black);
 
   var filtered;
 
@@ -555,12 +557,13 @@ class _MoveListState extends State<MoveList> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
+                    headingRowHeight: 50,
                     headingTextStyle: headingStyle,
                     dataRowMaxHeight: double.infinity,
                     dataRowMinHeight: 48,
                     border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                    horizontalMargin: 10,
-                    columnSpacing: 20,
+                    horizontalMargin: 0,
+                    columnSpacing: 10,
                     columns: [
                       DataColumn(label: SizedBox(
                         width: 150,
@@ -590,18 +593,18 @@ class _MoveListState extends State<MoveList> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Icon(Icons.arrow_drop_down, color: Colors.black,),
-                              Text("기술명\n커맨드", style: TextStyle(height: 1.2, color: Colors.black), textAlign: TextAlign.center,),
+                              Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center,),
                             ],
                           ),),
                         ),
                       )), // 헤딩
-                      DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada"),))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('가드',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('히트',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('카운터',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
-                      DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center, style: TextStyle(fontFamily: "Tenada")))),
+                      DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center,))),
+                      DataColumn(label: SizedBox(width: listWidth, child: Text('가드',textAlign: TextAlign.center))),
+                      DataColumn(label: SizedBox(width: listWidth, child: Text('히트',textAlign: TextAlign.center))),
+                      DataColumn(label: SizedBox(width: listWidth, child: Text('카운터',textAlign: TextAlign.center))),
+                      DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center))),
+                      DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center))),
+                      DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
                     ],
                     rows: [
                       if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
@@ -674,11 +677,13 @@ class _ThrowListState extends State<ThrowList>{
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
+                headingRowHeight: 50,
+                headingTextStyle: headingStyle,
                 dataRowMaxHeight: double.infinity,
                 dataRowMinHeight: 48,
                 border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                horizontalMargin: 10,
-                columnSpacing: 20,
+                horizontalMargin: 0,
+                columnSpacing: 10,
                 columns: [
                   DataColumn(label: SizedBox(width: 150,child: Text('기술명\n커맨드',textAlign: TextAlign.center,))),
                   DataColumn(label: SizedBox(width: 30,child: Text('발생',textAlign: TextAlign.center))),
