@@ -34,7 +34,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Big Bang Phoenix Smasher", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Big Bang Phoenix Smasher", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
@@ -59,11 +59,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"step" : true}, {"sway" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"cormorant step" : true}, {"sway" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "step" : "스텝", "sway" : "스웨이"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "cormorant step" : "가마우지 스텝", "sway" : "스웨이"
 };
 
 
@@ -285,7 +285,7 @@ class _PAULState extends State<PAUL> {
                   children: [
                     TabBar(
                       automaticIndicatorColorAdjustment: true,
-                      isScrollable: true,
+                      isScrollable: false,
                       tabs: [
                         Tab(text: "Move List"),
                         Tab(text: "Throw")
@@ -478,7 +478,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
   ];
 }
 
-const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 10);
+const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 12);
 
 class MoveList extends StatefulWidget {
 

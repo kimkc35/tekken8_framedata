@@ -1,5 +1,5 @@
 name: tekken8_framedata
-description: A new Flutter project.
+description: tk8 framedata.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 2.0.0+4
+version: 2.0.0+8
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -80,6 +80,11 @@ flutter:
     - assets/law/
     - assets/leroy/
     - assets/lili/
+    - assets/nina/
+    - assets/raven/
+    - assets/xiaoyu/
+    - assets/alisa/
+    - assets/devil jin/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

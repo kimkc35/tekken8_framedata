@@ -34,7 +34,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Polar Demon Gouge", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Polar Demon Gouge", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //jin extra list
 List<Map<String, String>> extraInitials = [{"name" : "aps", "aps" : "히트 상태에서 ${main.sticks["c1"]}AP 히트 혹은 가드 시 "},
@@ -44,7 +44,8 @@ List<Map<String, String>> extraInitials = [{"name" : "aps", "aps" : "히트 상�
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "zenshin", "zenshin" : "6~입력시 전심 이행\n()안의 프레임은 전심 이행 시 프레임"},
-  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"}
+  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
+  {"name" : "aps", "aps" : "Awakened Power Stance 도중"}
 ];
 
 const character = "jin";
@@ -58,11 +59,11 @@ List throwFiles = [
 ];
 
 List types = [
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"step" : true}, {"zanshin" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"breaking step" : true}, {"zanshin" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "step" : "스텝", "zanshin" : "잔심"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "breaking step" : "브레이킹 스텝", "zanshin" : "잔심"
 };
 
 bool heatSystemMenu = true, heatCommands = true;
@@ -280,7 +281,7 @@ class _JINState extends State<JIN> {
                       children: [
                         TabBar(
                           automaticIndicatorColorAdjustment: true,
-                          isScrollable: true,
+                          isScrollable: false,
                           tabs: [
                             Tab(text: "Move List"),
                             Tab(text: "Throw")
@@ -472,7 +473,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
   ];
 }
 
-const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 10);
+const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 12);
 
 class MoveList extends StatefulWidget {
 

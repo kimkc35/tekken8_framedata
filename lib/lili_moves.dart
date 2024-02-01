@@ -34,7 +34,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["La Vie en Rose fortississimo", "${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["La Vie en Rose fortississimo", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -58,11 +58,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"dew glide" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"dew glide" : true}, {"feisty rabbit" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "dew glide" : "듀 글라이드"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "dew glide" : "듀 글라이드", "feisty rabbit" : "페이스티 래빗"
 };
 
 
@@ -99,7 +99,6 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
-          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -284,7 +283,7 @@ class _LILIState extends State<LILI> {
                       children: [
                         TabBar(
                           automaticIndicatorColorAdjustment: true,
-                          isScrollable: true,
+                          isScrollable: false,
                           tabs: [
                             Tab(text: "Move List"),
                             Tab(text: "Throw")
@@ -477,7 +476,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
   ];
 }
 
-const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 10);
+const TextStyle headingStyle = TextStyle(color: Colors.black, fontFamily: "Tenada", fontSize: 12);
 
 class MoveList extends StatefulWidget {
 

@@ -1,0 +1,1 @@
+AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 3 RP+LK, 3 AR, 9 AP, 상대에게 등을 보일 때 6 AL or AR, 상대에게 등을 보일 때 3 RP+LK, Phoenix 도중 AL or AR, 상대의 펀치 공격에 맞춰서 1 AP, 상대의 공격에 맞춰서 4 AL or AR, 상대에게 등을 보일 때 상대의 펀치 공격에 맞춰서 6 AP, 상대에게 등을 보일 때 상대의 하단 공격에 맞춰서 2 AL or AR
