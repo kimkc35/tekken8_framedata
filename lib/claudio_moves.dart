@@ -269,13 +269,22 @@ class _CLAUDIOState extends State<CLAUDIO> {
                   actions: [
                     GestureDetector(
                       onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
-                        content: Text("LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능"),
+                        content: Text(main.description),
                         actions: [
                           TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
                         ],
                       )),
                       child: Icon(Icons.abc),
-                    )
+                    ),
+                    GestureDetector(
+                      onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("1.01.04V 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                        content: SingleChildScrollView(child: Text(main.patchNote)),
+                        actions: [
+                          TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                        ],
+                      )),
+                      child: Icon(Icons.article),
+                    ),
                   ],
                   backgroundColor: Colors.black,
                   bottom: PreferredSize(

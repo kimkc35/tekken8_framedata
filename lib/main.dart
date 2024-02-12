@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
@@ -22,6 +23,10 @@ import 'xiaoyu_moves.dart' as xiaoyu;
 import 'alisa_moves.dart' as alisa;
 import 'devil jin_moves.dart' as devjin;
 import 'dragunov_moves.dart' as dragunov;
+import 'lee_moves.dart' as lee;
+
+String description = "";
+String patchNote = "";
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
 final BannerAd _banner = BannerAd(
@@ -61,12 +66,16 @@ final themeData = ThemeData(
 
 const double keyboardFontSize = 10;
 
-final characterGetMoveList = {"alisa" : alisa.GetContents().getMoveList(), "asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "devil jin" : devjin.GetContents().getMoveList(), "dragunov" : dragunov.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "lars" : lars.GetContents().getMoveList(), "law" : law.GetContents().getMoveList(), "leroy" : leroy.GetContents().getMoveList(), "lili" : lili.GetContents().getMoveList(), "nina" : nina.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "raven" : raven.GetContents().getMoveList(), "xiaoyu" : xiaoyu.GetContents().getMoveList()};
-final characterGetThrowList = {"alisa" : alisa.GetContents().getThrowList(), "asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "devil jin" : devjin.GetContents().getThrowList(), "dragunov" : dragunov.GetContents().getThrowList(),  "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "lars" : lars.GetContents().getThrowList(), "law" : law.GetContents().getThrowList(), "leroy" : leroy.GetContents().getThrowList(), "lili" : lili.GetContents().getThrowList(), "nina" : nina.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "raven" : raven.GetContents().getThrowList(), "xiaoyu" : xiaoyu.GetContents().getThrowList()};
+final characterGetMoveList = {"alisa" : alisa.GetContents().getMoveList(), "asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "devil jin" : devjin.GetContents().getMoveList(), "dragunov" : dragunov.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "lars" : lars.GetContents().getMoveList(), "law" : law.GetContents().getMoveList(), "lee" : lee.GetContents().getMoveList(), "leroy" : leroy.GetContents().getMoveList(), "lili" : lili.GetContents().getMoveList(), "nina" : nina.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "raven" : raven.GetContents().getMoveList(), "xiaoyu" : xiaoyu.GetContents().getMoveList()};
+final characterGetThrowList = {"alisa" : alisa.GetContents().getThrowList(), "asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "devil jin" : devjin.GetContents().getThrowList(), "dragunov" : dragunov.GetContents().getThrowList(),  "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "lars" : lars.GetContents().getThrowList(), "law" : law.GetContents().getThrowList(), "lee" : lee.GetContents().getThrowList(), "leroy" : leroy.GetContents().getThrowList(), "lili" : lili.GetContents().getThrowList(), "nina" : nina.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "raven" : raven.GetContents().getThrowList(), "xiaoyu" : xiaoyu.GetContents().getThrowList()};
 
-Map<String, Widget> characterFunctionList = {"ALISA" : alisa.ALISA(moves: moves["alisa"], throws: throws["alisa"]), "ASUKA" : asuka.ASUKA(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.AZUCENA(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "DEVIL JIN" : devjin.DEVJIN(moves: moves["devil jin"], throws: throws["devil jin"]), "DRAGUNOV" : dragunov.DRAGUNOV(moves: moves["dragunov"], throws: throws["dragunov"]), "FENG" : feng.FENG(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.JACK(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "JUN" : jun.JUN(moves: moves["jun"], throws: throws["jun"]), "KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "LARS" : lars.LARS(moves: moves["lars"], throws: throws["lars"]), "LAW" : law.LAW(moves: moves["law"], throws: throws["law"]), "LEROY" : leroy.LEROY(moves: moves["leroy"], throws: throws["leroy"]), "LILI" : lili.LILI(moves: moves["lili"], throws: throws["lili"]), "NINA" : nina.NINA(moves: moves["nina"], throws: throws["nina"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "RAVEN" : raven.RAVEN(moves: moves["raven"], throws: throws["raven"]), "XIAOYU" : xiaoyu.XIAOYU(moves: moves["xiaoyu"], throws: throws["xiaoyu"])};
+Map<String, Widget> characterFunctionList = {"ALISA" : alisa.ALISA(moves: moves["alisa"], throws: throws["alisa"]), "ASUKA" : asuka.ASUKA(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.AZUCENA(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.BRYAN(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.CLAUDIO(moves: moves["claudio"], throws: throws["claudio"]), "DEVIL JIN" : devjin.DEVJIN(moves: moves["devil jin"], throws: throws["devil jin"]), "DRAGUNOV" : dragunov.DRAGUNOV(moves: moves["dragunov"], throws: throws["dragunov"]), "FENG" : feng.FENG(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.HWOARANG(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.JACK(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.JIN(moves: moves["jin"], throws: throws["jin"]), "JUN" : jun.JUN(moves: moves["jun"], throws: throws["jun"]), "KAZUYA" : kazuya.KAZUYA(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.KING(moves: moves["king"], throws: throws["king"]), "LARS" : lars.LARS(moves: moves["lars"], throws: throws["lars"]), "LAW" : law.LAW(moves: moves["law"], throws: throws["law"]), "LEE" : lee.LEE(moves: moves["lee"], throws: throws["lee"]), "LEROY" : leroy.LEROY(moves: moves["leroy"], throws: throws["leroy"]), "LILI" : lili.LILI(moves: moves["lili"], throws: throws["lili"]), "NINA" : nina.NINA(moves: moves["nina"], throws: throws["nina"]), "PAUL" : paul.PAUL(moves: moves["paul"], throws: throws["paul"]), "RAVEN" : raven.RAVEN(moves: moves["raven"], throws: throws["raven"]), "XIAOYU" : xiaoyu.XIAOYU(moves: moves["xiaoyu"], throws: throws["xiaoyu"])};
 
-final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "LARS", "LAW", "LEROY", "LILI", "NINA", "PAUL", "RAVEN", "XIAOYU"];
+final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "LARS", "LAW", "LEE", "LEO", "LEROY", "LILI", "NINA", "PAUL", "RAVEN", "XIAOYU"];
+
+Future getFile(String fileName) async{
+  return await rootBundle.loadString("assets/$fileName.txt");
+}
 
 class GetList{
   Future getCommandList(String character) async{
@@ -80,6 +89,15 @@ class GetList{
     throwList = await characterGetThrowList[character];
     return await throwList;
   }
+}
+
+String replaceNumbers(String text){
+  String result = text;
+  for (int i = 0; i < sticks.length; i ++){
+    result = result.replaceAll("${i + 1} ", "${sticks["c${i + 1}"]}");
+  }
+
+  return result;
 }
 
 
@@ -110,6 +128,8 @@ class _MyAppState extends State<MyApp> {
           throws[characterList[i].toString().toLowerCase()] = value,
         });
       }
+      getFile("description").then((value) => description = value);
+      getFile("patch note").then((value) => patchNote = replaceNumbers(value));
     });
   }
 
@@ -127,14 +147,27 @@ class _MyAppState extends State<MyApp> {
             actions: [
               Builder(
                 builder: (context) {
-                  return GestureDetector(
-                    onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
-                      content: Text("LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능"),
-                      actions: [
-                        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-                      ],
-                    )),
-                    child: Icon(Icons.abc),
+                  return Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                          content: Text(description),
+                          actions: [
+                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                          ],
+                        )),
+                        child: Icon(Icons.abc),
+                      ),
+                      GestureDetector(
+                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("1.01.04V 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                          content: SingleChildScrollView(child: Text(patchNote)),
+                          actions: [
+                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                          ],
+                        )),
+                        child: Icon(Icons.article),
+                      ),
+                    ],
                   );
                 }
               )
@@ -147,7 +180,7 @@ class _MyAppState extends State<MyApp> {
             height: double.infinity,
             child: Center(
               child: SizedBox(
-                width: 200,
+                width: 400,
                 height: 3000,
                 child: ListView.builder(
                     itemCount: 1,
@@ -196,8 +229,8 @@ class _CharacterButtonState extends State<CharacterButton> {
       children: [
         Container(
           padding: EdgeInsets.all(5),
-          width: 100,
-          height: 40,
+          width: 150,
+          height: 60,
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
@@ -210,15 +243,15 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character1, textAlign: TextAlign.center, textScaler: TextScaler.linear(0.7))
+                Text(widget.character1, textAlign: TextAlign.center, textScaler: TextScaler.linear(1))
               ],
             )
           ),
         ),
         Container(
           padding: EdgeInsets.all(5),
-          width: 100,
-          height: 40,
+          width: 150,
+          height: 60,
           child: ElevatedButton(
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
@@ -231,7 +264,7 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character2, textAlign: TextAlign.center, textScaler: TextScaler.linear(0.7))
+                Text(widget.character2, textAlign: TextAlign.center, textScaler: TextScaler.linear(1))
               ],
             )
           ),

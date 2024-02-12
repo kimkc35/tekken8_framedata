@@ -1,0 +1,5 @@
+LP: 왼손, RP: 오른손
+LK: 왼발, RK: 오른발
+AL: LP+LK, AR: RP+RK
+AP: 양손, AK: 양발
+D: 다운, T: 토네이도, A: 공중, g:가드 가능
