@@ -149,18 +149,17 @@ class GetContents { // 리스트 구성
 
 
 
-//변경해야될것
-class LEROY extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const LEROY({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<LEROY> createState() => _LEROYState();
+  State<Main> createState() => _MainState();
 }
 
-class _LEROYState extends State<LEROY> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

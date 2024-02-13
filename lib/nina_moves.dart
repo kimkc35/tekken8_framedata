@@ -148,18 +148,17 @@ class GetContents { // 리스트 구성
 
 
 
-//변경해야될것
-class NINA extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const NINA({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<NINA> createState() => _NINAState();
+  State<Main> createState() => _MainState();
 }
 
-class _NINAState extends State<NINA> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

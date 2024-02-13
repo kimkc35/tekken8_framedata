@@ -34,21 +34,24 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Terraforming Cannon", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Transcendent Blow", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
-List<Map<String, String>> extraInitials = [ //변경해야될것,,
-  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
+List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
-  {"name" : "howl", "howl" : "2 ~입력 시 Gamma Howl로\n()는 이행 시 프레임"}
+  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
+  {"name" : "Jin Ji Du Li", "Jin Ji Du Li" : "Jin Ji Du Li(금계독립)"},
+  {"name" : "Fo Bu", "Fo Bu" : "Fo Bu(부보)"},
+  {"name" : "Jin Bu", "Jin Bu" : "Jin Bu(진보)"}
 ];
 
-const character = "jack-8"; //변경해야될것
+List<String> heatSystem = ["Lightning Glare 보유 시의 기술 사용 가능"];
+
+const character = "leo"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -59,13 +62,12 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"sit down" : true}, {"gamma howl" : true}, {"gamma charge" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"jin bu" : true}, {"jin ji du li" : true}, {"fo bu" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "sit down" : "싯 다운", "gamma howl" : "감마 하울", "gamma charge" : "감마 차지"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "jin bu" : "진보", "jin ji du li" : "금계독립", "fo bu" : "부보"
 };
-
 
 bool heatSystemMenu = true;
 
@@ -100,6 +102,7 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -110,7 +113,7 @@ class GetContents { // 리스트 구성
               if (i == 8){
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
-                temp = temp.toString().replaceAll("\\n", "\n"),
+                temp = temp.toString().replaceAll("/", "\n"),
                 temp = temp.toString().replaceAll("-", "")
               },
               list[j]["contents"][k].add(temp.split(", ")[k]),
@@ -129,6 +132,7 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
+      print("잡기 ${throwFiles[i]} : ${valueToList.length}"); //디버그
       List temp = List.from(valueToList);
       for (int l = 1; l < 10; l++) {
         temp = temp
@@ -480,7 +484,7 @@ List<DataCell> createCommand(String name, command, start, guard, hit, counter, r
     DataCell(SizedBox(width: 50, child: Text(damage,textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: SizedBox(child: Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n"),textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
+      child: SizedBox(child: Text(extra,textAlign: TextAlign.start, textScaler: scale, style: commandStyle)),
     )), //비고
   ];
 }
@@ -562,7 +566,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["Gamma Charge 보유 시의 기술 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(heatSystem)), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
@@ -660,7 +664,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", ""), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 

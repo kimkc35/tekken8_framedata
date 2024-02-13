@@ -148,19 +148,17 @@ class GetContents { // 리스트 구성
 }
 
 
-
-//변경해야될것
-class ALISA extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const ALISA({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<ALISA> createState() => _ALISAState();
+  State<Main> createState() => _MainState();
 }
 
-class _ALISAState extends State<ALISA> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

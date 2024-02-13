@@ -147,19 +147,17 @@ class GetContents { // 리스트 구성
 }
 
 
-
-//변경해야될것
-class DEVJIN extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const DEVJIN({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<DEVJIN> createState() => _DEVJINState();
+  State<Main> createState() => _MainState();
 }
 
-class _DEVJINState extends State<DEVJIN> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

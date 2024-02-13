@@ -148,19 +148,17 @@ class GetContents { // 리스트 구성
 }
 
 
-
-//변경해야될것
-class DRAGUNOV extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const DRAGUNOV({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<DRAGUNOV> createState() => _DRAGUNOVState();
+  State<Main> createState() => _MainState();
 }
 
-class _DRAGUNOVState extends State<DRAGUNOV> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

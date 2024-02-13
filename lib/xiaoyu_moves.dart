@@ -147,19 +147,17 @@ class GetContents { // 리스트 구성
 }
 
 
-
-//변경해야될것
-class XIAOYU extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const XIAOYU({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<XIAOYU> createState() => _XIAOYUState();
+  State<Main> createState() => _MainState();
 }
 
-class _XIAOYUState extends State<XIAOYU> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

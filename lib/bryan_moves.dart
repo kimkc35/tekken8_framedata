@@ -149,19 +149,17 @@ class GetContents { // 리스트 구성
 }
 
 
-
-//변경해야될것
-class BRYAN extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const BRYAN({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<BRYAN> createState() => _BRYANState();
+  State<Main> createState() => _MainState();
 }
 
-class _BRYANState extends State<BRYAN> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

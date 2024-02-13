@@ -147,17 +147,17 @@ class GetContents { // 리스트 구성
 }
 
 
-class KAZUYA extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const KAZUYA({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<KAZUYA> createState() => _KAZUYAState();
+  State<Main> createState() => _MainState();
 }
 
-class _KAZUYAState extends State<KAZUYA> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

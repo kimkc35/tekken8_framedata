@@ -150,18 +150,17 @@ class GetContents { // 리스트 구성
 
 
 
-//변경해야될것
-class HWOARANG extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const HWOARANG({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<HWOARANG> createState() => _HWOARANGState();
+  State<Main> createState() => _MainState();
 }
 
-class _HWOARANGState extends State<HWOARANG> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

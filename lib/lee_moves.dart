@@ -151,18 +151,17 @@ class GetContents { // 리스트 구성
 
 
 
-//변경해야될것
-class LEE extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const LEE({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<LEE> createState() => _LEEState();
+  State<Main> createState() => _MainState();
 }
 
-class _LEEState extends State<LEE> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),

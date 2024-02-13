@@ -146,17 +146,17 @@ class GetContents { // 리스트 구성
 }
 
 
-class JIN extends StatefulWidget {
+class Main extends StatefulWidget {
 
   final moves, throws;
 
-  const JIN({super.key, required this.moves, required this.throws});
+  const Main({super.key, required this.moves, required this.throws});
 
   @override
-  State<JIN> createState() => _JINState();
+  State<Main> createState() => _MainState();
 }
 
-class _JINState extends State<JIN> {
+class _MainState extends State<Main> {
 
   final themeData = ThemeData(
       buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
