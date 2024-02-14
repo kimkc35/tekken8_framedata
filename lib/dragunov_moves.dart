@@ -98,7 +98,6 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
-          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -128,7 +127,6 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
-      print("잡기 ${throwFiles[i]} : ${valueToList.length}"); //디버그
       List temp = List.from(valueToList);
       for (int l = 1; l < 10; l++) {
         temp = temp
@@ -241,6 +239,7 @@ class _MainState extends State<Main> {
       onPopInvoked: (didPop) {
         _searchText = "";
         _searchController.text = "";
+        main.interstitialAd?.show();
       },
       child: MaterialApp(
           theme: themeData,

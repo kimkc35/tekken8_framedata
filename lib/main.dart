@@ -25,11 +25,15 @@ import 'devil jin_moves.dart' as devjin;
 import 'dragunov_moves.dart' as dragunov;
 import 'lee_moves.dart' as lee;
 import 'leo_moves.dart' as leo;
+import 'kuma_moves.dart' as kuma;
 
 String description = "";
 String patchNote = "";
 
+AdManagerInterstitialAd? interstitialAd;
+
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
+
 final BannerAd _banner = BannerAd(
     adUnitId: 'ca-app-pub-3256415400287290/4169383092',
     size: AdSize.banner,
@@ -46,8 +50,8 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
-final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
+final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
+final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,12 +71,12 @@ final themeData = ThemeData(
 
 const double keyboardFontSize = 10;
 
-final characterGetMoveList = {"alisa" : alisa.GetContents().getMoveList(), "asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "devil jin" : devjin.GetContents().getMoveList(), "dragunov" : dragunov.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "lars" : lars.GetContents().getMoveList(), "law" : law.GetContents().getMoveList(), "lee" : lee.GetContents().getMoveList(), "leo" : leo.GetContents().getMoveList(), "leroy" : leroy.GetContents().getMoveList(), "lili" : lili.GetContents().getMoveList(), "nina" : nina.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "raven" : raven.GetContents().getMoveList(), "xiaoyu" : xiaoyu.GetContents().getMoveList()};
-final characterGetThrowList = {"alisa" : alisa.GetContents().getThrowList(), "asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "devil jin" : devjin.GetContents().getThrowList(), "dragunov" : dragunov.GetContents().getThrowList(),  "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "lars" : lars.GetContents().getThrowList(), "law" : law.GetContents().getThrowList(), "lee" : lee.GetContents().getThrowList(), "leo" : leo.GetContents().getThrowList(), "leroy" : leroy.GetContents().getThrowList(), "lili" : lili.GetContents().getThrowList(), "nina" : nina.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "raven" : raven.GetContents().getThrowList(), "xiaoyu" : xiaoyu.GetContents().getThrowList()};
+final characterGetMoveList = {"alisa" : alisa.GetContents().getMoveList(), "asuka" : asuka.GetContents().getMoveList(), "azucena" : azucena.GetContents().getMoveList(), "bryan" : bryan.GetContents().getMoveList(), "claudio" : claudio.GetContents().getMoveList(), "devil jin" : devjin.GetContents().getMoveList(), "dragunov" : dragunov.GetContents().getMoveList(), "feng" : feng.GetContents().getMoveList(), "hwoarang" : hwoarang.GetContents().getMoveList(), "jack-8" : jack.GetContents().getMoveList(), "jin" : jin.GetContents().getMoveList(), "jun" : jun.GetContents().getMoveList(), "kazuya" : kazuya.GetContents().getMoveList(), "king" : king.GetContents().getMoveList(), "kuma" : kuma.GetContents().getMoveList(), "lars" : lars.GetContents().getMoveList(), "law" : law.GetContents().getMoveList(), "lee" : lee.GetContents().getMoveList(), "leo" : leo.GetContents().getMoveList(), "leroy" : leroy.GetContents().getMoveList(), "lili" : lili.GetContents().getMoveList(), "nina" : nina.GetContents().getMoveList(), "paul" : paul.GetContents().getMoveList(), "raven" : raven.GetContents().getMoveList(), "xiaoyu" : xiaoyu.GetContents().getMoveList()};
+final characterGetThrowList = {"alisa" : alisa.GetContents().getThrowList(), "asuka" : asuka.GetContents().getThrowList(), "azucena" : azucena.GetContents().getThrowList(), "bryan" : bryan.GetContents().getThrowList(), "claudio" : claudio.GetContents().getThrowList(), "devil jin" : devjin.GetContents().getThrowList(), "dragunov" : dragunov.GetContents().getThrowList(),  "feng" : feng.GetContents().getThrowList(), "hwoarang" : hwoarang.GetContents().getThrowList(), "jack-8" : jack.GetContents().getThrowList(), "jin" : jin.GetContents().getThrowList(), "jun" : jun.GetContents().getThrowList(), "kazuya" : kazuya.GetContents().getThrowList(), "king" : king.GetContents().getThrowList(), "kuma" : kuma.GetContents().getThrowList(), "lars" : lars.GetContents().getThrowList(), "law" : law.GetContents().getThrowList(), "lee" : lee.GetContents().getThrowList(), "leo" : leo.GetContents().getThrowList(), "leroy" : leroy.GetContents().getThrowList(), "lili" : lili.GetContents().getThrowList(), "nina" : nina.GetContents().getThrowList(), "paul" : paul.GetContents().getThrowList(), "raven" : raven.GetContents().getThrowList(), "xiaoyu" : xiaoyu.GetContents().getThrowList()};
 
-Map<String, Widget> characterFunctionList = {"ALISA" : alisa.Main(moves: moves["alisa"], throws: throws["alisa"]), "ASUKA" : asuka.Main(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.Main(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.Main(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.Main(moves: moves["claudio"], throws: throws["claudio"]), "DEVIL JIN" : devjin.Main(moves: moves["devil jin"], throws: throws["devil jin"]), "DRAGUNOV" : dragunov.Main(moves: moves["dragunov"], throws: throws["dragunov"]), "FENG" : feng.Main(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.Main(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.Main(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.Main(moves: moves["jin"], throws: throws["jin"]), "JUN" : jun.Main(moves: moves["jun"], throws: throws["jun"]), "KAZUYA" : kazuya.Main(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.Main(moves: moves["king"], throws: throws["king"]), "LARS" : lars.Main(moves: moves["lars"], throws: throws["lars"]), "LAW" : law.Main(moves: moves["law"], throws: throws["law"]), "LEE" : lee.Main(moves: moves["lee"], throws: throws["lee"]), "LEO" : leo.Main(moves: moves["leo"], throws: throws["leo"]), "LEROY" : leroy.Main(moves: moves["leroy"], throws: throws["leroy"]), "LILI" : lili.Main(moves: moves["lili"], throws: throws["lili"]), "NINA" : nina.Main(moves: moves["nina"], throws: throws["nina"]), "PAUL" : paul.Main(moves: moves["paul"], throws: throws["paul"]), "RAVEN" : raven.Main(moves: moves["raven"], throws: throws["raven"]), "XIAOYU" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"])};
+Map<String, Widget> characterFunctionList = {"ALISA" : alisa.Main(moves: moves["alisa"], throws: throws["alisa"]), "ASUKA" : asuka.Main(moves: moves["asuka"], throws: throws["asuka"]), "AZUCENA" : azucena.Main(moves: moves["azucena"], throws: throws["azucena"]), "BRYAN" : bryan.Main(moves: moves["bryan"], throws: throws["bryan"]), "CLAUDIO" : claudio.Main(moves: moves["claudio"], throws: throws["claudio"]), "DEVIL JIN" : devjin.Main(moves: moves["devil jin"], throws: throws["devil jin"]), "DRAGUNOV" : dragunov.Main(moves: moves["dragunov"], throws: throws["dragunov"]), "FENG" : feng.Main(moves: moves["feng"], throws: throws["feng"]), "HWOARANG" : hwoarang.Main(moves: moves["hwoarang"], throws: throws["hwoarang"]), "JACK-8" : jack.Main(moves: moves["jack-8"], throws: throws["jack-8"]), "JIN" : jin.Main(moves: moves["jin"], throws: throws["jin"]), "JUN" : jun.Main(moves: moves["jun"], throws: throws["jun"]), "KAZUYA" : kazuya.Main(moves: moves["kazuya"], throws: throws["kazuya"]), "KING" : king.Main(moves: moves["king"], throws: throws["king"]), "KUMA" : kuma.Main(moves: moves["kuma"], throws: throws["kuma"]), "LARS" : lars.Main(moves: moves["lars"], throws: throws["lars"]), "LAW" : law.Main(moves: moves["law"], throws: throws["law"]), "LEE" : lee.Main(moves: moves["lee"], throws: throws["lee"]), "LEO" : leo.Main(moves: moves["leo"], throws: throws["leo"]), "LEROY" : leroy.Main(moves: moves["leroy"], throws: throws["leroy"]), "LILI" : lili.Main(moves: moves["lili"], throws: throws["lili"]), "NINA" : nina.Main(moves: moves["nina"], throws: throws["nina"]), "PAUL" : paul.Main(moves: moves["paul"], throws: throws["paul"]), "RAVEN" : raven.Main(moves: moves["raven"], throws: throws["raven"]), "XIAOYU" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"])};
 
-final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "LARS", "LAW", "LEE", "LEO", "LEROY", "LILI", "NINA", "PAUL", "RAVEN", "XIAOYU"];
+final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "KUMA", "LARS", "LAW", "LEE", "LEO", "LEROY", "LILI", "NINA", "PANDA", "PAUL", "RAVEN", "XIAOYU"];
 
 Future getFile(String fileName) async{
   return await rootBundle.loadString("assets/$fileName.txt");
@@ -131,7 +135,23 @@ class _MyAppState extends State<MyApp> {
       }
       getFile("description").then((value) => description = value);
       getFile("patch note").then((value) => patchNote = replaceNumbers(value));
+      loadAd();
     });
+  }
+
+  void loadAd() {
+    AdManagerInterstitialAd.load(
+        adUnitId: 'ca-app-pub-3256415400287290/6923530178',
+        request: const AdManagerAdRequest(),
+        adLoadCallback: AdManagerInterstitialAdLoadCallback(
+          onAdLoaded: (ad) {
+            debugPrint('$ad loaded.');
+            interstitialAd = ad;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            debugPrint('AdManagerInterstitialAd failed to load: $error');
+          },
+        ));
   }
 
   @override

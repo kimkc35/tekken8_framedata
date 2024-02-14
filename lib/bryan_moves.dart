@@ -242,6 +242,7 @@ class _MainState extends State<Main> {
       onPopInvoked: (didPop) {
         _searchText = "";
         _searchController.text = "";
+        main.interstitialAd?.show();
       },
       child: MaterialApp(
           theme: themeData,

@@ -34,23 +34,22 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Sky Burial", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Type 38 Eradication Weapon: Aramaki", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
-  {"name" : "LF.", "LF." : "왼플라밍고"},
-  {"name" : "RF.", "RF." : "오른플라밍고"},
-  {"name" : "RS.", "RS." : "오른자세"},
+  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
+  {"name" : "hunting", "hunting" : "${main.sticks["c2"]} ~ or AK입력 시 Hunting으로"}
 ];
 
-const character = "hwoarang"; //변경해야될것
+List<String> heatSystem = ["일부 홀드기가 원래보다 짧은 시간 입력으로 최대 홀드 성능이 됨", "파워가 상승한 Bear Roll 사용 가능", "Wind Bear Fist, Fresh Wind Bear Fist 사용 가능"];
+
+const character = "kuma"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -61,11 +60,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"shark step" : true}, {"right stance" : true}, {"left flamingo" : true}, {"right flamingo" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"hunting" : true}, {"bear sit" : true}, {"bear roll" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shark step" : "샤크 스텝", "right stance" : "오른자세", "left flamingo" : "왼플라밍고", "right flamingo" : "오른플라밍고"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hunting" : "헌팅 자세", "bear sit" : "베어 시트", "bear roll" : "베어롤"
 };
 
 bool heatSystemMenu = true;
@@ -101,6 +100,7 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -130,6 +130,7 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
+      print("잡기 ${throwFiles[i]} : ${valueToList.length}"); //디버그
       List temp = List.from(valueToList);
       for (int l = 1; l < 10; l++) {
         temp = temp
@@ -564,7 +565,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["파워가 상승한 Right Flamingo 도중의 발차기 기술 사용 가능"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(heatSystem)), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
