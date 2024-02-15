@@ -1,0 +1,1 @@
+AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP, 2 1 4 AR, 상대의 펀치 공격에 맞춰서 4 AL or 4 AR, Parry 성공 후 LP, 히트 상태에서 Lion Heart 도중 상대의 중단 공격을 받았을 때, 히트 상태에서 Ducking In 도중 AL or AR, Two-Faced 도중 LP, Two-Faced 도중 RP
