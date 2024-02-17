@@ -52,7 +52,7 @@ const character = "paul"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
-]; 
+];
 
 List throwFiles = [
   "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
@@ -540,9 +540,8 @@ class _MoveListState extends State<MoveList> {
       });
     }
 
-    return ListView(
-        children: [
-          Column(
+    return SingleChildScrollView(
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -560,13 +559,13 @@ class _MoveListState extends State<MoveList> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
-                    headingRowHeight: 50,
-                    headingTextStyle: headingStyle,
-                    dataRowMaxHeight: double.infinity,
-                    dataRowMinHeight: 48,
-                    border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                    horizontalMargin: 0,
-                    columnSpacing: 10,
+                  headingRowHeight: 50,
+                  headingTextStyle: headingStyle,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 48,
+                  border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
+                  horizontalMargin: 0,
+                  columnSpacing: 10,
                   columns: [
                     DataColumn(label: SizedBox(
                       width: 150,
@@ -629,7 +628,6 @@ class _MoveListState extends State<MoveList> {
               ),
             ],
           ),
-        ]
     );
   }
 }
@@ -671,45 +669,38 @@ class ThrowList extends StatefulWidget {
 class _ThrowListState extends State<ThrowList>{
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                headingRowHeight: 50,
-                headingTextStyle: headingStyle,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 48,
-                border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
-                horizontalMargin: 0,
-                columnSpacing: 10,
-                columns: [
-                  DataColumn(label: SizedBox(width: 150,child: Text('기술명\n커맨드',textAlign: TextAlign.center,))),
-                  DataColumn(label: SizedBox(width: 30,child: Text('발생',textAlign: TextAlign.center))),
-                  DataColumn(label: SizedBox(width: 40,child: Text('풀기',textAlign: TextAlign.center))),
-                  DataColumn(label: SizedBox(width: 30,child: Text('풀기\n후 F',textAlign: TextAlign.center))),
-                  DataColumn(label: SizedBox(width: 50,child: Text('대미지',textAlign: TextAlign.center))),
-                  DataColumn(label: SizedBox(width: 30,child: Text('판정',textAlign: TextAlign.center))),
-                  DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
-                ],
-                rows: [
-                  for(int i = 0; i < widget.throws.length; i++)...[
-                    if(i % 2 == 0)...[
-                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)))
-                    ]else...[
-                      DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
-                    ]
-                  ]
-                ],
-              ),
-            )
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: DataTable(
+          headingRowHeight: 50,
+          headingTextStyle: headingStyle,
+          dataRowMaxHeight: double.infinity,
+          dataRowMinHeight: 48,
+          border: TableBorder.symmetric(inside: BorderSide(color: Colors.black)),
+          horizontalMargin: 0,
+          columnSpacing: 10,
+          columns: [
+            DataColumn(label: SizedBox(width: 150,child: Text('기술명\n커맨드',textAlign: TextAlign.center,))),
+            DataColumn(label: SizedBox(width: 30,child: Text('발생',textAlign: TextAlign.center))),
+            DataColumn(label: SizedBox(width: 40,child: Text('풀기',textAlign: TextAlign.center))),
+            DataColumn(label: SizedBox(width: 30,child: Text('풀기\n후 F',textAlign: TextAlign.center))),
+            DataColumn(label: SizedBox(width: 50,child: Text('대미지',textAlign: TextAlign.center))),
+            DataColumn(label: SizedBox(width: 30,child: Text('판정',textAlign: TextAlign.center))),
+            DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
           ],
-        )
-      ],
+          rows: [
+            for(int i = 0; i < widget.throws.length; i++)...[
+              if(i % 2 == 0)...[
+                DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => Color(0xffd5d5d5)))
+              ]else...[
+                DataRow(cells: createThrow(widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
+              ]
+            ]
+          ],
+        ),
+      ),
     );
   }
 }

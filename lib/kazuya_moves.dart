@@ -545,9 +545,8 @@ class _MoveListState extends State<MoveList> {
       });
     }
 
-    return ListView(
-        children: [
-          Column(
+    return SingleChildScrollView(
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -634,7 +633,6 @@ class _MoveListState extends State<MoveList> {
               ),
             ],
           ),
-        ]
     );
   }
 }

@@ -27,6 +27,9 @@ import 'lee_moves.dart' as lee;
 import 'leo_moves.dart' as leo;
 import 'kuma_moves.dart' as kuma;
 import 'steve_moves.dart' as steve;
+import 'panda_moves.dart' as panda;
+import 'reina_moves.dart' as reina;
+import 'shaheen_moves.dart' as shaheen;
 
 String description = "";
 String patchNote = "";
@@ -51,8 +54,8 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
-final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "paul" : [], "raven" : [], "xiaoyu" : []};
+final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "xiaoyu" : []};
+final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "xiaoyu" : []};
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -95,8 +98,11 @@ final characterGetMoveList = {
   "leroy" : leroy.GetContents().getMoveList(),
   "lili" : lili.GetContents().getMoveList(),
   "nina" : nina.GetContents().getMoveList(),
+  "panda" : panda.GetContents().getMoveList(),
   "paul" : paul.GetContents().getMoveList(),
   "raven" : raven.GetContents().getMoveList(),
+  "reina" : reina.GetContents().getMoveList(),
+  "shaheen" : shaheen.GetContents().getMoveList(),
   "steve" : steve.GetContents().getMoveList(),
   "xiaoyu" : xiaoyu.GetContents().getMoveList()
 };
@@ -124,8 +130,11 @@ final characterGetThrowList = {
   "leroy" : leroy.GetContents().getThrowList(),
   "lili" : lili.GetContents().getThrowList(),
   "nina" : nina.GetContents().getThrowList(),
+  "panda" : panda.GetContents().getThrowList(),
   "paul" : paul.GetContents().getThrowList(),
   "raven" : raven.GetContents().getThrowList(),
+  "reina" : reina.GetContents().getThrowList(),
+  "shaheen" : shaheen.GetContents().getThrowList(),
   "steve" : steve.GetContents().getThrowList(),
   "xiaoyu" : xiaoyu.GetContents().getThrowList()
 };
@@ -153,8 +162,11 @@ Map<String, Widget> characterFunctionList = {
   "LEROY" : leroy.Main(moves: moves["leroy"], throws: throws["leroy"]),
   "LILI" : lili.Main(moves: moves["lili"], throws: throws["lili"]),
   "NINA" : nina.Main(moves: moves["nina"], throws: throws["nina"]),
+  "PANDA" : panda.Main(moves: moves["panda"], throws: throws["panda"]),
   "PAUL" : paul.Main(moves: moves["paul"], throws: throws["paul"]),
   "RAVEN" : raven.Main(moves: moves["raven"], throws: throws["raven"]),
+  "REINA" : reina.Main(moves: moves["reina"], throws: throws["reina"]),
+  "SHAHEEN" : shaheen.Main(moves: moves["shaheen"], throws: throws["shaheen"],),
   "STEVE" : steve.Main(moves: moves["steve"], throws: throws["steve"]),
   "XIAOYU" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"])
 };
