@@ -48,6 +48,8 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "dragonCharge", "dragonCharge" : "${main.sticks["c6"]}~입력 시 Dragon Charge로\n()는 이행 시 프레임"}
 ];
 
+List<String> heatSystem = ["파워가 상승한 쌍절곤 기술 사용 가능", "Dragon Charge로 펀치 공격 흘리기 가능"];
+
 const character = "law"; //변경해야될것
 
 List moveFiles = [
@@ -561,7 +563,7 @@ class _MoveListState extends State<MoveList> {
             });
           }, child: Text("히트 시스템")),
           if(heatSystemMenu == true) // 히트 시스템 설명
-            SizedBox(child: heatSystemContexts(["파워가 상승한 Limited Entry 사용 가능", "새로운"])), //변경해야될것
+            SizedBox(child: heatSystemContexts(heatSystem)), //변경해야될것
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
