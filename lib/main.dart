@@ -30,6 +30,7 @@ import 'steve_moves.dart' as steve;
 import 'panda_moves.dart' as panda;
 import 'reina_moves.dart' as reina;
 import 'shaheen_moves.dart' as shaheen;
+import 'victor_moves.dart' as victor;
 
 String description = "";
 String patchNote = "";
@@ -41,7 +42,7 @@ const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "
 final BannerAd _banner = BannerAd(
     adUnitId: 'ca-app-pub-3256415400287290/4169383092',
     size: AdSize.banner,
-    request: AdRequest(),
+    request: const AdRequest(),
     listener: BannerAdListener(
       onAdLoaded: (Ad ad) => print('Ad loaded.'),
       onAdFailedToLoad: (Ad ad, LoadAdError error) {
@@ -54,15 +55,15 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "xiaoyu" : []};
-final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "xiaoyu" : []};
+final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : []};
+final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : []};
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
 
   runApp(
-    MyApp(getList: GetList())
+    const MyApp()
   );
 }
 
@@ -104,6 +105,7 @@ final characterGetMoveList = {
   "reina" : reina.GetContents().getMoveList(),
   "shaheen" : shaheen.GetContents().getMoveList(),
   "steve" : steve.GetContents().getMoveList(),
+  "victor" : victor.GetContents().getMoveList(),
   "xiaoyu" : xiaoyu.GetContents().getMoveList()
 };
 
@@ -136,6 +138,7 @@ final characterGetThrowList = {
   "reina" : reina.GetContents().getThrowList(),
   "shaheen" : shaheen.GetContents().getThrowList(),
   "steve" : steve.GetContents().getThrowList(),
+  "victor" : victor.GetContents().getThrowList(),
   "xiaoyu" : xiaoyu.GetContents().getThrowList()
 };
 
@@ -168,10 +171,11 @@ Map<String, Widget> characterFunctionList = {
   "REINA" : reina.Main(moves: moves["reina"], throws: throws["reina"]),
   "SHAHEEN" : shaheen.Main(moves: moves["shaheen"], throws: throws["shaheen"],),
   "STEVE" : steve.Main(moves: moves["steve"], throws: throws["steve"]),
+  "VICTOR" : victor.Main(moves: moves["victor"], throws: throws["victor"]),
   "XIAOYU" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"])
 };
 
-final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "KUMA", "LARS", "LAW", "LEE", "LEO", "LEROY", "LILI", "NINA", "PANDA", "PAUL", "RAVEN", "REINA", "SHAHEEN", "STEVE", "VICTOR", "XIAOYU"];
+final characterList = ["ALISA", "ASUKA", "AZUCENA", "BRYAN", "CLAUDIO", "DEVIL JIN", "DRAGUNOV", "FENG", "HWOARANG", "JACK-8", "JIN", "JUN", "KAZUYA", "KING", "KUMA", "LARS", "LAW", "LEE", "LEO", "LEROY", "LILI", "NINA", "PANDA", "PAUL", "RAVEN", "REINA", "SHAHEEN", "STEVE", "VICTOR", "XIAOYU", "YOSHIMITSU", "ZAFINA"];
 
 Future getFile(String fileName) async{
   return await rootBundle.loadString("assets/$fileName.txt");
@@ -200,17 +204,27 @@ String replaceNumbers(String text){
   return result;
 }
 
-
-class MyApp extends StatefulWidget {
-  final GetList getList;
-
-  const MyApp({super.key, required this.getList});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return Main(getList: GetList(),);
+  }
 }
 
-class _MyAppState extends State<MyApp> {
+
+
+class Main extends StatefulWidget {
+  final GetList getList;
+
+  const Main({super.key, required this.getList});
+
+  @override
+  State<Main> createState() => _MainState();
+}
+
+class _MainState extends State<Main> {
 
   @override
   void initState() {
@@ -257,31 +271,31 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             elevation: 0.0,
             leadingWidth: 120,
-            title: Text("FRAMEDATA"),
+            title: const Text("FRAMEDATA"),
             centerTitle: true,
-            actionsIconTheme: IconThemeData(size: 40),
+            actionsIconTheme: const IconThemeData(size: 40),
             actions: [
               Builder(
                 builder: (context) {
                   return Row(
                     children: [
                       GestureDetector(
-                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: const Text("설명", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: const TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: const TextStyle(fontFamily: "Tenada", color: Colors.black),
                           content: Text(description),
                           actions: [
-                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
                           ],
                         )),
-                        child: Icon(Icons.abc),
+                        child: const Icon(Icons.abc),
                       ),
                       GestureDetector(
-                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("1.01.04V 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: "Tenada", color: Colors.black),
+                        onTap: () => showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: const Text("1.01.04V 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: const TextStyle(fontFamily: "Tenada", height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: const TextStyle(fontFamily: "Tenada", color: Colors.black),
                           content: SingleChildScrollView(child: Text(patchNote)),
                           actions: [
-                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+                            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
                           ],
                         )),
-                        child: Icon(Icons.article),
+                        child: const Icon(Icons.article),
                       ),
                     ],
                   );
@@ -291,7 +305,7 @@ class _MyAppState extends State<MyApp> {
             backgroundColor: Colors.black,
           ),
           body: Container(
-            color: Color(0xff333333),
+            color: const Color(0xff333333),
             width: double.infinity,
             height: double.infinity,
             child: Center(
@@ -344,7 +358,7 @@ class _CharacterButtonState extends State<CharacterButton> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           width: 150,
           height: 60,
           child: ElevatedButton(
@@ -353,19 +367,19 @@ class _CharacterButtonState extends State<CharacterButton> {
               if(characterFunctionList[widget.character1] != null) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
               }else{
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
               }
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character1, textAlign: TextAlign.center, textScaler: TextScaler.linear(1))
+                Text(widget.character1, textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
               ],
             )
           ),
         ),
         Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           width: 150,
           height: 60,
           child: ElevatedButton(
@@ -374,13 +388,13 @@ class _CharacterButtonState extends State<CharacterButton> {
                 if(characterFunctionList[widget.character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character2]!));
                 }else{
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("제작중입니다.")));
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
                 }
               },
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character2, textAlign: TextAlign.center, textScaler: TextScaler.linear(1))
+                Text(widget.character2, textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
               ],
             )
           ),

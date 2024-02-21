@@ -34,23 +34,21 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Sky Burial", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["Coup de Chevalier", "레이지 상태에서 ${main.sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
-  {"name" : "LF.", "LF." : "왼플라밍고"},
-  {"name" : "RF.", "RF." : "오른플라밍고"},
-  {"name" : "RS.", "RS." : "오른자세"},
+  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}
 ];
 
-const character = "hwoarang"; //변경해야될것
+List<String> heatSystem = ["Monsieur Samurai 사용 가능", "Caliburnus, Rhongomyniad 파워 상승", "일부 칼 기술을 히트시키면 히트 상태의 남은 시간 회복"];
+
+const character = "victor"; //변경해야될것
 
 List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -61,11 +59,11 @@ List throwFiles = [
 ];
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"shark step" : true}, {"right stance" : true}, {"left flamingo" : true}, {"right flamingo" : true}
+  {"heat" : true}, {"general" : true}, {"sit" : true}, {"iai Stance" : true}, {"perfumer" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shark step" : "샤크 스텝", "right stance" : "오른자세", "left flamingo" : "왼플라밍고", "right flamingo" : "오른플라밍고"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "iai Stance" : "이아이 자세", "perfumer" : "퍼퓨머"
 };
 
 bool heatSystemMenu = true;
@@ -101,6 +99,7 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i]).then((value) =>
         {
+          print("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
           for(int k = 0; k < value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ").length; k++){
             if (i == 0){
               list[j]["contents"].add([(value[j].toString().replaceAll("${types[j].keys.firstWhere((k) => types[j][k] == true || types[j][k] == false)} : ", "").split(", ")[k])]),
@@ -112,7 +111,8 @@ class GetContents { // 리스트 구성
                 for (int l = 0; l < extraInitials.length; l++)
                   temp = temp.toString().replaceAll(extraInitials[l]["name"].toString(), extraInitials[l][extraInitials[l]["name"]].toString()),
                 temp = temp.toString().replaceAll("/", "\n"),
-                temp = temp.toString().replaceAll("-", "")
+                temp = temp.toString().replaceAll("-", ""),
+                temp = temp.toString().replaceAll("hyphen", "-"),
               },
               list[j]["contents"][k].add(temp.split(", ")[k]),
             }else{
@@ -130,6 +130,7 @@ class GetContents { // 리스트 구성
     for (int i = 0; i < throwFiles.length; i++){
       String value = await _loadFile(throwFiles[i]);
       List valueToList = value.split(", ");
+      print("잡기 ${throwFiles[i]} : ${valueToList.length}"); //디버그
       List temp = List.from(valueToList);
       for (int l = 1; l < 10; l++) {
         temp = temp
@@ -549,93 +550,93 @@ class _MoveListState extends State<MoveList> {
     }
 
     return SingleChildScrollView(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextButton(onPressed: (){
-                setState(() {
-                  if(heatSystemMenu == true){
-                    heatSystemMenu = false;
-                  } else if (heatSystemMenu == false){
-                    heatSystemMenu = true;
-                  }
-                });
-              }, child: const Text("히트 시스템")),
-              if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["파워가 상승한 Right Flamingo 도중의 발차기 기술 사용 가능"])), //변경해야될것
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: DataTable(
-                    headingRowHeight: 50,
-                    headingTextStyle: headingStyle,
-                    dataRowMaxHeight: double.infinity,
-                    dataRowMinHeight: 48,
-                    border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
-                    horizontalMargin: 0,
-                    columnSpacing: 10,
-                    columns: [
-                      DataColumn(label: SizedBox(
-                        width: 150,
-                        height: 100,
-                        child: MenuAnchor( // 커맨드 체크박스
-                          alignmentOffset: const Offset(20, 0),
-                          menuChildren: [
-                            for(int i = 0; i < types.length; i++)...[
-                              CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
-                                setState(() {
-                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                  }else{
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                  }
-                                });
-                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
-                            ],
-                          ],
-                          builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
-                            if (controller.isOpen) {
-                              controller.close();
-                            } else {
-                              controller.open();
-                            }
-                          }, child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(Icons.arrow_drop_down, color: Colors.black,),
-                              Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center,),
-                            ],
-                          ),),
-                        ),
-                      )), // 헤딩
-                      const DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center,))),
-                      const DataColumn(label: SizedBox(width: listWidth, child: Text('가드',textAlign: TextAlign.center))),
-                      const DataColumn(label: SizedBox(width: listWidth, child: Text('히트',textAlign: TextAlign.center))),
-                      const DataColumn(label: SizedBox(width: listWidth, child: Text('카운터',textAlign: TextAlign.center))),
-                      const DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center))),
-                      const DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center))),
-                      const DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
-                    ],
-                    rows: [
-                      if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
-                      for(int i = 0; i < types.length; i++)...[
-                        if(types[i][filtered[i]["type"]] == true)...[
-                          for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
-                            if(listLength % 2 == 1)...[
-                              DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
-                                  const Color(0xffd5d5d5)))
-                            ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
-                            ]
-                          ],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextButton(onPressed: (){
+            setState(() {
+              if(heatSystemMenu == true){
+                heatSystemMenu = false;
+              } else if (heatSystemMenu == false){
+                heatSystemMenu = true;
+              }
+            });
+          }, child: const Text("히트 시스템")),
+          if(heatSystemMenu == true) // 히트 시스템 설명
+            SizedBox(child: heatSystemContexts(heatSystem)), //변경해야될것
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: DataTable(
+                headingRowHeight: 50,
+                headingTextStyle: headingStyle,
+                dataRowMaxHeight: double.infinity,
+                dataRowMinHeight: 48,
+                border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
+                horizontalMargin: 0,
+                columnSpacing: 10,
+                columns: [
+                  DataColumn(label: SizedBox(
+                    width: 150,
+                    height: 100,
+                    child: MenuAnchor( // 커맨드 체크박스
+                      alignmentOffset: const Offset(20, 0),
+                      menuChildren: [
+                        for(int i = 0; i < types.length; i++)...[
+                          CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
+                            setState(() {
+                              if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
+                                types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
+                              }else{
+                                types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
+                              }
+                            });
+                          }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
                         ],
-                      ]
-                    ]
-                ),
-              ),
-            ],
+                      ],
+                      builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
+                        if (controller.isOpen) {
+                          controller.close();
+                        } else {
+                          controller.open();
+                        }
+                      }, child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.arrow_drop_down, color: Colors.black,),
+                          Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center,),
+                        ],
+                      ),),
+                    ),
+                  )), // 헤딩
+                  const DataColumn(label: SizedBox(width: 30, child: Text('발생',textAlign: TextAlign.center,))),
+                  const DataColumn(label: SizedBox(width: listWidth, child: Text('가드',textAlign: TextAlign.center))),
+                  const DataColumn(label: SizedBox(width: listWidth, child: Text('히트',textAlign: TextAlign.center))),
+                  const DataColumn(label: SizedBox(width: listWidth, child: Text('카운터',textAlign: TextAlign.center))),
+                  const DataColumn(label: SizedBox(width: 30, child: Text('판정',textAlign: TextAlign.center))),
+                  const DataColumn(label: SizedBox(width: 50, child: Text('대미지',textAlign: TextAlign.center))),
+                  const DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
+                ],
+                rows: [
+                  if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
+                    DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createCommand(rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
+                  for(int i = 0; i < types.length; i++)...[
+                    if(types[i][filtered[i]["type"]] == true)...[
+                      for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
+                        if(listLength % 2 == 1)...[
+                          DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                              const Color(0xffd5d5d5)))
+                        ]else if(listLength % 2 == 0)...[
+                          DataRow(cells : (createCommand(filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
+                        ]
+                      ],
+                    ],
+                  ]
+                ]
+            ),
           ),
+        ],
+      ),
     );
   }
 }
@@ -660,7 +661,7 @@ List<DataCell> createThrow(String name, command, start, breakThrow, frameAfterBr
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("hyphen", "-").replaceAll("/", "\n"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
   ];
 }
 

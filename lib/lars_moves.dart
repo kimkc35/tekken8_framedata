@@ -561,7 +561,7 @@ class _MoveListState extends State<MoveList> {
                 });
               }, child: Text("히트 시스템")),
               if(heatSystemMenu == true) // 히트 시스템 설명
-                SizedBox(child: heatSystemContexts(["파워가 상승한 Limited Entry 사용 가능", "새로운"])), //변경해야될것
+                SizedBox(child: heatSystemContexts(["파워가 상승한 Limited Entry 사용 가능", "새로운 Silent Entry 이행기 사용 가능"])), //변경해야될것
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(

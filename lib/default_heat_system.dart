@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-TextStyle contextStyle = TextStyle(fontWeight: FontWeight.w400, height: 1.5);
+TextStyle contextStyle = const TextStyle(fontWeight: FontWeight.w400, height: 1.5);
 
 Container heatSystemContexts(List<String> addition){
   return Container(
-    padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
