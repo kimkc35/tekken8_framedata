@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tk8.framedata">
+    xmlns:tools="http://schemas.android.com/tools">
+<!--    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>-->
     <application
         android:label="TK8 FRAMEDATA"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/free">
         <activity
             android:name=".MainActivity"
             android:exported="true"
