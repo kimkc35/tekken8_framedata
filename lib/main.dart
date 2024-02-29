@@ -261,14 +261,13 @@ class GetContents { // 리스트 구성
           moveNamesEn[character] = value.toString().split(", ")
         });
         //한국어 파일 부분
-        if(i == 0) {
-          await _loadList("${moveFiles[i]}_ko", character).then((value) => {
-            moveNamesKo[character] = value.toString().split(", ")
-          });
-        }
+        // if(i == 0) {
+        //   await _loadList("${moveFiles[i]}_ko", character).then((value) => {
+        //     moveNamesKo[character] = value.toString().split(", ")
+        //   });
+        // }
       }
     }
-    debugPrint("무브 영어 : $moveNamesEn, 무브 한글 : $moveNamesKo");
     return list;
   }
 
@@ -283,13 +282,12 @@ class GetContents { // 리스트 구성
       }
 
       //한국어 파일 읽는 부분
-      if(i == 0){
-        String fileContentsKo = await _loadFile("${throwFiles[i]}_ko", character);
-        throwNamesEn[character] = valueList;
-        throwNamesKo[character] = fileContentsKo.split(", ");
-      }
+      // if(i == 0){
+      //   String fileContentsKo = await _loadFile("${throwFiles[i]}_ko", character);
+      //   throwNamesEn[character] = valueList;
+      //   throwNamesKo[character] = fileContentsKo.split(", ");
+      // }
     }
-    debugPrint("잡기 영어 : $throwNamesEn, 잡기 한글 : $throwNamesKo");
     return throwList;
   }
 }
@@ -330,7 +328,7 @@ Future<void> main() async {
         for(var contents in value){
           for(int i = 1; i <= sticks.length; i++){
             contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
-            contents[7] = contents[7].toString().replaceAll("delete", "")
+            contents[1] = contents[1].toString().replaceAll("delete", "")
           }
         },
         throws.addAll({characterList[i].toLowerCase() : value})
@@ -397,7 +395,7 @@ Row actionBuilder(BuildContext context){
         child: const Icon(Icons.abc),
       ),
       GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("1.01.04V 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.02.01 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
           content: SingleChildScrollView(child: Text(patchNote)),
           actions: [
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
@@ -428,6 +426,19 @@ memo (BuildContext context, String character, name) {
 }
 
 bool changeFont = false;
+
+//한글화 부분
+// changeNames(){
+//   for(String character in characterList){
+//     debugPrint("이거 있음? : ${types[character.toLowerCase()]}");
+//     for(int i = 0; i < types[character.toLowerCase()]!.length; i++){
+//       for(int j = 0; j < moves[character.toLowerCase()]![i]["contents"].length; j++){
+//         debugPrint("moveNamesKo $character 인거 : ${moveNamesKo[j]}");
+//         moves[character.toLowerCase()]![i]["contents"][j][0] = moveNamesKo[j];
+//       }
+//     }
+//   }
+// }
 
 class SettingDialog extends StatefulWidget {
   const SettingDialog({super.key});
@@ -464,16 +475,17 @@ class _SettingDialogState extends State<SettingDialog> {
               ],
             ),
             Text("폰트는 재시작을 해야 전부 적용됩니다."),
-            Row(
-              children: [
-                Text("기술 이름 한글화"),
-                Switch(value: isKo, onChanged: (value) {
-                  setState(() {
-                    isKo = value;
-                  });
-                },)
-              ],
-            )
+            // Row(
+            //   children: [
+            //     Text("기술 이름 한글화"),
+            //     Switch(value: isKo, onChanged: (value) {
+            //       setState(() {
+            //         isKo = value;
+            //       });
+            //       changeNames();
+            //     },)
+            //   ],
+            // )
           ],
         ),
       ),
