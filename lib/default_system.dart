@@ -109,6 +109,9 @@ List<DataCell> createThrow(BuildContext context, String character, name, command
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
-    DataCell(Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle)), //비고
+    DataCell(Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle),
+    )), //비고
   ];
 }
