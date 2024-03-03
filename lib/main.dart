@@ -38,7 +38,7 @@ import 'zafina_moves.dart' as zafina;
 
 const bool isPro = false;
 
-bool isKo = false;
+bool isKo = true;
 
 String description = "";
 String patchNote = "";
@@ -63,15 +63,11 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
+final Map moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
 final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
 
-final Map<String, List> moveNamesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final Map<String, List> throwNamesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-
-final Map<String, List> moveNamesKo = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final Map<String, List> throwNamesKo = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-
+final movesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
+final throwsEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
 
 final types = {
   "alisa": alisa.types,
@@ -232,7 +228,7 @@ class GetContents { // 리스트 구성
     return text.split(" | ");
   }
 
-  Future<List> getMoveList(List types, character) async {
+  Future<List> getMoveList(List types, String character, {bool isKo = true}) async {
     var list = [];
     for(int j = 0; j < types.length; j++) {
       list.addAll(
@@ -247,8 +243,9 @@ class GetContents { // 리스트 구성
       for (int i = 0; i < moveFiles.length; i++) {
         await _loadList(moveFiles[i], character).then((value) =>
         {
+          //디버깅
           // if(character == "zafina"){
-          //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"), //디버그
+          //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
           // },
           for(int k = 0; k < value[j].toString().split(", ").length; k++){
             if (i == 0){
@@ -258,20 +255,13 @@ class GetContents { // 리스트 구성
               list[j]["contents"][k].add(value[j].toString().split(", ")[k]),
             },
           },
-          moveNamesEn[character] = value.toString().split(", ")
         });
-        //한국어 파일 부분
-        // if(i == 0) {
-        //   await _loadList("${moveFiles[i]}_ko", character).then((value) => {
-        //     moveNamesKo[character] = value.toString().split(", ")
-        //   });
-        // }
       }
     }
     return list;
   }
 
-  Future<List> getThrowList(character) async {
+  Future<List> getThrowList(String character, {bool isKo = true}) async {
     List<List<String>> throwList = [];
     var valueList;
     for (int i = 0; i < throwFiles.length; i++){
@@ -280,13 +270,6 @@ class GetContents { // 리스트 구성
       for (int j = 0; j < valueList.length; j++){
         throwList.length <= j? throwList.add([valueList[j]]) : throwList[j].add(valueList[j]);
       }
-
-      //한국어 파일 읽는 부분
-      // if(i == 0){
-      //   String fileContentsKo = await _loadFile("${throwFiles[i]}_ko", character);
-      //   throwNamesEn[character] = valueList;
-      //   throwNamesKo[character] = fileContentsKo.split(", ");
-      // }
     }
     return throwList;
   }
@@ -328,6 +311,7 @@ Future<void> main() async {
         for(var contents in value){
           for(int i = 1; i <= sticks.length; i++){
             contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
+            contents[7] = contents[7].toString().replaceAll("$i ", sticks["c$i"].toString()),
             contents[1] = contents[1].toString().replaceAll("delete", "")
           }
         },
@@ -477,7 +461,7 @@ class _SettingDialogState extends State<SettingDialog> {
             Text("폰트는 재시작을 해야 전부 적용됩니다."),
             // Row(
             //   children: [
-            //     Text("기술 이름 한글화"),
+            //     isKo? Text("English") : Text("한국어");
             //     Switch(value: isKo, onChanged: (value) {
             //       setState(() {
             //         isKo = value;

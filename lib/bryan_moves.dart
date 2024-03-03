@@ -484,16 +484,57 @@ class MoveList extends StatefulWidget {
 
 class _MoveListState extends State<MoveList> {
 
+  final TextEditingController _startFrameController = TextEditingController();
+  final TextEditingController _guardFrameController = TextEditingController();
+  final TextEditingController _hitFrameController = TextEditingController();
+  final TextEditingController _counterFrameController = TextEditingController();
+  final TextEditingController _damageController = TextEditingController();
+  final TextEditingController _extraController = TextEditingController();
+
+  bool _high = true;
+  bool _middle = true;
+  bool _low = true;
+  bool _unblockable = true;
+
   LinkedScrollControllerGroup horizonControllerGroup = LinkedScrollControllerGroup();
   ScrollController headerHorizonController = ScrollController();
   ScrollController dataTableHorizonController = ScrollController();
   late List filtered;
 
-  void filter(String text){
+  void filter(){
     setState(() {
       filtered = widget.moves.deepcopy();
       for (int i = 0; i < types.length; i++) {
-        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(text.toLowerCase())).toList();
+        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(_searchText.toLowerCase())).toList();
+      }
+      _startFrameController.text.isNotEmpty? headerFilter(2, _startFrameController) : null;
+      _guardFrameController.text.isNotEmpty? headerFilter(3, _guardFrameController) : null;
+      _hitFrameController.text.isNotEmpty? headerFilter(4, _hitFrameController) : null;
+      _counterFrameController.text.isNotEmpty? headerFilter(5, _counterFrameController) : null;
+      _damageController.text.isNotEmpty? headerFilter(7, _damageController) : null;
+      _extraController.text.isNotEmpty? headerFilter(8, _extraController) : null;
+      rangeFilter();
+    });
+  }
+
+  void headerFilter(int number, TextEditingController controller){
+    setState(() {
+      for (int i = 0; i < types.length; i++) {
+        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item[number].toString().contains(controller.text)).toList();
+      }
+    });
+  }
+
+  void rangeFilter(){
+    setState(() {
+      for (int i = 0; i < types.length; i++) {
+        filtered[i]["contents"] = filtered[i]["contents"].where((item) {
+          if(_high && item[6].toString().contains("상단") || _middle && item[6].toString().contains("중단") || _low && item[6].toString().contains("하단") || _unblockable && item[6].toString().contains("가불")){
+            return true;
+          }else{
+            return false;
+          }
+        }).toList();
       }
     });
   }
@@ -501,6 +542,7 @@ class _MoveListState extends State<MoveList> {
   @override
   void initState() {
     super.initState();
+    filtered = widget.moves.deepcopy();
     headerHorizonController = horizonControllerGroup.addAndGet();
     dataTableHorizonController = horizonControllerGroup.addAndGet();
   }
@@ -510,16 +552,36 @@ class _MoveListState extends State<MoveList> {
 
     listLength = 1;
 
-    if(_searchText.isNotEmpty) {
-      filter(_searchText); //필터링
-    }else{
-      setState(() {
-        filtered = widget.moves.deepcopy(); //초기화
-      });
-    }
+    filter();
 
     Widget line(){
       return Container(width: 0, height: 50, decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.black, width: 0.5), left: BorderSide(color: Colors.black, width: 0.5))));
+    }
+
+    Widget headerMenuAnchor(double width, TextEditingController controller, String name){
+      return MenuAnchor(
+        menuChildren: [
+          SizedBox(
+            width: width,
+            child: TextFormField(
+              controller: controller,
+              onChanged: (value) {
+                setState(() {
+                  controller.text = value;
+                  controller.selection = TextSelection.collapsed(offset: value.length);
+                });
+              },
+            ),
+          )
+        ],
+        builder: (context, controller, child) => TextButton(onPressed: (){
+          if (controller.isOpen) {
+            controller.close();
+          } else {
+            controller.open();
+          }
+        }, child: Text(name,textAlign: TextAlign.center, style: headingStyle,)),
+      );
     }
 
     return SingleChildScrollView(
@@ -527,46 +589,98 @@ class _MoveListState extends State<MoveList> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextButton(onPressed: (){
-            setState(() {
-              if(heatSystemMenu == true){
-                heatSystemMenu = false;
-              } else if (heatSystemMenu == false){
-                heatSystemMenu = true;
-              }
-            });
-          }, child: const Text("히트 시스템")),
+          Container(
+            width: 110,
+            child: TextButton(onPressed: (){
+              setState(() {
+                if(heatSystemMenu == true){
+                  heatSystemMenu = false;
+                } else if (heatSystemMenu == false){
+                  heatSystemMenu = true;
+                }
+              });
+            }, child: heatSystemMenu? Center(child: Row(children: [Text("히트 시스템"), Icon(Icons.arrow_drop_up)],)) : Row(children: [Text("히트 시스템"), Icon(Icons.arrow_drop_down)],)),
+          ),
           if(heatSystemMenu == true) // 히트 시스템 설명
             heatSystemContexts(heatSystem), //변경해야될것
-          StickyHeader(
-            header: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              controller: headerHorizonController,
-              child: Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
-                width: 842.3,
-                height: 50,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 150 + 5,
-                      child: MenuAnchor( // 커맨드 체크박스
+          Container(
+            width: 845,
+            child: StickyHeader(
+              header: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                controller: headerHorizonController,
+                child: Container(
+                  decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 150 + 5,
+                        child: MenuAnchor( // 커맨드 체크박스
+                          alignmentOffset: const Offset(20, 0),
+                          menuChildren: [
+                            for(int i = 0; i < types.length; i++)...[
+                              CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
+                                setState(() {
+                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
+                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
+                                  }else{
+                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
+                                  }
+                                });
+                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
+                            ],
+                          ],
+                          builder: (context, controller, child)=> TextButton(onPressed: () {
+                            if (controller.isOpen) {
+                              controller.close();
+                            } else {
+                              controller.open();
+                            }
+                          }, child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center),
+                              Icon(Icons.arrow_drop_down, color: Colors.black,),
+                            ],
+                          ),),
+                        ),
+                      ),
+                      line(),
+                      Container(width: 30 + 10, child: headerMenuAnchor(40, _startFrameController, "발생")),
+                      line(),
+                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _guardFrameController, "가드")),
+                      line(),
+                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _hitFrameController, "히트")),
+                      line(),
+                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _counterFrameController, "카운터")),
+                      line(),
+                      Container(width: 30 + 10, child: MenuAnchor( // 커맨드 체크박스
                         alignmentOffset: const Offset(20, 0),
                         menuChildren: [
-                          for(int i = 0; i < types.length; i++)...[
-                            CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
-                              setState(() {
-                                if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                }else{
-                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                }
-                              });
-                            }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
-                          ],
+                          CheckboxMenuButton(value: _high, onChanged: (value){
+                            setState(() {
+                              _high = value!;
+                            });
+                          }, closeOnActivate: false, child: Text("상단")),
+                          CheckboxMenuButton(value: _middle, onChanged: (value){
+                            setState(() {
+                              _middle = value!;
+                            });
+                          }, closeOnActivate: false, child: Text("중단")),
+                          CheckboxMenuButton(value: _low, onChanged: (value){
+                            setState(() {
+                              _low = value!;
+                            });
+                          }, closeOnActivate: false, child: Text("하단")),
+                          CheckboxMenuButton(value: _unblockable, onChanged: (value){
+                            setState(() {
+                              _unblockable = value!;
+                            });
+                          }, closeOnActivate: false, child: Text("가불"))
                         ],
-                        builder: (BuildContext context, MenuController controller, Widget? child)=> TextButton(onPressed: () {
+                        builder: (context, controller, child)=> TextButton(onPressed: () {
                           if (controller.isOpen) {
                             controller.close();
                           } else {
@@ -575,67 +689,56 @@ class _MoveListState extends State<MoveList> {
                         }, child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.arrow_drop_down, color: Colors.black,),
-                            Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center),
+                            Text("판정", style: headingStyle, textAlign: TextAlign.center),
                           ],
                         ),),
-                      ),
-                    ),
-                    line(),
-                    Container(width: 30 + 10, child: Text('발생',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Container(width: listWidth + 10, child: Text('가드',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Container(width: listWidth + 10, child: Text('히트',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Container(width: listWidth + 10, child: Text('카운터',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Container(width: 30 + 10, child: Text('판정',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Container(width: 50 + 10, child: Text('대미지',textAlign: TextAlign.center, style: headingStyle,)),
-                    line(),
-                    Expanded(child: Text('비고',textAlign: TextAlign.center, style: headingStyle,)),
-                  ],
+                      ),),
+                      line(),
+                      Container(width: 50 + 10, child: headerMenuAnchor(60, _damageController, "대미지")),
+                      line(),
+                      Container(width: 412, child: headerMenuAnchor(412, _extraController, "비고")),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            content: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              controller: dataTableHorizonController,
-              child: DataTable(
-                  headingRowHeight: 0,
-                  headingTextStyle: headingStyle,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 48,
-                  border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
-                  horizontalMargin: 0,
-                  columnSpacing: 10,
-                  columns: [
-                    const DataColumn(label: SizedBox(width: 150)),
-                    const DataColumn(label: SizedBox(width: 30)),
-                    const DataColumn(label: SizedBox(width: listWidth)),
-                    const DataColumn(label: SizedBox(width: listWidth)),
-                    const DataColumn(label: SizedBox(width: listWidth)),
-                    const DataColumn(label: SizedBox(width: 30)),
-                    const DataColumn(label: SizedBox(width: 50)),
-                    const DataColumn(label: SizedBox(width: 412.3)),
-                  ],
-                  rows: [
-                    if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                      DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
-                    for(int i = 0; i < types.length; i++)...[
-                      if(types[i][filtered[i]["type"]] == true)...[
-                        for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
-                          if(listLength % 2 == 1)...[
-                            DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
-                            const Color(0xffd5d5d5)))
-                          ]else if(listLength % 2 == 0)...[
-                            DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
-                          ]
+              content: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                controller: dataTableHorizonController,
+                child: DataTable(
+                    headingRowHeight: 0,
+                    headingTextStyle: headingStyle,
+                    dataRowMaxHeight: double.infinity,
+                    dataRowMinHeight: 48,
+                    border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
+                    horizontalMargin: 0,
+                    columnSpacing: 10,
+                    columns: [
+                      const DataColumn(label: SizedBox(width: 150)),
+                      const DataColumn(label: SizedBox(width: 30)),
+                      const DataColumn(label: SizedBox(width: listWidth)),
+                      const DataColumn(label: SizedBox(width: listWidth)),
+                      const DataColumn(label: SizedBox(width: listWidth)),
+                      const DataColumn(label: SizedBox(width: 30)),
+                      const DataColumn(label: SizedBox(width: 50)),
+                      const DataColumn(label: SizedBox(width: 412)),
+                    ],
+                    rows: [
+                      if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
+                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
+                      for(int i = 0; i < types.length; i++)...[
+                        if(types[i][filtered[i]["type"]] == true)...[
+                          for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
+                            if(listLength % 2 == 1)...[
+                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
+                              const Color(0xffd5d5d5)))
+                            ]else if(listLength % 2 == 0)...[
+                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])))
+                            ]
+                          ],
                         ],
-                      ],
+                      ]
                     ]
-                  ]
+                ),
               ),
             ),
           ),
@@ -656,38 +759,67 @@ class ThrowList extends StatefulWidget {
 }
 
 class _ThrowListState extends State<ThrowList>{
+
+  Widget line(){
+    return Container(width: 0, height: 50, decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.black, width: 0.5), left: BorderSide(color: Colors.black, width: 0.5))));
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
+      scrollDirection: Axis.horizontal,
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: DataTable(
-          headingRowHeight: 50,
-          headingTextStyle: headingStyle,
-          dataRowMaxHeight: double.infinity,
-          dataRowMinHeight: 48,
-          border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
-          horizontalMargin: 0,
-          columnSpacing: 10,
-          columns: [
-            const DataColumn(label: SizedBox(width: 150,child: Text('기술명\n커맨드',textAlign: TextAlign.center,))),
-            const DataColumn(label: SizedBox(width: 30,child: Text('발생',textAlign: TextAlign.center))),
-            const DataColumn(label: SizedBox(width: 40,child: Text('풀기',textAlign: TextAlign.center))),
-            const DataColumn(label: SizedBox(width: 30,child: Text('풀기\n후 F',textAlign: TextAlign.center))),
-            const DataColumn(label: SizedBox(width: 50,child: Text('대미지',textAlign: TextAlign.center))),
-            const DataColumn(label: SizedBox(width: 30,child: Text('판정',textAlign: TextAlign.center))),
-            const DataColumn(label: Expanded(child: Text('비고',textAlign: TextAlign.center))),
-          ],
-          rows: [
-            for(int i = 0; i < widget.throws.length; i++)...[
-              if(i % 2 == 0)...[
-                DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
-              ]else...[
-                DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
-              ]
-            ]
-          ],
+        child: Container(
+          width: 600,
+          child: StickyHeader(
+            header: Container(
+              height: 50,
+              decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
+              child: Row(
+                children: [
+                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headingStyle)),
+                  line(),
+                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headingStyle)),
+                ],
+              ),
+            ),
+            content: DataTable(
+              headingRowHeight: 0,
+              dataRowMaxHeight: double.infinity,
+              dataRowMinHeight: 48,
+              border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
+              horizontalMargin: 0,
+              columnSpacing: 10,
+              columns: [
+                const DataColumn(label: SizedBox(width: 150)),
+                const DataColumn(label: SizedBox(width: 30)),
+                const DataColumn(label: SizedBox(width: 40)),
+                const DataColumn(label: SizedBox(width: 30)),
+                const DataColumn(label: SizedBox(width: 50)),
+                const DataColumn(label: SizedBox(width: 30)),
+                const DataColumn(label: SizedBox(width: 210)),
+              ],
+              rows: [
+                for(int i = 0; i < widget.throws.length; i++)...[
+                  if(i % 2 == 0)...[
+                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                  ]else...[
+                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
+                  ]
+                ]
+              ],
+            ),
+          ),
         ),
       ),
     );

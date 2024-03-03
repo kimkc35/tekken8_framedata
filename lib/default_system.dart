@@ -4,7 +4,7 @@ import 'package:string_validator/string_validator.dart';
 
 TextStyle contextStyle = TextStyle(fontWeight: FontWeight.w400, height: 1.5);
 
-TextStyle headingStyle = TextStyle(color: Colors.black, fontSize: 12);
+TextStyle headingStyle = TextStyle(color: Colors.black, fontSize: 10);
 
 Container heatSystemContexts(List<String> addition){
   return Container(
@@ -24,7 +24,7 @@ Container heatSystemContexts(List<String> addition){
   );
 }
 
-const double listWidth = 35;
+const double listWidth = 37;
 
 const TextScaler scale = TextScaler.linear(0.8);
 
@@ -110,7 +110,7 @@ List<DataCell> createThrow(BuildContext context, String character, name, command
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: scale, style: commandStyle))), //판정
     DataCell(Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(extra.toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-"), textAlign: TextAlign.start, textScaler: scale, style: commandStyle),
     )), //비고
   ];
