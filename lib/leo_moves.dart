@@ -490,10 +490,10 @@ class _MoveListState extends State<MoveList> {
   final TextEditingController _damageController = TextEditingController();
   final TextEditingController _extraController = TextEditingController();
 
-  bool _high = true;
-  bool _middle = true;
-  bool _low = true;
-  bool _unblockable = true;
+  bool _high = false;
+  bool _middle = false;
+  bool _low = false;
+  bool _unblockable = false;
 
   LinkedScrollControllerGroup horizonControllerGroup = LinkedScrollControllerGroup();
   ScrollController headerHorizonController = ScrollController();
@@ -529,6 +529,8 @@ class _MoveListState extends State<MoveList> {
       for (int i = 0; i < types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) {
           if(_high && item[6].toString().contains("상단") || _middle && item[6].toString().contains("중단") || _low && item[6].toString().contains("하단") || _unblockable && item[6].toString().contains("가불")){
+            return true;
+          }else if(!_high && !_middle && !_low && !_unblockable) {
             return true;
           }else{
             return false;

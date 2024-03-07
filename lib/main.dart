@@ -39,7 +39,7 @@ import 'zafina_moves.dart' as zafina;
 
 const bool isPro = false;
 
-bool isKo = true;
+String language = "ko";
 
 String description = "";
 String patchNote = "";
@@ -229,7 +229,7 @@ class GetContents { // 리스트 구성
     return text.split(" | ");
   }
 
-  Future<List> getMoveList(List types, String character, {bool isKo = true}) async {
+  Future<List> getMoveList(List types, String character) async {
     var list = [];
     for(int j = 0; j < types.length; j++) {
       list.addAll(
@@ -242,21 +242,43 @@ class GetContents { // 리스트 구성
           }
       );
       for (int i = 0; i < moveFiles.length; i++) {
-        await _loadList(moveFiles[i], character).then((value) =>
-        {
-          //디버깅
-          // if(character == "zafina"){
-          //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
-          // },
-          for(int k = 0; k < value[j].toString().split(", ").length; k++){
-            if (i == 0){
+        if(i == 0 && language == "ko"){
+          await _loadList(moveFiles[i], character).then((value) =>
+          {
+            //디버그
+            // if(character == "asuka"){
+            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+            // },
+            for(int k = 0; k < value[j].toString().split(", ").length; k++){
+              if(character == "alisa"){
+                debugPrint(value[j].toString().split(", ")[k].toString())
+              },
               list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
-            }
-            else{
+            },
+          });
+        }else if(i == 0 && language == "en"){
+          await _loadList(moveFiles[i] + "_en", character).then((value) =>
+          {
+            //디버그
+            // if(character == "zafina"){
+            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+            // },
+            for(int k = 0; k < value[j].toString().split(", ").length; k++){
+              list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
+            },
+          });
+        }else{
+          await _loadList(moveFiles[i], character).then((value) =>
+          {
+            //디버그
+            // if(character == "asuka"){
+            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+            // },
+            for(int k = 0; k < value[j].toString().split(", ").length; k++){
               list[j]["contents"][k].add(value[j].toString().split(", ")[k]),
             },
-          },
-        });
+          });
+        }
       }
     }
     return list;
@@ -279,9 +301,12 @@ class GetContents { // 리스트 구성
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+
+  //초기화
   SharedPreferences prefs = await SharedPreferences.getInstance();
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
+  language = prefs.getString('language') ?? "ko";
 
   for (int i = 0; i < characterList.length; i++) {
     // debugPrint("${i + 1}번째 : ${characterList[i].toLowerCase()} 하고 ${characterList[i].toLowerCase()}"); //디버그
@@ -412,19 +437,6 @@ memo (BuildContext context, String character, name) {
 
 bool changeFont = false;
 
-//한글화 부분
-// changeNames(){
-//   for(String character in characterList){
-//     debugPrint("이거 있음? : ${types[character.toLowerCase()]}");
-//     for(int i = 0; i < types[character.toLowerCase()]!.length; i++){
-//       for(int j = 0; j < moves[character.toLowerCase()]![i]["contents"].length; j++){
-//         debugPrint("moveNamesKo $character 인거 : ${moveNamesKo[j]}");
-//         moves[character.toLowerCase()]![i]["contents"][j][0] = moveNamesKo[j];
-//       }
-//     }
-//   }
-// }
-
 class SettingDialog extends StatefulWidget {
   const SettingDialog({super.key});
 
@@ -432,9 +444,10 @@ class SettingDialog extends StatefulWidget {
   State<SettingDialog> createState() => _SettingDialogState();
 }
 
+//설정
 class _SettingDialogState extends State<SettingDialog> {
 
-  void saveSetting() async {
+  void saveFontSetting() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('changeFont', changeFont);
     setState(() {
@@ -442,41 +455,44 @@ class _SettingDialogState extends State<SettingDialog> {
     });
   }
 
+  void saveLanguageSetting(setLanguage) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      language = setLanguage;
+    });
+    prefs.setString('language', language);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(title: Text("설정", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+    return AlertDialog(title: Text(language == "ko"?"설정" : "Setting", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
       content: SingleChildScrollView(
         child: Column(
           children: [
             Row(
               children: [
-                Text("폰트 바꾸기"),
+                Text(language == 'ko'?"폰트 바꾸기" : "Change Font"),
                 Switch(value: changeFont, onChanged: (value) {
                   setState(() {
                     changeFont = value;
                   });
-                  saveSetting();
-                  Restart.restartApp();
+                  saveFontSetting();
                 })
               ],
             ),
-            Text("폰트는 재시작을 해야 전부 적용됩니다."),
             // Row(
             //   children: [
-            //     isKo? Text("English") : Text("한국어");
-            //     Switch(value: isKo, onChanged: (value) {
-            //       setState(() {
-            //         isKo = value;
-            //       });
-            //       changeNames();
-            //     },)
+            //     Icon(Icons.translate),
+            //     DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
             //   ],
-            // )
+            // ),
+            Text(language == "ko"? "설정은 재시작을 해야 전부 적용됩니다." : "All settings will take effect after a restart."),
           ],
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
+        TextButton(onPressed: () => Restart.restartApp(), child: Text(language == "ko"? '재시작' : "Restart")),
+        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))
       ],
     );
   }
@@ -505,7 +521,7 @@ class _MainState extends State<Main> {
     return Row(
       children: [
         GestureDetector(
-          onTap: () => showDialog<String>(context: context, builder: (context) => SettingDialog()),
+          onTap: () => showDialog<String>(context: context, barrierDismissible: false, builder: (context) => SettingDialog()),
           child: const Icon(Icons.settings),
         )
       ],

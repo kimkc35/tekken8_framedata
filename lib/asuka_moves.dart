@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Naniwa Peacemaker Knuckle", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
+final List rageArts = [language == "ko"?"나니와 중재꾼 너클":"Naniwa Peacemaker Knuckle", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "naniwa gusto" : "나니와 구스토"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "naniwa gusto" : "나니와의 기염"
 };
 
 
@@ -489,10 +489,10 @@ class _MoveListState extends State<MoveList> {
   final TextEditingController _damageController = TextEditingController();
   final TextEditingController _extraController = TextEditingController();
 
-  bool _high = true;
-  bool _middle = true;
-  bool _low = true;
-  bool _unblockable = true;
+  bool _high = false;
+  bool _middle = false;
+  bool _low = false;
+  bool _unblockable = false;
 
   LinkedScrollControllerGroup horizonControllerGroup = LinkedScrollControllerGroup();
   ScrollController headerHorizonController = ScrollController();
@@ -528,6 +528,8 @@ class _MoveListState extends State<MoveList> {
       for (int i = 0; i < types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) {
           if(_high && item[6].toString().contains("상단") || _middle && item[6].toString().contains("중단") || _low && item[6].toString().contains("하단") || _unblockable && item[6].toString().contains("가불")){
+            return true;
+          }else if(!_high && !_middle && !_low && !_unblockable) {
             return true;
           }else{
             return false;
