@@ -515,12 +515,12 @@ class _MoveListState extends State<MoveList> {
       for (int i = 0; i < types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(_searchText.toLowerCase())).toList();
       }
-      _startFrameController.text.isNotEmpty? headerFilter(2, _startFrameController) : null;
-      _guardFrameController.text.isNotEmpty? headerFilter(3, _guardFrameController) : null;
-      _hitFrameController.text.isNotEmpty? headerFilter(4, _hitFrameController) : null;
-      _counterFrameController.text.isNotEmpty? headerFilter(5, _counterFrameController) : null;
-      _damageController.text.isNotEmpty? headerFilter(7, _damageController) : null;
-      _extraController.text.isNotEmpty? headerFilter(8, _extraController) : null;
+      _startFrameController.value.text.isNotEmpty? headerFilter(2, _startFrameController) : null;
+      _guardFrameController.value.text.isNotEmpty? headerFilter(3, _guardFrameController) : null;
+      _hitFrameController.value.text.isNotEmpty? headerFilter(4, _hitFrameController) : null;
+      _counterFrameController.value.text.isNotEmpty? headerFilter(5, _counterFrameController) : null;
+      _damageController.value.text.isNotEmpty? headerFilter(7, _damageController) : null;
+      _extraController.value.text.isNotEmpty? headerFilter(8, _extraController) : null;
       rangeFilter();
     });
   }
@@ -528,7 +528,7 @@ class _MoveListState extends State<MoveList> {
   void headerFilter(int number, TextEditingController controller){
     setState(() {
       for (int i = 0; i < types.length; i++) {
-        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item[number].toString().contains(controller.text)).toList();
+        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item[number].toString().contains(controller.value.text)).toList();
       }
     });
   }
@@ -575,8 +575,6 @@ class _MoveListState extends State<MoveList> {
               controller: controller,
               onChanged: (value) {
                 setState(() {
-                  controller.text = value;
-                  controller.selection = TextSelection.collapsed(offset: value.length);
                 });
               },
             ),
@@ -612,7 +610,7 @@ class _MoveListState extends State<MoveList> {
           if(heatSystemMenu == true) // 히트 시스템 설명
             heatSystemContexts(heatSystem), //변경해야될것
           Container(
-            width: 845,
+            width: 848,
             child: StickyHeader(
               header: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

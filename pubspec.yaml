@@ -2,7 +2,7 @@ name: tekken8_framedata
 description: tk8 framedata.
 publish_to: 'none'
 
-version: 5.0.0+38
+version: 5.0.0+39
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -20,6 +20,7 @@ dependencies:
   google_mobile_ads: ^4.0.0
   sticky_headers: ^0.3.0+2
   linked_scroll_controller: ^0.2.0
+  restart_app: ^1.2.1
 
 dev_dependencies:
   change_app_package_name: ^1.1.0

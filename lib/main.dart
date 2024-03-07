@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:restart_app/restart_app.dart';
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
@@ -455,6 +456,7 @@ class _SettingDialogState extends State<SettingDialog> {
                     changeFont = value;
                   });
                   saveSetting();
+                  Restart.restartApp();
                 })
               ],
             ),
