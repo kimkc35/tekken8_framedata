@@ -32,23 +32,23 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Total Vandalization", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["토털 반달라이제이션", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "snakeEyes", "snakeEyes" : "히트 발동 시 Snake Eyes를 획득"},
-  {"name" : "useSnakeEyes", "useSnakeEyes" : "Snake Eyes를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)"},
+  {"name" : "snakeEyes", "snakeEyes" : "히트 발동 시 스네이크 아이즈를 획득"},
+  {"name" : "useSnakeEyes", "useSnakeEyes" : "스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
   {"name" : "tornado", "tornado" : "토네이도"},
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "sway", "sway" : "${sticks["c4"]}~입력 시 Sway로 이행\n()는 이행 시 프레임"},
-  {"name" : "slitherStep", "slitherStep" : "${sticks["c6"]}~입력 시 Slither Step으로 이행\n()는 이행 시 프레임"}
+  {"name" : "sway", "sway" : "${sticks["c4"]}~입력 시 스웨이로 이행\n()는 이행 시 프레임"},
+  {"name" : "slitherStep", "slitherStep" : "${sticks["c6"]}~입력 시 슬리더 스텝으로 이행\n()는 이행 시 프레임"}
 ];
 
-List<String> heatSystem = ["Snake Eyes 보유 시의 기술 사용 가능"];
+List<String> heatSystem = ["스네이크 아이즈 보유 시의 기술 사용 가능"];
 const character = "bryan"; //변경해야될것
 
 List types = [ //변경해야될것

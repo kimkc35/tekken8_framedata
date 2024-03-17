@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Death by Degrees", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["데스 바이 디그리즈", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -44,7 +44,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
 ];
 
-List<String> heatSystem = ["파워가 상승한 권총 기술 사용 가능", "Kiss Shot Penetrator 사용 가능"];
+List<String> heatSystem = ["파워가 상승한 권총 기술 사용 가능", "키스 샷 페네트레이터 사용 가능"];
 
 const character = "nina"; //변경해야될것
 
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "ducking step" : "덕킹 스텝", "sway" : "스웨이"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "ducking step" : "더킹 스텝", "sway" : "스웨이"
 };
 
 bool heatSystemMenu = true;

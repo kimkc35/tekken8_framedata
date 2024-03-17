@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Close Call! Panda Storming Flower", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["클로즈 콜! 팬더 스토밍 플라워", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -42,10 +42,10 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "hunting", "hunting" : "${sticks["c2"]} ~ or AK입력 시 Hunting으로"}
+  {"name" : "hunting", "hunting" : "${sticks["c2"]} ~ or AK입력 시 헌팅으로"}
 ];
 
-List<String> heatSystem = ["일부 홀드기가 원래보다 짧은 시간 입력으로 최대 홀드 성능이 됨", "파워가 상승한 Bear Roll 사용 가능", "Panda Shooting Star 사용 가능"];
+List<String> heatSystem = ["일부 홀드기가 원래보다 짧은 시간 입력으로 최대 홀드 성능이 됨", "파워가 상승한 베어 롤 사용 가능", "판다 슈팅 스타 사용 가능"];
 
 const character = "panda"; //변경해야될것
 
@@ -54,7 +54,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hunting" : "헌팅 자세", "bear sit" : "베어 시트", "bear roll" : "베어롤"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hunting" : "헌팅 자세", "bear sit" : "베어 시트", "bear roll" : "베어 롤"
 };
 
 bool heatSystemMenu = true;

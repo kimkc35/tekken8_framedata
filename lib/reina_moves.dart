@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Sacred Dismantle Spark", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["멸신 찬연세괴", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -44,7 +44,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
 ];
 
-List<String> heatSystem = ["일부 연계에서 Lethal Fury 사용 가능", "최속 입력이 아니더라도 Electric Wind God Fist, Electric War God Kick 사용 가능", "Heaven's Wrath로 상중단 공격 흘리기 가능"];
+List<String> heatSystem = ["일부 연계에서 겹쳐 죽이기 사용 가능", "최속 입력이 아니더라도 최속 풍신권, 최속 무신각 사용 가능", "금강벽으로 상중단 공격 흘리기 가능"];
 
 const character = "reina"; //변경해야될것
 
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "sentai" : "센타이", "unsoku" : "운소쿠", "heaven's wrath" : "헤븐즈 레이스", "wind step" : "무족"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "sentai" : "선체", "unsoku" : "운족", "heaven's wrath" : "금강격", "wind step" : "풍첨각"
 };
 
 bool heatSystemMenu = true;

@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Coup de Chevalier", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["쿠 드 슈발리에", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -44,7 +44,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}
 ];
 
-List<String> heatSystem = ["Monsieur Samurai 사용 가능", "Caliburnus, Rhongomyniad 파워 상승", "일부 칼 기술을 히트시키면 히트 상태의 남은 시간 회복"];
+List<String> heatSystem = ["무슈 사무라이 사용 가능", "칼리버너스, 롱고미니아드 파워 상승", "일부 칼 기술을 히트시키면 히트 상태의 남은 시간 회복"];
 
 const character = "victor"; //변경해야될것
 
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "iai Stance" : "이아이 자세", "perfumer" : "퍼퓨머"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "iai Stance" : "이아이 스탠스", "perfumer" : "퍼퓨머"
 };
 
 bool heatSystemMenu = true;

@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Devil Dimension: Tainted Chains", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["흉계시현 혈쇄인", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -44,7 +44,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"}
 ];
 
-List<String> heatSystem = ["Ray 사용 가능", "최속 입력이 아니더라도 Electric Wind God Fist 사용 가능"];
+List<String> heatSystem = ["멸초파 사용 가능", "최속 입력이 아니더라도 최속 풍신권 사용 가능"];
 const character = "devil jin"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -52,7 +52,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "fly" : "비행", "mourning crow" : "모닝 크로우"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "fly" : "비공", "mourning crow" : "모닝 크로우"
 };
 
 bool heatSystemMenu = true;

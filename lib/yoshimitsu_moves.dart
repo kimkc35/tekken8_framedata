@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Trailokya Pilgrimage", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["삼계순회 제행무상", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -44,7 +44,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}
 ];
 
-List<String> heatSystem = ["Mutou no Kiwami 도중에만 쓸 수 있는 파워 상승 버전 칼 기술을 일반 자세에서도 사용 가능", "Manji Dragonfly 도중의 일부 칼 기술이 파워 상승"];
+List<String> heatSystem = ["납도 자세 도중에만 쓸 수 있는 파워 상승 버전 칼 기술을 일반 자세에서도 사용 가능", "만잠자리 자세 도중의 일부 칼 기술이 파워 상승"];
 
 const character = "yoshimitsu"; //변경해야될것
 
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "kincho" : "금타 자세", "meditation" : "무상 자세", "flea" : "지뢰인 자세", "indian stance" : "만지앉기 자세", "mutou no kiwami" : "납도 자세", "manji dragonfly" : "만잠자리 자세"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "kincho" : "금타 자세", "meditation" : "무상 자세", "flea" : "지뢰인 자세", "indian stance" : "만자앉기 자세", "mutou no kiwami" : "납도 자세", "manji dragonfly" : "만잠자리 자세"
 };
 
 bool heatSystemMenu = true;

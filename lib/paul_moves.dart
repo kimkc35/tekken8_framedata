@@ -36,7 +36,7 @@ final List rageArts = ["Big Bang Phoenix Smasher", "레이지 상태에서 ${sti
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
-  {"name" : "sway", "sway" : "${sticks["c4"]}~입력 시 스웨이 이행\n()는 스웨이 이행 시 프레임"},
+  {"name" : "sway", "sway" : "${sticks["c4"]}~입력 시 부초(스웨이) 이행\n()는 부초(스웨이) 이행 시 프레임"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
@@ -46,7 +46,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-List<String> heatSystem = ["파워가 상승한 Phoenix Smasher", "파워가 상승한 홀드기 사용 가능"];
+List<String> heatSystem = ["파워가 상승한 붕권", "파워가 상승한 홀드기 사용 가능"];
 const character = "paul"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -54,7 +54,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "cormorant step" : "가마우지 스텝", "sway" : "스웨이"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "cormorant step" : "잠복 스텝", "sway" : "부초(스웨이)"
 };
 
 

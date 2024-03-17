@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Dear Land of Hope", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["디어 랜드 오브 호프", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -42,10 +42,10 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "dds", "dds" : "Ducking,Ducking Left(Right),Swaying으로 이행 가능"}
+  {"name" : "dds", "dds" : "더킹, 더킹 레프트(라이트), 스웨이로 이행 가능"}
 ];
 
-List<String> heatSystem = ["새로운 Ducking In 이행기 사용 가능", "Two-Faced 사용 가능", "Lion Heart로 중단 공격 흘리기 가능"];
+List<String> heatSystem = ["새로운 더킹 인 이행기 사용 가능", "투-페이스드 사용 가능", "라이온 하트로 중단 공격 흘리기 가능"];
 
 const character = "steve"; //변경해야될것
 
@@ -181,7 +181,7 @@ class _MainState extends State<Main> {
                       children: [
                         const TabBar(
                           automaticIndicatorColorAdjustment: true,
-                          isScrollable: false,
+                          physics: NeverScrollableScrollPhysics(),
                           tabs: [
                             Tab(text: "Move List"),
                             Tab(text: "Throw")

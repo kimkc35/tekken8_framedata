@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Wang's Celestial Epic", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["왕전비초 구천진공", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
@@ -45,7 +45,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-List<String> heatSystem = ["파워가 상승한 Hypnotist", "Bai Yang Yan Di Po, Bai Lian Yan Di Po 사용 가능"];
+List<String> heatSystem = ["파워가 상승한 파보", "백양염제파, 백련염제파 사용 가능"];
 const character = "xiaoyu"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "back" : "뒤돈 자세", "sit" : "앉은 자세", "hypnotist" : "힙노티스트", "phoenix" : "피닉스"
+  "heat" : "히트", "general" : "일반", "back" : "뒤자세", "sit" : "앉은 자세", "hypnotist" : "파보", "phoenix" : "봉황"
 };
 
 

@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Enlightened Yellow Dragon Palm", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["진결 화룡정천장", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -45,7 +45,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-List<String> heatSystem = ["Essence of Iron Palm 사용 가능", "Essence of Nian Zhang Mia Ba사용 가능", "Yinglong Sea Splitter 사용 가능"];
+List<String> heatSystem = ["신수박면장 사용 가능", "신수염장멸파 사용 가능", "응룡렬해답 사용 가능"];
 const character = "feng"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -53,7 +53,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "lingering shadow" : "링거링 쉐도우", "shifting clouds" : "쉬프팅 클라우드", "deceptive step" : "디셉티브 스텝"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "lingering shadow" : "잔영", "shifting clouds" : "운수", "deceptive step" : "허보"
 };
 
 

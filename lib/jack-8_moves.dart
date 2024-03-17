@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Terraforming Cannon", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["테라포밍 캐논", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -43,10 +43,10 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
-  {"name" : "howl", "howl" : "2 ~입력 시 Gamma Howl로\n()는 이행 시 프레임"}
+  {"name" : "howl", "howl" : "2 ~입력 시 감마 하울로\n()는 이행 시 프레임"}
 ];
 
-List<String> heatSystem = ["Gamma Charge 보유 시의 기술 사용 가능"];
+List<String> heatSystem = ["감마 차지 보유 시의 기술 사용 가능"];
 const character = "jack-8"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -54,7 +54,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "sit down" : "싯 다운", "gamma howl" : "감마 하울", "gamma charge" : "감마 차지"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "sit down" : "시트 다운", "gamma howl" : "감마 하울", "gamma charge" : "감마 차지"
 };
 
 

@@ -32,11 +32,11 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Amatsu Izanami", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["아마츠 이자나미", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-  {"name" : "horizon", "horizon" : "2 ~ or 8 ~을 입력하면 횡이동으로"},
+  {"name" : "horizon", "horizon" : "2 ~ or 8 ~입력 시 횡이동으로"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
   {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
@@ -46,7 +46,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지, 프레임"},
 ];
 
-List<String> heatSystem = ["체력을 소비하지 않고 카자마의 힘(체력 소비 기술) 사용 가능", "파워가 상승한 Inner Peace 사용 가능"];
+List<String> heatSystem = ["체력을 소비하지 않고 카자마의 힘(체력 소비 기술) 사용 가능", "파워가 상승한 감념상벽 사용 가능"];
 const character = "jun"; //변경해야될것
 
 List types = [ //변경해야될것
@@ -54,7 +54,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "izumo" : "이즈모", "genjitsu" : "겐지츠", "miare" : "미아레"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "izumo" : "이즈모", "genjitsu" : "환일", "miare" : "미아레"
 };
 
 

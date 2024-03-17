@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Dark Dragon Commandment", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["타계련환흑룡경", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -46,7 +46,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "parryFunction", "parryFunction" : "반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 Chain Punch: Branch로"}
 ];
 
-List<String> heatSystem = ["Chain Punch를 비롯한 고속 연속 공격의 가드 대미지 증가", "리로이 고유의 흘리기, 반격기를 성공하면 히트 상태의 남은 시간 회복 가능"];
+List<String> heatSystem = ["연환권을 비롯한 고속 연속 공격의 가드 대미지 증가", "리로이 고유의 흘리기, 반격기를 성공하면 히트 상태의 남은 시간 회복 가능"];
 
 const character = "leroy"; //변경해야될것
 
@@ -55,7 +55,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hermit" : "허밋", "cane" : "지팡이"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hermit" : "독보", "cane" : "지팡이"
 };
 
 

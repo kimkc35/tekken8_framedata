@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Wild Hunt X-ecutor", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["와일드 헌트 X-에큐터", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
@@ -45,7 +45,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
-List<String> heatSystem = ["분신을 사용한 공격이 가드당했을 때 자동으로 추가 공격 발동", "분신을 사용한 공격이 히트했을 때 히트 상태의 남은 시간 회복", "Typhon Fang Phantom 사용 가능"];
+List<String> heatSystem = ["분신을 사용한 공격이 가드당했을 때 자동으로 추가 공격 발동", "분신을 사용한 공격이 히트했을 때 히트 상태의 남은 시간 회복", "티폰 팽 팬텀 사용 가능"];
 
 const character = "raven"; //변경해야될것
 
@@ -54,7 +54,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shadow sprint" : "쉐도우 스프린트", "soulzone" : "소울존"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shadow sprint" : "섀도 스프린트", "soulzone" : "소울존"
 };
 
 

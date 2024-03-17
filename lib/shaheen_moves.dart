@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Najm Alshamal", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["나즘 알샤말", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -42,10 +42,10 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "stealthStep", "stealthStep" : "${sticks["c3"]}~입력 시 Stealth Step으로/()는 이행 시 프레임"}
+  {"name" : "stealthStep", "stealthStep" : "${sticks["c3"]}~입력 시 스텔스 스텝으로/()는 이행 시 프레임"}
 ];
 
-List<String> heatSystem = ["손날을 사용하는 일부 기술이 히트했을 때 히트 상태의 남은 시간 회복", "Al-Ghul Master 사용 가능"];
+List<String> heatSystem = ["손날을 사용하는 일부 기술이 히트했을 때 히트 상태의 남은 시간 회복", "알 굴 마스터 사용 가능"];
 
 const character = "shaheen"; //변경해야될것
 

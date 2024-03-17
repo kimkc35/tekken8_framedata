@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Fate of the Dragon", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["페이트 오브 더 드래곤", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
@@ -43,10 +43,10 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
-  {"name" : "dragonCharge", "dragonCharge" : "${sticks["c6"]}~입력 시 Dragon Charge로\n()는 이행 시 프레임"}
+  {"name" : "dragonCharge", "dragonCharge" : "${sticks["c6"]}~입력 시 드래곤 차지로\n()는 이행 시 프레임"}
 ];
 
-List<String> heatSystem = ["파워가 상승한 쌍절곤 기술 사용 가능", "Dragon Charge로 펀치 공격 흘리기 가능"];
+List<String> heatSystem = ["파워가 상승한 쌍절곤 기술 사용 가능", "드래곤 차지로 펀치 공격 흘리기 가능"];
 
 const character = "law"; //변경해야될것
 

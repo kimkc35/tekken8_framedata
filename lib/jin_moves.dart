@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Polar Demon Gouge", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["극성마인충", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //jin extra list
 List<Map<String, String>> extraInitials = [
@@ -43,10 +43,10 @@ List<Map<String, String>> extraInitials = [
   {"name" : "homing", "homing" : "호밍기"},
   {"name" : "zenshin", "zenshin" : "${sticks["c6"]}~입력시 전심 이행\n()안의 프레임은 전심 이행 시 프레임"},
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "aps", "aps" : "Awakened Power Stance 도중"}
+  {"name" : "aps", "aps" : "각성 삼전 서기 도중"}
 ];
 
-List<String> heatSystem = ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 Electric Thrusting Uppercut과 Electric Wind Hook Fist 사용 가능"];
+List<String> heatSystem = ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 최속 왼 찔러 올리기와 최속 오른 돌려 찌르기 사용 가능"];
 const character = "jin";
 
 List types = [

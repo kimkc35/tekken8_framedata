@@ -4,6 +4,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:restart_app/restart_app.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'jin_moves.dart' as jin;
 import 'kazuya_moves.dart' as kazuya;
 import 'paul_moves.dart' as paul;
@@ -38,6 +39,8 @@ import 'yoshimitsu_moves.dart' as yoshimitsu;
 import 'zafina_moves.dart' as zafina;
 
 const bool isPro = false;
+
+bool isFirst = true;
 
 String language = "ko";
 
@@ -246,13 +249,10 @@ class GetContents { // 리스트 구성
           await _loadList(moveFiles[i], character).then((value) =>
           {
             //디버그
-            // if(character == "asuka"){
-            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
-            // },
+            if(character == "feng"){
+              debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+            },
             for(int k = 0; k < value[j].toString().split(", ").length; k++){
-              if(character == "alisa"){
-                debugPrint(value[j].toString().split(", ")[k].toString())
-              },
               list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
             },
           });
@@ -271,7 +271,7 @@ class GetContents { // 리스트 구성
           await _loadList(moveFiles[i], character).then((value) =>
           {
             //디버그
-            // if(character == "asuka"){
+            // if(character == "feng"){
             //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
             // },
             for(int k = 0; k < value[j].toString().split(", ").length; k++){
@@ -307,6 +307,7 @@ Future<void> main() async {
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
+  isFirst = prefs.getBool('isFirst') ?? true;
 
   for (int i = 0; i < characterList.length; i++) {
     // debugPrint("${i + 1}번째 : ${characterList[i].toLowerCase()} 하고 ${characterList[i].toLowerCase()}"); //디버그
@@ -317,7 +318,8 @@ Future<void> main() async {
             for(int i = 1; i <= sticks.length; i++){
               contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
               contents[8] = contents[8].toString().replaceAll("$i ", sticks["c$i"].toString())
-            }
+            },
+            contents[8] = contents[8].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
           }
         },
         for(var extraInitial in characterExtraInitials.entries){
@@ -338,8 +340,9 @@ Future<void> main() async {
           for(int i = 1; i <= sticks.length; i++){
             contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
             contents[7] = contents[7].toString().replaceAll("$i ", sticks["c$i"].toString()),
-            contents[1] = contents[1].toString().replaceAll("delete", "")
-          }
+          },
+          contents[1] = contents[1].toString().replaceAll("delete", ""),
+          contents[7] = contents[7].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-").replaceAll("delete", "")
         },
         throws.addAll({characterList[i].toLowerCase() : value})
       });
@@ -509,11 +512,41 @@ class Main extends StatefulWidget {
 
 class _MainState extends State<Main> {
 
+  void changeIsFirst() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    isFirst = false;
+    prefs.setBool('isFirst', isFirst);
+  }
+
+  final Uri _url = Uri.parse("https://play.google.com/store/apps/details?id=com.tk8.framedata.vpro");
+
   @override
   void initState() {
     super.initState();
-    if(!isPro){
+    if(!isPro) {
       loadAd();
+      if(isFirst){
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+          changeIsFirst();
+          showDialog(context: context, builder: (context) => AlertDialog(title: Text("프로버전 출시!", style: TextStyle(fontSize: 20, color: Colors.black)),
+            content: SizedBox(
+              height: 80,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(onTap: (){
+                    launchUrl(_url);
+                  },child: Text("클릭해서 이동하세요!", style: TextStyle(fontSize: 15, color: Colors.lightBlue),)),
+                  Text("한번 창을 닫으면 더이상 뜨지 않습니다.", style: TextStyle(fontSize: 15))
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))
+            ],
+          ));
+        });
+      }
     }
   }
 

@@ -32,7 +32,7 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Zeus Unlimited", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["제우스 언리미티드", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
@@ -45,7 +45,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것,
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지, 프레임"},
 ];
 
-List<String> heatSystem = ["파워가 상승한 Limited Entry 사용 가능", "새로운 Silent Entry 이행기 사용 가능"];
+List<String> heatSystem = ["파워가 상승한 리미티드 엔트리 사용 가능", "새로운 사일런트 엔트리 이행기 사용 가능"];
 const character = "lars"; //변경해야될것
 
 List types = [ //변경해야될것

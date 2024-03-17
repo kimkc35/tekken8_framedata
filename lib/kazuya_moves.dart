@@ -32,11 +32,11 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Demonic", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["데모닉 카타스트로피", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //kazuya extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것
-  {"name" : "step", "step" : "${sticks["c3"]}~입력 시 Wind God Step으로 이행\n()는 이행 시 프레임"},
+  {"name" : "step", "step" : "${sticks["c3"]}~입력 시 풍신 스텝으로 이행\n()는 이행 시 프레임"},
   {"name" : "damageUp", "damageUp" : "상대 공격을 받아내면 대미지 증가"},
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
@@ -46,7 +46,7 @@ List<Map<String, String>> extraInitials = [ //변경해야될것
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
 ];
 
-List<String> heatSystem = ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 Electric Wind God Fist 사용 가능"];
+List<String> heatSystem = ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 최속 풍신권 사용 가능"];
 const character = "kazuya"; //변경해야될것
 
 List types = [ //변경해야될것
