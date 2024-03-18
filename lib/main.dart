@@ -143,6 +143,16 @@ final characterExtraInitials = {
   "zafina": zafina.extraInitials
 };
 
+const commonExtraInitials = [
+  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
+  {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
+  {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
+  {"name" : "tornado", "tornado" : "토네이도"},
+  {"name" : "homing", "homing" : "호밍기"},
+  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
+  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"}
+];
+
 Map<String, Widget> characterFunctionList = {
   "ALISA" : alisa.Main(moves: moves["alisa"], throws: throws["alisa"]),
   "ASUKA" : asuka.Main(moves: moves["asuka"], throws: throws["asuka"]),
@@ -178,7 +188,7 @@ Map<String, Widget> characterFunctionList = {
   "ZAFINA": zafina.Main(moves: moves["zafina"], throws: throws["zafina"],)
 };
 
-final characterList = [
+const characterList = [
   "ALISA",
   "ASUKA",
   "AZUCENA",
@@ -245,29 +255,8 @@ class GetContents { // 리스트 구성
           }
       );
       for (int i = 0; i < moveFiles.length; i++) {
-        if(i == 0 && language == "ko"){
-          await _loadList(moveFiles[i], character).then((value) =>
-          {
-            //디버그
-            if(character == "feng"){
-              debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
-            },
-            for(int k = 0; k < value[j].toString().split(", ").length; k++){
-              list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
-            },
-          });
-        }else if(i == 0 && language == "en"){
-          await _loadList(moveFiles[i] + "_en", character).then((value) =>
-          {
-            //디버그
-            // if(character == "zafina"){
-            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
-            // },
-            for(int k = 0; k < value[j].toString().split(", ").length; k++){
-              list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
-            },
-          });
-        }else{
+        late List temp;
+        if(language == "ko"){
           await _loadList(moveFiles[i], character).then((value) =>
           {
             //디버그
@@ -275,9 +264,46 @@ class GetContents { // 리스트 구성
             //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
             // },
             for(int k = 0; k < value[j].toString().split(", ").length; k++){
-              list[j]["contents"][k].add(value[j].toString().split(", ")[k]),
+              i==0? list[j]["contents"].add([(value[j].toString().split(", ")[k])]) : list[j]["contents"][k].add((value[j].toString().split(", ")[k])),
             },
           });
+        }else if(language == "en"){
+          if(i == 0 || i == 1){
+            await _loadList(moveFiles[i] + "_en", character).then((value) =>
+            {
+              //디버그
+              // if(character == "zafina"){
+              //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+              // },
+              for(int k = 0; k < value[j].toString().split(", ").length; k++){
+                if(i == 1){
+                  temp = value[j].toString().replaceAll("일어서며", "WS").replaceAll("횡이동 중", "SS").replaceAll("몸을 숙인 상태에서", "FC").replaceAll("상대에게 등을 보일 때", "BT")
+                      .replaceAll("상대가 쓰러져 있을 때", "OTG").replaceAll("홀드", "Hold").replaceAll("히트 혹은 가드 시", "Hit or Guard").replaceAll("히트 시", "Hit").replaceAll("가드 시", "Guard")
+                      .replaceAll("카운터 히트", "Counter Hit").replaceAll("히트 상태에서", "Heat").replaceAll("엎드려 쓰러져 있을 때", "FDFT").replaceAll("누워 쓰러져 있을 때", "FUFT")
+                      .split(", "),
+                  list[j]["contents"][k].add((temp[k])),
+                }else{
+                  list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
+                }
+              },
+            });
+          }else{
+            await _loadList(moveFiles[i], character).then((value) =>
+            {
+              //디버그
+              // if(character == "zafina"){
+              //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+              // },
+              for(int k = 0; k < value[j].toString().split(", ").length; k++){
+                if(i == 6){
+                  temp = value[j].toString().replaceAll("상단", "H").replaceAll("중단", "M").replaceAll("하단", "L").replaceAll("가불", "UB").split(", "),
+                  list[j]["contents"][k].add((temp[k])),
+                }else{
+                  list[j]["contents"][k].add((value[j].toString().split(", ")[k])),
+                }
+              },
+            });
+          }
         }
       }
     }
@@ -320,6 +346,13 @@ Future<void> main() async {
               contents[8] = contents[8].toString().replaceAll("$i ", sticks["c$i"].toString())
             },
             contents[8] = contents[8].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
+          }
+        },
+        for(var types in value){
+          for(var contents in types["contents"]){
+            for(int i = 0; i < commonExtraInitials.length; i++){
+              contents[8] = contents[8].toString().replaceAll(commonExtraInitials[i]["name"].toString(), commonExtraInitials[i][commonExtraInitials[i]["name"]].toString())
+            }
           }
         },
         for(var extraInitial in characterExtraInitials.entries){
@@ -375,7 +408,7 @@ final themeData = ThemeData(
     primarySwatch: Colors.pink
 );
 
-const double keyboardFontSize = 10;
+TextScaler keyboardFontSize = TextScaler.linear(0.85);
 
 String replaceNumbers(String text){
   String result = text;
@@ -483,12 +516,12 @@ class _SettingDialogState extends State<SettingDialog> {
                 })
               ],
             ),
-            // Row(
-            //   children: [
-            //     Icon(Icons.translate),
-            //     DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
-            //   ],
-            // ),
+            Row(
+              children: [
+                Icon(Icons.translate),
+                DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
+              ],
+            ),
             Text(language == "ko"? "설정은 재시작을 해야 전부 적용됩니다." : "All settings will take effect after a restart."),
           ],
         ),

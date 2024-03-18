@@ -36,13 +36,6 @@ final List rageArts = ["라 비 앙 로즈 포르티시시모", "레이지 상�
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
-  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
-  {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
-  {"name" : "tornado", "tornado" : "토네이도"},
-  {"name" : "homing", "homing" : "호밍기"},
-  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"},
 ];
 
 List<String> heatSystem = ["파워가 상승한 파이스티 래빗 사용 가능", "파워가 상승한 피어싱 톤 사용 가능"];
@@ -105,7 +98,7 @@ class _MainState extends State<Main> {
                 _searchController.text = _searchController.text + inputText;
                 _searchText = _searchController.text;
               });
-            }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+            }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
           ),
         ),
       );
@@ -121,7 +114,7 @@ class _MainState extends State<Main> {
                 _searchController.text = "";
                 _searchText = _searchController.text;
               });
-            }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+            }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
           ),
         ),
       );
@@ -137,7 +130,7 @@ class _MainState extends State<Main> {
               _searchController.text = _searchController.text + content;
               _searchText = _searchController.text;
             });
-          }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+          }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
         ),
       ),
     );
@@ -578,7 +571,7 @@ class _MoveListState extends State<MoveList> {
           } else {
             controller.open();
           }
-        }, child: Text(name,textAlign: TextAlign.center, style: headingStyle,)),
+        }, child: Text(name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale,)),
       );
     }
 
@@ -621,13 +614,9 @@ class _MoveListState extends State<MoveList> {
                             for(int i = 0; i < types.length; i++)...[
                               CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
                                 setState(() {
-                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                  }else{
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                  }
+                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = value;
                                 });
-                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
+                              }, closeOnActivate: false, child: Text(language == "ko"? typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]! : types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false))),
                             ],
                           ],
                           builder: (context, controller, child)=> TextButton(onPressed: () {
@@ -639,7 +628,7 @@ class _MoveListState extends State<MoveList> {
                           }, child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center),
+                              Text("기술명\n커맨드", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                               Icon(Icons.arrow_drop_down, color: Colors.black,),
                             ],
                           ),),
@@ -687,7 +676,7 @@ class _MoveListState extends State<MoveList> {
                         }, child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("판정", style: headingStyle, textAlign: TextAlign.center),
+                            Text("판정", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                           ],
                         ),),
                       ),),
@@ -704,7 +693,7 @@ class _MoveListState extends State<MoveList> {
                 controller: dataTableHorizonController,
                 child: DataTable(
                     headingRowHeight: 0,
-                    headingTextStyle: headingStyle,
+                    headingTextStyle: headerStyle,
                     dataRowMaxHeight: double.infinity,
                     dataRowMinHeight: 48,
                     border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
@@ -775,19 +764,19 @@ class _ThrowListState extends State<ThrowList>{
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
               child: Row(
                 children: [
-                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headingStyle)),
+                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                 ],
               ),
             ),

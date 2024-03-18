@@ -33,28 +33,29 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = [language == "ko"?"레디언트 페가수스 봄" : "Radiant Pegasus Bomb", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "혹은 레이지 상태에서 디스트럭티브 폼 도중 ${sticks["c3"]}AP\n레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"];
+final List rageArts = language == "ko"
+    ? ["레디언트 페가수스 봄", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "혹은 레이지 상태에서 디스트럭티브 폼 도중 ${sticks["c3"]}AP\n레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"]
+    : ["Radiant Pegasus Bomb", "Rage ${sticks["c3"]}AP", "20", "-15", "D", "D", "M", "55", "Rage & Destructive Form ${sticks["c3"]}AP\nRage Art\nRemoves recoverable health on hit\nCan hold"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,,
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
-  {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
-  {"name" : "tornado", "tornado" : "토네이도"},
-  {"name" : "homing", "homing" : "호밍기"},
-  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"}
+
+
 ];
 
-List<String> heatSystem = ["체인톱을 사용하는 공격의 가드 대미지 증가", "새로운 듀얼 부트 이행기 사용 가능"];
+List<String> heatSystem = language =="ko"
+    ?["체인톱을 사용하는 공격의 가드 대미지 증가", "새로운 듀얼 부트 이행기 사용 가능"]
+    : ["A new Dual Boot shift move can be used", "A power-up Destructive Form shift move can be use"];
+
 const character = "alisa"; //변경해야될것
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"destructive form" : true}, {"boot" : true}, {"dual boot" : true}, {"backup" : true}
+  {"Heat" : true}, {"General" : true}, {"Sit" : true}, {"Destructive Form" : true}, {"Boot" : true}, {"Dual Boot" : true}, {"Backup" : true}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "destructive form" : "디스트럭티브 폼", "boot" : "부트", "dual boot" : "듀얼 부트", "backup" : "백업"
+  "Heat" : "히트", "General" : "일반", "Sit" : "앉은 자세", "Destructive Form" : "디스트럭티브 폼", "Boot" : "부트", "Dual Boot" : "듀얼 부트", "Backup" : "백업"
 };
 
 
@@ -106,7 +107,7 @@ class _MainState extends State<Main> {
                 _searchController.text = _searchController.text + inputText;
                 _searchText = _searchController.text;
               });
-            }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+            }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
           ),
         ),
       );
@@ -122,7 +123,7 @@ class _MainState extends State<Main> {
                 _searchController.text = "";
                 _searchText = _searchController.text;
               });
-            }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+            }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
           ),
         ),
       );
@@ -138,7 +139,7 @@ class _MainState extends State<Main> {
               _searchController.text = _searchController.text + content;
               _searchText = _searchController.text;
             });
-          }, child: Text(content, style: const TextStyle(color: Colors.white, fontSize: keyboardFontSize),)),
+          }, child: Text(content, style: const TextStyle(color: Colors.white), textScaler: keyboardFontSize,)),
         ),
       ),
     );
@@ -578,7 +579,7 @@ class _MoveListState extends State<MoveList> {
           } else {
             controller.open();
           }
-        }, child: Text(name,textAlign: TextAlign.center, style: headingStyle,)),
+        }, child: Text(name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale,)),
       );
     }
 
@@ -621,13 +622,9 @@ class _MoveListState extends State<MoveList> {
                             for(int i = 0; i < types.length; i++)...[
                               CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
                                 setState(() {
-                                  if (types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] == true){
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = false;
-                                  }else{
-                                    types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = true;
-                                  }
+                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = value;
                                 });
-                              }, closeOnActivate: false, child: Text(typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]!)),
+                              }, closeOnActivate: false, child: Text(language == "ko"? typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]! : types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false))),
                             ],
                           ],
                           builder: (context, controller, child)=> TextButton(onPressed: () {
@@ -639,7 +636,7 @@ class _MoveListState extends State<MoveList> {
                           }, child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("기술명\n커맨드", style: headingStyle, textAlign: TextAlign.center),
+                              Text("기술명\n커맨드", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                               Icon(Icons.arrow_drop_down, color: Colors.black,),
                             ],
                           ),),
@@ -687,7 +684,7 @@ class _MoveListState extends State<MoveList> {
                         }, child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("판정", style: headingStyle, textAlign: TextAlign.center),
+                            Text("판정", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                           ],
                         ),),
                       ),),
@@ -704,7 +701,7 @@ class _MoveListState extends State<MoveList> {
                 controller: dataTableHorizonController,
                 child: DataTable(
                     headingRowHeight: 0,
-                    headingTextStyle: headingStyle,
+                    headingTextStyle: headerStyle,
                     dataRowMaxHeight: double.infinity,
                     dataRowMinHeight: 48,
                     border: TableBorder.symmetric(inside: const BorderSide(color: Colors.black)),
@@ -775,19 +772,19 @@ class _ThrowListState extends State<ThrowList>{
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
               child: Row(
                 children: [
-                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headingStyle)),
+                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                   line(),
-                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headingStyle)),
+                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headerStyle, textScaler: textScale)),
                 ],
               ),
             ),
