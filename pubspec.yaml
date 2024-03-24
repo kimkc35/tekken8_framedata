@@ -2,7 +2,7 @@ name: tekken8_framedata
 description: tk8 framedata.
 publish_to: 'none'
 
-version: 5.0.0+50
+version: 6.0.0+57
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -22,6 +22,8 @@ dependencies:
   linked_scroll_controller: ^0.2.0
   restart_app: ^1.2.1
   url_launcher: ^6.2.5
+  youtube_player_flutter: ^8.1.2
+  http: ^1.2.1
 
 dev_dependencies:
   change_app_package_name: ^1.1.0
@@ -32,8 +34,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter_launcher_icons:
-  android: "free"
-  image_path: "assets/icons/free.png"
+  android: "pro"
+  image_path: "assets/icons/pro.png"
 
 flutter:
   fonts:

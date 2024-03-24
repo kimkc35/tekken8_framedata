@@ -32,28 +32,26 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["Transcendent Blow", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["건곤회천황", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-
-
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "Jin Ji Du Li", "Jin Ji Du Li" : "Jin Ji Du Li(금계독립)"},
-  {"name" : "Fo Bu", "Fo Bu" : "Fo Bu(부보)"},
-  {"name" : "Jin Bu", "Jin Bu" : "Jin Bu(진보)"}
+  {"name" : "금계독립", "금계독립" : "금계독립(금계독립)"},
+  {"name" : "Fo Bu", "Fo Bu" : "부보"},
+  {"name" : "Jin Bu", "Jin Bu" : "진보"}
 ];
 
-List<String> heatSystem = ["Lightning Glare 보유 시의 기술 사용 가능"];
+List<String> heatSystem = ["섬전 보유 시의 기술 사용 가능"];
 
 const character = "leo"; //변경해야될것
 
 List types = [ //변경해야될것
-  {"heat" : true}, {"general" : true}, {"sit" : true}, {"jin bu" : true}, {"jin ji du li" : true}, {"fo bu" : true}
+  {"heat" : false}, {"general" : false}, {"sit" : false}, {"jin bu" : false}, {"금계독립" : false}, {"fo bu" : false}
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "jin bu" : "진보", "jin ji du li" : "금계독립", "fo bu" : "부보"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "jin bu" : "진보", "금계독립" : "금계독립", "fo bu" : "부보"
 };
 
 bool heatSystemMenu = true;
@@ -171,7 +169,7 @@ class _MainState extends State<Main> {
                   ),
                   actionsIconTheme: const IconThemeData(size: 40),
                   actions: [
-                    actionBuilder(context)
+                    actionBuilder(context, character, true)
                   ],
                   backgroundColor: Colors.black,
                   bottom: PreferredSize(
@@ -329,7 +327,7 @@ class _MainState extends State<Main> {
                   ),
                   actionsIconTheme: const IconThemeData(size: 40),
                   actions: [
-                    actionBuilder(context)
+                    actionBuilder(context, character, true)
                   ],
                   backgroundColor: Colors.black,
                   bottom: PreferredSize(
@@ -576,7 +574,7 @@ class _MoveListState extends State<MoveList> {
           } else {
             controller.open();
           }
-        }, child: Text(name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale,)),
+        }, child: Text(name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
       );
     }
 
@@ -586,7 +584,7 @@ class _MoveListState extends State<MoveList> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 110,
+            width: 111.5,
             child: TextButton(onPressed: (){
               setState(() {
                 if(heatSystemMenu == true){
@@ -595,7 +593,7 @@ class _MoveListState extends State<MoveList> {
                   heatSystemMenu = true;
                 }
               });
-            }, child: heatSystemMenu? Center(child: Row(children: [Text("히트 시스템"), Icon(Icons.arrow_drop_up)],)) : Row(children: [Text("히트 시스템"), Icon(Icons.arrow_drop_down)],)),
+            }, child: Row(children: [Text("히트 시스템"), Icon(heatSystemMenu? Icons.arrow_drop_up : Icons.arrow_drop_down)])),
           ),
           if(heatSystemMenu == true) // 히트 시스템 설명
             heatSystemContexts(heatSystem), //변경해야될것
@@ -718,7 +716,7 @@ class _MoveListState extends State<MoveList> {
                       if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
                         DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
                       for(int i = 0; i < types.length; i++)...[
-                        if(types[i][filtered[i]["type"]] == true)...[
+                        if(types[i][filtered[i]["type"]] == true || types.every((element) => element.containsValue(false)))...[
                           for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
                             if(listLength % 2 == 1)...[
                               DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8])), color: MaterialStateColor.resolveWith((states) =>
@@ -769,19 +767,19 @@ class _ThrowListState extends State<ThrowList>{
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
               child: Row(
                 children: [
-                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headerStyle)),
+                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headerStyle)),
+                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                 ],
               ),
             ),

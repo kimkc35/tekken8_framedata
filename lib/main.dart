@@ -5,40 +5,11 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:restart_app/restart_app.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'jin_moves.dart' as jin;
-import 'kazuya_moves.dart' as kazuya;
-import 'paul_moves.dart' as paul;
-import 'claudio_moves.dart' as claudio;
-import 'bryan_moves.dart' as bryan;
-import 'hwoarang_moves.dart' as hwoarang;
-import 'king_moves.dart' as king;
-import 'feng_moves.dart' as feng;
-import 'asuka_moves.dart' as asuka;
-import 'azucena_moves.dart' as azucena;
-import 'jack-8_moves.dart' as jack;
-import 'jun_moves.dart' as jun;
-import 'lars_moves.dart' as lars;
-import 'law_moves.dart' as law;
-import 'leroy_moves.dart' as leroy;
-import 'lili_moves.dart' as lili;
-import 'nina_moves.dart' as nina;
-import 'raven_moves.dart' as raven;
-import 'xiaoyu_moves.dart' as xiaoyu;
-import 'alisa_moves.dart' as alisa;
-import 'devil jin_moves.dart' as devjin;
-import 'dragunov_moves.dart' as dragunov;
-import 'lee_moves.dart' as lee;
-import 'leo_moves.dart' as leo;
-import 'kuma_moves.dart' as kuma;
-import 'steve_moves.dart' as steve;
-import 'panda_moves.dart' as panda;
-import 'reina_moves.dart' as reina;
-import 'shaheen_moves.dart' as shaheen;
-import 'victor_moves.dart' as victor;
-import 'yoshimitsu_moves.dart' as yoshimitsu;
-import 'zafina_moves.dart' as zafina;
+import 'character_variables.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-const bool isPro = false;
+const bool isPro = true;
 
 bool isFirst = true;
 
@@ -67,171 +38,15 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-final Map moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-
-final movesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final throwsEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-
-final types = {
-  "alisa": alisa.types,
-  "asuka": asuka.types,
-  "azucena": azucena.types,
-  "bryan": bryan.types,
-  "claudio": claudio.types,
-  "devil jin": devjin.types,
-  "dragunov": dragunov.types,
-  "feng": feng.types,
-  "hwoarang": hwoarang.types,
-  "jack-8": jack.types,
-  "jin": jin.types,
-  "jun": jun.types,
-  "kazuya": kazuya.types,
-  "king": king.types,
-  "kuma": kuma.types,
-  "lars": lars.types,
-  "law": law.types,
-  "lee": lee.types,
-  "leo": leo.types,
-  "leroy": leroy.types,
-  "lili": lili.types,
-  "nina": nina.types,
-  "panda": panda.types,
-  "paul": paul.types,
-  "raven": raven.types,
-  "reina": reina.types,
-  "shaheen": shaheen.types,
-  "steve": steve.types,
-  "victor": victor.types,
-  "xiaoyu": xiaoyu.types,
-  "yoshimitsu": yoshimitsu.types,
-  "zafina": zafina.types
-};
-
-final characterExtraInitials = {
-  "alisa": alisa.extraInitials,
-  "asuka": asuka.extraInitials,
-  "azucena": azucena.extraInitials,
-  "bryan": bryan.extraInitials,
-  "claudio": claudio.extraInitials,
-  "devil jin": devjin.extraInitials,
-  "dragunov": dragunov.extraInitials,
-  "feng": feng.extraInitials,
-  "hwoarang": hwoarang.extraInitials,
-  "jack-8": jack.extraInitials,
-  "jin": jin.extraInitials,
-  "jun": jun.extraInitials,
-  "kazuya": kazuya.extraInitials,
-  "king": king.extraInitials,
-  "kuma": kuma.extraInitials,
-  "lars": lars.extraInitials,
-  "law": law.extraInitials,
-  "lee": lee.extraInitials,
-  "leo": leo.extraInitials,
-  "leroy": leroy.extraInitials,
-  "lili": lili.extraInitials,
-  "nina": nina.extraInitials,
-  "panda": panda.extraInitials,
-  "paul": paul.extraInitials,
-  "raven": raven.extraInitials,
-  "reina": reina.extraInitials,
-  "shaheen": shaheen.extraInitials,
-  "steve": steve.extraInitials,
-  "victor": victor.extraInitials,
-  "xiaoyu": xiaoyu.extraInitials,
-  "yoshimitsu": yoshimitsu.extraInitials,
-  "zafina": zafina.extraInitials
-};
-
-const commonExtraInitials = [
-  {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
-  {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
-  {"name" : "powerCrash", "powerCrash" : "파워 크래시"},
-  {"name" : "tornado", "tornado" : "토네이도"},
-  {"name" : "homing", "homing" : "호밍기"},
-  {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
-  {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"}
+const List moveFiles = [
+  "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
 ];
 
-Map<String, Widget> characterFunctionList = {
-  "ALISA" : alisa.Main(moves: moves["alisa"], throws: throws["alisa"]),
-  "ASUKA" : asuka.Main(moves: moves["asuka"], throws: throws["asuka"]),
-  "AZUCENA" : azucena.Main(moves: moves["azucena"], throws: throws["azucena"]),
-  "BRYAN" : bryan.Main(moves: moves["bryan"], throws: throws["bryan"]),
-  "CLAUDIO" : claudio.Main(moves: moves["claudio"], throws: throws["claudio"]),
-  "DEVIL JIN" : devjin.Main(moves: moves["devil jin"], throws: throws["devil jin"]),
-  "DRAGUNOV" : dragunov.Main(moves: moves["dragunov"], throws: throws["dragunov"]),
-  "FENG" : feng.Main(moves: moves["feng"], throws: throws["feng"]),
-  "HWOARANG" : hwoarang.Main(moves: moves["hwoarang"], throws: throws["hwoarang"]),
-  "JACK-8" : jack.Main(moves: moves["jack-8"], throws: throws["jack-8"]),
-  "JIN" : jin.Main(moves: moves["jin"], throws: throws["jin"]),
-  "JUN" : jun.Main(moves: moves["jun"], throws: throws["jun"]),
-  "KAZUYA" : kazuya.Main(moves: moves["kazuya"], throws: throws["kazuya"]),
-  "KING" : king.Main(moves: moves["king"], throws: throws["king"]),
-  "KUMA" : kuma.Main(moves: moves["kuma"], throws: throws["kuma"]),
-  "LARS" : lars.Main(moves: moves["lars"], throws: throws["lars"]),
-  "LAW" : law.Main(moves: moves["law"], throws: throws["law"]),
-  "LEE" : lee.Main(moves: moves["lee"], throws: throws["lee"]),
-  "LEO" : leo.Main(moves: moves["leo"], throws: throws["leo"]),
-  "LEROY" : leroy.Main(moves: moves["leroy"], throws: throws["leroy"]),
-  "LILI" : lili.Main(moves: moves["lili"], throws: throws["lili"]),
-  "NINA" : nina.Main(moves: moves["nina"], throws: throws["nina"]),
-  "PANDA" : panda.Main(moves: moves["panda"], throws: throws["panda"]),
-  "PAUL" : paul.Main(moves: moves["paul"], throws: throws["paul"]),
-  "RAVEN" : raven.Main(moves: moves["raven"], throws: throws["raven"]),
-  "REINA" : reina.Main(moves: moves["reina"], throws: throws["reina"]),
-  "SHAHEEN" : shaheen.Main(moves: moves["shaheen"], throws: throws["shaheen"],),
-  "STEVE" : steve.Main(moves: moves["steve"], throws: throws["steve"]),
-  "VICTOR" : victor.Main(moves: moves["victor"], throws: throws["victor"]),
-  "XIAOYU" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"]),
-  "YOSHIMITSU": yoshimitsu.Main(moves: moves["yoshimitsu"], throws: throws["yoshimitsu"]),
-  "ZAFINA": zafina.Main(moves: moves["zafina"], throws: throws["zafina"],)
-};
-
-const characterList = [
-  "ALISA",
-  "ASUKA",
-  "AZUCENA",
-  "BRYAN",
-  "CLAUDIO",
-  "DEVIL JIN",
-  "DRAGUNOV",
-  "FENG",
-  "HWOARANG",
-  "JACK-8",
-  "JIN",
-  "JUN",
-  "KAZUYA",
-  "KING",
-  "KUMA",
-  "LARS",
-  "LAW",
-  "LEE",
-  "LEO",
-  "LEROY",
-  "LILI",
-  "NINA",
-  "PANDA",
-  "PAUL",
-  "RAVEN",
-  "REINA",
-  "SHAHEEN",
-  "STEVE",
-  "VICTOR",
-  "XIAOYU",
-  "YOSHIMITSU",
-  "ZAFINA"
+const List throwFiles = [
+  "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
 ];
 
 class GetContents { // 리스트 구성
-
-  List moveFiles = [
-    "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
-  ];
-
-  List throwFiles = [
-    "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
-  ];
 
   Future _loadFile(fileName, character) async {
     return await rootBundle.loadString("assets/$character/$fileName.txt");
@@ -322,23 +137,58 @@ class GetContents { // 리스트 구성
     }
     return throwList;
   }
+
+  Future<List> getVideoUrlList(String character) async {
+    String urlFile = await _loadFile("video_url", character);
+    List videoUrlList = urlFile.toString().split(", ");
+
+    return videoUrlList;
+  }
+
+  Future makeCharacterVideoUrlList(String character) async {
+    List urlList = await GetContents().getVideoUrlList(character.toLowerCase());
+    characterVideoUrlList[character.toLowerCase()] = {};
+    debugPrint("현재 상태 : $characterVideoUrlList");
+
+    // 비디오 제목을 가져오는 작업을 비동기로 처리하여 병렬로 실행
+    List<Future<void>> futures = urlList.map((url) async {
+      String embedUrl = "https://www.youtube.com/oembed?url=$url&format=json";
+      try {
+        final response = await http.get(Uri.parse(embedUrl));
+        final data = json.decode(response.body);
+        String currentTitle = data['title'] ?? "제목 오류";
+        if (currentTitle != "제목 오류") {
+          characterVideoUrlList[character.toLowerCase()]![currentTitle] = url;
+        } else {
+          debugPrint("$url에서 제목 오류");
+        }
+      } catch (e) {
+        debugPrint("$embedUrl 에서 비디오 제목 가져오기 실패: $e");
+      }
+    }).toList();
+
+    // 모든 비디오 제목 가져오기 작업이 완료될 때까지 기다림
+    await Future.wait(futures);
+  }
 }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+
+  isPro? null : MobileAds.instance.initialize();
 
   //초기화
   SharedPreferences prefs = await SharedPreferences.getInstance();
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
-  isFirst = prefs.getBool('isFirst') ?? true;
+  //한국어
+  // isFirst = prefs.getBool('isFirst') ?? true;
 
-  for (int i = 0; i < characterList.length; i++) {
+  for (String character in characterList) {
     // debugPrint("${i + 1}번째 : ${characterList[i].toLowerCase()} 하고 ${characterList[i].toLowerCase()}"); //디버그
     try{
-      await GetContents().getMoveList(types[characterList[i].toLowerCase()]!, characterList[i].toLowerCase()).then((value) => {
+      await GetContents().getMoveList(types[character.toLowerCase()]!, character.toLowerCase()).then((value) => {
         for(var types in value){
           for(var contents in types["contents"]){
             for(int i = 1; i <= sticks.length; i++){
@@ -364,10 +214,9 @@ Future<void> main() async {
             }
           }
         },
-        moves.addAll({characterList[i].toLowerCase() : value}),
+        moves.addAll({character.toLowerCase() : value}),
       });
-      await GetContents().getThrowList(characterList[i].toLowerCase()).then((
-          value) =>
+      await GetContents().getThrowList(character.toLowerCase()).then((value) =>
       {
         for(var contents in value){
           for(int i = 1; i <= sticks.length; i++){
@@ -377,10 +226,10 @@ Future<void> main() async {
           contents[1] = contents[1].toString().replaceAll("delete", ""),
           contents[7] = contents[7].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-").replaceAll("delete", "")
         },
-        throws.addAll({characterList[i].toLowerCase() : value})
+        throws.addAll({character.toLowerCase() : value})
       });
     }catch(e){
-      debugPrint("${characterList[i]}에서 오류 : $e");
+      debugPrint("$character에서 오류 : $e");
     }
   }
   GetContents()._loadFile("description", "internal").then((value) => description = value);
@@ -401,11 +250,12 @@ Future<void> main() async {
 String mainFont = "Tenada";
 
 final themeData = ThemeData(
-    buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
-    fontFamily: mainFont,
-    textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
-    useMaterial3: false,
-    primarySwatch: Colors.pink
+  buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
+  fontFamily: mainFont,
+  textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
+  useMaterial3: false,
+  primarySwatch: Colors.pink,
+  iconTheme: IconThemeData(size: 10)
 );
 
 TextScaler keyboardFontSize = TextScaler.linear(0.85);
@@ -428,14 +278,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Row actionBuilder(BuildContext context){
+Row actionBuilder(BuildContext context, String character, bool isMove){
   return Row(
     children: [
       GestureDetector(
         onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black, fontFamily: mainFont)), contentTextStyle: TextStyle(height: 1.5, fontSize: 15, color: Colors.black, fontFamily: mainFont),
           content: Text(description),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
+            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
           ],
         )),
         child: const Icon(Icons.abc),
@@ -444,31 +294,36 @@ Row actionBuilder(BuildContext context){
         onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.02.01 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
           content: SingleChildScrollView(child: Text(patchNote)),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
+            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
           ],
         )),
         child: const Icon(Icons.article),
       ),
+      if(isPro && isMove)...[
+        GestureDetector(
+          onTap: () {
+
+            TextEditingController controller = TextEditingController();
+
+            var currentBox = Hive.box(character);
+            if(currentBox.containsKey(character)){
+              controller.text = currentBox.get(character);
+            }
+
+            showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text(character.toUpperCase(), style: TextStyle(color: Colors.black), textScaler: TextScaler.linear(1.2),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, color: Colors.black,), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+              content: SingleChildScrollView(child: TextField(onChanged: (value) {
+                currentBox.put(character, value);
+              },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
+              actions: [
+                TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
+              ],
+            ));
+          },
+          child: Icon(Icons.edit_note),
+        )
+      ]
     ],
   );
-}
-
-memo (BuildContext context, String character, name) {
-  TextEditingController controller = TextEditingController();
-
-  var currentBox = Hive.box(character);
-  if(currentBox.containsKey(name)){
-    controller.text = currentBox.get(name);
-  }
-
-  showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("${character.toUpperCase()}, $name", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
-      content: SingleChildScrollView(child: TextField(onChanged: (value) {
-        currentBox.put(name, value);
-      },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
-      actions: [
-        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('닫기'))
-      ],
-    ));
 }
 
 bool changeFont = false;
@@ -516,12 +371,13 @@ class _SettingDialogState extends State<SettingDialog> {
                 })
               ],
             ),
-            Row(
-              children: [
-                Icon(Icons.translate),
-                DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
-              ],
-            ),
+            //한국어
+            // Row(
+            //   children: [
+            //     Icon(Icons.translate),
+            //     DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
+            //   ],
+            // ),
             Text(language == "ko"? "설정은 재시작을 해야 전부 적용됩니다." : "All settings will take effect after a restart."),
           ],
         ),
@@ -533,7 +389,6 @@ class _SettingDialogState extends State<SettingDialog> {
     );
   }
 }
-
 
 class Main extends StatefulWidget {
 
@@ -613,55 +468,14 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     if(isPro){
       return Scaffold(
-              appBar: AppBar(
-                elevation: 0.0,
-                leadingWidth: 120,
-                title: const Text("FRAMEDATA"),
-                centerTitle: true,
-                actionsIconTheme: const IconThemeData(size: 40),
-                actions: [
-                  actionBuilder(context),
-                  setting()
-                ],
-                backgroundColor: Colors.black,
-              ),
-              body: Container(
-                color: const Color(0xff333333),
-                width: double.infinity,
-                height: double.infinity,
-                child: Center(
-                  child: SizedBox(
-                    width: 400,
-                    height: 3000,
-                    child: ListView.builder(
-                        itemCount: 1,
-                        itemBuilder: (BuildContext ctx, int idx) {
-                          return Column(
-                            children: [
-                              for(int i = 0; i < characterList.length / 2; i++)...[
-                                CharacterButton(
-                                    character1: characterList[2 * i],
-                                    character2: characterList[2 * i + 1]
-                                )
-                              ]
-                            ],
-                          );
-                        }
-                    ),
-                  ),
-                ),
-              )
-          );
-    }
-    return Scaffold(
           appBar: AppBar(
             elevation: 0.0,
             leadingWidth: 120,
-            title: const Text("FRAMEDATA"),
+            title: Text("FRAMEDATA"),
             centerTitle: true,
             actionsIconTheme: const IconThemeData(size: 40),
             actions: [
-              actionBuilder(context),
+              actionBuilder(context, "", false),
               setting()
             ],
             backgroundColor: Colors.black,
@@ -677,28 +491,69 @@ class _MainState extends State<Main> {
                 child: ListView.builder(
                     itemCount: 1,
                     itemBuilder: (BuildContext ctx, int idx) {
-                    return Column(
-                      children: [
-                        for(int i = 0; i < characterList.length / 2; i++)...[
-                          CharacterButton(
-                              character1: characterList[2 * i],
-                              character2: characterList[2 * i + 1]
-                          )
-                        ]
-                      ],
-                    );
-                  }
+                      return Column(
+                        children: [
+                          for(int i = 0; i < characterList.length / 2; i++)...[
+                            CharacterButton(
+                                character1: characterList[2 * i],
+                                character2: characterList[2 * i + 1]
+                            )
+                          ]
+                        ],
+                      );
+                    }
                 ),
               ),
             ),
-          ),
-          bottomNavigationBar: Container(
-            color: Colors.black,
-            width: _banner.size.width.toDouble(),
-            height: _banner.size.height.toDouble(),
-            child: AdWidget(ad: _banner,),
           )
-        );
+      );
+    }
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        leadingWidth: 120,
+        title: Text("FRAMEDATA"),
+        centerTitle: true,
+        actionsIconTheme: const IconThemeData(size: 40),
+        actions: [
+          actionBuilder(context, "", false),
+          setting()
+        ],
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+        color: const Color(0xff333333),
+        width: double.infinity,
+        height: double.infinity,
+        child: Center(
+          child: SizedBox(
+            width: 400,
+            height: 3000,
+            child: ListView.builder(
+                itemCount: 1,
+                itemBuilder: (BuildContext ctx, int idx) {
+                return Column(
+                  children: [
+                    for(int i = 0; i < characterList.length / 2; i++)...[
+                      CharacterButton(
+                          character1: characterList[2 * i],
+                          character2: characterList[2 * i + 1]
+                      )
+                    ]
+                  ],
+                );
+              }
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        width: _banner.size.width.toDouble(),
+        height: _banner.size.height.toDouble(),
+        child: AdWidget(ad: _banner,),
+      )
+    );
   }
 }
 
@@ -726,7 +581,10 @@ class _CharacterButtonState extends State<CharacterButton> {
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
               if(characterFunctionList[widget.character1] != null) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character1]!));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  isPro? GetContents().makeCharacterVideoUrlList(widget.character1) : null;
+                  return characterFunctionList[widget.character1]!;
+                }));
               }else{
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
               }
@@ -747,7 +605,10 @@ class _CharacterButtonState extends State<CharacterButton> {
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
                 if(characterFunctionList[widget.character2] != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => characterFunctionList[widget.character2]!));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    isPro? GetContents().makeCharacterVideoUrlList(widget.character2) : null;
+                    return characterFunctionList[widget.character2]!;
+                  }));
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
                 }
