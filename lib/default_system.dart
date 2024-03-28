@@ -53,8 +53,7 @@ memo (BuildContext context, String character, String moveName) async {
       autoPlay: true,
       hideThumbnail: true,
       controlsVisibleAtStart: false,
-      disableDragSeek: true,
-      hideControls: true
+      disableDragSeek: true
     ),
   );
 

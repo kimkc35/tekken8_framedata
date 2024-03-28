@@ -164,7 +164,7 @@ class _MainState extends State<Main> {
                         )
                     ),
                   ),
-                  actionsIconTheme: const IconThemeData(size: 40),
+                  
                   actions: [
                     actionBuilder(context, character, true)
                   ],
@@ -322,7 +322,7 @@ class _MainState extends State<Main> {
                     )
                 ),
               ),
-              actionsIconTheme: const IconThemeData(size: 40),
+              
               actions: [
                 actionBuilder(context, character, true)
               ],

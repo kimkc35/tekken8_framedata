@@ -127,10 +127,12 @@ class GetContents { // 리스트 구성
 
   Future<List> getThrowList(String character, {bool isKo = true}) async {
     List<List<String>> throwList = [];
-    var valueList;
+    List valueList;
     for (int i = 0; i < throwFiles.length; i++){
       String fileContents = await _loadFile(throwFiles[i], character);
       valueList = fileContents.split(", ");
+      //디버깅
+      character == "king"?debugPrint("$character의 ${throwFiles[i]} 길이 : ${valueList.length}"):null;
       for (int j = 0; j < valueList.length; j++){
         throwList.length <= j? throwList.add([valueList[j]]) : throwList[j].add(valueList[j]);
       }
@@ -139,16 +141,44 @@ class GetContents { // 리스트 구성
   }
 
   Future<List> getVideoUrlList(String character) async {
-    String urlFile = await _loadFile("video_url", character);
-    List videoUrlList = urlFile.toString().split(", ");
 
-    return videoUrlList;
+    String docsUrl = "https://docs.google.com/document/d/1fnSCB7ijrcPDarWyLBMf2S19NHGjwiMxu-FF49mMLR8/edit?usp=sharing";
+
+    assert((){
+      docsUrl = "https://docs.google.com/document/d/1vHR19LZT8yKFPYpkfESVukUhxYlxO3ySdEpjzJsh5oo/edit?usp=sharing";
+      return true;
+    }());
+
+    final response = await http.get(Uri.parse(docsUrl));
+
+    RegExp regExp = RegExp(r'character:\\n(.*?)(end)'.replaceAll("character", character));
+
+    Match? match = regExp.firstMatch(response.body);
+
+    if(match != null){
+      RegExp linkRegExp = RegExp(r'https://youtu\.be/.*?\\n');
+      Iterable<Match> linkMatches = linkRegExp.allMatches(match.group(1)!);
+
+      List<String> videoUrlList = [];
+      for (Match linkMatch in linkMatches) {
+        videoUrlList.add(linkMatch.group(0)!.replaceAll("\\n", ""));
+      }
+
+      assert((){
+        debugPrint("$character리스트 : $videoUrlList");
+        return true;
+      }());
+
+      return videoUrlList;
+    }
+
+    debugPrint("$character에서 없음");
+    return [];
   }
 
   Future makeCharacterVideoUrlList(String character) async {
-    List urlList = await GetContents().getVideoUrlList(character.toLowerCase());
-    characterVideoUrlList[character.toLowerCase()] = {};
-    debugPrint("현재 상태 : $characterVideoUrlList");
+    List urlList = await GetContents().getVideoUrlList(character);
+    characterVideoUrlList[character] = {};
 
     // 비디오 제목을 가져오는 작업을 비동기로 처리하여 병렬로 실행
     List<Future<void>> futures = urlList.map((url) async {
@@ -158,17 +188,29 @@ class GetContents { // 리스트 구성
         final data = json.decode(response.body);
         String currentTitle = data['title'] ?? "제목 오류";
         if (currentTitle != "제목 오류") {
-          characterVideoUrlList[character.toLowerCase()]![currentTitle] = url;
+          characterVideoUrlList[character]![currentTitle] = url;
         } else {
           debugPrint("$url에서 제목 오류");
         }
       } catch (e) {
-        debugPrint("$embedUrl 에서 비디오 제목 가져오기 실패: $e");
+        debugPrint("$url 에서 비디오 제목 가져오기 실패: $e");
       }
     }).toList();
-
     // 모든 비디오 제목 가져오기 작업이 완료될 때까지 기다림
     await Future.wait(futures);
+    assert(() {
+      for(int i = 0; i < types[character]!.length; i++){
+        debugPrint("$character의 ${types[character]![i]} 에서 : ");
+        for(var move in moves[character]![i]!["contents"]){
+          String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
+          if(characterVideoUrlList[character]![modifiedMoveName] == null){
+            debugPrint("$modifiedMoveName영상이 없음");
+          }
+        }
+      }
+      debugPrint("$character끝.");
+      return true;
+    }());
   }
 }
 
@@ -186,9 +228,9 @@ Future<void> main() async {
   // isFirst = prefs.getBool('isFirst') ?? true;
 
   for (String character in characterList) {
-    // debugPrint("${i + 1}번째 : ${characterList[i].toLowerCase()} 하고 ${characterList[i].toLowerCase()}"); //디버그
+    // debugPrint("${i + 1}번째 : ${characterList[i]} 하고 ${characterList[i]}"); //디버그
     try{
-      await GetContents().getMoveList(types[character.toLowerCase()]!, character.toLowerCase()).then((value) => {
+      await GetContents().getMoveList(types[character]!, character).then((value) => {
         for(var types in value){
           for(var contents in types["contents"]){
             for(int i = 1; i <= sticks.length; i++){
@@ -214,9 +256,9 @@ Future<void> main() async {
             }
           }
         },
-        moves.addAll({character.toLowerCase() : value}),
+        moves.addAll({character : value}),
       });
-      await GetContents().getThrowList(character.toLowerCase()).then((value) =>
+      await GetContents().getThrowList(character).then((value) =>
       {
         for(var contents in value){
           for(int i = 1; i <= sticks.length; i++){
@@ -226,7 +268,7 @@ Future<void> main() async {
           contents[1] = contents[1].toString().replaceAll("delete", ""),
           contents[7] = contents[7].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-").replaceAll("delete", "")
         },
-        throws.addAll({character.toLowerCase() : value})
+        throws.addAll({character : value})
       });
     }catch(e){
       debugPrint("$character에서 오류 : $e");
@@ -255,7 +297,6 @@ final themeData = ThemeData(
   textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
   useMaterial3: false,
   primarySwatch: Colors.pink,
-  iconTheme: IconThemeData(size: 10)
 );
 
 TextScaler keyboardFontSize = TextScaler.linear(0.85);
@@ -279,6 +320,8 @@ class MyApp extends StatelessWidget {
 }
 
 Row actionBuilder(BuildContext context, String character, bool isMove){
+  const double buttonSize = 37;
+
   return Row(
     children: [
       GestureDetector(
@@ -288,7 +331,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
           ],
         )),
-        child: const Icon(Icons.abc),
+        child: const Icon(Icons.abc, size: buttonSize),
       ),
       GestureDetector(
         onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.02.01 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
@@ -297,9 +340,14 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
           ],
         )),
-        child: const Icon(Icons.article),
+        child: const Icon(Icons.article, size: buttonSize),
       ),
-      if(isPro && isMove)...[
+      if(!isMove)...[
+        GestureDetector(
+          onTap: () => showDialog<String>(context: context, barrierDismissible: false, builder: (context) => SettingDialog()),
+          child: const Icon(Icons.settings, size: buttonSize),
+        )
+      ]else if(isPro && isMove)...[
         GestureDetector(
           onTap: () {
 
@@ -319,7 +367,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
               ],
             ));
           },
-          child: Icon(Icons.edit_note),
+          child: Icon(Icons.edit_note, size: buttonSize),
         )
       ]
     ],
@@ -438,17 +486,6 @@ class _MainState extends State<Main> {
     }
   }
 
-  Widget setting() {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () => showDialog<String>(context: context, barrierDismissible: false, builder: (context) => SettingDialog()),
-          child: const Icon(Icons.settings),
-        )
-      ],
-    );
-  }
-
   void loadAd() {
     AdManagerInterstitialAd.load(
         adUnitId: 'ca-app-pub-3256415400287290/6923530178',
@@ -473,10 +510,9 @@ class _MainState extends State<Main> {
             leadingWidth: 120,
             title: Text("FRAMEDATA"),
             centerTitle: true,
-            actionsIconTheme: const IconThemeData(size: 40),
+
             actions: [
-              actionBuilder(context, "", false),
-              setting()
+              actionBuilder(context, "", false)
             ],
             backgroundColor: Colors.black,
           ),
@@ -514,10 +550,9 @@ class _MainState extends State<Main> {
         leadingWidth: 120,
         title: Text("FRAMEDATA"),
         centerTitle: true,
-        actionsIconTheme: const IconThemeData(size: 40),
+        
         actions: [
-          actionBuilder(context, "", false),
-          setting()
+          actionBuilder(context, "", false)
         ],
         backgroundColor: Colors.black,
       ),
@@ -592,7 +627,7 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character1, textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
+                Text(widget.character1.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
               ],
             )
           ),
@@ -616,7 +651,7 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character2, textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
+                Text(widget.character2.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
               ],
             )
           ),
