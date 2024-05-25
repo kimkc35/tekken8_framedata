@@ -2,7 +2,7 @@ name: tekken8_framedata
 description: tk8 framedata.
 publish_to: 'none'
 
-version: 7.0.0+73
+version: 7.0.0+78
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -34,8 +34,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter_launcher_icons:
-  android: "pro"
-  image_path: "assets/icons/pro.png"
+  android: "free"
+  image_path: "assets/icons/free.png"
 
 flutter:
   fonts:

@@ -32,12 +32,10 @@ final BannerAd _banner = BannerAd(
 //변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
 
 //레이지 아츠
-final List rageArts = ["셈퍼 어바러스 어젯", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
+final List rageArts = ["셈퍼 어바러스 어젯", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "혹은 레이지 상태에서 스케어크로 자세 도중 ${sticks["c3"]}AP\n레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
 
 //paul extra list
 List<Map<String, String>> extraInitials = [ //변경해야될것,
-
-
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}
 ];
 
@@ -141,169 +139,12 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-    if(isPro){
-      return PopScope(
-        onPopInvoked: (didPop) {
-          _searchText = "";
-          _searchController.text = "";
-        },
-        child: DefaultTabController(
-              length: 2,
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Text(character.toUpperCase()),
-                  centerTitle: true,
-                  leadingWidth: 80,
-                  leading: GestureDetector(
-                    onTap: (){
-                      Navigator.pop(context);
-                    },
-                    child: (
-                        const ButtonBar(
-                          children: [
-                            Text("FRAME\nDATA")
-                          ],
-                        )
-                    ),
-                  ),
-                  
-                  actions: [
-                    actionBuilder(context, character, true)
-                  ],
-                  backgroundColor: Colors.black,
-                  bottom: PreferredSize(
-                    preferredSize: const Size(0, 100),
-                    child: Column(
-                      children: [
-                        const TabBar(
-                          automaticIndicatorColorAdjustment: true,
-                          isScrollable: false,
-                          tabs: [
-                            Tab(text: "Move List"),
-                            Tab(text: "Throw")
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2.0), //검색기능
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: TextFormField(controller: _searchController, decoration: const InputDecoration(
-                                    labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
-                                ), style: const TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
-                                  setState((){
-                                    _searchText = _searchController.text;
-                                  });
-                                },),
-                              ),
-                              //키보드
-                              IconButton(onPressed: (){
-                                showModalBottomSheet<void>(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return Theme(
-                                      data: themeData,
-                                      child: Container(
-                                        height: 288,
-                                        color: Colors.black,
-                                        child: Center(
-                                            child: Column(
-                                              children: [
-                                                Row( //1번째 줄
-                                                  children: [
-                                                    keyboardButton("↖"),
-                                                    keyboardButton("↑"),
-                                                    keyboardButton("↗"),
-                                                    keyboardButton("LP"),
-                                                    keyboardButton("RP"),
-                                                    keyboardButton("AP"),
-                                                    keyboardButton("delete"),
-                                                  ],
-                                                ),
-                                                Row( //2번째 줄
-                                                  children: [
-                                                    keyboardButton("←"),
-                                                    keyboardButton("N"),
-                                                    keyboardButton("→"),
-                                                    keyboardButton("LK"),
-                                                    keyboardButton("RK"),
-                                                    keyboardButton("AK"),
-                                                    keyboardButton("토네\n이도", inputText: "토네이도"),
-                                                  ],
-                                                ),
-                                                Row( //3번째 줄
-                                                  children: [
-                                                    keyboardButton("↙"),
-                                                    keyboardButton("↓"),
-                                                    keyboardButton("↘"),
-                                                    keyboardButton("AL"),
-                                                    keyboardButton("AR"),
-                                                    keyboardButton("~"),
-                                                    keyboardButton("가댐", inputText: "가드 대미지"),
-                                                  ],
-                                                ),
-                                                Row( //4번째 줄
-                                                  children: [
-                                                    keyboardButton("상단"),
-                                                    keyboardButton("중단"),
-                                                    keyboardButton("하단"),
-                                                    keyboardButton("D"),
-                                                    keyboardButton("A"),
-                                                    keyboardButton("T"),
-                                                    keyboardButton("파크", inputText: "파워 크래시"),
-                                                  ],
-                                                ),
-                                                Row( //5번째 줄
-                                                  children: [
-                                                    keyboardButton("+"),
-                                                    keyboardButton("1"),
-                                                    keyboardButton("2"),
-                                                    keyboardButton("3"),
-                                                    keyboardButton("4"),
-                                                    keyboardButton("5"),
-                                                    keyboardButton("호밍기"),
-                                                  ],
-                                                ),
-                                                Row( //6번째 줄
-                                                  children: [
-                                                    keyboardButton("-"),
-                                                    keyboardButton("6"),
-                                                    keyboardButton("7"),
-                                                    keyboardButton("8"),
-                                                    keyboardButton("9"),
-                                                    keyboardButton("0"),
-                                                    keyboardButton("AC"),
-                                                  ],
-                                                ),
-                                              ],
-                                            )
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );}, icon: const Icon(Icons.keyboard_alt_outlined), color: Colors.white, iconSize: 30,)
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                body: TabBarView(
-                  children: [
-                    MoveList(moves: widget.moves),
-                    ThrowList(throws: widget.throws)
-                  ],
-                ),
-              ),
-            )
-      );
-    }
+
     return PopScope(
       onPopInvoked: (didPop) {
         _searchText = "";
         _searchController.text = "";
-        interstitialAd?.show();
+        isPro?null:interstitialAd?.show();
       },
       child: DefaultTabController(
             length: 2,
@@ -453,7 +294,7 @@ class _MainState extends State<Main> {
                     ThrowList(throws: widget.throws)
                   ],
                 ),
-                bottomNavigationBar: Container(
+                bottomNavigationBar: isPro?null:Container(
                   color: Colors.black,
                   width: _banner.size.width.toDouble(),
                   height: _banner.size.height.toDouble(),

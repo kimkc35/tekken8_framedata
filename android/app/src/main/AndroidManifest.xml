@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+<!--    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>-->
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="TK8 FRAMEDATA PRO"
+        android:label="TK8 FRAMEDATA"
         android:name="${applicationName}"
-        android:icon="@mipmap/pro">
+        android:icon="@mipmap/free">
         <activity
             android:name=".MainActivity"
             android:exported="true"
