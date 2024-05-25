@@ -282,7 +282,7 @@ Future<void> main() async {
     }
   }
   GetContents()._loadFile("description", "internal").then((value) => description = value);
-  GetContents()._loadFile("patch note", "internal").then((value) => patchNote = replaceNumbers(value));
+  GetContents()._loadFile("patch_note", "internal").then((value) => patchNote = replaceNumbers(value));
 
   if(isPro){
     await Hive.initFlutter();
