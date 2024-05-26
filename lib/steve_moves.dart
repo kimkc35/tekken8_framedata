@@ -51,7 +51,7 @@ List types = [ //변경해야될것
 ];
 
 Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "ducking left/right" : "더킹 레프트/라이트", "quick spin" : "퀵 스핀", "ducking/ducking in" : "더킹/더킹 인", "peekaboo" : "피커브", "swaying" : "스웨이", "flicker stance" : "플리커 자세", "lion heart" : "라이언 하트"
+  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "ducking left/right" : "더킹 레프트/라이트", "quick spin" : "퀵 스핀", "ducking/ducking in" : "더킹/더킹 인", "peekaboo" : "피커브", "swaying" : "스웨이", "flicker stance" : "플리커 자세", "lion heart" : "라이온 하트"
 };
 
 bool heatSystemMenu = true;

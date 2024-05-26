@@ -341,7 +341,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
         child: const Icon(Icons.abc, size: buttonSize),
       ),
       GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.03.01 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.04 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
           content: SingleChildScrollView(child: Text(patchNote)),
           actions: [
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
