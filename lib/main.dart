@@ -221,12 +221,10 @@ class GetContents { // 리스트 구성
   }
 }
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
+//초기화
+Future reset() async{
   isPro? null : MobileAds.instance.initialize();
 
-  //초기화
   SharedPreferences prefs = await SharedPreferences.getInstance();
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
@@ -290,6 +288,12 @@ Future<void> main() async {
       await Hive.openBox(characterList[i]);
     }
   }
+}
+
+main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  reset();
 
   runApp(
      MyApp()
@@ -313,6 +317,7 @@ String replaceNumbers(String text){
   for (int i = 0; i < sticks.length; i ++){
     result = result.replaceAll("${i + 1} ", "${sticks["c${i + 1}"]}");
   }
+  result = result.replaceAll("space", " ");
 
   return result;
 }

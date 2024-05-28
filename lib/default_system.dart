@@ -57,7 +57,7 @@ memo (BuildContext context, String character, String moveName) async {
     ),
   );
 
-  playYoutubePlayer(){
+  playYoutubePlayer() {
     return showDialog(context: context, builder: (BuildContext context) {
       if(youtubeController.initialVideoId != ""){
         return PopScope(
