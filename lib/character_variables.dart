@@ -30,14 +30,15 @@ import 'shaheen_moves.dart' as shaheen;
 import 'victor_moves.dart' as victor;
 import 'yoshimitsu_moves.dart' as yoshimitsu;
 import 'zafina_moves.dart' as zafina;
+import 'eddy_moves.dart' as eddy;
 
-final Map<String, Map<String, String>> characterVideoUrlList = {};
+Map<String, Map<String, String>> characterVideoUrlList = {};
 
-final moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
+moves = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : [], "eddy" : []};
+throws = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : [], "eddy": []};
 
-final movesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
-final throwsEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : []};
+movesEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : [], "eddy" : []};
+throwsEn = {"alisa" : [], "asuka" : [], "azucena" : [], "bryan" : [], "devil jin" : [], "dragunov" : [], "claudio" : [], "feng" : [], "hwoarang" : [], "jack-8" : [], "jin" : [], "jun" : [], "kazuya" : [], "king" : [], "kuma" : [], "lars" : [], "law" : [], "lee" : [], "leo" : [], "leroy" : [], "lili" : [], "nina" : [], "panda" : [], "paul" : [], "raven" : [], "reina" : [], "shaheen" : [], "steve" : [], "victor" : [], "xiaoyu" : [], "yoshimitsu" : [], "zafina" : [], "eddy" : []};
 
 final Map<String, List> types = {
   "alisa": alisa.types,
@@ -71,7 +72,8 @@ final Map<String, List> types = {
   "victor": victor.types,
   "xiaoyu": xiaoyu.types,
   "yoshimitsu": yoshimitsu.types,
-  "zafina": zafina.types
+  "zafina": zafina.types,
+  "eddy": eddy.types
 };
 
 final characterExtraInitials = {
@@ -106,7 +108,8 @@ final characterExtraInitials = {
   "victor": victor.extraInitials,
   "xiaoyu": xiaoyu.extraInitials,
   "yoshimitsu": yoshimitsu.extraInitials,
-  "zafina": zafina.extraInitials
+  "zafina": zafina.extraInitials,
+  "eddy": eddy.extraInitials
 };
 
 const commonExtraInitials = [
@@ -152,6 +155,7 @@ Map<String, dynamic> characterFunctionList = {
   "xiaoyu" : xiaoyu.Main(moves: moves["xiaoyu"], throws: throws["xiaoyu"]),
   "yoshimitsu" : yoshimitsu.Main(moves: moves["yoshimitsu"], throws: throws["yoshimitsu"]),
   "zafina" : zafina.Main(moves: moves["zafina"], throws: throws["zafina"]),
+  "eddy" : eddy.Main(moves: moves["eddy"], throws: throws["eddy"]),
 };
 
-const characterList = ["alisa", "asuka", "azucena", "bryan", "claudio", "devil jin", "dragunov", "feng", "hwoarang", "jack-8", "jin", "jun", "kazuya", "king", "kuma", "lars", "law", "lee", "leo", "leroy", "lili", "nina", "panda", "paul", "raven", "reina", "shaheen", "steve", "victor", "xiaoyu", "yoshimitsu", "zafina"];
+const characterList = ["alisa", "asuka", "azucena", "bryan", "claudio", "devil jin", "dragunov", "feng", "hwoarang", "jack-8", "jin", "jun", "kazuya", "king", "kuma", "lars", "law", "lee", "leo", "leroy", "lili", "nina", "panda", "paul", "raven", "reina", "shaheen", "steve", "victor", "xiaoyu", "yoshimitsu", "zafina", "eddy", ""];
