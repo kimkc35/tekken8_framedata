@@ -1,0 +1,1 @@
+AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP, 바나네이라 도중 AL or AR, 네가치바 도중 9 AP, 상대가 몸을 숙이고 있을 때 2 AL, 상대가 몸을 숙이고 있을 때 2 AR
