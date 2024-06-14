@@ -9,7 +9,7 @@ import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const bool isPro = true;
+const bool isPro = false;
 
 bool isFirst = true;
 
@@ -204,8 +204,15 @@ class GetContents { // 리스트 구성
         for(var move in moves[character]![i]!["contents"]){
           String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
           if(characterVideoUrlList[character]![modifiedMoveName] == null){
-            debugPrint("$modifiedMoveName영상이 없음");
+            debugPrint("$modifiedMoveName 영상이 없음");
           }
+        }
+      }
+      debugPrint("$character의 잡기 리스트 에서 : ");
+      for(var move in throws[character]!){
+        String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
+        if(characterVideoUrlList[character]![modifiedMoveName] == null){
+          debugPrint("$modifiedMoveName 영상이 없음");
         }
       }
       debugPrint("$character끝.");
@@ -275,7 +282,7 @@ Future<void> main() async {
     }
   }
   GetContents()._loadFile("description", "internal").then((value) => description = value);
-  GetContents()._loadFile("patch note", "internal").then((value) => patchNote = replaceNumbers(value));
+  GetContents()._loadFile("patch_note", "internal").then((value) => patchNote = replaceNumbers(value));
 
   if(isPro){
     await Hive.initFlutter();
@@ -334,7 +341,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
         child: const Icon(Icons.abc, size: buttonSize),
       ),
       GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.02.01 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.04 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
           content: SingleChildScrollView(child: Text(patchNote)),
           actions: [
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
