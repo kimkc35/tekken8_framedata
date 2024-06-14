@@ -622,7 +622,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
-              if(characterFunctionList[widget.character1] != null || widget.character1 != "EDDY") {
+              if(characterFunctionList[widget.character1] != null || widget.character1 != "eddy") {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   isPro? GetContents().makeCharacterVideoUrlList(widget.character1) : null;
                   return characterFunctionList[widget.character1]!;
@@ -646,7 +646,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
-                if(characterFunctionList[widget.character2] != null) {
+                if(characterFunctionList[widget.character2] != null || widget.character2 != "eddy") {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     isPro? GetContents().makeCharacterVideoUrlList(widget.character2) : null;
                     return characterFunctionList[widget.character2]!;
