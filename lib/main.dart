@@ -9,7 +9,7 @@ import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const bool isPro = false;
+const bool isPro = true;
 
 bool isFirst = true;
 
@@ -341,7 +341,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove){
         child: const Icon(Icons.abc, size: buttonSize),
       ),
       GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.04 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.05 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
           content: SingleChildScrollView(child: Text(patchNote)),
           actions: [
             TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
@@ -622,7 +622,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
-              if(characterFunctionList[widget.character1] != null) {
+              if(characterFunctionList[widget.character1] != null || widget.character1 != "EDDY") {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   isPro? GetContents().makeCharacterVideoUrlList(widget.character1) : null;
                   return characterFunctionList[widget.character1]!;
