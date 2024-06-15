@@ -9,7 +9,7 @@ import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const bool isPro = true;
+const bool isPro = false;
 
 bool isFirst = true;
 
