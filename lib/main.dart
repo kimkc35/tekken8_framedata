@@ -75,9 +75,9 @@ class GetContents { // 리스트 구성
           await _loadList(moveFiles[i], character).then((value) =>
           {
             //디버그
-            // if(character == "feng"){
-            //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
-            // },
+            if(character == "eddy"){
+              debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+            },
             for(int k = 0; k < value[j].toString().split(", ").length; k++){
               i==0? list[j]["contents"].add([(value[j].toString().split(", ")[k])]) : list[j]["contents"][k].add((value[j].toString().split(", ")[k])),
             },
@@ -242,7 +242,7 @@ Future<void> main() async {
           for(var contents in types["contents"]){
             for(int i = 1; i <= sticks.length; i++){
               contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
-              contents[8] = contents[8].toString().replaceAll("$i ", sticks["c$i"].toString())
+              contents[8] = contents[8].toString().replaceAll("$i ", sticks["c$i"].toString()).replaceAll("space", " ")
             },
             contents[8] = contents[8].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
           }
@@ -622,7 +622,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
-              if(characterFunctionList[widget.character1] != null && widget.character1 != "eddy") {
+              if(characterFunctionList[widget.character1] != null) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   isPro? GetContents().makeCharacterVideoUrlList(widget.character1) : null;
                   return characterFunctionList[widget.character1]!;
@@ -646,7 +646,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
-                if(characterFunctionList[widget.character2] != null && widget.character2 != "eddy") {
+                if(characterFunctionList[widget.character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     isPro? GetContents().makeCharacterVideoUrlList(widget.character2) : null;
                     return characterFunctionList[widget.character2]!;

@@ -80,5 +80,6 @@ flutter:
     - assets/victor/
     - assets/yoshimitsu/
     - assets/zafina/
+    - assets/eddy/
 
   uses-material-design: true

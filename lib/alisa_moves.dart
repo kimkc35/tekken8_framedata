@@ -565,10 +565,10 @@ class _MoveListState extends State<MoveList> {
                         if(types[i][filtered[i]["type"]] == true || types.every((element) => element.containsValue(false)))...[
                           for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r`\[.*?]`), "\r"))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), "\b"))), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r`\[.*?]`), "\r"))))
+                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), "\b"))))
                             ]
                           ],
                         ],
