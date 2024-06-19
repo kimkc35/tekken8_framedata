@@ -141,9 +141,9 @@ List<DataCell> createMove(BuildContext context, String character, name, command,
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(guard.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
-        guardPart1.contains("+") ? TextSpan(text: guardPart1, style: textStylePlus) : guardPart1.contains("-") ? TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleDefault),
+        guardPart1.contains("+") ? TextSpan(text: guardPart1, style: textStylePlus) : guardPart1.contains("-") ? int.parse(guardPart1) <= -10 ? TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleDefault),
         TextSpan(text: "\n(", style: textStyleDefault, ),
-        guardPart2.contains("+") ? TextSpan(text: guardPart2, style: textStylePlus) : guardPart2.contains("-") ? TextSpan(text: guardPart2, style: textStyleMinus) : TextSpan(text: guardPart2, style: textStyleDefault),
+        guardPart2.contains("+") ? TextSpan(text: guardPart2, style: textStylePlus) : (guardPart2.contains("-") && int.parse(guardPart2) <= -10) ? TextSpan(text: guardPart2, style: textStylePunish) : guardPart2.contains("-") ? TextSpan(text: guardPart2, style: textStyleMinus) : TextSpan(text: guardPart2, style: textStyleDefault),
         TextSpan(text: ")", style: textStyleDefault),
       ]), textScaler: textScale, textAlign: TextAlign.center)))
     ]else if(guard.contains("-") && guard != "-")...[
