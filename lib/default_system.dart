@@ -119,11 +119,12 @@ TextStyle textStyleDefault = TextStyle(fontWeight: FontWeight.w400, color: Color
 //무브 리스트 생성
 List<DataCell> createMove(BuildContext context, String character, name, command, start, guard, hit, counter, range, damage, extra){
   listLength++;
-  String guardPart1 = "", guardPart2 = "", hitPart1 = "", hitPart2 = "", counterPart1 = "", counterPart2 = "";
+  List<String> guardParts = [];
+  String guardPart1 = "", hitPart1 = "", hitPart2 = "", counterPart1 = "", counterPart2 = "";
 
   if(guard.contains("(")){
     guardPart1 = guard.toString().split("(")[0];
-    guardPart2 = guard.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "");
+    guardParts = guard.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "").split(",");
   }
 
   if(hit.contains("(")){
@@ -141,10 +142,13 @@ List<DataCell> createMove(BuildContext context, String character, name, command,
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(guard.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
-        guardPart1.contains("+") ? TextSpan(text: guardPart1, style: textStylePlus) : guardPart1.contains("-") ? int.parse(guardPart1) <= -10 ? TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleDefault),
+        guardPart1.contains("+") ? TextSpan(text: guardPart1, style: textStylePlus) : (guardPart1.contains("-") && isFloat(guardPart1) && int.parse(guardPart1) <= -10) ? TextSpan(text: guardPart1, style: textStylePunish) : guardPart1.contains("-") ? TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleDefault),
         TextSpan(text: "\n(", style: textStyleDefault, ),
-        guardPart2.contains("+") ? TextSpan(text: guardPart2, style: textStylePlus) : (guardPart2.contains("-") && int.parse(guardPart2) <= -10) ? TextSpan(text: guardPart2, style: textStylePunish) : guardPart2.contains("-") ? TextSpan(text: guardPart2, style: textStyleMinus) : TextSpan(text: guardPart2, style: textStyleDefault),
-        TextSpan(text: ")", style: textStyleDefault),
+        for(int i = 0; i < guardParts.length; i++)...[
+          guardParts[i].contains("+") ? TextSpan(text: guardParts[i], style: textStylePlus) : (guardParts[i].contains("-") && isFloat(guardParts[i]) && int.parse(guardParts[i]) <= -10) ? TextSpan(text: guardParts[i], style: textStylePunish) : guardParts[i].contains("-") ? TextSpan(text: guardParts[i], style: textStyleMinus) : TextSpan(text: guardParts[i], style: textStyleDefault),
+          i != guardParts.length - 1 ? TextSpan(text: ",", style: textStyleDefault) : TextSpan(text: "")
+        ],
+          TextSpan(text: ")", style: textStyleDefault),
       ]), textScaler: textScale, textAlign: TextAlign.center)))
     ]else if(guard.contains("-") && guard != "-")...[
       if(isFloat(guard) && int.parse(guard) <= -10)...[
