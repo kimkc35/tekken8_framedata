@@ -9,7 +9,7 @@ import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const bool isPro = false;
+const bool isPro = true;
 
 bool isFirst = true;
 
@@ -75,7 +75,7 @@ class GetContents { // 리스트 구성
           await _loadList(moveFiles[i], character).then((value) =>
           {
             //디버그
-            if(character == "eddy"){
+            if(character == "kuma"){
               debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
             },
             for(int k = 0; k < value[j].toString().split(", ").length; k++){
@@ -231,8 +231,7 @@ Future<void> main() async {
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
-  //한국어
-  // isFirst = prefs.getBool('isFirst') ?? true;
+  isFirst = prefs.getBool('isFirst') ?? true;
 
   for (String character in characterList) {
     // debugPrint("${i + 1}번째 : ${characterList[i]} 하고 ${characterList[i]}"); //디버그
