@@ -34,8 +34,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter_launcher_icons:
-  android: "pro"
-  image_path: "assets/icons/pro.png"
+  android: "free"
+  image_path: "assets/icons/free.png"
 
 flutter:
   fonts:
