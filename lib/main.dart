@@ -9,7 +9,7 @@ import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const bool isPro = false;
+const bool isPro = true;
 
 bool isFirst = true;
 
@@ -619,7 +619,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 60,
           child: ElevatedButton(
-            style: ButtonStyle(backgroundColor: WidgetStateColor.resolveWith((states) => Colors.black), ),
+            style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
               if(characterFunctionList[widget.character1] != null) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -643,7 +643,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 60,
           child: ElevatedButton(
-              style: ButtonStyle(backgroundColor: WidgetStateColor.resolveWith((states) => Colors.black), ),
+              style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
                 if(characterFunctionList[widget.character2] != null) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
