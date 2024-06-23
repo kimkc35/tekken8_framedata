@@ -77,7 +77,7 @@ class _MainState extends State<Main> {
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
                 _searchText = _searchController.text;
@@ -93,7 +93,7 @@ class _MainState extends State<Main> {
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = _searchController.text + inputText;
                 _searchText = _searchController.text;
@@ -109,7 +109,7 @@ class _MainState extends State<Main> {
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = "";
                 _searchText = _searchController.text;
@@ -125,7 +125,7 @@ class _MainState extends State<Main> {
         padding: const EdgeInsets.all(4.0),
         child: SizedBox(
           height: 40,
-          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+          child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
             setState(() {
               _searchController.text = _searchController.text + content;
               _searchText = _searchController.text;
@@ -422,7 +422,7 @@ class _MoveListState extends State<MoveList> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: 111.5,
             child: TextButton(onPressed: (){
               setState(() {
@@ -436,7 +436,7 @@ class _MoveListState extends State<MoveList> {
           ),
           if(heatSystemMenu == true) // 히트 시스템 설명
             heatSystemContexts(heatSystem), //변경해야될것
-          Container(
+          SizedBox(
             width: 848,
             child: StickyHeader(
               header: SingleChildScrollView(
@@ -448,7 +448,7 @@ class _MoveListState extends State<MoveList> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: 150 + 5,
                         child: MenuAnchor( // 커맨드 체크박스
                           alignmentOffset: const Offset(20, 0),
@@ -477,15 +477,15 @@ class _MoveListState extends State<MoveList> {
                         ),
                       ),
                       line(),
-                      Container(width: 30 + 10, child: headerMenuAnchor(40, _startFrameController, "발생")),
+                      SizedBox(width: 30 + 10, child: headerMenuAnchor(40, _startFrameController, "발생")),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _guardFrameController, "가드")),
+                      SizedBox(width: listWidth + 10, child: headerMenuAnchor(45, _guardFrameController, "가드")),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _hitFrameController, "히트")),
+                      SizedBox(width: listWidth + 10, child: headerMenuAnchor(45, _hitFrameController, "히트")),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _counterFrameController, "카운터")),
+                      SizedBox(width: listWidth + 10, child: headerMenuAnchor(45, _counterFrameController, "카운터")),
                       line(),
-                      Container(width: 30 + 10, child: MenuAnchor( // 커맨드 체크박스
+                      SizedBox(width: 30 + 10, child: MenuAnchor( // 커맨드 체크박스
                         alignmentOffset: const Offset(20, 0),
                         menuChildren: [
                           CheckboxMenuButton(value: _high, onChanged: (value){
@@ -523,9 +523,9 @@ class _MoveListState extends State<MoveList> {
                         ),),
                       ),),
                       line(),
-                      Container(width: 50 + 10, child: headerMenuAnchor(60, _damageController, "대미지")),
+                      SizedBox(width: 50 + 10, child: headerMenuAnchor(60, _damageController, "대미지")),
                       line(),
-                      Container(width: 412, child: headerMenuAnchor(412, _extraController, "비고")),
+                      SizedBox(width: 412, child: headerMenuAnchor(412, _extraController, "비고")),
                     ],
                   ),
                 ),
@@ -553,12 +553,12 @@ class _MoveListState extends State<MoveList> {
                     ],
                     rows: [
                       if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
+                        DataRow(color: WidgetStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
                       for(int i = 0; i < types.length; i++)...[
                         if(types[i][filtered[i]["type"]] == true || types.every((element) => element.containsValue(false)))...[
                           for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: WidgetStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
                               DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), ""))))
@@ -598,7 +598,7 @@ class _ThrowListState extends State<ThrowList>{
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: 600,
           child: StickyHeader(
             header: Container(
@@ -641,7 +641,7 @@ class _ThrowListState extends State<ThrowList>{
               rows: [
                 for(int i = 0; i < widget.throws.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: WidgetStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
                     DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
                   ]
