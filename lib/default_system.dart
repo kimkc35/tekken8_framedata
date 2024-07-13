@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'main.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'character_variables.dart';
 
 TextStyle contextStyle = TextStyle(fontWeight: FontWeight.w400, height: 1.5);
 
@@ -33,57 +32,57 @@ Container heatSystemContexts(List<String> addition){
 memo (BuildContext context, String character, String moveName) async {
   TextEditingController controller = TextEditingController();
 
-  String modifiedMoveName = moveName.replaceAll(RegExp(r'\d{1,2}$'), '');
+  // String modifiedMoveName = moveName.replaceAll(RegExp(r'\d{1,2}$'), '');
 
-  String getVideoId(){
-    try{
-      String url = characterVideoUrlList[character]![modifiedMoveName]!;
-      return YoutubePlayer.convertUrlToId(url)!;
-    }catch(e){
-      debugPrint("$modifiedMoveName에서 오류 : $e");
-      return "";
-    }
-  }
+  // String getVideoId(){
+  //   try{
+  //     String url = characterVideoUrlList[character]![modifiedMoveName]!;
+  //     return YoutubePlayer.convertUrlToId(url)!;
+  //   }catch(e){
+  //     debugPrint("$modifiedMoveName에서 오류 : $e");
+  //     return "";
+  //   }
+  // }
 
-  YoutubePlayerController youtubeController = YoutubePlayerController(
-    initialVideoId: getVideoId(),
-    flags: YoutubePlayerFlags(
-      forceHD: true,
-      loop: true,
-      autoPlay: true,
-      hideThumbnail: true,
-      controlsVisibleAtStart: false,
-      disableDragSeek: true
-    ),
-  );
+  // YoutubePlayerController youtubeController = YoutubePlayerController(
+  //   initialVideoId: getVideoId(),
+  //   flags: YoutubePlayerFlags(
+  //     forceHD: true,
+  //     loop: true,
+  //     autoPlay: true,
+  //     hideThumbnail: true,
+  //     controlsVisibleAtStart: false,
+  //     disableDragSeek: true
+  //   ),
+  // );
 
-  playYoutubePlayer(){
-    return showDialog(context: context, builder: (BuildContext context) {
-      if(youtubeController.initialVideoId != ""){
-        return PopScope(
-          onPopInvoked: (didPop) {
-            SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-          },
-          child: Dialog(
-            insetPadding: EdgeInsets.zero,
-            child: YoutubePlayer(
-              controller: youtubeController,
-              showVideoProgressIndicator: true,
-              progressIndicatorColor: Colors.red,
-              progressColors: const ProgressBarColors(
-                playedColor: Colors.redAccent,
-                handleColor: Colors.red,
-              ),
-            ),
-          ),
-        );
-      }
-      return AlertDialog(
-          insetPadding: EdgeInsets.zero,
-          content: Text("영상이 없습니다.")
-      );
-    });
-  }
+  // playYoutubePlayer(){
+  //   return showDialog(context: context, builder: (BuildContext context) {
+  //     if(youtubeController.initialVideoId != ""){
+  //       return PopScope(
+  //         onPopInvoked: (didPop) {
+  //           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  //         },
+  //         child: Dialog(
+  //           insetPadding: EdgeInsets.zero,
+  //           child: YoutubePlayer(
+  //             controller: youtubeController,
+  //             showVideoProgressIndicator: true,
+  //             progressIndicatorColor: Colors.red,
+  //             progressColors: const ProgressBarColors(
+  //               playedColor: Colors.redAccent,
+  //               handleColor: Colors.red,
+  //             ),
+  //           ),
+  //         ),
+  //       );
+  //     }
+  //     return AlertDialog(
+  //         insetPadding: EdgeInsets.zero,
+  //         content: Text("영상이 없습니다.")
+  //     );
+  //   });
+  // }
 
   var currentBox = Hive.box(character);
   if(currentBox.containsKey(moveName)){
@@ -96,9 +95,9 @@ memo (BuildContext context, String character, String moveName) async {
     },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
     actions: [
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          TextButton(onPressed: () => playYoutubePlayer(), child: Text('영상 재생')),
+          // TextButton(onPressed: () => playYoutubePlayer(), child: Text('영상 재생')),
           TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
         ],)
     ],

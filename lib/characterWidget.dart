@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'character_variables.dart';
 import 'default_system.dart';
 import 'main.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -29,44 +30,23 @@ final BannerAd _banner = BannerAd(
     )
 )..load();
 
-//변경해야될것 : 리스트, 캐릭터, 타입, 히트 시스템, 레이지아츠
-
-//레이지 아츠
-final List rageArts = ["라 비 앙 로즈 포르티시시모", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"];
-
-//paul extra list
-List<Map<String, String>> extraInitials = [ //변경해야될것,,
-];
-
-List<String> heatSystem = ["파워가 상승한 파이스티 래빗 사용 가능", "파워가 상승한 피어싱 톤 사용 가능"];
-const character = "lili"; //변경해야될것
-
-List types = [ //변경해야될것
-  {"heat" : false}, {"general" : false}, {"sit" : false}, {"dew glide" : false}, {"feisty rabbit" : false}
-];
-
-Map<String, String> typesKo = {
-  "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "dew glide" : "듀 글라이드", "feisty rabbit" : "파이스티 래빗"
-};
-
-
 bool heatSystemMenu = true;
 
 String _searchText = "";
 
 final TextEditingController _searchController = TextEditingController();
 
-class Main extends StatefulWidget {
+class CharacterPage extends StatefulWidget {
 
-  final moves, throws;
+  final Character character;
 
-  const Main({super.key, required this.moves, required this.throws});
+  CharacterPage({super.key, required this.character});
 
   @override
-  State<Main> createState() => _MainState();
+  State<CharacterPage> createState() => _CharacterPageState();
 }
 
-class _MainState extends State<Main> {
+class _CharacterPageState extends State<CharacterPage> {
 
   //키보드 버튼 제작 함수
   Widget keyboardButton(String content, {String inputText = ""}){
@@ -138,7 +118,6 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-
     return PopScope(
       onPopInvoked: (didPop) {
         _searchText = "";
@@ -149,7 +128,13 @@ class _MainState extends State<Main> {
             length: 2,
             child: Scaffold(
                 appBar: AppBar(
-                  title: Text(character.toUpperCase()),
+                  // title: Text(widget.character.name.toUpperCase()),
+                  title: TextButton(
+                    child: Text(widget.character.name.toUpperCase()),
+                    onPressed: () {
+                      showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveList.toString()),),),);
+                    },
+                  ),
                   centerTitle: true,
                   leadingWidth: 80,
                   leading: GestureDetector(
@@ -166,7 +151,7 @@ class _MainState extends State<Main> {
                   ),
                   
                   actions: [
-                    actionBuilder(context, character, true)
+                    actionBuilder(context, widget.character.name, true)
                   ],
                   backgroundColor: Colors.black,
                   bottom: PreferredSize(
@@ -289,8 +274,8 @@ class _MainState extends State<Main> {
                 ),
                 body: TabBarView(
                   children: [
-                    MoveList(moves: widget.moves),
-                    ThrowList(throws: widget.throws)
+                    MoveList(character: widget.character),
+                    ThrowList(character: widget.character)
                   ],
                 ),
                 bottomNavigationBar: isPro?null:Container(
@@ -307,16 +292,15 @@ class _MainState extends State<Main> {
 
 class MoveList extends StatefulWidget {
 
-  final List moves;
+  final Character character;
 
-  const MoveList({super.key, required this.moves});
+  MoveList({super.key, required this.character});
 
   @override
   State<MoveList> createState() => _MoveListState();
 }
 
-
-class _MoveListState extends State<MoveList> {
+class _MoveListState extends State<MoveList>{
 
   final TextEditingController _startFrameController = TextEditingController();
   final TextEditingController _guardFrameController = TextEditingController();
@@ -337,10 +321,11 @@ class _MoveListState extends State<MoveList> {
 
   void filter(){
     setState(() {
-      filtered = widget.moves.deepcopy();
-      for (int i = 0; i < types.length; i++) {
+      filtered = widget.character.moveList.deepcopy();
+      for (int i = 0; i < widget.character.types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(_searchText.toLowerCase())).toList();
       }
+
       _startFrameController.value.text.isNotEmpty? headerFilter(2, _startFrameController) : null;
       _guardFrameController.value.text.isNotEmpty? headerFilter(3, _guardFrameController) : null;
       _hitFrameController.value.text.isNotEmpty? headerFilter(4, _hitFrameController) : null;
@@ -353,7 +338,7 @@ class _MoveListState extends State<MoveList> {
 
   void headerFilter(int number, TextEditingController controller){
     setState(() {
-      for (int i = 0; i < types.length; i++) {
+      for (int i = 0; i < widget.character.types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) => item[number].toString().contains(controller.value.text)).toList();
       }
     });
@@ -361,7 +346,7 @@ class _MoveListState extends State<MoveList> {
 
   void rangeFilter(){
     setState(() {
-      for (int i = 0; i < types.length; i++) {
+      for (int i = 0; i < widget.character.types.length; i++) {
         filtered[i]["contents"] = filtered[i]["contents"].where((item) {
           if(_high && item[6].toString().contains("상단") || _middle && item[6].toString().contains("중단") || _low && item[6].toString().contains("하단") || _unblockable && item[6].toString().contains("가불")){
             return true;
@@ -378,7 +363,7 @@ class _MoveListState extends State<MoveList> {
   @override
   void initState() {
     super.initState();
-    filtered = widget.moves.deepcopy();
+    filtered = widget.character.moveList.deepcopy();
     headerHorizonController = horizonControllerGroup.addAndGet();
     dataTableHorizonController = horizonControllerGroup.addAndGet();
   }
@@ -427,16 +412,12 @@ class _MoveListState extends State<MoveList> {
             width: 111.5,
             child: TextButton(onPressed: (){
               setState(() {
-                if(heatSystemMenu == true){
-                  heatSystemMenu = false;
-                } else if (heatSystemMenu == false){
-                  heatSystemMenu = true;
-                }
+                heatSystemMenu == true? heatSystemMenu = false : heatSystemMenu = true;
               });
             }, child: Row(children: [Text("히트 시스템"), Icon(heatSystemMenu? Icons.arrow_drop_up : Icons.arrow_drop_down)])),
           ),
           if(heatSystemMenu == true) // 히트 시스템 설명
-            heatSystemContexts(heatSystem), //변경해야될것
+            heatSystemContexts(widget.character.heatSystem), //변경해야될것
           Container(
             width: 848,
             child: StickyHeader(
@@ -454,20 +435,16 @@ class _MoveListState extends State<MoveList> {
                         child: MenuAnchor( // 커맨드 체크박스
                           alignmentOffset: const Offset(20, 0),
                           menuChildren: [
-                            for(int i = 0; i < types.length; i++)...[
-                              CheckboxMenuButton(value: types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)], onChanged: (value) {
+                            for(MapEntry<String, bool> type in widget.character.types.entries)...[
+                              CheckboxMenuButton(value: widget.character.types[type.key], onChanged: (value) {
                                 setState(() {
-                                  types[i][types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false)] = value;
+                                  widget.character.types[type.key] = value!;
                                 });
-                              }, closeOnActivate: false, child: Text(language == "ko"? typesKo[types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false).toString()]! : types[i].keys.firstWhere((k) => types[i][k] == true || types[i][k] == false))),
+                              }, closeOnActivate: false, child: Text(language == "ko"? widget.character.typesKo[type.key]! : type.key)),
                             ],
                           ],
                           builder: (context, controller, child)=> TextButton(onPressed: () {
-                            if (controller.isOpen) {
-                              controller.close();
-                            } else {
-                              controller.open();
-                            }
+                            controller.isOpen? controller.close() : controller.open();
                           }, child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -553,16 +530,16 @@ class _MoveListState extends State<MoveList> {
                       const DataColumn(label: SizedBox(width: 412)),
                     ],
                     rows: [
-                      if(_searchText.isEmpty || rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, character, rageArts[0], rageArts[1], rageArts[2], rageArts[3], rageArts[4], rageArts[5], rageArts[6], rageArts[7], rageArts[8]))), //레이지 아츠
-                      for(int i = 0; i < types.length; i++)...[
-                        if(types[i][filtered[i]["type"]] == true || types.every((element) => element.containsValue(false)))...[
-                          for(int j = 0; j < filtered[i]["contents"].length; j ++)...[
+                      if(_searchText.isEmpty || widget.character.rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
+                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character.name, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8]))), //레이지 아츠
+                      for(String type in widget.character.types.keys)...[
+                        if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
+                          for(List data in filtered.firstWhere((element) => element["type"] == type)["contents"])...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character.name, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, character, filtered[i]["contents"][j][0], filtered[i]["contents"][j][1], filtered[i]["contents"][j][2], filtered[i]["contents"][j][3], filtered[i]["contents"][j][4], filtered[i]["contents"][j][5], filtered[i]["contents"][j][6], filtered[i]["contents"][j][7], filtered[i]["contents"][j][8].replaceAll(RegExp(r'\[.*?\]'), ""))))
+                              DataRow(cells : (createMove(context, widget.character.name, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))))
                             ]
                           ],
                         ],
@@ -580,9 +557,9 @@ class _MoveListState extends State<MoveList> {
 
 class ThrowList extends StatefulWidget {
 
-  final throws;
+  final Character character;
 
-  const ThrowList({super.key, required this.throws});
+  const ThrowList({super.key, required this.character});
 
   @override
   State<ThrowList> createState() => _ThrowListState();
@@ -640,11 +617,11 @@ class _ThrowListState extends State<ThrowList>{
                 const DataColumn(label: SizedBox(width: 210)),
               ],
               rows: [
-                for(int i = 0; i < widget.throws.length; i++)...[
+                for(int i = 0; i < widget.character.throwList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character.name, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
-                    DataRow(cells: createThrow(context, character, widget.throws[i][0], widget.throws[i][1], widget.throws[i][2], widget.throws[i][3], widget.throws[i][4], widget.throws[i][5], widget.throws[i][6], widget.throws[i][7]))
+                    DataRow(cells: createThrow(context, widget.character.name, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]))
                   ]
                 ]
               ],
