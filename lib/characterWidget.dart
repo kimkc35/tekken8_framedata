@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'character_variables.dart';
 import 'default_system.dart';
@@ -118,19 +119,25 @@ class _CharacterPageState extends State<CharacterPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Future<Map<String, String>> videoList = GetContents(widget.character).makeCharacterVideoUrlList();
+
     return PopScope(
       onPopInvoked: (didPop) {
         _searchText = "";
         _searchController.text = "";
-        isPro?null:interstitialAd?.show();
+        if(!isPro) interstitialAd?.show();
       },
-      child: DefaultTabController(
+      child: FutureBuilder(
+        future: videoList,
+        builder: (context, snapshot) {
+          return DefaultTabController(
             length: 2,
             child: Scaffold(
                 appBar: AppBar(
                   // title: Text(widget.character.name.toUpperCase()),
-                  title: TextButton(
-                    child: Text(widget.character.name.toUpperCase()),
+                  title:!kDebugMode? Text(widget.character.name.toUpperCase()) : TextButton(
+                    child:  Text(widget.character.name.toUpperCase()),
                     onPressed: () {
                       showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveList.toString()),),),);
                     },
@@ -149,7 +156,7 @@ class _CharacterPageState extends State<CharacterPage> {
                         )
                     ),
                   ),
-                  
+
                   actions: [
                     actionBuilder(context, widget.character.name, true)
                   ],
@@ -274,8 +281,8 @@ class _CharacterPageState extends State<CharacterPage> {
                 ),
                 body: TabBarView(
                   children: [
-                    MoveList(character: widget.character),
-                    ThrowList(character: widget.character)
+                    MoveList(character: widget.character, snapshot: snapshot),
+                    ThrowList(character: widget.character, snapshot: snapshot,)
                   ],
                 ),
                 bottomNavigationBar: isPro?null:Container(
@@ -285,7 +292,9 @@ class _CharacterPageState extends State<CharacterPage> {
                   child: AdWidget(ad: _banner,),
                 )
             ),
-          )
+          );
+        },
+      )
     );
   }
 }
@@ -293,8 +302,9 @@ class _CharacterPageState extends State<CharacterPage> {
 class MoveList extends StatefulWidget {
 
   final Character character;
+  final AsyncSnapshot<Map<String, String>> snapshot;
 
-  MoveList({super.key, required this.character});
+  MoveList({super.key, required this.character, required this.snapshot});
 
   @override
   State<MoveList> createState() => _MoveListState();
@@ -531,15 +541,15 @@ class _MoveListState extends State<MoveList>{
                     ],
                     rows: [
                       if(_searchText.isEmpty || widget.character.rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character.name, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8]))), //레이지 아츠
+                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8], widget.snapshot))), //레이지 아츠
                       for(String type in widget.character.types.keys)...[
                         if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
                           for(List data in filtered.firstWhere((element) => element["type"] == type)["contents"])...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, widget.character.name, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""), widget.snapshot)), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, widget.character.name, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))))
+                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""), widget.snapshot)))
                             ]
                           ],
                         ],
@@ -558,8 +568,9 @@ class _MoveListState extends State<MoveList>{
 class ThrowList extends StatefulWidget {
 
   final Character character;
+  final AsyncSnapshot<Map<String, String>> snapshot;
 
-  const ThrowList({super.key, required this.character});
+  const ThrowList({super.key, required this.character, required this.snapshot});
 
   @override
   State<ThrowList> createState() => _ThrowListState();
@@ -619,9 +630,9 @@ class _ThrowListState extends State<ThrowList>{
               rows: [
                 for(int i = 0; i < widget.character.throwList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, widget.character.name, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7], widget.snapshot), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
-                    DataRow(cells: createThrow(context, widget.character.name, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7], widget.snapshot))
                   ]
                 ]
               ],

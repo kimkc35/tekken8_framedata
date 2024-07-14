@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 import 'main.dart';
 import 'package:string_validator/string_validator.dart';
-// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'character_variables.dart';
 
 TextStyle contextStyle = TextStyle(fontWeight: FontWeight.w400, height: 1.5);
 
@@ -29,67 +31,63 @@ Container heatSystemContexts(List<String> addition){
   );
 }
 
-memo (BuildContext context, String character, String moveName) async {
+memo (BuildContext context, Character character, String moveName, AsyncSnapshot<Map<String, String>> snapshot) {
   TextEditingController controller = TextEditingController();
 
-  // String modifiedMoveName = moveName.replaceAll(RegExp(r'\d{1,2}$'), '');
+  String modifiedMoveName = moveName.replaceAll(RegExp(r'\d{1,2}$'), '');
 
-  // String getVideoId(){
-  //   try{
-  //     String url = characterVideoUrlList[character]![modifiedMoveName]!;
-  //     return YoutubePlayer.convertUrlToId(url)!;
-  //   }catch(e){
-  //     debugPrint("$modifiedMoveName에서 오류 : $e");
-  //     return "";
-  //   }
-  // }
+  String getVideoId(){
+    try{
+      String url = character.videoList[modifiedMoveName]!;
+      return YoutubePlayer.convertUrlToId(url)!;
+    }catch(e){
+      debugPrint("$modifiedMoveName에서 오류 : $e");
+      return "";
+    }
+  }
 
-  // YoutubePlayerController youtubeController = YoutubePlayerController(
-  //   initialVideoId: getVideoId(),
-  //   flags: YoutubePlayerFlags(
-  //     forceHD: true,
-  //     loop: true,
-  //     autoPlay: true,
-  //     hideThumbnail: true,
-  //     controlsVisibleAtStart: false,
-  //     disableDragSeek: true
-  //   ),
-  // );
+  YoutubePlayerController youtubeController = YoutubePlayerController(
+    initialVideoId: getVideoId(),
+    flags: YoutubePlayerFlags(
+      forceHD: true,
+      loop: true,
+      autoPlay: true,
+      hideThumbnail: true,
+      controlsVisibleAtStart: false,
+      disableDragSeek: true
+    ),
+  );
 
-  // playYoutubePlayer(){
-  //   return showDialog(context: context, builder: (BuildContext context) {
-  //     if(youtubeController.initialVideoId != ""){
-  //       return PopScope(
-  //         onPopInvoked: (didPop) {
-  //           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  //         },
-  //         child: Dialog(
-  //           insetPadding: EdgeInsets.zero,
-  //           child: YoutubePlayer(
-  //             controller: youtubeController,
-  //             showVideoProgressIndicator: true,
-  //             progressIndicatorColor: Colors.red,
-  //             progressColors: const ProgressBarColors(
-  //               playedColor: Colors.redAccent,
-  //               handleColor: Colors.red,
-  //             ),
-  //           ),
-  //         ),
-  //       );
-  //     }
-  //     return AlertDialog(
-  //         insetPadding: EdgeInsets.zero,
-  //         content: Text("영상이 없습니다.")
-  //     );
-  //   });
-  // }
+  playYoutubePlayer(){
+    return showDialog(context: context, builder: (BuildContext context) {
+      return PopScope(
+        onPopInvoked: (didPop) {
+          SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+        },
+        child: character.videoList[modifiedMoveName] == null
+            ? AlertDialog(content: Text("영상이 없습니다."),) :
+        Dialog(
+          insetPadding: EdgeInsets.zero,
+          child: YoutubePlayer(
+            controller: youtubeController,
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.red,
+            progressColors: const ProgressBarColors(
+              playedColor: Colors.redAccent,
+              handleColor: Colors.red,
+            ),
+          ),
+        )
+      );
+    });
+  }
 
-  var currentBox = Hive.box(character);
+  var currentBox = Hive.box(character.name);
   if(currentBox.containsKey(moveName)){
     controller.text = currentBox.get(moveName);
   }
 
-  showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("${character.toUpperCase()}, $moveName", style: TextStyle(color: Colors.black), textScaler: TextScaler.linear(1.2),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, color: Colors.black,), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+  showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("${character.name.toUpperCase()}, $moveName", style: TextStyle(color: Colors.black), textScaler: TextScaler.linear(1.2),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, color: Colors.black,), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
     content: SingleChildScrollView(child: TextField(onChanged: (value) {
       currentBox.put(moveName, value);
     },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
@@ -97,9 +95,12 @@ memo (BuildContext context, String character, String moveName) async {
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          // TextButton(onPressed: () => playYoutubePlayer(), child: Text('영상 재생')),
+            snapshot.hasData? TextButton(
+                  onPressed: () => playYoutubePlayer(),
+                  child: Text('영상 재생')):
+             Text("영상 로딩중"),
           TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-        ],)
+      ],)
     ],
   ));
 }
@@ -116,7 +117,7 @@ TextStyle textStyleDefault = TextStyle(fontWeight: FontWeight.w400, color: Color
     textStylePunish = TextStyle(fontWeight: FontWeight.w400, color: Colors.red, fontFamily: mainFont);
 
 //무브 리스트 생성
-List<DataCell> createMove(BuildContext context, String character, name, command, start, guard, hit, counter, range, damage, extra){
+List<DataCell> createMove(BuildContext context, Character character, name, command, start, guard, hit, counter, range, damage, extra, snapshot){
   listLength++;
   List<String> guardParts = [];
   String guardPart1 = "", hitPart1 = "", hitPart2 = "", counterPart1 = "", counterPart2 = "";
@@ -137,7 +138,7 @@ List<DataCell> createMove(BuildContext context, String character, name, command,
   }
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name, snapshot);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(guard.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
@@ -205,9 +206,9 @@ List<DataCell> createMove(BuildContext context, String character, name, command,
   ];
 }
 
-List<DataCell> createThrow(BuildContext context, String character, name, command, start, breakThrow, frameAfterBreak, damage, range, extra){
+List<DataCell> createThrow(BuildContext context, Character character, name, command, start, breakThrow, frameAfterBreak, damage, range, extra, snapshot){
   return [
-    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name, snapshot);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     DataCell(SizedBox(width: 40, child: Text(breakThrow, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
     if(frameAfterBreak.contains("+") && frameAfterBreak.contains("-") && frameAfterBreak != "-")...[ //풀기 후 F

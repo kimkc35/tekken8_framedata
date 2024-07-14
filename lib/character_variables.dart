@@ -1,7 +1,5 @@
 import 'main.dart';
 
-Map<String, Map<String, String>> characterVideoUrlList = {};
-
 const commonExtraInitials = [
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
   {"name" : "guardDamage", "guardDamage" : "가드 대미지"},
@@ -21,6 +19,7 @@ class Character{
   Map<String, String> typesKo;
   late List<Map<String, dynamic>> moveList;
   late List<List<String>> throwList;
+  Map<String, String> videoList = {};
 
   Character({
     required this.name,
@@ -399,9 +398,9 @@ Character victor = Character(
   extraInitials: [],
   heatSystem: ["파워가 상승한 파보", "백양염제파, 백련염제파 사용 가능"],
   rageArts: ["쿠 드 슈발리에", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
-  types: {"heat" : false, "general" : false, "back" : false, "sit" : false, "hypnotist" : false, "phoenix" : false},
+  types: {"heat" : false, "general" : false, "sit" : false, "iai Stance" : false, "perfumer" : false},
   typesKo: {
-    "heat" : "히트", "general" : "일반", "back" : "뒤자세", "sit" : "앉은 자세", "hypnotist" : "파보", "phoenix" : "봉황"
+    "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "iai Stance" : "이아이 스탠스", "perfumer" : "퍼퓨머"
   },
 );
 

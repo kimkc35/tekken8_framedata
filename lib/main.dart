@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -10,7 +11,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'characterWidget.dart';
 
-const bool isPro = true;
+const bool isPro = false;
 
 bool isFirst = true;
 
@@ -155,7 +156,7 @@ class GetContents { // 리스트 구성
       String fileContents = await _loadCharcterFile(throwFiles[i]);
       valueList = fileContents.split(", ");
       //디버깅
-      character.name == "king"?debugPrint("$character의 ${throwFiles[i]} 길이 : ${valueList.length}"):null;
+      // character.name == "king"?debugPrint("$character의 ${throwFiles[i]} 길이 : ${valueList.length}"):null;
       for (int j = 0; j < valueList.length; j++){
         throwList.length <= j? throwList.add([valueList[j]]) : throwList[j].add(valueList[j]);
       }
@@ -165,12 +166,7 @@ class GetContents { // 리스트 구성
 
     Future<List> getVideoUrlList() async {
 
-    String docsUrl = "https://docs.google.com/document/d/1fnSCB7ijrcPDarWyLBMf2S19NHGjwiMxu-FF49mMLR8/edit?usp=sharing";
-
-    assert((){
-      docsUrl = "https://docs.google.com/document/d/1vHR19LZT8yKFPYpkfESVukUhxYlxO3ySdEpjzJsh5oo/edit?usp=sharing";
-      return true;
-    }());
+    String docsUrl = kDebugMode? "https://docs.google.com/document/d/1vHR19LZT8yKFPYpkfESVukUhxYlxO3ySdEpjzJsh5oo/edit?usp=sharing" : "https://docs.google.com/document/d/1fnSCB7ijrcPDarWyLBMf2S19NHGjwiMxu-FF49mMLR8/edit?usp=sharing";
 
     final response = await http.get(Uri.parse(docsUrl));
 
@@ -187,10 +183,7 @@ class GetContents { // 리스트 구성
         videoUrlList.add(linkMatch.group(0)!.replaceAll("\\n", ""));
       }
 
-      assert((){
-        debugPrint("${character.name}리스트 : $videoUrlList");
-        return true;
-      }());
+      if(kDebugMode) debugPrint("${character.name}리스트 : $videoUrlList");
 
       return videoUrlList;
     }
@@ -199,9 +192,9 @@ class GetContents { // 리스트 구성
     return [];
   }
 
-  Future makeCharacterVideoUrlList() async {
+  Future<Map<String, String>> makeCharacterVideoUrlList() async {
     List urlList = await GetContents(character).getVideoUrlList();
-    characterVideoUrlList[character.name] = {};
+    Map<String, String> videoList = {};
 
     // 비디오 제목을 가져오는 작업을 비동기로 처리하여 병렬로 실행
     List<Future<void>> futures = urlList.map((url) async {
@@ -211,7 +204,7 @@ class GetContents { // 리스트 구성
         final data = json.decode(response.body);
         String currentTitle = data['title'] ?? "제목 오류";
         if (currentTitle != "제목 오류") {
-          characterVideoUrlList[character.name]![currentTitle] = url;
+          videoList[currentTitle] = url;
         } else {
           debugPrint("$url에서 제목 오류");
         }
@@ -222,25 +215,27 @@ class GetContents { // 리스트 구성
     // 모든 비디오 제목 가져오기 작업이 완료될 때까지 기다림
     await Future.wait(futures);
     assert(() {
-      for(int i = 0; i < character.types.length; i++){
-        debugPrint("${character.name}의 ${character.types[i]} 에서 : ");
-        for(var move in character.moveList[i]["contents"]){
+      for(var type in character.types.keys){
+        debugPrint("${character.name}의 $type에서 : ");
+        for(var move in character.moveList.firstWhere((element) => element["type"] == type)["contents"]){
           String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-          if(characterVideoUrlList[character.name]![modifiedMoveName] == null){
+          if(videoList[modifiedMoveName] == null){
             debugPrint("$modifiedMoveName 영상이 없음");
           }
         }
       }
-      debugPrint("$character의 잡기 리스트 에서 : ");
+      debugPrint("${character.name}의 잡기 리스트 에서 : ");
       for(var move in character.throwList){
         String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-        if(characterVideoUrlList[character]![modifiedMoveName] == null){
+        if(videoList[modifiedMoveName] == null){
           debugPrint("$modifiedMoveName 영상이 없음");
         }
       }
-      debugPrint("$character끝.");
+      debugPrint("${character.name}끝.");
       return true;
     }());
+    character.videoList = videoList;
+    return videoList;
   }
 }
 
