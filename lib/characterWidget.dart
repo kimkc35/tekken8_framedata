@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'actionBuilderWidget.dart';
 import 'character_variables.dart';
 import 'default_system.dart';
 import 'main.dart';
@@ -48,7 +49,7 @@ class CharacterPage extends StatefulWidget {
 }
 
 class _CharacterPageState extends State<CharacterPage> {
-
+  TextScaler keyboardFontSize = TextScaler.linear(0.85);
   //키보드 버튼 제작 함수
   Widget keyboardButton(String content, {String inputText = ""}){
     if(content == "delete"){
@@ -119,192 +120,187 @@ class _CharacterPageState extends State<CharacterPage> {
 
   @override
   Widget build(BuildContext context) {
-
-    Future<Map<String, String>> videoList = GetContents(widget.character).makeCharacterVideoUrlList();
-
     return PopScope(
       onPopInvoked: (didPop) {
         _searchText = "";
         _searchController.text = "";
         if(!isPro) interstitialAd?.show();
       },
-      child: FutureBuilder(
-        future: videoList,
-        builder: (context, snapshot) {
-          return DefaultTabController(
-            length: 2,
-            child: Scaffold(
-                appBar: AppBar(
-                  // title: Text(widget.character.name.toUpperCase()),
-                  title:!kDebugMode? Text(widget.character.name.toUpperCase()) : TextButton(
-                    child:  Text(widget.character.name.toUpperCase()),
-                    onPressed: () {
-                      showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveList.toString()),),),);
-                    },
-                  ),
-                  centerTitle: true,
-                  leadingWidth: 80,
-                  leading: GestureDetector(
-                    onTap: (){
-                      Navigator.pop(context);
-                    },
-                    child: (
-                        const ButtonBar(
-                          children: [
-                            Text("FRAME\nDATA")
-                          ],
-                        )
-                    ),
-                  ),
-
-                  actions: [
-                    actionBuilder(context, widget.character.name, true)
-                  ],
-                  backgroundColor: Colors.black,
-                  bottom: PreferredSize(
-                    preferredSize: const Size(0, 100),
-                    child: Column(
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+            appBar: AppBar(
+              // title: Text(widget.character.name.toUpperCase()),
+              title:!kDebugMode? Text(widget.character.name.toUpperCase()) : TextButton(
+                child:  Text(widget.character.name.toUpperCase()),
+                onPressed: () {
+                  showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveList.toString()),),),);
+                },
+              ),
+              centerTitle: true,
+              leadingWidth: 80,
+              leading: GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: (
+                    const ButtonBar(
                       children: [
-                        const TabBar(
-                          automaticIndicatorColorAdjustment: true,
-                          isScrollable: false,
-                          tabs: [
-                            Tab(text: "Move List"),
-                            Tab(text: "Throw")
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2.0), //검색기능
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: TextFormField(controller: _searchController, decoration: const InputDecoration(
-                                    labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
-                                ), style: const TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
-                                  setState((){
-                                    _searchText = _searchController.text;
-                                  });
-                                },),
-                              ),
-                              //키보드
-                              IconButton(onPressed: (){
-                                showModalBottomSheet<void>(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return Theme(
-                                      data: themeData,
-                                      child: Container(
-                                        height: 288,
-                                        color: Colors.black,
-                                        child: Center(
-                                            child: Column(
-                                              children: [
-                                                Row( //1번째 줄
-                                                  children: [
-                                                    keyboardButton("↖"),
-                                                    keyboardButton("↑"),
-                                                    keyboardButton("↗"),
-                                                    keyboardButton("LP"),
-                                                    keyboardButton("RP"),
-                                                    keyboardButton("AP"),
-                                                    keyboardButton("delete"),
-                                                  ],
-                                                ),
-                                                Row( //2번째 줄
-                                                  children: [
-                                                    keyboardButton("←"),
-                                                    keyboardButton("N"),
-                                                    keyboardButton("→"),
-                                                    keyboardButton("LK"),
-                                                    keyboardButton("RK"),
-                                                    keyboardButton("AK"),
-                                                    keyboardButton("토네\n이도", inputText: "토네이도"),
-                                                  ],
-                                                ),
-                                                Row( //3번째 줄
-                                                  children: [
-                                                    keyboardButton("↙"),
-                                                    keyboardButton("↓"),
-                                                    keyboardButton("↘"),
-                                                    keyboardButton("AL"),
-                                                    keyboardButton("AR"),
-                                                    keyboardButton("~"),
-                                                    keyboardButton("가댐", inputText: "가드 대미지"),
-                                                  ],
-                                                ),
-                                                Row( //4번째 줄
-                                                  children: [
-                                                    keyboardButton("상단"),
-                                                    keyboardButton("중단"),
-                                                    keyboardButton("하단"),
-                                                    keyboardButton("D"),
-                                                    keyboardButton("A"),
-                                                    keyboardButton("T"),
-                                                    keyboardButton("파크", inputText: "파워 크래시"),
-                                                  ],
-                                                ),
-                                                Row( //5번째 줄
-                                                  children: [
-                                                    keyboardButton("+"),
-                                                    keyboardButton("1"),
-                                                    keyboardButton("2"),
-                                                    keyboardButton("3"),
-                                                    keyboardButton("4"),
-                                                    keyboardButton("5"),
-                                                    keyboardButton("호밍기"),
-                                                  ],
-                                                ),
-                                                Row( //6번째 줄
-                                                  children: [
-                                                    keyboardButton("-"),
-                                                    keyboardButton("6"),
-                                                    keyboardButton("7"),
-                                                    keyboardButton("8"),
-                                                    keyboardButton("9"),
-                                                    keyboardButton("0"),
-                                                    keyboardButton("AC"),
-                                                  ],
-                                                ),
-                                              ],
-                                            )
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );}, icon: const Icon(Icons.keyboard_alt_outlined), color: Colors.white, iconSize: 30,)
-                            ],
-                          ),
-                        )
+                        Text("FRAME\nDATA")
+                      ],
+                    )
+                ),
+              ),
+
+              actions: [
+                actionBuilder(context, widget.character.name, true)
+              ],
+              backgroundColor: Colors.black,
+              bottom: PreferredSize(
+                preferredSize: const Size(0, 100),
+                child: Column(
+                  children: [
+                    const TabBar(
+                      automaticIndicatorColorAdjustment: true,
+                      isScrollable: false,
+                      tabs: [
+                        Tab(text: "Move List"),
+                        Tab(text: "Throw")
                       ],
                     ),
-                  ),
-                ),
-                body: TabBarView(
-                  children: [
-                    MoveList(character: widget.character, snapshot: snapshot),
-                    ThrowList(character: widget.character, snapshot: snapshot,)
+                    Padding(
+                      padding: const EdgeInsets.all(2.0), //검색기능
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextFormField(controller: _searchController, decoration: const InputDecoration(
+                                labelStyle: TextStyle(color: Colors.white), label: Text("검색"), border: OutlineInputBorder()
+                            ), style: const TextStyle(color: Colors.white), onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(), onChanged: (value) {
+                              setState((){
+                                _searchText = _searchController.text;
+                              });
+                            },),
+                          ),
+                          //키보드
+                          keyBoard(context)
+                        ],
+                      ),
+                    )
                   ],
                 ),
-                bottomNavigationBar: isPro?null:Container(
-                  color: Colors.black,
-                  width: _banner.size.width.toDouble(),
-                  height: _banner.size.height.toDouble(),
-                  child: AdWidget(ad: _banner,),
-                )
+              ),
             ),
-          );
-        },
+            body: TabBarView(
+              children: [
+                MoveList(character: widget.character),
+                ThrowList(character: widget.character)
+              ],
+            ),
+            bottomNavigationBar: isPro?null:Container(
+              color: Colors.black,
+              width: _banner.size.width.toDouble(),
+              height: _banner.size.height.toDouble(),
+              child: AdWidget(ad: _banner,),
+            )
+        ),
       )
     );
+  }
+
+  IconButton keyBoard(BuildContext context) {
+    return IconButton(onPressed: (){
+                              showModalBottomSheet<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Theme(
+                                    data: themeData,
+                                    child: Container(
+                                      height: 288,
+                                      color: Colors.black,
+                                      child: Center(
+                                          child: Column(
+                                            children: [
+                                              Row( //1번째 줄
+                                                children: [
+                                                  keyboardButton("↖"),
+                                                  keyboardButton("↑"),
+                                                  keyboardButton("↗"),
+                                                  keyboardButton("LP"),
+                                                  keyboardButton("RP"),
+                                                  keyboardButton("AP"),
+                                                  keyboardButton("delete"),
+                                                ],
+                                              ),
+                                              Row( //2번째 줄
+                                                children: [
+                                                  keyboardButton("←"),
+                                                  keyboardButton("N"),
+                                                  keyboardButton("→"),
+                                                  keyboardButton("LK"),
+                                                  keyboardButton("RK"),
+                                                  keyboardButton("AK"),
+                                                  keyboardButton("토네\n이도", inputText: "토네이도"),
+                                                ],
+                                              ),
+                                              Row( //3번째 줄
+                                                children: [
+                                                  keyboardButton("↙"),
+                                                  keyboardButton("↓"),
+                                                  keyboardButton("↘"),
+                                                  keyboardButton("AL"),
+                                                  keyboardButton("AR"),
+                                                  keyboardButton("~"),
+                                                  keyboardButton("가댐", inputText: "가드 대미지"),
+                                                ],
+                                              ),
+                                              Row( //4번째 줄
+                                                children: [
+                                                  keyboardButton("상단"),
+                                                  keyboardButton("중단"),
+                                                  keyboardButton("하단"),
+                                                  keyboardButton("D"),
+                                                  keyboardButton("A"),
+                                                  keyboardButton("T"),
+                                                  keyboardButton("파크", inputText: "파워 크래시"),
+                                                ],
+                                              ),
+                                              Row( //5번째 줄
+                                                children: [
+                                                  keyboardButton("+"),
+                                                  keyboardButton("1"),
+                                                  keyboardButton("2"),
+                                                  keyboardButton("3"),
+                                                  keyboardButton("4"),
+                                                  keyboardButton("5"),
+                                                  keyboardButton("호밍기"),
+                                                ],
+                                              ),
+                                              Row( //6번째 줄
+                                                children: [
+                                                  keyboardButton("-"),
+                                                  keyboardButton("6"),
+                                                  keyboardButton("7"),
+                                                  keyboardButton("8"),
+                                                  keyboardButton("9"),
+                                                  keyboardButton("0"),
+                                                  keyboardButton("AC"),
+                                                ],
+                                              ),
+                                            ],
+                                          )
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );}, icon: const Icon(Icons.keyboard_alt_outlined), color: Colors.white, iconSize: 30,);
   }
 }
 
 class MoveList extends StatefulWidget {
 
   final Character character;
-  final AsyncSnapshot<Map<String, String>> snapshot;
 
-  MoveList({super.key, required this.character, required this.snapshot});
+  MoveList({super.key, required this.character});
 
   @override
   State<MoveList> createState() => _MoveListState();
@@ -541,15 +537,15 @@ class _MoveListState extends State<MoveList>{
                     ],
                     rows: [
                       if(_searchText.isEmpty || widget.character.rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8], widget.snapshot))), //레이지 아츠
+                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8]))), //레이지 아츠
                       for(String type in widget.character.types.keys)...[
                         if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
                           for(List data in filtered.firstWhere((element) => element["type"] == type)["contents"])...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""), widget.snapshot)), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""), widget.snapshot)))
+                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))))
                             ]
                           ],
                         ],
@@ -568,9 +564,8 @@ class _MoveListState extends State<MoveList>{
 class ThrowList extends StatefulWidget {
 
   final Character character;
-  final AsyncSnapshot<Map<String, String>> snapshot;
 
-  const ThrowList({super.key, required this.character, required this.snapshot});
+  const ThrowList({super.key, required this.character});
 
   @override
   State<ThrowList> createState() => _ThrowListState();
@@ -630,9 +625,9 @@ class _ThrowListState extends State<ThrowList>{
               rows: [
                 for(int i = 0; i < widget.character.throwList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7], widget.snapshot), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7], widget.snapshot))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]))
                   ]
                 ]
               ],

@@ -2,12 +2,14 @@ name: tekken8_framedata
 description: tk8 framedata.
 publish_to: 'none'
 
-version: 7.0.0+88
+version: 7.2.0+89
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
 
 dependencies:
+  upgrader: ^10.3.0
+  in_app_update: ^4.2.3
   shared_preferences: ^2.2.2
   string_validator: ^1.0.2
   path_provider: ^2.1.1
@@ -21,7 +23,6 @@ dependencies:
   sticky_headers: ^0.3.0+2
   linked_scroll_controller: ^0.2.0
   restart_app: ^1.2.1
-  url_launcher: ^6.2.5
   youtube_player_flutter: ^8.1.2
   http: ^1.2.1
 
@@ -47,7 +48,7 @@ flutter:
       fonts:
         - asset: assets/fonts/ONE Mobile Bold.ttf
   assets:
-    - assets/internal/
+    - assets/internal/patch_note.json
     - assets/jin/
     - assets/kazuya/
     - assets/paul/

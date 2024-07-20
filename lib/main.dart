@@ -5,11 +5,12 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:restart_app/restart_app.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'actionBuilderWidget.dart';
 import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'characterWidget.dart';
+import 'upgradeAlertWidget.dart';
 
 const bool isPro = false;
 
@@ -17,8 +18,7 @@ bool isFirst = true;
 
 String language = "ko";
 
-String description = "";
-String patchNote = "";
+late Map<String, dynamic> patchNote;
 
 AdManagerInterstitialAd? interstitialAd;
 
@@ -47,6 +47,28 @@ const List moveFiles = [
 const List throwFiles = [
   "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
 ];
+
+main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initializeSetting();
+
+  runApp(
+     MyApp()
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Main(), 
+      theme: themeData
+   );
+  }
+}
 
 class GetContents { // 리스트 구성
 
@@ -183,16 +205,14 @@ class GetContents { // 리스트 구성
         videoUrlList.add(linkMatch.group(0)!.replaceAll("\\n", ""));
       }
 
-      if(kDebugMode) debugPrint("${character.name}리스트 : $videoUrlList");
-
       return videoUrlList;
     }
 
-    debugPrint("${character.name}에서 없음");
+    // debugPrint("${character.name}에서 없음");
     return [];
   }
 
-  Future<Map<String, String>> makeCharacterVideoUrlList() async {
+  Future<void> makeCharacterVideoUrlList() async {
     List urlList = await GetContents(character).getVideoUrlList();
     Map<String, String> videoList = {};
 
@@ -206,7 +226,7 @@ class GetContents { // 리스트 구성
         if (currentTitle != "제목 오류") {
           videoList[currentTitle] = url;
         } else {
-          debugPrint("$url에서 제목 오류");
+          // debugPrint("$url에서 제목 오류");
         }
       } catch (e) {
         debugPrint("$url 에서 비디오 제목 가져오기 실패: $e");
@@ -214,33 +234,32 @@ class GetContents { // 리스트 구성
     }).toList();
     // 모든 비디오 제목 가져오기 작업이 완료될 때까지 기다림
     await Future.wait(futures);
-    assert(() {
-      for(var type in character.types.keys){
-        debugPrint("${character.name}의 $type에서 : ");
-        for(var move in character.moveList.firstWhere((element) => element["type"] == type)["contents"]){
-          String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-          if(videoList[modifiedMoveName] == null){
-            debugPrint("$modifiedMoveName 영상이 없음");
-          }
-        }
-      }
-      debugPrint("${character.name}의 잡기 리스트 에서 : ");
-      for(var move in character.throwList){
-        String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-        if(videoList[modifiedMoveName] == null){
-          debugPrint("$modifiedMoveName 영상이 없음");
-        }
-      }
-      debugPrint("${character.name}끝.");
-      return true;
-    }());
+    //디버그
+    // assert(() {
+    //   for(var type in character.types.keys){
+    //     debugPrint("${character.name}의 $type에서 : ");
+    //     for(var move in character.moveList.firstWhere((element) => element["type"] == type)["contents"]){
+    //       String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
+    //       if(videoList[modifiedMoveName] == null){
+    //         debugPrint("$modifiedMoveName 영상이 없음");
+    //       }
+    //     }
+    //   }
+    //   debugPrint("${character.name}의 잡기 리스트 에서 : ");
+    //   for(var move in character.throwList){
+    //     String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
+    //     if(videoList[modifiedMoveName] == null){
+    //       debugPrint("$modifiedMoveName 영상이 없음");
+    //     }
+    //   }
+    //   debugPrint("${character.name}끝.");
+    //   return true;
+    // }());
     character.videoList = videoList;
-    return videoList;
   }
 }
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+Future<void> initializeSetting() async{
 
   if(isPro){
     await Hive.initFlutter();
@@ -253,7 +272,6 @@ Future<void> main() async {
   changeFont = prefs.getBool('changeFont') ?? false;
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
-  isFirst = prefs.getBool('isFirst') ?? true;
 
   for (Character character in characterList.skipWhile((value) => value.name == "")) {
     isPro ? await Hive.openBox(character.name) : null;
@@ -301,12 +319,7 @@ Future<void> main() async {
       debugPrint("${character.name}에서 오류 : $e");
     }
   }
-  description = await rootBundle.loadString("assets/internal/description.txt");
-  patchNote = replaceNumbers(await rootBundle.loadString("assets/internal/patch_note.txt"));
-
-  runApp(
-     MyApp()
-  );
+  patchNote = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
 }
 
 String mainFont = "Tenada";
@@ -319,8 +332,6 @@ final themeData = ThemeData(
   primarySwatch: Colors.pink,
 );
 
-TextScaler keyboardFontSize = TextScaler.linear(0.85);
-
 String replaceNumbers(String text){
   String result = text;
   for (int i = 0; i < sticks.length; i ++){
@@ -330,69 +341,7 @@ String replaceNumbers(String text){
   return result;
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-   return MaterialApp(home: Main(), theme: themeData);
-  }
-}
-
-Row actionBuilder(BuildContext context, String character, bool isMove){
-  const double buttonSize = 37;
-
-  return Row(
-    children: [
-      GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("설명", style: TextStyle(fontSize: 20, color: Colors.black, fontFamily: mainFont)), contentTextStyle: TextStyle(height: 1.5, fontSize: 15, color: Colors.black, fontFamily: mainFont),
-          content: Text(description),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-          ],
-        )),
-        child: const Icon(Icons.abc, size: buttonSize),
-      ),
-      GestureDetector(
-        onTap: () => showDialog<String>(context: context, builder: (context) => AlertDialog(title: Text("v1.05 패치노트", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
-          content: SingleChildScrollView(child: Text(patchNote)),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-          ],
-        )),
-        child: const Icon(Icons.article, size: buttonSize),
-      ),
-      if(!isMove)...[
-        GestureDetector(
-          onTap: () => showDialog<String>(context: context, barrierDismissible: false, builder: (context) => SettingDialog()),
-          child: const Icon(Icons.settings, size: buttonSize),
-        )
-      ]else if(isPro && isMove)...[
-        GestureDetector(
-          onTap: () {
-
-            TextEditingController controller = TextEditingController();
-
-            var currentBox = Hive.box(character);
-            if(currentBox.containsKey(character)){
-              controller.text = currentBox.get(character);
-            }
-
-            showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text(character.toUpperCase(), style: TextStyle(color: Colors.black), textScaler: TextScaler.linear(1.2),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, color: Colors.black,), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
-              content: SingleChildScrollView(child: TextField(onChanged: (value) {
-                currentBox.put(character, value);
-              },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
-              actions: [
-                TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
-              ],
-            ));
-          },
-          child: Icon(Icons.edit_note, size: buttonSize),
-        )
-      ]
-    ],
-  );
-}
 
 bool changeFont = false;
 
@@ -468,41 +417,11 @@ class Main extends StatefulWidget {
 
 class _MainState extends State<Main> {
 
-  void changeIsFirst() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    isFirst = false;
-    prefs.setBool('isFirst', isFirst);
-  }
-
-  final Uri _url = Uri.parse("https://play.google.com/store/apps/details?id=com.tk8.framedata.vpro");
-
   @override
   void initState() {
     super.initState();
     if(!isPro) {
       loadAd();
-      if(isFirst){
-        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          changeIsFirst();
-          showDialog(context: context, builder: (context) => AlertDialog(title: Text("프로버전 출시!", style: TextStyle(fontSize: 20, color: Colors.black)),
-            content: SizedBox(
-              height: 80,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  GestureDetector(onTap: (){
-                    launchUrl(_url);
-                  },child: Text("클릭해서 이동하세요!", style: TextStyle(fontSize: 15, color: Colors.lightBlue),)),
-                  Text("한번 창을 닫으면 더이상 뜨지 않습니다.", style: TextStyle(fontSize: 15))
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))
-            ],
-          ));
-        });
-      }
     }
   }
 
@@ -523,48 +442,50 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        leadingWidth: 120,
-        title: Text("FRAMEDATA"),
-        centerTitle: true,
-        
-        actions: [
-          actionBuilder(context, "", false)
-        ],
-        backgroundColor: Colors.black,
-      ),
-      body: Container(
-        color: const Color(0xff333333),
-        width: double.infinity,
-        height: double.infinity,
-        child: Center(
-          child: SizedBox(
-            width: 400,
-            height: 3000,
-            child: ListView.builder(
-                itemCount: characterList.length ~/ 2,
-                itemBuilder: (BuildContext ctx, int idx) {
-                return Column(
-                  children: [
-                    CharacterButton(
-                      character1: characterList[idx * 2],
-                      character2: characterList[idx * 2 + 1]
-                    )
-                  ],
-                );
-              }
+    return MyUpgradeAlert(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          leadingWidth: 120,
+          title: Text("FRAMEDATA"),
+          centerTitle: true,
+
+          actions: [
+            actionBuilder(context, "", false)
+          ],
+          backgroundColor: Colors.black,
+        ),
+        body: Container(
+          color: const Color(0xff333333),
+          width: double.infinity,
+          height: double.infinity,
+          child: Center(
+            child: SizedBox(
+              width: 400,
+              height: 3000,
+              child: ListView.builder(
+                  itemCount: characterList.length ~/ 2,
+                  itemBuilder: (BuildContext ctx, int idx) {
+                  return Column(
+                    children: [
+                      CharacterButton(
+                        character1: characterList[idx * 2],
+                        character2: characterList[idx * 2 + 1]
+                      )
+                    ],
+                  );
+                }
+              ),
             ),
           ),
         ),
+        bottomNavigationBar: !isPro ? Container(
+          color: Colors.black,
+          width: _banner.size.width.toDouble(),
+          height: _banner.size.height.toDouble(),
+          child: AdWidget(ad: _banner,),
+        ) : null
       ),
-      bottomNavigationBar: !isPro ? Container(
-        color: Colors.black,
-        width: _banner.size.width.toDouble(),
-        height: _banner.size.height.toDouble(),
-        child: AdWidget(ad: _banner,),
-      ) : null
     );
   }
 }
@@ -582,6 +503,7 @@ class CharacterButton extends StatefulWidget {
 class _CharacterButtonState extends State<CharacterButton> {
   @override
   Widget build(BuildContext context) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -593,6 +515,7 @@ class _CharacterButtonState extends State<CharacterButton> {
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) {
+                if(widget.character1.videoList == null) GetContents(widget.character1).makeCharacterVideoUrlList();
                 return CharacterPage(character: widget.character1,);
               }));
             },
@@ -613,6 +536,7 @@ class _CharacterButtonState extends State<CharacterButton> {
               onPressed: (){
               widget.character2 != empty?
               Navigator.push(context, MaterialPageRoute(builder: (context) {
+                if(widget.character2.videoList == null) GetContents(widget.character2).makeCharacterVideoUrlList();
                 return CharacterPage(character: widget.character2);
               }))
               : ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));

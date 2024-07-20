@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'main.dart';
@@ -31,14 +30,14 @@ Container heatSystemContexts(List<String> addition){
   );
 }
 
-memo (BuildContext context, Character character, String moveName, AsyncSnapshot<Map<String, String>> snapshot) {
+memo (BuildContext context, Character character, String moveName) {
   TextEditingController controller = TextEditingController();
 
   String modifiedMoveName = moveName.replaceAll(RegExp(r'\d{1,2}$'), '');
 
   String getVideoId(){
     try{
-      String url = character.videoList[modifiedMoveName]!;
+      String url = character.videoList![modifiedMoveName]!;
       return YoutubePlayer.convertUrlToId(url)!;
     }catch(e){
       debugPrint("$modifiedMoveName에서 오류 : $e");
@@ -64,7 +63,7 @@ memo (BuildContext context, Character character, String moveName, AsyncSnapshot<
         onPopInvoked: (didPop) {
           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
         },
-        child: character.videoList[modifiedMoveName] == null
+        child: character.videoList![modifiedMoveName] == null
             ? AlertDialog(content: Text("영상이 없습니다."),) :
         Dialog(
           insetPadding: EdgeInsets.zero,
@@ -95,10 +94,9 @@ memo (BuildContext context, Character character, String moveName, AsyncSnapshot<
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-            snapshot.hasData? TextButton(
+            TextButton(
                   onPressed: () => playYoutubePlayer(),
-                  child: Text('영상 재생')):
-             Text("영상 로딩중"),
+                  child: Text('영상 재생')),
           TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('닫기'))
       ],)
     ],
@@ -117,7 +115,7 @@ TextStyle textStyleDefault = TextStyle(fontWeight: FontWeight.w400, color: Color
     textStylePunish = TextStyle(fontWeight: FontWeight.w400, color: Colors.red, fontFamily: mainFont);
 
 //무브 리스트 생성
-List<DataCell> createMove(BuildContext context, Character character, name, command, start, guard, hit, counter, range, damage, extra, snapshot){
+List<DataCell> createMove(BuildContext context, Character character, name, command, start, guard, hit, counter, range, damage, extra){
   listLength++;
   List<String> guardParts = [];
   String guardPart1 = "", hitPart1 = "", hitPart2 = "", counterPart1 = "", counterPart2 = "";
@@ -138,7 +136,7 @@ List<DataCell> createMove(BuildContext context, Character character, name, comma
   }
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name, snapshot);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(guard.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
@@ -206,9 +204,9 @@ List<DataCell> createMove(BuildContext context, Character character, name, comma
   ];
 }
 
-List<DataCell> createThrow(BuildContext context, Character character, name, command, start, breakThrow, frameAfterBreak, damage, range, extra, snapshot){
+List<DataCell> createThrow(BuildContext context, Character character, name, command, start, breakThrow, frameAfterBreak, damage, range, extra){
   return [
-    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name, snapshot);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(start, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     DataCell(SizedBox(width: 40, child: Text(breakThrow, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
     if(frameAfterBreak.contains("+") && frameAfterBreak.contains("-") && frameAfterBreak != "-")...[ //풀기 후 F

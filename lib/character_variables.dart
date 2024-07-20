@@ -19,7 +19,7 @@ class Character{
   Map<String, String> typesKo;
   late List<Map<String, dynamic>> moveList;
   late List<List<String>> throwList;
-  Map<String, String> videoList = {};
+  Map<String, String>? videoList = {};
 
   Character({
     required this.name,
