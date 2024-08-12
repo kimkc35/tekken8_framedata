@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL, 상대 뒤에서 AR, 3 AR, 3 3 ~AR, 1 RP+LK, 9 AP, 9 AP2 3 RP, 1 6 AP, 2 3 6 LP, 2 1 4 RP, Gamma Howl 도중 AP, 2 AL, 2 AR, 상대가 벽에 부딪혔을 때 AL or AR
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL`상대 뒤에서 AR`3 AR`3 3 ~AR`1 RP+LK`9 AP`9 AP2 3 RP`1 6 AP`2 3 6 LP`2 1 4 RP`Gamma Howl 도중 AP`2 AL`2 AR`상대가 벽에 부딪혔을 때 AL or AR

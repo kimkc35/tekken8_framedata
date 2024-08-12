@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import 'main.dart';
 
-Row actionBuilder(BuildContext context, String character, bool isMove) {
+Row actionBuilder({required BuildContext context, String? character}) {
   const double buttonSize = 37;
 
   return Row(
@@ -23,7 +22,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove) {
                       fontSize: 15,
                       color: Colors.black,
                       fontFamily: mainFont),
-                  content: Text(patchNote["description"]),
+                  content: Text(patchNotes["description"]),
                   actions: [
                     TextButton(
                         onPressed: () => Navigator.pop(context, 'Cancel'),
@@ -36,7 +35,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove) {
         onTap: () => patchNoteWidget(context),
         child: const Icon(Icons.article, size: buttonSize),
       ),
-      if (!isMove) ...[
+      if (character == null) ...[
         GestureDetector(
           onTap: () => showDialog<String>(
               context: context,
@@ -44,7 +43,7 @@ Row actionBuilder(BuildContext context, String character, bool isMove) {
               builder: (context) => SettingDialog()),
           child: const Icon(Icons.settings, size: buttonSize),
         )
-      ] else if (isPro && isMove) ...[
+      ] else if (isPro) ...[
         GestureDetector(
           onTap: () {
             TextEditingController controller = TextEditingController();
@@ -93,7 +92,18 @@ Row actionBuilder(BuildContext context, String character, bool isMove) {
 }
 
 patchNoteWidget(BuildContext context) {
-  String currentCharacter = "캐릭터 선택";
+  TextEditingController patchNoteController = TextEditingController();
+
+  Size screenSize = MediaQuery.of(context).size;
+
+  String replaceNumbers(String text){
+    String result = text;
+    for (int i = 0; i < sticks.length; i ++){
+      result = result.replaceAll("${i + 1} ", "${sticks["c${i + 1}"]}");
+    }
+
+    return result;
+  }
 
   return showDialog<String>(
     context: context,
@@ -102,39 +112,17 @@ patchNoteWidget(BuildContext context) {
         return AlertDialog(
           title: Row(
             children: [
-              MenuAnchor(
-                menuChildren: [
-                  for (MapEntry<String, dynamic> name in patchNote["patchNote"].entries)...[
-                    if(name.key != currentCharacter && name.value != "")
-                      MenuItemButton(
-                        child: Text(name.key.toUpperCase()),
-                        onPressed: () {
-                          setState(() {
-                            currentCharacter = name.key;
-                          });
-                        },
-                      )
+              DropdownMenu(
+                menuHeight: screenSize.height * 0.4,
+                onSelected: (value) => setState((){
+                }),
+                hintText: "캐릭터",
+                controller: patchNoteController,
+                  dropdownMenuEntries: [
+                    for(MapEntry<String, dynamic> character in patchNotes["characters"].entries)...[
+                      if(character.value != "") DropdownMenuEntry(value: character.key, label: character.key.toUpperCase())
+                    ]
                   ]
-                ],
-                builder: (context, controller, child) {
-                  return TextButton(
-                    child: (
-                        Text(currentCharacter.toUpperCase(), style: TextStyle(fontFamily: mainFont, fontSize: 15),)
-                    ),
-                    onPressed: () {
-                      controller.isOpen
-                          ? controller.close()
-                          : controller.open();
-                    },
-                  );
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  patchNote["version"],
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
               ),
             ],
           ),
@@ -144,7 +132,8 @@ patchNoteWidget(BuildContext context) {
               fontSize: 15,
               color: Colors.black),
           content: SingleChildScrollView(
-              child: Text(patchNote["patchNote"][currentCharacter] ?? "")),
+              child: Text("${patchNotes["version"]} 패치노트\n${replaceNumbers(patchNotes["characters"][patchNoteController.text.toLowerCase()] ?? "")}")
+          ),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),

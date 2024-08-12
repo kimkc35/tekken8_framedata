@@ -1,0 +1,25 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "appId": "1:648481478664:android:734e178062681bfb6919bd",
+          "fileOutput": "android/app/google-services.json",
+          "projectId": "tk8-framedata-pro"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "configurations": {
+            "android": "1:648481478664:android:734e178062681bfb6919bd",
+            "ios": "1:648481478664:ios:168ea2cb8842085c6919bd",
+            "macos": "1:648481478664:ios:168ea2cb8842085c6919bd",
+            "web": "1:648481478664:web:d51debef5b9b43a26919bd",
+            "windows": "1:648481478664:web:5bbd459cf3499cdb6919bd"
+          },
+          "projectId": "tk8-framedata-pro"
+        }
+      }
+    }
+  }
+}

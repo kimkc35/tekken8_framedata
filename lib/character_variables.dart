@@ -34,9 +34,9 @@ class Character{
 Character empty = Character(name: "", rageArts: [], extraInitials: [], heatSystem: [], types: {}, typesKo: {});
 
 Character alisa = Character(
-  name: "alisa", 
-  extraInitials: [{"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}], 
-  heatSystem: ["체인톱을 사용하는 공격의 가드 대미지 증가", "새로운 듀얼 부트 이행기 사용 가능"], 
+  name: "alisa",
+  extraInitials: [{"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}],
+  heatSystem: ["체인톱을 사용하는 공격의 가드 대미지 증가", "새로운 듀얼 부트 이행기 사용 가능"],
   rageArts: ["레디언트 페가수스 봄", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "혹은 레이지 상태에서 디스트럭티브 폼 도중 ${sticks["c3"]}AP\n레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰\n홀드 가능"],
   types: {"heat" : false, "general" : false, "sit" : false, "destructive form" : false, "boot" : false, "dual boot" : false, "backup" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "destructive form" : "디스트럭티브 폼", "boot" : "부트", "dual boot" : "듀얼 부트", "backup" : "백업"},
@@ -52,24 +52,24 @@ Character asuka = Character(
 );
 
 Character azucena = Character(
-  name: "azucena", 
-  extraInitials: [], 
-  heatSystem: ["리베르타도르 레볼루시온 사용 가능", "누에보 리베르타도르 사용 가능", "파워가 상승한 리베르타도르 사용 가능"], 
+  name: "azucena",
+  extraInitials: [],
+  heatSystem: ["리베르타도르 레볼루시온 사용 가능", "누에보 리베르타도르 사용 가능", "파워가 상승한 리베르타도르 사용 가능"],
   rageArts: ["알레그리아 델 카페", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "libertador" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "libertador" : "리베르타도르"},
 );
 
 Character bryan = Character(
-  name: "bryan", 
+  name: "bryan",
   extraInitials: [
     {"name" : "snakeEyes", "snakeEyes" : "히트 발동 시 스네이크 아이즈를 획득"},
     {"name" : "useSnakeEyes", "useSnakeEyes" : "스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)"},
     {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
     {"name" : "sway", "sway" : "${sticks["c4"]}~입력 시 스웨이로 이행\n()는 이행 시 프레임"},
     {"name" : "slitherStep", "slitherStep" : "${sticks["c6"]}~입력 시 슬리더 스텝으로 이행\n()는 이행 시 프레임"}
-  ], 
-  heatSystem: ["스네이크 아이즈 보유 시의 기술 사용 가능"], 
+  ],
+  heatSystem: ["스네이크 아이즈 보유 시의 기술 사용 가능"],
   rageArts: ["토털 반달라이제이션", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "snake eyes" : false, "slither step" : false, "sway" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "snake eyes" : "스네이크 아이즈", "slither step" : "슬리더 스텝", "sway" : "스웨이"},
@@ -85,81 +85,81 @@ Character claudio = Character(
 );
 
 Character devilJin = Character(
-  name: "devil jin", 
+  name: "devil jin",
   extraInitials: [
     {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
     {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"}
-  ], 
-  heatSystem: ["멸초파 사용 가능", "최속 입력이 아니더라도 최속 풍신권 사용 가능"], 
+  ],
+  heatSystem: ["멸초파 사용 가능", "최속 입력이 아니더라도 최속 풍신권 사용 가능"],
   rageArts: ["흉계시현 혈쇄인", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "wind god step" : false, "fly" : false, "mourning crow" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "fly" : "비공", "mourning crow" : "모닝 크로우"},
 );
 
 Character dragunov = Character(
-  name: "dragunov", 
+  name: "dragunov",
   extraInitials: [
     {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
     {"name" : "sneak", "sneak" : "${sticks["c3"]}~입력 시 스네이크로/()는 이행 시 프레임"}
-  ], 
-  heatSystem: ["페인트 & 캐치, 앰부시 태클이 잡기 풀기 불가능", "일부 연계에서 앰부시 태클 사용 가능"], 
+  ],
+  heatSystem: ["페인트 & 캐치, 앰부시 태클이 잡기 풀기 불가능", "일부 연계에서 앰부시 태클 사용 가능"],
   rageArts: ["화이트 엔젤 오브 데스", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "sneak" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "sneak" : "스네이크"},
 );
 
 Character eddy = Character(
-  name: "eddy", 
+  name: "eddy",
   extraInitials: [
     {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"}
-  ], 
-  heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"], 
+  ],
+  heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"],
   rageArts: ["인셴치 지 아셰", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "bananeira" : false, "negativa" : false, "mandinga" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "bananeira" : "바나네이라", "negativa" : "네가치바", "mandinga" : "만징가"},
 );
 
 Character feng = Character(
-  name: "feng", 
-  extraInitials: [], 
-  heatSystem: ["신수박면장 사용 가능", "신수염장멸파 사용 가능", "응룡렬해답 사용 가능"], 
+  name: "feng",
+  extraInitials: [],
+  heatSystem: ["신수박면장 사용 가능", "신수염장멸파 사용 가능", "응룡렬해답 사용 가능"],
   rageArts: ["진결 화룡정천장", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "lingering shadow" : false, "shifting clouds" : false, "deceptive step" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "lingering shadow" : "잔영", "shifting clouds" : "운수", "deceptive step" : "허보"},
 );
 
 Character hwoarang = Character(
-  name: "hwoarang", 
+  name: "hwoarang",
   extraInitials: [
     {"name" : "LF.", "LF." : "왼 플라밍고"},
     {"name" : "RF.", "RF." : "오른 플라밍고"},
     {"name" : "RS.", "RS." : "오른 자세"},
-  ], 
-  heatSystem: ["파워가 상승한 오른 플라밍고 도중의 발차기 기술 사용 가능"], 
+  ],
+  heatSystem: ["파워가 상승한 오른 플라밍고 도중의 발차기 기술 사용 가능"],
   rageArts: ["스카이 베리얼", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "오른 자세, 왼 플라밍고, 오른 플라밍고 도중에도 사용 가능\n레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "shark step" : false, "right stance" : false, "left flamingo" : false, "right flamingo" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shark step" : "샤크 스텝", "right stance" : "오른 자세", "left flamingo" : "왼 플라밍고", "right flamingo" : "오른 플라밍고"},
 );
 
 Character jack8 = Character(
-  name: "jack-8", 
+  name: "jack-8",
   extraInitials: [
     {"name" : "howl", "howl" : "2 ~입력 시 감마 하울로\n()는 이행 시 프레임"}
-  ], 
-  heatSystem: ["감마 차지 보유 시의 기술 사용 가능"], 
+  ],
+  heatSystem: ["감마 차지 보유 시의 기술 사용 가능"],
   rageArts: ["테라포밍 캐논", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "sit down" : false, "gamma howl" : false, "gamma charge" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "sit down" : "시트 다운", "gamma howl" : "감마 하울", "gamma charge" : "감마 차지"},
 );
 
 Character jin = Character(
-  name: "jin", 
+  name: "jin",
   extraInitials: [
     {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
     {"name" : "zenshin", "zenshin" : "${sticks["c6"]}~입력시 전심 이행\n()안의 프레임은 전심 이행 시 프레임"},
     {"name" : "aps", "aps" : "각성 삼전 서기 도중"}
-  ], 
-  heatSystem: ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 최속 왼 찔러 올리기와 최속 오른 돌려 찌르기 사용 가능"], 
+  ],
+  heatSystem: ["데빌의 힘을 사용하는 새로운 기술 사용 가능", "최속 입력이 아니더라도 최속 왼 찔러 올리기와 최속 오른 돌려 찌르기 사용 가능"],
   rageArts: ["극성마인충", "레이지 상태에서 ${sticks["c3"]}AP", "20", "-15", "D", "D", "중단", "55", "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"],
   types: {"heat" : false, "general" : false, "sit" : false, "breaking step" : false, "zanshin" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "breaking step" : "브레이킹 스텝", "zanshin" : "잔심"},
@@ -433,6 +433,14 @@ Character zafina = Character(
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "scarecrow stance" : "스케어크로 자세", "tarantula stance" : "타란튤라 자세", "mantis stance" : "맨티스 자세"},
 );
 
+Character lidia = Character(
+    name: "lidia",
+    rageArts: [],
+    extraInitials: [],
+    heatSystem: [],
+    types: {},
+    typesKo: {}
+);
 
 
 final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina, empty];

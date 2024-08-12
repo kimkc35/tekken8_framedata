@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "648481478664",
+    "firebase_url": "https://tk8-framedata-pro-default-rtdb.firebaseio.com",
+    "project_id": "tk8-framedata-pro",
+    "storage_bucket": "tk8-framedata-pro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648481478664:android:a4d357679f10a2e76919bd",
+        "android_client_info": {
+          "package_name": "com.tk8.framedata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648481478664-0bdn44cdik9q7lef3uiasgm6darivu5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwdg9HPq1EML2VPQT9eE2sI-8SNfkjBgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648481478664-0bdn44cdik9q7lef3uiasgm6darivu5u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648481478664-f4pu4bu998sra1o3rfk76iu632669dk1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tekken8Framedata"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648481478664:android:250596a9ea8d76786919bd",
+        "android_client_info": {
+          "package_name": "com.tk8.framedata.vpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648481478664-7rrvkmvusun8ss8c1v3icc94bmrbsv90.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tk8.framedata.vpro",
+            "certificate_hash": "d81d52ad67260dde63da0a32a18b18cdcdeecfe6"
+          }
+        },
+        {
+          "client_id": "648481478664-qi9vcu6c2csblujpgi2kf47or2bg0dat.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tk8.framedata.vpro",
+            "certificate_hash": "97316237e95f94412edd7d3b823e3b5ad86bb756"
+          }
+        },
+        {
+          "client_id": "648481478664-rhb2ubi014khsv5m5ptdlcsl86il1n8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tk8.framedata.vpro",
+            "certificate_hash": "f77897096e9eb4628fde4f2c40389ea9c6c9cc37"
+          }
+        },
+        {
+          "client_id": "648481478664-0bdn44cdik9q7lef3uiasgm6darivu5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwdg9HPq1EML2VPQT9eE2sI-8SNfkjBgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648481478664-0bdn44cdik9q7lef3uiasgm6darivu5u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648481478664-f4pu4bu998sra1o3rfk76iu632669dk1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tekken8Framedata"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

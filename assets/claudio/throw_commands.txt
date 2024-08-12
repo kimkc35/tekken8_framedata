@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`9 AP

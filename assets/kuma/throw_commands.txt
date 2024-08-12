@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP, 6 3 2 1 4 6 AP, 헌팅 도중 6 AP, 상대의 하단 공격에 맞춰서 헌팅 도중 6 ~
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`9 AP`6 3 2 1 4 6 AP`헌팅 도중 6 AP`상대의 하단 공격에 맞춰서 헌팅 도중 6 ~

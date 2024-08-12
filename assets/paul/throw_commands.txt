@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL, 상대 뒤에서 AR, AR4 ~, 3 AL2 3 6 RP, 4 LP+RK, 9 AP, 6 6 ~AP, 몸을 숙인 상태에서AP, LPRPLPRP 혹은 RPLPRPLP, RP2 LPLPAP, AP 또는 얼티밋 펀치 3타에서 AP, 4 AL or 4 AR
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL`상대 뒤에서 AR`AR4 ~`3 AL2 3 6 RP`4 LP+RK`9 AP`6 6 ~AP`몸을 숙인 상태에서AP`LPRPLPRP 혹은 RPLPRPLP`RP2 LPLPAP`AP 또는 얼티밋 펀치 3타에서 AP`4 AL or 4 AR

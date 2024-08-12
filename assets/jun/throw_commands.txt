@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 3 RP+LK, 9 AP, 1 AP, 이즈모 도중 LP+RK or RP+LK, 상대의 공격에 맞춰서 4 AL or 4 AR, 상대의 하단 공격에 맞춰서 6 AK, 상대의 잡기 기술에 맞춰서 6 AK
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`3 RP+LK`9 AP`1 AP`이즈모 도중 LP+RK or RP+LK`상대의 공격에 맞춰서 4 AL or 4 AR`상대의 하단 공격에 맞춰서 6 AK`상대의 잡기 기술에 맞춰서 6 AK

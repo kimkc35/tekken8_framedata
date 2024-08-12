@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP, 상대의 펀치 공격에 맞춰서 4 AL or 4 AR, 미스트 일루전 성공 후 RK
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`9 AP`상대의 펀치 공격에 맞춰서 4 AL or 4 AR`미스트 일루전 성공 후 RK

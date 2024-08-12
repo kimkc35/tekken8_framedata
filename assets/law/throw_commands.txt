@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 6 RP+LK, 9 AP, 9 APLPRPAP, 6 6 ~AK, 9 AP, 상대의 공격에 맞춰서 4 AL, 상대의 펀치 공격에 맞춰서 4 AR
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`6 RP+LK`9 AP`9 APLPRPAP`6 6 ~AK`9 AP`상대의 공격에 맞춰서 4 AL`상대의 펀치 공격에 맞춰서 4 AR

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:upgrader/upgrader.dart';
 
@@ -27,13 +26,12 @@ class MyUpgradeAlertState extends UpgradeAlertState {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            key: key,
             title: const Text('업데이트'),
             content: SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
-                  Text('최신버전이 있습니다.'),
-                  Text('\n패치노트 : $releaseNotes'),
+                  Text('최신 버전이 있습니다.'),
+                  Text('\n\n패치노트\n$releaseNotes'),
                 ],
               ),
             ),

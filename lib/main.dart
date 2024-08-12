@@ -5,40 +5,30 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:restart_app/restart_app.dart';
+import 'package:tekken8_framedata/drawer.dart';
+import 'package:tekken8_framedata/searchScreen.dart';
 import 'actionBuilderWidget.dart';
+import 'ad_manager.dart';
 import 'character_variables.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'characterWidget.dart';
+import 'firebase_options.dart' ;
+import 'tipScreen.dart';
 import 'upgradeAlertWidget.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
 
-const bool isPro = false;
+const bool isPro = true;
 
 bool isFirst = true;
 
 String language = "ko";
 
-late Map<String, dynamic> patchNote;
+late Map<String, dynamic> patchNotes;
 
-AdManagerInterstitialAd? interstitialAd;
+
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
-
-final BannerAd _banner = BannerAd(
-    adUnitId: 'ca-app-pub-3256415400287290/4169383092',
-    size: AdSize.banner,
-    request: const AdRequest(),
-    listener: BannerAdListener(
-      onAdLoaded: (Ad ad) => print('Ad loaded.'),
-      onAdFailedToLoad: (Ad ad, LoadAdError error) {
-        ad.dispose();
-        print('Ad failed to load: $error');
-      },
-      onAdOpened: (Ad ad) => print('Ad opened.'),
-      onAdClosed: (Ad ad) => print('Ad closed.'),
-      onAdImpression: (Ad ad) => print('Ad impression.'),
-    )
-)..load();
 
 const List moveFiles = [
   "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
@@ -48,8 +38,12 @@ const List throwFiles = [
   "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
 ];
 
-main() async{
+Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
 
   await initializeSetting();
 
@@ -64,9 +58,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Main(), 
-      theme: themeData
-   );
+      theme: themeData, home: Main()
+    );
   }
 }
 
@@ -102,17 +95,17 @@ class GetContents { // 리스트 구성
         {
           //디버그
           // if(character.name == "kuma"){
-          //   debugPrint("$character, $file, $type : ${mass.toString().split(", ").length}"),
+          //   debugPrint("$character, $file, $type : ${mass.toString().split("`").length}"),
           // },
-          for(int i = 0; i < value[valueNum].toString().split(", ").length; i++){
+          for(int i = 0; i < value[valueNum].toString().split("`").length; i++){
             if(file == "move_names"){
-              moveList.firstWhere((element) => element["type"] == type)["contents"].add([value[valueNum].toString().split(", ")[i]])
+              moveList.firstWhere((element) => element["type"] == type)["contents"].add([value[valueNum].toString().split("`")[i]])
             }else{
-              moveList.firstWhere((element) => element["type"] == type)["contents"][i].add(value[valueNum].toString().split(", ")[i])
+              moveList.firstWhere((element) => element["type"] == type)["contents"][i].add(value[valueNum].toString().split("`")[i])
             }
           }
-          // for(int k = 0; k < value[j].toString().split(", ").length; k++){
-          //   file == "move_names"? list[j]["contents"].add([value[j].toString().split(", ")[k]]) : list[j]["contents"][k].add(value[j].toString().split(", ")[k]),
+          // for(int k = 0; k < value[j].toString().split("`").length; k++){
+          //   file == "move_names"? list[j]["contents"].add([value[j].toString().split("`")[k]]) : list[j]["contents"][k].add(value[j].toString().split("`")[k]),
           // },
         });
         //  late List temp;
@@ -121,10 +114,10 @@ class GetContents { // 리스트 구성
         //   {
         //     //디버그
         //     if(character == "kuma"){
-        //       debugPrint("$character, $file, ${types[j]} : ${value[j].toString().split(", ").length}"),
+        //       debugPrint("$character, $file, ${types[j]} : ${value[j].toString().split("`").length}"),
         //     },
-        //     for(int k = 0; k < value[j].toString().split(", ").length; k++){
-        //       file == "move_names"? list[j]["contents"].add([(value[j].toString().split(", ")[k])]) : list[j]["contents"][k].add((value[j].toString().split(", ")[k])),
+        //     for(int k = 0; k < value[j].toString().split("`").length; k++){
+        //       file == "move_names"? list[j]["contents"].add([(value[j].toString().split("`")[k])]) : list[j]["contents"][k].add((value[j].toString().split("`")[k])),
         //     },
         //   });
         // }else if(language == "en"){
@@ -133,17 +126,17 @@ class GetContents { // 리스트 구성
         //     {
         //       //디버그
         //       // if(character == "zafina"){
-        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split("`").length}"),
         //       // },
-        //       for(int k = 0; k < value[j].toString().split(", ").length; k++){
+        //       for(int k = 0; k < value[j].toString().split("`").length; k++){
         //         if(file == "move_names"){
         //           temp = value[j].toString().replaceAll("일어서며", "WS").replaceAll("횡이동 중", "SS").replaceAll("몸을 숙인 상태에서", "FC").replaceAll("상대에게 등을 보일 때", "BT")
         //               .replaceAll("상대가 쓰러져 있을 때", "OTG").replaceAll("홀드", "Hold").replaceAll("히트 혹은 가드 시", "Hit or Guard").replaceAll("히트 시", "Hit").replaceAll("가드 시", "Guard")
         //               .replaceAll("카운터 히트", "Counter Hit").replaceAll("히트 상태에서", "Heat").replaceAll("엎드려 쓰러져 있을 때", "FDFT").replaceAll("누워 쓰러져 있을 때", "FUFT")
-        //               .split(", "),
+        //               .split("`"),
         //           list[j]["contents"][k].add((temp[k])),
         //         }else{
-        //           list[j]["contents"].add([(value[j].toString().split(", ")[k])]),
+        //           list[j]["contents"].add([(value[j].toString().split("`")[k])]),
         //         }
         //       },
         //     });
@@ -152,14 +145,14 @@ class GetContents { // 리스트 구성
         //     {
         //       //디버그
         //       // if(character == "zafina"){
-        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split(", ").length}"),
+        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split("`").length}"),
         //       // },
-        //       for(int k = 0; k < value[j].toString().split(", ").length; k++){
+        //       for(int k = 0; k < value[j].toString().split("`").length; k++){
         //         if(file == "move_ranges"){
-        //           temp = value[j].toString().replaceAll("상단", "H").replaceAll("중단", "M").replaceAll("하단", "L").replaceAll("가불", "UB").split(", "),
+        //           temp = value[j].toString().replaceAll("상단", "H").replaceAll("중단", "M").replaceAll("하단", "L").replaceAll("가불", "UB").split("`"),
         //           list[j]["contents"][k].add((temp[k])),
         //         }else{
-        //           list[j]["contents"][k].add((value[j].toString().split(", ")[k])),
+        //           list[j]["contents"][k].add((value[j].toString().split("`")[k])),
         //         }
         //       },
         //     });
@@ -176,7 +169,7 @@ class GetContents { // 리스트 구성
     List valueList;
     for (int i = 0; i < throwFiles.length; i++){
       String fileContents = await _loadCharcterFile(throwFiles[i]);
-      valueList = fileContents.split(", ");
+      valueList = fileContents.split("`");
       //디버깅
       // character.name == "king"?debugPrint("$character의 ${throwFiles[i]} 길이 : ${valueList.length}"):null;
       for (int j = 0; j < valueList.length; j++){
@@ -261,10 +254,12 @@ class GetContents { // 리스트 구성
 
 Future<void> initializeSetting() async{
 
-  if(isPro){
-    await Hive.initFlutter();
-  }else{
-    MobileAds.instance.initialize();
+  if(!kIsWeb){
+    if(isPro){
+      await Hive.initFlutter();
+    }else{
+      await loadAd();
+    }
   }
 
   //초기화
@@ -273,53 +268,78 @@ Future<void> initializeSetting() async{
   mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
 
-  for (Character character in characterList.skipWhile((value) => value.name == "")) {
-    isPro ? await Hive.openBox(character.name) : null;
-    // debugPrint("${i + 1}번째 : ${characterList[i]} 하고 ${characterList[i]}"); //디버그
-    try{
-      await GetContents(character).getMoveList(character.types).then((value) => {
-        for(var type in value){
-          for(var contents in type["contents"]){
-            for(int i = 1; i <= sticks.length; i++){
-              contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
-              contents[8] = contents[8].toString().replaceAll("$i ", sticks["c$i"].toString()).replaceAll("space", " ")
-            },
-            contents[8] = contents[8].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
-          },
-          for(var contents in type["contents"]){
-            for(int i = 0; i < commonExtraInitials.length; i++){
-              contents[8] = contents[8].toString().replaceAll(commonExtraInitials[i]["name"].toString(), commonExtraInitials[i][commonExtraInitials[i]["name"]].toString())
-            }
-          }
-        },
-        for(var extraInitial in character.extraInitials){
+  if(kIsWeb){
+    mainFont = 'OneMobile';
+  }
+
+  for (Character character in characterList) {
+    if(character.name != "") {
+      isPro && !kIsWeb ? await Hive.openBox(character.name) : null;
+      // debugPrint("${i + 1}번째 : ${characterList[i]} 하고 ${characterList[i]}"); //디버그
+      try {
+        await GetContents(character).getMoveList(character.types).then((
+            value) =>
+        {
           for(var type in value){
             for(var contents in type["contents"]){
-              for(int i = 0; i < extraInitial.values.length; i++){
-                contents[8] = contents[8].toString().replaceAll(extraInitial["name"].toString(), extraInitial[extraInitial["name"]].toString()).replaceAll("/", "\n")
+              for(int i = 1; i <= sticks.length; i++){
+                contents[1] = contents[1].toString().replaceAll(
+                    "$i ", sticks["c$i"].toString()),
+                contents[8] = contents[8].toString().replaceAll(
+                    "$i ", sticks["c$i"].toString()).replaceAll("space", " ")
+              },
+              contents[8] =
+                  contents[8].toString().replaceAll("-", "").replaceAll(
+                      "/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
+            },
+            for(var contents in type["contents"]){
+              for(int i = 0; i < commonExtraInitials.length; i++){
+                contents[8] = contents[8].toString().replaceAll(
+                    commonExtraInitials[i]["name"].toString(),
+                    commonExtraInitials[i][commonExtraInitials[i]["name"]]
+                        .toString())
               }
             }
-          }
-        },
-        character.moveList = value,
-      });
-      await GetContents(character).getThrowList().then((value) =>
-      {
-        for(var contents in value){
-          for(int i = 1; i <= sticks.length; i++){
-            contents[1] = contents[1].toString().replaceAll("$i ", sticks["c$i"].toString()),
-            contents[7] = contents[7].toString().replaceAll("$i ", sticks["c$i"].toString()),
           },
-          contents[1] = contents[1].toString().replaceAll("delete", ""),
-          contents[7] = contents[7].toString().replaceAll("-", "").replaceAll("/", "\n").replaceAll("-", "").replaceAll("hyphen", "-").replaceAll("delete", "")
-        },
-        character.throwList = value,
-      });
-    }catch(e){
-      debugPrint("${character.name}에서 오류 : $e");
+          for(var extraInitial in character.extraInitials){
+            for(var type in value){
+              for(var contents in type["contents"]){
+                for(int i = 0; i < extraInitial.values.length; i++){
+                  contents[8] = contents[8].toString().replaceAll(
+                      extraInitial["name"].toString(),
+                      extraInitial[extraInitial["name"]].toString()).replaceAll(
+                      "/", "\n")
+                }
+              }
+            }
+          },
+          character.moveList = value,
+        });
+        await GetContents(character).getThrowList().then((value) =>
+        {
+          for(var contents in value){
+            for(int i = 1; i <= sticks.length; i++){
+              contents[1] = contents[1].toString().replaceAll(
+                  "$i ", sticks["c$i"].toString()),
+              contents[7] = contents[7].toString().replaceAll(
+                  "$i ", sticks["c$i"].toString()),
+            },
+            contents[1] = contents[1].toString().replaceAll(";", "\b"),
+            contents[7] = contents[7].toString().replaceAll("-", "")
+                .replaceAll("/", "\n")
+                .replaceAll("hyphen", "-"),
+            for(int i = 0; i < contents.length; i++){
+              contents[i] = contents[i].toString().replaceAll(";", "\b")
+            }
+          },
+          character.throwList = value,
+        });
+      } catch (e) {
+        debugPrint("${character.name}에서 오류 : $e");
+      }
     }
   }
-  patchNote = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
+  patchNotes = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
 }
 
 String mainFont = "Tenada";
@@ -331,17 +351,6 @@ final themeData = ThemeData(
   useMaterial3: false,
   primarySwatch: Colors.pink,
 );
-
-String replaceNumbers(String text){
-  String result = text;
-  for (int i = 0; i < sticks.length; i ++){
-    result = result.replaceAll("${i + 1} ", "${sticks["c${i + 1}"]}");
-  }
-
-  return result;
-}
-
-
 
 bool changeFont = false;
 
@@ -415,7 +424,9 @@ class Main extends StatefulWidget {
   State<Main> createState() => _MainState();
 }
 
-class _MainState extends State<Main> {
+class _MainState extends State<Main> with SingleTickerProviderStateMixin{
+
+  late TabController tabController;
 
   @override
   void initState() {
@@ -423,69 +434,76 @@ class _MainState extends State<Main> {
     if(!isPro) {
       loadAd();
     }
+
+    tabController = TabController(length: tabList.length, vsync: this);
   }
 
-  void loadAd() {
-    AdManagerInterstitialAd.load(
-        adUnitId: 'ca-app-pub-3256415400287290/6923530178',
-        request: const AdManagerAdRequest(),
-        adLoadCallback: AdManagerInterstitialAdLoadCallback(
-          onAdLoaded: (ad) {
-            debugPrint('$ad loaded.');
-            interstitialAd = ad;
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            debugPrint('AdManagerInterstitialAd failed to load: $error');
-          },
-        ));
-  }
+  List<Widget> tabList = [
+    Container(
+      color: const Color(0xff333333),
+      width: double.infinity,
+      height: double.infinity,
+      child: Center(
+        child: SizedBox(
+          width: 400,
+          height: 3000,
+          child: ListView.builder(
+              itemCount: characterList.length ~/ 2,
+              itemBuilder: (BuildContext ctx, int idx) {
+                return Column(
+                  children: [
+                    CharacterButton(
+                        character1: characterList[idx * 2],
+                        character2: characterList[idx * 2 + 1]
+                    )
+                  ],
+                );
+              }
+          ),
+        ),
+      ),
+    ),
+    TipPage(),
+    SearchPage()
+  ];
+
 
   @override
   Widget build(BuildContext context) {
     return MyUpgradeAlert(
       child: Scaffold(
+        drawer: DrawerWidget(tabController: tabController,),
         appBar: AppBar(
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
           elevation: 0.0,
-          leadingWidth: 120,
           title: Text("FRAMEDATA"),
           centerTitle: true,
-
-          actions: [
-            actionBuilder(context, "", false)
-          ],
-          backgroundColor: Colors.black,
-        ),
-        body: Container(
-          color: const Color(0xff333333),
-          width: double.infinity,
-          height: double.infinity,
-          child: Center(
-            child: SizedBox(
-              width: 400,
-              height: 3000,
-              child: ListView.builder(
-                  itemCount: characterList.length ~/ 2,
-                  itemBuilder: (BuildContext ctx, int idx) {
-                  return Column(
-                    children: [
-                      CharacterButton(
-                        character1: characterList[idx * 2],
-                        character2: characterList[idx * 2 + 1]
-                      )
-                    ],
-                  );
-                }
-              ),
-            ),
+            actions: [
+              actionBuilder(context: context)
+            ],
+            backgroundColor: Colors.black,
           ),
+          body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: tabController,
+            children: tabList
+          ),
+          bottomNavigationBar: !isPro ? Container(
+            color: Colors.black,
+            width: banner.size.width.toDouble(),
+            height: banner.size.height.toDouble(),
+            child: AdWidget(ad: banner,),
+          ) : null
         ),
-        bottomNavigationBar: !isPro ? Container(
-          color: Colors.black,
-          width: _banner.size.width.toDouble(),
-          height: _banner.size.height.toDouble(),
-          child: AdWidget(ad: _banner,),
-        ) : null
-      ),
     );
   }
 }
@@ -514,10 +532,8 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                if(widget.character1.videoList == null) GetContents(widget.character1).makeCharacterVideoUrlList();
-                return CharacterPage(character: widget.character1,);
-              }));
+              GetContents(widget.character1).makeCharacterVideoUrlList();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character1,)));
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
@@ -534,11 +550,10 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
-              widget.character2 != empty?
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                if(widget.character2.videoList == null) GetContents(widget.character2).makeCharacterVideoUrlList();
-                return CharacterPage(character: widget.character2);
-              }))
+              widget.character2 != empty ?{
+              GetContents(widget.character2).makeCharacterVideoUrlList(),
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
+              }
               : ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
             },
             child: Stack(

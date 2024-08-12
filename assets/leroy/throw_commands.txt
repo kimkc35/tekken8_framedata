@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 9 AP, 상대의 공격에 맞춰서 4 RP, 쌍룡문 성공 후 LP or RP, 상대의 공격에 맞춰서 4 RP(저스트), 쌍룡문(저스트) 성공 후 LP or RP
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`9 AP`상대의 공격에 맞춰서 4 RP`쌍룡문 성공 후 LP or RP`상대의 공격에 맞춰서 4 RP(저스트)`쌍룡문(저스트) 성공 후 LP or RP

@@ -1,1 +1,1 @@
-AL, AR, 상대 왼쪽에서 AL or AR, 상대 오른쪽에서 AL or AR, 상대 뒤에서 AL or AR, 3 RP+LK, 9 AP, 2 1 4 AL, 상대 공격에 맞춰 4 AL or 4 AR
+AL`AR`상대 왼쪽에서 AL or AR`상대 오른쪽에서 AL or AR`상대 뒤에서 AL or AR`3 RP+LK`9 AP`2 1 4 AL`상대 공격에 맞춰 4 AL or 4 AR
