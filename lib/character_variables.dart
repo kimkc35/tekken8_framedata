@@ -1,4 +1,5 @@
 import 'main.dart';
+import 'modules.dart';
 
 const commonExtraInitials = [
   {"name" : "heat", "heat" : "히트 상태의 남은 시간을 소비"},
@@ -9,27 +10,6 @@ const commonExtraInitials = [
   {"name" : "charge", "charge" : "효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"},
   {"name" : "clean", "clean" : "클린 히트 효과\n()는 클린 히트 시 대미지"}
 ];
-
-class Character{
-  String name;
-  List rageArts;
-  List<Map<String, String>> extraInitials;
-  List<String> heatSystem;
-  Map<String, bool> types;
-  Map<String, String> typesKo;
-  late List<Map<String, dynamic>> moveList;
-  late List<List<String>> throwList;
-  Map<String, String>? videoList = {};
-
-  Character({
-    required this.name,
-    required this.rageArts,
-    required this.extraInitials,
-    required this.heatSystem,
-    required this.types,
-    required this.typesKo,
-  });
-}
 
 Character empty = Character(name: "", rageArts: [], extraInitials: [], heatSystem: [], types: {}, typesKo: {});
 
@@ -443,4 +423,4 @@ Character lidia = Character(
 );
 
 
-final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina, empty];
+final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina];

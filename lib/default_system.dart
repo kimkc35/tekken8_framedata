@@ -4,7 +4,7 @@ import 'main.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'character_variables.dart';
+import 'modules.dart';
 
 TextStyle contextStyle = TextStyle(fontWeight: FontWeight.w400, height: 1.5);
 
@@ -86,7 +86,7 @@ memo (BuildContext context, Character character, String moveName) {
     controller.text = currentBox.get(moveName);
   }
 
-  showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("${character.name.toUpperCase()}, $moveName", style: TextStyle(color: Colors.black), textScaler: TextScaler.linear(1.2),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, color: Colors.black,), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
+  showDialog<String>(context: context, builder: (BuildContext context) => AlertDialog(title: Text("${character.name.toUpperCase()}, $moveName", style: TextStyle(fontSize: 20),),
     content: SingleChildScrollView(child: TextField(onChanged: (value) {
       currentBox.put(moveName, value);
     },controller:controller,maxLines: null, decoration: const InputDecoration(hintText: "원하는 내용을 입력하세요!", border: null))),
@@ -109,36 +109,36 @@ const TextScaler textScale = TextScaler.linear(0.9);
 
 int listLength = 0;
 
-TextStyle textStyleDefault = TextStyle(fontWeight: FontWeight.w400, color: Colors.black, height: 1.2, fontFamily: mainFont),
-    textStylePlus = TextStyle(fontWeight: FontWeight.w400, color: Colors.green, fontFamily: mainFont),
-    textStyleMinus = TextStyle(fontWeight: FontWeight.w400, color: Color(0xff1a74b2), fontFamily: mainFont),
-    textStylePunish = TextStyle(fontWeight: FontWeight.w400, color: Colors.red, fontFamily: mainFont);
-
 //무브 리스트 생성
-List<DataCell> createMove(BuildContext context, Character character, name, command, start, guard, hit, counter, range, damage, extra){
+List<DataCell> createMove(BuildContext context, Character character, name, command, startFrame, guardFrame, hitFrame, counterFrame, range, damage, extra){
+  TextStyle textStyleDefault = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.black, height: 1.2, ),
+      textStylePlus = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.green),
+      textStyleMinus = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Color(0xff1a74b2)),
+      textStylePunish = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.red,);
+
   listLength++;
   List<String> guardParts = [];
   String guardPart1 = "", hitPart1 = "", hitPart2 = "", counterPart1 = "", counterPart2 = "";
 
-  if(guard.contains("(")){
-    guardPart1 = guard.toString().split("(")[0];
-    guardParts = guard.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "").split(",");
+  if(guardFrame.contains("(")){
+    guardPart1 = guardFrame.toString().split("(")[0];
+    guardParts = guardFrame.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "").split(",");
   }
 
-  if(hit.contains("(")){
-    hitPart1 = hit.toString().split("(")[0];
-    hitPart2 = hit.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "");
+  if(hitFrame.contains("(")){
+    hitPart1 = hitFrame.toString().split("(")[0];
+    hitPart2 = hitFrame.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "");
   }
 
-  if(counter.contains("(")){
-    counterPart1 = counter.toString().split("(")[0];
-    counterPart2 = counter.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "");
+  if(counterFrame.contains("(")){
+    counterPart1 = counterFrame.toString().split("(")[0];
+    counterPart2 = counterFrame.toString().split("(")[1].replaceAll("(", "").replaceAll(")", "");
   }
 
   return [
     DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
-    DataCell(SizedBox(width: 30, child: Text(start,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
-    if(guard.contains("("))...[
+    DataCell(SizedBox(width: 30, child: Text(startFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
+    if(guardFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
         guardPart1.contains("+") ? TextSpan(text: guardPart1, style: textStylePlus) : (guardPart1.contains("-") && isFloat(guardPart1) && int.parse(guardPart1) <= -10) ? TextSpan(text: guardPart1, style: textStylePunish) : guardPart1.contains("-") ? TextSpan(text: guardPart1, style: textStyleMinus) : TextSpan(text: guardPart1, style: textStyleDefault),
         TextSpan(text: "\n(", style: textStyleDefault, ),
@@ -148,52 +148,52 @@ List<DataCell> createMove(BuildContext context, Character character, name, comma
         ],
           TextSpan(text: ")", style: textStyleDefault),
       ]), textScaler: textScale, textAlign: TextAlign.center)))
-    ]else if(guard.contains("-") && guard != "-")...[
-      if(isFloat(guard) && int.parse(guard) <= -10)...[
-        DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
+    ]else if(guardFrame.contains("-") && guardFrame != "-")...[
+      if(isFloat(guardFrame) && int.parse(guardFrame) <= -10)...[
+        DataCell(SizedBox(width: listWidth, child: Text(guardFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(guardFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
       ]
-    ]else if(guard.contains("+"))...[
-      DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
+    ]else if(guardFrame.contains("+"))...[
+      DataCell(SizedBox(width: listWidth, child: Text(guardFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: listWidth, child: Text(guard,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
+      DataCell(SizedBox(width: listWidth, child: Text(guardFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
-    if(hit.contains("("))...[
+    if(hitFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
         hitPart1.contains("+") ? TextSpan(text: hitPart1, style: textStylePlus) : hitPart1.contains("-") ? TextSpan(text: hitPart1, style: textStyleMinus) : TextSpan(text: hitPart1, style: textStyleDefault),
         TextSpan(text: "\n(", style: textStyleDefault, ),
         hitPart2.contains("+") ? TextSpan(text: hitPart2, style: textStylePlus) : hitPart2.contains("-") ? TextSpan(text: hitPart2, style: textStyleMinus) : TextSpan(text: hitPart2, style: textStyleDefault),
         TextSpan(text: ")", style: textStyleDefault),
       ]), textScaler: textScale, textAlign: TextAlign.center)))
-    ]else if(hit.contains("-") && hit != "-")...[
-      if(isFloat(hit) && int.parse(hit) <= -10)...[
-        DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
+    ]else if(hitFrame.contains("-") && hitFrame != "-")...[
+      if(isFloat(hitFrame) && int.parse(hitFrame) <= -10)...[
+        DataCell(SizedBox(width: listWidth, child: Text(hitFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(hitFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
       ]
-    ]else if(hit.contains("+"))...[
-      DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
+    ]else if(hitFrame.contains("+"))...[
+      DataCell(SizedBox(width: listWidth, child: Text(hitFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: listWidth, child: Text(hit,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
+      DataCell(SizedBox(width: listWidth, child: Text(hitFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
-    if(counter.contains("("))...[
+    if(counterFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: RichText(text : TextSpan(children: [
         counterPart1.contains("+") ? TextSpan(text: counterPart1, style: textStylePlus) : counterPart1.contains("-") ? TextSpan(text: counterPart1, style: textStyleMinus) : TextSpan(text: counterPart1, style: textStyleDefault),
         TextSpan(text: "\n(", style: textStyleDefault, ),
         counterPart2.contains("+") ? TextSpan(text: counterPart2, style: textStylePlus) : counterPart2.contains("-") ? TextSpan(text: counterPart2, style: textStyleMinus) : TextSpan(text: counterPart2, style: textStyleDefault),
         TextSpan(text: ")", style: textStyleDefault),
       ]), textScaler: textScale, textAlign: TextAlign.center)))
-    ]else if(counter.contains("-") && counter != "-")...[
-      if(isFloat(counter) && int.parse(counter) <= -10)...[
-        DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
+    ]else if(counterFrame.contains("-") && counterFrame != "-")...[
+      if(isFloat(counterFrame) && int.parse(counterFrame) <= -10)...[
+        DataCell(SizedBox(width: listWidth, child: Text(counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
+        DataCell(SizedBox(width: listWidth, child: Text(counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
       ]
-    ]else if(counter.contains("+"))...[
-      DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
+    ]else if(counterFrame.contains("+"))...[
+      DataCell(SizedBox(width: listWidth, child: Text(counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: listWidth, child: Text(counter,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
+      DataCell(SizedBox(width: listWidth, child: Text(counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
     DataCell(SizedBox(width: 30, child: Text(range,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(SizedBox(width: 50, child: Text(damage,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
@@ -204,23 +204,28 @@ List<DataCell> createMove(BuildContext context, Character character, name, comma
   ];
 }
 
-List<DataCell> createThrow(BuildContext context, Character character, name, command, start, breakThrow, frameAfterBreak, damage, range, extra){
+List<DataCell> createThrow(BuildContext context, Character character, name, command, startFrame, breakCommand, afterBreakCommand, damage, range, extra){
+  TextStyle textStyleDefault = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.black, height: 1.2, ),
+      textStylePlus = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.green),
+      textStyleMinus = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Color(0xff1a74b2)),
+      textStylePunish = TextStyle(fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font, color: Colors.red,);
+
   return [
     DataCell(SizedBox(width: 150, child: Text("$name\n$command", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, name);}), //기술명, 커맨드
-    DataCell(SizedBox(width: 30, child: Text(start, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
-    DataCell(SizedBox(width: 40, child: Text(breakThrow, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
-    if(frameAfterBreak.contains("+") && frameAfterBreak.contains("-") && frameAfterBreak != "-")...[ //풀기 후 F
-      DataCell(SizedBox(width: 30, child: Text(frameAfterBreak,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
-    ]else if(frameAfterBreak.contains("-") && frameAfterBreak != "-")...[
-      if(isFloat(frameAfterBreak) && int.parse(frameAfterBreak) <= -10)...[
-        DataCell(SizedBox(width: 30, child: Text(frameAfterBreak,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
+    DataCell(SizedBox(width: 30, child: Text(startFrame, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
+    DataCell(SizedBox(width: 40, child: Text(breakCommand, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
+    if(afterBreakCommand.contains("+") && afterBreakCommand.contains("-") && afterBreakCommand != "-")...[ //풀기 후 F
+      DataCell(SizedBox(width: 30, child: Text(afterBreakCommand,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
+    ]else if(afterBreakCommand.contains("-") && afterBreakCommand != "-")...[
+      if(isFloat(afterBreakCommand) && int.parse(afterBreakCommand) <= -10)...[
+        DataCell(SizedBox(width: 30, child: Text(afterBreakCommand,textAlign: TextAlign.center, textScaler: textScale, style: textStylePunish)))
       ]else...[
-        DataCell(SizedBox(width: 30, child: Text(frameAfterBreak,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
+        DataCell(SizedBox(width: 30, child: Text(afterBreakCommand,textAlign: TextAlign.center, textScaler: textScale, style: textStyleMinus)))
       ]
-    ]else if(frameAfterBreak.contains("+"))...[
-      DataCell(SizedBox(width: 30, child: Text(frameAfterBreak,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
+    ]else if(afterBreakCommand.contains("+"))...[
+      DataCell(SizedBox(width: 30, child: Text(afterBreakCommand,textAlign: TextAlign.center, textScaler: textScale, style: textStylePlus)))
     ]else...[
-      DataCell(SizedBox(width: 30, child: Text(frameAfterBreak,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
+      DataCell(SizedBox(width: 30, child: Text(afterBreakCommand,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
     DataCell(SizedBox(width: 50, child: Text(damage, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
     DataCell(SizedBox(width: 30, child: Text(range, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정

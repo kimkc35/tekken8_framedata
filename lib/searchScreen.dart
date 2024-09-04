@@ -7,12 +7,7 @@ import 'package:html/parser.dart' as parser;
 import 'package:html/dom.dart' as dom;
 import 'package:tekken8_framedata/main.dart';
 import 'package:tekken8_framedata/playerDetailsScreen.dart';
-
-class PlayerInfo {
-  final String polarisId, name, onlineId, platform, url;
-
-  PlayerInfo({required this.polarisId, required this.name, required this.onlineId, required this.platform, required this.url});
-}
+import 'modules.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -30,22 +25,20 @@ class _SearchPageState extends State<SearchPage> {
     List<PlayerInfo> playerInfoList = [];
 
     if(searchController.text != ""){
-      final url = "https://tekkenstats.gg/search/?q=${searchController.text}";
+      final uri = Uri.https("tekkenstats.gg", "/search/", {'q': searchController.text});
       setState(() {
         searchController.text = "";
         isSearching = true;
       });
-
-      final parse = Uri.parse(url);
-      final response = await http.get(parse);
+      final response = await http.get(uri);
       dom.Document document = parser.parse(response.body);
       final playerList = document.querySelectorAll('main > div > table > tbody > tr');
 
       for (var player in playerList) {
         final playerInfo = player.querySelectorAll('td');
-        final url = playerInfo[0].querySelector('a')?.attributes['href'];
+        final number = playerInfo[0].querySelector('a')?.attributes['href']!.replaceAll('https://tekkenstats.gg/player/', '');
         playerInfoList.add(
-          PlayerInfo(polarisId: playerInfo[0].text, name: playerInfo[1].text, onlineId: playerInfo[2].text, platform: playerInfo[3].text.replaceAll("\n", "").replaceAll(" ", ""), url : url!)
+          PlayerInfo(polarisId: playerInfo[0].text, name: playerInfo[1].text, onlineId: playerInfo[2].text, platform: playerInfo[3].text.replaceAll("\n", "").replaceAll(" ", ""), number : number!)
         );
       }
 
@@ -93,6 +86,10 @@ class _SearchPageState extends State<SearchPage> {
                             ),
                             maxLines: null,
                             controller: searchController,
+                            textInputAction: TextInputAction.search,
+                            onSubmitted: (value)async{
+                              resultList = await search();
+                            },
                           ),
                         ),
                         IconButton(onPressed: ()async{

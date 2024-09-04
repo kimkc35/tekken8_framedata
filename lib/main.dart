@@ -1,10 +1,10 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:restart_app/restart_app.dart';
 import 'package:tekken8_framedata/drawer.dart';
 import 'package:tekken8_framedata/searchScreen.dart';
 import 'actionBuilderWidget.dart';
@@ -14,6 +14,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'characterWidget.dart';
 import 'firebase_options.dart' ;
+import 'modules.dart';
 import 'tipScreen.dart';
 import 'upgradeAlertWidget.dart';
 import 'package:firebase_core/firebase_core.dart' show Firebase;
@@ -26,17 +27,9 @@ String language = "ko";
 
 late Map<String, dynamic> patchNotes;
 
-
+List<PlayerInfo> bookmarkedList = [];
 
 const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "N", "c6" : "→", "c7" : "↖", "c8" : "↑", "c9" : "↗"};
-
-const List moveFiles = [
-  "move_names", "move_commands", "move_start_frames", "move_guard_frames", "move_hit_frames", "move_counter_frames", "move_ranges", "move_damages", "move_extras"
-];
-
-const List throwFiles = [
-  "throw_names", "throw_commands", "throw_start_frames", "throw_break_commands", "throw_after_break_frames", "throw_damages", "throw_ranges", "throw_extras"
-];
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,13 +45,27 @@ Future main() async{
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+  refresh(){
+    setState(() {
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: themeData, home: Main()
+      navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
+      theme: themeData,
+      home: Main(refresh: refresh,),
     );
   }
 }
@@ -68,116 +75,6 @@ class GetContents { // 리스트 구성
   Character character;
 
   GetContents(this.character);
-
-  Future _loadCharcterFile(fileName) async {
-    return await rootBundle.loadString("assets/${character.name}/$fileName.txt");
-  }
-
-  Future<List> _loadList(fileName) async {
-    final String text = await _loadCharcterFile(fileName);
-    return text.split(" | ");
-  }
-
-  Future<List<Map<String, dynamic>>> getMoveList(Map<String, bool> types) async {
-    List<Map<String, dynamic>> moveList = [];
-    int valueNum = 0;
-    for(String type in types.keys) {
-      moveList.addAll(
-          {
-            {
-              "type": type,
-              "contents": []
-            }
-          }
-      );
-      for (String file in moveFiles) {
-        await _loadList(file).then((value) =>
-        {
-          //디버그
-          // if(character.name == "kuma"){
-          //   debugPrint("$character, $file, $type : ${mass.toString().split("`").length}"),
-          // },
-          for(int i = 0; i < value[valueNum].toString().split("`").length; i++){
-            if(file == "move_names"){
-              moveList.firstWhere((element) => element["type"] == type)["contents"].add([value[valueNum].toString().split("`")[i]])
-            }else{
-              moveList.firstWhere((element) => element["type"] == type)["contents"][i].add(value[valueNum].toString().split("`")[i])
-            }
-          }
-          // for(int k = 0; k < value[j].toString().split("`").length; k++){
-          //   file == "move_names"? list[j]["contents"].add([value[j].toString().split("`")[k]]) : list[j]["contents"][k].add(value[j].toString().split("`")[k]),
-          // },
-        });
-        //  late List temp;
-        // if(language == "ko"){
-        //   await _loadList(file, character).then((value) =>
-        //   {
-        //     //디버그
-        //     if(character == "kuma"){
-        //       debugPrint("$character, $file, ${types[j]} : ${value[j].toString().split("`").length}"),
-        //     },
-        //     for(int k = 0; k < value[j].toString().split("`").length; k++){
-        //       file == "move_names"? list[j]["contents"].add([(value[j].toString().split("`")[k])]) : list[j]["contents"][k].add((value[j].toString().split("`")[k])),
-        //     },
-        //   });
-        // }else if(language == "en"){
-        //   if(file == "move_names" || file == "move_commands"){
-        //     await _loadList("${file}_en", character).then((value) =>
-        //     {
-        //       //디버그
-        //       // if(character == "zafina"){
-        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split("`").length}"),
-        //       // },
-        //       for(int k = 0; k < value[j].toString().split("`").length; k++){
-        //         if(file == "move_names"){
-        //           temp = value[j].toString().replaceAll("일어서며", "WS").replaceAll("횡이동 중", "SS").replaceAll("몸을 숙인 상태에서", "FC").replaceAll("상대에게 등을 보일 때", "BT")
-        //               .replaceAll("상대가 쓰러져 있을 때", "OTG").replaceAll("홀드", "Hold").replaceAll("히트 혹은 가드 시", "Hit or Guard").replaceAll("히트 시", "Hit").replaceAll("가드 시", "Guard")
-        //               .replaceAll("카운터 히트", "Counter Hit").replaceAll("히트 상태에서", "Heat").replaceAll("엎드려 쓰러져 있을 때", "FDFT").replaceAll("누워 쓰러져 있을 때", "FUFT")
-        //               .split("`"),
-        //           list[j]["contents"][k].add((temp[k])),
-        //         }else{
-        //           list[j]["contents"].add([(value[j].toString().split("`")[k])]),
-        //         }
-        //       },
-        //     });
-        //   }else{
-        //     await _loadList(file, character).then((value) =>
-        //     {
-        //       //디버그
-        //       // if(character == "zafina"){
-        //       //   debugPrint("$character, ${moveFiles[i]}, ${types[j]} : ${value[j].toString().split("`").length}"),
-        //       // },
-        //       for(int k = 0; k < value[j].toString().split("`").length; k++){
-        //         if(file == "move_ranges"){
-        //           temp = value[j].toString().replaceAll("상단", "H").replaceAll("중단", "M").replaceAll("하단", "L").replaceAll("가불", "UB").split("`"),
-        //           list[j]["contents"][k].add((temp[k])),
-        //         }else{
-        //           list[j]["contents"][k].add((value[j].toString().split("`")[k])),
-        //         }
-        //       },
-        //     });
-        //   }
-        // }
-      }
-      valueNum++;
-    }
-    return moveList;
-  }
-
-  Future<List<List<String>>> getThrowList({bool isKo = true}) async {
-    List<List<String>> throwList = [];
-    List valueList;
-    for (int i = 0; i < throwFiles.length; i++){
-      String fileContents = await _loadCharcterFile(throwFiles[i]);
-      valueList = fileContents.split("`");
-      //디버깅
-      // character.name == "king"?debugPrint("$character의 ${throwFiles[i]} 길이 : ${valueList.length}"):null;
-      for (int j = 0; j < valueList.length; j++){
-        throwList.length <= j? throwList.add([valueList[j]]) : throwList[j].add(valueList[j]);
-      }
-    }
-    return throwList;
-  }
 
     Future<List> getVideoUrlList() async {
 
@@ -252,6 +149,14 @@ class GetContents { // 리스트 구성
   }
 }
 
+ThemeData themeData = ThemeData(
+  buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
+  textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
+  fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font,
+  useMaterial3: false,
+  primarySwatch: Colors.pink,
+);
+
 Future<void> initializeSetting() async{
 
   if(!kIsWeb){
@@ -262,171 +167,62 @@ Future<void> initializeSetting() async{
     }
   }
 
+  for(var character in characterList){
+    if(isPro) await Hive.openBox(character.name);
+    final Map<String, List<Moves>> moves = {};
+    final List<Throws> throws = [];
+    var characterJson = jsonDecode(await rootBundle.loadString("assets/json/${character.name}.json"));
+
+    for(var type in character.types.keys){
+      moves.addAll({
+        type : []
+      });
+      for(var move in characterJson['moves'][type]){
+        moves[type]?.add(
+            Moves(name: move['name'], command: move['command'], startFrame: move['start_frame'], guardFrame: move["guard_frame"], hitFrame: move['hit_frame'], counterFrame: move['counter_frame'], range: move['range'], damage: move['damage'], extra: move['extra'])
+        );
+      }
+    }
+
+    for(var moveThrow in characterJson['throws']){
+      throws.add(
+        Throws(name: moveThrow['name'], command: moveThrow['command'], startFrame: moveThrow['start_frame'], breakCommand: moveThrow['break_command'], afterBreakFrame: moveThrow['after_break_frame'], range: moveThrow['range'], damage: moveThrow['damage'], extra: moveThrow['extra'])
+      );
+    }
+
+    character.moveList = moves;
+    character.throwList = throws;
+  }
+  characterList.add(empty);
+
   //초기화
   SharedPreferences prefs = await SharedPreferences.getInstance();
   changeFont = prefs.getBool('changeFont') ?? false;
-  mainFont = changeFont ? 'OneMobile' : 'Tenada';
   language = prefs.getString('language') ?? "ko";
-
-  if(kIsWeb){
-    mainFont = 'OneMobile';
-  }
-
-  for (Character character in characterList) {
-    if(character.name != "") {
-      isPro && !kIsWeb ? await Hive.openBox(character.name) : null;
-      // debugPrint("${i + 1}번째 : ${characterList[i]} 하고 ${characterList[i]}"); //디버그
-      try {
-        await GetContents(character).getMoveList(character.types).then((
-            value) =>
-        {
-          for(var type in value){
-            for(var contents in type["contents"]){
-              for(int i = 1; i <= sticks.length; i++){
-                contents[1] = contents[1].toString().replaceAll(
-                    "$i ", sticks["c$i"].toString()),
-                contents[8] = contents[8].toString().replaceAll(
-                    "$i ", sticks["c$i"].toString()).replaceAll("space", " ")
-              },
-              contents[8] =
-                  contents[8].toString().replaceAll("-", "").replaceAll(
-                      "/", "\n").replaceAll("-", "").replaceAll("hyphen", "-")
-            },
-            for(var contents in type["contents"]){
-              for(int i = 0; i < commonExtraInitials.length; i++){
-                contents[8] = contents[8].toString().replaceAll(
-                    commonExtraInitials[i]["name"].toString(),
-                    commonExtraInitials[i][commonExtraInitials[i]["name"]]
-                        .toString())
-              }
-            }
-          },
-          for(var extraInitial in character.extraInitials){
-            for(var type in value){
-              for(var contents in type["contents"]){
-                for(int i = 0; i < extraInitial.values.length; i++){
-                  contents[8] = contents[8].toString().replaceAll(
-                      extraInitial["name"].toString(),
-                      extraInitial[extraInitial["name"]].toString()).replaceAll(
-                      "/", "\n")
-                }
-              }
-            }
-          },
-          character.moveList = value,
-        });
-        await GetContents(character).getThrowList().then((value) =>
-        {
-          for(var contents in value){
-            for(int i = 1; i <= sticks.length; i++){
-              contents[1] = contents[1].toString().replaceAll(
-                  "$i ", sticks["c$i"].toString()),
-              contents[7] = contents[7].toString().replaceAll(
-                  "$i ", sticks["c$i"].toString()),
-            },
-            contents[1] = contents[1].toString().replaceAll(";", "\b"),
-            contents[7] = contents[7].toString().replaceAll("-", "")
-                .replaceAll("/", "\n")
-                .replaceAll("hyphen", "-"),
-            for(int i = 0; i < contents.length; i++){
-              contents[i] = contents[i].toString().replaceAll(";", "\b")
-            }
-          },
-          character.throwList = value,
-        });
-      } catch (e) {
-        debugPrint("${character.name}에서 오류 : $e");
-      }
+  final list = prefs.getStringList('bookmarkedList');
+  if(list != null){
+    for(String string in list) {
+      bookmarkedList.add(PlayerInfo.fromJson(jsonDecode(string)));
     }
   }
+
   patchNotes = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
 }
 
-String mainFont = "Tenada";
-
-final themeData = ThemeData(
-  buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
-  fontFamily: mainFont,
-  textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
-  useMaterial3: false,
-  primarySwatch: Colors.pink,
-);
-
 bool changeFont = false;
 
-class SettingDialog extends StatefulWidget {
-  const SettingDialog({super.key});
-
-  @override
-  State<SettingDialog> createState() => _SettingDialogState();
-}
-
-//설정
-class _SettingDialogState extends State<SettingDialog> {
-
-  void saveFontSetting() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('changeFont', changeFont);
-    setState(() {
-      mainFont = changeFont ? 'OneMobile' : 'Tenada';
-    });
-  }
-
-  void saveLanguageSetting(setLanguage) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      language = setLanguage;
-    });
-    prefs.setString('language', language);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(title: Text(language == "ko"?"설정" : "Setting", style: TextStyle(fontSize: 20, color: Colors.black),), contentTextStyle: TextStyle(fontFamily: mainFont, height: 1.5, fontSize: 15, color: Colors.black), titleTextStyle: TextStyle(fontFamily: mainFont, color: Colors.black),
-      content: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(language == 'ko'?"폰트 바꾸기" : "Change Font"),
-                Switch(value: changeFont, onChanged: (value) {
-                  setState(() {
-                    changeFont = value;
-                  });
-                  saveFontSetting();
-                })
-              ],
-            ),
-            //한국어
-            // Row(
-            //   children: [
-            //     Icon(Icons.translate),
-            //     DropdownButton(value: language, items: [DropdownMenuItem(value: "ko", child: Text("한국어"),), DropdownMenuItem(value: "en", child: Text("English"),)], onChanged: (value) => saveLanguageSetting(value))
-            //   ],
-            // ),
-            Text(language == "ko"? "설정은 재시작을 해야 전부 적용됩니다." : "All settings will take effect after a restart."),
-          ],
-        ),
-      ),
-      actions: [
-        TextButton(onPressed: () => Restart.restartApp(), child: Text(language == "ko"? '재시작' : "Restart")),
-        TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))
-      ],
-    );
-  }
-}
+late TabController tabController;
 
 class Main extends StatefulWidget {
+  final Function refresh;
 
-  const Main({super.key});
+  const Main({super.key, required this.refresh});
 
   @override
   State<Main> createState() => _MainState();
 }
 
 class _MainState extends State<Main> with SingleTickerProviderStateMixin{
-
-  late TabController tabController;
 
   @override
   void initState() {
@@ -436,6 +232,11 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
     }
 
     tabController = TabController(length: tabList.length, vsync: this);
+    tabController.addListener(() {
+      setState(() {
+
+      });
+    });
   }
 
   List<Widget> tabList = [
@@ -470,6 +271,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("메인 빌드됨.");
     return MyUpgradeAlert(
       child: Scaffold(
         drawer: DrawerWidget(tabController: tabController,),
@@ -488,7 +290,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
           title: Text("FRAMEDATA"),
           centerTitle: true,
             actions: [
-              actionBuilder(context: context)
+              actionBuilder(context: context, refresh: widget.refresh)
             ],
             backgroundColor: Colors.black,
           ),

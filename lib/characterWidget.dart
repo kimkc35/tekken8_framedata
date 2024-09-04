@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'actionBuilderWidget.dart';
 import 'ad_manager.dart';
-import 'character_variables.dart';
 import 'default_system.dart';
 import 'main.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:deepcopy/deepcopy.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:linked_scroll_controller/linked_scroll_controller.dart';
+import 'package:math_expressions/math_expressions.dart';
+import 'modules.dart';
 
 final BannerAd _banner = BannerAd(
     adUnitId: 'ca-app-pub-3256415400287290/4169383092',
@@ -134,6 +134,12 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
     );
   }
 
+  refresh(){
+    setState(() {
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -166,7 +172,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
               ),
             ),
             actions: [
-              actionBuilder(context: context, character: widget.character.name)
+              actionBuilder(context: context, character: widget.character.name, refresh: refresh)
             ],
             backgroundColor: Colors.black,
             bottom: PreferredSize(
@@ -333,6 +339,12 @@ class _MoveListState extends State<MoveList>{
   final TextEditingController _damageController = TextEditingController();
   final TextEditingController _extraController = TextEditingController();
 
+  late final ComparisonHeader startComparisonHeader = ComparisonHeader(name: "발생", controller: _startFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader guardComparisonHeader = ComparisonHeader(name: "가드", controller: _guardFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader hitComparisonHeader = ComparisonHeader(name: "히트", controller: _hitFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader counterComparisonHeader = ComparisonHeader(name: "카운터", controller: _counterFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader damageComparisonHeader = ComparisonHeader(name: "대미지", controller: _damageController, state: ComparisonState.greater);
+
   bool _high = false;
   bool _middle = false;
   bool _low = false;
@@ -341,38 +353,49 @@ class _MoveListState extends State<MoveList>{
   LinkedScrollControllerGroup horizonControllerGroup = LinkedScrollControllerGroup();
   ScrollController headerHorizonController = ScrollController();
   ScrollController dataTableHorizonController = ScrollController();
-  late List filtered;
+  late Map<String, List<Moves>> filtered;
 
   void filter(){
+    filtered = widget.character.getMoveList();;
     setState(() {
-      filtered = widget.character.moveList.deepcopy();
-      for (int i = 0; i < widget.character.types.length; i++) {
-        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item.toString().toLowerCase().contains(_searchText.toLowerCase())).toList();
+      for (var type in widget.character.types.keys) {
+        filtered[type] = filtered[type]!.where((item){
+          if(item.name.contains(_searchText)) return true;
+          if(item.command.contains(_searchText)) return true;
+          if(item.range.contains(_searchText)) return true;
+          if(item.damage.contains(_searchText)) return true;
+          if(item.extra.contains(_searchText)) return true;
+          return false;
+        }).toList();
       }
 
-      _startFrameController.value.text.isNotEmpty? headerFilter(2, _startFrameController) : null;
-      _guardFrameController.value.text.isNotEmpty? headerFilter(3, _guardFrameController) : null;
-      _hitFrameController.value.text.isNotEmpty? headerFilter(4, _hitFrameController) : null;
-      _counterFrameController.value.text.isNotEmpty? headerFilter(5, _counterFrameController) : null;
-      _damageController.value.text.isNotEmpty? headerFilter(7, _damageController) : null;
-      _extraController.value.text.isNotEmpty? headerFilter(8, _extraController) : null;
+      _damageController.value.text.isNotEmpty? headerFilter(_damageController) : null;
+      _extraController.value.text.isNotEmpty? headerFilter(_extraController) : null;
       rangeFilter();
+      comparisonFilter();
     });
   }
 
-  void headerFilter(int number, TextEditingController controller){
+  void headerFilter(TextEditingController controller){
     setState(() {
-      for (int i = 0; i < widget.character.types.length; i++) {
-        filtered[i]["contents"] = filtered[i]["contents"].where((item) => item[number].toString().contains(controller.value.text)).toList();
+      for (var type in widget.character.types.keys) {
+        filtered[type] = filtered[type]!.where((item){
+          if(item.name.contains(_searchText)) return true;
+          if(item.command.contains(_searchText)) return true;
+          if(item.range.contains(_searchText)) return true;
+          if(item.damage.contains(_searchText)) return true;
+          if(item.extra.contains(_searchText)) return true;
+          return false;
+        }).toList();
       }
     });
   }
 
   void rangeFilter(){
     setState(() {
-      for (int i = 0; i < widget.character.types.length; i++) {
-        filtered[i]["contents"] = filtered[i]["contents"].where((item) {
-          if(_high && item[6].toString().contains("상단") || _middle && item[6].toString().contains("중단") || _low && item[6].toString().contains("하단") || _unblockable && item[6].toString().contains("가불")){
+      for (var type in widget.character.types.keys) {
+        filtered[type] = filtered[type]!.where((item) {
+          if(_high && item.range.contains("상단") || _middle && item.range.contains("중단") || _low && item.range.contains("하단") || _unblockable && item.range.contains("가불")){
             return true;
           }else if(!_high && !_middle && !_low && !_unblockable) {
             return true;
@@ -384,10 +407,133 @@ class _MoveListState extends State<MoveList>{
     });
   }
 
+  void comparisonFilter(){
+    setState(() {
+      for (var type in widget.character.types.keys) {
+        if(startComparisonHeader.controller.text.isNotEmpty) {
+          filtered[type] = filtered[type]!.where((item) {
+            try {
+              int.parse(startComparisonHeader.controller.text);
+              return comparison(item.startFrame, startComparisonHeader);
+            } on FormatException {
+              if (item.startFrame.toLowerCase().contains(startComparisonHeader.controller.text.toLowerCase())) return true;
+            }
+            return false;
+          }).toList();
+        }
+        if(guardComparisonHeader.controller.text.isNotEmpty) {
+          filtered[type] = filtered[type]!.where((item) {
+            try {
+              int.parse(guardComparisonHeader.controller.text);
+              return comparison(item.guardFrame, guardComparisonHeader);
+            } on FormatException {
+              if(item.guardFrame.toLowerCase().contains(guardComparisonHeader.controller.text.toLowerCase())) return true;
+            }
+            return false;
+          }).toList();
+        }
+        if(hitComparisonHeader.controller.text.isNotEmpty) {
+          filtered[type] = filtered[type]!.where((item) {
+            try {
+              int.parse(hitComparisonHeader.controller.text);
+              return comparison(item.hitFrame, hitComparisonHeader);
+            } on FormatException {
+              if (item.hitFrame.toLowerCase().contains(hitComparisonHeader.controller.text.toLowerCase())) return true;
+            }
+            return false;
+          }).toList();
+        }
+        if(counterComparisonHeader.controller.text.isNotEmpty) {
+          filtered[type] = filtered[type]!.where((item) {
+            try {
+              int.parse(counterComparisonHeader.controller.text);
+              return comparison(item.counterFrame, counterComparisonHeader);
+            } on FormatException {
+              if (item.counterFrame.toLowerCase().contains(counterComparisonHeader.controller.text.toLowerCase())) return true;
+            }
+            return false;
+          }).toList();
+        }
+        if(damageComparisonHeader.controller.text.isNotEmpty){
+          filtered[type] = filtered[type]!.where((item) {
+            int damage = 0;
+            item.damage.split(",").forEach((element) {
+              try{
+                debugPrint(element);
+                damage += int.parse(element);
+              } on FormatException {
+                if(element.contains("x")){
+                  final n = element.replaceAll("x", "*");
+                  final p = Parser();
+                  damage += int.parse(p.parse(n).evaluate(EvaluationType.REAL, ContextModel()).toInt().toString());
+                }else if(element.contains("(")){
+                  final d = element.split("(")[0];
+                  damage += int.parse(d);
+                }else{
+                  damage += 0;
+                }
+              }
+            });
+            return comparison(damage.toString(), damageComparisonHeader);
+          }).toList();
+        }
+      }
+    });
+  }
+
+  bool comparison(String itemText, ComparisonHeader comparisonHeader){
+    itemText = itemText.replaceAll("g", "");
+    switch(comparisonHeader.state){
+      case ComparisonState.greater:
+        try {
+          if(int.parse(itemText) > int.parse(comparisonHeader.controller.text)){
+            return true;
+          }
+        } on FormatException{
+          try {
+            if(int.parse(itemText.split("(")[0]) > int.parse(comparisonHeader.controller.text) || int.parse(itemText.split("(")[1].replaceAll(")", "")) > int.parse(comparisonHeader.controller.text)){
+              return true;
+            }
+          } on FormatException {
+            return false;
+          }
+        }
+      case ComparisonState.lesser:
+        try {
+          if(int.parse(itemText) < int.parse(comparisonHeader.controller.text)){
+            return true;
+          }
+        } on FormatException{
+          try {
+            if(int.parse(itemText.split("(")[0]) < int.parse(comparisonHeader.controller.text) || int.parse(itemText.split("(")[1].replaceAll(")", "")) < int.parse(comparisonHeader.controller.text)){
+              return true;
+            }
+          } on FormatException {
+            return false;
+          }
+        }
+      case ComparisonState.equal:
+        try {
+          if(int.parse(itemText) == int.parse(comparisonHeader.controller.text)){
+            return true;
+          }
+        } on FormatException{
+          try {
+            if(int.parse(itemText.split("(")[0]) == int.parse(comparisonHeader.controller.text) || int.parse(itemText.split("(")[1].replaceAll(")", "")) == int.parse(comparisonHeader.controller.text)){
+              return true;
+            }
+          } on FormatException {
+            return false;
+          }
+        }
+    }
+    return false;
+  }
+
   @override
   void initState() {
     super.initState();
-    filtered = widget.character.moveList.deepcopy();
+    filtered = widget.character.getMoveList();
     headerHorizonController = horizonControllerGroup.addAndGet();
     dataTableHorizonController = horizonControllerGroup.addAndGet();
   }
@@ -401,6 +547,51 @@ class _MoveListState extends State<MoveList>{
 
     Widget line(){
       return Container(width: 0, height: 50, decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.black, width: 0.5), left: BorderSide(color: Colors.black, width: 0.5))));
+    }
+
+    Widget comparisonHeaderMenuAnchor(ComparisonHeader comparisonHeader){
+      return MenuAnchor(
+        menuChildren: [
+          SizedBox(
+            width: 70,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 35,
+                  child: TextFormField(
+                    controller: comparisonHeader.controller,
+                    maxLength: 3,
+                    decoration: InputDecoration(
+                      counter: SizedBox.shrink()
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 35,
+                  child: TextButton(
+                      onPressed: (){
+                        setState(() {
+                        });
+                        comparisonHeader.changeState();
+                      }, child: Text(comparisonHeader.state.state)
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+        builder: (context, controller, child) => TextButton(onPressed: (){
+          if (controller.isOpen) {
+            controller.close();
+          } else {
+            controller.open();
+          }
+        }, child: Text(comparisonHeader.name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+      );
     }
 
     Widget headerMenuAnchor(double width, TextEditingController controller, String name){
@@ -441,7 +632,7 @@ class _MoveListState extends State<MoveList>{
             }, child: Row(children: [Text("히트 시스템"), Icon(heatSystemMenu? Icons.arrow_drop_up : Icons.arrow_drop_down)])),
           ),
           if(heatSystemMenu == true) // 히트 시스템 설명
-            heatSystemContexts(widget.character.heatSystem), //변경해야될것
+            heatSystemContexts(widget.character.heatSystem),
           Container(
             width: 848,
             child: StickyHeader(
@@ -479,13 +670,13 @@ class _MoveListState extends State<MoveList>{
                         ),
                       ),
                       line(),
-                      Container(width: 30 + 10, child: headerMenuAnchor(40, _startFrameController, "발생")),
+                      Container(width: 30 + 10, child: comparisonHeaderMenuAnchor(startComparisonHeader)),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _guardFrameController, "가드")),
+                      Container(width: listWidth + 10, child: comparisonHeaderMenuAnchor(guardComparisonHeader)),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _hitFrameController, "히트")),
+                      Container(width: listWidth + 10, child: comparisonHeaderMenuAnchor(hitComparisonHeader)),
                       line(),
-                      Container(width: listWidth + 10, child: headerMenuAnchor(45, _counterFrameController, "카운터")),
+                      Container(width: listWidth + 10, child: comparisonHeaderMenuAnchor(counterComparisonHeader)),
                       line(),
                       Container(width: 30 + 10, child: MenuAnchor( // 커맨드 체크박스
                         alignmentOffset: const Offset(20, 0),
@@ -525,7 +716,7 @@ class _MoveListState extends State<MoveList>{
                         ),),
                       ),),
                       line(),
-                      Container(width: 50 + 10, child: headerMenuAnchor(60, _damageController, "대미지")),
+                      Container(width: 50 + 10, child: comparisonHeaderMenuAnchor(damageComparisonHeader)),
                       line(),
                       Container(width: 450, child: headerMenuAnchor(450, _extraController, "비고")),
                     ],
@@ -558,12 +749,12 @@ class _MoveListState extends State<MoveList>{
                         DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8]))), //레이지 아츠
                       for(String type in widget.character.types.keys)...[
                         if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
-                          for(List data in filtered.firstWhere((element) => element["type"] == type)["contents"])...[
+                          for(Moves data in filtered[type]!)...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character, data.name, data.command, data.startFrame, data.guardFrame, data.hitFrame, data.counterFrame, data.range, data.damage, data.extra.replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, widget.character, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8].replaceAll(RegExp(r'\[.*?\]'), ""))))
+                              DataRow(cells : (createMove(context, widget.character, data.name, data.command, data.startFrame, data.guardFrame, data.hitFrame, data.counterFrame, data.range, data.damage, data.extra.replaceAll(RegExp(r'\[.*?\]'), ""))))
                             ]
                           ],
                         ],
@@ -643,9 +834,9 @@ class _ThrowListState extends State<ThrowList>{
               rows: [
                 for(int i = 0; i < widget.character.throwList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i].name, widget.character.throwList[i].command, widget.character.throwList[i].startFrame, widget.character.throwList[i].breakCommand, widget.character.throwList[i].afterBreakFrame, widget.character.throwList[i].damage, widget.character.throwList[i].range, widget.character.throwList[i].extra), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i][0], widget.character.throwList[i][1], widget.character.throwList[i][2], widget.character.throwList[i][3], widget.character.throwList[i][4], widget.character.throwList[i][5], widget.character.throwList[i][6], widget.character.throwList[i][7]))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i].name, widget.character.throwList[i].command, widget.character.throwList[i].startFrame, widget.character.throwList[i].breakCommand, widget.character.throwList[i].afterBreakFrame, widget.character.throwList[i].damage, widget.character.throwList[i].range, widget.character.throwList[i].extra))
                   ]
                 ]
               ],
