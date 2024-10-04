@@ -296,7 +296,7 @@ Character paul = Character(
 Character raven = Character(
   name: "raven",
   heatSystem: ["분신을 사용한 공격이 가드당했을 때 자동으로 추가 공격 발동", "분신을 사용한 공격이 히트했을 때 히트 상태의 남은 시간 회복", "티폰 팽 팬텀 사용 가능"],
-  rageArts: MoveInfo(name: "와일드 헌트 X-에큐터", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "와일드 헌트 X-에큐터", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 44, endAt: 59),
   types: {"heat" : false, "general" : false, "sit" : false, "shadow sprint" : false, "soulzone" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "shadow sprint" : "섀도 스프린트", "soulzone" : "소울존"
@@ -307,7 +307,7 @@ Character raven = Character(
 Character reina = Character(
   name: "reina",
   heatSystem: ["일부 연계에서 겹쳐 죽이기 사용 가능", "최속 입력이 아니더라도 최속 풍신권, 최속 무신각 사용 가능", "금강벽으로 상중단 공격 흘리기 가능"],
-  rageArts: MoveInfo(name: "멸신 찬연세괴", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "멸신 찬연세괴", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 63, endAt: 78),
   types: {"heat" : false, "general" : false, "sit" : false, "wind god step" : false, "sentai" : false, "unsoku" : false, "heaven's wrath" : false, "wind step" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step" : "풍신 스텝", "sentai" : "선체", "unsoku" : "운족", "heaven's wrath" : "금강벽", "wind step" : "바람 다리"
