@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n히트 시 스타버스트 상태로\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n히트 시 스타버스트 상태로\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
         "name":"서클 오브 저지먼트",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"10,13,25",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 4,
+        "endAt": 8
       },
       {
         "name":"레퀴에스캇",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"14,22",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 9,
+        "endAt": 13
       },
       {
         "name":"샤이닝 레이",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"10,20",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 15,
+        "endAt": 19
       },
       {
         "name":"메테오 스톰",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 20,
+        "endAt": 23
       },
       {
         "name":"이라",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"40",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로\n가드 대미지[번너클]"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로\n가드 대미지[번너클]",
+        "startAt": 24,
+        "endAt": 27
       },
       {
         "name":"스텔라 카덴테",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12,10,26",
-        "extra":"히트 시 잡기로 이행"
+        "extra":"히트 시 잡기로 이행",
+        "startAt": 31,
+        "endAt": 36
       }
     ],
     "general":[
@@ -89,7 +103,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 51,
+        "endAt": 53
       },
       {
         "name":"스캐터드 애시즈2",
@@ -100,7 +116,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,12",
-        "extra":""
+        "extra":"",
+        "startAt": 51,
+        "endAt": 53
       },
       {
         "name":"업절브",
@@ -111,7 +129,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"5,11",
-        "extra":""
+        "extra":"",
+        "startAt": 55,
+        "endAt": 57
       },
       {
         "name":"서클 오브 저지먼트1",
@@ -122,7 +142,9 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 58,
+        "endAt": 62
       },
       {
         "name":"서클 오브 저지먼트2",
@@ -133,7 +155,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"10,13",
-        "extra":""
+        "extra":"",
+        "startAt": 58,
+        "endAt": 62
       },
       {
         "name":"서클 오브 저지먼트3",
@@ -144,7 +168,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,13,25",
-        "extra":"히트 시 스타버스트 상태로"
+        "extra":"히트 시 스타버스트 상태로",
+        "startAt": 58,
+        "endAt": 62
       },
       {
         "name":"레퀴에스캇1",
@@ -155,7 +181,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 63,
+        "endAt": 66
       },
       {
         "name":"레퀴에스캇2",
@@ -166,7 +194,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,22",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 63,
+        "endAt": 66
       },
       {
         "name":"배틀 스카즈1",
@@ -177,7 +207,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 67,
+        "endAt": 69
       },
       {
         "name":"배틀 스카즈2",
@@ -188,7 +220,9 @@
         "counter_frame":"+15g",
         "range":"상단",
         "damage":"13,14",
-        "extra":""
+        "extra":"",
+        "startAt": 67,
+        "endAt": 69
       },
       {
         "name":"크림슨 델타 엣지1",
@@ -199,7 +233,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 71,
+        "endAt": 74
       },
       {
         "name":"크림슨 델타 엣지2",
@@ -210,7 +246,9 @@
         "counter_frame":"0",
         "range":"잡기",
         "damage":"20,10",
-        "extra":""
+        "extra":"",
+        "startAt": 71,
+        "endAt": 74
       },
       {
         "name":"크림슨 델타 엣지3",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"잡기",
         "damage":"20,10,18",
-        "extra":"히트 시 스타버스트 상태로\nAP←→RP 입력 시 파워 상승"
+        "extra":"히트 시 스타버스트 상태로\nAP←→RP 입력 시 파워 상승",
+        "startAt": 71,
+        "endAt": 74
       },
       {
         "name":"크림슨 델타 엣지3(파워 상승)",
@@ -232,7 +272,9 @@
         "counter_frame":"D",
         "range":"잡기",
         "damage":"20,10,25",
-        "extra":"히트 시 스타버스트 상태로"
+        "extra":"히트 시 스타버스트 상태로",
+        "startAt": 71,
+        "endAt": 74
       },
       {
         "name":"롤링 스트라이크",
@@ -243,7 +285,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 75,
+        "endAt": 77
       },
       {
         "name":"트리니티 오브 페인1",
@@ -254,7 +298,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 79,
+        "endAt": 82
       },
       {
         "name":"트리니티 오브 페인2",
@@ -265,7 +311,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"9,12",
-        "extra":""
+        "extra":"",
+        "startAt": 79,
+        "endAt": 82
       },
       {
         "name":"트리니티 오브 페인3",
@@ -276,7 +324,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,12,25",
-        "extra":""
+        "extra":"",
+        "startAt": 79,
+        "endAt": 82
       },
       {
         "name":"데들리 신",
@@ -287,7 +337,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,20",
-        "extra":"히트 시 스타버스트 상태로"
+        "extra":"히트 시 스타버스트 상태로",
+        "startAt": 83,
+        "endAt": 86
       },
       {
         "name":"세이크리드 엣지",
@@ -298,7 +350,9 @@
         "counter_frame":"+14",
         "range":"상단",
         "damage":"18",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 87,
+        "endAt": 89
       },
       {
         "name":"인투 더 어비스",
@@ -309,7 +363,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 90,
+        "endAt": 92
       },
       {
         "name":"크로스 암 스트라이크",
@@ -320,7 +376,9 @@
         "counter_frame":"-7",
         "range":"중단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 93,
+        "endAt": 95
       },
       {
         "name":"크로스 암 임팩트",
@@ -331,7 +389,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"8,16",
-        "extra":""
+        "extra":"",
+        "startAt": 93,
+        "endAt": 95
       },
       {
         "name":"어보브 더 스톰",
@@ -342,7 +402,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 98
       },
       {
         "name":"스카이즈 아크1",
@@ -353,7 +415,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 100,
+        "endAt": 102
       },
       {
         "name":"스카이즈 아크2",
@@ -364,7 +428,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,15",
-        "extra":""
+        "extra":"",
+        "startAt": 100,
+        "endAt": 102
       },
       {
         "name":"카오스 피스트",
@@ -375,7 +441,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"19",
-        "extra":"[기원권]"
+        "extra":"[기원권]",
+        "startAt": 103,
+        "endAt": 105
       },
       {
         "name":"디스펠 매직1",
@@ -386,7 +454,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"디스펠 매직2",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,18",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"디스펠 포스",
@@ -408,7 +480,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 111,
+        "endAt": 113
       },
       {
         "name":"미스틱 레이1",
@@ -419,7 +493,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 114,
+        "endAt": 116
       },
       {
         "name":"미스틱 레이2",
@@ -430,7 +506,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"14,15",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 114,
+        "endAt": 116
       },
       {
         "name":"그래비티 홀1",
@@ -441,7 +519,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"6",
-        "extra":""
+        "extra":"",
+        "startAt": 117,
+        "endAt": 120
       },
       {
         "name":"그래비티 홀2",
@@ -452,7 +532,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"6,8",
-        "extra":""
+        "extra":"",
+        "startAt": 117,
+        "endAt": 120
       },
       {
         "name":"수페르비아",
@@ -463,7 +545,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":"혹은 상대에게 등을 보일 때AP"
+        "extra":"혹은 상대에게 등을 보일 때AP",
+        "startAt": 121,
+        "endAt": 123
       },
       {
         "name":"트윈 클로1",
@@ -474,7 +558,9 @@
         "counter_frame":"+7",
         "range":"특수 하단",
         "damage":"8",
-        "extra":"혹은 몸을 숙인 상태에서RP"
+        "extra":"혹은 몸을 숙인 상태에서RP",
+        "startAt": 124,
+        "endAt": 127
       },
       {
         "name":"트윈 클로2",
@@ -485,7 +571,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"8,12",
-        "extra":"혹은 몸을 숙인 상태에서RPLP"
+        "extra":"혹은 몸을 숙인 상태에서RPLP",
+        "startAt": 124,
+        "endAt": 127
       },
       {
         "name":"아케디아",
@@ -496,7 +584,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 128,
+        "endAt": 130
       },
       {
         "name":"라그랑주 니들1",
@@ -507,7 +597,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 132,
+        "endAt": 134
       },
       {
         "name":"라그랑주 니들2",
@@ -518,7 +610,9 @@
         "counter_frame":"0",
         "range":"상단",
         "damage":"7,10",
-        "extra":""
+        "extra":"",
+        "startAt": 132,
+        "endAt": 134
       },
       {
         "name":"블루 문",
@@ -529,7 +623,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 136,
+        "endAt": 138
       },
       {
         "name":"배니싱 스톰",
@@ -540,7 +636,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 141,
+        "endAt": 143
       },
       {
         "name":"스피닝 스카이즈",
@@ -551,7 +649,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 144,
+        "endAt": 146
       },
       {
         "name":"버닝 코어",
@@ -562,7 +662,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 155,
+        "endAt": 157
       },
       {
         "name":"크레센트 힐",
@@ -573,7 +675,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,21",
-        "extra":""
+        "extra":"",
+        "startAt": 155,
+        "endAt": 157
       },
       {
         "name":"샤이닝 윈드1",
@@ -584,7 +688,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 161,
+        "endAt": 163
       },
       {
         "name":"샤이닝 윈드2",
@@ -595,7 +701,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"10,18",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 161,
+        "endAt": 163
       },
       {
         "name":"샤이닝 레이",
@@ -606,7 +714,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,20",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 164,
+        "endAt": 167
       },
       {
         "name":"액셜 레이",
@@ -617,7 +727,9 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"10,14",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 168,
+        "endAt": 171
       },
       {
         "name":"아바리티아",
@@ -628,7 +740,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,14,20",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 171
       },
       {
         "name":"루나 레이",
@@ -639,7 +753,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,16",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 172,
+        "endAt": 175
       },
       {
         "name":"저지먼트 클로",
@@ -650,7 +766,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 176,
+        "endAt": 178
       },
       {
         "name":"이터널 문",
@@ -661,7 +779,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 179,
+        "endAt": 181
       },
       {
         "name":"빅 뱅",
@@ -672,7 +792,9 @@
         "counter_frame":"D",
         "range":"가드 불가",
         "damage":"60",
-        "extra":""
+        "extra":"",
+        "startAt": 182,
+        "endAt": 185
       },
       {
         "name":"메테오 스톰",
@@ -683,7 +805,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로",
+        "startAt": 187,
+        "endAt": 190
       },
       {
         "name":"그라운드 슬래시 노바",
@@ -694,7 +818,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"22",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 191,
+        "endAt": 193
       },
       {
         "name":"스카이 슬래시 노바",
@@ -705,7 +831,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 195,
+        "endAt": 198
       },
       {
         "name":"폴룩스",
@@ -716,10 +844,12 @@
         "counter_frame":"D",
         "range":"중단,중단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 200,
+        "endAt": 202
       },
       {
-        "name":"들레이드 라이징 토 킥",
+        "name":"딜레이드 라이징 토 킥",
         "command":"↗NRK",
         "start_frame":"23",
         "guard_frame":"-13",
@@ -727,7 +857,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 205,
+        "endAt": 207
       },
       {
         "name":"듀얼 건즈1",
@@ -738,7 +870,9 @@
         "counter_frame":"-7",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 208,
+        "endAt": 210
       },
       {
         "name":"듀얼 건즈2",
@@ -749,7 +883,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"14,20",
-        "extra":"혹은 몸을 숙인 상태에서↘RPRP"
+        "extra":"혹은 몸을 숙인 상태에서↘RPRP",
+        "startAt": 208,
+        "endAt": 210
       },
       {
         "name":"브링어 오브 저스티스",
@@ -760,7 +896,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,20",
-        "extra":"혹은 몸을 숙인 상태에서↘RPAP\n히트 시 스타버스트 상태로"
+        "extra":"혹은 몸을 숙인 상태에서↘RPAP\n히트 시 스타버스트 상태로",
+        "startAt": 211,
+        "endAt": 214
       },
       {
         "name":"인비디아",
@@ -771,7 +909,9 @@
         "counter_frame":"+13",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 216,
+        "endAt": 218
       },
       {
         "name":"이라",
@@ -782,7 +922,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"40",
-        "extra":"히트 발동기\n히트 시 스타버스트 상태로\n가드 대미지[번너클]"
+        "extra":"히트 발동기\n히트 시 스타버스트 상태로\n가드 대미지[번너클]",
+        "startAt": 220,
+        "endAt": 223
       },
       {
         "name":"10단 콤보1",
@@ -793,7 +935,9 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보2",
@@ -804,7 +948,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"10,13",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보3",
@@ -815,7 +961,9 @@
         "counter_frame":"-16",
         "range":"중단",
         "damage":"10,13,6",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보4",
@@ -826,7 +974,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"10,13,6,10",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보5",
@@ -837,7 +987,9 @@
         "counter_frame":"-10",
         "range":"하단",
         "damage":"10,13,6,10,5",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보6",
@@ -848,7 +1000,9 @@
         "counter_frame":"-15",
         "range":"상단",
         "damage":"10,13,6,10,5,7",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보7",
@@ -859,7 +1013,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,13,6,10,5,7,10",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보8",
@@ -870,7 +1026,9 @@
         "counter_frame":"-15",
         "range":"중단",
         "damage":"10,13,6,10,5,7,10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보9",
@@ -881,7 +1039,9 @@
         "counter_frame":"-23",
         "range":"상단",
         "damage":"10,13,6,10,5,7,10,10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"10단 콤보10",
@@ -892,7 +1052,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,13,6,10,5,7,10,10,10,20",
-        "extra":""
+        "extra":"",
+        "startAt": 224,
+        "endAt": 230
       },
       {
         "name":"기합 모으기",
@@ -903,7 +1065,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 231,
+        "endAt": 233
       },
       {
         "name":"룩수리아",
@@ -914,7 +1078,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 261,
+        "endAt": 263
       }
     ],
     "sit":[
@@ -927,7 +1093,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 234,
+        "endAt": 236
       },
       {
         "name":"노블 스텝2",
@@ -938,7 +1106,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"12,15",
-        "extra":""
+        "extra":"",
+        "startAt": 234,
+        "endAt": 236
       },
       {
         "name":"말레픽 드로우",
@@ -949,7 +1119,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12,12",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 238,
+        "endAt": 240
       },
       {
         "name":"실비아",
@@ -960,7 +1132,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"히트 시 스타버스트 상태로"
+        "extra":"히트 시 스타버스트 상태로",
+        "startAt": 243,
+        "endAt": 246
       },
       {
         "name":"피어싱 윈드",
@@ -971,7 +1145,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 247,
+        "endAt": 249
       },
       {
         "name":"홀리 스매시",
@@ -982,7 +1158,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 255,
+        "endAt": 258
       }
     ],
     "starburst":[
@@ -995,7 +1173,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 264,
+        "endAt": 267
       },
       {
         "name":"오로라 팍툼2",
@@ -1006,7 +1186,9 @@
         "counter_frame":"T",
         "range":"특수 중단",
         "damage":"13,32",
-        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 264,
+        "endAt": 267
       },
       {
         "name":"크로스 암 임팩트 버스트1",
@@ -1017,7 +1199,9 @@
         "counter_frame":"-7",
         "range":"중단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 268,
+        "endAt": 272
       },
       {
         "name":"크로스 암 임팩트 버스트2",
@@ -1028,7 +1212,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"8,16",
-        "extra":"가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 268,
+        "endAt": 272
       },
       {
         "name":"미스틱 레이 버스트1",
@@ -1039,7 +1225,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 274,
+        "endAt": 277
       },
       {
         "name":"미스틱 레이 버스트2",
@@ -1050,7 +1238,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,23",
-        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 274,
+        "endAt": 277
       },
       {
         "name":"블루 문 버스트",
@@ -1061,7 +1251,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"25",
-        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 282,
+        "endAt": 285
       },
       {
         "name":"아바리티아 버스트1",
@@ -1072,7 +1264,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 290
       },
       {
         "name":"아바리티아 버스트2",
@@ -1083,7 +1277,9 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 290
       },
       {
         "name":"아바리티아 버스트3",
@@ -1094,7 +1290,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,14,38",
-        "extra":"호밍기\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"호밍기\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 286,
+        "endAt": 290
       },
       {
         "name":"아니마",
@@ -1105,7 +1303,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"45",
-        "extra":"가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)[뉴너클]"
+        "extra":"가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)[뉴너클]",
+        "startAt": 296,
+        "endAt": 300
       },
       {
         "name":"말레픽 드로우 버스트1",
@@ -1116,7 +1316,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 300,
+        "endAt": 304
       },
       {
         "name":"말레픽 드로우 버스트2",
@@ -1127,7 +1329,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,23",
-        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)"
+        "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
+        "startAt": 300,
+        "endAt": 304
       }
     ]
   },
@@ -1140,7 +1344,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 305,
+      "endAt": 308
     },
     {
       "name":"로슈 리미트",
@@ -1150,7 +1356,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 310,
+      "endAt": 314
     },
     {
       "name":"아발란치 스로",
@@ -1160,7 +1368,9 @@
       "after_break_frame":"-3",
       "damage":"45",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 317,
+      "endAt": 321
     },
     {
       "name":"프레이어 인투 더 보이드",
@@ -1170,7 +1380,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 322,
+      "endAt": 325
     },
     {
       "name":"서든 섀도",
@@ -1180,7 +1392,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 326,
+      "endAt": 330
     },
     {
       "name":"굴라",
@@ -1190,7 +1404,9 @@
       "after_break_frame":"-6",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 331,
+      "endAt": 334
     }
   ]
 }

@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←를 입력하면 공격을 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←를 입력하면 공격을 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
         "name":"피스톤 건 어썰트",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"27",
-        "extra":"히트 발동기\n홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"히트 발동기\n홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 6,
+        "endAt": 10
       },
       {
         "name":"튤판 블래스트",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 10,
+        "endAt": 14
       },
       {
         "name":"풀 메탈 데스블로",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 15,
+        "endAt": 19
       },
       {
         "name":"파티클 배리어",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"특수 중단",
         "damage":"20",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 20,
+        "endAt": 24
       },
       {
         "name":"아이언 건맨",
@@ -65,7 +75,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 발동기\n혹은 감마 하울 도중 AR\n잡기 풀기 불가능\n히트 대시 불가능"
+        "extra":"히트 발동기\n혹은 감마 하울 도중 AR\n잡기 풀기 불가능\n히트 대시 불가능",
+        "startAt": 25,
+        "endAt": 30
       },
       {
         "name":"메테오 레이드",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,12,8,20",
-        "extra":"히트 시 잡기로"
+        "extra":"히트 시 잡기로",
+        "startAt": 31,
+        "endAt": 36
       }
     ],
     "general":[
@@ -89,7 +103,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 54,
+        "endAt": 56
       },
       {
         "name":"잽~잭해머",
@@ -100,7 +116,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,22",
-        "extra":"↓~입력 시 감마 하울로"
+        "extra":"↓~입력 시 감마 하울로",
+        "startAt": 54,
+        "endAt": 56
       },
       {
         "name":"잽~잭해머~감마 하울",
@@ -111,7 +129,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,22",
-        "extra":"감마 하울로"
+        "extra":"감마 하울로",
+        "startAt": 54,
+        "endAt": 56
       },
       {
         "name":"잽~스터닝 훅",
@@ -122,7 +142,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,24",
-        "extra":""
+        "extra":"",
+        "startAt": 58,
+        "endAt": 61
       },
       {
         "name":"잽 엘보1",
@@ -133,7 +155,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 62,
+        "endAt": 66
       },
       {
         "name":"잽 엘보2",
@@ -144,7 +168,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 62,
+        "endAt": 66
       },
       {
         "name":"잽 엘보 스매시",
@@ -155,7 +181,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 62,
+        "endAt": 66
       },
       {
         "name":"피스톤 건 퓨질레이드",
@@ -166,7 +194,9 @@
         "counter_frame":"D",
         "range":"상단x5",
         "damage":"10,12,10,6,6,6,20",
-        "extra":""
+        "extra":"",
+        "startAt": 69,
+        "endAt": 73
       },
       {
         "name":"미메시스 새비지 니",
@@ -177,18 +207,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,18",
-        "extra":""
+        "extra":"",
+        "startAt": 75,
+        "endAt": 78
       },
       {
         "name":"토네이도 펀치",
         "command":"AP",
         "start_frame":"15",
         "guard_frame":"-13",
-        "hit_frame":"T(+13g)",
-        "counter_frame":"T(+13g)",
+        "hit_frame":"+13g",
+        "counter_frame":"+13g",
         "range":"중단x2",
         "damage":"8,14",
-        "extra":"토네이도\n호밍기"
+        "extra":"토네이도\n호밍기\n1타 히트 시 2타 공중 판정으로 토네이도",
+        "startAt": 79,
+        "endAt": 83
       },
       {
         "name":"감마 하울",
@@ -199,7 +233,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"파워 크래시\n혹은 일어서며 AK\n감마 하울로\n상대의 공격을 받아내면 감마 차지를 획득\n히트 상태의 남은 시간 회복\n상대의 공격을 받아낼 시 체력 회복 가능 게이지, 히트 상태의 남은 시간 회복"
+        "extra":"파워 크래시\n혹은 일어서며 AK\n감마 하울로\n상대의 공격을 받아내면 감마 차지를 획득\n히트 상태의 남은 시간 회복\n상대의 공격을 받아낼 시 체력 회복 가능 게이지, 히트 상태의 남은 시간 회복",
+        "startAt": 83,
+        "endAt": 86
       },
       {
         "name":"기가톤 펀치1",
@@ -210,7 +246,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"기가톤 펀치2",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25(30)",
-        "extra":"←↙↓↘→LP를 입력하면 파워 상승\n가드 대미지"
+        "extra":"←↙↓↘→LP를 입력하면 파워 상승\n가드 대미지",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"기가톤 펀치(홀드)",
@@ -232,7 +272,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"45~199",
-        "extra":"LP+RK홀드 혹은 ←↙↓↘→~를 입력하면 회전 수 증가"
+        "extra":"LP+RK홀드 혹은 ←↙↓↘→~를 입력하면 회전 수 증가",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"와인드업 어퍼컷",
@@ -243,7 +285,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"21(25)",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 97,
+        "endAt": 101
       },
       {
         "name":"프라임 와인드업 어퍼컷",
@@ -254,7 +298,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"30(36)",
-        "extra":"토네이도\n←↙↓↘→↘LP(빠르게 입력하면 파워 상승)"
+        "extra":"토네이도\n←↙↓↘→↘LP(빠르게 입력하면 파워 상승)",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"임팩트 드라이버1",
@@ -265,7 +311,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 110
       },
       {
         "name":"임팩트 드라이버2",
@@ -276,7 +324,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,25",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 110
       },
       {
         "name":"드릴링 엔진1",
@@ -287,7 +337,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"13,12",
-        "extra":""
+        "extra":"",
+        "startAt": 110,
+        "endAt": 114
       },
       {
         "name":"드릴링 엔진2",
@@ -298,18 +350,35 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"13,12,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 110,
+        "endAt": 114
       },
       {
         "name":"피스톤 건 블래스터",
         "command":"→LPRPRP",
         "start_frame":"14",
-        "guard_frame":"+6(-12)",
+        "guard_frame":"+6",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,12,22",
-        "extra":"홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 115,
+        "endAt": 118
+      },
+      {
+        "name":"피스톤 건 블래스터(홀드)",
+        "command":"→LPRPRP",
+        "start_frame":"61",
+        "guard_frame":"-12",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"13,12,40",
+        "extra":"가드 대미지",
+        "startAt": 115,
+        "endAt": 118
       },
       {
         "name":"핀포인트 어썰트",
@@ -320,7 +389,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"22",
-        "extra":""
+        "extra":"",
+        "startAt": 120,
+        "endAt": 122
       },
       {
         "name":"투스텝 다이1",
@@ -331,7 +402,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 일어서며 LK\n↓~입력 시 감마 하울로"
+        "extra":"혹은 일어서며 LK\n↓~입력 시 감마 하울로",
+        "startAt": 125,
+        "endAt": 129
       },
       {
         "name":"투스텝 다이1~감마 하울",
@@ -342,7 +415,9 @@
         "counter_frame":"+16g",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 일어서며 LK↓~\n감마 하울로"
+        "extra":"혹은 일어서며 LK↓~\n감마 하울로",
+        "startAt": 125,
+        "endAt": 129
       },
       {
         "name":"투스텝 다이2",
@@ -353,7 +428,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18,20",
-        "extra":""
+        "extra":"",
+        "startAt": 125,
+        "endAt": 129
       },
       {
         "name":"머신 프레스",
@@ -364,7 +441,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"18,22",
-        "extra":""
+        "extra":"",
+        "startAt": 129,
+        "endAt": 132
       },
       {
         "name":"다크 그리팅",
@@ -375,7 +454,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"80",
-        "extra":""
+        "extra":"",
+        "startAt": 138,
+        "endAt": 142
       },
       {
         "name":"서든 엘보",
@@ -386,7 +467,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":""
+        "extra":"",
+        "startAt": 138,
+        "endAt": 142
       },
       {
         "name":"롤링 데스 크러셔",
@@ -397,7 +480,9 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"12,20",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 146,
+        "endAt": 149
       },
       {
         "name":"메르카바 헤드벗",
@@ -408,7 +493,9 @@
         "counter_frame":"+9",
         "range":"중단",
         "damage":"24",
-        "extra":"↓~입력 시 감마 하울로"
+        "extra":"↓~입력 시 감마 하울로",
+        "startAt": 149,
+        "endAt": 152
       },
       {
         "name":"메르카바 헤드벗~감마 하울",
@@ -419,7 +506,9 @@
         "counter_frame":"+15g",
         "range":"중단",
         "damage":"24",
-        "extra":"감마 하울로"
+        "extra":"감마 하울로",
+        "startAt": 149,
+        "endAt": 152
       },
       {
         "name":"오버히트1",
@@ -430,7 +519,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 152,
+        "endAt": 155
       },
       {
         "name":"오버히트2",
@@ -441,7 +532,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"12,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 152,
+        "endAt": 155
       },
       {
         "name":"오버드라이브1",
@@ -452,7 +545,9 @@
         "counter_frame":"-1",
         "range":"상단",
         "damage":"12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 159,
+        "endAt": 163
       },
       {
         "name":"오버드라이브2",
@@ -463,7 +558,9 @@
         "counter_frame":"-2",
         "range":"상단",
         "damage":"12,10,2",
-        "extra":""
+        "extra":"",
+        "startAt": 159,
+        "endAt": 163
       },
       {
         "name":"오버드라이브3",
@@ -474,7 +571,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,10,2,1,8",
-        "extra":""
+        "extra":"",
+        "startAt": 159,
+        "endAt": 163
       },
       {
         "name":"프로그램드 어퍼컷",
@@ -485,7 +584,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 164,
+        "endAt": 167
       },
       {
         "name":"코스믹 스위퍼",
@@ -496,18 +597,22 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"13,16",
-        "extra":"홀드하면 파워 상승\n↓~입력 시 감마 하울로"
+        "extra":"홀드하면 파워 상승\n↓~입력 시 감마 하울로",
+        "startAt": 168,
+        "endAt": 171
       },
       {
         "name":"코스믹 스위퍼(홀드)",
         "command":"↘RPLP홀드",
-        "start_frame":"15",
+        "start_frame":"35",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"상단",
         "damage":"13,35",
-        "extra":"토네이도\n↓~입력 시 감마 하울로"
+        "extra":"토네이도\n↓~입력 시 감마 하울로",
+        "startAt": 171,
+        "endAt": 176
       },
       {
         "name":"콤바인 하베스터1",
@@ -518,7 +623,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 177,
+        "endAt": 180
       },
       {
         "name":"콤바인 하베스터2",
@@ -529,7 +636,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,20",
-        "extra":""
+        "extra":"",
+        "startAt": 177,
+        "endAt": 180
       },
       {
         "name":"미메시스 렌치 킥",
@@ -540,7 +649,9 @@
         "counter_frame":"+14",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 182,
+        "endAt": 184
       },
       {
         "name":"덤프트럭",
@@ -551,7 +662,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 185,
+        "endAt": 187
       },
       {
         "name":"보디 프레스",
@@ -562,7 +675,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"근거리 정면 히트 시 잡기로"
+        "extra":"근거리 정면 히트 시 잡기로",
+        "startAt": 187,
+        "endAt": 192
       },
       {
         "name":"헬 드릴러",
@@ -573,7 +688,9 @@
         "counter_frame":"D",
         "range":"연계",
         "damage":"25,10",
-        "extra":"잡기 풀기 불가능"
+        "extra":"잡기 풀기 불가능",
+        "startAt": 193,
+        "endAt": 199
       },
       {
         "name":"디버거",
@@ -584,7 +701,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"23",
-        "extra":"호밍기\n←↙↓↘LP입력 시 파워 상승"
+        "extra":"호밍기\n←↙↓↘LP입력 시 파워 상승",
+        "startAt": 201,
+        "endAt": 204
       },
       {
         "name":"메가톤 블래스트",
@@ -595,7 +714,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"26",
-        "extra":"←↙↓↘RP입력 시 파워 상승"
+        "extra":"←↙↓↘RP입력 시 파워 상승",
+        "startAt": 205,
+        "endAt": 208
       },
       {
         "name":"더블 액스",
@@ -606,7 +727,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 210,
+        "endAt": 213
       },
       {
         "name":"시트 다운",
@@ -617,7 +740,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"시트 다운으로"
+        "extra":"시트 다운으로",
+        "startAt": 214,
+        "endAt": 216
       },
       {
         "name":"머신건 블래스트1",
@@ -628,7 +753,9 @@
         "counter_frame":"+1",
         "range":"하단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 217,
+        "endAt": 220
       },
       {
         "name":"머신건 블래스트2",
@@ -639,7 +766,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"13,5",
-        "extra":""
+        "extra":"",
+        "startAt": 217,
+        "endAt": 220
       },
       {
         "name":"머신건 블래스트3",
@@ -650,7 +779,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"13,5,5",
-        "extra":""
+        "extra":"",
+        "startAt": 217,
+        "endAt": 220
       },
       {
         "name":"머신건 블래스트4",
@@ -661,18 +792,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,5,5,21",
-        "extra":""
+        "extra":"",
+        "startAt": 217,
+        "endAt": 220
       },
       {
         "name":"파워 셔블",
         "command":"↙RP",
         "start_frame":"22",
-        "guard_frame":"-18(-33)",
-        "hit_frame":"+3(D)",
+        "guard_frame":"-18",
+        "hit_frame":"+3",
         "counter_frame":"D",
         "range":"하단",
         "damage":"24",
-        "extra":"홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 222,
+        "endAt": 225
+      },
+      {
+        "name":"파워 셔블(홀드)",
+        "command":"↙RP",
+        "start_frame":"36",
+        "guard_frame":"-33",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"하단",
+        "damage":"30",
+        "extra":"가드 대미지",
+        "startAt": 222,
+        "endAt": 225
       },
       {
         "name":"코사크 킥스1",
@@ -683,7 +831,9 @@
         "counter_frame":"-9",
         "range":"하단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 킥스2",
@@ -694,7 +844,9 @@
         "counter_frame":"-5",
         "range":"하단",
         "damage":"15,12",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 킥스3",
@@ -705,7 +857,9 @@
         "counter_frame":"-8",
         "range":"하단",
         "damage":"15,12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 킥스4",
@@ -716,7 +870,9 @@
         "counter_frame":"-5",
         "range":"하단",
         "damage":"15,12,12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 킥스5",
@@ -727,7 +883,9 @@
         "counter_frame":"-8",
         "range":"하단",
         "damage":"15,12,12,12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 킥스6",
@@ -738,29 +896,35 @@
         "counter_frame":"-5",
         "range":"하단",
         "damage":"15,12,12,12,12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 230
       },
       {
         "name":"코사크 스매시",
-        "command":"Cossack Kicks 도중 AP",
+        "command":"코사크 킥스 도중 AP",
         "start_frame":"21",
         "guard_frame":"+14g",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 232,
+        "endAt": 235
       },
       {
         "name":"코사크 컴팩터",
-        "command":"Cossack Kicks 도중 ↓AP",
+        "command":"코사크 킥스 도중 ↓AP",
         "start_frame":"21",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"45",
-        "extra":"잡기 풀기 불가능"
+        "extra":"잡기 풀기 불가능",
+        "startAt": 235,
+        "endAt": 240
       },
       {
         "name":"빅 부트",
@@ -771,7 +935,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 241,
+        "endAt": 243
       },
       {
         "name":"메가톤 어스퀘이크",
@@ -782,7 +948,9 @@
         "counter_frame":"D",
         "range":"하단x2",
         "damage":"8,21",
-        "extra":""
+        "extra":"",
+        "startAt": 244,
+        "endAt": 247
       },
       {
         "name":"더블 바이셉스1",
@@ -793,7 +961,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 247,
+        "endAt": 281
       },
       {
         "name":"더블 바이셉스2",
@@ -804,18 +974,35 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"17,17",
-        "extra":""
+        "extra":"",
+        "startAt": 247,
+        "endAt": 281
       },
       {
         "name":"피스톤 건 어썰트",
         "command":"←RP",
         "start_frame":"19",
-        "guard_frame":"+5(-2)",
+        "guard_frame":"+5",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"27",
-        "extra":"히트 발동기\n홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"히트 발동기\n홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 252,
+        "endAt": 255
+      },
+      {
+        "name":"피스톤 건 어썰트(홀드)",
+        "command":"←RP",
+        "start_frame":"35",
+        "guard_frame":"-2",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"40",
+        "extra":"히트 발동기\n가드 대미지 있음",
+        "startAt": 252,
+        "endAt": 255
       },
       {
         "name":"매드 도저1",
@@ -826,7 +1013,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 261
       },
       {
         "name":"매드 도저2",
@@ -837,7 +1026,9 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"14,13",
-        "extra":"↓~입력 시 감마 하울로"
+        "extra":"↓~입력 시 감마 하울로",
+        "startAt": 258,
+        "endAt": 261
       },
       {
         "name":"매드 도저2~감마 하울",
@@ -848,7 +1039,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"14,13",
-        "extra":"감마 하울로"
+        "extra":"감마 하울로",
+        "startAt": 258,
+        "endAt": 261
       },
       {
         "name":"매드 도저3",
@@ -859,7 +1052,22 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,13,20",
-        "extra":"홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 258,
+        "endAt": 261
+      },
+      {
+        "name":"매드 도저3(홀드)",
+        "command":"←LKRPRP",
+        "start_frame":"67",
+        "guard_frame":"-9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"상단",
+        "damage":"14,13,40",
+        "extra":"가드 대미지 있음",
+        "startAt": 258,
+        "endAt": 261
       },
       {
         "name":"셔먼 스텀프1",
@@ -870,7 +1078,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 265,
+        "endAt": 268
       },
       {
         "name":"셔먼 스텀프2",
@@ -881,7 +1091,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,21",
-        "extra":""
+        "extra":"",
+        "startAt": 265,
+        "endAt": 268
       },
       {
         "name":"튤판 블래스트",
@@ -892,7 +1104,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 270,
+        "endAt": 274
       },
       {
         "name":"배럴 재킷 해머",
@@ -903,7 +1117,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"파워 크래시\n호밍기\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n호밍기\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 274,
+        "endAt": 277
       },
       {
         "name":"패트리어트 피스트",
@@ -914,7 +1130,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 281
       },
       {
         "name":"자이언트 풋 스텀프",
@@ -925,7 +1143,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"40",
-        "extra":"혹은 ↖AK\n↑AKAKAKAKAK입력 시 파워 상승"
+        "extra":"혹은 ↖AK\n↑AKAKAKAKAK입력 시 파워 상승",
+        "startAt": 282,
+        "endAt": 266
       },
       {
         "name":"스카이 스위퍼",
@@ -936,7 +1156,9 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"14",
-        "extra":"토네이도\n혹은 ↖LP or ↑LP\n홀드하면 파워 상승\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로"
+        "extra":"토네이도\n혹은 ↖LP or ↑LP\n홀드하면 파워 상승\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로",
+        "startAt": 289,
+        "endAt": 292
       },
       {
         "name":"스카이 스위퍼(홀드)",
@@ -947,7 +1169,9 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"35",
-        "extra":"토네이도\n↖LP홀드 or ↑LP홀드\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로"
+        "extra":"토네이도\n↖LP홀드 or ↑LP홀드\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로",
+        "startAt": 294,
+        "endAt": 298
       },
       {
         "name":"리액터 엘보",
@@ -958,7 +1182,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 ↖RP or ↑RP"
+        "extra":"혹은 ↖RP or ↑RP",
+        "startAt": 300,
+        "endAt": 302
       },
       {
         "name":"테라펄서",
@@ -969,7 +1195,9 @@
         "counter_frame":"+8",
         "range":"하단",
         "damage":"6",
-        "extra":"혹은 ↖LK or ↑LK\n히트 시 감마 하울로"
+        "extra":"혹은 ↖LK or ↑LK\n히트 시 감마 하울로",
+        "startAt": 303,
+        "endAt": 306
       },
       {
         "name":"팬케이크 프레스",
@@ -980,7 +1208,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":"시트 다운으로"
+        "extra":"시트 다운으로",
+        "startAt": 307,
+        "endAt": 310
       },
       {
         "name":"잭해머",
@@ -991,7 +1221,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"↓~입력 시 감마 하울로"
+        "extra":"↓~입력 시 감마 하울로",
+        "startAt": 311,
+        "endAt": 313
       },
       {
         "name":"잭해머~감마 하울",
@@ -1002,18 +1234,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"감마 하울로"
+        "extra":"감마 하울로",
+        "startAt": 311,
+        "endAt": 313
       },
       {
         "name":"로켓 어퍼컷",
         "command":"→→~RP",
         "start_frame":"18",
-        "guard_frame":"-16(-15)",
+        "guard_frame":"-16",
         "hit_frame":"A",
         "counter_frame":"A",
         "range":"중단",
         "damage":"23",
-        "extra":"홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 314,
+        "endAt": 317
+      },
+      {
+        "name":"로켓 어퍼컷(홀드)",
+        "command":"→→~RP",
+        "start_frame":"18",
+        "guard_frame":"-15",
+        "hit_frame":"A",
+        "counter_frame":"A",
+        "range":"중단",
+        "damage":"35",
+        "extra":"가드 대미지",
+        "startAt": 314,
+        "endAt": 317
       },
       {
         "name":"그래닛 스텀핑",
@@ -1024,7 +1273,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"↓~입력 시 직접 몸을 숙인 상태로"
+        "extra":"↓~입력 시 직접 몸을 숙인 상태로",
+        "startAt": 314,
+        "endAt": 317
       },
       {
         "name":"로켓 킥",
@@ -1035,7 +1286,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"32",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 321,
+        "endAt": 323
       },
       {
         "name":"크로스 컷 블래스트1",
@@ -1046,7 +1299,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"크로스 컷 블래스트2",
@@ -1057,7 +1312,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,24",
-        "extra":""
+        "extra":"",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"하이 앤드 로우 크로스 컷",
@@ -1068,7 +1325,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20,21",
-        "extra":""
+        "extra":"",
+        "startAt": 331,
+        "endAt": 334
       },
       {
         "name":"슬라이딩 어택",
@@ -1079,7 +1338,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"착지할 때는 하단"
+        "extra":"착지할 때는 하단",
+        "startAt": 335,
+        "endAt": 340
       },
       {
         "name":"세마호 촙",
@@ -1090,7 +1351,9 @@
         "counter_frame":"+10",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 344,
+        "endAt": 347
       },
       {
         "name":"미메시스 차징 태클",
@@ -1101,7 +1364,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"34",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 347,
+        "endAt": 350
       },
       {
         "name":"10단 콤보(1)1",
@@ -1112,7 +1377,9 @@
         "counter_frame":"+7",
         "range":"특수 하단",
         "damage":"8",
-        "extra":"혹은 몸을 숙인 상태에서 RP"
+        "extra":"혹은 몸을 숙인 상태에서 RP",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)2",
@@ -1123,7 +1390,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"8,6",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)3",
@@ -1134,7 +1403,9 @@
         "counter_frame":"-10",
         "range":"하단",
         "damage":"8,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)4",
@@ -1145,7 +1416,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"8,6,5,7",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)5",
@@ -1156,7 +1429,9 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"8,6,5,7,7",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)6",
@@ -1167,7 +1442,9 @@
         "counter_frame":"-10",
         "range":"중단",
         "damage":"8,6,5,7,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)7",
@@ -1178,7 +1455,9 @@
         "counter_frame":"-12",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)8",
@@ -1189,7 +1468,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6,8",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)9",
@@ -1200,7 +1481,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6,8,21",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(1)10",
@@ -1211,7 +1494,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6,8,21,25",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 357
       },
       {
         "name":"10단 콤보(2)1",
@@ -1222,7 +1507,9 @@
         "counter_frame":"+7",
         "range":"특수 하단",
         "damage":"8",
-        "extra":"혹은 몸을 숙인 상태에서 RP"
+        "extra":"혹은 몸을 숙인 상태에서 RP",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)2",
@@ -1233,7 +1520,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"8,6",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)3",
@@ -1244,7 +1533,9 @@
         "counter_frame":"-10",
         "range":"하단",
         "damage":"8,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)4",
@@ -1255,7 +1546,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"8,6,5,7",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)5",
@@ -1266,7 +1559,9 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"8,6,5,7,7",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)6",
@@ -1277,7 +1572,9 @@
         "counter_frame":"-10",
         "range":"중단",
         "damage":"8,6,5,7,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)7",
@@ -1288,7 +1585,9 @@
         "counter_frame":"-12",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)8",
@@ -1299,7 +1598,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6,8",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)9",
@@ -1310,7 +1611,9 @@
         "counter_frame":"A",
         "range":"하단",
         "damage":"8,6,5,7,7,6,6,8,12",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"10단 콤보(2)10",
@@ -1321,7 +1624,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"8,6,5,7,7,6,6,8,12,35",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 364
       },
       {
         "name":"도발",
@@ -1332,7 +1637,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 364,
+        "endAt": 367
       },
       {
         "name":"기합 모으기",
@@ -1343,7 +1650,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 369,
+        "endAt": 372
       },
       {
         "name":"디스차저",
@@ -1354,7 +1663,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 433,
+        "endAt": 436
       },
       {
         "name":"피스톤 건 스나이프",
@@ -1365,7 +1676,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":"↓~입력 시 감마 하울로\n가드 대미지"
+        "extra":"↓~입력 시 감마 하울로\n가드 대미지",
+        "startAt": 436,
+        "endAt": 439
       },
       {
         "name":"겟 업 펀치",
@@ -1376,7 +1689,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18",
-        "extra":"시트 다운으로"
+        "extra":"시트 다운으로",
+        "startAt": 442,
+        "endAt": 445
       }
     ],
     "sit":[
@@ -1389,7 +1704,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 372,
+        "endAt": 375
       },
       {
         "name":"V-트윈1",
@@ -1400,7 +1717,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 375,
+        "endAt": 378
       },
       {
         "name":"V-트윈2",
@@ -1411,7 +1730,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,17",
-        "extra":""
+        "extra":"",
+        "startAt": 375,
+        "endAt": 378
       },
       {
         "name":"V-데스블로",
@@ -1422,7 +1743,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,26",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 379,
+        "endAt": 382
       },
       {
         "name":"토 스매시",
@@ -1433,7 +1756,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 383,
+        "endAt": 385
       },
       {
         "name":"더블 어퍼컷",
@@ -1444,7 +1769,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 387,
+        "endAt": 391
       },
       {
         "name":"더블 해머 얼터네이트",
@@ -1455,7 +1782,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,12",
-        "extra":""
+        "extra":"",
+        "startAt": 387,
+        "endAt": 391
       },
       {
         "name":"더블 해머 쓰래시",
@@ -1466,7 +1795,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"14,12,14",
-        "extra":""
+        "extra":"",
+        "startAt": 387,
+        "endAt": 391
       },
       {
         "name":"더블 로우 해머1",
@@ -1477,7 +1808,9 @@
         "counter_frame":"+3",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 391,
+        "endAt": 394
       },
       {
         "name":"더블 로우 해머2",
@@ -1488,7 +1821,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 391,
+        "endAt": 394
       },
       {
         "name":"메가톤 스트라이크",
@@ -1499,7 +1834,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,24",
-        "extra":""
+        "extra":"",
+        "startAt": 395,
+        "endAt": 399
       },
       {
         "name":"크로스 컷 소우",
@@ -1510,7 +1847,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 399,
+        "endAt": 403
       },
       {
         "name":"로우 크로스 콤보",
@@ -1521,7 +1860,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"21,23",
-        "extra":""
+        "extra":"",
+        "startAt": 399,
+        "endAt": 403
       },
       {
         "name":"윈드밀 펀치스1",
@@ -1532,7 +1873,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 404,
+        "endAt": 408
       },
       {
         "name":"윈드밀 펀치스2",
@@ -1543,7 +1886,9 @@
         "counter_frame":"-11",
         "range":"중단",
         "damage":"5,8",
-        "extra":""
+        "extra":"",
+        "startAt": 404,
+        "endAt": 408
       },
       {
         "name":"윈드밀 펀치스3",
@@ -1554,7 +1899,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,8,11",
-        "extra":""
+        "extra":"",
+        "startAt": 404,
+        "endAt": 408
       },
       {
         "name":"윈드밀 펀치스4",
@@ -1565,7 +1912,9 @@
         "counter_frame":"+13",
         "range":"중단",
         "damage":"5,8,11,30",
-        "extra":""
+        "extra":"",
+        "startAt": 404,
+        "endAt": 408
       },
       {
         "name":"스윙 R 너클1",
@@ -1576,7 +1925,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 408,
+        "endAt": 412
       },
       {
         "name":"스윙 R 너클2",
@@ -1587,7 +1938,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 408,
+        "endAt": 412
       },
       {
         "name":"스윙 R 너클3",
@@ -1598,7 +1951,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 408,
+        "endAt": 412
       },
       {
         "name":"스윙 R 너클 하이",
@@ -1609,7 +1964,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,23",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 416
       },
       {
         "name":"스윙 R 너클 로우",
@@ -1620,7 +1977,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"12,8",
-        "extra":""
+        "extra":"",
+        "startAt": 417,
+        "endAt": 420
       },
       {
         "name":"미메시스 스파이크 프레스1",
@@ -1631,7 +1990,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 420,
+        "endAt": 424
       },
       {
         "name":"미메시스 스파이크 프레스2",
@@ -1642,7 +2003,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,17",
-        "extra":""
+        "extra":"",
+        "startAt": 420,
+        "endAt": 424
       },
       {
         "name":"아토믹 숄더 태클",
@@ -1653,7 +2016,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 425,
+        "endAt": 428
       },
       {
         "name":"펄버라이저1",
@@ -1664,7 +2029,9 @@
         "counter_frame":"+3",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 429,
+        "endAt": 432
       },
       {
         "name":"펄버라이저2",
@@ -1675,7 +2042,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"14,10",
-        "extra":""
+        "extra":"",
+        "startAt": 429,
+        "endAt": 432
       },
       {
         "name":"펄버라이저3",
@@ -1686,7 +2055,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,10,20",
-        "extra":"홀드하면 파워 상승(가드 대미지 있음)"
+        "extra":"홀드하면 파워 상승(가드 대미지 있음)",
+        "startAt": 429,
+        "endAt": 432
+      },
+      {
+        "name":"펄버라이저3(홀드)",
+        "command":"몸을 숙인 상태에서↙LPLPLP",
+        "start_frame":"34",
+        "guard_frame":"-6",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"14,10,30",
+        "extra":"가드 대미지 있음",
+        "startAt": 429,
+        "endAt": 432
       }
     ],
     "sit down":[
@@ -1699,7 +2083,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"시트 다운으로"
+        "extra":"시트 다운으로",
+        "startAt": 445,
+        "endAt": 448
       },
       {
         "name":"시트 펀치스1",
@@ -1710,7 +2096,9 @@
         "counter_frame":"-37",
         "range":"하단",
         "damage":"10",
-        "extra":"혹은 시트 다운 도중 RP"
+        "extra":"혹은 시트 다운 도중 RP",
+        "startAt": 448,
+        "endAt": 452
       },
       {
         "name":"시트 펀치스2",
@@ -1721,7 +2109,9 @@
         "counter_frame":"-36",
         "range":"하단",
         "damage":"10,10",
-        "extra":"혹은 시트 다운 도중 RPLP"
+        "extra":"혹은 시트 다운 도중 RPLP",
+        "startAt": 448,
+        "endAt": 452
       },
       {
         "name":"시트 펀치스3",
@@ -1732,7 +2122,9 @@
         "counter_frame":"-32",
         "range":"하단",
         "damage":"10,10,10",
-        "extra":"혹은 시트 다운 도중 RPLPRP"
+        "extra":"혹은 시트 다운 도중 RPLPRP",
+        "startAt": 448,
+        "endAt": 452
       },
       {
         "name":"시트 펀치스4",
@@ -1743,7 +2135,9 @@
         "counter_frame":"-36",
         "range":"하단",
         "damage":"10,10,10,10",
-        "extra":"혹은 시트 다운 도중 RPLPRPLP"
+        "extra":"혹은 시트 다운 도중 RPLPRPLP",
+        "startAt": 448,
+        "endAt": 452
       },
       {
         "name":"그라운드 어썰트",
@@ -1754,7 +2148,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 455,
+        "endAt": 458
       },
       {
         "name":"엑스트라 팬케이크 프레스",
@@ -1765,29 +2161,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"35",
-        "extra":"시트 다운으로(Extra Pancake Press 이외의 기술로 파생 가능)"
+        "extra":"시트 다운으로(엑스트라 팬케이크 프레스 이외의 기술로 파생 가능)",
+        "startAt": 459,
+        "endAt": 462
       },
       {
         "name":"포워드 롤",
-        "command":"시트 다운 도중 6",
+        "command":"시트 다운 도중 →",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 465,
+        "endAt": 468
       },
       {
         "name":"백워드 롤",
-        "command":"시트 다운 도중 4",
+        "command":"시트 다운 도중 ←",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 470,
+        "endAt": 473
       }
     ],
     "gamma howl":[
@@ -1800,7 +2202,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"파워 크래시\n감마 하울로"
+        "extra":"파워 크래시\n감마 하울로",
+        "startAt": 475,
+        "endAt": 476
       },
       {
         "name":"저거넛 훅",
@@ -1811,7 +2215,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 476,
+        "endAt": 479
       },
       {
         "name":"엑사톤 블래스트",
@@ -1822,10 +2228,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"40",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 479,
+        "endAt": 482
       },
       {
-        "name":"그래닛 스텀핑(감마 하울)",
+        "name":"그래닛 스텀핑",
         "command":"감마 하울 도중 LK",
         "start_frame":"24",
         "guard_frame":"+4",
@@ -1833,7 +2241,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":"↓~입력 시 직접 몸을 숙인 상태로"
+        "extra":"↓~입력 시 직접 몸을 숙인 상태로",
+        "startAt": 484,
+        "endAt": 487
       },
       {
         "name":"풀 메탈 데스블로",
@@ -1844,7 +2254,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 489,
+        "endAt": 493
       },
       {
         "name":"파티클 배리어",
@@ -1855,10 +2267,12 @@
         "counter_frame":"D",
         "range":"특수 중단",
         "damage":"20",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 493,
+        "endAt": 498
       },
       {
-        "name":"프라임 와인드업 어퍼컷(감마 하울)",
+        "name":"프라임 와인드업 어퍼컷",
         "command":"감마 하울 도중 →LP",
         "start_frame":"20",
         "guard_frame":"-17",
@@ -1866,7 +2280,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"26",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 499,
+        "endAt": 503
       },
       {
         "name":"메갈로드릴러",
@@ -1877,7 +2293,9 @@
         "counter_frame":"D",
         "range":"중단x4",
         "damage":"22,4,4,4",
-        "extra":""
+        "extra":"",
+        "startAt": 504,
+        "endAt": 508
       },
       {
         "name":"브레이크아웃 포트리스",
@@ -1888,7 +2306,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 510,
+        "endAt": 512
       },
       {
         "name":"플라잉 포트리스",
@@ -1899,7 +2319,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 513,
+        "endAt": 516
       }
     ],
     "gamma charge":[
@@ -1912,7 +2334,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태 지속 중에는 상시 효과 발동"
+        "extra":"히트 상태 지속 중에는 상시 효과 발동",
+        "startAt": 516,
+        "endAt": 519
       },
       {
         "name":"재규어 훅 - 감마",
@@ -1923,7 +2347,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"호밍기\n가드 대미지\n히트 상태 지속 중에는 히트 상태의 남은 시간을 소비"
+        "extra":"호밍기\n가드 대미지\n히트 상태 지속 중에는 히트 상태의 남은 시간을 소비",
+        "startAt": 519,
+        "endAt": 523
       },
       {
         "name":"액사톤 블래스트 - 감마",
@@ -1934,7 +2360,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"42",
-        "extra":"토네이도\n파워 크래시\n가드 대미지\n히트 상태 지속 중에는 히트 상태의 남은 시간을 소비"
+        "extra":"토네이도\n파워 크래시\n가드 대미지\n히트 상태 지속 중에는 히트 상태의 남은 시간을 소비",
+        "startAt": 524,
+        "endAt": 528
       }
     ]
   },
@@ -1947,7 +2375,9 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 531,
+      "endAt": 536
     },
     {
       "name":"피스톤 건 백 브레이커",
@@ -1957,7 +2387,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 536,
+      "endAt": 540
     },
     {
       "name":"사이드 래프트 봄",
@@ -1967,7 +2399,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 540,
+      "endAt": 545
     },
     {
       "name":"파더즈 러브",
@@ -1977,7 +2411,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 545,
+      "endAt": 549
     },
     {
       "name":"스파이널 크러시",
@@ -1987,7 +2423,9 @@
       "after_break_frame":"-",
       "damage":"70",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 550,
+      "endAt": 554
     },
     {
       "name":"스로 어웨이",
@@ -1997,7 +2435,9 @@
       "after_break_frame":"-",
       "damage":"70",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 555,
+      "endAt": 558
     },
     {
       "name":"볼케이노",
@@ -2007,7 +2447,9 @@
       "after_break_frame":"-2",
       "damage":"10,5",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 559,
+      "endAt": 564
     },
     {
       "name":"볼케이노 블래스터",
@@ -2017,7 +2459,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"-6",
-      "extra":""
+      "extra":"",
+      "startAt": 565,
+      "endAt": 568
     },
     {
       "name":"보디 스매시",
@@ -2027,7 +2471,9 @@
       "after_break_frame":"-2",
       "damage":"25",
       "range":"-2",
-      "extra":""
+      "extra":"",
+      "startAt": 570,
+      "endAt": 575
     },
     {
       "name":"그라운드 제로",
@@ -2037,7 +2483,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"-6",
-      "extra":""
+      "extra":"",
+      "startAt": 581,
+      "endAt": 586
     },
     {
       "name":"리프트 업 메가톤 히트",
@@ -2047,7 +2495,9 @@
       "after_break_frame":"-6",
       "damage":"40",
       "range":"-6",
-      "extra":""
+      "extra":"",
+      "startAt": 594,
+      "endAt": 598
     },
     {
       "name":"파일 드라이버",
@@ -2057,7 +2507,9 @@
       "after_break_frame":"-6",
       "damage":"50",
       "range":"-6",
-      "extra":""
+      "extra":"",
+      "startAt": 599,
+      "endAt": 605
     },
     {
       "name":"피라미드 드라이버",
@@ -2067,7 +2519,9 @@
       "after_break_frame":"-2",
       "damage":"40",
       "range":"-2",
-      "extra":""
+      "extra":"",
+      "startAt": 605,
+      "endAt": 610
     },
     {
       "name":"백 브레이커",
@@ -2077,17 +2531,21 @@
       "after_break_frame":"-2",
       "damage":"45",
       "range":"-2",
-      "extra":""
+      "extra":"",
+      "startAt": 611,
+      "endAt": 616
     },
     {
       "name":"미메시스 오버킬",
-      "command":"Gamma Howl 도중 AP",
+      "command":"감마 하울 도중 AP",
       "start_frame":"16",
       "break_command":"AP",
       "after_break_frame":"-6",
       "damage":"45",
       "range":"-6",
-      "extra":""
+      "extra":"",
+      "startAt": 616,
+      "endAt": 621
     },
     {
       "name":"건 봄",
@@ -2097,7 +2555,9 @@
       "after_break_frame":"-",
       "damage":"30",
       "range":"중단",
-      "extra":"혹은 감마 하울 도중 AL"
+      "extra":"혹은 감마 하울 도중 AL",
+      "startAt": 628,
+      "endAt": 631
     },
     {
       "name":"아이언 건맨",
@@ -2107,7 +2567,9 @@
       "after_break_frame":"-",
       "damage":"25",
       "range":"중단",
-      "extra":"히트 발동기\n혹은 감마 하울 도중 AR\n히트 대시 불가능"
+      "extra":"히트 발동기\n혹은 감마 하울 도중 AR\n히트 대시 불가능",
+      "startAt": 631,
+      "endAt": 636
     },
     {
       "name":"트윈 드라이버즈",
@@ -2117,7 +2579,9 @@
       "after_break_frame":"-",
       "damage":"33",
       "range":"상단",
-      "extra":"혹은 상대가 벽에 부딪혔을 때 9 AP"
+      "extra":"혹은 상대가 벽에 부딪혔을 때 ↗AP",
+      "startAt": 637,
+      "endAt": 641
     }
   ]
 }

@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
         "name":"델타 슬라이서",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"5,8,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 3,
+        "endAt": 7
       },
       {
         "name":"일렉트릭 졸트",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 8,
+        "endAt": 12
       },
       {
         "name":"더블 배럴",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"14,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 13,
+        "endAt": 17
       },
       {
         "name":"보우 쇼크",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"23",
-        "extra":"히트 발동기\n호밍기\n사일런트 엔트리로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n가드 대미지"
+        "extra":"히트 발동기\n호밍기\n사일런트 엔트리로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n가드 대미지",
+        "startAt": 17,
+        "endAt": 21
       },
       {
         "name":"라이트닝 쓰러스트",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"26",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 22,
+        "endAt": 26
       },
       {
         "name":"리벨리온",
@@ -76,7 +88,9 @@
         "counter_frame":"+17g",
         "range":"특수 중단",
         "damage":"5",
-        "extra":"파워 크래시\n사일런트 엔트리로\n히트 상태의 남은 시간 소비"
+        "extra":"파워 크래시\n사일런트 엔트리로\n히트 상태의 남은 시간 소비",
+        "startAt": 27,
+        "endAt": 31
       },
       {
         "name":"블루 제트",
@@ -87,7 +101,9 @@
         "counter_frame":"+17g",
         "range":"하단",
         "damage":"20,15",
-        "extra":"정면 지상 히트 시 잡기로"
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 32,
+        "endAt": 37
       },
       {
         "name":"썬더버드 디센트",
@@ -98,18 +114,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"55",
-        "extra":"히트 시 잡기로\n가드 시 다이나믹 엔트리로(←~입력 시 이행하지 않음)"
+        "extra":"히트 시 잡기로\n가드 시 다이나믹 엔트리로(←~입력 시 이행하지 않음)",
+        "startAt": 38,
+        "endAt": 41
       },
       {
         "name":"썬더버드 디센트~선 자세",
-        "command":"히트 상태에서 RP+LK←~",
+        "command":"히트 상태에서 RP+LK 가드 시 ←~",
         "start_frame":"18",
         "guard_frame":"+8",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"55",
-        "extra":"히트 시 잡기로"
+        "extra":"",
+        "startAt": 38,
+        "endAt": 41
       }
     ],
     "general":[
@@ -122,7 +142,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 57,
+        "endAt": 61
       },
       {
         "name":"델타 슬라이서2",
@@ -133,7 +155,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"5,8",
-        "extra":""
+        "extra":"",
+        "startAt": 57,
+        "endAt": 61
       },
       {
         "name":"델타 슬라이서3",
@@ -144,7 +168,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"5,8,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 57,
+        "endAt": 61
       },
       {
         "name":"레프트 라이트 콤보",
@@ -155,7 +181,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,9",
-        "extra":""
+        "extra":"",
+        "startAt": 62,
+        "endAt": 65
       },
       {
         "name":"리저네어즈 스핀",
@@ -166,7 +194,9 @@
         "counter_frame":"+1",
         "range":"하단",
         "damage":"5,10",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 65,
+        "endAt": 68
       },
       {
         "name":"링 커런트1",
@@ -177,7 +207,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 68,
+        "endAt": 71
       },
       {
         "name":"링 커런트2",
@@ -188,7 +220,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"10,12",
-        "extra":"리미티드 엔트리로"
+        "extra":"리미티드 엔트리로",
+        "startAt": 68,
+        "endAt": 71
       },
       {
         "name":"킥 스타트",
@@ -199,7 +233,9 @@
         "counter_frame":"0",
         "range":"상단",
         "damage":"16",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 71,
+        "endAt": 73
       },
       {
         "name":"킥 스타트~리미티드 엔트리",
@@ -210,7 +246,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"16",
-        "extra":"리미티드 엔트리로"
+        "extra":"리미티드 엔트리로",
+        "startAt": 68,
+        "endAt": 71
       },
       {
         "name":"스피닝 커터",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"27",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 77
       },
       {
         "name":"엑스레이",
@@ -232,7 +272,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 79,
+        "endAt": 82
       },
       {
         "name":"일렉트릭 졸트",
@@ -243,7 +285,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 82,
+        "endAt": 86
       },
       {
         "name":"플래시 클로1",
@@ -254,7 +298,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"플래시 클로2~사일런트 엔트리",
@@ -265,7 +311,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"10,11",
-        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로"
+        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"플래시 클로2~선 자세",
@@ -276,7 +324,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"10,11",
-        "extra":""
+        "extra":"",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"플래시 뱅~다이나믹 엔트리",
@@ -287,7 +337,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,11,20",
-        "extra":"다이나믹 엔트리로\n←~입력 시 서 있는 상태로"
+        "extra":"다이나믹 엔트리로\n←~입력 시 서 있는 상태로",
+        "startAt": 91,
+        "endAt": 94
       },
       {
         "name":"플래시 뱅~선 자세",
@@ -298,7 +350,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,11,20",
-        "extra":"서 있는 상태로"
+        "extra":"서 있는 상태로",
+        "startAt": 91,
+        "endAt": 94
       },
       {
         "name":"차지 팩터1",
@@ -309,7 +363,9 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 94,
+        "endAt": 98
       },
       {
         "name":"차지 팩터2~사일런트 엔트리",
@@ -320,7 +376,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"10,15",
-        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로\n()는 이행 시 프레임"
+        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로\n()는 이행 시 프레임",
+        "startAt": 94,
+        "endAt": 98
       },
       {
         "name":"차지 팩터2~선 자세",
@@ -331,7 +389,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"10,15",
-        "extra":"서 있는 상태로"
+        "extra":"서 있는 상태로",
+        "startAt": 94,
+        "endAt": 98
       },
       {
         "name":"데스 마스크",
@@ -342,7 +402,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,22",
-        "extra":""
+        "extra":"",
+        "startAt": 99,
+        "endAt": 102
       },
       {
         "name":"다이나믹 엔트리",
@@ -353,7 +415,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 104,
+        "endAt": 106
       },
       {
         "name":"볼캐닉 라이트닝1",
@@ -364,7 +428,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"볼캐틱 라이트닝2",
@@ -375,7 +441,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,8",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"볼캐틱 라이트닝3",
@@ -386,7 +454,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"볼캐틱 라이트닝4",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,8,8,20",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"아크 블래스트",
@@ -408,7 +480,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"파워 슬러그",
@@ -419,7 +493,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 117,
+        "endAt": 120
       },
       {
         "name":"플래시 불릿~사이런트 엔트리",
@@ -430,7 +506,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로"
+        "extra":"사일런트 엔트리로\n←~입력 시 서 있는 상태로",
+        "startAt": 120,
+        "endAt": 123
       },
       {
         "name":"플래시 불릿~선 자세",
@@ -441,7 +519,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"서 있는 상태로"
+        "extra":"서 있는 상태로",
+        "startAt": 120,
+        "endAt": 123
       },
       {
         "name":"아웃포스트",
@@ -452,7 +532,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15",
-        "extra":"↓~입력 시 다이나믹 엔트리로"
+        "extra":"↓~입력 시 다이나믹 엔트리로",
+        "startAt": 123,
+        "endAt": 126
       },
       {
         "name":"아웃포스트~다이나믹 엔트리",
@@ -463,7 +545,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 120,
+        "endAt": 123
       },
       {
         "name":"아웃포스트 블리츠",
@@ -474,7 +558,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,24",
-        "extra":""
+        "extra":"",
+        "startAt": 120,
+        "endAt": 123
       },
       {
         "name":"택티컬 소드",
@@ -485,7 +571,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":"↓~입력 시 직접 몸을 숙인 상태로"
+        "extra":"↓~입력 시 직접 몸을 숙인 상태로",
+        "startAt": 127,
+        "endAt": 129
       },
       {
         "name":"테슬라 그래비티1",
@@ -496,7 +584,9 @@
         "counter_frame":"-3",
         "range":"하단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 130,
+        "endAt": 132
       },
       {
         "name":"테슬라 그래비티2",
@@ -507,7 +597,9 @@
         "counter_frame":"+4",
         "range":"상단x2",
         "damage":"8,4,10",
-        "extra":""
+        "extra":"",
+        "startAt": 130,
+        "endAt": 132
       },
       {
         "name":"어스 배터리",
@@ -518,7 +610,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 133,
+        "endAt": 135
       },
       {
         "name":"아크 콤비네이션1",
@@ -529,7 +623,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 136,
+        "endAt": 138
       },
       {
         "name":"아크 콤비네이션2",
@@ -540,7 +636,9 @@
         "counter_frame":"-1",
         "range":"상단",
         "damage":"9,10",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 136,
+        "endAt": 138
       },
       {
         "name":"할로우 포인트",
@@ -551,7 +649,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"12",
-        "extra":"→~입력 시 사일런트 엔트리로"
+        "extra":"→~입력 시 사일런트 엔트리로",
+        "startAt": 139,
+        "endAt": 142
       },
       {
         "name":"할로우 포인트~사일런트 엔트리",
@@ -562,7 +662,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"12",
-        "extra":"사일런트 엔트리로"
+        "extra":"사일런트 엔트리로",
+        "startAt": 139,
+        "endAt": 142
       },
       {
         "name":"더블 탭",
@@ -573,7 +675,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12,8",
-        "extra":""
+        "extra":"",
+        "startAt": 139,
+        "endAt": 142
       },
       {
         "name":"HE 콤비네이션",
@@ -584,7 +688,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"12,15",
-        "extra":"토네이도\n홀드하면 파워가 상승하고 가드 대미지 추가"
+        "extra":"토네이도\n홀드하면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 143,
+        "endAt": 145
       },
       {
         "name":"HE 콤비네이션(홀드)",
@@ -595,7 +701,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,15",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 143,
+        "endAt": 145
       },
       {
         "name":"섀도 커터",
@@ -606,7 +714,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"19",
-        "extra":""
+        "extra":"",
+        "startAt": 147,
+        "endAt": 149
       },
       {
         "name":"인덕턴스",
@@ -617,7 +727,9 @@
         "counter_frame":"+10",
         "range":"중단",
         "damage":"18",
-        "extra":"↓~입력 시 다이나믹 엔트리로"
+        "extra":"↓~입력 시 다이나믹 엔트리로",
+        "startAt": 150,
+        "endAt": 152
       },
       {
         "name":"인덕턴스~다이나믹 엔트리",
@@ -628,7 +740,9 @@
         "counter_frame":"+11",
         "range":"중단",
         "damage":"18",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 150,
+        "endAt": 152
       },
       {
         "name":"셰브론 슬래시",
@@ -639,7 +753,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"17",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 153,
+        "endAt": 155
       },
       {
         "name":"길버트 스매시1",
@@ -650,7 +766,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 157,
+        "endAt": 159
       },
       {
         "name":"길버트 스매시2",
@@ -661,7 +779,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,17",
-        "extra":""
+        "extra":"",
+        "startAt": 157,
+        "endAt": 159
       },
       {
         "name":"길버트 캐논",
@@ -672,7 +792,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 159,
+        "endAt": 163
       },
       {
         "name":"임펄스 킥",
@@ -683,7 +805,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"14",
-        "extra":"→~입력 시 사일런트 엔트리로"
+        "extra":"→~입력 시 사일런트 엔트리로",
+        "startAt": 165,
+        "endAt": 167
       },
       {
         "name":"임펄스 킥~사일런트 엔트리",
@@ -694,7 +818,9 @@
         "counter_frame":"+11",
         "range":"중단",
         "damage":"14",
-        "extra":"사일런트 엔트리로"
+        "extra":"사일런트 엔트리로",
+        "startAt": 165,
+        "endAt": 167
       },
       {
         "name":"임펄스 플러스",
@@ -705,7 +831,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,20",
-        "extra":""
+        "extra":"",
+        "startAt": 165,
+        "endAt": 167
       },
       {
         "name":"마그네틱 니",
@@ -716,7 +844,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 171
       },
       {
         "name":"마그네틱 니 블래스트",
@@ -727,7 +857,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"27,28",
-        "extra":"정면 지상 히트 시 잡기로"
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 184,
+        "endAt": 189
       },
       {
         "name":"윈드 라이거",
@@ -738,7 +870,9 @@
         "counter_frame":"+9",
         "range":"중단x2",
         "damage":"4,20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 190,
+        "endAt": 193
       },
       {
         "name":"제우스",
@@ -749,7 +883,9 @@
         "counter_frame":"A",
         "range":"가불",
         "damage":"43",
-        "extra":""
+        "extra":"",
+        "startAt": 197,
+        "endAt": 202
       },
       {
         "name":"라이트닝 스크류",
@@ -760,7 +896,9 @@
         "counter_frame":"A",
         "range":"중단x2",
         "damage":"12,14",
-        "extra":"혹은 ↖LK or ↑LK"
+        "extra":"혹은 ↖LK or ↑LK",
+        "startAt": 202,
+        "endAt": 206
       },
       {
         "name":"스톰 액슬",
@@ -771,7 +909,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 ↖RK or ↑RK"
+        "extra":"혹은 ↖RK or ↑RK",
+        "startAt": 207,
+        "endAt": 210
       },
       {
         "name":"아발란치 플립",
@@ -782,7 +922,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ↖AK or ↑AK"
+        "extra":"혹은 ↖AK or ↑AK",
+        "startAt": 211,
+        "endAt": 214
       },
       {
         "name":"아발란치 플립 브레이크 다운",
@@ -793,7 +935,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,20",
-        "extra":"정면 히트 시 잡기로"
+        "extra":"정면 히트 시 잡기로",
+        "startAt": 214,
+        "endAt": 217
       },
       {
         "name":"아발란치 드롭",
@@ -804,7 +948,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"40",
-        "extra":"잡기 풀기 AP"
+        "extra":"잡기 풀기 AP",
+        "startAt": 218,
+        "endAt": 222
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -815,7 +961,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 222,
+        "endAt": 225
       },
       {
         "name":"서지 블래스트",
@@ -826,7 +974,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도\n히트 시 →~입력 시 사일런트 엔트리로"
+        "extra":"토네이도\n히트 시 →~입력 시 사일런트 엔트리로",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"크로스 트랜지스터1",
@@ -837,7 +987,9 @@
         "counter_frame":"+5",
         "range":"하단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 231,
+        "endAt": 234
       },
       {
         "name":"크로스 트랜지스터2",
@@ -848,7 +1000,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"12,15",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 231,
+        "endAt": 234
       },
       {
         "name":"더블 펄스",
@@ -859,7 +1013,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 235,
+        "endAt": 238
       },
       {
         "name":"엘보 코로나",
@@ -870,7 +1026,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 239,
+        "endAt": 241
       },
       {
         "name":"더블 액션",
@@ -881,7 +1039,9 @@
         "counter_frame":"0",
         "range":"하단x2",
         "damage":"11,15",
-        "extra":""
+        "extra":"",
+        "startAt": 242,
+        "endAt": 244
       },
       {
         "name":"블루 볼트1",
@@ -892,7 +1052,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 246,
+        "endAt": 249
       },
       {
         "name":"블루 볼트2",
@@ -903,7 +1065,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 246,
+        "endAt": 249
       },
       {
         "name":"레드 스프라이트",
@@ -914,7 +1078,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 249,
+        "endAt": 252
       },
       {
         "name":"10단 콤보1",
@@ -925,7 +1091,9 @@
         "counter_frame":"-5",
         "range":"상단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보2",
@@ -936,7 +1104,9 @@
         "counter_frame":"-14",
         "range":"중단",
         "damage":"12,7",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보3",
@@ -947,7 +1117,9 @@
         "counter_frame":"-5",
         "range":"중단",
         "damage":"12,7,8",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보4",
@@ -958,7 +1130,9 @@
         "counter_frame":"-14",
         "range":"중단",
         "damage":"12,7,8,12",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보5",
@@ -969,7 +1143,9 @@
         "counter_frame":"-15",
         "range":"하단",
         "damage":"12,7,8,12,6",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보6",
@@ -980,7 +1156,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,7,8,12,6,10",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보7",
@@ -991,7 +1169,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,7,8,12,6,10,7",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보8",
@@ -1002,7 +1182,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,7,8,12,6,10,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보9",
@@ -1013,7 +1195,9 @@
         "counter_frame":"D",
         "range":"잡기",
         "damage":"12,7,8,12,6,10,7,6,1,2",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"10단 콤보10",
@@ -1024,7 +1208,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,7,8,12,6,10,7,6,1,2,17",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 260
       },
       {
         "name":"기합 모으기",
@@ -1035,7 +1221,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 262,
+        "endAt": 265
       },
       {
         "name":"쇼크웨이브",
@@ -1046,7 +1234,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 293,
+        "endAt": 296
       }
     ],
     "sit":[
@@ -1059,18 +1249,22 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"16",
-        "extra":"토네이도\n히트 시 →~입력 시 사일런트 엔트리로"
+        "extra":"토네이도\n히트 시 →~입력 시 사일런트 엔트리로",
+        "startAt": 266,
+        "endAt": 269
       },
       {
         "name":"라이트닝 스타터",
         "command":"일어서며 RP",
         "start_frame":"13",
-        "guard_frame":"-8(-12,-5)",
-        "hit_frame":"+3(-1,+6)",
-        "counter_frame":"+3(-1,+6)",
+        "guard_frame":"-8",
+        "hit_frame":"+3",
+        "counter_frame":"+3",
         "range":"중단",
         "damage":"13",
-        "extra":"↓~입력 시 다이나믹 엔트리로\n→~입력 시 사일런트 엔트리로"
+        "extra":"↓~입력 시 다이나믹 엔트리로\n→~입력 시 사일런트 엔트리로",
+        "startAt": 270,
+        "endAt": 273
       },
       {
         "name":"라이트닝 스타터~다이나믹 엔트리",
@@ -1081,7 +1275,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"13",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 270,
+        "endAt": 273
       },
       {
         "name":"라이트닝 스타터~사일런트 엔트리",
@@ -1092,7 +1288,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"13",
-        "extra":"사일런트 엔트리로"
+        "extra":"사일런트 엔트리로",
+        "startAt": 270,
+        "endAt": 273
       },
       {
         "name":"멀티플라이드 포스",
@@ -1103,7 +1301,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,17",
-        "extra":""
+        "extra":"",
+        "startAt": 270,
+        "endAt": 273
       },
       {
         "name":"글라스 브레이커",
@@ -1114,7 +1314,9 @@
         "counter_frame":"-3",
         "range":"상단",
         "damage":"13,20",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 274,
+        "endAt": 277
       },
       {
         "name":"글라스 브레이커~리미티드 엔트리",
@@ -1125,7 +1327,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"13,20",
-        "extra":"리미티드 엔트리로"
+        "extra":"리미티드 엔트리로",
+        "startAt": 274,
+        "endAt": 277
       },
       {
         "name":"타워 캐논",
@@ -1136,7 +1340,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 277,
+        "endAt": 280
       },
       {
         "name":"타워 캐논~리미티드 엔트리",
@@ -1147,7 +1353,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"리미티드 엔트리로"
+        "extra":"리미티드 엔트리로",
+        "startAt": 277,
+        "endAt": 280
       },
       {
         "name":"셸 스매시",
@@ -1158,7 +1366,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 281,
+        "endAt": 284
       },
       {
         "name":"더블 스맥",
@@ -1169,7 +1379,9 @@
         "counter_frame":"+1",
         "range":"하단x2",
         "damage":"9,15",
-        "extra":""
+        "extra":"",
+        "startAt": 284,
+        "endAt": 287
       },
       {
         "name":"파워 스파이크",
@@ -1180,7 +1392,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"19",
-        "extra":""
+        "extra":"",
+        "startAt": 289,
+        "endAt": 291
       }
     ],
     "dynamic entry":[
@@ -1193,7 +1407,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"다이나믹 엔트리로\n→~입력 시 사일런트 엔트리로"
+        "extra":"다이나믹 엔트리로\n→~입력 시 사일런트 엔트리로",
+        "startAt": 297,
+        "endAt": 299
       },
       {
         "name":"록 & 로드",
@@ -1204,7 +1420,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"14",
-        "extra":"→~입력 시 사일런트 엔트리로"
+        "extra":"→~입력 시 사일런트 엔트리로",
+        "startAt": 300,
+        "endAt": 304
       },
       {
         "name":"록 & 로드~사일런트 엔트리",
@@ -1215,7 +1433,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"14",
-        "extra":"사일런트 엔트리로"
+        "extra":"사일런트 엔트리로",
+        "startAt": 300,
+        "endAt": 304
       },
       {
         "name":"더블 배럴",
@@ -1226,18 +1446,35 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 300,
+        "endAt": 304
       },
       {
         "name":"림파이어",
         "command":"다이나믹 엔트리 도중 RP",
         "start_frame":"17",
         "guard_frame":"-7",
-        "hit_frame":"+7(+9)",
+        "hit_frame":"+7",
         "counter_frame":"D",
         "range":"중단",
         "damage":"19",
-        "extra":"히트 시 ↗~입력 시 Avalanche Flip으로"
+        "extra":"히트 시 ↗~입력 시 아발란치 플립으로",
+        "startAt": 304,
+        "endAt": 307
+      },
+      {
+        "name":"림파이어~아발란치 플립",
+        "command":"다이나믹 엔트리 도중 RP 히트 시 ↗~",
+        "start_frame":"17",
+        "guard_frame":"-7",
+        "hit_frame":"+9",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"19",
+        "extra":"",
+        "startAt": 304,
+        "endAt": 307
       },
       {
         "name":"보우 쇼크",
@@ -1248,7 +1485,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"23",
-        "extra":"히트 발동기\n호밍기\n사일런트 엔트리로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음\n가드 대미지"
+        "extra":"히트 발동기\n호밍기\n사일런트 엔트리로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음\n가드 대미지",
+        "startAt": 307,
+        "endAt": 311
       },
       {
         "name":"리저네어즈 샷",
@@ -1259,7 +1498,9 @@
         "counter_frame":"+1",
         "range":"하단",
         "damage":"14",
-        "extra":"↓~입력 시 리미티드 엔트리로"
+        "extra":"↓~입력 시 리미티드 엔트리로",
+        "startAt": 312,
+        "endAt": 315
       },
       {
         "name":"인투 더 스톰",
@@ -1270,7 +1511,9 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 317,
+        "endAt": 320
       },
       {
         "name":"스택 업",
@@ -1281,7 +1524,9 @@
         "counter_frame":"+5",
         "range":"하단",
         "damage":"21",
-        "extra":"→~입력 시 사일런트 엔트리로"
+        "extra":"→~입력 시 사일런트 엔트리로",
+        "startAt": 320,
+        "endAt": 323
       },
       {
         "name":"스택 업~사일런트 엔트리",
@@ -1292,7 +1537,9 @@
         "counter_frame":"+12",
         "range":"하단",
         "damage":"21",
-        "extra":"사일런트 엔트리로"
+        "extra":"사일런트 엔트리로",
+        "startAt": 320,
+        "endAt": 323
       },
       {
         "name":"다이나믹 엔트리",
@@ -1303,7 +1550,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 324,
+        "endAt": 327
       }
     ],
     "silent entry":[
@@ -1316,7 +1565,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"사일런트 엔트리로\n↓~입력 시 리미티드 엔트리로"
+        "extra":"사일런트 엔트리로\n↓~입력 시 리미티드 엔트리로",
+        "startAt": 327,
+        "endAt": 330
       },
       {
         "name":"라이트닝 쓰러스트",
@@ -1327,7 +1578,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"26",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 331,
+        "endAt": 335
       },
       {
         "name":"터바인 훅",
@@ -1338,7 +1591,9 @@
         "counter_frame":"T",
         "range":"하단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 336,
+        "endAt": 339
       },
       {
         "name":"라이징 스톰",
@@ -1349,7 +1604,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 340,
+        "endAt": 342
       },
       {
         "name":"일렉트리 발리",
@@ -1360,7 +1617,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"28",
-        "extra":"가드 대미지\n호밍기\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"가드 대미지\n호밍기\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 342,
+        "endAt": 346
       },
       {
         "name":"인탱글링 이젝터",
@@ -1371,7 +1630,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 346,
+        "endAt": 349
       },
       {
         "name":"라이트닝 액슬",
@@ -1382,7 +1643,9 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"6,23",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 350,
+        "endAt": 354
       },
       {
         "name":"다이나믹 엔트리",
@@ -1393,7 +1656,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"다이나믹 엔트리로"
+        "extra":"다이나믹 엔트리로",
+        "startAt": 354,
+        "endAt": 357
       }
     ],
     "limited entry":[
@@ -1406,7 +1671,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리미티드 엔트리로"
+        "extra":"리미티드 엔트리로",
+        "startAt": 360,
+        "endAt": 363
       },
       {
         "name":"블래스팅 스맥",
@@ -1417,7 +1684,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"20",
-        "extra":"히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)"
+        "extra":"히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)",
+        "startAt": 363,
+        "endAt": 367
       },
       {
         "name":"블루 제트",
@@ -1428,7 +1697,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20,15",
-        "extra":"정면 지상 히트 시 잡기로"
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 368,
+        "endAt": 373
       },
       {
         "name":"라이징 포스",
@@ -1439,7 +1710,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도\n가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)"
+        "extra":"토네이도\n가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)",
+        "startAt": 374,
+        "endAt": 378
       }
     ]
   },
@@ -1452,7 +1725,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 380,
+      "endAt": 385
     },
     {
       "name":"레이징 썬더",
@@ -1462,7 +1737,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 385,
+      "endAt": 390
     },
     {
       "name":"택티컬 니",
@@ -1472,7 +1749,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 390,
+      "endAt": 393
     },
     {
       "name":"리썰 포스",
@@ -1482,7 +1761,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 394,
+      "endAt": 397
     },
     {
       "name":"스위프트 사일런스",
@@ -1492,7 +1773,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 398,
+      "endAt": 402
     },
     {
       "name":"아포칼립스",
@@ -1502,7 +1785,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 403,
+      "endAt": 407
     },
     {
       "name":"SHB",
@@ -1512,7 +1797,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":"혹은 다이나믹 엔트리 도중 RP+LK"
+      "extra":"혹은 다이나믹 엔트리 도중 RP+LK",
+      "startAt": 409,
+      "endAt": 411
     },
     {
       "name":"리젝션",
@@ -1522,7 +1809,9 @@
       "after_break_frame":"-",
       "damage":"18,1",
       "range":"상단",
-      "extra":"혹은 공중에 있는 상대에게 다이나믹 엔트리 도중 RP+LK"
+      "extra":"혹은 공중에 있는 상대에게 다이나믹 엔트리 도중 RP+LK",
+      "startAt": 412,
+      "endAt": 416
     }
   ]
 }

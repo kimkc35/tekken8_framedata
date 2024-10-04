@@ -87,14 +87,14 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                                 filter = "likeCount";
                               });
                             }
-                          }, child: Text("인기순", style: TextStyle(color: filter == "likeCount" ? themeData.primaryColor : themeData.secondaryHeaderColor),)),
+                          }, child: Text("인기순", style: TextStyle(color: filter == "likeCount" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor),)),
                           TextButton(onPressed: (){
                             if(filter != "date"){
                               setState(() {
                                 filter = "date";
                               });
                             }
-                          }, child: Text("최신순", style: TextStyle(color: filter == "date" ? themeData.primaryColor : themeData.secondaryHeaderColor)))
+                          }, child: Text("최신순", style: TextStyle(color: filter == "date" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor)))
                         ],
                       ),
                       Row(
@@ -165,7 +165,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                             Row(
                               children: [
                                 Text("${currentDoc["author"]}  "),
-                                Text("${currentDoc["version"]}", style: TextStyle(color: themeData.primaryColor, fontSize: 15),)
+                                Text("${currentDoc["version"]}", style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor, fontSize: 15),)
                               ],
                             ),
                             SizedBox(
@@ -250,7 +250,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
               });
             },
             style: ButtonStyle(
-              iconColor: MaterialStatePropertyAll(themeData.primaryColor)
+              iconColor: MaterialStatePropertyAll(CustomThemeMode.currentThemeData.value.primaryColor)
             ),
             child: Text("로그인"),
           )

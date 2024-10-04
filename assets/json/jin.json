@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 4
       },
       {
         "name":"정중선 마구 찌르기",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"4,4,16",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 5,
+        "endAt": 9
       },
       {
         "name":"단전 이단 치기",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"12,17",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 9,
+        "endAt": 13
       },
       {
         "name":"뒤돌려 오른 발꿈치 찍기",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 13,
+        "endAt": 17
       },
       {
         "name":"몸통 빼기",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기\n가드 대미지[통발]"
+        "extra":"히트 발동기\n가드 대미지[통발]",
+        "startAt": 17,
+        "endAt": 21
       },
       {
         "name":"마조 쓸기",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"27",
-        "extra":"히트 발동기\n파워 크래시\n호밍기\n가드 대미지\n상대 공격을 받아내면 대미지 증가"
+        "extra":"히트 발동기\n파워 크래시\n호밍기\n가드 대미지\n상대 공격을 받아내면 대미지 증가",
+        "startAt": 21,
+        "endAt": 25
       },
       {
         "name":"각성 삼전서기",
@@ -76,7 +88,9 @@
         "counter_frame":"+23g",
         "range":"중단",
         "damage":"-",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비",
+        "startAt": 27,
+        "endAt": 30
       },
       {
         "name":"각성 뇌신권",
@@ -87,7 +101,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"25",
-        "extra":"토네이도\n파워 크래시\n가드 대미지"
+        "extra":"토네이도\n파워 크래시\n가드 대미지",
+        "startAt": 30,
+        "endAt": 36
       },
       {
         "name":"각성 풍신권",
@@ -98,7 +114,9 @@
         "counter_frame":"A",
         "range":"특수중단",
         "damage":"23",
-        "extra":"파워 크래시\n가드 대미지"
+        "extra":"파워 크래시\n가드 대미지",
+        "startAt": 37,
+        "endAt": 42
       },
       {
         "name":"각성 규환섬공",
@@ -109,7 +127,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"파워 크래시\n가드 대미지"
+        "extra":"파워 크래시\n가드 대미지",
+        "startAt": 43,
+        "endAt": 47
       },
       {
         "name":"각성 등활섬공",
@@ -120,7 +140,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"24",
-        "extra":"파워 크래시\n가드 대미지"
+        "extra":"파워 크래시\n가드 대미지",
+        "startAt": 47,
+        "endAt": 52
       },
       {
         "name":"각성 나락떨구기1",
@@ -131,7 +153,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12",
-        "extra":"파워 크래시\n가드 대미지"
+        "extra":"파워 크래시\n가드 대미지",
+        "startAt": 53,
+        "endAt": 57
       },
       {
         "name":"각성 나락떨구기2",
@@ -142,7 +166,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,19",
-        "extra":"파워 크래시\n가드 대미지"
+        "extra":"파워 크래시\n가드 대미지",
+        "startAt": 53,
+        "endAt": 57
       },
       {
         "name":"뇌홍암권살",
@@ -153,7 +179,9 @@
         "counter_frame":"D",
         "range":"중단,상단,중단",
         "damage":"15,12,15,10,10",
-        "extra":"히트 스매시\n히트 시 잡기 이행\n가드 시 브레이킹 스텝 이행\n←~입력 시 서 있는 상태"
+        "extra":"히트 스매시\n히트 시 잡기 이행\n가드 시 브레이킹 스텝 이행\n←~입력 시 서 있는 상태",
+        "startAt": 58,
+        "endAt": 64
       },
       {
         "name":"뇌홍월명살",
@@ -164,7 +192,9 @@
         "counter_frame":"D",
         "range":"중단,상단,중단",
         "damage":"15,12,21",
-        "extra":"히트 스매시"
+        "extra":"히트 스매시",
+        "startAt": 65,
+        "endAt": 69
       }
     ],
     "general":[
@@ -177,7 +207,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 83,
+        "endAt": 85
       },
       {
         "name":"순 찌르기",
@@ -188,7 +220,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"5,12",
-        "extra":""
+        "extra":"",
+        "startAt": 83,
+        "endAt": 85
       },
       {
         "name":"순 찌르기~흑익윤무",
@@ -199,7 +233,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"5,12,20",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 86,
+        "endAt": 89
       },
       {
         "name":"순 찌르기~안 돌려 발꿈치 찍기",
@@ -210,7 +246,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 89,
+        "endAt": 92
       },
       {
         "name":"순 찌르기~상단 뒤 돌려 차기",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,12,26",
-        "extra":""
+        "extra":"",
+        "startAt": 92,
+        "endAt": 95
       },
       {
         "name":"곧게 찌르기~왼 하단 차기~오른 하단 차기",
@@ -232,7 +272,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"5,9,17",
-        "extra":""
+        "extra":"",
+        "startAt": 95,
+        "endAt": 98
       },
       {
         "name":"역 찌르기1",
@@ -243,7 +285,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 98,
+        "endAt": 101
       },
       {
         "name":"역 찌르기2",
@@ -254,7 +298,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"9,9",
-        "extra":""
+        "extra":"",
+        "startAt": 98,
+        "endAt": 101
       },
       {
         "name":"역 찌르기~중단 앞 돌려차기",
@@ -265,7 +311,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,9,18",
-        "extra":""
+        "extra":"",
+        "startAt": 98,
+        "endAt": 101
       },
       {
         "name":"역 찌르기 하단 앞 돌려차기",
@@ -276,7 +324,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"9,9,20",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"정권~상단 뒤 돌려 차기",
@@ -287,18 +337,22 @@
         "counter_frame":"+11",
         "range":"상단",
         "damage":"9,20",
-        "extra":"→~입력시 전심으로[투포]"
+        "extra":"→~입력시 전심으로[투포]",
+        "startAt": 105,
+        "endAt": 108
       },
       {
         "name":"정권~상단 뒤 돌려 차기~전심",
         "command":"RPRK→~",
         "start_frame":"10",
-        "guard_frame":"-9(-6)",
-        "hit_frame":"+11(+14)",
+        "guard_frame":"-6",
+        "hit_frame":"+14",
         "counter_frame":"+14",
         "range":"상단",
         "damage":"9,20",
-        "extra":"전심으로[투포]"
+        "extra":"전심으로[투포]",
+        "startAt": 105,
+        "endAt": 108
       },
       {
         "name":"귀신열광1",
@@ -309,7 +363,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"19",
-        "extra":""
+        "extra":"",
+        "startAt": 108,
+        "endAt": 111
       },
       {
         "name":"귀신열광2",
@@ -320,7 +376,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"19,7",
-        "extra":"→~입력시 전심으로"
+        "extra":"→~입력시 전심으로",
+        "startAt": 108,
+        "endAt": 111
       },
       {
         "name":"귀신열광2~전심",
@@ -331,7 +389,9 @@
         "counter_frame":"+12",
         "range":"상단",
         "damage":"19,7",
-        "extra":"전심으로"
+        "extra":"전심으로",
+        "startAt": 108,
+        "endAt": 111
       },
       {
         "name":"귀신열광3",
@@ -342,7 +402,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"19,7,18",
-        "extra":""
+        "extra":"",
+        "startAt": 108,
+        "endAt": 111
       },
       {
         "name":"오른 상단 앞 돌려차기",
@@ -353,7 +415,9 @@
         "counter_frame":"+13",
         "range":"상단",
         "damage":"15",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 111,
+        "endAt": 113
       },
       {
         "name":"몸 돌려 회전 차기",
@@ -364,7 +428,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"27",
-        "extra":"[파쇄축]"
+        "extra":"[파쇄축]",
+        "startAt": 114,
+        "endAt": 116
       },
       {
         "name":"정중선 마구 찌르기",
@@ -375,7 +441,9 @@
         "counter_frame":"D",
         "range":"중단x3",
         "damage":"13,8,12",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 116,
+        "endAt": 120
       },
       {
         "name":"왼 족도",
@@ -386,7 +454,9 @@
         "counter_frame":"-5",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 121,
+        "endAt": 125
       },
       {
         "name":"단전 이단 치기",
@@ -397,7 +467,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12,17",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 121,
+        "endAt": 125
       },
       {
         "name":"왼족도~왼 세로 차기",
@@ -408,7 +480,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"12,14",
-        "extra":"→~입력시 전심으로\n←~입력 시 특수 동작 이행"
+        "extra":"→~입력시 전심으로\n←~입력 시 특수 동작 이행",
+        "startAt": 125,
+        "endAt": 128
       },
       {
         "name":"왼족도~왼 세로 차기~전심",
@@ -419,7 +493,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"12,14",
-        "extra":"전심으로"
+        "extra":"전심으로",
+        "startAt": 125,
+        "endAt": 128
       },
       {
         "name":"오른 중단 앞차기",
@@ -430,7 +506,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"→~입력 시 전심으로[뻥발]"
+        "extra":"→~입력 시 전심으로[뻥발]",
+        "startAt": 128,
+        "endAt": 130
       },
       {
         "name":"오른 중단 앞차기~전심",
@@ -441,7 +519,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"전심으로[뻥발]"
+        "extra":"전심으로[뻥발]",
+        "startAt": 128,
+        "endAt": 130
       },
       {
         "name":"정권 이단 찌르기",
@@ -452,7 +532,9 @@
         "counter_frame":"D",
         "range":"상단x2",
         "damage":"14,24",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 131,
+        "endAt": 134
       },
       {
         "name":"전심",
@@ -463,7 +545,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↘~입력 시 브레이킹 스텝으로"
+        "extra":"↘~입력 시 브레이킹 스텝으로",
+        "startAt": 135,
+        "endAt": 137
       },
       {
         "name":"왼 중단 곧게 찌르기",
@@ -474,7 +558,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"10",
-        "extra":"[왼어퍼 포]"
+        "extra":"[왼어퍼 포]",
+        "startAt": 138,
+        "endAt": 140
       },
       {
         "name":"왼 중단 곧게 찌르기~상단 돌려차기",
@@ -485,7 +571,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,18",
-        "extra":"[왼어퍼 포]"
+        "extra":"[왼어퍼 포]",
+        "startAt": 138,
+        "endAt": 140
       },
       {
         "name":"왼 중단 곧게 찌르기~중단 족도",
@@ -496,7 +584,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,24",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 144
       },
       {
         "name":"마열조",
@@ -507,7 +597,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12",
-        "extra":"가드 대미지\n↘~입력 시 브레이킹 스텝으로"
+        "extra":"가드 대미지\n↘~입력 시 브레이킹 스텝으로",
+        "startAt": 145,
+        "endAt": 147
       },
       {
         "name":"마열조~브레이킹 스텝",
@@ -518,7 +610,9 @@
         "counter_frame":"+13g",
         "range":"중단",
         "damage":"12",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 145,
+        "endAt": 147
       },
       {
         "name":"왼 중단 돌려차기",
@@ -529,7 +623,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 149,
+        "endAt": 151
       },
       {
         "name":"세로 차기",
@@ -540,7 +636,9 @@
         "counter_frame":"+13",
         "range":"중단",
         "damage":"20",
-        "extra":"↘~입력 시 브레이킹 스텝으로"
+        "extra":"↘~입력 시 브레이킹 스텝으로",
+        "startAt": 152,
+        "endAt": 154
       },
       {
         "name":"세로 차기~브레이킹 스텝",
@@ -551,7 +649,9 @@
         "counter_frame":"+9",
         "range":"중단",
         "damage":"20",
-        "extra":"브레이킹 스텝으로"
+        "extra":"브레이킹 스텝으로",
+        "startAt": 152,
+        "endAt": 154
       },
       {
         "name":"뒤돌려 오른 발꿈치 찍기",
@@ -562,7 +662,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 155,
+        "endAt": 159
       },
       {
         "name":"시체 치기~흑익일섬",
@@ -573,7 +675,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21,10",
-        "extra":"파워 크래시\n정면 지상 히트 시 잡기\n상대 공격을 받아내면 대미지 증가"
+        "extra":"파워 크래시\n정면 지상 히트 시 잡기\n상대 공격을 받아내면 대미지 증가",
+        "startAt": 159,
+        "endAt": 163
       },
       {
         "name":"재화",
@@ -584,7 +688,9 @@
         "counter_frame":"T",
         "range":"하단",
         "damage":"22",
-        "extra":"[연깎, 연깍]"
+        "extra":"[연깎, 연깍]",
+        "startAt": 163,
+        "endAt": 166
       },
       {
         "name":"왼 관절 차기",
@@ -595,7 +701,9 @@
         "counter_frame":"-3",
         "range":"하단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 167,
+        "endAt": 170
       },
       {
         "name":"카자마류 삼각축1",
@@ -606,7 +714,9 @@
         "counter_frame":"-3",
         "range":"상단",
         "damage":"7,10",
-        "extra":""
+        "extra":"",
+        "startAt": 167,
+        "endAt": 170
       },
       {
         "name":"카자마류 삼각축2",
@@ -617,7 +727,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"7,10,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 167,
+        "endAt": 170
       },
       {
         "name":"왼 관절차기~중단족도",
@@ -628,10 +740,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"7,24",
-        "extra":""
+        "extra":"",
+        "startAt": 171,
+        "endAt": 174
       },
       {
-        "name":"오른 하단 뒤돌려차기(1)",
+        "name":"오른 하단 뒤돌려차기",
         "command":"↓RK",
         "start_frame":"16",
         "guard_frame":"-12",
@@ -639,7 +753,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"11",
-        "extra":"[하돌]"
+        "extra":"[하돌]",
+        "startAt": 175,
+        "endAt": 177
       },
       {
         "name":"뛰어 이단차기",
@@ -650,7 +766,9 @@
         "counter_frame":"A",
         "range":"중단x2",
         "damage":"5,15",
-        "extra":""
+        "extra":"",
+        "startAt": 178,
+        "endAt": 181
       },
       {
         "name":"전장절도1",
@@ -661,7 +779,9 @@
         "counter_frame":"-4",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 181,
+        "endAt": 184
       },
       {
         "name":"전장절도2",
@@ -672,7 +792,9 @@
         "counter_frame":"-7",
         "range":"상단",
         "damage":"12,11",
-        "extra":""
+        "extra":"",
+        "startAt": 181,
+        "endAt": 184
       },
       {
         "name":"전장절도3",
@@ -683,7 +805,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,11,21",
-        "extra":""
+        "extra":"",
+        "startAt": 181,
+        "endAt": 184
       },
       {
         "name":"전장폭포",
@@ -694,7 +818,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,23",
-        "extra":""
+        "extra":"",
+        "startAt": 185,
+        "endAt": 188
       },
       {
         "name":"왼 상단 뒤돌려차기",
@@ -705,7 +831,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 188,
+        "endAt": 190
       },
       {
         "name":"오른 하단 돌려차기",
@@ -716,7 +844,9 @@
         "counter_frame":"+13g",
         "range":"하단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 191,
+        "endAt": 193
       },
       {
         "name":"삼전 서기",
@@ -727,7 +857,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"0",
-        "extra":""
+        "extra":"",
+        "startAt": 194,
+        "endAt": 196
       },
       {
         "name":"준마천1",
@@ -738,7 +870,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"준마천2",
@@ -749,7 +883,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"11,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"준마찰1",
@@ -760,7 +896,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 204,
+        "endAt": 207
       },
       {
         "name":"준마찰2",
@@ -771,7 +909,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 204,
+        "endAt": 207
       },
       {
         "name":"왼 무릎 차기",
@@ -782,7 +922,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"17",
-        "extra":"→~입력 시 전심으로"
+        "extra":"→~입력 시 전심으로",
+        "startAt": 208,
+        "endAt": 211
       },
       {
         "name":"왼 무릎 차기~전심",
@@ -793,7 +935,9 @@
         "counter_frame":"+9",
         "range":"중단",
         "damage":"17",
-        "extra":"전심으로"
+        "extra":"전심으로",
+        "startAt": 208,
+        "endAt": 211
       },
       {
         "name":"왼 무릎 차기~오른 아래 찌르기",
@@ -804,7 +948,9 @@
         "counter_frame":"+9",
         "range":"중단",
         "damage":"17,20",
-        "extra":""
+        "extra":"",
+        "startAt": 208,
+        "endAt": 211
       },
       {
         "name":"뒤차기",
@@ -815,7 +961,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 211,
+        "endAt": 214
       },
       {
         "name":"수월돌",
@@ -826,7 +974,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"20",
-        "extra":"펀치 흘리기 성능"
+        "extra":"펀치 흘리기 성능",
+        "startAt": 214,
+        "endAt": 217
       },
       {
         "name":"잔심",
@@ -837,7 +987,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"→~입력 시 대시\n↘~입력 시 브레이킹 스텝으로"
+        "extra":"→~입력 시 대시\n↘~입력 시 브레이킹 스텝으로",
+        "startAt": 218,
+        "endAt": 220
       },
       {
         "name":"오른 팔꿈치 치기",
@@ -848,7 +1000,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"50",
-        "extra":"←←입력 시 캔슬"
+        "extra":"←←입력 시 캔슬",
+        "startAt": 220,
+        "endAt": 224
       },
       {
         "name":"혼신 정권 찌르기",
@@ -859,7 +1013,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 227
       },
       {
         "name":"피해 중단 찌르기",
@@ -870,7 +1026,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":"혹은 ↖LK or ↑LK"
+        "extra":"혹은 ↖LK or ↑LK",
+        "startAt": 228,
+        "endAt": 230
       },
       {
         "name":"뒤로 돌아 왼 뛰어 차기",
@@ -881,7 +1039,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":"혹은 ↑RK"
+        "extra":"혹은 ↑RK",
+        "startAt": 230,
+        "endAt": 233
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -892,7 +1052,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 233,
+        "endAt": 236
       },
       {
         "name":"몸통 빼기",
@@ -903,7 +1065,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기\n가드 대미지[통발]"
+        "extra":"히트 발동기\n가드 대미지[통발]",
+        "startAt": 239,
+        "endAt": 243
       },
       {
         "name":"왼 발꿈치 찍기",
@@ -914,7 +1078,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"[좌종]"
+        "extra":"[좌종]",
+        "startAt": 244,
+        "endAt": 246
       },
       {
         "name":"왼 발꿈치 찍기~곧게 찌르기",
@@ -925,7 +1091,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20,5",
-        "extra":"2타부터 LP기술로 이행"
+        "extra":"2타부터 LP기술로 이행",
+        "startAt": 247,
+        "endAt": 249
       },
       {
         "name":"일식 족도",
@@ -936,7 +1104,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"28",
-        "extra":""
+        "extra":"",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"나후1",
@@ -947,7 +1117,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"[나살문]",
+        "startAt": 261,
+        "endAt": 264
       },
       {
         "name":"나후2",
@@ -958,7 +1130,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"15,21",
-        "extra":""
+        "extra":"[나살문]",
+        "startAt": 261,
+        "endAt": 264
       },
       {
         "name":"나후3",
@@ -969,7 +1143,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,21,19",
-        "extra":""
+        "extra":"[나살문]",
+        "startAt": 261,
+        "endAt": 264
       },
       {
         "name":"선형",
@@ -980,7 +1156,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,14,22",
-        "extra":"토네이도"
+        "extra":"토네이도[나살문]",
+        "startAt": 265,
+        "endAt": 269
       },
       {
         "name":"계도",
@@ -991,7 +1169,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,17",
-        "extra":"→~입력시 전심으로"
+        "extra":"→~입력시 전심으로",
+        "startAt": 269,
+        "endAt": 272
       },
       {
         "name":"계도~전심",
@@ -1002,7 +1182,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,17",
-        "extra":"전심으로"
+        "extra":"전심으로",
+        "startAt": 269,
+        "endAt": 272
       },
       {
         "name":"공참각",
@@ -1013,7 +1195,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"혹은 →N↓↘↗~LK\n가드 대미지"
+        "extra":"혹은 →N↓↘↗~LK\n가드 대미지",
+        "startAt": 272,
+        "endAt": 275
       },
       {
         "name":"10단 콤보1",
@@ -1024,7 +1208,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보2",
@@ -1035,7 +1221,9 @@
         "counter_frame":"-10",
         "range":"하단",
         "damage":"12,7",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보3",
@@ -1046,7 +1234,9 @@
         "counter_frame":"-12",
         "range":"중단",
         "damage":"12,7,7",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보4",
@@ -1057,7 +1247,9 @@
         "counter_frame":"-14",
         "range":"상단",
         "damage":"12,7,7,10",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보5",
@@ -1068,7 +1260,9 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"12,7,7,10,8",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보6",
@@ -1079,7 +1273,9 @@
         "counter_frame":"-9",
         "range":"중단",
         "damage":"12,7,7,10,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보7",
@@ -1090,7 +1286,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"12,7,7,10,8,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보8",
@@ -1101,7 +1299,9 @@
         "counter_frame":"-13",
         "range":"상단",
         "damage":"12,7,7,8,8,8,10",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보9",
@@ -1112,7 +1312,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12,7,7,10,8,8,8,10,18",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"10단 콤보10",
@@ -1123,7 +1325,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,7,7,10,8,8,8,10,18,17",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 283
       },
       {
         "name":"잔심 동작",
@@ -1134,7 +1338,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 283,
+        "endAt": 285
       },
       {
         "name":"기합 모으기",
@@ -1145,7 +1351,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 287,
+        "endAt": 289
       },
       {
         "name":"오른 정권 추격",
@@ -1156,7 +1364,9 @@
         "counter_frame":"+3",
         "range":"하단",
         "damage":"24",
-        "extra":""
+        "extra":"",
+        "startAt": 454,
+        "endAt": 456
       }
     ],
     "sit":[
@@ -1169,7 +1379,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"귀팔문2",
@@ -1180,7 +1392,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"7,19",
-        "extra":"→~입력시 전심으로"
+        "extra":"→~입력시 전심으로",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"귀팔문2~전심",
@@ -1191,21 +1405,12 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7,19",
-        "extra":"전심으로"
+        "extra":"전심으로",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"카자마류 육연격 개1",
-        "command":"일어서며 LP",
-        "start_frame":"13",
-        "guard_frame":"-6",
-        "hit_frame":"+5",
-        "counter_frame":"+5",
-        "range":"중단",
-        "damage":"7",
-        "extra":""
-      },
-      {
-        "name":"카자마류 육연격 개2",
         "command":"일어서며 LPLK",
         "start_frame":"13",
         "guard_frame":"-6",
@@ -1213,10 +1418,12 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"7,8",
-        "extra":"←~입력 시 특수 동작 이행"
+        "extra":"←~입력 시 특수 동작 이행",
+        "startAt": 299,
+        "endAt": 303
       },
       {
-        "name":"카자마류 육연격 개3",
+        "name":"카자마류 육연격 개2",
         "command":"일어서며 LPLKRP",
         "start_frame":"13",
         "guard_frame":"-11",
@@ -1224,10 +1431,12 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"7,8,4",
-        "extra":""
+        "extra":"",
+        "startAt": 299,
+        "endAt": 303
       },
       {
-        "name":"카자마류 육연격 개4",
+        "name":"카자마류 육연격 개3",
         "command":"일어서며 LPLKRPLP",
         "start_frame":"13",
         "guard_frame":"-11",
@@ -1235,10 +1444,12 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"7,8,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 299,
+        "endAt": 303
       },
       {
-        "name":"카자마류 육연격 개5",
+        "name":"카자마류 육연격 개4",
         "command":"일어서며 LPLKRPLPRK",
         "start_frame":"13",
         "guard_frame":"-31",
@@ -1246,10 +1457,12 @@
         "counter_frame":"+8",
         "range":"하단",
         "damage":"7,8,4,3,5",
-        "extra":""
+        "extra":"",
+        "startAt": 299,
+        "endAt": 303
       },
       {
-        "name":"카자마류 육연격 개6",
+        "name":"카자마류 육연격 개5",
         "command":"일어서며 LPLKRPLPRKRP",
         "start_frame":"13",
         "guard_frame":"-16",
@@ -1257,18 +1470,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"7,8,4,3,5,10",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 299,
+        "endAt": 303
       },
       {
         "name":"단중 찌르기~세로차기",
         "command":"일어서며 LP[LKLK]",
         "start_frame":"13",
-        "guard_frame":"+6(+2)",
-        "hit_frame":"+13(+9)",
-        "counter_frame":"+13(+9)",
+        "guard_frame":"+6",
+        "hit_frame":"+13",
+        "counter_frame":"+13",
         "range":"중단",
         "damage":"7,20",
-        "extra":"step"
+        "extra":"↘~입력 시 브레이킹 스텝으로",
+        "startAt": 304,
+        "endAt": 307
+      },
+      {
+        "name":"단중 찌르기~세로차기~브레이킹 스텝",
+        "command":"일어서며 LP[LKLK]",
+        "start_frame":"13",
+        "guard_frame":"+2",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
+        "range":"중단",
+        "damage":"7,20",
+        "extra":"",
+        "startAt": 304,
+        "endAt": 307
       },
       {
         "name":"쫓아 찌르기",
@@ -1279,7 +1509,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 310
       },
       {
         "name":"당죽차기",
@@ -1290,7 +1522,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 312,
+        "endAt": 315
       },
       {
         "name":"이단 십자각1",
@@ -1301,7 +1535,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 318,
+        "endAt": 321
       },
       {
         "name":"이단 십자각2",
@@ -1312,10 +1548,12 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"13,15",
-        "extra":""
+        "extra":"",
+        "startAt": 318,
+        "endAt": 321
       },
       {
-        "name":"오른 하단 뒤돌려차기(2)",
+        "name":"오른 하단 뒤돌려차기",
         "command":"앉은 상태에서 ↘RK",
         "start_frame":"25",
         "guard_frame":"-26",
@@ -1323,7 +1561,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 321,
+        "endAt": 324
       }
     ],
     "breaking step":[
@@ -1336,7 +1576,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 326,
+        "endAt": 327
       },
       {
         "name":"왼 찔러 올리기",
@@ -1347,7 +1589,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도\n히트 상태의 남은 시간을 소비\n↘~으로 이행한 브레이킹 스텝에서는 최속 왼 찔러 올리기로 변화"
+        "extra":"토네이도\n히트 상태의 남은 시간을 소비\n↘~으로 이행한 브레이킹 스텝에서는 최속 왼 찔러 올리기로 변화",
+        "startAt": 329,
+        "endAt": 331
       },
       {
         "name":"최속 왼 찔러 올리기",
@@ -1358,7 +1602,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"22",
-        "extra":"토네이도\n가드 대미지[초왼찌]"
+        "extra":"토네이도\n가드 대미지[초왼찌]",
+        "startAt": 331,
+        "endAt": 334
       },
       {
         "name":"오른 돌려 찌르기",
@@ -1369,7 +1615,9 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"20",
-        "extra":"히트 상태의 남은 시간을 소비\n↘~으로 이행한 브레이킹 스텝에서는 초속 오른 돌려 찌르기로 변화"
+        "extra":"히트 상태의 남은 시간을 소비\n↘~으로 이행한 브레이킹 스텝에서는 초속 오른 돌려 찌르기로 변화",
+        "startAt": 336,
+        "endAt": 339
       },
       {
         "name":"최속 오른 돌려 찌르기",
@@ -1380,7 +1628,9 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"25",
-        "extra":"가드 대미지[초오찌]"
+        "extra":"가드 대미지[초오찌]",
+        "startAt": 339,
+        "endAt": 342
       },
       {
         "name":"파고 들어 하단 돌려차기",
@@ -1391,7 +1641,9 @@
         "counter_frame":"+8",
         "range":"하단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 345,
+        "endAt": 347
       },
       {
         "name":"타락무도",
@@ -1402,7 +1654,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,28",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 345,
+        "endAt": 347
       }
     ],
     "zanshin":[
@@ -1415,7 +1669,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"→~입력 시 대시\n↘~입력 시 브레이킹 스텝으로"
+        "extra":"→~입력 시 대시\n↘~입력 시 브레이킹 스텝으로",
+        "startAt": 352,
+        "endAt": 354
       },
       {
         "name":"왼 돌려 찌르기~흑익사장1",
@@ -1426,7 +1682,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 356,
+        "endAt": 360
       },
       {
         "name":"왼 돌려 찌르기~흑익사장2",
@@ -1437,7 +1695,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,21",
-        "extra":"가드 대미지\n↘~입력 시 캔슬하고 브레이킹 스텝 이행"
+        "extra":"가드 대미지\n↘~입력 시 캔슬하고 브레이킹 스텝 이행",
+        "startAt": 356,
+        "endAt": 360
       },
       {
         "name":"카자마류 연격 방원각",
@@ -1448,7 +1708,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,14",
-        "extra":"정면 히트 시 잡기 이행"
+        "extra":"정면 히트 시 잡기 이행",
+        "startAt": 361,
+        "endAt": 365
       },
       {
         "name":"마조 쓸기",
@@ -1459,7 +1721,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"27",
-        "extra":"히트 발동기\n파워 크래시\n호밍기\n상대 공격을 받아내면 대미지 증가\n가드 대미지"
+        "extra":"히트 발동기\n파워 크래시\n호밍기\n상대 공격을 받아내면 대미지 증가\n가드 대미지",
+        "startAt": 374,
+        "endAt": 378
       },
       {
         "name":"뒷꿈치 깎기",
@@ -1470,7 +1734,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 379,
+        "endAt": 382
       },
       {
         "name":"해정각",
@@ -1481,7 +1747,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 383,
+        "endAt": 386
       },
       {
         "name":"하단 수도 치기~인과폭심각",
@@ -1492,7 +1760,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"10,20",
-        "extra":"정면 지상 히트 시 잡기 이행"
+        "extra":"정면 지상 히트 시 잡기 이행",
+        "startAt": 386,
+        "endAt": 390
       },
       {
         "name":"흑익뢰명각",
@@ -1503,7 +1773,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"가드 대미지\n↘~입력 시 브레이킹 스텝으로"
+        "extra":"가드 대미지\n↘~입력 시 브레이킹 스텝으로",
+        "startAt": 398,
+        "endAt": 401
       },
       {
         "name":"흑익뢰명각~브레이킹 스텝",
@@ -1514,7 +1786,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"가드 대미지\n브레이킹 스텝으로"
+        "extra":"가드 대미지\n브레이킹 스텝으로",
+        "startAt": 398,
+        "endAt": 401
       },
       {
         "name":"흑익윤무",
@@ -1525,7 +1799,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 404,
+        "endAt": 407
       }
     ]
   },
@@ -1538,7 +1814,9 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 409,
+      "endAt": 413
     },
     {
       "name":"번개",
@@ -1548,7 +1826,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 413,
+      "endAt": 417
     },
     {
       "name":"천칭던지기",
@@ -1558,7 +1838,9 @@
       "after_break_frame":"-3",
       "damage":"43",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 418,
+      "endAt": 421
     },
     {
       "name":"양어깨 비틀기",
@@ -1568,7 +1850,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 422,
+      "endAt": 425
     },
     {
       "name":"허리 옮겨 치기",
@@ -1578,7 +1862,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 425,
+      "endAt": 429
     },
     {
       "name":"순련단",
@@ -1588,7 +1874,9 @@
       "after_break_frame":"-2",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 429,
+      "endAt": 434
     },
     {
       "name":"어깨 굳히고 노도와 떨구기",
@@ -1598,7 +1886,9 @@
       "after_break_frame":"0",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 436,
+      "endAt": 441
     },
     {
       "name":"망루 부수기",
@@ -1608,7 +1898,9 @@
       "after_break_frame":"-2",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 443,
+      "endAt": 447
     },
     {
       "name":"받아 넘기기",
@@ -1618,7 +1910,9 @@
       "after_break_frame":"-",
       "damage":"-",
       "range":"반격",
-      "extra":"상대 기술에 따라 이득 프레임이 다름"
+      "extra":"상대 기술에 따라 이득 프레임이 다름",
+      "startAt": 447,
+      "endAt": 450
     }
   ]
 }

@@ -381,11 +381,11 @@
         "name":"랜스 킥",
         "command":"→RK",
         "start_frame":"15",
-        "guard_frame":"-9",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "guard_frame":"-12",
+        "hit_frame":"T",
+        "counter_frame":"T",
         "range":"상단",
-        "damage":"23",
+        "damage":"17",
         "extra":""
       },
       {

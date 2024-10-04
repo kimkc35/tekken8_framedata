@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
 import 'package:html/dom.dart' as dom;
@@ -31,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
         isSearching = true;
       });
       final response = await http.get(uri);
-      dom.Document document = parser.parse(response.body);
+      final dom.Document document = parser.parse(response.body);
       final playerList = document.querySelectorAll('main > div > table > tbody > tr');
 
       for (var player in playerList) {
@@ -47,9 +46,9 @@ class _SearchPageState extends State<SearchPage> {
       });
     }else{
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("검색어를 입력해 주세요."),
-          )
+        SnackBar(
+          content: Text("검색어를 입력해 주세요."),
+        )
       );
     }
 
@@ -67,8 +66,8 @@ class _SearchPageState extends State<SearchPage> {
         children: [
           Container(
             decoration: BoxDecoration(
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(5)
+              border: Border.all(),
+              borderRadius: BorderRadius.circular(5)
             ),
             child: Center(
               child: Container(
@@ -94,6 +93,7 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         IconButton(onPressed: ()async{
                           resultList = await search();
+                          inspect(resultList);
                         }, icon: Icon(Icons.search)),
                       ],
                     ),
@@ -127,9 +127,10 @@ class _SearchPageState extends State<SearchPage> {
                         width: 100,
                         child: GestureDetector(
                           onTap: (){
+
                             Navigator.push(context, MaterialPageRoute(builder: (context) => PlayerDetailsPage(playerInfo: resultList[index])));
                           },
-                          child: Text(resultList[index].polarisId, textAlign: TextAlign.center, style: TextStyle(color: themeData.primaryColor),),
+                          child: Text(resultList[index].polarisId, textAlign: TextAlign.center, style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor),),
                         ),
                       ),
                       SizedBox(width: 80, child: Text(resultList[index].name, textAlign: TextAlign.center,)),

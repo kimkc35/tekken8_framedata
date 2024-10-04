@@ -1178,7 +1178,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 8 대미지"
       },
       {
         "name":"화륜2",
@@ -1189,7 +1189,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
       },
       {
         "name":"화륜3",
@@ -1200,7 +1200,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
       },
       {
         "name":"화륜4",
@@ -1211,7 +1211,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
       },
       {
         "name":"화륜5",
@@ -1222,7 +1222,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
       },
       {
         "name":"화륜6",
@@ -1233,7 +1233,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
       },
       {
         "name":"납도 자세",

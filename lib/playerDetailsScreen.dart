@@ -1,16 +1,25 @@
 import 'dart:convert';
+import 'dart:math' as math;
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_radar_chart/flutter_radar_chart.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tekken8_framedata/character_variables.dart';
 import 'package:tekken8_framedata/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' as parser;
 
 import 'modules.dart';
+
+extension ImageExtension on num {
+  int cacheSize(BuildContext context) {
+    return (this * MediaQuery.of(context).devicePixelRatio).round();
+  }
+}
 
 class PlayerDetailsPage extends StatefulWidget {
   final PlayerInfo playerInfo;
@@ -34,11 +43,11 @@ class _PlayerDetailsPageState extends State<PlayerDetailsPage> with SingleTicker
   void initState(){
     super.initState();
     tabController = TabController(length: 3, vsync: this);
-    isBookmarked = bookmarkedList.contains(widget.playerInfo);
   }
 
   @override
   Widget build(BuildContext context) {
+    isBookmarked = bookmarkedList.any((element) => element.polarisId == widget.playerInfo.polarisId);
     return Scaffold(
       appBar: AppBar(
         bottom: PreferredSize(preferredSize: Size(0, 50), child: TabBar(controller: tabController, tabs: [Tab(text: "스탯",), Tab(text: "캐릭터별 승률"), Tab(text: "전적",)],)),
@@ -108,7 +117,7 @@ class _StatTabState extends State<StatTab> with AutomaticKeepAliveClientMixin{
       });
       statMap[statName]?.insert(0, totalValue.toString());
     }
-    final isBookmarked = bookmarkedList.contains(widget.playerInfo.polarisId);
+    final isBookmarked = bookmarkedList.contains(widget.playerInfo);
 
     PlayerDetails playerDetails = PlayerDetails(stats: statMap, prowess: prowess, imgUrl: imgUrl.toString(), rankPoint: rankPoint, isBookmarked: isBookmarked);
 
@@ -191,9 +200,9 @@ class _StatTabState extends State<StatTab> with AutomaticKeepAliveClientMixin{
                             ticks: [0, 25, 50, 75, 100],
                             features: ["공격 ${totalValues[0]}\n", "기술 ${totalValues[1]}", "매력 ${totalValues[2]}", "정신 ${totalValues[3]}", "수비 ${totalValues[4]}"],
                             data: [totalValues],
-                            graphColors: [themeData.primaryColor],
+                            graphColors: [CustomThemeMode.currentThemeData.value.primaryColor],
                             ticksTextStyle: TextStyle(color: Colors.transparent, fontSize: 12),
-                            featuresTextStyle: TextStyle(color: themeData.primaryColor, fontSize: 15),
+                            featuresTextStyle: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor, fontSize: 15),
                             sides: 5
                         ),
                       )
@@ -337,7 +346,7 @@ class _CharacterTabState extends State<CharacterTab> with AutomaticKeepAliveClie
                     ],
                   ),
                   SizedBox(height: 5,),
-                  Container(height: 1, color: themeData.primaryColor,),
+                  Container(height: 1, color: CustomThemeMode.currentThemeData.value.primaryColor,),
                   SizedBox(height: 4,),
                   Expanded(
                     child: ListView.separated(
@@ -356,7 +365,7 @@ class _CharacterTabState extends State<CharacterTab> with AutomaticKeepAliveClie
                             ),
                           );
                         },
-                        separatorBuilder: (context, index) => Container(height: 1, decoration: BoxDecoration(color: themeData.primaryColor),),
+                        separatorBuilder: (context, index) => Container(height: 1, decoration: BoxDecoration(color: CustomThemeMode.currentThemeData.value.primaryColor),),
                         itemCount: snapshot.data!.length),
                   ),
                 ],
@@ -410,7 +419,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
 
   String convertScore(String score){
     final currentScore = score.replaceAll("\n", "").replaceAll(" ", "");
-    return currentScore.replaceFirstMapped(RegExp(r'(\d)([A-Za-z])'), (Match m) => '${m[1]} ${m[2]}');
+    return currentScore.replaceFirstMapped(RegExp(r'(\d)([A-Za-z])'), (Match m) => '${m[1]}\n${m[2]}');
   }
 
   Future<List<PlayHistory>> historyFuture()async{
@@ -418,7 +427,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
 
     final uri = Uri.https('tekkenstats.gg', '/player/${widget.playerInfo.number}');
     final response = await http.get(uri);
-    dom.Document document = parser.parse(response.body);
+    final dom.Document document = parser.parse(response.body);
     final characterList = document.querySelector("div[class='rounded-lg overflow-hidden']")?.nextElementSibling?.nextElementSibling?.querySelectorAll("tr[class='border border-zinc-800 hover:bg-zinc-800/75']");
 
     for (var element in characterList!) {
@@ -448,25 +457,36 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
                 itemBuilder: (context, index) {
                   return SizedBox(
                     height: 150,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    child: Stack(
                       children: [
-                        Align(alignment: Alignment.centerLeft, child: Text(data[index].date, textAlign: TextAlign.start,)),
                         Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              SizedBox(width: 100, child: Text("${data[index].player}\n${data[index].playerChar}", textAlign: TextAlign.center, style: TextStyle(height: 1.8),)),
-                              SizedBox(width: 100, child: Text(data[index].score, textAlign: TextAlign.center,)),
-                              SizedBox(width: 100, child: Text("${data[index].oppName}\n${data[index].oppChar}", textAlign: TextAlign.center, style: TextStyle(height: 1.8),)),
-                            ]
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image(image: CachedNetworkImageProvider(characterImageUrls[data[index].playerChar.toLowerCase()] ?? "")),
+                            Transform(alignment: Alignment.center,transform: Matrix4.rotationY(math.pi),child: Image(image: CachedNetworkImageProvider(characterImageUrls[data[index].oppChar.toLowerCase()] ?? ""))),
+                          ],
                         ),
-                        Text(data[index].type, textAlign: TextAlign.center,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Align(alignment: Alignment.centerLeft, child: Text(data[index].date, textAlign: TextAlign.start,)),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(width: 100, child: Text("${data[index].player}\n${data[index].playerChar}", textAlign: TextAlign.center, style: TextStyle(height: 1.8),)),
+                                  SizedBox(width: 80, child: Text(data[index].score, textAlign: TextAlign.center,)),
+                                  SizedBox(width: 100, child: Text("${data[index].oppName}\n${data[index].oppChar}", textAlign: TextAlign.center, style: TextStyle(height: 1.8),)),
+                                ]
+                            ),
+                            Text(data[index].type, textAlign: TextAlign.center,),
+                          ],
+                        )
                       ],
                     ),
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return Container(height: 1, decoration: BoxDecoration(color: themeData.primaryColor),);
+                  return Container(height: 1, decoration: BoxDecoration(color: CustomThemeMode.currentThemeData.value.primaryColor),);
                 },
               );
             }else if(snapshot.hasError){

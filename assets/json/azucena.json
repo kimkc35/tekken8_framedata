@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 2,
+        "endAt": 5
       },
       {
         "name":"티폰 파테아르",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"16,21",
-        "extra":"히트 발동기\n호밍기\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"히트 발동기\n호밍기\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 6,
+        "endAt": 9
       },
       {
         "name":"에어로 프레스 페가르",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 10,
+        "endAt": 13
       },
       {
         "name":"타콘 플런저",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 14,
+        "endAt": 18
       },
       {
         "name":"골페 카푸치노",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"18",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 18,
+        "endAt": 22
       },
       {
         "name":"스멜 더 커피",
@@ -65,7 +75,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 발동기\n혹은 리베르타도르 도중 ↓AL or ↓AR\n히트 대시 불가능"
+        "extra":"히트 발동기\n혹은 리베르타도르 도중 ↓AL or ↓AR\n히트 대시 불가능",
+        "startAt": 27,
+        "endAt": 31
       },
       {
         "name":"리베르타도르 레볼루시온",
@@ -76,7 +88,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 히트 상태에서 LKRP→~ or ↖←→~\n리베르타도르로\n히트 상태의 남은 시간을 소비"
+        "extra":"혹은 히트 상태에서 LKRP→~ or ↖←→~\n리베르타도르로\n히트 상태의 남은 시간을 소비",
+        "startAt": 31,
+        "endAt": 33
       },
       {
         "name":"더블 블렌드 템페스타드~누에보 리베르타도르",
@@ -87,7 +101,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"14,16,20",
-        "extra":"리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 34,
+        "endAt": 39
       },
       {
         "name":"밀 누디요~누에보 리베르타도르",
@@ -98,7 +114,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"21",
-        "extra":"호밍기\n리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"호밍기\n리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 42,
+        "endAt": 45
       },
       {
         "name":"블렌드 템페스타드~누에보 리베르타도르",
@@ -109,7 +127,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"14,20",
-        "extra":"리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"리베르타도르로\n가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 46,
+        "endAt": 51
       },
       {
         "name":"원 드립 시엘로",
@@ -120,7 +140,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"27",
-        "extra":"토네이도\n히트 상태의 남은 시간을 소비"
+        "extra":"토네이도\n히트 상태의 남은 시간을 소비",
+        "startAt": 55,
+        "endAt": 58
       },
       {
         "name":"푸뇨 데 후에고 에비타시온",
@@ -131,7 +153,9 @@
         "counter_frame":"D",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복"
+        "extra":"히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복",
+        "startAt": 60,
+        "endAt": 64
       },
       {
         "name":"원 드립 시엘로 에비타시온",
@@ -142,7 +166,9 @@
         "counter_frame":"T",
         "range":"-",
         "damage":"-",
-        "extra":"토네이도\n히트 상태의 남은 시간을 회복\n회복 가능 게이지가 있다면 체력 회복"
+        "extra":"토네이도\n히트 상태의 남은 시간을 회복\n회복 가능 게이지가 있다면 체력 회복",
+        "startAt": 71,
+        "endAt": 75
       },
       {
         "name":"아수세나 스페셜티",
@@ -153,7 +179,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,9,29",
-        "extra":"혹은 리베르타도르 도중 RP+LK\n히트 시 잡기로\n가드 시 리베르타도르로"
+        "extra":"혹은 리베르타도르 도중 RP+LK\n히트 시 잡기로\n가드 시 리베르타도르로",
+        "startAt": 77,
+        "endAt": 80
       }
     ],
     "general":[
@@ -166,10 +194,12 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 97,
+        "endAt": 99
       },
       {
-        "name":"하이 마운틴 콤보",
+        "name":"하이 마운틴 콤보2",
         "command":"LPLP",
         "start_frame":"10",
         "guard_frame":"-10",
@@ -177,7 +207,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"5,15",
-        "extra":"지상 히트 시 리베르타도르로"
+        "extra":"지상 히트 시 리베르타도르로",
+        "startAt": 97,
+        "endAt": 99
       },
       {
         "name":"하이 로스트 콤보",
@@ -188,7 +220,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,23",
-        "extra":"←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 100,
+        "endAt": 102
       },
       {
         "name":"안데스 마운틴 어퍼컷 콤보1",
@@ -199,7 +233,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 108
       },
       {
         "name":"안데스 마운틴 어퍼컷 콤보2",
@@ -210,7 +246,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"9,11",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 108
       },
       {
         "name":"안데스 마운틴 어퍼컷 콤보3",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"9,11,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 106,
+        "endAt": 108
       },
       {
         "name":"그루비 스트라이크1",
@@ -232,7 +272,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 109,
+        "endAt": 111
       },
       {
         "name":"그루비 스트라이크2",
@@ -243,7 +285,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"11,18",
-        "extra":"→~입력 시 캔슬하고 리베르타도르로(히트 상태 지속 중에는 파워 상승)"
+        "extra":"→~입력 시 캔슬하고 리베르타도르로(히트 상태 지속 중에는 파워 상승)",
+        "startAt": 109,
+        "endAt": 111
       },
       {
         "name":"그루비 스트라이크2(캔슬)~리베르타도르",
@@ -254,7 +298,9 @@
         "counter_frame":"-7",
         "range":"-",
         "damage":"11",
-        "extra":"리베르타도르로(히트 상태 지속 중에는 파워 상승)"
+        "extra":"리베르타도르로(히트 상태 지속 중에는 파워 상승)",
+        "startAt": 109,
+        "endAt": 111
       },
       {
         "name":"그루비 푸냘라다",
@@ -265,7 +311,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"11,23",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"구아푸뇨1",
@@ -276,7 +324,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"15",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 118,
+        "endAt": 120
       },
       {
         "name":"구아푸뇨2",
@@ -287,7 +337,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"15,14",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 118,
+        "endAt": 120
       },
       {
         "name":"델핀 파타다스",
@@ -298,7 +350,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,17",
-        "extra":""
+        "extra":"",
+        "startAt": 121,
+        "endAt": 124
       },
       {
         "name":"부메랑 사이드",
@@ -309,7 +363,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 124,
+        "endAt": 126
       },
       {
         "name":"단자 델 콘도르1",
@@ -320,7 +376,9 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 127,
+        "endAt": 130
       },
       {
         "name":"단자 델 콘도르2",
@@ -331,7 +389,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"14,17",
-        "extra":""
+        "extra":"",
+        "startAt": 127,
+        "endAt": 130
       },
       {
         "name":"단자 델 콘도르3",
@@ -342,7 +402,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,17,23",
-        "extra":""
+        "extra":"",
+        "startAt": 127,
+        "endAt": 130
       },
       {
         "name":"수마트라 백 너클1",
@@ -353,7 +415,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 131,
+        "endAt": 134
       },
       {
         "name":"수마트라 백 너클2",
@@ -364,7 +428,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 131,
+        "endAt": 134
       },
       {
         "name":"티폰 파테아르1",
@@ -375,7 +441,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"16",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 136,
+        "endAt": 139
       },
       {
         "name":"티폰 파테아르2",
@@ -386,7 +454,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,21",
-        "extra":"히트 발동기\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"히트 발동기\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 136,
+        "endAt": 139
       },
       {
         "name":"티폰 파테아르2(캔슬)~뒤돈 자세",
@@ -397,7 +467,9 @@
         "counter_frame":"-10",
         "range":"-",
         "damage":"16",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 136,
+        "endAt": 139
       },
       {
         "name":"티폰 트루에노",
@@ -408,7 +480,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,23",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"티폰 카뇬",
@@ -419,7 +493,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"16,24",
-        "extra":""
+        "extra":"",
+        "startAt": 146,
+        "endAt": 149
       },
       {
         "name":"에어로 프레스 페가르",
@@ -430,7 +506,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 150,
+        "endAt": 153
       },
       {
         "name":"리베르타도르",
@@ -441,7 +519,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리베르타도르로\n상단 피하기 효과 있음\n하단 흘리기 효과 있음\n리베르타도르 도중 ↙입력 시 서 있는 상태로\n히트 상태 지속 중에는 파워 상승"
+        "extra":"리베르타도르로\n상단 피하기 효과 있음\n하단 흘리기 효과 있음\n리베르타도르 도중 ↙입력 시 서 있는 상태로\n히트 상태 지속 중에는 파워 상승",
+        "startAt": 154,
+        "endAt": 155
       },
       {
         "name":"그란데 콤보1",
@@ -452,7 +532,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 160
       },
       {
         "name":"그란데 콤보2",
@@ -463,7 +545,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"11,13",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 160
       },
       {
         "name":"그란데 콤보3",
@@ -474,7 +558,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"11,13,20",
-        "extra":"→~입력 시 캔슬하고 리베르타도르로"
+        "extra":"→~입력 시 캔슬하고 리베르타도르로",
+        "startAt": 156,
+        "endAt": 160
       },
       {
         "name":"그란데 콤보3(캔슬)~리베르타도르",
@@ -485,7 +571,9 @@
         "counter_frame":"-6",
         "range":"-",
         "damage":"11,13",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 156,
+        "endAt": 160
       },
       {
         "name":"풀 보디 그란데 콤보",
@@ -496,7 +584,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"11,13,23",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 160
       },
       {
         "name":"마운트 레이니어",
@@ -507,7 +597,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 165,
+        "endAt": 167
       },
       {
         "name":"로디야 샷",
@@ -518,7 +610,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"블루 마운틴 콤보1",
@@ -529,7 +623,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 170,
+        "endAt": 172
       },
       {
         "name":"블루 마운틴 콤보2",
@@ -540,7 +636,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,23",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 170,
+        "endAt": 172
       },
       {
         "name":"핸드 드립 해머",
@@ -551,7 +649,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 176,
+        "endAt": 178
       },
       {
         "name":"라니냐 킥 콤보1",
@@ -562,7 +662,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 180,
+        "endAt": 182
       },
       {
         "name":"라니냐 킥 콤보2",
@@ -573,7 +675,9 @@
         "counter_frame":"+16g",
         "range":"상단",
         "damage":"15,20",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 180,
+        "endAt": 182
       },
       {
         "name":"패셔네이트 킥 콤보1",
@@ -584,7 +688,9 @@
         "counter_frame":"-3",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 183,
+        "endAt": 186
       },
       {
         "name":"패셔네이트 킥 콤보2",
@@ -595,7 +701,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 183,
+        "endAt": 186
       },
       {
         "name":"패셔네이트 킥 콤보3",
@@ -606,7 +714,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,14,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 183,
+        "endAt": 186
       },
       {
         "name":"로스트 너클 콤보1",
@@ -617,7 +727,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 187,
+        "endAt": 189
       },
       {
         "name":"로스트 너클 콤보2",
@@ -628,10 +740,12 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"13,5",
-        "extra":""
+        "extra":"",
+        "startAt": 187,
+        "endAt": 189
       },
       {
-        "name":"로스트 너클 콤보 풀 시티",
+        "name":"풀 시티 로스트 너클 콤보",
         "command":"↓RK[LPRP]",
         "start_frame":"15",
         "guard_frame":"-8",
@@ -639,7 +753,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,20",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"보라스카 킥 콤보1",
@@ -650,7 +766,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"14",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 193,
+        "endAt": 196
       },
       {
         "name":"보라스카 킥 콤보2",
@@ -661,7 +779,9 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"14,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 193,
+        "endAt": 196
       },
       {
         "name":"비터 로우 킥",
@@ -672,7 +792,9 @@
         "counter_frame":"+12g",
         "range":"하단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 197,
+        "endAt": 199
       },
       {
         "name":"킬리만자로 어퍼컷",
@@ -683,7 +805,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 200,
+        "endAt": 202
       },
       {
         "name":"엘 콘도르 파사",
@@ -694,7 +818,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":""
+        "extra":"",
+        "startAt": 207,
+        "endAt": 209
       },
       {
         "name":"더블 블렌드 템페스타드1",
@@ -705,7 +831,9 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 210,
+        "endAt": 213
       },
       {
         "name":"더블 블렌드 템페스타드2",
@@ -716,7 +844,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"14,16",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 210,
+        "endAt": 213
       },
       {
         "name":"더블 블렌드 템페스타드3",
@@ -727,7 +857,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,16,20",
-        "extra":"가드 대미지\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"가드 대미지\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 210,
+        "endAt": 213
       },
       {
         "name":"더블 블렌드 템페스타드3(캔슬)~뒤돈 자세",
@@ -738,7 +870,9 @@
         "counter_frame":"-10",
         "range":"-",
         "damage":"14,16",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 210,
+        "endAt": 213
       },
       {
         "name":"밀 누디요",
@@ -749,7 +883,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"21",
-        "extra":"호밍기\n가드 대미지"
+        "extra":"호밍기\n가드 대미지",
+        "startAt": 215,
+        "endAt": 217
       },
       {
         "name":"타콘 플런저",
@@ -760,7 +896,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 218,
+        "endAt": 221
       },
       {
         "name":"스애틀 스키퍼1",
@@ -771,7 +909,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 223,
+        "endAt": 226
       },
       {
         "name":"스애틀 스키퍼2",
@@ -782,7 +922,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 223,
+        "endAt": 226
       },
       {
         "name":"스애틀 스키퍼3",
@@ -793,7 +935,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"10,10,16",
-        "extra":""
+        "extra":"",
+        "startAt": 223,
+        "endAt": 226
       },
       {
         "name":"스애틀 스키퍼4",
@@ -804,7 +948,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,10,16,23",
-        "extra":""
+        "extra":"",
+        "startAt": 223,
+        "endAt": 226
       },
       {
         "name":"호핑 턴",
@@ -815,7 +961,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 리베르타도르 도중 ←AK\n상대에게 등을 보이는 상태로"
+        "extra":"혹은 리베르타도르 도중 ←AK\n상대에게 등을 보이는 상태로",
+        "startAt": 227,
+        "endAt": 229
       },
       {
         "name":"아이 오프너",
@@ -826,7 +974,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"18",
-        "extra":"혹은 ↖LP or ↑LP 혹은 리베르타도르 도중 ←←~LP\n펀치 흘리기 효과 있음"
+        "extra":"혹은 ↖LP or ↑LP 혹은 리베르타도르 도중 ←←~LP\n펀치 흘리기 효과 있음",
+        "startAt": 229,
+        "endAt": 231
       },
       {
         "name":"리드믹 훅",
@@ -837,7 +987,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"23",
-        "extra":"혹은 ↖RP or ↑RP 혹은 리베르타도르 도중 ↗RP"
+        "extra":"혹은 ↖RP or ↑RP 혹은 리베르타도르 도중 ↗RP",
+        "startAt": 232,
+        "endAt": 234
       },
       {
         "name":"데이라이트 디스크1",
@@ -848,7 +1000,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":"혹은 ↖LK or ↑LK"
+        "extra":"혹은 ↖LK or ↑LK",
+        "startAt": 235,
+        "endAt": 238
       },
       {
         "name":"데이라이트 디스크2",
@@ -859,7 +1013,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,11",
-        "extra":""
+        "extra":"",
+        "startAt": 235,
+        "endAt": 238
       },
       {
         "name":"타코네스 드립",
@@ -870,7 +1026,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"혹은 ↖RK or ↑RK"
+        "extra":"혹은 ↖RK or ↑RK",
+        "startAt": 239,
+        "endAt": 241
       },
       {
         "name":"루나 예나",
@@ -881,7 +1039,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 242,
+        "endAt": 245
       },
       {
         "name":"데미타스 몰리노",
@@ -892,7 +1052,9 @@
         "counter_frame":"+13",
         "range":"중단",
         "damage":"21",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 247,
+        "endAt": 249
       },
       {
         "name":"오르티스 몰리노",
@@ -903,7 +1065,9 @@
         "counter_frame":"+5",
         "range":"중단x2",
         "damage":"10,18",
-        "extra":"리베르타도르로\n가드 대미지\n←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"리베르타도르로\n가드 대미지\n←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 251,
+        "endAt": 253
       },
       {
         "name":"에스프레소 아그레시온1",
@@ -914,7 +1078,9 @@
         "counter_frame":"-4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 257
       },
       {
         "name":"에스프레소 아그레시온2",
@@ -925,7 +1091,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 254,
+        "endAt": 257
       },
       {
         "name":"10단 콤보1",
@@ -936,7 +1104,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보2",
@@ -947,7 +1117,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"15,11",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보3",
@@ -958,7 +1130,9 @@
         "counter_frame":"-6",
         "range":"하단",
         "damage":"15,11,8",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보4",
@@ -969,7 +1143,9 @@
         "counter_frame":"-6",
         "range":"상단",
         "damage":"15,11,8,5",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보5",
@@ -980,7 +1156,9 @@
         "counter_frame":"-13",
         "range":"상단",
         "damage":"15,11,8,5,10",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보6",
@@ -991,7 +1169,9 @@
         "counter_frame":"-14",
         "range":"하단",
         "damage":"15,11,8,5,10,7",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보7",
@@ -1002,7 +1182,9 @@
         "counter_frame":"-17",
         "range":"중단",
         "damage":"15,11,8,5,10,7,8",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보8",
@@ -1013,7 +1195,9 @@
         "counter_frame":"-7",
         "range":"상단",
         "damage":"15,11,8,5,10,7,8,10",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보9",
@@ -1024,7 +1208,9 @@
         "counter_frame":"-16",
         "range":"중단",
         "damage":"15,11,8,5,10,7,8,10,9",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"10단 콤보10",
@@ -1035,7 +1221,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,11,8,5,10,7,8,10,9,24",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 264
       },
       {
         "name":"도발",
@@ -1046,7 +1234,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 266,
+        "endAt": 268
       },
       {
         "name":"셔플 리사이틀",
@@ -1057,7 +1247,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태의 남은 시간 회복"
+        "extra":"히트 상태의 남은 시간 회복",
+        "startAt": 270,
+        "endAt": 287
       },
       {
         "name":"커피 브레이크",
@@ -1068,7 +1260,9 @@
         "counter_frame":"-1",
         "range":"가불",
         "damage":"0",
-        "extra":"히트 상태 지속 중에는 파워 상승(히트 시 다운 상태로)"
+        "extra":"히트 상태 지속 중에는 파워 상승(히트 시 다운 상태로)",
+        "startAt": 289,
+        "endAt": 292
       },
       {
         "name":"기합 모으기",
@@ -1079,7 +1273,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 293,
+        "endAt": 296
       },
       {
         "name":"블랙 아이보리 탤런",
@@ -1090,7 +1286,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"54",
-        "extra":""
+        "extra":"",
+        "startAt": 297,
+        "endAt": 301
       },
       {
         "name":"셔플 잼버리",
@@ -1101,7 +1299,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 상대에게 등을 보일 때 →AK홀드\n리베르타도르로\n히트 상태의 남은 시간 회복"
+        "extra":"혹은 상대에게 등을 보일 때 →AK홀드\n리베르타도르로\n히트 상태의 남은 시간 회복",
+        "startAt": 302,
+        "endAt": 311
       },
       {
         "name":"셔플 카니발",
@@ -1112,7 +1312,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태의 남은 시간 회복"
+        "extra":"히트 상태의 남은 시간 회복",
+        "startAt": 313,
+        "endAt": 315
       },
       {
         "name":"볼테라도르",
@@ -1123,7 +1325,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"→~입력 시 리베르타도르로(히트 상태 지속 중에는 파워 상승)"
+        "extra":"→~입력 시 리베르타도르로(히트 상태 지속 중에는 파워 상승)",
+        "startAt": 316,
+        "endAt": 318
       },
       {
         "name":"모카 아타크 마타리1",
@@ -1134,7 +1338,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 351,
+        "endAt": 353
       },
       {
         "name":"모카 아타크 마타리2",
@@ -1145,7 +1351,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"9,23",
-        "extra":"→~입력 시 캔슬하고 리베르타도르로"
+        "extra":"→~입력 시 캔슬하고 리베르타도르로",
+        "startAt": 351,
+        "endAt": 353
       },
       {
         "name":"모카 아타크 마타리2(캔슬)~리베르타도르",
@@ -1156,7 +1364,9 @@
         "counter_frame":"-11",
         "range":"-",
         "damage":"9",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 351,
+        "endAt": 353
       },
       {
         "name":"모카 아타크 시다모",
@@ -1167,7 +1377,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,21",
-        "extra":""
+        "extra":"",
+        "startAt": 355,
+        "endAt": 357
       },
       {
         "name":"카팍 난1",
@@ -1178,7 +1390,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 359,
+        "endAt": 363
       },
       {
         "name":"카팍 난2",
@@ -1189,7 +1403,9 @@
         "counter_frame":"D",
         "range":"잡기",
         "damage":"15,23",
-        "extra":""
+        "extra":"",
+        "startAt": 359,
+        "endAt": 363
       },
       {
         "name":"칼프 리퍼",
@@ -1200,7 +1416,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"23",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 366,
+        "endAt": 367
       },
       {
         "name":"업비트 파타다스1",
@@ -1211,7 +1429,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 369,
+        "endAt": 371
       },
       {
         "name":"업비트 파타다스2",
@@ -1222,7 +1442,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 369,
+        "endAt": 371
       },
       {
         "name":"골페 아포가토",
@@ -1233,7 +1455,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 372,
+        "endAt": 374
       },
       {
         "name":"푸 파이터",
@@ -1244,10 +1468,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 376,
+        "endAt": 378
       },
       {
-        "name":"리베르타도르 (리그레소)",
+        "name":"리베르타도르",
         "command":"상대에게 등을 보일 때→AK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1255,7 +1481,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 379,
+        "endAt": 381
       },
       {
         "name":"셔플 워크",
@@ -1266,7 +1494,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 상대에게 등을 보일 때 ←RK"
+        "extra":"혹은 상대에게 등을 보일 때 ←RK",
+        "startAt": 382,
+        "endAt": 384
       },
       {
         "name":"러너웨이",
@@ -1277,7 +1507,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"중단 회피 효과 있음"
+        "extra":"중단 회피 효과 있음",
+        "startAt": 387,
+        "endAt": 388
       },
       {
         "name":"하이드 턴",
@@ -1288,7 +1520,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 391,
+        "endAt": 393
       }
     ],
     "sit":[
@@ -1301,7 +1535,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 319,
+        "endAt": 321
       },
       {
         "name":"레인보 마운틴 스윙",
@@ -1312,7 +1548,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 325
       },
       {
         "name":"비엔토 푸에르테",
@@ -1323,7 +1561,9 @@
         "counter_frame":"+16g",
         "range":"중단",
         "damage":"23",
-        "extra":"리베르타도르로\n가드 대미지"
+        "extra":"리베르타도르로\n가드 대미지",
+        "startAt": 326,
+        "endAt": 329
       },
       {
         "name":"콤보 데 칸투타1",
@@ -1334,7 +1574,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 331,
+        "endAt": 334
       },
       {
         "name":"콤보 데 칸투타2",
@@ -1345,7 +1587,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"13,10",
-        "extra":""
+        "extra":"",
+        "startAt": 331,
+        "endAt": 334
       },
       {
         "name":"콤보 데 칸투타3",
@@ -1356,7 +1600,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,10,23",
-        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 331,
+        "endAt": 334
       },
       {
         "name":"콤보 데 칸투타3(캔슬)~뒤돈 자세",
@@ -1367,7 +1613,35 @@
         "counter_frame":"-8",
         "range":"-",
         "damage":"13,10",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 331,
+        "endAt": 334
+      },
+      {
+        "name":"리베르타도르",
+        "command":"일어서며 →AK",
+        "start_frame":"-",
+        "guard_frame":"-",
+        "hit_frame":"-",
+        "counter_frame":"-",
+        "range":"-",
+        "damage":"-",
+        "extra":"리베르타도르로\n상단 피하기 효과 있음\n하단 흘리기 효과 있음\n↙입력 시 서 있는 상태로\n히트 상태 지속 중에는 파워 상승",
+        "startAt": 340,
+        "endAt": 342
+      },
+      {
+        "name":"호핑 턴",
+        "command":"일어서며 ←AK",
+        "start_frame":"-",
+        "guard_frame":"-",
+        "hit_frame":"-",
+        "counter_frame":"-",
+        "range":"-",
+        "damage":"-",
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 345,
+        "endAt": 347
       },
       {
         "name":"코세차 라티고",
@@ -1378,7 +1652,9 @@
         "counter_frame":"+13",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 348,
+        "endAt": 350
       }
     ],
     "libertador":[
@@ -1391,7 +1667,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리베르타도르로\n상단 피하기 효과 있음\n하단 흘리기 효과 있음\n리베르타도르 도중 ↙입력 시 서 있는 상태로\n히트 상태 지속 중에는 파워 상승"
+        "extra":"리베르타도르로\n상단 피하기 효과 있음\n하단 흘리기 효과 있음\n↙입력 시 서 있는 상태로\n히트 상태 지속 중에는 파워 상승",
+        "startAt": 397,
+        "endAt": 399
       },
       {
         "name":"블렌드 템페스타드1",
@@ -1402,7 +1680,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"14",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 399,
+        "endAt": 403
       },
       {
         "name":"블렌드 템페스타드2",
@@ -1413,7 +1693,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,20",
-        "extra":"가드 대미지\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"가드 대미지\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 399,
+        "endAt": 403
       },
       {
         "name":"블렌드 템페스타드2(캔슬)~뒤돈 자세",
@@ -1424,7 +1706,9 @@
         "counter_frame":"-10",
         "range":"-",
         "damage":"14",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 399,
+        "endAt": 403
       },
       {
         "name":"골페 카푸치노",
@@ -1435,7 +1719,9 @@
         "counter_frame":"+11",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 408,
+        "endAt": 411
       },
       {
         "name":"어서빅 로우 킥",
@@ -1446,7 +1732,9 @@
         "counter_frame":"+2",
         "range":"하단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 412,
+        "endAt": 415
       },
       {
         "name":"블렌드 레가냐르",
@@ -1457,7 +1745,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,20",
-        "extra":""
+        "extra":"",
+        "startAt": 416,
+        "endAt": 419
       },
       {
         "name":"블렌드 아살타르1",
@@ -1468,7 +1758,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"14",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 420,
+        "endAt": 424
       },
       {
         "name":"블렌드 아살타르2",
@@ -1479,7 +1771,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"14,10",
-        "extra":""
+        "extra":"",
+        "startAt": 416,
+        "endAt": 419
       },
       {
         "name":"블렌드 아살타르3",
@@ -1490,7 +1784,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"14,10,23",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 416,
+        "endAt": 419
       },
       {
         "name":"블렌드 마르티요",
@@ -1501,7 +1797,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,21",
-        "extra":""
+        "extra":"",
+        "startAt": 430,
+        "endAt": 432
       },
       {
         "name":"라나 바리스타",
@@ -1512,7 +1810,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"23",
-        "extra":"토네이도\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"토네이도\n←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 433,
+        "endAt": 436
       },
       {
         "name":"라나 바리스타(캔슬)~뒤돈 자세",
@@ -1523,7 +1823,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 433,
+        "endAt": 436
       },
       {
         "name":"엘니냐 하이 킥",
@@ -1534,7 +1836,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"파워 크래시\n호밍기\n가드 대미지\n상대의 공격을 받아내면 파워 상승"
+        "extra":"파워 크래시\n호밍기\n가드 대미지\n상대의 공격을 받아내면 파워 상승",
+        "startAt": 437,
+        "endAt": 440
       },
       {
         "name":"블렌드 코르타르1",
@@ -1545,7 +1849,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 450,
+        "endAt": 453
       },
       {
         "name":"블렌드 코르타르2",
@@ -1556,10 +1862,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,27",
-        "extra":""
+        "extra":"",
+        "startAt": 450,
+        "endAt": 453
       },
       {
-        "name":"리베르타도르 (바리오스)",
+        "name":"리베르타도르",
         "command":"리베르타도르 도중 →→~",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1567,7 +1875,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 458,
+        "endAt": 461
       },
       {
         "name":"카에르 백 퍼늘",
@@ -1578,7 +1888,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"리베르타도르로"
+        "extra":"리베르타도르로",
+        "startAt": 462,
+        "endAt": 464
       },
       {
         "name":"아수세나 어드미션",
@@ -1589,7 +1901,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태 유지 중에는 히트 상태의 남은 시간 회복"
+        "extra":"히트 상태 유지 중에는 히트 상태의 남은 시간 회복",
+        "startAt": 465,
+        "endAt": 467
       },
       {
         "name":"밀라그로스 쇼",
@@ -1600,7 +1914,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"히트 상태 유지 중에는 히트 상태의 남은 시간 회복"
+        "extra":"히트 상태 유지 중에는 히트 상태의 남은 시간 회복",
+        "startAt": 469,
+        "endAt": 472
       },
       {
         "name":"살리다 카스티요",
@@ -1611,7 +1927,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 473,
+        "endAt": 475
       }
     ]
   },
@@ -1624,7 +1942,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 477,
+      "endAt": 482
     },
     {
       "name":"엘 도라도 넥 스냅",
@@ -1634,7 +1954,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 483,
+      "endAt": 487
     },
     {
       "name":"우루밤바 넥 록",
@@ -1644,7 +1966,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 496,
+      "endAt": 500
     },
     {
       "name":"지라토리오 슬리퍼 스로",
@@ -1654,7 +1978,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 502,
+      "endAt": 507
     },
     {
       "name":"카페인 업덕션",
@@ -1664,7 +1990,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 508,
+      "endAt": 514
     },
     {
       "name":"인티 레이미 네클리스",
@@ -1674,7 +2002,9 @@
       "after_break_frame":"0",
       "damage":"40",
       "range":"상단",
-      "extra":"혹은 리베르타도르 도중 9 AP"
+      "extra":"혹은 리베르타도르 도중 ↗AP",
+      "startAt": 516,
+      "endAt": 520
     },
     {
       "name":"UFO 롤",
@@ -1684,7 +2014,9 @@
       "after_break_frame":"-",
       "damage":"21",
       "range":"하단",
-      "extra":"리베르타도르로\n상대가 몸을 숙이고 있을 때 히트하면 자신이 대미지를 입음"
+      "extra":"리베르타도르로\n상대가 몸을 숙이고 있을 때 히트하면 자신이 대미지를 입음",
+      "startAt": 522,
+      "endAt": 526
     },
     {
       "name":"얼티밋 태클",
@@ -1694,7 +2026,9 @@
       "after_break_frame":"-5",
       "damage":"0",
       "range":"중단",
-      "extra":"히트 시 테이크 다운으로"
+      "extra":"히트 시 테이크 다운으로",
+      "startAt": 530,
+      "endAt": 533
     },
     {
       "name":"얼티밋 펀치",
@@ -1704,17 +2038,21 @@
       "after_break_frame":"0",
       "damage":"5,5,5,15",
       "range":"연계",
-      "extra":"혹은 테이크 다운 도중 LPRPLPRP"
+      "extra":"혹은 테이크 다운 도중 LPRPLPRP",
+      "startAt": 534,
+      "endAt": 539
     },
     {
-      "name":"암 브레이커",
+      "name":"암바",
       "command":"테이크 다운 도중 AP",
       "start_frame":"-",
       "break_command":"AP",
       "after_break_frame":"-9",
       "damage":"25",
       "range":"연계",
-      "extra":"Ultimate Punch 3타에서도 이행 가능"
+      "extra":"Ultimate Punch 3타에서도 이행 가능",
+      "startAt": 542,
+      "endAt": 547
     },
     {
       "name":"스멜 더 커피",
@@ -1724,7 +2062,9 @@
       "after_break_frame":"-",
       "damage":"30",
       "range":"중단",
-      "extra":"혹은 상대가 몸을 숙이고 있을 때 리베르타도르 도중 2 AL or 2 AR\n히트 대시 불가능"
+      "extra":"혹은 상대가 몸을 숙이고 있을 때 리베르타도르 도중 2 AL or 2 AR\n히트 대시 불가능",
+      "startAt": 548,
+      "endAt": 552
     },
     {
       "name":"클로즈 인카운터",
@@ -1734,7 +2074,9 @@
       "after_break_frame":"-",
       "damage":"18(25)",
       "range":"상단",
-      "extra":"3~10프레임 반격 가능"
+      "extra":"3~10프레임 반격 가능\n()는 반격 성공 시 대미지",
+      "startAt": 554,
+      "endAt": 556
     },
     {
       "name":"크레마 페탈로",
@@ -1754,7 +2096,9 @@
       "after_break_frame":"-",
       "damage":"15,20",
       "range":"반격",
-      "extra":"리베르타도르로\n회복 가능 게이지가 있다면 체력 회복"
+      "extra":"리베르타도르로\n회복 가능 게이지가 있다면 체력 회복",
+      "startAt": 559,
+      "endAt": 562
     },
     {
       "name":"푸뇨 데 후에고 에비타시온",
@@ -1764,7 +2108,9 @@
       "after_break_frame":"-",
       "damage":"25",
       "range":"반격",
-      "extra":"히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복"
+      "extra":"히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복",
+      "startAt": 564,
+      "endAt": 567
     },
     {
       "name":"원 드립 시엘로 에비타시온",
@@ -1774,7 +2120,9 @@
       "after_break_frame":"-",
       "damage":"20",
       "range":"반격",
-      "extra":"tornado\n히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복"
+      "extra":"토네이도\n히트 상태의 남은 시간 회복\n회복 가능 게이지가 있다면 체력 회복",
+      "startAt": 570,
+      "endAt": 574
     }
   ]
 }

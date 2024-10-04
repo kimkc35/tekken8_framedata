@@ -134,12 +134,6 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
     );
   }
 
-  refresh(){
-    setState(() {
-
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -154,7 +148,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
             title:!kDebugMode? Text(widget.character.name.toUpperCase()) : TextButton(
               child:  Text(widget.character.name.toUpperCase()),
               onPressed: () {
-                showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveList.toString()),),),);
+                showDialog(context: context, builder: (context) => AlertDialog(title: Text("moves"), content: SingleChildScrollView(child: Text(widget.character.moveInfoList.toString()),),),);
               },
             ),
             centerTitle: true,
@@ -172,7 +166,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
               ),
             ),
             actions: [
-              actionBuilder(context: context, character: widget.character.name, refresh: refresh)
+              actionBuilder(context: context, character: widget.character.name)
             ],
             backgroundColor: Colors.black,
             bottom: PreferredSize(
@@ -236,83 +230,80 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
       showModalBottomSheet<void>(
         context: context,
         builder: (BuildContext context) {
-          return Theme(
-            data: themeData,
-            child: Container(
-              height: 288,
-              color: Colors.black,
-              child: Center(
-                  child: Column(
-                    children: [
-                      Row( //1번째 줄
-                        children: [
-                          keyboardButton("↖"),
-                          keyboardButton("↑"),
-                          keyboardButton("↗"),
-                          keyboardButton("LP"),
-                          keyboardButton("RP"),
-                          keyboardButton("AP"),
-                          keyboardButton("delete"),
-                        ],
-                      ),
-                      Row( //2번째 줄
-                        children: [
-                          keyboardButton("←"),
-                          keyboardButton("N"),
-                          keyboardButton("→"),
-                          keyboardButton("LK"),
-                          keyboardButton("RK"),
-                          keyboardButton("AK"),
-                          keyboardButton("토네\n이도", inputText: "토네이도"),
-                        ],
-                      ),
-                      Row( //3번째 줄
-                        children: [
-                          keyboardButton("↙"),
-                          keyboardButton("↓"),
-                          keyboardButton("↘"),
-                          keyboardButton("AL"),
-                          keyboardButton("AR"),
-                          keyboardButton("~"),
-                          keyboardButton("가댐", inputText: "가드 대미지"),
-                        ],
-                      ),
-                      Row( //4번째 줄
-                        children: [
-                          keyboardButton("상단"),
-                          keyboardButton("중단"),
-                          keyboardButton("하단"),
-                          keyboardButton("D"),
-                          keyboardButton("A"),
-                          keyboardButton("T"),
-                          keyboardButton("파크", inputText: "파워 크래시"),
-                        ],
-                      ),
-                      Row( //5번째 줄
-                        children: [
-                          keyboardButton("+"),
-                          keyboardButton("1"),
-                          keyboardButton("2"),
-                          keyboardButton("3"),
-                          keyboardButton("4"),
-                          keyboardButton("5"),
-                          keyboardButton("호밍기"),
-                        ],
-                      ),
-                      Row( //6번째 줄
-                        children: [
-                          keyboardButton("-"),
-                          keyboardButton("6"),
-                          keyboardButton("7"),
-                          keyboardButton("8"),
-                          keyboardButton("9"),
-                          keyboardButton("0"),
-                          keyboardButton("AC"),
-                        ],
-                      ),
-                    ],
-                  )
-              ),
+          return Container(
+            height: 288,
+            color: Colors.black,
+            child: Center(
+                child: Column(
+                  children: [
+                    Row( //1번째 줄
+                      children: [
+                        keyboardButton("↖"),
+                        keyboardButton("↑"),
+                        keyboardButton("↗"),
+                        keyboardButton("LP"),
+                        keyboardButton("RP"),
+                        keyboardButton("AP"),
+                        keyboardButton("delete"),
+                      ],
+                    ),
+                    Row( //2번째 줄
+                      children: [
+                        keyboardButton("←"),
+                        keyboardButton("N"),
+                        keyboardButton("→"),
+                        keyboardButton("LK"),
+                        keyboardButton("RK"),
+                        keyboardButton("AK"),
+                        keyboardButton("토네\n이도", inputText: "토네이도"),
+                      ],
+                    ),
+                    Row( //3번째 줄
+                      children: [
+                        keyboardButton("↙"),
+                        keyboardButton("↓"),
+                        keyboardButton("↘"),
+                        keyboardButton("AL"),
+                        keyboardButton("AR"),
+                        keyboardButton("~"),
+                        keyboardButton("가댐", inputText: "가드 대미지"),
+                      ],
+                    ),
+                    Row( //4번째 줄
+                      children: [
+                        keyboardButton("상단"),
+                        keyboardButton("중단"),
+                        keyboardButton("하단"),
+                        keyboardButton("D"),
+                        keyboardButton("A"),
+                        keyboardButton("T"),
+                        keyboardButton("파크", inputText: "파워 크래시"),
+                      ],
+                    ),
+                    Row( //5번째 줄
+                      children: [
+                        keyboardButton("+"),
+                        keyboardButton("1"),
+                        keyboardButton("2"),
+                        keyboardButton("3"),
+                        keyboardButton("4"),
+                        keyboardButton("5"),
+                        keyboardButton("호밍기"),
+                      ],
+                    ),
+                    Row( //6번째 줄
+                      children: [
+                        keyboardButton("-"),
+                        keyboardButton("6"),
+                        keyboardButton("7"),
+                        keyboardButton("8"),
+                        keyboardButton("9"),
+                        keyboardButton("0"),
+                        keyboardButton("AC"),
+                      ],
+                    ),
+                  ],
+                )
             ),
           );
         },
@@ -353,7 +344,7 @@ class _MoveListState extends State<MoveList>{
   LinkedScrollControllerGroup horizonControllerGroup = LinkedScrollControllerGroup();
   ScrollController headerHorizonController = ScrollController();
   ScrollController dataTableHorizonController = ScrollController();
-  late Map<String, List<Moves>> filtered;
+  late Map<String, List<MoveInfo>> filtered;
 
   void filter(){
     filtered = widget.character.getMoveList();;
@@ -746,15 +737,15 @@ class _MoveListState extends State<MoveList>{
                     ],
                     rows: [
                       if(_searchText.isEmpty || widget.character.rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts[0], widget.character.rageArts[1], widget.character.rageArts[2], widget.character.rageArts[3], widget.character.rageArts[4], widget.character.rageArts[5], widget.character.rageArts[6], widget.character.rageArts[7], widget.character.rageArts[8]))), //레이지 아츠
+                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts))), //레이지 아츠
                       for(String type in widget.character.types.keys)...[
                         if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
-                          for(Moves data in filtered[type]!)...[
+                          for(MoveInfo data in filtered[type]!)...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, widget.character, data.name, data.command, data.startFrame, data.guardFrame, data.hitFrame, data.counterFrame, data.range, data.damage, data.extra.replaceAll(RegExp(r'\[.*?\]'), ""))), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character, data)), color: MaterialStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
-                              DataRow(cells : (createMove(context, widget.character, data.name, data.command, data.startFrame, data.guardFrame, data.hitFrame, data.counterFrame, data.range, data.damage, data.extra.replaceAll(RegExp(r'\[.*?\]'), ""))))
+                              DataRow(cells : (createMove(context, widget.character, data)))
                             ]
                           ],
                         ],
@@ -832,11 +823,11 @@ class _ThrowListState extends State<ThrowList>{
                 const DataColumn(label: SizedBox(width: 210)),
               ],
               rows: [
-                for(int i = 0; i < widget.character.throwList.length; i++)...[
+                for(int i = 0; i < widget.character.throwInfoList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i].name, widget.character.throwList[i].command, widget.character.throwList[i].startFrame, widget.character.throwList[i].breakCommand, widget.character.throwList[i].afterBreakFrame, widget.character.throwList[i].damage, widget.character.throwList[i].range, widget.character.throwList[i].extra), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwInfoList[i]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwList[i].name, widget.character.throwList[i].command, widget.character.throwList[i].startFrame, widget.character.throwList[i].breakCommand, widget.character.throwList[i].afterBreakFrame, widget.character.throwList[i].damage, widget.character.throwList[i].range, widget.character.throwList[i].extra))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwInfoList[i]))
                   ]
                 ]
               ],

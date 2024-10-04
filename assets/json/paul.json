@@ -1390,7 +1390,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"10,20",
+        "damage":"10,30",
         "extra":"토네이도"
       },
       {
@@ -1416,7 +1416,7 @@
         "extra":""
       },
       {
-        "name":"써머썰트 NG(이중 잠복)",
+        "name":"써머썰트 NG",
         "command":"이중 잠복 도중 AK",
         "start_frame":"13",
         "guard_frame":"D",

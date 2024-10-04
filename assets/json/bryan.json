@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬\n스네이크 아이즈를 획득"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬\n스네이크 아이즈를 획득",
+        "startAt": 0,
+        "endAt": 2
       },
       {
         "name":"원 투 넥 브레이커",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"5,8,24",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 3,
+        "endAt": 7
       },
       {
         "name":"크래시 임팩트",
@@ -32,10 +36,12 @@
         "counter_frame":"+17g",
         "range":"중단,상단",
         "damage":"8,16",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 8,
+        "endAt": 11
       },
       {
-        "name":"마하 펀치",
+        "name":"마크 브레이커",
         "command":"→→~RP",
         "start_frame":"13",
         "guard_frame":"-9",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"29",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지[마하 펀치]",
+        "startAt": 13,
+        "endAt": 16
       },
       {
         "name":"스네이크 팽",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"15,20",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 17,
+        "endAt": 20
       },
       {
         "name":"레퀴엠",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지",
+        "startAt": 22,
+        "endAt": 25
       },
       {
         "name":"노토리어스 몬스터",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"55",
-        "extra":"혹은 히트 상태에서 도발 도중RP+LK\n도발 도중 사용 시 1타 대미지 1←증가\n히트 시 잡기 이행"
+        "extra":"혹은 히트 상태에서 도발 도중RP+LK\n도발 도중 사용 시 1타 대미지 1←증가\n히트 시 잡기 이행",
+        "startAt": 27,
+        "endAt": 32
       }
     ],
     "general":[
@@ -89,7 +103,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":"[원투원]"
+        "extra":"[원투원]",
+        "startAt": 49,
+        "endAt": 51
       },
       {
         "name":"레프트 라이트 콤보",
@@ -100,7 +116,9 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"5,8",
-        "extra":"[원투원]"
+        "extra":"[원투원]",
+        "startAt": 49,
+        "endAt": 51
       },
       {
         "name":"원 투 보디 블로",
@@ -111,7 +129,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,8,18",
-        "extra":"[원투원]"
+        "extra":"[원투원]",
+        "startAt": 52,
+        "endAt": 54
       },
       {
         "name":"원 투 로우 킥",
@@ -122,7 +142,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"5,8,15",
-        "extra":""
+        "extra":"",
+        "startAt": 56,
+        "endAt": 58
       },
       {
         "name":"원 투 넥 브레이커",
@@ -133,7 +155,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,8,24",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 59,
+        "endAt": 62
       },
       {
         "name":"레어즈 댄스1",
@@ -144,7 +168,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"5,14",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스2",
@@ -155,7 +181,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,14,18",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스3",
@@ -166,7 +194,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,14,18,16",
-        "extra":"→LP입력 시 3타 캔슬\n↓ 혹은 ↑입력 시 캔슬하고 횡이동\n→~입력 시 슬리더 스텝으로 이행"
+        "extra":"→LP입력 시 3타 캔슬\n↓ 혹은 ↑입력 시 캔슬하고 횡이동\n→~입력 시 슬리더 스텝으로 이행",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스3(캔슬)~횡이동",
@@ -177,7 +207,9 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"5,14,18",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스3(3타 캔슬)",
@@ -188,7 +220,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,14,16",
-        "extra":"→~입력 시 슬리더 스텝으로 이행"
+        "extra":"→~입력 시 슬리더 스텝으로 이행",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스3~슬리더 스텝",
@@ -199,7 +233,9 @@
         "counter_frame":"D",
         "range":"-",
         "damage":"5,14,18,16",
-        "extra":"슬리더 스텝으로"
+        "extra":"슬리더 스텝으로",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"레어즈 댄스4",
@@ -210,7 +246,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,14,18,16,22",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"위핑 퓨리",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,14,18,21",
-        "extra":""
+        "extra":"",
+        "startAt": 71,
+        "endAt": 74
       },
       {
         "name":"크러메이션",
@@ -232,7 +272,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,14,18,16,14",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 75,
+        "endAt": 80
       },
       {
         "name":"잽~더블 스핀 킥",
@@ -243,7 +285,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"5,14,15",
-        "extra":""
+        "extra":"",
+        "startAt": 82,
+        "endAt": 84
       },
       {
         "name":"러닝 블라인드",
@@ -254,7 +298,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,14,15,18",
-        "extra":""
+        "extra":"",
+        "startAt": 90,
+        "endAt": 92
       },
       {
         "name":"PK 콤비네이션1",
@@ -265,7 +311,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 98
       },
       {
         "name":"PK 콤비네이션2",
@@ -276,7 +324,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 98
       },
       {
         "name":"미드 킥",
@@ -287,7 +337,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"미드 킥~러시1",
@@ -298,7 +350,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"14,11",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"미드 킥~러시2",
@@ -309,7 +363,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14,11,10",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"미드 킥~러시3",
@@ -320,7 +376,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,11,10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"개틀링 콤비네이션",
@@ -331,7 +389,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"14,11,10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 108,
+        "endAt": 111
       },
       {
         "name":"퀵 소뱃",
@@ -342,7 +402,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"14,13",
-        "extra":""
+        "extra":"",
+        "startAt": 112,
+        "endAt": 115
       },
       {
         "name":"아나콘다 바이트",
@@ -353,7 +415,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"14,13,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 112,
+        "endAt": 115
       },
       {
         "name":"아나콘다 레이지",
@@ -364,7 +428,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,13,25",
-        "extra":""
+        "extra":"",
+        "startAt": 116,
+        "endAt": 120
       },
       {
         "name":"더블 스핀 토마호크1",
@@ -375,7 +441,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 121,
+        "endAt": 124
       },
       {
         "name":"더블 스핀 토마호크2",
@@ -386,7 +454,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"15,12",
-        "extra":""
+        "extra":"",
+        "startAt": 121,
+        "endAt": 124
       },
       {
         "name":"더블 스핀 토마호크3",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,12,16",
-        "extra":"홀드하면 파워가 상승하고 가드 대미지 추가"
+        "extra":"홀드하면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 121,
+        "endAt": 124
       },
       {
         "name":"트리플 스핀 킥",
@@ -408,7 +480,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"15,12,18",
-        "extra":""
+        "extra":"",
+        "startAt": 125,
+        "endAt": 127
       },
       {
         "name":"스네이크 바이트1",
@@ -419,7 +493,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"15",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 129,
+        "endAt": 131
       },
       {
         "name":"스네이크 바이트2",
@@ -430,7 +506,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"15,15",
-        "extra":"←~입력 시 스웨이로 이행"
+        "extra":"←~입력 시 스웨이로 이행",
+        "startAt": 129,
+        "endAt": 131
       },
       {
         "name":"스네이크 바이트2~스웨이",
@@ -441,7 +519,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"15,15",
-        "extra":"스웨이로"
+        "extra":"스웨이로",
+        "startAt": 129,
+        "endAt": 131
       },
       {
         "name":"스네이크 피트",
@@ -452,7 +532,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,20",
-        "extra":""
+        "extra":"",
+        "startAt": 132,
+        "endAt": 135
       },
       {
         "name":"미들 사이드 킥",
@@ -463,7 +545,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 137,
+        "endAt": 139
       },
       {
         "name":"라이트 레프트1",
@@ -474,7 +558,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"10",
-        "extra":"[브살문]"
+        "extra":"[브살문]",
+        "startAt": 142,
+        "endAt": 145
       },
       {
         "name":"라이트 레프트2",
@@ -485,7 +571,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"10,12",
-        "extra":"[브살문]"
+        "extra":"[브살문]",
+        "startAt": 142,
+        "endAt": 145
       },
       {
         "name":"라이트 레프트~스핀 킥",
@@ -496,7 +584,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,12,20",
-        "extra":"[브살문]"
+        "extra":"[브살문]",
+        "startAt": 142,
+        "endAt": 145
       },
       {
         "name":"라이트 레프트~스핀 킥~스네이크 아이즈",
@@ -507,7 +597,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"10,12,20",
-        "extra":"스네이크 아이즈를 획득[브살문]"
+        "extra":"스네이크 아이즈를 획득[브살문]",
+        "startAt": 142,
+        "endAt": 145
       },
       {
         "name":"니 스트라이크",
@@ -518,7 +610,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 146,
+        "endAt": 148
       },
       {
         "name":"보아 크러셔1",
@@ -529,7 +623,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 149,
+        "endAt": 152
       },
       {
         "name":"보아 크러셔2",
@@ -540,7 +636,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 149,
+        "endAt": 152
       },
       {
         "name":"사이드스텝 엘보",
@@ -551,7 +649,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"22",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 153,
+        "endAt": 155
       },
       {
         "name":"레프트 보디 블로",
@@ -562,7 +662,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 158
       },
       {
         "name":"더블 보디 블로",
@@ -573,7 +675,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"8,20",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 158
       },
       {
         "name":"벌컨 캐넌1",
@@ -584,7 +688,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"8",
-        "extra":"RP를 입력하면 더블 보디 블로로 이행"
+        "extra":"RP를 입력하면 더블 보디 블로로 이행",
+        "startAt": 159,
+        "endAt": 162
       },
       {
         "name":"벌컨 캐넌2",
@@ -595,7 +701,9 @@
         "counter_frame":"-4",
         "range":"중단",
         "damage":"8,2",
-        "extra":"RP를 입력하면 더블 보디 블로로 이행"
+        "extra":"RP를 입력하면 더블 보디 블로로 이행",
+        "startAt": 159,
+        "endAt": 162
       },
       {
         "name":"벌컨 캐넌3",
@@ -606,7 +714,9 @@
         "counter_frame":"-4",
         "range":"중단",
         "damage":"8,2,2",
-        "extra":"RP를 입력하면 더블 보디 블로로 이행"
+        "extra":"RP를 입력하면 더블 보디 블로로 이행",
+        "startAt": 159,
+        "endAt": 162
       },
       {
         "name":"벌컨 캐넌4",
@@ -617,7 +727,9 @@
         "counter_frame":"-4",
         "range":"중단",
         "damage":"8,2,2,2",
-        "extra":"RP를 입력하면 더블 보디 블로로 이행"
+        "extra":"RP를 입력하면 더블 보디 블로로 이행",
+        "startAt": 159,
+        "endAt": 162
       },
       {
         "name":"블랙아웃 콤보1",
@@ -628,7 +740,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"블랙아웃 콤보2",
@@ -639,7 +753,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"12,11",
-        "extra":"←~입력 시 스웨이로 이행"
+        "extra":"←~입력 시 스웨이로 이행",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"블랙아웃 콤보2~스웨이",
@@ -650,7 +766,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"12,11",
-        "extra":"스웨이로"
+        "extra":"스웨이로",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"블랙아웃 트랩",
@@ -661,7 +779,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 171,
+        "endAt": 173
       },
       {
         "name":"스네이크 엣지",
@@ -672,7 +792,9 @@
         "counter_frame":"T",
         "range":"하단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 180,
+        "endAt": 182
       },
       {
         "name":"울프스 테일",
@@ -683,7 +805,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 184,
+        "endAt": 186
       },
       {
         "name":"엘보 슬래시",
@@ -694,7 +818,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 187,
+        "endAt": 190
       },
       {
         "name":"파이선 크러시",
@@ -705,7 +831,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17,21",
-        "extra":""
+        "extra":"",
+        "startAt": 187,
+        "endAt": 190
       },
       {
         "name":"퀵 레프트 로우 킥",
@@ -716,7 +844,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 191,
+        "endAt": 194
       },
       {
         "name":"퀵 로우 스크류 펀치",
@@ -727,7 +857,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,22",
-        "extra":""
+        "extra":"",
+        "startAt": 187,
+        "endAt": 190
       },
       {
         "name":"퀵 로우 스크류 펀치~스네이크 아이즈",
@@ -738,7 +870,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"10,22",
-        "extra":"스네이크 아이즈를 획득"
+        "extra":"스네이크 아이즈를 획득",
+        "startAt": 187,
+        "endAt": 190
       },
       {
         "name":"로우 킥",
@@ -749,7 +883,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 195,
+        "endAt": 196
       },
       {
         "name":"해머 드라이버",
@@ -760,7 +896,9 @@
         "counter_frame":"+3",
         "range":"중단,중단",
         "damage":"10,15",
-        "extra":"→~입력 시 슬리더 스텝으로 이행\n←~입력 시 스웨이로 이행"
+        "extra":"→~입력 시 슬리더 스텝으로 이행\n←~입력 시 스웨이로 이행",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"해머 드라이버~슬리더 스텝",
@@ -771,7 +909,9 @@
         "counter_frame":"+10g",
         "range":"중단",
         "damage":"10",
-        "extra":"슬리더 스텝으로"
+        "extra":"슬리더 스텝으로",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"해머 드라이버~스웨이",
@@ -782,7 +922,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"10",
-        "extra":"스웨이로"
+        "extra":"스웨이로",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"해머 드라이버 하체트",
@@ -793,7 +935,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"10,15,20",
-        "extra":""
+        "extra":"",
+        "startAt": 198,
+        "endAt": 201
       },
       {
         "name":"스네이크 봄",
@@ -804,7 +948,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"24",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 202,
+        "endAt": 205
       },
       {
         "name":"사이드 로우",
@@ -815,7 +961,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 207,
+        "endAt": 210
       },
       {
         "name":"사이드 로우 너클 윕",
@@ -826,7 +974,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,25",
-        "extra":"토네이도\n↙~입력 시 캔슬"
+        "extra":"토네이도\n↙~입력 시 캔슬",
+        "startAt": 207,
+        "endAt": 210
       },
       {
         "name":"스터먹 블로",
@@ -837,7 +987,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 211,
+        "endAt": 213
       },
       {
         "name":"스위퍼 킥",
@@ -848,7 +1000,9 @@
         "counter_frame":"+4",
         "range":"하단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 214,
+        "endAt": 216
       },
       {
         "name":"크래시 임팩트",
@@ -859,7 +1013,9 @@
         "counter_frame":"+4",
         "range":"중단,상단",
         "damage":"8,16",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 217,
+        "endAt": 220
       },
       {
         "name":"초핑 엘보",
@@ -870,7 +1026,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"21",
-        "extra":""
+        "extra":"[쵸핑]",
+        "startAt": 222,
+        "endAt": 224
       },
       {
         "name":"라이트 백 너클",
@@ -881,7 +1039,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"더블 백 너클",
@@ -892,7 +1052,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18,16",
-        "extra":"→LP 입력 시 1타 캔슬\n↓ 혹은 ↑입력 시 캔슬하고 횡이동 이행\n→~입력 시 슬리더 스텝으로 이행"
+        "extra":"→LP 입력 시 1타 캔슬\n↓ 혹은 ↑입력 시 캔슬하고 횡이동 이행\n→~입력 시 슬리더 스텝으로 이행",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"더블 백 너클(1타 캔슬)",
@@ -903,7 +1065,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16",
-        "extra":"↓ 혹은 ↑입력 시 캔슬하고 횡이동 이행\n→~입력 시 슬리더 스텝으로 이행"
+        "extra":"↓ 혹은 ↑입력 시 캔슬하고 횡이동 이행\n→~입력 시 슬리더 스텝으로 이행",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"더블 백 너클(캔슬)~횡이동",
@@ -914,7 +1078,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"더블 백 너클~슬리더 스텝",
@@ -925,7 +1091,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18,16",
-        "extra":"슬리더 스텝으로"
+        "extra":"슬리더 스텝으로",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"핸즈 오브 둠",
@@ -936,18 +1104,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18,16,22",
-        "extra":""
-      },
-      {
-        "name":"울프 콜",
-        "command":"←RPRK",
-        "start_frame":"17",
-        "guard_frame":"-5",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"중단",
-        "damage":"18,21",
-        "extra":"→RK입력 시 1타 캔슬"
+        "extra":"",
+        "startAt": 225,
+        "endAt": 228
       },
       {
         "name":"킥애스 콤보",
@@ -958,7 +1117,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18,16,14",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 233,
+        "endAt": 236
+      },
+      {
+        "name":"울프 콜",
+        "command":"←RPRK",
+        "start_frame":"17",
+        "guard_frame":"-5",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"18,21",
+        "extra":"→RK입력 시 1타 캔슬",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"프런트 킥",
@@ -969,7 +1143,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":"→~입력 시 슬리더 스텝으로 이행"
+        "extra":"→~입력 시 슬리더 스텝으로 이행",
+        "startAt": 242,
+        "endAt": 245
       },
       {
         "name":"프런트 킥~슬리더 스텝",
@@ -980,7 +1156,9 @@
         "counter_frame":"+12g",
         "range":"중단",
         "damage":"12",
-        "extra":"슬리더 스텝으로"
+        "extra":"슬리더 스텝으로",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"프런트 킥 투 펀치",
@@ -991,7 +1169,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"프런트 킥~러시1",
@@ -1002,7 +1182,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"프런트 킥~러시2",
@@ -1013,7 +1195,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,12,10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"런 포 커버",
@@ -1024,7 +1208,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"12,12,10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 246,
+        "endAt": 249
       },
       {
         "name":"프런트 킥~더블 해머",
@@ -1035,7 +1221,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,25",
-        "extra":""
+        "extra":"",
+        "startAt": 251,
+        "endAt": 253
       },
       {
         "name":"니 브레이크",
@@ -1046,7 +1234,9 @@
         "counter_frame":"+15",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 255,
+        "endAt": 257
       },
       {
         "name":"그래비티 블로",
@@ -1057,7 +1247,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"26",
-        "extra":""
+        "extra":"",
+        "startAt": 258,
+        "endAt": 261
       },
       {
         "name":"메테오 스매시",
@@ -1068,7 +1260,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"45",
-        "extra":""
+        "extra":"",
+        "startAt": 262,
+        "endAt": 265
       },
       {
         "name":"개틀링 러시1",
@@ -1079,7 +1273,9 @@
         "counter_frame":"-6",
         "range":"중단,중단",
         "damage":"5,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시2",
@@ -1090,7 +1286,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"5,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시3",
@@ -1101,7 +1299,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"5,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시4",
@@ -1112,7 +1312,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"5,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시5",
@@ -1123,7 +1325,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"5,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시6",
@@ -1134,7 +1338,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시7",
@@ -1145,7 +1351,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시8",
@@ -1156,7 +1364,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시9",
@@ -1167,7 +1377,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시10",
@@ -1178,7 +1390,9 @@
         "counter_frame":"-15",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2,2,2,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"개틀링 러시11",
@@ -1189,7 +1403,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,2,2,2,2,2,2,2,2,2,2,14",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"롤링 드라이버",
@@ -1200,7 +1416,9 @@
         "counter_frame":"+15",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 272,
+        "endAt": 274
       },
       {
         "name":"블러디 워1",
@@ -1211,7 +1429,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6",
-        "extra":"[오딸, 오른 딸펀치]"
+        "extra":"[오딸, 오른 딸펀치]",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"블러디 워2",
@@ -1222,7 +1442,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6,4",
-        "extra":"[오딸, 오른 딸펀치]"
+        "extra":"[오딸, 오른 딸펀치]",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"블러디 워3",
@@ -1233,7 +1455,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6,4,4",
-        "extra":"[오딸, 오른 딸펀치]"
+        "extra":"[오딸, 오른 딸펀치]",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"블러디 워4",
@@ -1244,7 +1468,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"6,4,4,20",
-        "extra":"[오딸, 오른 딸펀치]"
+        "extra":"[오딸, 오른 딸펀치]",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"오비탈 힐 킥",
@@ -1255,7 +1481,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 279,
+        "endAt": 281
       },
       {
         "name":"불릿 니~스네이크 아이즈",
@@ -1266,7 +1494,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득"
+        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득",
+        "startAt": 282,
+        "endAt": 285
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -1277,10 +1507,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 287,
+        "endAt": 289
       },
       {
-        "name":"마하 펀치",
+        "name":"마크 브레이커",
         "command":"→→~RP",
         "start_frame":"13",
         "guard_frame":"-9",
@@ -1288,7 +1520,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"29",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지[마하 펀치]",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"슬래시 킥",
@@ -1299,7 +1533,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지\n홀드 가능"
+        "extra":"가드 대미지\n홀드 가능",
+        "startAt": 295,
+        "endAt": 298
       },
       {
         "name":"슬래시 킥~스네이크 아이즈",
@@ -1310,10 +1546,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"25",
-        "extra":"스네이크 아이즈를 획득"
+        "extra":"스네이크 아이즈를 획득",
+        "startAt": 295,
+        "endAt": 298
       },
       {
-        "name":"마하 킥",
+        "name":"마크 킥",
         "command":"→→~RK",
         "start_frame":"16",
         "guard_frame":"-9",
@@ -1321,7 +1559,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"32",
-        "extra":"호밍기\n가드 대미지"
+        "extra":"호밍기\n가드 대미지[마하 킥]",
+        "startAt": 302,
+        "endAt": 305
       },
       {
         "name":"제트 어퍼컷",
@@ -1332,7 +1572,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 305,
+        "endAt": 307
       },
       {
         "name":"웨지 드라이버",
@@ -1343,7 +1585,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"25",
-        "extra":"←~입력 시 캔슬"
+        "extra":"←~입력 시 캔슬",
+        "startAt": 309,
+        "endAt": 311
       },
       {
         "name":"플라잉 니 킥",
@@ -1354,7 +1598,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":""
+        "extra":"",
+        "startAt": 314,
+        "endAt": 316
       },
       {
         "name":"스네이크 슬래시",
@@ -1365,7 +1611,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 317,
+        "endAt": 319
       },
       {
         "name":"10단 콤보1",
@@ -1376,7 +1624,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보2",
@@ -1387,7 +1637,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"12,18",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보3",
@@ -1398,7 +1650,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"12,18,5",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보4",
@@ -1409,7 +1663,9 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"12,18,5,7",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보5",
@@ -1420,7 +1676,9 @@
         "counter_frame":"-10",
         "range":"상단",
         "damage":"12,18,5,7,3",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보6",
@@ -1431,7 +1689,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"12,18,5,7,3,8",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보7",
@@ -1442,7 +1702,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,18,5,7,3,8,5",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보8",
@@ -1453,7 +1715,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,18,5,7,3,8,5,5",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보9",
@@ -1464,7 +1728,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12,18,5,7,3,8,5,5,10",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"10단 콤보10",
@@ -1475,7 +1741,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"12,18,5,7,3,8,5,5,10,20",
-        "extra":""
+        "extra":"",
+        "startAt": 322,
+        "endAt": 328
       },
       {
         "name":"도발",
@@ -1486,7 +1754,9 @@
         "counter_frame":"+16",
         "range":"-",
         "damage":"0",
-        "extra":"스네이크 아이즈를 획득"
+        "extra":"스네이크 아이즈를 획득",
+        "startAt": 330,
+        "endAt": 333
       },
       {
         "name":"기합 모으기",
@@ -1497,7 +1767,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 334,
+        "endAt": 336
       },
       {
         "name":"헬레이저",
@@ -1508,7 +1780,9 @@
         "counter_frame":"+15",
         "range":"상단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 367,
+        "endAt": 368
       },
       {
         "name":"스네이크 팽1",
@@ -1519,7 +1793,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 369,
+        "endAt": 373
       },
       {
         "name":"스네이크 팽2",
@@ -1530,7 +1806,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,20",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "startAt": 369,
+        "endAt": 373
       }
     ],
     "sit":[
@@ -1543,7 +1821,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 337,
+        "endAt": 340
       },
       {
         "name":"피셔맨즈 슬램",
@@ -1554,7 +1834,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,20",
-        "extra":"히트 시 잡기로 이행\n히트 시 →RP 혹은 ←RP(저스트)입력 시 파워 상승"
+        "extra":"히트 시 잡기로 이행\n히트 시 →RP 혹은 ←RP(저스트)입력 시 파워 상승",
+        "startAt": 341,
+        "endAt": 345
       },
       {
         "name":"피셔맨즈 슬램(저스트)",
@@ -1565,7 +1847,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,25",
-        "extra":"히트 시 잡기로 이행"
+        "extra":"히트 시 잡기로 이행",
+        "startAt": 341,
+        "endAt": 345
       },
       {
         "name":"하이 니 킥",
@@ -1576,7 +1860,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 346,
+        "endAt": 348
       },
       {
         "name":"더블 하이 니 킥",
@@ -1587,7 +1873,9 @@
         "counter_frame":"+29g",
         "range":"중단",
         "damage":"17,21",
-        "extra":""
+        "extra":"",
+        "startAt": 349,
+        "endAt": 351
       },
       {
         "name":"토 스매시",
@@ -1598,7 +1886,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 352,
+        "endAt": 354
       },
       {
         "name":"스네이크 램페이지1",
@@ -1609,7 +1899,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 356,
+        "endAt": 359
       },
       {
         "name":"스네이크 램페이지2",
@@ -1620,7 +1912,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,25",
-        "extra":""
+        "extra":"",
+        "startAt": 356,
+        "endAt": 359
       },
       {
         "name":"노던 크로스",
@@ -1631,7 +1925,9 @@
         "counter_frame":"+13g",
         "range":"중단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 361,
+        "endAt": 363
       }
     ],
     "snake eyes":[
@@ -1644,7 +1940,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 376,
+        "endAt": 378
       },
       {
         "name":"네오 소울 이레이저2",
@@ -1655,7 +1953,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,20",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지"
+        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "startAt": 376,
+        "endAt": 378
       },
       {
         "name":"네오 소울 이레이저 익시드",
@@ -1666,7 +1966,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"20,30",
-        "extra":"토네이도\n스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지"
+        "extra":"토네이도\n스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "startAt": 379,
+        "endAt": 384
       },
       {
         "name":"네오 인시너레이터1",
@@ -1677,7 +1979,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 385,
+        "endAt": 389
       },
       {
         "name":"네오 인시너레이터2",
@@ -1688,7 +1992,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 385,
+        "endAt": 389
       },
       {
         "name":"네오 인시너레이터3",
@@ -1699,7 +2005,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"10,12,5",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지"
+        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "startAt": 385,
+        "endAt": 389
       },
       {
         "name":"네오 인시너레이터4",
@@ -1710,7 +2018,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,12,5,7",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 385,
+        "endAt": 389
       },
       {
         "name":"네오 인시너레이터5",
@@ -1721,7 +2031,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,12,5,7,20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 385,
+        "endAt": 389
       },
       {
         "name":"네오 블러디 워1",
@@ -1732,7 +2044,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6",
-        "extra":""
+        "extra":"",
+        "startAt": 390,
+        "endAt": 394
       },
       {
         "name":"네오 블러디 워2",
@@ -1743,7 +2057,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6,4",
-        "extra":""
+        "extra":"",
+        "startAt": 390,
+        "endAt": 394
       },
       {
         "name":"네오 블러디 워3",
@@ -1754,7 +2070,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"6,4,4",
-        "extra":""
+        "extra":"",
+        "startAt": 390,
+        "endAt": 394
       },
       {
         "name":"네오 블러디 워4",
@@ -1765,7 +2083,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"6,4,4,9",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지"
+        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "startAt": 390,
+        "endAt": 394
       },
       {
         "name":"네오 블러디 워5",
@@ -1776,7 +2096,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"6,4,4,9,9",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 390,
+        "endAt": 394
       },
       {
         "name":"네오 블러디 워6",
@@ -1787,10 +2109,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"6,4,4,9,9,23",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 390,
+        "endAt": 394
       },
       {
-        "name":"네오 마하 펀치",
+        "name":"네오 마크 브레이커",
         "command":"스네이크 아이즈 보유 시→→~AP",
         "start_frame":"13",
         "guard_frame":"+5",
@@ -1798,7 +2122,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"36",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지"
+        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지[네오 마하 펀치]",
+        "startAt": 396,
+        "endAt": 399
       }
     ],
     "slither step":[
@@ -1811,7 +2137,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↓↘~입력 시 캔슬하고 몸을 숙인 상태로"
+        "extra":"↓↘~입력 시 캔슬하고 몸을 숙인 상태로",
+        "startAt": 400,
+        "endAt": 402
       },
       {
         "name":"크로스 바주카1",
@@ -1822,7 +2150,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 405,
+        "endAt": 408
       },
       {
         "name":"크로스 바주카2",
@@ -1833,7 +2163,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,23",
-        "extra":""
+        "extra":"",
+        "startAt": 405,
+        "endAt": 408
       },
       {
         "name":"크로스 그레네이드",
@@ -1844,7 +2176,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,25",
-        "extra":""
+        "extra":"",
+        "startAt": 409,
+        "endAt": 411
       },
       {
         "name":"크로스 불릿-스네이크 아이즈",
@@ -1855,10 +2189,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,22",
-        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득"
+        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득",
+        "startAt": 415,
+        "endAt": 417
       },
       {
-        "name":"스네이크 스핀 마하 펀치1",
+        "name":"스네이크 스핀 마크 브레이커1",
         "command":"↓↘→RK",
         "start_frame":"18",
         "guard_frame":"-5",
@@ -1866,10 +2202,12 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"[스네이크 스핀 마하 펀치]",
+        "startAt": 421,
+        "endAt": 424
       },
       {
-        "name":"스네이크 스핀 마하 펀치2",
+        "name":"스네이크 스핀 마크 브레이커2",
         "command":"↓↘→RKLP",
         "start_frame":"18",
         "guard_frame":"0",
@@ -1877,10 +2215,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,13",
-        "extra":"↓ 혹은 ↑입력 시 캔슬하고 횡이동"
+        "extra":"↓ 혹은 ↑입력 시 캔슬하고 횡이동[스네이크 스핀 마하 펀치]",
+        "startAt": 421,
+        "endAt": 424
       },
       {
-        "name":"스네이크 스핀 마하 펀치3",
+        "name":"스네이크 스핀 마크 브레이커3",
         "command":"↓↘→RKLPRP",
         "start_frame":"18",
         "guard_frame":"-9",
@@ -1888,7 +2228,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,13,22",
-        "extra":""
+        "extra":"[스네이크 스핀 마하 펀치]",
+        "startAt": 421,
+        "endAt": 424
       },
       {
         "name":"스네이크 스핀 킥애스",
@@ -1899,7 +2241,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,13,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 425,
+        "endAt": 429
       },
       {
         "name":"레퀴엠",
@@ -1910,7 +2254,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지"
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지",
+        "startAt": 431,
+        "endAt": 434
       }
     ],
     "sway":[
@@ -1923,7 +2269,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 435,
+        "endAt": 436
       },
       {
         "name":"캐넌볼 스트레이트",
@@ -1934,10 +2282,12 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"22",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 439,
+        "endAt": 442
       },
       {
-        "name":"스매시 앤드 마하 킥1",
+        "name":"스매시 앤드 마크 킥1",
         "command":"↓↙←RP",
         "start_frame":"15",
         "guard_frame":"-9",
@@ -1945,10 +2295,12 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"[스매시 앤드 마하 킥]",
+        "startAt": 442,
+        "endAt": 445
       },
       {
-        "name":"스매시 앤드 마하 킥2",
+        "name":"스매시 앤드 마크 킥2",
         "command":"↓↙←RPRK",
         "start_frame":"15",
         "guard_frame":"-9",
@@ -1956,7 +2308,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지[스매시 앤드 마하 킥]",
+        "startAt": 442,
+        "endAt": 445
       },
       {
         "name":"하체트 킥",
@@ -1967,7 +2321,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 449,
+        "endAt": 451
       },
       {
         "name":"킥오프",
@@ -1978,7 +2334,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 452,
+        "endAt": 454
       }
     ]
   },
@@ -1991,7 +2349,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 456,
+      "endAt": 460
     },
     {
       "name":"길로틴",
@@ -2001,7 +2361,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 461,
+      "endAt": 465
     },
     {
       "name":"그래비티 스로",
@@ -2011,7 +2373,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 467,
+      "endAt": 471
     },
     {
       "name":"니 블래스트",
@@ -2021,7 +2385,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 472,
+      "endAt": 475
     },
     {
       "name":"넥 스로",
@@ -2031,7 +2397,9 @@
       "after_break_frame":"-",
       "damage":"60",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 476,
+      "endAt": 479
     },
     {
       "name":"아나콘다 어쌔신",
@@ -2041,7 +2409,9 @@
       "after_break_frame":"-6",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 480,
+      "endAt": 483
     },
     {
       "name":"체인즈 오브 미저리",
@@ -2051,7 +2421,9 @@
       "after_break_frame":"-6",
       "damage":"45",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 486,
+      "endAt": 490
     },
     {
       "name":"패리",
@@ -2061,17 +2433,21 @@
       "after_break_frame":"-",
       "damage":"-",
       "range":"반격",
-      "extra":"상중단 펀치류 반격"
+      "extra":"상중단 펀치류 반격",
+      "startAt": 91,
+      "endAt": 494
     },
     {
-      "name":"패리~마하 펀치~스네이크 아이즈",
+      "name":"패리~마크 브레이커~스네이크 아이즈",
       "command":"패리 성공 후 RP",
       "start_frame":"13",
       "break_command":"-",
       "after_break_frame":"-",
       "damage":"30",
       "range":"상단",
-      "extra":"RP를 입력하면 추가타"
+      "extra":"RP를 입력하면 추가타[패리~마하 펀치~스네이크 아이즈]",
+      "startAt": 496,
+      "endAt": 499
     },
     {
       "name":"이모탈 페이백",
@@ -2081,7 +2457,9 @@
       "after_break_frame":"-",
       "damage":"36",
       "range":"상단",
-      "extra":"히트 시 스네이크 아이즈를 획득\n가드 대미지"
+      "extra":"히트 시 스네이크 아이즈를 획득\n가드 대미지",
+      "startAt": 500,
+      "endAt": 503
     }
   ]
 }

@@ -10,7 +10,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 2
       },
       {
         "name":"호포참조",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 3,
+        "endAt": 5
       },
       {
         "name":"악촌고",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"31",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 7,
+        "endAt": 9
       },
       {
         "name":"비학장",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 13,
+        "endAt": 16
       },
       {
         "name":"삽추",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"23",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 17,
+        "endAt": 20
       },
       {
         "name":"호참장",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 21,
+        "endAt": 24
       },
       {
         "name":"응룔렬해답",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 상태의 남은 시간을 소비"
+        "extra":"히트 상태의 남은 시간을 소비",
+        "startAt": 25,
+        "endAt": 28
       },
       {
         "name":"신수박면장",
@@ -87,7 +101,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":"히트 상태의 남은 시간을 소비"
+        "extra":"히트 상태의 남은 시간을 소비",
+        "startAt": 29,
+        "endAt": 32
       },
       {
         "name":"신수염장멸파",
@@ -98,7 +114,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 상태의 남은 시간을 소비"
+        "extra":"히트 상태의 남은 시간을 소비",
+        "startAt": 33,
+        "endAt": 36
       },
       {
         "name":"응룡파산고",
@@ -109,7 +127,9 @@
         "counter_frame":"D",
         "range":"중단,중단",
         "damage":"22,26",
-        "extra":"가드 시 운수로(←~입력 시 서 있는 상태로)"
+        "extra":"가드 시 운수로(←~입력 시 서 있는 상태로)",
+        "startAt": 37,
+        "endAt": 40
       },
       {
         "name":"응룡파산고(서 있는 상태)",
@@ -120,7 +140,9 @@
         "counter_frame":"D",
         "range":"중단,중단",
         "damage":"22,26",
-        "extra":""
+        "extra":"",
+        "startAt": 37,
+        "endAt": 40
       }
     ],
     "general":[
@@ -133,7 +155,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 57,
+        "endAt": 59
       },
       {
         "name":"연권충추2",
@@ -144,7 +168,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,21",
-        "extra":""
+        "extra":"",
+        "startAt": 57,
+        "endAt": 59
       },
       {
         "name":"순련권",
@@ -155,7 +181,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,9",
-        "extra":""
+        "extra":"",
+        "startAt": 60,
+        "endAt": 62
       },
       {
         "name":"질화련탄",
@@ -166,7 +194,9 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"5,9,12",
-        "extra":"←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 64,
+        "endAt": 66
       },
       {
         "name":"질화련탄~뒤돈 자세",
@@ -177,7 +207,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"5,9,12",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 64,
+        "endAt": 66
       },
       {
         "name":"연환충퇴",
@@ -188,7 +220,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,19",
-        "extra":""
+        "extra":"",
+        "startAt": 67,
+        "endAt": 70
       },
       {
         "name":"삼련횡1",
@@ -199,7 +233,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 77
       },
       {
         "name":"삼련횡2",
@@ -210,7 +246,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"8,15",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 77
       },
       {
         "name":"삼련횡3",
@@ -221,7 +259,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"8,15,25",
-        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 74,
+        "endAt": 77
       },
       {
         "name":"삼련횡3(캔슬)~뒤돈 자세",
@@ -232,7 +272,9 @@
         "counter_frame":"-2",
         "range":"-",
         "damage":"8,15",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 74,
+        "endAt": 77
       },
       {
         "name":"공작소퇴1",
@@ -243,7 +285,9 @@
         "counter_frame":"0",
         "range":"상단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 78,
+        "endAt": 80
       },
       {
         "name":"공작소퇴2",
@@ -254,7 +298,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"15,10",
-        "extra":""
+        "extra":"",
+        "startAt": 78,
+        "endAt": 80
       },
       {
         "name":"공작소퇴3",
@@ -265,7 +311,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"15,18,23",
-        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로",
+        "startAt": 78,
+        "endAt": 80
       },
       {
         "name":"공작소퇴3(캔슬)~뒤돈 자세",
@@ -276,7 +324,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"15,18",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 78,
+        "endAt": 80
       },
       {
         "name":"공작창습아",
@@ -287,7 +337,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,30",
-        "extra":""
+        "extra":"",
+        "startAt": 84,
+        "endAt": 86
       },
       {
         "name":"선풍지배각1",
@@ -298,7 +350,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"27",
-        "extra":"←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 90,
+        "endAt": 92
       },
       {
         "name":"선풍지배각1~뒤돈 자세",
@@ -309,7 +363,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"27",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 90,
+        "endAt": 93
       },
       {
         "name":"선풍지배각2",
@@ -320,7 +376,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"27,11",
-        "extra":""
+        "extra":"",
+        "startAt": 90,
+        "endAt": 93
       },
       {
         "name":"전진락조",
@@ -331,7 +389,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 94,
+        "endAt": 97
       },
       {
         "name":"괴주",
@@ -342,7 +402,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"20",
-        "extra":"펀치 흘리기 효과 있음(5~9프레임)"
+        "extra":"펀치 흘리기 효과 있음(5~9프레임)",
+        "startAt": 98,
+        "endAt": 100
       },
       {
         "name":"입환악촌파1",
@@ -353,7 +415,9 @@
         "counter_frame":"+10g",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 106
       },
       {
         "name":"입환악촌파2",
@@ -364,7 +428,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 106
       },
       {
         "name":"입환악촌파3",
@@ -375,7 +441,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,10,28",
-        "extra":""
+        "extra":"",
+        "startAt": 102,
+        "endAt": 106
       },
       {
         "name":"용보아참",
@@ -386,7 +454,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"용보돌장",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,17",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"용보승운",
@@ -408,7 +480,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,15",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 110,
+        "endAt": 113
       },
       {
         "name":"이합전퇴",
@@ -419,7 +493,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"19",
-        "extra":"←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 113,
+        "endAt": 117
       },
       {
         "name":"이합전퇴~뒤돈 자세",
@@ -430,7 +506,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"19",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 113,
+        "endAt": 117
       },
       {
         "name":"우각공장파",
@@ -441,7 +519,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"19,24",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 113,
+        "endAt": 117
       },
       {
         "name":"우각조축파",
@@ -452,7 +532,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"19,30",
-        "extra":""
+        "extra":"",
+        "startAt": 118,
+        "endAt": 120
       },
       {
         "name":"우각락축파",
@@ -463,7 +545,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"19,16",
-        "extra":""
+        "extra":"",
+        "startAt": 122,
+        "endAt": 126
       },
       {
         "name":"호포참조",
@@ -474,7 +558,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 128,
+        "endAt": 131
       },
       {
         "name":"운수",
@@ -485,7 +571,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ↓↘→AK\n운수로\n←~입력 시 허보로"
+        "extra":"혹은 ↓↘→AK\n운수로\n←~입력 시 허보로",
+        "startAt": 132,
+        "endAt": 134
       },
       {
         "name":"장파",
@@ -496,7 +584,9 @@
         "counter_frame":"36g",
         "range":"중단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 136,
+        "endAt": 138
       },
       {
         "name":"발경장1",
@@ -507,7 +597,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 140,
+        "endAt": 142
       },
       {
         "name":"발경장2",
@@ -518,7 +610,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,21",
-        "extra":""
+        "extra":"",
+        "startAt": 140,
+        "endAt": 142
       },
       {
         "name":"측척퇴",
@@ -529,7 +623,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 144,
+        "endAt": 147
       },
       {
         "name":"탄퇴",
@@ -540,7 +636,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 148,
+        "endAt": 152
       },
       {
         "name":"천습포락1",
@@ -551,7 +649,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"13,13",
-        "extra":""
+        "extra":"",
+        "startAt": 148,
+        "endAt": 152
       },
       {
         "name":"천습포락2",
@@ -562,7 +662,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,13,23",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 148,
+        "endAt": 152
       },
       {
         "name":"쌍선각",
@@ -573,7 +675,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,23",
-        "extra":""
+        "extra":"",
+        "startAt": 154,
+        "endAt": 157
       },
       {
         "name":"방천선퇴",
@@ -584,7 +688,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 157,
+        "endAt": 160
       },
       {
         "name":"창사락습",
@@ -595,7 +701,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"귀탄격장1",
@@ -606,7 +714,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 175,
+        "endAt": 177
       },
       {
         "name":"귀탄격장2",
@@ -617,7 +727,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"7,22",
-        "extra":""
+        "extra":"",
+        "startAt": 175,
+        "endAt": 177
       },
       {
         "name":"양단파",
@@ -628,7 +740,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 179,
+        "endAt": 181
       },
       {
         "name":"양단단타",
@@ -639,18 +753,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 179,
+        "endAt": 181
       },
       {
         "name":"선진소금타1",
         "command":"↙LP",
         "start_frame":"16",
-        "guard_frame":"-12(-16,-9)",
-        "hit_frame":"+4(0,+7)",
-        "counter_frame":"+4(0,+7)",
+        "guard_frame":"-12",
+        "hit_frame":"+4",
+        "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":"→~입력 시 운수로\n←~입력 시 허보로"
+        "extra":"→~입력 시 운수로\n←~입력 시 허보로",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진소금타1~운수",
@@ -661,7 +779,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"15",
-        "extra":"운수로"
+        "extra":"운수로",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진소금타1~허보",
@@ -672,7 +792,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"15",
-        "extra":"허보로"
+        "extra":"허보로",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진소금타2",
@@ -683,7 +805,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"15,18",
-        "extra":""
+        "extra":"",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진소금타3",
@@ -694,7 +818,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,15,30",
-        "extra":""
+        "extra":"",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진소금타4",
@@ -705,7 +831,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,15,30,20",
-        "extra":""
+        "extra":"",
+        "startAt": 184,
+        "endAt": 188
       },
       {
         "name":"선진단수각",
@@ -716,7 +844,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,23",
-        "extra":""
+        "extra":"",
+        "startAt": 188,
+        "endAt": 191
       },
       {
         "name":"선풍련추1",
@@ -727,7 +857,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 191,
+        "endAt": 195
       },
       {
         "name":"선풍련추2",
@@ -738,7 +870,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"10,10",
-        "extra":"←~입력 시 캔슬"
+        "extra":"←~입력 시 캔슬",
+        "startAt": 191,
+        "endAt": 195
       },
       {
         "name":"선풍련추2(캔슬)",
@@ -749,7 +883,9 @@
         "counter_frame":"-4",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 191,
+        "endAt": 195
       },
       {
         "name":"선풍련추3",
@@ -760,7 +896,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,10,25",
-        "extra":""
+        "extra":"",
+        "startAt": 191,
+        "endAt": 195
       },
       {
         "name":"질채",
@@ -771,7 +909,9 @@
         "counter_frame":"-",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 201,
+        "endAt": 203
       },
       {
         "name":"질채륜각",
@@ -782,7 +922,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"16,16,4",
-        "extra":"정면 지상 히트 시 잡기로"
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 206,
+        "endAt": 210
       },
       {
         "name":"강소퇴",
@@ -793,7 +935,9 @@
         "counter_frame":"T",
         "range":"하단",
         "damage":"23",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 221,
+        "endAt": 215
       },
       {
         "name":"교아락습1",
@@ -804,7 +948,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 218,
+        "endAt": 221
       },
       {
         "name":"교아락습2",
@@ -815,7 +961,9 @@
         "counter_frame":"+14g",
         "range":"하단",
         "damage":"15,15",
-        "extra":""
+        "extra":"",
+        "startAt": 218,
+        "endAt": 221
       },
       {
         "name":"박면장",
@@ -826,7 +974,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 222,
+        "endAt": 224
       },
       {
         "name":"복호련각진1",
@@ -837,7 +987,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 229
       },
       {
         "name":"복호련각진2",
@@ -848,7 +1000,9 @@
         "counter_frame":"+8",
         "range":"하단",
         "damage":"13,6",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 229
       },
       {
         "name":"복호련각진3",
@@ -859,7 +1013,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,10,13",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 229
       },
       {
         "name":"복호련각진4",
@@ -870,7 +1026,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15,10,13,22",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 229
       },
       {
         "name":"흉악쇄",
@@ -881,7 +1039,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 232,
+        "endAt": 234
       },
       {
         "name":"전신환무",
@@ -892,7 +1052,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 236,
+        "endAt": 238
       },
       {
         "name":"측복퇴",
@@ -903,7 +1065,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 241,
+        "endAt": 243
       },
       {
         "name":"악촌고",
@@ -914,7 +1078,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"31",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 245,
+        "endAt": 248
       },
       {
         "name":"허보",
@@ -925,7 +1091,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"허보로\n→~입력 시 운수로"
+        "extra":"허보로\n→~입력 시 운수로",
+        "startAt": 250,
+        "endAt": 251
       },
       {
         "name":"연추창충",
@@ -936,7 +1104,9 @@
         "counter_frame":"+10",
         "range":"중단,상단",
         "damage":"8,20",
-        "extra":""
+        "extra":"",
+        "startAt": 252,
+        "endAt": 255
       },
       {
         "name":"천장",
@@ -947,7 +1117,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"70",
-        "extra":""
+        "extra":"",
+        "startAt": 256,
+        "endAt": 260
       },
       {
         "name":"낙습붕타",
@@ -958,7 +1130,9 @@
         "counter_frame":"+10",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 261,
+        "endAt": 263
       },
       {
         "name":"응상파",
@@ -969,7 +1143,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":"↖LP or ↑LP"
+        "extra":"↖LP or ↑LP",
+        "startAt": 265,
+        "endAt": 267
       },
       {
         "name":"늑단괴수",
@@ -980,7 +1156,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 270
       },
       {
         "name":"열선각",
@@ -991,7 +1169,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16",
-        "extra":"↖LK or ↑LK"
+        "extra":"↖LK or ↑LK",
+        "startAt": 270,
+        "endAt": 273
       },
       {
         "name":"비천각",
@@ -1002,7 +1182,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":"↖RK or ↑RK"
+        "extra":"↖RK or ↑RK",
+        "startAt": 274,
+        "endAt": 276
       },
       {
         "name":"창궁퇴1",
@@ -1013,7 +1195,9 @@
         "counter_frame":"A",
         "range":"중단,상단,상단",
         "damage":"10,10,7",
-        "extra":""
+        "extra":"",
+        "startAt": 277,
+        "endAt": 281
       },
       {
         "name":"창궁퇴2",
@@ -1024,7 +1208,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,10,7,23",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 277,
+        "endAt": 281
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -1035,7 +1221,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 282,
+        "endAt": 285
       },
       {
         "name":"삽추",
@@ -1046,7 +1234,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 286,
+        "endAt": 289
       },
       {
         "name":"분파",
@@ -1057,7 +1247,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"33",
-        "extra":"가드 대미지\n→~입력 시 운수로"
+        "extra":"가드 대미지\n→~입력 시 운수로",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"분파~운수",
@@ -1068,7 +1260,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"33",
-        "extra":"가드 대미지\n운수로"
+        "extra":"가드 대미지\n운수로",
+        "startAt": 290,
+        "endAt": 293
       },
       {
         "name":"연환퇴1",
@@ -1079,7 +1273,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 295,
+        "endAt": 298
       },
       {
         "name":"연환퇴2",
@@ -1090,18 +1286,35 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,21",
-        "extra":"딜레이로 파워 상승"
+        "extra":"딜레이로 파워 상승",
+        "startAt": 295,
+        "endAt": 298
       },
       {
         "name":"염장멸파",
         "command":"→→~AP",
         "start_frame":"23",
-        "guard_frame":"-9(+6)",
+        "guard_frame":"-9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"25(30)",
-        "extra":"홀드하면 파워가 상승하고 가드 대미지 추가"
+        "damage":"25",
+        "extra":"홀드하면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 299,
+        "endAt": 301
+      },
+      {
+        "name":"염장멸파(파워 상승)",
+        "command":"→→~AP",
+        "start_frame":"23",
+        "guard_frame":"+6",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"30",
+        "extra":"",
+        "startAt": 299,
+        "endAt": 301
       },
       {
         "name":"단편",
@@ -1112,7 +1325,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 302,
+        "endAt": 304
       },
       {
         "name":"열축각",
@@ -1123,7 +1338,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 305,
+        "endAt": 307
       },
       {
         "name":"10단 콤보1",
@@ -1134,7 +1351,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보2",
@@ -1145,7 +1364,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,21",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보3",
@@ -1156,7 +1377,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"5,21,5",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보4",
@@ -1167,7 +1390,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"5,21,5,5",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보5",
@@ -1178,7 +1403,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"5,21,5,5,8",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보6",
@@ -1189,7 +1416,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"5,21,5,5,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보7",
@@ -1200,7 +1429,9 @@
         "counter_frame":"-9",
         "range":"하단",
         "damage":"5,21,5,5,8,8,7",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보8",
@@ -1211,7 +1442,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"5,21,5,5,8,8,7,5",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보9",
@@ -1222,7 +1455,9 @@
         "counter_frame":"-9",
         "range":"중단",
         "damage":"5,21,5,5,8,8,7,5,10",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"10단 콤보10",
@@ -1233,7 +1468,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,21,5,5,8,8,7,5,10,20",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 314
       },
       {
         "name":"도발",
@@ -1244,7 +1481,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 315,
+        "endAt": 319
       },
       {
         "name":"기합 모으기",
@@ -1255,7 +1494,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 320,
+        "endAt": 322
       },
       {
         "name":"반장",
@@ -1266,18 +1507,35 @@
         "counter_frame":"+31g",
         "range":"상단",
         "damage":"18",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 370,
+        "endAt": 372
       },
       {
         "name":"전소퇴",
         "command":"횡이동 중 RK",
         "start_frame":"20",
         "guard_frame":"-31",
-        "hit_frame":"-3(T)",
+        "hit_frame":"-3",
         "counter_frame":"T",
         "range":"하단",
-        "damage":"19(20)",
-        "extra":"클린 히트 효과 있음"
+        "damage":"19",
+        "extra":"클린 히트 효과 있음",
+        "startAt": 378,
+        "endAt": 381
+      },
+      {
+        "name":"전소퇴(클린 히트)",
+        "command":"횡이동 중 RK",
+        "start_frame":"20",
+        "guard_frame":"-31",
+        "hit_frame":"T",
+        "counter_frame":"T",
+        "range":"하단",
+        "damage":"20",
+        "extra":"",
+        "startAt": 378,
+        "endAt": 381
       },
       {
         "name":"타개",
@@ -1288,7 +1546,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 383,
+        "endAt": 386
       },
       {
         "name":"기도각",
@@ -1299,7 +1559,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 386,
+        "endAt": 389
       },
       {
         "name":"파안수",
@@ -1310,7 +1572,9 @@
         "counter_frame":"+14",
         "range":"상단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 389,
+        "endAt": 391
       },
       {
         "name":"호참장",
@@ -1321,7 +1585,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"27",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 392,
+        "endAt": 395
       },
       {
         "name":"분파",
@@ -1332,7 +1598,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"33",
-        "extra":"가드 대미지\n→~입력 시 운수로"
+        "extra":"가드 대미지\n→~입력 시 운수로",
+        "startAt": 396,
+        "endAt": 399
       },
       {
         "name":"분파~운수",
@@ -1343,7 +1611,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"33",
-        "extra":"가드 대미지\n운수로"
+        "extra":"가드 대미지\n운수로",
+        "startAt": 396,
+        "endAt": 399
       },
       {
         "name":"배신쌍주",
@@ -1354,7 +1624,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 400,
+        "endAt": 402
       },
       {
         "name":"배신천부퇴",
@@ -1365,18 +1637,35 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 403,
+        "endAt": 404
       },
       {
         "name":"배신강소퇴",
         "command":"상대에게 등을 보일 때 ↓LK",
         "start_frame":"18",
         "guard_frame":"-26",
-        "hit_frame":"-3(T)",
+        "hit_frame":"-3",
         "counter_frame":"T",
         "range":"하단",
-        "damage":"19(20)",
-        "extra":"클린 히트 효과 있음"
+        "damage":"19",
+        "extra":"클린 히트 효과 있음",
+        "startAt": 406,
+        "endAt": 408
+      },
+      {
+        "name":"배신강소퇴(클린 히트)",
+        "command":"상대에게 등을 보일 때 ↓LK",
+        "start_frame":"18",
+        "guard_frame":"-26",
+        "hit_frame":"T",
+        "counter_frame":"T",
+        "range":"하단",
+        "damage":"20",
+        "extra":"",
+        "startAt": 406,
+        "endAt": 409
       },
       {
         "name":"도진각",
@@ -1387,7 +1676,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"24",
-        "extra":""
+        "extra":"",
+        "startAt": 540,
+        "endAt": 543
       }
     ],
     "sit":[
@@ -1400,7 +1691,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"질보련탄2",
@@ -1411,7 +1704,9 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"13,16",
-        "extra":""
+        "extra":"",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"질보련탄3",
@@ -1422,7 +1717,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,16,20",
-        "extra":""
+        "extra":"",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"질보갈복축",
@@ -1433,7 +1730,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,20",
-        "extra":""
+        "extra":"",
+        "startAt": 332,
+        "endAt": 335
       },
       {
         "name":"금강도추",
@@ -1444,7 +1743,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 336,
+        "endAt": 339
       },
       {
         "name":"천궁퇴",
@@ -1455,7 +1756,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 340,
+        "endAt": 343
       },
       {
         "name":"등각",
@@ -1466,7 +1769,9 @@
         "counter_frame":"+29g",
         "range":"중단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 344,
+        "endAt": 346
       },
       {
         "name":"호박장",
@@ -1477,7 +1782,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"20",
-        "extra":"펀치 흘리기 효과 있음(5~8프레임)"
+        "extra":"펀치 흘리기 효과 있음(5~8프레임)",
+        "startAt": 351,
+        "endAt": 354
       },
       {
         "name":"낙습파",
@@ -1488,7 +1795,9 @@
         "counter_frame":"+13g",
         "range":"하단",
         "damage":"19",
-        "extra":""
+        "extra":"",
+        "startAt": 357,
+        "endAt": 359
       },
       {
         "name":"청홍불파",
@@ -1499,7 +1808,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 360,
+        "endAt": 364
       },
       {
         "name":"선각삭안수1",
@@ -1510,7 +1821,9 @@
         "counter_frame":"+3",
         "range":"하단",
         "damage":"13",
-        "extra":"혹은 ↓↘~RK\n상대에게 등을 보이는 상태로"
+        "extra":"혹은 ↓↘~RK\n상대에게 등을 보이는 상태로",
+        "startAt": 366,
+        "endAt": 369
       },
       {
         "name":"선각삭안수2",
@@ -1521,7 +1834,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"13,10",
-        "extra":""
+        "extra":"",
+        "startAt": 366,
+        "endAt": 369
       }
     ],
     "lingering shadow":[
@@ -1534,7 +1849,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↓↘~입력 시 캔슬하고 직접 몸을 숙인 상태로"
+        "extra":"↓↘~입력 시 캔슬하고 직접 몸을 숙인 상태로",
+        "startAt": 410,
+        "endAt": 412
       },
       {
         "name":"칠촌고",
@@ -1545,7 +1862,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"23",
-        "extra":""
+        "extra":"",
+        "startAt": 420,
+        "endAt": 423
       },
       {
         "name":"숭산뢰포",
@@ -1556,7 +1875,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 423,
+        "endAt": 426
       },
       {
         "name":"갈파",
@@ -1567,7 +1888,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 426,
+        "endAt": 429
       }
     ],
     "shifting clouds":[
@@ -1580,7 +1903,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"운수로\n←~입력 시 허보로"
+        "extra":"운수로\n←~입력 시 허보로",
+        "startAt": 429,
+        "endAt": 432
       },
       {
         "name":"폭단파",
@@ -1591,7 +1916,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 432,
+        "endAt": 435
       },
       {
         "name":"천구수",
@@ -1602,7 +1929,9 @@
         "counter_frame":"+25g",
         "range":"상단",
         "damage":"18",
-        "extra":"←~입력 시 상대에게 등을 보이는 상태로"
+        "extra":"←~입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 437,
+        "endAt": 439
       },
       {
         "name":"천구수~뒤돈 자세",
@@ -1613,7 +1942,9 @@
         "counter_frame":"+28g",
         "range":"상단",
         "damage":"18",
-        "extra":"상대에게 등을 보이는 상태로"
+        "extra":"상대에게 등을 보이는 상태로",
+        "startAt": 437,
+        "endAt": 439
       },
       {
         "name":"와문호선각",
@@ -1624,7 +1955,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 442,
+        "endAt": 445
       },
       {
         "name":"금보진",
@@ -1635,7 +1968,9 @@
         "counter_frame":"+14",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 448
       },
       {
         "name":"강쇄습",
@@ -1646,7 +1981,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 449,
+        "endAt": 452
       }
     ],
     "deceptive step":[
@@ -1659,7 +1996,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"허보로\n→~입력 시 운수로"
+        "extra":"허보로\n→~입력 시 운수로",
+        "startAt": 452,
+        "endAt": 455
       },
       {
         "name":"천부추",
@@ -1670,7 +2009,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 456,
+        "endAt": 458
       },
       {
         "name":"비학장",
@@ -1681,7 +2022,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 469,
+        "endAt": 473
       },
       {
         "name":"연비도각",
@@ -1692,7 +2035,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 474,
+        "endAt": 478
       },
       {
         "name":"선퇴강파잠1",
@@ -1703,7 +2048,9 @@
         "counter_frame":"-4",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 478,
+        "endAt": 482
       },
       {
         "name":"선퇴강파잠2",
@@ -1714,7 +2061,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,35",
-        "extra":""
+        "extra":"",
+        "startAt": 478,
+        "endAt": 482
       },
       {
         "name":"도무익습1",
@@ -1725,7 +2074,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":""
+        "extra":"",
+        "startAt": 482,
+        "endAt": 486
       },
       {
         "name":"도무익습2",
@@ -1736,7 +2087,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 482,
+        "endAt": 486
       }
     ]
   },
@@ -1749,7 +2102,9 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 487,
+      "endAt": 490
     },
     {
       "name":"사교장파",
@@ -1759,7 +2114,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 491,
+      "endAt": 495
     },
     {
       "name":"붕격파",
@@ -1769,7 +2126,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 496,
+      "endAt": 500
     },
     {
       "name":"단인공무",
@@ -1779,7 +2138,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 501,
+      "endAt": 504
     },
     {
       "name":"회두포주",
@@ -1789,7 +2150,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 506,
+      "endAt": 510
     },
     {
       "name":"곤륜추",
@@ -1799,7 +2162,9 @@
       "after_break_frame":"-6",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 512,
+      "endAt": 516
     },
     {
       "name":"포락장",
@@ -1809,7 +2174,9 @@
       "after_break_frame":"-6",
       "damage":"45",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 517,
+      "endAt": 521
     },
     {
       "name":"반격기",
@@ -1819,7 +2186,9 @@
       "after_break_frame":"-",
       "damage":"25",
       "range":"반격",
-      "extra":""
+      "extra":"",
+      "startAt": 522,
+      "endAt": 525
     },
     {
       "name":"운수~호락단편",
@@ -1829,7 +2198,9 @@
       "after_break_frame":"-",
       "damage":"21",
       "range":"반격",
-      "extra":"상대의 공격을 2회 받아내면 추가 공격"
+      "extra":"상대의 공격을 2회 받아내면 추가 공격",
+      "startAt": 530,
+      "endAt": 534
     }
   ]
 }

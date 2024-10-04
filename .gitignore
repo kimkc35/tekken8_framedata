@@ -45,4 +45,4 @@ app.*.map.json
 
 SDK/
 pubspec.lock
-changeVersion.bat
+assets/internal/old/

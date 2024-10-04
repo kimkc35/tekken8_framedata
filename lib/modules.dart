@@ -23,13 +23,13 @@ class PlayerInfo {
   PlayerInfo({required this.polarisId, required this.name, required this.onlineId, required this.platform, required this.number});
 
   PlayerInfo.fromJson(Map<String, dynamic> json):
-  polarisId = json['polarisId']!,
-  name = json['name']!,
-  onlineId = json['onlineId']!,
-  platform = json['platform']!,
-  number = json['number']!;
+  polarisId = json['polarisId'],
+  name = json['name'],
+  onlineId = json['onlineId'],
+  platform = json['platform'],
+  number = json['number'];
 
-  Map<String, dynamic> toJson() => {'polarisId' : polarisId, 'name': name, 'onlineId' : onlineId, 'platform' : platform, 'url' : number};
+  Map<String, dynamic> toJson() => {'polarisId' : polarisId, 'name': name, 'onlineId' : onlineId, 'platform' : platform, 'number' : number};
 }
 
 class PlayerDetails{
@@ -68,41 +68,49 @@ class CharacterWinRate{
 
 class Character{
   final String name;
-  final List rageArts;
-  final List<Map<String, String>> extraInitials;
+  final MoveInfo rageArts;
   final List<String> heatSystem;
   final Map<String, bool> types;
   final Map<String, String> typesKo;
-  late final Map<String, List<Moves>> moveList;
-  late final List<Throws> throwList;
+  late final Map<String, List<MoveInfo>> moveInfoList;
+  late final List<ThrowInfo> throwInfoList;
   Map<String, String>? videoList = {};
+  final String videoId;
 
   Character({
     required this.name,
     required this.rageArts,
-    required this.extraInitials,
     required this.heatSystem,
     required this.types,
     required this.typesKo,
+    this.videoId = ""
   });
 
-  Map<String, List<Moves>> getMoveList(){
-    return moveList.map((key, value) => MapEntry(key, value));
+  Map<String, List<MoveInfo>> getMoveList(){
+    return moveInfoList.map((key, value) => MapEntry(key, value));
   }
 
 }
 
-class Moves{
-  final String name, command, startFrame, guardFrame, hitFrame, counterFrame, range, damage, extra;
+class Info{
+  final String name;
+  int startAt;
+  int? endAt;
 
-  Moves({required this.name, required this.command, required this.startFrame, required this.guardFrame, required this.hitFrame, required this.counterFrame, required this.range, required this.damage, required this.extra});
+  Info({required this.name, this.startAt = 0, this.endAt});
+}
+
+class MoveInfo extends Info{
+  final String command, startFrame, guardFrame, hitFrame, counterFrame, range, damage, extra;
+
+  MoveInfo({required super.name, required this.command, required this.startFrame, required this.guardFrame, required this.hitFrame, required this.counterFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt});
 
 }
 
-class Throws{
-  final String name, command, startFrame, breakCommand, afterBreakFrame, range, damage, extra;
+class ThrowInfo extends Info{
+  final String command, startFrame, breakCommand, afterBreakFrame, range, damage, extra;
 
-  Throws({required this.name, required this.command, required this.startFrame, required this.breakCommand, required this.afterBreakFrame, required this.range, required this.damage, required this.extra});
+  ThrowInfo({required super.name, required this.command, required this.startFrame, required this.breakCommand, required this.afterBreakFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt});
 }
 
 class ComparisonHeader{

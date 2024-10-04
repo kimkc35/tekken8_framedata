@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekken8_framedata/playerDetailsScreen.dart';
 
 import 'main.dart';
-import 'modules.dart';
 
 const double buttonSize = 34;
 
-Row actionBuilder({required BuildContext context,String? character, required Function refresh}) {
+Row actionBuilder({required BuildContext context,String? character}) {
 
   return Row(
     children: [
@@ -21,7 +19,7 @@ Row actionBuilder({required BuildContext context,String? character, required Fun
         GestureDetector(
           onTap: () => showDialog<String>(
               context: context,
-              builder: (context) => settingDialog(context, refresh)),
+              builder: (context) => settingDialog(context)),
           child: const Icon(Icons.settings, size: buttonSize),
         )
       ] else if (isPro) ...[
@@ -107,7 +105,7 @@ Widget firstAction(BuildContext context, double buttonSize) {
               children: [
                 GestureDetector(
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PlayerDetailsPage(playerInfo: bookmarkedList[index]))),
-                  child: Text(bookmarkedList[index].polarisId, style: TextStyle(color: themeData.primaryColor)),
+                  child: Text(bookmarkedList[index].polarisId, style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor)),
                 ),
                 Expanded(child: Text(bookmarkedList[index].name, overflow: TextOverflow.visible, textAlign: TextAlign.center,))
               ],
@@ -186,7 +184,9 @@ patchNoteWidget(BuildContext context) {
           content: SingleChildScrollView(
               child: Text.rich(
                 TextSpan(
-                  children: convertPatchNote(patchNoteController.text.toLowerCase())
+                  style: TextStyle(height: 1.4),
+                  children: convertPatchNote(patchNoteController.text.toLowerCase(),
+                  )
                 ),
               )
           ),
@@ -200,37 +200,23 @@ patchNoteWidget(BuildContext context) {
         ));
 }
 
-AlertDialog settingDialog(BuildContext context, Function refresh){
-
-  void saveFontSetting() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('changeFont', changeFont);
-  }
+AlertDialog settingDialog(BuildContext context){
 
   return AlertDialog(title: Text(language == "ko"?"설정" : "Setting", style: TextStyle(fontSize: 20)),
-    content: StatefulBuilder(
-      builder: (context, setState) {
+    content: ValueListenableBuilder(
+      valueListenable: CustomThemeMode.fontChanged,
+      builder: (context, value, child) {
         return SingleChildScrollView(
           child: Row(
             children: [
               Text(language == 'ko' ? "폰트 바꾸기" : "Change Font"),
-              Switch(value: changeFont, onChanged: (value) {
-                changeFont = value;
-                themeData = ThemeData(
-                  buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
-                  textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
-                  fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font,
-                  useMaterial3: false,
-                  primarySwatch: Colors.pink,
-                );
-                saveFontSetting();
-                refresh();
-                setState((){});
+              Switch(value: value, onChanged: (value) {
+                CustomThemeMode.changeFont();
               })
             ],
           ),
         );
-      }
+      },
     ),
     actions: [
       TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))

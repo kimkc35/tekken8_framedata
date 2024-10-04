@@ -1,3 +1,6 @@
+// import 'dart:developer';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +13,9 @@ import 'package:tekken8_framedata/searchScreen.dart';
 import 'actionBuilderWidget.dart';
 import 'ad_manager.dart';
 import 'character_variables.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
+// import 'package:html/parser.dart' as parser;
+// import 'package:html/dom.dart' as dom;
 import 'dart:convert';
 import 'characterWidget.dart';
 import 'firebase_options.dart' ;
@@ -55,109 +60,73 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
-  refresh(){
-    setState(() {
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
-      theme: themeData,
-      home: Main(refresh: refresh,),
+    CustomThemeMode.instance;
+    return ValueListenableBuilder(
+      valueListenable: CustomThemeMode.currentThemeData,
+      builder: (context, value, child) {
+        return MaterialApp(
+          navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
+          theme: value,
+          home: Main(),
+        );
+      },
     );
   }
 }
 
-class GetContents { // 리스트 구성
+class CustomThemeMode {
+  static final CustomThemeMode instance = CustomThemeMode._internal();
+  static ValueNotifier<bool> fontChanged = ValueNotifier(true);
+  static ValueNotifier<ThemeData> currentThemeData = ValueNotifier(CustomThemeData.oneMobile);
+  factory CustomThemeMode() => instance;
 
-  Character character;
+  static void initSetting() {
+    currentThemeData.value = fontChanged.value ? CustomThemeData.oneMobile : CustomThemeData.tenada;
+  }
 
-  GetContents(this.character);
-
-    Future<List> getVideoUrlList() async {
-
-    String docsUrl = kDebugMode? "https://docs.google.com/document/d/1vHR19LZT8yKFPYpkfESVukUhxYlxO3ySdEpjzJsh5oo/edit?usp=sharing" : "https://docs.google.com/document/d/1fnSCB7ijrcPDarWyLBMf2S19NHGjwiMxu-FF49mMLR8/edit?usp=sharing";
-
-    final response = await http.get(Uri.parse(docsUrl));
-
-    RegExp regExp = RegExp(r'character:\\n(.*?)(end)'.replaceAll("character", character.name));
-
-    Match? match = regExp.firstMatch(response.body);
-
-    if(match != null){
-      RegExp linkRegExp = RegExp(r'https://youtu\.be/.*?\\n');
-      Iterable<Match> linkMatches = linkRegExp.allMatches(match.group(1)!);
-
-      List<String> videoUrlList = [];
-      for (Match linkMatch in linkMatches) {
-        videoUrlList.add(linkMatch.group(0)!.replaceAll("\\n", ""));
-      }
-
-      return videoUrlList;
+  static void changeFont() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    switch (fontChanged.value) {
+      case false:
+        fontChanged.value = true;
+        currentThemeData.value = CustomThemeData.oneMobile;
+        preferences.setBool("changeFont", fontChanged.value);
+        break;
+      case true:
+        fontChanged.value = false;
+        currentThemeData.value = CustomThemeData.tenada;
+        preferences.setBool("changeFont", fontChanged.value);
+        break;
+      default:
     }
-
-    // debugPrint("${character.name}에서 없음");
-    return [];
   }
 
-  Future<void> makeCharacterVideoUrlList() async {
-    List urlList = await GetContents(character).getVideoUrlList();
-    Map<String, String> videoList = {};
-
-    // 비디오 제목을 가져오는 작업을 비동기로 처리하여 병렬로 실행
-    List<Future<void>> futures = urlList.map((url) async {
-      String embedUrl = "https://www.youtube.com/oembed?url=$url&format=json";
-      try {
-        final response = await http.get(Uri.parse(embedUrl));
-        final data = json.decode(response.body);
-        String currentTitle = data['title'] ?? "제목 오류";
-        if (currentTitle != "제목 오류") {
-          videoList[currentTitle] = url;
-        } else {
-          // debugPrint("$url에서 제목 오류");
-        }
-      } catch (e) {
-        debugPrint("$url 에서 비디오 제목 가져오기 실패: $e");
-      }
-    }).toList();
-    // 모든 비디오 제목 가져오기 작업이 완료될 때까지 기다림
-    await Future.wait(futures);
-    //디버그
-    // assert(() {
-    //   for(var type in character.types.keys){
-    //     debugPrint("${character.name}의 $type에서 : ");
-    //     for(var move in character.moveList.firstWhere((element) => element["type"] == type)["contents"]){
-    //       String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-    //       if(videoList[modifiedMoveName] == null){
-    //         debugPrint("$modifiedMoveName 영상이 없음");
-    //       }
-    //     }
-    //   }
-    //   debugPrint("${character.name}의 잡기 리스트 에서 : ");
-    //   for(var move in character.throwList){
-    //     String modifiedMoveName = move[0].replaceAll(RegExp(r'\d{1,2}$'), '');
-    //     if(videoList[modifiedMoveName] == null){
-    //       debugPrint("$modifiedMoveName 영상이 없음");
-    //     }
-    //   }
-    //   debugPrint("${character.name}끝.");
-    //   return true;
-    // }());
-    character.videoList = videoList;
-  }
+  CustomThemeMode._internal();
 }
 
-ThemeData themeData = ThemeData(
-  buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
-  textTheme: TextTheme(titleLarge: TextStyle(fontWeight: FontWeight.w900)),
-  fontFamily: changeFont ? Font.oneMobile.font : Font.tenada.font,
-  useMaterial3: false,
-  primarySwatch: Colors.pink,
-);
+class CustomThemeData {
+  static final ThemeData oneMobile = ThemeData(
+    buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
+    fontFamily: Font.oneMobile.font,
+    useMaterial3: false,
+    primarySwatch: Colors.pink,
+  );
+
+  static final ThemeData tenada = ThemeData(
+    buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
+    fontFamily: Font.tenada.font,
+    useMaterial3: false,
+    primarySwatch: Colors.pink,
+  );
+}
 
 Future<void> initializeSetting() async{
+
+  for(String url in characterImageUrls.values){
+    CachedNetworkImageProvider(url);
+  }
 
   if(!kIsWeb){
     if(isPro){
@@ -168,40 +137,56 @@ Future<void> initializeSetting() async{
   }
 
   for(var character in characterList){
-    if(isPro) await Hive.openBox(character.name);
-    final Map<String, List<Moves>> moves = {};
-    final List<Throws> throws = [];
+
+    if(isPro && !kIsWeb) await Hive.openBox(character.name);
+    final Map<String, List<MoveInfo>> moveInfoList = {};
+    final List<ThrowInfo> throwInfoList = [];
     var characterJson = jsonDecode(await rootBundle.loadString("assets/json/${character.name}.json"));
 
     for(var type in character.types.keys){
-      moves.addAll({
+      moveInfoList.addAll({
         type : []
       });
-      for(var move in characterJson['moves'][type]){
-        moves[type]?.add(
-            Moves(name: move['name'], command: move['command'], startFrame: move['start_frame'], guardFrame: move["guard_frame"], hitFrame: move['hit_frame'], counterFrame: move['counter_frame'], range: move['range'], damage: move['damage'], extra: move['extra'])
-        );
+      for(var moveJson in characterJson['moves'][type]){
+        try {
+          moveInfoList[type]!.add(
+              MoveInfo(name: moveJson['name'], command: moveJson['command'], startFrame: moveJson['start_frame'], guardFrame: moveJson["guard_frame"], hitFrame: moveJson['hit_frame'], counterFrame: moveJson['counter_frame'], range: moveJson['range'], damage: moveJson['damage'], extra: moveJson['extra'], startAt: moveJson['startAt'] ?? 0, endAt: moveJson['endAt'])
+          );
+        } catch(e) {
+          debugPrint("$moveJson에서 오류, $e");
+        }
       }
     }
 
-    for(var moveThrow in characterJson['throws']){
-      throws.add(
-        Throws(name: moveThrow['name'], command: moveThrow['command'], startFrame: moveThrow['start_frame'], breakCommand: moveThrow['break_command'], afterBreakFrame: moveThrow['after_break_frame'], range: moveThrow['range'], damage: moveThrow['damage'], extra: moveThrow['extra'])
+    for(var throwJson in characterJson['throws']){
+      throwInfoList.add(
+        ThrowInfo(name: throwJson['name'], command: throwJson['command'], startFrame: throwJson['start_frame'], breakCommand: throwJson['break_command'], afterBreakFrame: throwJson['after_break_frame'], range: throwJson['range'], damage: throwJson['damage'], extra: throwJson['extra'], startAt: throwJson['startAt'] ?? 0, endAt: throwJson['endAt'])
       );
     }
 
-    character.moveList = moves;
-    character.throwList = throws;
+    character.moveInfoList = moveInfoList;
+    character.throwInfoList = throwInfoList;
   }
   characterList.add(empty);
 
   //초기화
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  changeFont = prefs.getBool('changeFont') ?? false;
+  CustomThemeMode.fontChanged.value = prefs.getBool("changeFont") ?? false;
+  CustomThemeMode.initSetting();
   language = prefs.getString('language') ?? "ko";
-  final list = prefs.getStringList('bookmarkedList');
-  if(list != null){
-    for(String string in list) {
+  final initialBookmarkedList = prefs.getStringList('bookmarkedList');
+
+  if (initialBookmarkedList != null) {
+    for(int i = 0; i < initialBookmarkedList.length; i++){
+      if(initialBookmarkedList[i].contains("url")){
+        initialBookmarkedList[i] = initialBookmarkedList[i].replaceAll("url", "number");
+        prefs.setStringList('bookmarkedList', initialBookmarkedList);
+      }
+    }
+  }
+
+  if(initialBookmarkedList != null){
+    for(String string in initialBookmarkedList) {
       bookmarkedList.add(PlayerInfo.fromJson(jsonDecode(string)));
     }
   }
@@ -209,14 +194,11 @@ Future<void> initializeSetting() async{
   patchNotes = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
 }
 
-bool changeFont = false;
-
 late TabController tabController;
 
 class Main extends StatefulWidget {
-  final Function refresh;
 
-  const Main({super.key, required this.refresh});
+  const Main({super.key});
 
   @override
   State<Main> createState() => _MainState();
@@ -268,10 +250,8 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
     SearchPage()
   ];
 
-
   @override
   Widget build(BuildContext context) {
-    debugPrint("메인 빌드됨.");
     return MyUpgradeAlert(
       child: Scaffold(
         drawer: DrawerWidget(tabController: tabController,),
@@ -290,7 +270,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
           title: Text("FRAMEDATA"),
           centerTitle: true,
             actions: [
-              actionBuilder(context: context, refresh: widget.refresh)
+              actionBuilder(context: context)
             ],
             backgroundColor: Colors.black,
           ),
@@ -334,7 +314,6 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
             style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
-              GetContents(widget.character1).makeCharacterVideoUrlList();
               Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character1,)));
             },
             child: Stack(
@@ -353,7 +332,6 @@ class _CharacterButtonState extends State<CharacterButton> {
               style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
               onPressed: (){
               widget.character2 != empty ?{
-              GetContents(widget.character2).makeCharacterVideoUrlList(),
               Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
               }
               : ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
