@@ -285,7 +285,7 @@ Character panda = Character(
 Character paul = Character(
   name: "paul",
   heatSystem: ["파워가 상승한 붕권", "파워가 상승한 홀드기 사용 가능"],
-  rageArts: MoveInfo(name: "빅뱅폭권", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "빅뱅폭권", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 29, endAt: 42),
   types: {"heat" : false, "general" : false, "sit" : false, "cormorant step" : false, "sway" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "cormorant step" : "잠복 스텝", "sway" : "부초(스웨이)"
