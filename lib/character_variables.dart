@@ -318,7 +318,7 @@ Character reina = Character(
 Character shaheen = Character(
   name: "shaheen",
   heatSystem: ["손날을 사용하는 일부 기술이 히트했을 때 히트 상태의 남은 시간 회복", "알 굴 마스터 사용 가능"],
-  rageArts: MoveInfo(name: "나즘 알샤말", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "나즘 알샤말", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 35, endAt: 53),
   types: {"heat" : false, "general" : false, "sit" : false, "stealth step" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "stealth step" : "스텔스 스텝"
