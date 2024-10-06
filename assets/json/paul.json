@@ -3,7 +3,7 @@
     "heat": [
       {
         "name": "히트 버스트",
-        "command": "RP+LK",
+        "command": "히트 발동 가능 상태에서 RP+LK",
         "start_frame": "16",
         "guard_frame": "+1",
         "hit_frame": "+2",
@@ -68,7 +68,7 @@
       },
       {
         "name": "붕권(히트 상태)",
-        "command": "↓↘→RP",
+        "command": "히트 상태에서 ↓↘→RP",
         "start_frame": "13",
         "guard_frame": "-13",
         "hit_frame": "+17g",
@@ -239,7 +239,7 @@
       },
       {
         "name": "반보붕권(히트 상태)",
-        "command": "AP",
+        "command": "히트 상태에서 AP",
         "start_frame": "28~45",
         "guard_frame": "-13",
         "hit_frame": "D",
@@ -252,7 +252,7 @@
       },
       {
         "name": "반보붕권(홀드)",
-        "command": "AP홀드",
+        "command": "AP 홀드",
         "start_frame": "46~70",
         "guard_frame": "0",
         "hit_frame": "D",
@@ -265,7 +265,7 @@
       },
       {
         "name": "반보붕권(홀드, 히트 상태)",
-        "command": "AP홀드",
+        "command": "AP 홀드",
         "start_frame": "46~70",
         "guard_frame": "0",
         "hit_frame": "D",
@@ -278,26 +278,26 @@
       },
       {
         "name": "만성용왕권",
-        "command": "AP홀드(최대)",
+        "command": "AP 홀드(최대)",
         "start_frame": "71",
         "guard_frame": "-",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "가불",
-        "damage": 40,
+        "damage": "40",
         "extra": "히트 상태 중에는 대미지 증가(히트 상태의 남은 시간을 소비)\n→~입력 시 캔슬하고 잠복 스텝으로\n←~입력 시 캔슬하고 스웨이로",
         "startAt": 64,
         "endAt": 67
       },
       {
         "name": "만성용왕권(히트 상태)",
-        "command": "AP홀드(최대)",
+        "command": "히트 상태에서 AP 홀드(최대)",
         "start_frame": "71",
         "guard_frame": "-",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "가불",
-        "damage": 50,
+        "damage": "50",
         "extra": "히트 상태의 남은 시간을 소비\n→~입력 시 캔슬하고 잠복 스텝으로\n←~입력 시 캔슬하고 스웨이로",
         "startAt": 64,
         "endAt": 67
@@ -564,7 +564,7 @@
       },
       {
         "name": "기와깨기 붕권(히트 상태)",
-        "command": "↓LPRP",
+        "command": "히트 상태에서 ↓LPRP",
         "start_frame": "14",
         "guard_frame": "-13",
         "hit_frame": "D",
@@ -632,10 +632,10 @@
         "command": "↓RK",
         "start_frame": "15",
         "guard_frame": "-31",
-        "hit_frame": -17,
+        "hit_frame": "-17",
         "counter_frame": "D",
         "range": "하단",
-        "damage": 8,
+        "damage": "8",
         "extra": "클린 히트 효과[벽력장]",
         "startAt": 140,
         "endAt": 143
@@ -648,7 +648,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "하단",
-        "damage": 9,
+        "damage": "9",
         "extra": "[벽력장]",
         "startAt": 140,
         "endAt": 143
@@ -674,7 +674,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": "9,23,26(30)",
+        "damage": "9,23,26",
         "extra": "저스트 입력 시 대미지 증가[벽력장]",
         "startAt": 144,
         "endAt": 147
@@ -785,7 +785,7 @@
       },
       {
         "name": "개풍(홀드)",
-        "command": "←RPLP홀드",
+        "command": "←RPLP 홀드",
         "start_frame": "18(60)",
         "guard_frame": "+8",
         "hit_frame": "D",
@@ -798,7 +798,7 @@
       },
       {
         "name": "개풍(홀드, 히트 상태)",
-        "command": "←RPLP홀드",
+        "command": "←RPLP 홀드",
         "start_frame": "18(60)",
         "guard_frame": "+12",
         "hit_frame": "A",
@@ -1064,7 +1064,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 21,
+        "damage": "21",
         "extra": "정면 히트 시 잡기 이행[어썸]",
         "startAt": 250,
         "endAt": 252
@@ -1476,7 +1476,7 @@
     "sit": [
       {
         "name": "좌우룡1",
-        "command": "일어서며 LP",
+        "command": "일어나며 LP",
         "start_frame": "15",
         "guard_frame": "-10",
         "hit_frame": "-7",
@@ -1489,7 +1489,7 @@
       },
       {
         "name": "좌우룡2",
-        "command": "일어서며 LPRP",
+        "command": "일어나며 LPRP",
         "start_frame": "15",
         "guard_frame": "-11",
         "hit_frame": "+2",
@@ -1502,7 +1502,7 @@
       },
       {
         "name": "좌우룡2~스웨이",
-        "command": "일어서며 LPRP←~",
+        "command": "일어나며 LPRP←~",
         "start_frame": "15",
         "guard_frame": "+1",
         "hit_frame": "+14",
@@ -1515,7 +1515,7 @@
       },
       {
         "name": "진월",
-        "command": "일어서며 RP",
+        "command": "일어나며 RP",
         "start_frame": "15",
         "guard_frame": "-14",
         "hit_frame": "A",
@@ -1528,7 +1528,7 @@
       },
       {
         "name": "사응1",
-        "command": "일어서며 LK",
+        "command": "일어나며 LK",
         "start_frame": "13",
         "guard_frame": "-8",
         "hit_frame": "+6",
@@ -1541,7 +1541,7 @@
       },
       {
         "name": "사응2",
-        "command": "일어서며 LKRP",
+        "command": "일어나며 LKRP",
         "start_frame": "13",
         "guard_frame": "-11",
         "hit_frame": "D",
@@ -1554,7 +1554,7 @@
       },
       {
         "name": "토 스매시",
-        "command": "일어서며 RK",
+        "command": "일어나며 RK",
         "start_frame": "11",
         "guard_frame": "-6",
         "hit_frame": "+5",
@@ -1627,7 +1627,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 30,
+        "damage": "30",
         "extra": "히트 발동기\n클린 히트 효과\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)[뚜어]",
         "startAt": 323,
         "endAt": 327
@@ -1640,20 +1640,20 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 45,
+        "damage": "45",
         "extra": "히트 발동기\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)[뚜어]",
         "startAt": 323,
         "endAt": 327
       },
       {
         "name": "붕권(히트 상태)",
-        "command": "↓↘→RP",
+        "command": "히트 상태에서 ↓↘→RP",
         "start_frame": "13",
         "guard_frame": "-13",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 34,
+        "damage": "34",
         "extra": "클린 히트 효과\n히트 상태의 남은 시간을 소비[뚜어]",
         "startAt": 323,
         "endAt": 327
@@ -1666,7 +1666,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 51,
+        "damage": "51",
         "extra": "히트 상태의 남은 시간을 소비[뚜어]",
         "startAt": 323,
         "endAt": 327
@@ -1679,7 +1679,7 @@
         "hit_frame": "0",
         "counter_frame": "D",
         "range": "하단",
-        "damage": 17,
+        "damage": "17",
         "extra": "클린 히트 효과",
         "startAt": 327,
         "endAt": 329
@@ -1692,7 +1692,7 @@
         "hit_frame": "0",
         "counter_frame": "D",
         "range": "하단",
-        "damage": 18,
+        "damage": "18",
         "extra": "",
         "startAt": 327,
         "endAt": 329
@@ -1837,7 +1837,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 21,
+        "damage": "21",
         "extra": "히트 발동기\n클린 히트 효과",
         "startAt": 361,
         "endAt": 364
@@ -1850,7 +1850,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": 27,
+        "damage": "27",
         "extra": "히트 발동기",
         "startAt": 361,
         "endAt": 364
@@ -1944,7 +1944,7 @@
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 383,
       "endAt": 386
     },
@@ -1956,7 +1956,7 @@
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 387,
       "endAt": 390
     },

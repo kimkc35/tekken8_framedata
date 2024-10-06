@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -486,7 +486,7 @@
       },
       {
         "name":"귀신 목 떨구기(2회전)",
-        "command":"→LK홀드",
+        "command":"→LK 홀드",
         "start_frame":"52",
         "guard_frame":"+6",
         "hit_frame":"D",
@@ -499,7 +499,7 @@
       },
       {
         "name":"귀신 목 떨구기(3회전)",
-        "command":"→LK홀드",
+        "command":"→LK 홀드",
         "start_frame":"70",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1346,7 +1346,7 @@
     "sit":[
       {
         "name":"시케이",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"14",
         "guard_frame":"-7",
         "hit_frame":"+4",
@@ -1359,7 +1359,7 @@
       },
       {
         "name":"시케이타이",
-        "command":"일어서며 LPRK",
+        "command":"일어나며 LPRK",
         "start_frame":"14",
         "guard_frame":"-4",
         "hit_frame":"D",
@@ -1372,7 +1372,7 @@
       },
       {
         "name":"요시노",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
@@ -1385,7 +1385,7 @@
       },
       {
         "name":"호박",
-        "command":"일어서며 RPAP",
+        "command":"일어나며 RPAP",
         "start_frame":"13",
         "guard_frame":"-5",
         "hit_frame":"+17g",
@@ -1398,7 +1398,7 @@
       },
       {
         "name":"향월",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"18",
         "guard_frame":"-16",
         "hit_frame":"A",
@@ -1411,7 +1411,7 @@
       },
       {
         "name":"토 스매시",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-3",
         "hit_frame":"+8",
@@ -1424,7 +1424,7 @@
       },
       {
         "name":"발 흘림",
-        "command":"일어서며 AP",
+        "command":"일어나며 AP",
         "start_frame":"21",
         "guard_frame":"-2",
         "hit_frame":"+13",
@@ -1489,7 +1489,7 @@
       },
       {
         "name":"10단 콤보(1)1",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
@@ -1502,7 +1502,7 @@
       },
       {
         "name":"10단 콤보(1)2",
-        "command":"일어서며 RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"13",
         "guard_frame":"-2",
         "hit_frame":"+9",
@@ -1515,7 +1515,7 @@
       },
       {
         "name":"10단 콤보(1)3",
-        "command":"일어서며 RPLPLP",
+        "command":"일어나며 RPLPLP",
         "start_frame":"13",
         "guard_frame":"-21",
         "hit_frame":"-10",
@@ -1528,7 +1528,7 @@
       },
       {
         "name":"10단 콤보(1)4",
-        "command":"일어서며 RPLPLPLP",
+        "command":"일어나며 RPLPLPLP",
         "start_frame":"13",
         "guard_frame":"-17",
         "hit_frame":"-6",
@@ -1541,7 +1541,7 @@
       },
       {
         "name":"10단 콤보(1)5",
-        "command":"일어서며 RPLPLPLPRP",
+        "command":"일어나며 RPLPLPLPRP",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"0",
@@ -1554,7 +1554,7 @@
       },
       {
         "name":"10단 콤보(1)6",
-        "command":"일어서며 RPLPLPLPRPLP",
+        "command":"일어나며 RPLPLPLPRPLP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -1567,7 +1567,7 @@
       },
       {
         "name":"10단 콤보(1)7",
-        "command":"일어서며 RPLPLPLPRPLPRK",
+        "command":"일어나며 RPLPLPLPRPLPRK",
         "start_frame":"13",
         "guard_frame":"-17",
         "hit_frame":"-6",
@@ -1580,7 +1580,7 @@
       },
       {
         "name":"10단 콤보(1)8",
-        "command":"일어서며 RPLPLPLPRPLPRKLK",
+        "command":"일어나며 RPLPLPLPRPLPRKLK",
         "start_frame":"13",
         "guard_frame":"-19",
         "hit_frame":"-3",
@@ -1593,7 +1593,7 @@
       },
       {
         "name":"10단 콤보(1)9",
-        "command":"일어서며 RPLPLPLPRPLPRKLKAK",
+        "command":"일어나며 RPLPLPLPRPLPRKLKAK",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"D",
@@ -1606,7 +1606,7 @@
       },
       {
         "name":"10단 콤보(2)1",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
@@ -1619,7 +1619,7 @@
       },
       {
         "name":"10단 콤보(2)2",
-        "command":"일어서며 RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"13",
         "guard_frame":"-2",
         "hit_frame":"+9",
@@ -1632,7 +1632,7 @@
       },
       {
         "name":"10단 콤보(2)3",
-        "command":"일어서며 RPLPLP",
+        "command":"일어나며 RPLPLP",
         "start_frame":"13",
         "guard_frame":"-21",
         "hit_frame":"-10",
@@ -1645,7 +1645,7 @@
       },
       {
         "name":"10단 콤보(2)4",
-        "command":"일어서며 RPLPLPLP",
+        "command":"일어나며 RPLPLPLP",
         "start_frame":"13",
         "guard_frame":"-17",
         "hit_frame":"-6",
@@ -1658,7 +1658,7 @@
       },
       {
         "name":"10단 콤보(2)5",
-        "command":"일어서며 RPLPLPLPRP",
+        "command":"일어나며 RPLPLPLPRP",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"0",
@@ -1671,7 +1671,7 @@
       },
       {
         "name":"10단 콤보(2)6",
-        "command":"일어서며 RPLPLPLPRPLP+RK",
+        "command":"일어나며 RPLPLPLPRPLP+RK",
         "start_frame":"13",
         "guard_frame":"-19",
         "hit_frame":"-19",
@@ -1684,7 +1684,7 @@
       },
       {
         "name":"10단 콤보(2)7",
-        "command":"일어서며 RPLPLPLPRPLP+RKLP",
+        "command":"일어나며 RPLPLPLPRPLP+RKLP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -1697,7 +1697,7 @@
       },
       {
         "name":"10단 콤보(2)8",
-        "command":"일어서며 RPLPLPLPRPLP+RKLPAK",
+        "command":"일어나며 RPLPLPLPRPLP+RKLPAK",
         "start_frame":"13",
         "guard_frame":"-36(-43)",
         "hit_frame":"A",
@@ -1710,7 +1710,7 @@
       },
       {
         "name":"10단 콤보(3)1",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
@@ -1723,7 +1723,7 @@
       },
       {
         "name":"10단 콤보(3)2",
-        "command":"일어서며 RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"13",
         "guard_frame":"-2",
         "hit_frame":"+9",
@@ -1736,7 +1736,7 @@
       },
       {
         "name":"10단 콤보(3)3",
-        "command":"일어서며 RPLPLP",
+        "command":"일어나며 RPLPLP",
         "start_frame":"13",
         "guard_frame":"-21",
         "hit_frame":"-10",
@@ -1749,7 +1749,7 @@
       },
       {
         "name":"10단 콤보(3)4",
-        "command":"일어서며 RPLPLPLK",
+        "command":"일어나며 RPLPLPLK",
         "start_frame":"13",
         "guard_frame":"-20",
         "hit_frame":"D",
@@ -1812,7 +1812,7 @@
       "after_break_frame":"-2",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 460,
       "endAt": 465
     },
@@ -1824,7 +1824,7 @@
       "after_break_frame":"-2",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 466,
       "endAt": 470
     },

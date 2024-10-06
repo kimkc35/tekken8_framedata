@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -28,7 +28,7 @@
         "endAt": 7
       },
       {
-        "name":"피스키퍼",
+        "name":"피스키퍼~오른 자세",
         "command":"→→~RK",
         "start_frame":"17",
         "guard_frame":"-7",
@@ -36,12 +36,12 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"22",
-        "extra":"오른 자세중에도 사용 가능\n오른 자세로 이행(히트, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra":"오른 자세중에도 사용 가능\n오른 자세로(히트, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 12,
         "endAt": 15
       },
       {
-        "name":"블랙 카이트",
+        "name":"블랙 카이트~오른 자세",
         "command":"오른 자세 도중↘LK",
         "start_frame":"22",
         "guard_frame":"+1",
@@ -49,12 +49,12 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n호밍기\n가드 대미지\n오른 자세로 이행(히트, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra":"히트 발동기\n호밍기\n가드 대미지\n오른 자세로(히트, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 16,
         "endAt": 20
       },
       {
-        "name":"플라밍고 로켓",
+        "name":"플라밍고 로켓~왼 플라밍고",
         "command":"왼 플라밍고 도중→LK",
         "start_frame":"19",
         "guard_frame":"+4",
@@ -80,7 +80,7 @@
         "endAt": 29
       },
       {
-        "name":"트리니티 클레이모어",
+        "name":"트리니티 클레이모어~오른 플라밍고",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"17",
         "guard_frame":"+11g",
@@ -275,7 +275,7 @@
         "endAt": 85
       },
       {
-        "name":"시즈 모르타르 콤보3",
+        "name":"시즈 모르타르 콤보3~오른 플라밍고",
         "command":"LKLKRP",
         "start_frame":"14",
         "guard_frame":"-11",
@@ -392,7 +392,7 @@
         "endAt": 110
       },
       {
-        "name":"라이트 킥스~체인소 힐",
+        "name":"라이트 킥스~체인소 힐~오른 자세",
         "command":"RKRKLK",
         "start_frame":"11",
         "guard_frame":"-14",
@@ -405,7 +405,7 @@
         "endAt": 110
       },
       {
-        "name":"라이트 킥스~랩터 콤보1",
+        "name":"라이트 킥스~랩터 콤보1~오른 자세",
         "command":"RKRKRK",
         "start_frame":"11",
         "guard_frame":"-2",
@@ -470,7 +470,7 @@
         "endAt": 124
       },
       {
-        "name":"러스티 나이프",
+        "name":"러스티 나이프~오른 자세",
         "command":"→RP",
         "start_frame":"16",
         "guard_frame":"-2",
@@ -483,7 +483,7 @@
         "endAt": 127
       },
       {
-        "name":"레프트 플라밍고 페인트",
+        "name":"레프트 플라밍고 페인트~왼 플라밍고",
         "command":"→LK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -509,7 +509,7 @@
         "endAt": 135
       },
       {
-        "name":"라이트 훅 킥",
+        "name":"라이트 훅 킥~오른 플라밍고",
         "command":"→RK",
         "start_frame":"18",
         "guard_frame":"+7",
@@ -522,7 +522,7 @@
         "endAt": 138
       },
       {
-        "name":"라이트 플라밍고 페인트",
+        "name":"라이트 플라밍고 페인트~오른 플라밍고",
         "command":"→NRK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -561,7 +561,7 @@
         "endAt": 147
       },
       {
-        "name":"레프트 어퍼컷 & 미들 킥",
+        "name":"레프트 어퍼컷 & 미들 킥~왼 플라밍고",
         "command":"↘LPLK",
         "start_frame":"13",
         "guard_frame":"-2",
@@ -613,7 +613,7 @@
         "endAt": 158
       },
       {
-        "name":"미들 클레이모어",
+        "name":"미들 클레이모어~오른 자세",
         "command":"↘RK",
         "start_frame":"16",
         "guard_frame":"-8",
@@ -782,7 +782,7 @@
         "endAt": 200
       },
       {
-        "name":"노즈 블리더",
+        "name":"노즈 블리더~오른 자세",
         "command":"←RK",
         "start_frame":"13",
         "guard_frame":"-10",
@@ -821,7 +821,7 @@
         "endAt": 210
       },
       {
-        "name":"점프 킥",
+        "name":"점프 킥~왼 플라밍고",
         "command":"↑LK",
         "start_frame":"20",
         "guard_frame":"+5",
@@ -834,7 +834,7 @@
         "endAt": 214
       },
       {
-        "name":"스콜피온 사이드 킥",
+        "name":"스콜피온 사이드 킥~오른 플라밍고",
         "command":"↑RK",
         "start_frame":"16",
         "guard_frame":"+3",
@@ -886,7 +886,7 @@
         "endAt": 230
       },
       {
-        "name":"헌팅 호크2",
+        "name":"헌팅 호크2~오른 플라밍고",
         "command":"↗LK 히트 혹은 가드 시RK",
         "start_frame":"28",
         "guard_frame":"+2",
@@ -894,7 +894,7 @@
         "counter_frame":"+13g",
         "range":"중단",
         "damage":"11,12",
-        "extra":"오른 플라밍고로 이행",
+        "extra":"오른 플라밍고로",
         "startAt": 226,
         "endAt": 230
       },
@@ -912,7 +912,7 @@
         "endAt": 230
       },
       {
-        "name":"에어 레이드1",
+        "name":"에어 레이드1~오른 플라밍고",
         "command":"↗RK",
         "start_frame":"22",
         "guard_frame":"-2",
@@ -925,7 +925,7 @@
         "endAt": 233
       },
       {
-        "name":"에어 레이드2",
+        "name":"에어 레이드2~오른 플라밍고",
         "command":"↗RKRK",
         "start_frame":"22",
         "guard_frame":"0",
@@ -938,7 +938,7 @@
         "endAt": 233
       },
       {
-        "name":"에어 레이드3",
+        "name":"에어 레이드3~오른 플라밍고",
         "command":"↗RKRKRK",
         "start_frame":"22",
         "guard_frame":"+1",
@@ -977,7 +977,7 @@
         "endAt": 236
       },
       {
-        "name":"플래싱 트라이던트2",
+        "name":"플래싱 트라이던트2~오른 자세",
         "command":"↗AKRK",
         "start_frame":"14",
         "guard_frame":"-10",
@@ -1003,7 +1003,7 @@
         "endAt": 240
       },
       {
-        "name":"스피닝 액스 킥",
+        "name":"스피닝 액스 킥~오른 자세",
         "command":"→→~LK",
         "start_frame":"20",
         "guard_frame":"+6",
@@ -1016,7 +1016,7 @@
         "endAt": 243
       },
       {
-        "name":"피스키퍼",
+        "name":"피스키퍼~오른 자세",
         "command":"→→~RK",
         "start_frame":"17",
         "guard_frame":"-7",
@@ -1024,7 +1024,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"히트 발동기\n오른 자세중에도 사용 가능\n오른 자세로 이행(히트, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra":"히트 발동기\n오른 자세중에도 사용 가능\n오른 자세로(히트, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 243,
         "endAt": 247
       },
@@ -1068,7 +1068,7 @@
         "endAt": 256
       },
       {
-        "name":"이럽션1",
+        "name":"이럽션1~왼 플라밍고",
         "command":"횡이동 중LK",
         "start_frame":"18",
         "guard_frame":"-12",
@@ -1081,7 +1081,7 @@
         "endAt": 296
       },
       {
-        "name":"이럽션2",
+        "name":"이럽션2~왼 플라밍고",
         "command":"횡이동 중LKLK",
         "start_frame":"18",
         "guard_frame":"+3",
@@ -1094,7 +1094,7 @@
         "endAt": 296
       },
       {
-        "name":"스피닝 트립 킥",
+        "name":"스피닝 트립 킥~오른 자세",
         "command":"횡이동 중RK",
         "start_frame":"19",
         "guard_frame":"-13",
@@ -1120,7 +1120,7 @@
         "endAt": 309
       },
       {
-        "name":"플라즈마 블레이드",
+        "name":"플라즈마 블레이드~오른 자세",
         "command":"상대에게 등을 보일 때RK",
         "start_frame":"14",
         "guard_frame":"-13",
@@ -1161,7 +1161,7 @@
         "endAt": 277
       },
       {
-        "name":"촌산 스핀2",
+        "name":"촌산 스핀2~왼 플라밍고",
         "command":"일어서며RPLK",
         "start_frame":"15",
         "guard_frame":"+3",
@@ -1200,7 +1200,7 @@
         "endAt": 288
       },
       {
-        "name":"쓰나미 킥2",
+        "name":"쓰나미 킥2~오른 자세",
         "command":"일어서며RKRK",
         "start_frame":"11",
         "guard_frame":"-5",
@@ -1254,7 +1254,7 @@
         "endAt": 259
       },
       {
-        "name":"팔랑크스",
+        "name":"팔랑크스~왼 플라밍고",
         "command":"→N↓↘LK",
         "start_frame":"18",
         "guard_frame":"+4",
@@ -1412,7 +1412,7 @@
         "endAt": 340
       },
       {
-        "name":"체인소 킥 콤보2",
+        "name":"체인소 킥 콤보2~오른 자세",
         "command":"오른 자세중에RPRKLK",
         "start_frame":"10",
         "guard_frame":"-14",
@@ -1451,7 +1451,7 @@
         "endAt": 352
       },
       {
-        "name":"볼캐논2",
+        "name":"볼캐논2~오른 플라밍고",
         "command":"오른 자세중에LKRK",
         "start_frame":"16",
         "guard_frame":"+10",
@@ -1490,7 +1490,7 @@
         "endAt": 357
       },
       {
-        "name":"체인소 킥1",
+        "name":"체인소 킥1~오른 플라밍고",
         "command":"오른 자세중에RK",
         "start_frame":"12",
         "guard_frame":"-8",
@@ -1516,7 +1516,7 @@
         "endAt": 364
       },
       {
-        "name":"체인소 킥2",
+        "name":"체인소 킥2~오른 자세",
         "command":"오른 자세중에RKLK",
         "start_frame":"12",
         "guard_frame":"-14",
@@ -1594,7 +1594,7 @@
         "endAt": 379
       },
       {
-        "name":"칩 샷",
+        "name":"칩 샷~왼 플라밍고",
         "command":"오른 자세중에→LK",
         "start_frame":"14",
         "guard_frame":"+12g",
@@ -1620,7 +1620,7 @@
         "endAt": 379
       },
       {
-        "name":"라이트 플라밍고 페인트(오른자세)",
+        "name":"라이트 플라밍고 페인트~오른 플라밍고",
         "command":"오른 자세중에→RK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1633,7 +1633,7 @@
         "endAt": 386
       },
       {
-        "name":"플라즈마 블레이드(오른자세)",
+        "name":"플라즈마 블레이드~오른 자세",
         "command":"오른 자세중에→[RKRK]",
         "start_frame":"18",
         "guard_frame":"-13",
@@ -1646,7 +1646,7 @@
         "endAt": 392
       },
       {
-        "name":"블랙 카이트",
+        "name":"블랙 카이트~오른 자세",
         "command":"오른 자세중에↘LK",
         "start_frame":"22",
         "guard_frame":"+1",
@@ -1654,12 +1654,12 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n호밍기\n가드 대미지\n오른 자세로 이행(히트, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra":"히트 발동기\n호밍기\n가드 대미지\n오른 자세로(히트, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 396,
         "endAt": 400
       },
       {
-        "name":"라이트 사이드킥",
+        "name":"라이트 사이드킥~오른 자세",
         "command":"오른 자세중에↘RK",
         "start_frame":"13",
         "guard_frame":"-7",
@@ -1724,7 +1724,7 @@
         "endAt": 422
       },
       {
-        "name":"트라이엄프 로우 라이트2",
+        "name":"트라이엄프 로우 라이트2~오른 플라밍고",
         "command":"오른 자세중에↓LKRK",
         "start_frame":"18",
         "guard_frame":"+8",
@@ -1737,7 +1737,7 @@
         "endAt": 422
       },
       {
-        "name":"힐 스크류",
+        "name":"힐 스크류~오른 자세",
         "command":"오른 자세중에↓AK",
         "start_frame":"19",
         "guard_frame":"-11",
@@ -1750,7 +1750,7 @@
         "endAt": 424
       },
       {
-        "name":"블래스트 피스트",
+        "name":"블래스트 피스트~오른 자세",
         "command":"오른 자세중에←RP",
         "start_frame":"16",
         "guard_frame":"+4",
@@ -1830,7 +1830,7 @@
         "endAt": 448
       },
       {
-        "name":"라이트 백핸드",
+        "name":"라이트 백핸드~오른 자세",
         "command":"왼 플라밍고중에RP",
         "start_frame":"16",
         "guard_frame":"-2",
@@ -1895,7 +1895,7 @@
         "endAt": 459
       },
       {
-        "name":"플라밍고 사이드 킥~라이트 훅 킥",
+        "name":"플라밍고 사이드 킥~라이트 훅 킥~오른 플라밍고",
         "command":"왼 플라밍고중에LKRK",
         "start_frame":"14",
         "guard_frame":"+8",
@@ -1921,7 +1921,7 @@
         "endAt": 467
       },
       {
-        "name":"라이트 스텝 킥",
+        "name":"라이트 스텝 킥~오른 플라밍고",
         "command":"왼 플라밍고중에RK",
         "start_frame":"14",
         "guard_frame":"+4",
@@ -1973,7 +1973,7 @@
         "endAt": 488
       },
       {
-        "name":"플라밍고 로캣",
+        "name":"플라밍고 로캣~왼 플라밍고",
         "command":"왼 플라밍고중에→LK",
         "start_frame":"19",
         "guard_frame":"+4",
@@ -2038,7 +2038,7 @@
         "endAt": 504
       },
       {
-        "name":"플라밍고 로우 라이트2",
+        "name":"플라밍고 로우 라이트2~오른 플라밍고",
         "command":"왼 플라밍고중에↓LKRK",
         "start_frame":"16",
         "guard_frame":"+8",
@@ -2051,7 +2051,7 @@
         "endAt": 504
       },
       {
-        "name":"컴뱃 로우",
+        "name":"컴뱃 로우~오른 자세",
         "command":"왼 플라밍고중에↓RK",
         "start_frame":"20",
         "guard_frame":"-12",
@@ -2077,7 +2077,7 @@
         "endAt": 511
       },
       {
-        "name":"레프트 썬더볼트",
+        "name":"레프트 썬더볼트~오른 자세",
         "command":"왼 플라밍고중에←LK",
         "start_frame":"20",
         "guard_frame":"-12",
@@ -2090,7 +2090,7 @@
         "endAt": 514
       },
       {
-        "name":"플라밍고 스크류 킥1",
+        "name":"플라밍고 스크류 킥1~오른 자세",
         "command":"왼 플라밍고중에←RK",
         "start_frame":"16",
         "guard_frame":"-8",
@@ -2103,7 +2103,7 @@
         "endAt": 519
       },
       {
-        "name":"플라밍고 스크류 킥2",
+        "name":"플라밍고 스크류 킥2~오른 자세",
         "command":"왼 플라밍고중에←RKLK",
         "start_frame":"16",
         "guard_frame":"0",
@@ -2129,7 +2129,7 @@
         "endAt": 523
       },
       {
-        "name":"플라밍고 헌팅 호크2",
+        "name":"플라밍고 헌팅 호크2~오른 플라밍고",
         "command":"왼 플라밍고중에↗LK 히트 혹은 가드 시RK",
         "start_frame":"28",
         "guard_frame":"+2",
@@ -2194,7 +2194,7 @@
         "endAt": 533
       },
       {
-        "name":"플라밍고 플래싱 트라이던트2",
+        "name":"플라밍고 플래싱 트라이던트2~오른 자세",
         "command":"왼 플라밍고중에↗AKRK",
         "start_frame":"14",
         "guard_frame":"-10",
@@ -2207,7 +2207,7 @@
         "endAt": 533
       },
       {
-        "name":"10단 콤보(1)1",
+        "name":"10단 콤보(1)1~오른 자세",
         "command":"왼 플라밍고중에RP",
         "start_frame":"16",
         "guard_frame":"-2",
@@ -2220,7 +2220,7 @@
         "endAt": 544
       },
       {
-        "name":"10단 콤보(1)2",
+        "name":"10단 콤보(1)2~오른 자세",
         "command":"왼 플라밍고중에RPRP",
         "start_frame":"16",
         "guard_frame":"0",
@@ -2324,7 +2324,7 @@
         "endAt": 544
       },
       {
-        "name":"10단 콤보(1)10",
+        "name":"10단 콤보(1)10~오른 자세",
         "command":"왼 플라밍고중에RPRPLKRKLKRKRKRKRKLK",
         "start_frame":"16",
         "guard_frame":"+3",
@@ -2378,7 +2378,7 @@
         "endAt": 555
       },
       {
-        "name":"레프트 스텝 킥",
+        "name":"레프트 스텝 킥~왼 플라밍고",
         "command":"오른 플라밍고중에LK",
         "start_frame":"14",
         "guard_frame":"+4",
@@ -2391,7 +2391,7 @@
         "endAt": 559
       },
       {
-        "name":"라이트 킥",
+        "name":"라이트 킥~오른 자세",
         "command":"오른 플라밍고중에RK",
         "start_frame":"14",
         "guard_frame":"-13",
@@ -2430,7 +2430,7 @@
         "endAt": 575
       },
       {
-        "name":"라이트 바이퍼 콤보",
+        "name":"라이트 바이퍼 콤보~오른 플라밍고",
         "command":"오른 플라밍고중에→RK",
         "start_frame":"8",
         "guard_frame":"0",
@@ -2443,7 +2443,7 @@
         "endAt": 583
       },
       {
-        "name":"라이트 바이퍼 콤보~라이트 소드",
+        "name":"라이트 바이퍼 콤보~라이트 소드~오른 자세",
         "command":"오른 플라밍고중에→RKRK",
         "start_frame":"8",
         "guard_frame":"-6",
@@ -2495,7 +2495,7 @@
         "endAt": 592
       },
       {
-        "name":"프레데터 버디슈1",
+        "name":"프레데터 버디슈1~오른 자세",
         "command":"오른 플라밍고중에↓RK",
         "start_frame":"20",
         "guard_frame":"-23",
@@ -2503,7 +2503,7 @@
         "counter_frame":"+7",
         "range":"하단",
         "damage":"15",
-        "extra":"오른 자세로",
+        "extra":"오른 자세로\n히트 상태에선 1타 히트 시 3타까지 확정",
         "startAt": 593,
         "endAt": 598
       },
@@ -2586,7 +2586,7 @@
         "endAt": 617
       },
       {
-        "name":"에어 블레이드",
+        "name":"에어 블레이드~오른 자세",
         "command":"오른 플라밍고중에↗RK",
         "start_frame":"17",
         "guard_frame":"-13",
@@ -2610,7 +2610,7 @@
         "endAt": 620
       },
       {
-        "name":"10단 콤보(2)1",
+        "name":"10단 콤보(2)1~오른 자세",
         "command":"오른 플라밍고중에LP",
         "start_frame":"16",
         "guard_frame":"-2",
@@ -2623,7 +2623,7 @@
         "endAt": 629
       },
       {
-        "name":"10단 콤보(2)2",
+        "name":"10단 콤보(2)2~오른 자세",
         "command":"오른 플라밍고중에LPRP",
         "start_frame":"16",
         "guard_frame":"0",
@@ -2727,7 +2727,7 @@
         "endAt": 629
       },
       {
-        "name":"10단 콤보(2)10",
+        "name":"10단 콤보(2)10~오른 자세",
         "command":"오른 플라밍고중에LPRPLKRKLKRKRKRKRKLK",
         "start_frame":"16",
         "guard_frame":"+3",
@@ -2750,7 +2750,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 629,
       "endAt": 633
     },
@@ -2762,7 +2762,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 633,
       "endAt": 637
     },

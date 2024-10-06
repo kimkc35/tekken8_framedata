@@ -3,7 +3,7 @@
     "heat": [
       {
         "name": "히트 버스트",
-        "command": "RP+LK",
+        "command": "히트 발동 가능 상태에서 RP+LK",
         "start_frame": "16",
         "guard_frame": "+1",
         "hit_frame": "+2",
@@ -93,7 +93,7 @@
         "endAt": 28
       },
       {
-        "name": "룸 알 다우라",
+        "name": "룸 알 다우라~스텔스 스텝",
         "command": "히트 상태에서 RP+LK",
         "start_frame": "16",
         "guard_frame": "+6",
@@ -420,7 +420,7 @@
         "endAt": 102
       },
       {
-        "name": "스카이라인",
+        "name": "스카이라인~스텔스 스텝",
         "command": "→AK",
         "start_frame": "22",
         "guard_frame": "+3",
@@ -1124,7 +1124,7 @@
         "endAt": 256
       },
       {
-        "name": "서펀즈1",
+        "name": "서펀즈1~스텔스 스텝",
         "command": "몸을 숙인 상태에서 ↘RK↘~",
         "start_frame": "16",
         "guard_frame": "-11",
@@ -1163,7 +1163,7 @@
         "endAt": 259
       },
       {
-        "name": "샌드 스톰",
+        "name": "샌드 스톰~스텔스 스텝",
         "command": "몸을 숙인 상태에서 ↘↓↘~LK",
         "start_frame": "16",
         "guard_frame": "-23",
@@ -1305,7 +1305,7 @@
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 306,
       "endAt": 310
     },
@@ -1317,7 +1317,7 @@
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 311,
       "endAt": 315
     },

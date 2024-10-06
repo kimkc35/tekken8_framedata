@@ -3,7 +3,7 @@
     "heat": [
       {
         "name": "히트 버스트",
-        "command": "RP+LK",
+        "command": "히트 발동 가능 상태에서 RP+LK",
         "start_frame": "16",
         "guard_frame": "+1",
         "hit_frame": "+2",
@@ -67,7 +67,7 @@
         "endAt": 21
       },
       {
-        "name": "프럴리킹 베어",
+        "name": "프럴리킹 베어~헌팅",
         "command": "헌팅 도중 ↓AP",
         "start_frame": "16",
         "guard_frame": "-9",
@@ -93,7 +93,7 @@
         "endAt": 30
       },
       {
-        "name": "판다 슈퍼 어택",
+        "name": "판다 슈퍼 어택~베어 롤",
         "command": "히트 상태에서 RP+LK",
         "start_frame": "13",
         "guard_frame": "+7(+6,+11)",
@@ -102,6 +102,32 @@
         "range": "중단x2",
         "damage": "22,40",
         "extra": "혹은 히트 상태에서 헌팅 도중 RP+LK\n→~입력 시 베어 롤로\n↓~ or AK입력 시 헌팅으로",
+        "startAt": 30,
+        "endAt": 34
+      },
+      {
+        "name": "판다 슈퍼 어택~베어 롤",
+        "command": "히트 상태에서 RP+LK→~",
+        "start_frame": "13",
+        "guard_frame": "+6",
+        "hit_frame": "D",
+        "counter_frame": "D",
+        "range": "중단x2",
+        "damage": "22,40",
+        "extra": "베어 롤로",
+        "startAt": 30,
+        "endAt": 34
+      },
+      {
+        "name": "판다 슈퍼 어택~헌팅",
+        "command": "히트 상태에서 RP+LK↓~(AK)",
+        "start_frame": "13",
+        "guard_frame": "+11",
+        "hit_frame": "D",
+        "counter_frame": "D",
+        "range": "중단x2",
+        "damage": "22,40",
+        "extra": "헌팅으로",
         "startAt": 30,
         "endAt": 34
       }
@@ -460,7 +486,7 @@
       },
       {
         "name": "더블 와일드 슬랩(홀드)",
-        "command": "↙LPRP홀드",
+        "command": "↙LPRP 홀드",
         "start_frame": "14(34~47)",
         "guard_frame": "-12",
         "hit_frame": "+13",
@@ -473,7 +499,7 @@
       },
       {
         "name": "프레시 와일드 슬랩",
-        "command": "↙LPRP홀드(최대)",
+        "command": "↙LPRP 홀드(최대)",
         "start_frame": "14(47)",
         "guard_frame": "+3",
         "hit_frame": "D",
@@ -488,9 +514,9 @@
         "name": "베어 래리어트",
         "command": "↙RP",
         "start_frame": "18",
-        "guard_frame": -15,
-        "hit_frame": -1,
-        "counter_frame": -1,
+        "guard_frame": "-15",
+        "hit_frame": "-1",
+        "counter_frame": "-1",
         "range": "하단",
         "damage": "10",
         "extra": "↓~ or AK입력 시 헌팅으로",
@@ -501,9 +527,9 @@
         "name": "베어 래리어트~헌팅",
         "command": "↙RP↓~(AK)",
         "start_frame": "18",
-        "guard_frame": -17,
-        "hit_frame": -3,
-        "counter_frame": -3,
+        "guard_frame": "-17",
+        "hit_frame": "-3",
+        "counter_frame": "-3",
         "range": "하단",
         "damage": "10",
         "extra": "헌팅으로",
@@ -590,7 +616,7 @@
       },
       {
         "name": "새먼 헌터(홀드)",
-        "command": "↙RP+LK홀드",
+        "command": "↙RP+LK 홀드",
         "start_frame": "45~60",
         "guard_frame": "-12",
         "hit_frame": "D",
@@ -603,7 +629,7 @@
       },
       {
         "name": "프레시 새먼 헌터",
-        "command": "↙RP+LK홀드(최대)",
+        "command": "↙RP+LK 홀드(최대)",
         "start_frame": "60",
         "guard_frame": "-4",
         "hit_frame": "D",
@@ -618,7 +644,7 @@
         "name": "베어 슬래시",
         "command": "←LP",
         "start_frame": "22",
-        "guard_frame": -13,
+        "guard_frame": "-13",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
@@ -753,7 +779,7 @@
         "counter_frame": "A",
         "range": "중단",
         "damage": "20",
-        "extra": "토네이도\n혹은 일어서며 AK",
+        "extra": "토네이도\n혹은 일어나며 AK",
         "startAt": 170,
         "endAt": 173
       },
@@ -891,7 +917,7 @@
         "name": "베어 더블 홉 킥 콤보3",
         "command": "↗LKRKAP",
         "start_frame": "16",
-        "guard_frame": -15,
+        "guard_frame": "-15",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
@@ -953,7 +979,7 @@
         "endAt": 220
       },
       {
-        "name": "폴링 베어",
+        "name": "폴링 베어~헌팅",
         "command": "→→~AP",
         "start_frame": "37",
         "guard_frame": "+8",
@@ -1083,7 +1109,7 @@
         "endAt": 300
       },
       {
-        "name": "베어 백스트로크",
+        "name": "베어 백스트로크~헌팅",
         "command": "누워 쓰러져 있을 때 AP",
         "start_frame": "17",
         "guard_frame": "-2",
@@ -1109,7 +1135,7 @@
         "endAt": 421
       },
       {
-        "name": "베어 버터플라이",
+        "name": "베어 버터플라이~헌팅",
         "command": "엎드려 쓰러져 있을 때 AP",
         "start_frame": "14",
         "guard_frame": "-12",
@@ -1136,7 +1162,7 @@
       },
       {
         "name": "베어 롤(히트 상태)",
-        "command": "엎드려 쓰러져 있을 때 →~",
+        "command": "히트 상태에서 엎드려 쓰러져 있을 때 →~",
         "start_frame": "-",
         "guard_frame": "+1",
         "hit_frame": "+7",
@@ -1164,7 +1190,7 @@
     "sit": [
       {
         "name": "킬링 클로스1",
-        "command": "일어서며 LP",
+        "command": "일어나며 LP",
         "start_frame": "13",
         "guard_frame": "-12",
         "hit_frame": "+2",
@@ -1177,7 +1203,7 @@
       },
       {
         "name": "킬링 클로스2",
-        "command": "일어서며 LPRP",
+        "command": "일어나며 LPRP",
         "start_frame": "13",
         "guard_frame": "-13",
         "hit_frame": "+6",
@@ -1190,7 +1216,7 @@
       },
       {
         "name": "킬링 클로스(홀드)",
-        "command": "일어서며 LPRP홀드",
+        "command": "일어나며 LPRP 홀드",
         "start_frame": "13(35~44)",
         "guard_frame": "-12",
         "hit_frame": "+18g",
@@ -1203,7 +1229,7 @@
       },
       {
         "name": "프레시 킬링 클로스",
-        "command": "일어서며 LPRP홀드(최대)",
+        "command": "일어나며 LPRP 홀드(최대)",
         "start_frame": "13(44)",
         "guard_frame": "+3",
         "hit_frame": "D",
@@ -1216,7 +1242,7 @@
       },
       {
         "name": "매드 앵글러",
-        "command": "일어서며 RP",
+        "command": "일어나며 RP",
         "start_frame": "15",
         "guard_frame": "-12",
         "hit_frame": "A",
@@ -1229,7 +1255,7 @@
       },
       {
         "name": "스피닝 베어 킥",
-        "command": "일어서며 LK",
+        "command": "일어나며 LK",
         "start_frame": "18",
         "guard_frame": "-9",
         "hit_frame": "D",
@@ -1242,7 +1268,7 @@
       },
       {
         "name": "포 스매시",
-        "command": "일어서며 RK",
+        "command": "일어나며 RK",
         "start_frame": "11",
         "guard_frame": "-6",
         "hit_frame": "+5",
@@ -1281,7 +1307,7 @@
       },
       {
         "name": "베어 롤(히트 상태)",
-        "command": "몸을 숙인 상태에서 AP",
+        "command": "히트 상태에서 몸을 숙인 상태에서 AP",
         "start_frame": "-",
         "guard_frame": "-6",
         "hit_frame": "+7",
@@ -1465,7 +1491,7 @@
       },
       {
         "name": "허니콤 스파이크(홀드)",
-        "command": "헌팅 도중 LPRP홀드",
+        "command": "헌팅 도중 LPRP 홀드",
         "start_frame": "12(33~44)",
         "guard_frame": "-12",
         "hit_frame": "+13",
@@ -1478,7 +1504,7 @@
       },
       {
         "name": "프레시 허니콤 스파이크",
-        "command": "헌팅 도중 LPRP홀드(최대)",
+        "command": "헌팅 도중 LPRP 홀드(최대)",
         "start_frame": "12(44)",
         "guard_frame": "+3",
         "hit_frame": "A",
@@ -1490,7 +1516,7 @@
         "endAt": 322
       },
       {
-        "name": "베어 클로",
+        "name": "베어 클로~헌팅",
         "command": "헌팅 도중 RP",
         "start_frame": "21",
         "guard_frame": "-15",
@@ -1555,7 +1581,7 @@
         "endAt": 345
       },
       {
-        "name": "프럴리킹 베어",
+        "name": "프럴리킹 베어~헌팅",
         "command": "헌팅 도중 ↓AP",
         "start_frame": "16",
         "guard_frame": "-9",
@@ -1634,7 +1660,7 @@
       },
       {
         "name": "베어 롤(히트 상태)",
-        "command": "헌팅 도중 →→",
+        "command": "히트 상태에서 헌팅 도중 →→",
         "start_frame": "-",
         "guard_frame": "+1",
         "hit_frame": "+7",
@@ -1740,7 +1766,7 @@
       },
       {
         "name": "베어 롤(히트 상태)",
-        "command": "베어 시트 도중 →~",
+        "command": "히트 상태에서 베어 시트 도중 →~",
         "start_frame": "-",
         "guard_frame": "+1",
         "hit_frame": "+7",
@@ -1768,7 +1794,7 @@
       },
       {
         "name": "베어 롤(히트 상태)",
-        "command": "몸을 숙인 상태에서 AP",
+        "command": "히트 상태에서 몸을 숙인 상태에서 AP",
         "start_frame": "-",
         "guard_frame": "+1",
         "hit_frame": "+7",
@@ -1794,7 +1820,7 @@
       },
       {
         "name": "베어 셔브(히트 상태)",
-        "command": "베어 롤 도중 LP",
+        "command": "히트 상태에서 베어 롤 도중 LP",
         "start_frame": "15",
         "guard_frame": "+13",
         "hit_frame": "D",
@@ -1881,7 +1907,7 @@
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 428,
       "endAt": 432
     },
@@ -1893,7 +1919,7 @@
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 433,
       "endAt": 437
     },

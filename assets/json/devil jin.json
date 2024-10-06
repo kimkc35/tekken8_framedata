@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -132,7 +132,7 @@
         "endAt": 48
       },
       {
-        "name":"흉옥라선",
+        "name":"흉옥라선~모닝 크로우",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"18",
         "guard_frame":"+11",
@@ -668,7 +668,7 @@
       },
       {
         "name":"(진)육도귀환",
-        "command":"↙AP홀드",
+        "command":"↙AP 홀드",
         "start_frame":"40~61",
         "guard_frame":"+17g",
         "hit_frame":"D",
@@ -681,7 +681,7 @@
       },
       {
         "name":"(진)육도귀환(풀 홀드)",
-        "command":"↙AP홀드",
+        "command":"↙AP 홀드",
         "start_frame":"62",
         "guard_frame":"+10",
         "hit_frame":"D",
@@ -862,7 +862,7 @@
         "endAt": 236
       },
       {
-        "name":"귀신 쇄박",
+        "name":"귀신 쇄박~모닝 크로우",
         "command":"↗LP",
         "start_frame":"21",
         "guard_frame":"+11",
@@ -1255,7 +1255,7 @@
     "sit":[
       {
         "name":"독각",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"13",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1267,8 +1267,8 @@
         "endAt": 309
       },
       {
-        "name":"독각쇄박",
-        "command":"일어서며 LPLP",
+        "name":"독각쇄박~모닝 크로우",
+        "command":"일어나며 LPLP",
         "start_frame":"13",
         "guard_frame":"+11",
         "hit_frame":"+16",
@@ -1281,7 +1281,7 @@
       },
       {
         "name":"독각파화",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"+6(+14)",
@@ -1294,7 +1294,7 @@
       },
       {
         "name":"아뢰야",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-12",
         "hit_frame":"T",
@@ -1307,11 +1307,11 @@
       },
       {
         "name":"낙부",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"14",
         "guard_frame":"-11",
-        "hit_frame":"+9(+14)",
-        "counter_frame":"+14(+23)",
+        "hit_frame":"+9",
+        "counter_frame":"+14",
         "range":"중단",
         "damage":"16",
         "extra":"히트 시 →~입력 시 모닝 크로우로",
@@ -1319,8 +1319,21 @@
         "endAt": 321
       },
       {
+        "name":"낙부~모닝 크로우",
+        "command":"일어나며 LK 히트 시 →~",
+        "start_frame":"14",
+        "guard_frame":"-11",
+        "hit_frame":"+14",
+        "counter_frame":"+23",
+        "range":"중단",
+        "damage":"16",
+        "extra":"모닝 크로우로",
+        "startAt": 319,
+        "endAt": 321
+      },
+      {
         "name":"발꿈치 찍기1",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-3",
         "hit_frame":"+8",
@@ -1333,7 +1346,7 @@
       },
       {
         "name":"발꿈치 찍기2",
-        "command":"일어서며 RKRK",
+        "command":"일어나며 RKRK",
         "start_frame":"11",
         "guard_frame":"-16",
         "hit_frame":"+4",
@@ -1725,7 +1738,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 470,
       "endAt": 474
     },
@@ -1737,7 +1750,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 476,
       "endAt": 480
     },

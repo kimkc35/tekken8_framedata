@@ -3,17 +3,19 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
-        "name":"염마봉화",
+        "name":"염마봉화~만잠자리 자세",
         "command":"LKLP",
         "start_frame":"15",
         "guard_frame":"+7",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"12,22(25)",
-        "extra":"히트 발동기\n가드 대미지\n만잠자리 자세로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"히트 발동기\n가드 대미지\n만잠자리 자세로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 3,
+        "endAt": 7
       },
       {
         "name":"구두룡",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"23(29)",
-        "extra":"히트 발동기\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"히트 발동기\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 7,
+        "endAt": 11
       },
       {
         "name":"봉마 못집",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"12,21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 11,
+        "endAt": 15
       },
       {
         "name":"바위 모서리",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n호밍기"
+        "extra":"히트 발동기\n호밍기",
+        "startAt": 16,
+        "endAt": 19
       },
       {
         "name":"여름좀잠자리",
@@ -65,7 +75,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"24",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 20,
+        "endAt": 24
       },
       {
         "name":"신검 날뛰는 카게키요",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,38",
-        "extra":"히트 시 잡기로\n히트 시 체력 회복\n가드 시 ↑~입력 시 만잠자리 자세 로"
+        "extra":"히트 시 잡기로\n히트 시 체력 회복\n가드 시 ↑~입력 시 만잠자리 자세로",
+        "startAt": 26,
+        "endAt": 30
       }
     ],
     "general":[
@@ -89,7 +103,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 47,
+        "endAt": 50
       },
       {
         "name":"때려 투구 깨기2",
@@ -100,7 +116,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"7,19(22)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 47,
+        "endAt": 50
       },
       {
         "name":"정권 몸통 없애기1",
@@ -111,7 +129,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 50,
+        "endAt": 53
       },
       {
         "name":"정권 몸통 없애기2",
@@ -122,7 +142,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,23",
-        "extra":"납도 자세 도중에는 실패감기로 변화\n←~입력 시 캔슬"
+        "extra":"납도 자세 도중에는 실패감기로 변화\n←~입력 시 캔슬",
+        "startAt": 50,
+        "endAt": 53
       },
       {
         "name":"정권 몸통 없애기2(캔슬)",
@@ -133,7 +155,9 @@
         "counter_frame":"-3",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 50,
+        "endAt": 53
       },
       {
         "name":"태엽 소용돌이",
@@ -144,7 +168,9 @@
         "counter_frame":"+15g",
         "range":"상단",
         "damage":"10,18",
-        "extra":"토네이도\n히트 혹은 가드 시 납도 자세로\nAP입력 시 금타 자세로"
+        "extra":"토네이도\n히트 혹은 가드 시 납도 자세로\nAP입력 시 금타 자세로",
+        "startAt": 54,
+        "endAt": 56
       },
       {
         "name":"PK 콤보",
@@ -155,7 +181,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,24",
-        "extra":""
+        "extra":"",
+        "startAt": 56,
+        "endAt": 59
       },
       {
         "name":"PDK 콤보",
@@ -166,7 +194,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"10,11",
-        "extra":""
+        "extra":"",
+        "startAt": 60,
+        "endAt": 62
       },
       {
         "name":"염마봉화1",
@@ -177,10 +207,12 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 65,
+        "endAt": 69
       },
       {
-        "name":"염마봉화2",
+        "name":"염마봉화2~만잠자리 자세",
         "command":"LKLP",
         "start_frame":"15",
         "guard_frame":"+7",
@@ -188,7 +220,9 @@
         "counter_frame":"+18g",
         "range":"상단",
         "damage":"12,22(25)",
-        "extra":"히트 발동기\n가드 대미지\n만잠자리 자세 로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"히트 발동기\n가드 대미지\n만잠자리 자세로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 65,
+        "endAt": 69
       },
       {
         "name":"염마지리검1",
@@ -199,7 +233,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 69,
+        "endAt": 73
       },
       {
         "name":"염마지리검2",
@@ -210,18 +246,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,12,29(39)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 65,
+        "endAt": 69
       },
       {
         "name":"날뛰는 우시와카",
         "command":"[LKRK]",
         "start_frame":"17",
-        "guard_frame":"-6(+5)",
-        "hit_frame":"+3(+14)",
-        "counter_frame":"+3(+14)",
+        "guard_frame":"-6",
+        "hit_frame":"+3",
+        "counter_frame":"+3",
         "range":"중단x2",
         "damage":"6,22",
-        "extra":"↑~입력 시 만잠자리 자세 로(납도 자세 도중에는 이행 불가능)"
+        "extra":"↑~입력 시 만잠자리 자세로(납도 자세 도중에는 이행 불가능)",
+        "startAt": 74,
+        "endAt": 76
+      },
+      {
+        "name":"날뛰는 우시와카~만잠자리 자세",
+        "command":"[LKRK]↑~",
+        "start_frame":"17",
+        "guard_frame":"+5",
+        "hit_frame":"+14",
+        "counter_frame":"+14",
+        "range":"중단x2",
+        "damage":"6,22",
+        "extra":"만잠자리 자세로",
+        "startAt": 74,
+        "endAt": 76
       },
       {
         "name":"일향포",
@@ -232,7 +285,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 77,
+        "endAt": 80
       },
       {
         "name":"시차절명검1",
@@ -243,7 +298,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 80,
+        "endAt": 86
       },
       {
         "name":"시차절명검2",
@@ -254,7 +311,9 @@
         "counter_frame":"-2",
         "range":"상단",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 80,
+        "endAt": 86
       },
       {
         "name":"시차절명검3",
@@ -265,7 +324,9 @@
         "counter_frame":"-12",
         "range":"중단",
         "damage":"12,12,5",
-        "extra":""
+        "extra":"",
+        "startAt": 80,
+        "endAt": 86
       },
       {
         "name":"시차절명검4",
@@ -276,7 +337,9 @@
         "counter_frame":"-13",
         "range":"상단",
         "damage":"12,12,5,6",
-        "extra":""
+        "extra":"",
+        "startAt": 80,
+        "endAt": 86
       },
       {
         "name":"시차절명검5",
@@ -287,7 +350,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"12,12,5,6,30",
-        "extra":"[LPLP]입력 시 선풍검으로"
+        "extra":"[LPLP]입력 시 선풍검으로",
+        "startAt": 80,
+        "endAt": 86
       },
       {
         "name":"삼산화",
@@ -298,7 +363,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 88,
+        "endAt": 91
       },
       {
         "name":"금타 자세",
@@ -309,7 +376,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 몸을 숙인 상태에서 AP\n금타 자세로\n→~입력 시 전진\n↓~입력 시 몸을 숙인 상태로\n반격기 효과 있음"
+        "extra":"혹은 몸을 숙인 상태에서 AP\n금타 자세로\n→~입력 시 전진\n↓~입력 시 몸을 숙인 상태로\n반격기 효과 있음",
+        "startAt": 92,
+        "endAt": 94
       },
       {
         "name":"무상 자세",
@@ -320,7 +389,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ←AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로"
+        "extra":"혹은 ←AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 94,
+        "endAt": 97
       },
       {
         "name":"요시미츠 블레이드",
@@ -331,7 +402,9 @@
         "counter_frame":"+14",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 몸을 숙인 상태에서 LP+RK\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(가드 대미지 추가, 히트 시 체력 회복, 히트 상태의 남은 시간을 소비)[요블]"
+        "extra":"혹은 몸을 숙인 상태에서 LP+RK\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(가드 대미지 추가, 히트 시 체력 회복, 히트 상태의 남은 시간을 소비)[요블]",
+        "startAt": 99,
+        "endAt": 101
       },
       {
         "name":"요시미츠 블레이드(파워 상승)",
@@ -342,7 +415,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 몸을 숙인 상태에서 LP+RK[요블]"
+        "extra":"혹은 몸을 숙인 상태에서 LP+RK[요블]",
+        "startAt": 99,
+        "endAt": 101
       },
       {
         "name":"부 선풍검",
@@ -353,7 +428,9 @@
         "counter_frame":"+18",
         "range":"중단",
         "damage":"0(25)",
-        "extra":"납도 자세 도중에는 파워 상승\n()는 파워 상승 시 대미지"
+        "extra":"납도 자세 도중에는 파워 상승\n()는 파워 상승 시 대미지",
+        "startAt": 102,
+        "endAt": 105
       },
       {
         "name":"만이권1",
@@ -364,7 +441,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"18",
-        "extra":"혹은 상대에게 등을 보일 때 RP"
+        "extra":"혹은 상대에게 등을 보일 때 RP",
+        "startAt": 109,
+        "endAt": 112
       },
       {
         "name":"만이권2",
@@ -375,73 +454,87 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 109,
+        "endAt": 112
       },
       {
         "name":"진전1",
-        "command":"→RP↘RP",
+        "command":"→RP↙RP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"+6",
         "counter_frame":"+6",
         "range":"중단",
         "damage":"18,8",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"진전2",
-        "command":"→RP↘RPRP",
+        "command":"→RP↙RPRP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"18,8,7",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"진전3",
-        "command":"→RP↘RPRPRP",
+        "command":"→RP↙RPRPRP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"18,8,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"진전4",
-        "command":"→RP↘RPRPRPRP",
+        "command":"→RP↙RPRPRPRP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"18,8,7,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"진전5",
-        "command":"→RP↘RPRPRPRPRP",
+        "command":"→RP↙RPRPRPRPRP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"18,8,7,6,5,4",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"진전6",
-        "command":"→RP↘RPRPRPRPRPRP",
+        "command":"→RP↙RPRPRPRPRPRP",
         "start_frame":"17",
         "guard_frame":"-49",
         "hit_frame":"-38",
         "counter_frame":"-38",
         "range":"중단",
         "damage":"18,8,7,6,5,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 113,
+        "endAt": 116
       },
       {
         "name":"발레리나 킥",
@@ -452,7 +545,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"24",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 120,
+        "endAt": 122
       },
       {
         "name":"번개",
@@ -463,7 +558,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24,20",
-        "extra":""
+        "extra":"",
+        "startAt": 123,
+        "endAt": 125
       },
       {
         "name":"덧문짝 넘어뜨리기",
@@ -474,7 +571,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 126,
+        "endAt": 128
       },
       {
         "name":"구두룡",
@@ -485,7 +584,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23(29)",
-        "extra":"히트 발동기\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"히트 발동기\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 129,
+        "endAt": 132
       },
       {
         "name":"돌충",
@@ -496,7 +597,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로\n히트 시 지뢰 달리기로(납도 자세 도중에는 이행 불가능)"
+        "extra":"←~입력 시 캔슬하고 상대에게 등을 보이는 상태로\n히트 시 지뢰 달리기로(납도 자세 도중에는 이행 불가능)",
+        "startAt": 133,
+        "endAt": 136
       },
       {
         "name":"병당신",
@@ -507,7 +610,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 137,
+        "endAt": 140
       },
       {
         "name":"화전1",
@@ -518,7 +623,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"14,16",
-        "extra":""
+        "extra":"",
+        "startAt": 137,
+        "endAt": 140
       },
       {
         "name":"화전2",
@@ -529,7 +636,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,16,19",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 137,
+        "endAt": 140
       },
       {
         "name":"화전~인법만국1",
@@ -540,7 +649,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"14,16,8",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"화전~인법만국2",
@@ -551,7 +662,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14,16,8,7",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"화전~인법만국3",
@@ -562,7 +675,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14,16,8,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"화전~인법만국4",
@@ -573,7 +688,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14,16,8,7,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"화전~인법만국5",
@@ -584,7 +701,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14,16,8,7,6,5,4",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"화전~인법만국6",
@@ -595,7 +714,9 @@
         "counter_frame":"-38",
         "range":"중단",
         "damage":"14,16,8,7,6,5,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 145
       },
       {
         "name":"단풍차기",
@@ -606,7 +727,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"14,17",
-        "extra":""
+        "extra":"",
+        "startAt": 146,
+        "endAt": 149
       },
       {
         "name":"스텝 인 어퍼",
@@ -617,7 +740,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 149,
+        "endAt": 151
       },
       {
         "name":"탄 가르기1",
@@ -628,7 +753,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 153,
+        "endAt": 155
       },
       {
         "name":"탄 가르기2",
@@ -639,7 +766,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,20(24)",
-        "extra":"가드 대미지\n홀드하면 Death Slash로\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n홀드하면 연옥검으로\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 153,
+        "endAt": 155
       },
       {
         "name":"외법섬",
@@ -650,7 +779,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"AP입력 시 금타 자세로\n→N↓↘LP입력 시 파워 상승"
+        "extra":"AP입력 시 금타 자세로\n→N↓↘LP입력 시 파워 상승",
+        "startAt": 156,
+        "endAt": 159
       },
       {
         "name":"신뢰점",
@@ -661,7 +792,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18",
-        "extra":"→N↓↘RP입력 시 파워 상승"
+        "extra":"→N↓↘RP입력 시 파워 상승",
+        "startAt": 159,
+        "endAt": 161
       },
       {
         "name":"참곡검",
@@ -672,18 +805,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15(24)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 162,
+        "endAt": 164
       },
       {
         "name":"연옥검",
-        "command":"↓LP홀드N",
+        "command":"↓LP 홀드N",
         "start_frame":"55~259",
         "guard_frame":"-",
         "hit_frame":"+4(D)",
         "counter_frame":"D",
         "range":"가불",
         "damage":"180",
-        "extra":"←←입력 시 캔슬\n불꽃 한번 당 대미지 5씩 증가"
+        "extra":"←←입력 시 캔슬\n불꽃 한번 당 대미지 5씩 증가",
+        "startAt": 166,
+        "endAt": 172
       },
       {
         "name":"헤시키리 베기1",
@@ -694,7 +831,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 173,
+        "endAt": 176
       },
       {
         "name":"헤시키리 베기2",
@@ -705,7 +844,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,23",
-        "extra":""
+        "extra":"",
+        "startAt": 173,
+        "endAt": 176
       },
       {
         "name":"헤시키리 없애기1",
@@ -716,7 +857,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,17",
-        "extra":"←~입력 시 납도 자세로"
+        "extra":"←~입력 시 납도 자세로",
+        "startAt": 176,
+        "endAt": 180
       },
       {
         "name":"헤시키리 없애기2",
@@ -727,7 +870,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,17,20",
-        "extra":""
+        "extra":"",
+        "startAt": 176,
+        "endAt": 180
       },
       {
         "name":"헤시키리 징벌",
@@ -738,7 +883,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,17,19",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 180,
+        "endAt": 184
       },
       {
         "name":"헤시키리 깎기",
@@ -749,7 +896,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,17,17",
-        "extra":""
+        "extra":"",
+        "startAt": 185,
+        "endAt": 188
       },
       {
         "name":"지뢰인 자세",
@@ -760,7 +909,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"지뢰인 자세로\n납도 자세 도중에는 만자앉기 자세로"
+        "extra":"지뢰인 자세로\n납도 자세 도중에는 만자앉기 자세로",
+        "startAt": 192,
+        "endAt": 194
       },
       {
         "name":"만자앉기 자세",
@@ -771,7 +922,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 194,
+        "endAt": 198
       },
       {
         "name":"불우",
@@ -782,7 +935,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60",
-        "extra":"자신에게 대미지[할복]"
+        "extra":"자신에게 대미지[할복]",
+        "startAt": 199,
+        "endAt": 202
       },
       {
         "name":"불우~만혈앵1",
@@ -793,7 +948,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,18",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 208
       },
       {
         "name":"불우~만혈앵2",
@@ -804,7 +961,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,18,20",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 208
       },
       {
         "name":"불우~만혈앵3",
@@ -815,7 +974,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,18,20,21",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 208
       },
       {
         "name":"불우~만혈앵4",
@@ -826,7 +987,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,18,20,21,28",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 208
       },
       {
         "name":"불우~만혈앵5",
@@ -837,7 +1000,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,18,20,21,28,30",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 208
       },
       {
         "name":"신류격1",
@@ -848,7 +1013,9 @@
         "counter_frame":"+7",
         "range":"하단",
         "damage":"12",
-        "extra":"납도 자세 도중에는 사용 불가능"
+        "extra":"납도 자세 도중에는 사용 불가능",
+        "startAt": 209,
+        "endAt": 212
       },
       {
         "name":"신류격2",
@@ -859,7 +1026,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 209,
+        "endAt": 212
       },
       {
         "name":"인법만국1",
@@ -870,7 +1039,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만국2",
@@ -881,7 +1052,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"8,7",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만국3",
@@ -892,7 +1065,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"8,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만국4",
@@ -903,7 +1078,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"8,7,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만국5",
@@ -914,7 +1091,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"8,7,6,5,4",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만국6",
@@ -925,7 +1104,9 @@
         "counter_frame":"-38",
         "range":"중단",
         "damage":"8,7,6,5,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 212,
+        "endAt": 215
       },
       {
         "name":"인법만삼1",
@@ -936,7 +1117,9 @@
         "counter_frame":"-14",
         "range":"하단",
         "damage":"8",
-        "extra":""
+        "extra":"",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"인법만삼2",
@@ -947,7 +1130,9 @@
         "counter_frame":"-7",
         "range":"하단",
         "damage":"8,7",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"인법만삼3",
@@ -958,7 +1143,9 @@
         "counter_frame":"-7",
         "range":"하단",
         "damage":"8,7,7",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"인법만삼4",
@@ -969,7 +1156,9 @@
         "counter_frame":"-7",
         "range":"하단",
         "damage":"8,7,7,5",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"인법만삼5",
@@ -980,7 +1169,9 @@
         "counter_frame":"-7",
         "range":"하단",
         "damage":"8,7,7,5,5",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"인법만삼6",
@@ -991,7 +1182,9 @@
         "counter_frame":"-15",
         "range":"하단",
         "damage":"8,7,7,5,5,5",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 216,
+        "endAt": 220
       },
       {
         "name":"도목축",
@@ -1002,7 +1195,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"AP입력 시 금타 자세로\n←~입력 시 납도 자세로"
+        "extra":"AP입력 시 금타 자세로\n←~입력 시 납도 자세로",
+        "startAt": 221,
+        "endAt": 224
       },
       {
         "name":"도목축~금타 자세",
@@ -1013,7 +1208,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"금타 자세로"
+        "extra":"금타 자세로",
+        "startAt": 221,
+        "endAt": 224
       },
       {
         "name":"도목축~납도 자세",
@@ -1024,7 +1221,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"납도 자세로"
+        "extra":"납도 자세로",
+        "startAt": 221,
+        "endAt": 224
       },
       {
         "name":"노즈치",
@@ -1035,7 +1234,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 225,
+        "endAt": 227
       },
       {
         "name":"독 모으기",
@@ -1046,7 +1247,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 228,
+        "endAt": 231
       },
       {
         "name":"독무",
@@ -1057,7 +1260,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 233,
+        "endAt": 236
       },
       {
         "name":"해독",
@@ -1068,7 +1273,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 236,
+        "endAt": 239
       },
       {
         "name":"인법만갈1",
@@ -1079,7 +1286,9 @@
         "counter_frame":"+12",
         "range":"상단",
         "damage":"8",
-        "extra":"↙LK입력 시 인법만삼으로"
+        "extra":"↙LK입력 시 인법만삼으로",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"인법만갈2",
@@ -1090,7 +1299,9 @@
         "counter_frame":"+10",
         "range":"상단",
         "damage":"8,9",
-        "extra":"↙LK입력 시 인법만삼으로"
+        "extra":"↙LK입력 시 인법만삼으로",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"인법만갈3",
@@ -1101,7 +1312,9 @@
         "counter_frame":"+10",
         "range":"상단",
         "damage":"8,9,10",
-        "extra":"↙LK입력 시 인법만삼으로"
+        "extra":"↙LK입력 시 인법만삼으로",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"인법만갈4",
@@ -1112,7 +1325,9 @@
         "counter_frame":"+10",
         "range":"상단",
         "damage":"8,9,10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"인법만갈5",
@@ -1123,7 +1338,9 @@
         "counter_frame":"+10",
         "range":"상단",
         "damage":"8,9,10,12,14",
-        "extra":""
+        "extra":"",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"인법만갈6",
@@ -1134,7 +1351,9 @@
         "counter_frame":"-67",
         "range":"상단",
         "damage":"8,9,10,12,14,16",
-        "extra":""
+        "extra":"",
+        "startAt": 241,
+        "endAt": 245
       },
       {
         "name":"봉마외법섬1",
@@ -1145,7 +1364,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"NAP입력 시 금타 자세로"
+        "extra":"NAP입력 시 금타 자세로",
+        "startAt": 246,
+        "endAt": 249
       },
       {
         "name":"봉마외법섬2",
@@ -1156,7 +1377,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,20",
-        "extra":"AP입력 시 금타 자세로"
+        "extra":"AP입력 시 금타 자세로",
+        "startAt": 246,
+        "endAt": 249
       },
       {
         "name":"봉마 못질",
@@ -1167,7 +1390,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 250,
+        "endAt": 254
       },
       {
         "name":"화륜1",
@@ -1178,7 +1403,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 8 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 8 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"화륜2",
@@ -1189,7 +1416,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"화륜3",
@@ -1200,7 +1429,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"화륜4",
@@ -1211,7 +1442,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"화륜5",
@@ -1222,7 +1455,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"화륜6",
@@ -1233,7 +1468,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어서며 LPLP←LK or LPLP←RK\n자신에게 10 대미지"
+        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "startAt": 256,
+        "endAt": 259
       },
       {
         "name":"납도 자세",
@@ -1244,7 +1481,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화"
+        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화",
+        "startAt": 260,
+        "endAt": 262
       },
       {
         "name":"이검길광",
@@ -1255,7 +1494,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25(39)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 262,
+        "endAt": 265
       },
       {
         "name":"절명검",
@@ -1266,7 +1507,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"40",
-        "extra":""
+        "extra":"",
+        "startAt": 266,
+        "endAt": 269
       },
       {
         "name":"투구깨기",
@@ -1277,7 +1520,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 270,
+        "endAt": 272
       },
       {
         "name":"선풍검",
@@ -1288,7 +1533,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"22",
-        "extra":"←~입력 시 단축"
+        "extra":"←~입력 시 단축",
+        "startAt": 273,
+        "endAt": 277
       },
       {
         "name":"만잠자리 자세",
@@ -1299,7 +1546,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만잠자리 자세 로\n납도 자세 도중에는 맷돌 으깨기로 변화"
+        "extra":"만잠자리 자세로\n납도 자세 도중에는 맷돌 으깨기로 변화",
+        "startAt": 278,
+        "endAt": 279
       },
       {
         "name":"아타가라스",
@@ -1310,7 +1559,9 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 284,
+        "endAt": 287
       },
       {
         "name":"차양 깨기",
@@ -1321,7 +1572,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 ↖LP or ↑LP"
+        "extra":"혹은 ↖LP or ↑LP",
+        "startAt": 288,
+        "endAt": 291
       },
       {
         "name":"쿠라마일도",
@@ -1332,7 +1585,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"25",
-        "extra":"↓~입력 시 캔슬하고 몸을 숙인 상태로"
+        "extra":"↓~입력 시 캔슬하고 몸을 숙인 상태로",
+        "startAt": 292,
+        "endAt": 295
       },
       {
         "name":"하야부사",
@@ -1343,7 +1598,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 295,
+        "endAt": 298
       },
       {
         "name":"만리도차기",
@@ -1354,7 +1611,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"호밍기\n혹은 ↖RK or ↑RK"
+        "extra":"호밍기\n혹은 ↖RK or ↑RK",
+        "startAt": 299,
+        "endAt": 301
       },
       {
         "name":"인법만차",
@@ -1365,7 +1624,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"AP입력 시 캔슬하고 만잠자리 자세로\n↓AP입력 시 지뢰인 자세로\n↓AK입력 시 만자앉기 자세로"
+        "extra":"AP입력 시 캔슬하고 만잠자리 자세로\n↓AP입력 시 지뢰인 자세로\n↓AK입력 시 만자앉기 자세로",
+        "startAt": 302,
+        "endAt": 305
       },
       {
         "name":"인법만차~지뢰인 자세",
@@ -1376,7 +1637,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"지뢰인 자세로"
+        "extra":"지뢰인 자세로",
+        "startAt": 302,
+        "endAt": 305
       },
       {
         "name":"인법만차~만자앉기 자세",
@@ -1387,7 +1650,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 302,
+        "endAt": 305
       },
       {
         "name":"동섬화",
@@ -1398,7 +1663,9 @@
         "counter_frame":"-43",
         "range":"상단",
         "damage":"20,8",
-        "extra":""
+        "extra":"",
+        "startAt": 306,
+        "endAt": 310
       },
       {
         "name":"은섬화",
@@ -1409,7 +1676,9 @@
         "counter_frame":"D",
         "range":"-",
         "damage":"20,8,15,15",
-        "extra":""
+        "extra":"",
+        "startAt": 306,
+        "endAt": 310
       },
       {
         "name":"금섬화",
@@ -1420,7 +1689,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,8,15,15,15(24)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지\n홀드 시 Death Slash로"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지\n홀드 시 연옥검으로",
+        "startAt": 306,
+        "endAt": 310
       },
       {
         "name":"강섬화",
@@ -1431,7 +1702,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,8,21",
-        "extra":""
+        "extra":"",
+        "startAt": 312,
+        "endAt": 315
       },
       {
         "name":"잠자리차",
@@ -1442,7 +1715,9 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"20,10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 316,
+        "endAt": 319
       },
       {
         "name":"만차~일향포",
@@ -1453,7 +1728,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20,25",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 320,
+        "endAt": 324
       },
       {
         "name":"비공검",
@@ -1464,7 +1741,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"40",
-        "extra":"AP입력 시 캔슬하고 만잠자리 자세 로\n납도 자세 도중에는 Safe Heron Jump로 변화"
+        "extra":"AP입력 시 캔슬하고 만잠자리 자세로\n납도 자세 도중에는 로조로 변화",
+        "startAt": 328,
+        "endAt": 332
       },
       {
         "name":"비공습검",
@@ -1475,7 +1754,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25(30)",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 333,
+        "endAt": 336
       },
       {
         "name":"허공습검",
@@ -1486,7 +1767,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"35",
-        "extra":"AP입력 시 캔슬하고 만잠자리 자세 로"
+        "extra":"AP입력 시 캔슬하고 만잠자리 자세로",
+        "startAt": 341,
+        "endAt": 344
       },
       {
         "name":"황천 달리기",
@@ -1497,7 +1780,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 358,
+        "endAt": 360
       },
       {
         "name":"황천 달려 지나가기",
@@ -1508,18 +1793,35 @@
         "counter_frame":"D",
         "range":"연계",
         "damage":"35",
-        "extra":"↓AK입력 시 만자앉기 자세로"
+        "extra":"↓AK입력 시 만자앉기 자세로",
+        "startAt": 362,
+        "endAt": 365
       },
       {
         "name":"암력",
         "command":"→→~LK",
         "start_frame":"23",
-        "guard_frame":"-4(+3)",
+        "guard_frame":"-4",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"중단",
         "damage":"20",
-        "extra":"AP입력 시 금타 자세로"
+        "extra":"AP입력 시 금타 자세로",
+        "startAt": 366,
+        "endAt": 368
+      },
+      {
+        "name":"암력~금타 자세",
+        "command":"→→~LKAP",
+        "start_frame":"23",
+        "guard_frame":"+3",
+        "hit_frame":"+5",
+        "counter_frame":"+5",
+        "range":"중단",
+        "damage":"20",
+        "extra":"금타 자세로",
+        "startAt": 366,
+        "endAt": 368
       },
       {
         "name":"눈보라",
@@ -1530,7 +1832,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"[취설]"
+        "extra":"[취설]",
+        "startAt": 368,
+        "endAt": 371
       },
       {
         "name":"인법 아지랑이 이",
@@ -1541,7 +1845,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"22",
-        "extra":""
+        "extra":"",
+        "startAt": 374,
+        "endAt": 376
       },
       {
         "name":"인법 아지랑이",
@@ -1552,7 +1858,9 @@
         "counter_frame":"-9",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 379,
+        "endAt": 382
       },
       {
         "name":"인법 쿠사나기",
@@ -1563,7 +1871,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,15",
-        "extra":"벽에 부딪히면 만자앉기 자세로(자신에게 대미지)"
+        "extra":"벽에 부딪히면 만자앉기 자세로(자신에게 대미지)",
+        "startAt": 383,
+        "endAt": 387
       },
       {
         "name":"쿠사나기포",
@@ -1574,7 +1884,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,15,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 383,
+        "endAt": 387
       },
       {
         "name":"불혹",
@@ -1585,7 +1897,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60",
-        "extra":"자신에게 대미지\n납도 자세 도중에는 사용 불가능"
+        "extra":"자신에게 대미지\n납도 자세 도중에는 사용 불가능",
+        "startAt": 389,
+        "endAt": 392
       },
       {
         "name":"혹",
@@ -1596,7 +1910,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 392,
+        "endAt": 394
       },
       {
         "name":"극 불혹",
@@ -1607,7 +1923,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"60,185",
-        "extra":"자신에게 대미지\n납도 자세 도중에는 사용 불가능"
+        "extra":"자신에게 대미지\n납도 자세 도중에는 사용 불가능",
+        "startAt": 395,
+        "endAt": 400
       },
       {
         "name":"일섬",
@@ -1618,7 +1936,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"50",
-        "extra":"←~입력 시 Soul Stealer로"
+        "extra":"←~입력 시 요시미츠 블레이드로",
+        "startAt": 401,
+        "endAt": 404
       },
       {
         "name":"오보로구루마",
@@ -1629,7 +1949,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24,15,35",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 405,
+        "endAt": 408
       },
       {
         "name":"만격축",
@@ -1640,7 +1962,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지\n↑~입력 시 만잠자리 자세로(납도 자세 도중에는 이행 불가능)"
+        "extra":"가드 대미지\n↑~입력 시 만잠자리 자세로(납도 자세 도중에는 이행 불가능)",
+        "startAt": 410,
+        "endAt": 413
       },
       {
         "name":"만격축~만잠자리 자세",
@@ -1651,7 +1975,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지\n만잠자리 자세로"
+        "extra":"가드 대미지\n만잠자리 자세로",
+        "startAt": 410,
+        "endAt": 413
       },
       {
         "name":"10단 콤보(1)1",
@@ -1662,7 +1988,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)2",
@@ -1673,7 +2001,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"7,12",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)3",
@@ -1684,7 +2014,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"7,12,15",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)4",
@@ -1695,7 +2027,9 @@
         "counter_frame":"-14",
         "range":"상단",
         "damage":"7,12,15,9",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)5",
@@ -1706,7 +2040,9 @@
         "counter_frame":"-14",
         "range":"상단",
         "damage":"7,12,15,9,9",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)6",
@@ -1717,7 +2053,9 @@
         "counter_frame":"-14",
         "range":"하단",
         "damage":"7,12,15,9,9,5",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)7",
@@ -1728,7 +2066,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"7,12,15,9,9,5,5",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)8",
@@ -1739,7 +2079,9 @@
         "counter_frame":"-4",
         "range":"가불",
         "damage":"7,12,15,9,9,5,5,8",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)9",
@@ -1750,7 +2092,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"7,12,15,9,9,5,5,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(1)10",
@@ -1761,7 +2105,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"7,12,15,9,9,5,5,8,8,25",
-        "extra":""
+        "extra":"",
+        "startAt": 413,
+        "endAt": 420
       },
       {
         "name":"10단 콤보(2)1",
@@ -1772,7 +2118,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)2",
@@ -1783,7 +2131,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"7,12",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)3",
@@ -1794,7 +2144,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"7,12,15",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)4",
@@ -1805,7 +2157,9 @@
         "counter_frame":"-14",
         "range":"상단",
         "damage":"7,12,15,9",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)5",
@@ -1816,7 +2170,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"7,12,15,9,3",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)6",
@@ -1827,7 +2183,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7,12,15,9,3,3",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)7",
@@ -1838,7 +2196,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"7,12,15,9,3,3,3",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)8",
@@ -1849,7 +2209,9 @@
         "counter_frame":"-7",
         "range":"중단",
         "damage":"7,12,15,9,3,3,3,7",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)9",
@@ -1860,7 +2222,9 @@
         "counter_frame":"-15",
         "range":"가불",
         "damage":"7,12,15,9,3,3,3,7,8",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"10단 콤보(2)10",
@@ -1871,7 +2235,9 @@
         "counter_frame":"T",
         "range":"가불",
         "damage":"7,12,15,9,3,3,3,7,8,20",
-        "extra":""
+        "extra":"",
+        "startAt": 421,
+        "endAt": 428
       },
       {
         "name":"기합 모으기",
@@ -1882,7 +2248,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 429,
+        "endAt": 431
       },
       {
         "name":"합장",
@@ -1893,7 +2261,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 471,
+        "endAt": 473
       },
       {
         "name":"신사",
@@ -1904,10 +2274,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 475,
+        "endAt": 478
       },
       {
-        "name":"유설(기상)",
+        "name":"유설~만자앉기 자세",
         "command":"누워 쓰러져 있을 때 ↓AK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1915,7 +2287,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 478,
+        "endAt": 480
       },
       {
         "name":"아라타마1",
@@ -1926,7 +2300,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 482,
+        "endAt": 485
       },
       {
         "name":"아라타마2",
@@ -1937,7 +2313,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,18",
-        "extra":""
+        "extra":"",
+        "startAt": 482,
+        "endAt": 485
       },
       {
         "name":"마가타마",
@@ -1948,7 +2326,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,25",
-        "extra":""
+        "extra":"",
+        "startAt": 485,
+        "endAt": 489
       },
       {
         "name":"나는 텐구",
@@ -1959,7 +2339,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 489,
+        "endAt": 491
       },
       {
         "name":"지절권만",
@@ -1970,10 +2352,12 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 492,
+        "endAt": 494
       },
       {
-        "name":"납도 자세(뒤자세)",
+        "name":"납도 자세",
         "command":"상대에게 등을 보일 때 ←AP",
         "start_frame":"-",
         "guard_frame":"-3",
@@ -1981,7 +2365,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화"
+        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화",
+        "startAt": 495,
+        "endAt": 497
       },
       {
         "name":"가이샤쿠",
@@ -1992,196 +2378,232 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"24",
-        "extra":"납도 자세 도중에는 사용 불가능"
+        "extra":"납도 자세 도중에는 사용 불가능",
+        "startAt": 853,
+        "endAt": 857
       }
     ],
     "sit":[
       {
         "name":"도깨비엉겅퀴1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"14",
         "guard_frame":"-10",
         "hit_frame":"+1",
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 434,
+        "endAt": 437
       },
       {
         "name":"도깨비엉겅퀴2",
-        "command":"일어서며 LPLP",
+        "command":"일어나며 LPLP",
         "start_frame":"14",
         "guard_frame":"-11",
         "hit_frame":"0",
         "counter_frame":"0",
         "range":"상단",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 434,
+        "endAt": 437
       },
       {
         "name":"도깨비엉겅퀴3",
-        "command":"일어서며 LPLPLP",
+        "command":"일어나며 LPLPLP",
         "start_frame":"14",
         "guard_frame":"-11",
         "hit_frame":"0",
         "counter_frame":"0",
         "range":"상단",
         "damage":"12,12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 434,
+        "endAt": 437
       },
       {
         "name":"도깨비엉겅퀴4",
-        "command":"일어서며 LPLPLPLP",
+        "command":"일어나며 LPLPLPLP",
         "start_frame":"14",
         "guard_frame":"0",
         "hit_frame":"+6",
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12,12,12,21",
-        "extra":""
+        "extra":"",
+        "startAt": 434,
+        "endAt": 437
       },
       {
         "name":"자전1",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"14",
         "guard_frame":"-4",
         "hit_frame":"+14g",
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,18",
-        "extra":""
+        "extra":"",
+        "startAt": 442,
+        "endAt": 446
       },
       {
         "name":"자전2",
-        "command":"일어서며 LPRPLP",
+        "command":"일어나며 LPRPLP",
         "start_frame":"14",
         "guard_frame":"-12",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,18,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 442,
+        "endAt": 446
       },
       {
         "name":"자전국1",
-        "command":"일어서며 LPRP↙RP",
+        "command":"일어나며 LPRP↙RP",
         "start_frame":"14",
         "guard_frame":"-5",
         "hit_frame":"+6",
         "counter_frame":"+6",
         "range":"중단",
         "damage":"12,18,8",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"자전국2",
-        "command":"일어서며 LPRP↙RPRP",
+        "command":"일어나며 LPRP↙RPRP",
         "start_frame":"14",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,18,8,7",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"자전국3",
-        "command":"일어서며 LPRP↙RPRPRP",
+        "command":"일어나며 LPRP↙RPRPRP",
         "start_frame":"14",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,18,8,7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"자전국4",
-        "command":"일어서며 LPRP↙RPRPRPRP",
+        "command":"일어나며 LPRP↙RPRPRPRP",
         "start_frame":"14",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,18,8,7,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"자전국5",
-        "command":"일어서며 LPRP↙RPRPRPRPRP",
+        "command":"일어나며 LPRP↙RPRPRPRPRP",
         "start_frame":"14",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12,18,8,7,6,5,4",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"자전국6",
-        "command":"일어서며 LPRP↙RPRPRPRPRPRP",
+        "command":"일어나며 LPRP↙RPRPRPRPRPRP",
         "start_frame":"14",
         "guard_frame":"-49",
         "hit_frame":"-38",
         "counter_frame":"-38",
         "range":"중단",
         "damage":"12,18,8,7,6,5,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 446,
+        "endAt": 451
       },
       {
         "name":"액막이",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-4",
         "hit_frame":"+7",
         "counter_frame":"+7",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 451,
+        "endAt": 455
       },
       {
-        "name":"예백도",
-        "command":"일어서며 RPLP",
+        "name":"예백도~만잠자리 자세",
+        "command":"일어나며 RPLP",
         "start_frame":"15",
         "guard_frame":"-3",
         "hit_frame":"A",
         "counter_frame":"A",
         "range":"중단",
         "damage":"13,14",
-        "extra":"만잠자리 자세 로\n납도 자세 도중에는 Aratama로 변화"
+        "extra":"만잠자리 자세로\n납도 자세 도중에는 아라타마로 변화",
+        "startAt": 451,
+        "endAt": 455
       },
       {
         "name":"귀문 넘기1",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"-6",
         "hit_frame":"+3",
         "counter_frame":"+3",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 457,
+        "endAt": 460
       },
       {
         "name":"귀문 넘기2",
-        "command":"일어서며 LKRP",
+        "command":"일어나며 LKRP",
         "start_frame":"16",
         "guard_frame":"-12",
         "hit_frame":"D",
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 457,
+        "endAt": 460
       },
       {
         "name":"도장마주",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"중단",
         "damage":"14",
-        "extra":"AP입력 시 금타 자세로\n←~입력 시 납도 자세로"
+        "extra":"AP입력 시 금타 자세로\n←~입력 시 납도 자세로",
+        "startAt": 461,
+        "endAt": 463
       },
       {
         "name":"이슬 치우기",
@@ -2192,7 +2614,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"18",
-        "extra":"호밍기\n↓AK입력 시 만자앉기로"
+        "extra":"호밍기\n↓AK입력 시 만자앉기로",
+        "startAt": 463,
+        "endAt": 466
       },
       {
         "name":"이슬 치우기~만자앉기",
@@ -2203,7 +2627,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"18",
-        "extra":"호밍기\n만자앉기로"
+        "extra":"호밍기\n만자앉기로",
+        "startAt": 461,
+        "endAt": 463
       },
       {
         "name":"화엄",
@@ -2214,7 +2640,9 @@
         "counter_frame":"T",
         "range":"가불",
         "damage":"12",
-        "extra":"혹은 몸을 숙인 상태에서 ↙←LP"
+        "extra":"혹은 몸을 숙인 상태에서 ↙←LP",
+        "startAt": 466,
+        "endAt": 470
       }
     ],
     "kincho":[
@@ -2227,7 +2655,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"금타 자세로\n→~입력 시 전진\n↓~입력 시 몸을 숙인 상태로\n반격기 효과 있음"
+        "extra":"금타 자세로\n→~입력 시 전진\n↓~입력 시 몸을 숙인 상태로\n반격기 효과 있음",
+        "startAt": 498,
+        "endAt": 500
       },
       {
         "name":"동자가르기1",
@@ -2238,7 +2668,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"10",
-        "extra":"납도 자세 도중 혹은 히트 상태 지속 중에는 2타 파워 상승(히트 상태의 남은 시간을 소비)"
+        "extra":"",
+        "startAt": 503,
+        "endAt": 506
       },
       {
         "name":"동자가르기2",
@@ -2249,7 +2681,9 @@
         "counter_frame":"+7",
         "range":"중단x2",
         "damage":"10,5,15(20)",
-        "extra":"파워 상승(가드 대미지 추가, 히트 시 체력 회복)\n()는 파워 상승 시 대미지"
+        "extra":"파워 상승(가드 대미지 추가, 히트 시 체력 회복)\n()는 파워 상승 시 대미지",
+        "startAt": 503,
+        "endAt": 506
       },
       {
         "name":"천수각 무너뜨리기1",
@@ -2260,7 +2694,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 506,
+        "endAt": 510
       },
       {
         "name":"천수각 무너뜨리기2",
@@ -2271,7 +2707,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,30",
-        "extra":"홀드 가능\n가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)"
+        "extra":"홀드 가능\n가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)",
+        "startAt": 506,
+        "endAt": 510
       },
       {
         "name":"죽은 말 몰기",
@@ -2282,7 +2720,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 512,
+        "endAt": 515
       },
       {
         "name":"유설",
@@ -2293,7 +2733,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"23",
-        "extra":"호밍기\n혹은 횡이동 중 RK\nAP입력 시 금타 자세로\nAK입력 시 무상 자세로"
+        "extra":"호밍기\n혹은 횡이동 중 RK\nAP입력 시 금타 자세로\nAK입력 시 무상 자세로",
+        "startAt": 516,
+        "endAt": 519
       },
       {
         "name":"유설~금타 자세",
@@ -2304,7 +2746,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"23",
-        "extra":"호밍기\n금타 자세로"
+        "extra":"호밍기\n금타 자세로",
+        "startAt": 516,
+        "endAt": 519
       },
       {
         "name":"유설~무상 자세",
@@ -2315,7 +2759,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"23",
-        "extra":"호밍기\n무상 자세로"
+        "extra":"호밍기\n무상 자세로",
+        "startAt": 516,
+        "endAt": 519
       },
       {
         "name":"아수라참",
@@ -2326,7 +2772,9 @@
         "counter_frame":"D",
         "range":"중단x4",
         "damage":"4,4,4,24",
-        "extra":""
+        "extra":"",
+        "startAt": 521,
+        "endAt": 524
       },
       {
         "name":"요시미츠 블레이드",
@@ -2337,7 +2785,9 @@
         "counter_frame":"+14",
         "range":"중단",
         "damage":"20",
-        "extra":"납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(가드 대미지 추가, 히트 시 체력 회복, 히트 상태의 남은 시간을 소비)[요블]"
+        "extra":"납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(가드 대미지 추가, 히트 시 체력 회복, 히트 상태의 남은 시간을 소비)[요블]",
+        "startAt": 525,
+        "endAt": 527
       },
       {
         "name":"요시미츠 블레이드(파워 상승)",
@@ -2348,7 +2798,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"[요블]"
+        "extra":"[요블]",
+        "startAt": 525,
+        "endAt": 527
       },
       {
         "name":"돌담 무너뜨리기",
@@ -2359,7 +2811,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 528,
+        "endAt": 530
       },
       {
         "name":"이의전륜",
@@ -2370,18 +2824,22 @@
         "counter_frame":"-2",
         "range":"중단x3",
         "damage":"6,6,10(12)",
-        "extra":"홀드 가능\n가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"홀드 가능\n가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 531,
+        "endAt": 534
       },
       {
         "name":"이의전륜(홀드)",
-        "command":"금타 자세 도중 →LP홀드",
+        "command":"금타 자세 도중 →LP 홀드",
         "start_frame":"19",
         "guard_frame":"-12",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단x6",
         "damage":"6x5,10(12)",
-        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지"
+        "extra":"가드 대미지\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
+        "startAt": 534,
+        "endAt": 531
       },
       {
         "name":"바위 모서리",
@@ -2392,7 +2850,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n호밍기"
+        "extra":"히트 발동기\n호밍기",
+        "startAt": 536,
+        "endAt": 540
       },
       {
         "name":"이카루가1",
@@ -2403,7 +2863,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 541,
+        "endAt": 544
       },
       {
         "name":"이카루가2",
@@ -2414,7 +2876,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,19",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 541,
+        "endAt": 544
       },
       {
         "name":"무명십자검",
@@ -2425,10 +2889,12 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"25",
-        "extra":"납도 자세 도중에는 사용 불가능"
+        "extra":"납도 자세 도중에는 사용 불가능",
+        "startAt": 545,
+        "endAt": 549
       },
       {
-        "name":"금타잠자리",
+        "name":"금타잠자리~만잠자리 자세",
         "command":"금타 자세 도중 ↑AP",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2436,7 +2902,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만잠자리 자세로\n납도 자세 도중에는 사용 불가능"
+        "extra":"만잠자리 자세로\n납도 자세 도중에는 사용 불가능",
+        "startAt": 550,
+        "endAt": 552
       }
     ],
     "meditation":[
@@ -2449,7 +2917,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ←AK 혹은 상대에게 등을 보일 때 AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로"
+        "extra":"혹은 ←AK 혹은 상대에게 등을 보일 때 AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
+        "startAt": 553,
+        "endAt": 556
       },
       {
         "name":"가람",
@@ -2460,7 +2930,9 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"15,15",
-        "extra":""
+        "extra":"",
+        "startAt": 557,
+        "endAt": 559
       },
       {
         "name":"전생",
@@ -2471,7 +2943,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"10",
-        "extra":"체력 회복"
+        "extra":"체력 회복",
+        "startAt": 561,
+        "endAt": 565
       }
     ],
     "flea":[
@@ -2484,7 +2958,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"-",
-        "extra":"지뢰인 자세로\n↙입력 시 캔슬\n납도 자세 도중에는 사용 불가능"
+        "extra":"지뢰인 자세로\n↙입력 시 캔슬\n납도 자세 도중에는 사용 불가능",
+        "startAt": 566,
+        "endAt": 567
       },
       {
         "name":"유전",
@@ -2495,7 +2971,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 568,
+        "endAt": 571
       },
       {
         "name":"잠수두개",
@@ -2506,10 +2984,12 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 571,
+        "endAt": 574
       },
       {
-        "name":"지뢰선",
+        "name":"지뢰선~지뢰인 자세",
         "command":"지뢰인 자세 도중 LK or RK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2517,7 +2997,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"지뢰인 자세로"
+        "extra":"지뢰인 자세로",
+        "startAt": 575,
+        "endAt": 577
       },
       {
         "name":"두개",
@@ -2528,7 +3010,9 @@
         "counter_frame":"A",
         "range":"상단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 580,
+        "endAt": 583
       },
       {
         "name":"지뢰포",
@@ -2539,10 +3023,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 584,
+        "endAt": 587
       },
       {
-        "name":"지뢰달리기",
+        "name":"지뢰달리기~지뢰인 자세",
         "command":"지뢰인 자세 도중 →→",
         "start_frame":"17",
         "guard_frame":"+8",
@@ -2550,10 +3036,12 @@
         "counter_frame":"-",
         "range":"중단x4",
         "damage":"3x5",
-        "extra":"지뢰인 자세로\n벽에 부딪히면 만자앉기 자세로(자신에게 대미지)"
+        "extra":"지뢰인 자세로\n벽에 부딪히면 만자앉기 자세로(자신에게 대미지)",
+        "startAt": 588,
+        "endAt": 591
       },
       {
-        "name":"지뢰잠수",
+        "name":"지뢰잠수~지뢰인 자세",
         "command":"지뢰인 자세 도중 ↓",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2561,10 +3049,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"지뢰인 자세로"
+        "extra":"지뢰인 자세로",
+        "startAt": 591,
+        "endAt": 594
       },
       {
-        "name":"지뢰인~만자앉기",
+        "name":"지뢰인~만자앉기 자세",
         "command":"지뢰인 자세 도중 ↓AK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2572,10 +3062,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 595,
+        "endAt": 598
       },
       {
-        "name":"잠자리 돌아가기",
+        "name":"잠자리 돌아가기~만잠자리 자세",
         "command":"지뢰인 자세 도중 ↑AP",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2583,7 +3075,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만잠자리 자세 로"
+        "extra":"만잠자리 자세로",
+        "startAt": 598,
+        "endAt": 601
       },
       {
         "name":"잠자리홀리기",
@@ -2594,7 +3088,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"옆구르기 낙법 가능"
+        "extra":"옆구르기 낙법 가능",
+        "startAt": 604,
+        "endAt": 607
       },
       {
         "name":"뛰는 지뢰",
@@ -2605,7 +3101,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"21",
-        "extra":"혹은 지뢰인 자세 도중 ↖or ↑"
+        "extra":"혹은 지뢰인 자세 도중 ↖or ↑",
+        "startAt": 610,
+        "endAt": 613
       },
       {
         "name":"지뢰맹마",
@@ -2616,7 +3114,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 614,
+        "endAt": 616
       },
       {
         "name":"거슬러 오르기",
@@ -2626,8 +3126,23 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"25(37,10)",
-        "extra":"클린 히트 효과 있음\n정면 지상 히트 시 잡기로"
+        "damage":"25,10",
+        "extra":"클린 히트 효과 있음\n정면 지상 히트 시 잡기로",
+        "startAt": 617,
+        "endAt": 621
+      },
+      {
+        "name":"거슬러 오르기(클린 히트)",
+        "command":"지뢰맹마 도중 LK",
+        "start_frame":"17",
+        "guard_frame":"-16",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"37,10",
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 617,
+        "endAt": 621
       },
       {
         "name":"쓰루베비",
@@ -2638,7 +3153,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 621,
+        "endAt": 625
       }
     ],
     "indian stance":[
@@ -2651,7 +3168,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 626,
+        "endAt": 628
       },
       {
         "name":"천각",
@@ -2662,7 +3181,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"회복 가능 게이지가 있다면 체력 회복"
+        "extra":"회복 가능 게이지가 있다면 체력 회복",
+        "startAt": 630,
+        "endAt": 633
       },
       {
         "name":"천각 오보로구루마",
@@ -2673,7 +3194,9 @@
         "counter_frame":"0",
         "range":"가불",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 633,
+        "endAt": 636
       },
       {
         "name":"천각 만국1",
@@ -2684,7 +3207,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 639,
+        "endAt": 643
       },
       {
         "name":"천각 만국2",
@@ -2695,7 +3220,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7,6",
-        "extra":""
+        "extra":"",
+        "startAt": 639,
+        "endAt": 643
       },
       {
         "name":"천각 만국3",
@@ -2706,7 +3233,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7,6,5",
-        "extra":""
+        "extra":"",
+        "startAt": 639,
+        "endAt": 643
       },
       {
         "name":"천각 만국4",
@@ -2717,7 +3246,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"7,6,5,4",
-        "extra":""
+        "extra":"",
+        "startAt": 639,
+        "endAt": 643
       },
       {
         "name":"천각 만국5",
@@ -2728,7 +3259,9 @@
         "counter_frame":"-38",
         "range":"중단",
         "damage":"7,6,5,4,3",
-        "extra":""
+        "extra":"",
+        "startAt": 639,
+        "endAt": 643
       },
       {
         "name":"천각 쿠사나기포1",
@@ -2739,7 +3272,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"벽에 부딪히면 만자앉기 자세로(자신에게 대미지)"
+        "extra":"벽에 부딪히면 만자앉기 자세로(자신에게 대미지)",
+        "startAt": 647,
+        "endAt": 652
       },
       {
         "name":"천각 쿠사나기포2",
@@ -2750,7 +3285,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 647,
+        "endAt": 652
       },
       {
         "name":"천각 이슬치우기",
@@ -2761,7 +3298,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"18",
-        "extra":"호밍기\n↓AK입력 시 만자앉기로"
+        "extra":"호밍기\n↓AK입력 시 만자앉기로",
+        "startAt": 654,
+        "endAt": 657
       },
       {
         "name":"천각 이슬치우기~만자앉기",
@@ -2772,10 +3311,12 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"18",
-        "extra":"호밍기\n만자앉기로"
+        "extra":"호밍기\n만자앉기로",
+        "startAt": 654,
+        "endAt": 657
       },
       {
-        "name":"천각 지뢰인",
+        "name":"천각 지뢰인~지뢰인 자세",
         "command":"천각 도중 AP",
         "start_frame":"2",
         "guard_frame":"-",
@@ -2783,18 +3324,35 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"지뢰인 자세로\n납도 자세 도중에는 사용 불가능"
+        "extra":"지뢰인 자세로\n납도 자세 도중에는 사용 불가능",
+        "startAt": 659,
+        "endAt": 661
       },
       {
-        "name":"날뛰는 우시와카(천각)",
+        "name":"날뛰는 우시와카",
         "command":"천각 도중 AK",
         "start_frame":"17",
-        "guard_frame":"-6(+5)",
-        "hit_frame":"+3(+14)",
-        "counter_frame":"+3(+14)",
+        "guard_frame":"-6",
+        "hit_frame":"+3",
+        "counter_frame":"+3",
         "range":"중단x2",
         "damage":"6,22",
-        "extra":"↑~입력 시 만잠자리 자세 로(납도 자세 도중에는 이행 불가능)\n호밍기"
+        "extra":"↑~입력 시 만잠자리 자세로(납도 자세 도중에는 이행 불가능)\n호밍기",
+        "startAt": 664,
+        "endAt": 667
+      },
+      {
+        "name":"날뛰는 우시와카~만잠자리 자세",
+        "command":"천각 도중 AK↑~",
+        "start_frame":"17",
+        "guard_frame":"+5",
+        "hit_frame":"+14",
+        "counter_frame":"+14",
+        "range":"중단x2",
+        "damage":"6,22",
+        "extra":"만잠자리 자세로",
+        "startAt": 664,
+        "endAt": 667
       },
       {
         "name":"천각 무공무",
@@ -2805,21 +3363,25 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 668,
+        "endAt": 670
       },
       {
         "name":"천각 부동",
-        "command":"천각 도중 ↓~AK홀드",
+        "command":"천각 도중 ↓~AK 홀드",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"AK홀드 도중 방향 입력 시 이동 가능"
+        "extra":"AK 홀드 도중 방향 입력 시 이동 가능",
+        "startAt": 671,
+        "endAt": 674
       },
       {
-        "name":"천각 만잠자리",
+        "name":"천각 만잠자리~만잠자리 자세",
         "command":"천각 도중 ↑AP",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2827,7 +3389,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만잠자리 자세 로\n납도 자세 도중에는 사용 불가능"
+        "extra":"만잠자리 자세로\n납도 자세 도중에는 사용 불가능",
+        "startAt": 675,
+        "endAt": 677
       }
     ],
     "mutou no kiwami":[
@@ -2840,7 +3404,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화"
+        "extra":"납도 자세로\n납도 자세 도중에는 일부 일반 기술이 전용 기술로 변화",
+        "startAt": 677,
+        "endAt": 679
       },
       {
         "name":"실패감기1",
@@ -2851,7 +3417,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 681,
+        "endAt": 685
       },
       {
         "name":"실패감기2",
@@ -2862,7 +3430,9 @@
         "counter_frame":"D",
         "range":"상단x2",
         "damage":"10,5,15",
-        "extra":""
+        "extra":"",
+        "startAt": 681,
+        "endAt": 685
       },
       {
         "name":"염마지혼인1",
@@ -2873,7 +3443,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 686,
+        "endAt": 690
       },
       {
         "name":"염마지혼인2",
@@ -2884,7 +3456,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 686,
+        "endAt": 690
       },
       {
         "name":"염마지혼인3",
@@ -2895,7 +3469,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,12,30(39)",
-        "extra":"혹은 히트 상태에서 AP\n가드 대미지\n클린 히트 효과 있음\n히트 시 체력 회복"
+        "extra":"혹은 히트 상태에서 AP\n가드 대미지\n클린 히트 효과 있음\n히트 시 체력 회복",
+        "startAt": 686,
+        "endAt": 690
       },
       {
         "name":"요시미츠 블레이드(납도)",
@@ -2906,10 +3482,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":"혹은 납도 자세 도중 몸을 숙인 상태에서 LP+RK\n가드 대미지\n히트 시 체력 회복[요블]"
+        "extra":"혹은 납도 자세 도중 몸을 숙인 상태에서 LP+RK\n가드 대미지\n히트 시 체력 회복[요블]",
+        "startAt": 696,
+        "endAt": 700
       },
       {
-        "name":"지뢰인 자세",
+        "name":"만자앉기 자세",
         "command":"납도 자세 도중 ↓AP",
         "start_frame":"-",
         "guard_frame":"-",
@@ -2917,7 +3495,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 702,
+        "endAt": 705
       },
       {
         "name":"근심",
@@ -2928,7 +3508,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 706,
+        "endAt": 708
       },
       {
         "name":"만사가반",
@@ -2939,7 +3521,9 @@
         "counter_frame":"+6",
         "range":"특수 하단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 709,
+        "endAt": 712
       },
       {
         "name":"발도각오",
@@ -2950,7 +3534,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"납도 자세 해제"
+        "extra":"납도 자세 해제",
+        "startAt": 712,
+        "endAt": 714
       },
       {
         "name":"혼령길광",
@@ -2961,10 +3547,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30(39)",
-        "extra":"혹은 히트 상태에서 ↖AP\n가드 대미지\n클린 히트 효과 있음\n히트 시 체력 회복"
+        "extra":"혹은 히트 상태에서 ↖AP\n가드 대미지\n클린 히트 효과 있음\n()는 클린 히트 시 대미지\n히트 시 체력 회복",
+        "startAt": 716,
+        "endAt": 719
       },
       {
-        "name":"맷돌 으깨기",
+        "name":"맷돌 으깨기~만자앉기 자세",
         "command":"납도 자세 도중 ↑AP",
         "start_frame":"27",
         "guard_frame":"+4",
@@ -2972,7 +3560,9 @@
         "counter_frame":"+20",
         "range":"하단",
         "damage":"18",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 720,
+        "endAt": 722
       },
       {
         "name":"로조",
@@ -2983,51 +3573,61 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 727,
+        "endAt": 729
       },
       {
         "name":"예황혼1",
-        "command":"납도 자세 도중 일어서며 RP",
+        "command":"납도 자세 도중 일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-4",
         "hit_frame":"+7",
         "counter_frame":"+7",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 730,
+        "endAt": 734
       },
       {
         "name":"예황혼2",
-        "command":"납도 자세 도중 일어서며 RPLP",
+        "command":"납도 자세 도중 일어나며 RPLP",
         "start_frame":"15",
         "guard_frame":"-6",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"상단",
         "damage":"13,16",
-        "extra":""
+        "extra":"",
+        "startAt": 730,
+        "endAt": 734
       },
       {
         "name":"예황혼3",
-        "command":"납도 자세 도중 일어서며 RPLPRP",
+        "command":"납도 자세 도중 일어나며 RPLPRP",
         "start_frame":"15",
         "guard_frame":"-5",
         "hit_frame":"+5",
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,16,18",
-        "extra":""
+        "extra":"",
+        "startAt": 730,
+        "endAt": 734
       },
       {
         "name":"니라기마가타마",
-        "command":"납도 자세 도중 일어서며 RPLPLK",
+        "command":"납도 자세 도중 일어나며 RPLPLK",
         "start_frame":"15",
         "guard_frame":"-7",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"13,16,25",
-        "extra":""
+        "extra":"",
+        "startAt": 735,
+        "endAt": 739
       },
       {
         "name":"아함폭1",
@@ -3038,7 +3638,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12",
-        "extra":"혹은 납도 자세 도중 몸을 숙인 상태에서 ↙←LP"
+        "extra":"혹은 납도 자세 도중 몸을 숙인 상태에서 ↙←LP",
+        "startAt": 741,
+        "endAt": 745
       },
       {
         "name":"아함폭2",
@@ -3049,7 +3651,9 @@
         "counter_frame":"+14",
         "range":"하단",
         "damage":"12,20",
-        "extra":""
+        "extra":"",
+        "startAt": 741,
+        "endAt": 745
       },
       {
         "name":"이슬 베어넘기기",
@@ -3060,7 +3664,9 @@
         "counter_frame":"T",
         "range":"하단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 745,
+        "endAt": 749
       }
     ],
     "manji dragonfly":[
@@ -3073,7 +3679,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만잠자리 자세 로\n납도 자세 도중에는 사용 불가능"
+        "extra":"만잠자리 자세로\n납도 자세 도중에는 사용 불가능",
+        "startAt": 750,
+        "endAt": 752
       },
       {
         "name":"귀산마",
@@ -3084,18 +3692,22 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)"
+        "extra":"가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)",
+        "startAt": 753,
+        "endAt": 756
       },
       {
         "name":"귀산마(파워 상승)",
-        "command":"만잠자리 자세 도중 LP",
+        "command":"히트 상태에서 만잠자리 자세 도중 LP",
         "start_frame":"30",
         "guard_frame":"+2",
         "hit_frame":"A",
         "counter_frame":"A",
         "range":"중단",
         "damage":"26",
-        "extra":"가드 대미지\n"
+        "extra":"가드 대미지\n",
+        "startAt": 753,
+        "endAt": 756
       },
       {
         "name":"은산마1",
@@ -3106,7 +3718,9 @@
         "counter_frame":"+13",
         "range":"상단",
         "damage":"15",
-        "extra":"만잠자리 자세 로"
+        "extra":"만잠자리 자세로",
+        "startAt": 756,
+        "endAt": 760
       },
       {
         "name":"은산마2",
@@ -3117,7 +3731,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,22",
-        "extra":"토네이도\n←~입력 시 납도 자세로"
+        "extra":"토네이도\n←~입력 시 납도 자세로",
+        "startAt": 756,
+        "endAt": 760
       },
       {
         "name":"고추잠자리",
@@ -3128,7 +3744,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"18",
-        "extra":""
+        "extra":"",
+        "startAt": 761,
+        "endAt": 764
       },
       {
         "name":"여름좀잠자리",
@@ -3139,10 +3757,12 @@
         "counter_frame":"+14g",
         "range":"중단",
         "damage":"24",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 767,
+        "endAt": 771
       },
       {
-        "name":"만잠자리~지뢰인",
+        "name":"만잠자리~지뢰인 자세",
         "command":"만잠자리 자세 도중 AP",
         "start_frame":"2",
         "guard_frame":"-",
@@ -3150,7 +3770,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"지뢰인 자세로"
+        "extra":"지뢰인 자세로",
+        "startAt": 772,
+        "endAt": 774
       },
       {
         "name":"가미카쿠시",
@@ -3160,11 +3782,13 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"가불",
-        "damage":"17(,18)",
-        "extra":"정면 히트 시 잡기로"
+        "damage":"17,18",
+        "extra":"정면 히트 시 잡기로",
+        "startAt": 777,
+        "endAt": 782
       },
       {
-        "name":"타우산마",
+        "name":"타우산마~만잠자리 자세",
         "command":"만잠자리 자세 도중 →RP",
         "start_frame":"20",
         "guard_frame":"+7",
@@ -3172,7 +3796,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"23",
-        "extra":"호밍기\n혹은 지뢰인 자세 도중 →RP\n만잠자리 자세 로"
+        "extra":"호밍기\n혹은 지뢰인 자세 도중 →RP\n만잠자리 자세로",
+        "startAt": 783,
+        "endAt": 785
       },
       {
         "name":"지옥화",
@@ -3183,7 +3809,9 @@
         "counter_frame":"D",
         "range":"상단x3",
         "damage":"10,10,20",
-        "extra":"호밍기\n가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 프레임"
+        "extra":"호밍기\n가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 프레임",
+        "startAt": 787,
+        "endAt": 790
       },
       {
         "name":"만잠자리~만자앉기",
@@ -3194,7 +3822,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"만자앉기 자세로"
+        "extra":"만자앉기 자세로",
+        "startAt": 790,
+        "endAt": 793
       }
     ]
   },
@@ -3207,7 +3837,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 795,
+      "endAt": 800
     },
     {
       "name":"물방울",
@@ -3217,7 +3849,9 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 802,
+      "endAt": 805
     },
     {
       "name":"지옥차",
@@ -3227,7 +3861,9 @@
       "after_break_frame":"-3",
       "damage":"45",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 807,
+      "endAt": 811
     },
     {
       "name":"낙화낭자",
@@ -3237,7 +3873,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 813,
+      "endAt": 817
     },
     {
       "name":"인법풍진",
@@ -3247,7 +3885,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 820,
+      "endAt": 824
     },
     {
       "name":"인법 야구라오토시",
@@ -3257,7 +3897,9 @@
       "after_break_frame":"0",
       "damage":"45",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 826,
+      "endAt": 831
     },
     {
       "name":"영혼깎이",
@@ -3267,7 +3909,9 @@
       "after_break_frame":"0",
       "damage":"22",
       "range":"상단",
-      "extra":"상대의 체력을 흡수(잡기 풀기 성공 시 상대에게 체력을 줌)"
+      "extra":"상대의 체력을 흡수(잡기 풀기 성공 시 상대에게 체력을 줌)",
+      "startAt": 832,
+      "endAt": 836
     },
     {
       "name":"영혼 되돌리기",
@@ -3277,7 +3921,9 @@
       "after_break_frame":"-",
       "damage":"-35",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 837,
+      "endAt": 840
     },
     {
       "name":"산우오",
@@ -3287,7 +3933,9 @@
       "after_break_frame":"-",
       "damage":"22",
       "range":"반격",
-      "extra":""
+      "extra":"",
+      "startAt": 843,
+      "endAt": 845
     }
   ]
 }

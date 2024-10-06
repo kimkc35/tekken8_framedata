@@ -105,19 +105,10 @@ Character dragunov = Character(
   videoId: "gC-tC-qwNZs"
 );
 
-Character eddy = Character(
-  name: "eddy",
-  heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"],
-  rageArts: MoveInfo(name: "인셴치 지 아셰", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 42, endAt: 56),
-  types: {"heat" : false, "general" : false, "sit" : false, "bananeira" : false, "negativa" : false, "mandinga" : false},
-  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "bananeira" : "바나네이라", "negativa" : "네가치바", "mandinga" : "만징가"},
-  videoId: "bEKK2uh7ea8"
-);
-
 Character feng = Character(
   name: "feng",
   heatSystem: ["신수박면장 사용 가능", "신수염장멸파 사용 가능", "응룡렬해답 사용 가능"],
-  rageArts: MoveInfo(name: "진결 화룡정천장", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "진결 화룡정천장", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 42, endAt: 56),
   types: {"heat" : false, "general" : false, "sit" : false, "lingering shadow" : false, "shifting clouds" : false, "deceptive step" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "lingering shadow" : "잔영", "shifting clouds" : "운수", "deceptive step" : "허보"},
   videoId: "fVW4i4byh3c"
@@ -189,7 +180,7 @@ Character kuma = Character(
   rageArts: MoveInfo(name: "타입 38 이래디케이션 웨폰: 아라마키", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 47, endAt: 61),
   types: {"heat" : false, "general" : false, "sit" : false, "hunting" : false, "bear sit" : false, "bear roll" : false},
   typesKo: {
-    "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hunting" : "헌팅 자세", "bear sit" : "베어 시트", "bear roll" : "베어 롤"
+    "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "hunting" : "헌팅", "bear sit" : "베어 시트", "bear roll" : "베어 롤"
   },
   videoId: "unownphUFS0"
 );
@@ -329,7 +320,7 @@ Character shaheen = Character(
 Character steve = Character(
   name: "steve",
   heatSystem: ["새로운 더킹 인 이행기 사용 가능", "투-페이스드 사용 가능", "라이온 하트로 중단 공격 흘리기 가능"],
-  rageArts: MoveInfo(name: "디어 랜드 오브 호프", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "디어 랜드 오브 호프", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 76, endAt: 91),
   types: {"heat" : false, "general" : false, "sit" : false, "ducking left/right" : false, "quick spin" : false, "ducking/ducking in" : false, "peekaboo" : false, "swaying" : false, "flicker stance" : false, "lion heart" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "ducking left/right" : "더킹 레프트/라이트", "quick spin" : "퀵 스핀", "ducking/ducking in" : "더킹/더킹 인", "peekaboo" : "피커브", "swaying" : "스웨이", "flicker stance" : "플리커 자세", "lion heart" : "라이온 하트"
@@ -340,7 +331,7 @@ Character steve = Character(
 Character victor = Character(
   name: "victor",
   heatSystem: ["파워가 상승한 파보", "백양염제파, 백련염제파 사용 가능"],
-  rageArts: MoveInfo(name: "쿠 드 슈발리에", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "쿠 드 슈발리에", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 48, endAt: 63),
   types: {"heat" : false, "general" : false, "sit" : false, "iai Stance" : false, "perfumer" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "iai Stance" : "이아이 스탠스", "perfumer" : "퍼퓨머"
@@ -351,7 +342,7 @@ Character victor = Character(
 Character xiaoyu = Character(
   name: "xiaoyu",
   heatSystem: ["파워가 상승한 파보", "백양염제파, 백련염제파 사용 가능"],
-  rageArts: MoveInfo(name: "왕전비초 구천진공", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "왕전비초 구천진공", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 57, endAt: 61),
   types: {"heat" : false, "general" : false, "back" : false, "sit" : false, "hypnotist" : false, "phoenix" : false},
   typesKo: {
     "heat" : "히트", "general" : "일반", "back" : "뒤자세", "sit" : "앉은 자세", "hypnotist" : "파보", "phoenix" : "봉황"
@@ -362,7 +353,7 @@ Character xiaoyu = Character(
 Character yoshimitsu = Character(
   name: "yoshimitsu",
   heatSystem: ["납도 자세 도중에만 쓸 수 있는 파워 상승 버전 칼 기술을 일반 자세에서도 사용 가능", "만잠자리 자세 도중의 일부 칼 기술이 파워 상승"],
-  rageArts: MoveInfo(name: "삼계순회 제행무상", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠 히트 시 상대의 회복 가능 게이지를 없앰"),
+  rageArts: MoveInfo(name: "삼계순회 제행무상", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 32, endAt: 47),
   types: {"heat" : false, "general" : false, "sit" : false, "kincho" : false, "meditation" : false, "flea" : false, "indian stance" : false, "mutou no kiwami" : false, "manji dragonfly" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "kincho" : "금타 자세", "meditation" : "무상 자세", "flea" : "지뢰인 자세", "indian stance" : "만자앉기 자세", "mutou no kiwami" : "납도 자세", "manji dragonfly" : "만잠자리 자세"},
   videoId: "32pYkK8wrP8"
@@ -371,21 +362,29 @@ Character yoshimitsu = Character(
 Character zafina = Character(
   name: "zafina",
   heatSystem: ["아자젤의 힘(체력 소비 기술)이 발동했을 때 체력을 소비하지 않음", "아자젤의 힘에 의한 큰 기술이 파워 크래시가 됨"],
-  rageArts: MoveInfo(name: "셈퍼 어바러스 어젯", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "혹은 레이지 상태에서 스케어크로 자세 도중 ${sticks["c3"]}AP 레이지 아츠 히트 시 상대의 회복 가능 게이지를 없앰")
-  ,
+  rageArts: MoveInfo(name: "셈퍼 어바러스 어젯", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "혹은 레이지 상태에서 스케어크로 자세 도중 ${sticks["c3"]}AP 레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 39, endAt: 53),
   types: {"heat" : false, "general" : false, "sit" : false, "scarecrow stance" : false, "tarantula stance" : false, "mantis stance" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "scarecrow stance" : "스케어크로 자세", "tarantula stance" : "타란튤라 자세", "mantis stance" : "맨티스 자세"},
   videoId: "vshwmLE3bpo"
 );
 
+Character eddy = Character(
+    name: "eddy",
+    heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"],
+    rageArts: MoveInfo(name: "인셴치 지 아셰", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 45, endAt: 59),
+    types: {"heat" : false, "general" : false, "sit" : false, "bananeira" : false, "negativa" : false, "mandinga" : false},
+    typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "bananeira" : "바나네이라", "negativa" : "네가치바", "mandinga" : "만징가"},
+    videoId: "bEKK2uh7ea8"
+);
+
 Character lidia = Character(
-    name: "lidia",
-    rageArts: MoveInfo(name: "", command: "", startFrame: "", guardFrame: "", hitFrame: "", counterFrame: "", range: "", damage: "", extra: ""),
-    heatSystem: [],
-    types: {},
-    typesKo: {},
+  name: "lidia",
+  heatSystem: ["천상천하 자세 사용 가능", "파워가 상승한 AP, →→~RP, →→→~LP, 후랑 자세 중 LP 사용 가능"],
+  rageArts: MoveInfo(name: "스칼렛 발러: 마샬 디보션", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 42, endAt: 56),
+  types: {"heat" : false, "general" : false, "sit" : false, "horse stance" : false, "cat stance" : false, "wolf stance" : false, "heaven and earth" : false},
+  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "horse stance" : "말 자세", "cat stance" : "묘족 자세", "wolf stance" : "후랑 자세", "heaven and earth" : "천상천하 자세"},
     videoId: "ZYSdvZ6qaEk"
 );
 
 
-final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina];
+final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lidia, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina];

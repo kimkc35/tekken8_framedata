@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -233,7 +233,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"파워 크래시\n혹은 일어서며 AK\n감마 하울로\n상대의 공격을 받아내면 감마 차지를 획득\n히트 상태의 남은 시간 회복\n상대의 공격을 받아낼 시 체력 회복 가능 게이지, 히트 상태의 남은 시간 회복",
+        "extra":"파워 크래시\n혹은 일어나며 AK\n감마 하울로\n상대의 공격을 받아내면 감마 차지를 획득\n히트 상태의 남은 시간 회복\n상대의 공격을 받아낼 시 체력 회복 가능 게이지, 히트 상태의 남은 시간 회복",
         "startAt": 83,
         "endAt": 86
       },
@@ -265,14 +265,14 @@
       },
       {
         "name":"기가톤 펀치(홀드)",
-        "command":"LP+RK홀드LP",
+        "command":"LP+RK 홀드LP",
         "start_frame":"17",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"가불",
         "damage":"45~199",
-        "extra":"LP+RK홀드 혹은 ←↙↓↘→~를 입력하면 회전 수 증가",
+        "extra":"LP+RK 홀드 혹은 ←↙↓↘→~를 입력하면 회전 수 증가",
         "startAt": 87,
         "endAt": 90
       },
@@ -402,7 +402,7 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 일어서며 LK\n↓~입력 시 감마 하울로",
+        "extra":"혹은 일어나며 LK\n↓~입력 시 감마 하울로",
         "startAt": 125,
         "endAt": 129
       },
@@ -415,7 +415,7 @@
         "counter_frame":"+16g",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 일어서며 LK↓~\n감마 하울로",
+        "extra":"혹은 일어나며 LK↓~\n감마 하울로",
         "startAt": 125,
         "endAt": 129
       },
@@ -603,7 +603,7 @@
       },
       {
         "name":"코스믹 스위퍼(홀드)",
-        "command":"↘RPLP홀드",
+        "command":"↘RPLP 홀드",
         "start_frame":"35",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -1156,20 +1156,20 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"14",
-        "extra":"토네이도\n혹은 ↖LP or ↑LP\n홀드하면 파워 상승\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로",
+        "extra":"토네이도\n혹은 ↖LP or ↑LP\n홀드하면 파워 상승\n공중에 있는 상대에게만 히트함\n↓~입력 시 감마 하울로",
         "startAt": 289,
         "endAt": 292
       },
       {
         "name":"스카이 스위퍼(홀드)",
-        "command":"↗LP홀드",
+        "command":"↗LP 홀드",
         "start_frame":"31",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"상단",
         "damage":"35",
-        "extra":"토네이도\n↖LP홀드 or ↑LP홀드\n공중에 있는 상대에게만 히트함\n2 ~입력 시 감마 하울로",
+        "extra":"토네이도\n↖LP 홀드 or ↑LP 홀드\n공중에 있는 상대에게만 히트함\n↓~입력 시 감마 하울로",
         "startAt": 294,
         "endAt": 298
       },
@@ -1187,7 +1187,7 @@
         "endAt": 302
       },
       {
-        "name":"테라펄서",
+        "name":"테라펄서~감마 하울",
         "command":"↗LK",
         "start_frame":"23",
         "guard_frame":"-12",
@@ -1681,7 +1681,7 @@
         "endAt": 439
       },
       {
-        "name":"겟 업 펀치",
+        "name":"겟 업 펀치~시트 다운",
         "command":"누워 쓰러져 있을 때 ↓AP",
         "start_frame":"28",
         "guard_frame":"+15g",
@@ -2153,7 +2153,7 @@
         "endAt": 458
       },
       {
-        "name":"엑스트라 팬케이크 프레스",
+        "name":"엑스트라 팬케이크 프레스~시트 다운",
         "command":"시트 다운 도중 AK",
         "start_frame":"54",
         "guard_frame":"+13g",
@@ -2375,7 +2375,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 531,
       "endAt": 536
     },
@@ -2387,7 +2387,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 536,
       "endAt": 540
     },

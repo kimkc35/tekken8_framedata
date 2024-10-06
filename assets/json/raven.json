@@ -2,8 +2,8 @@
   "moves":{
     "heat":[
       {
-        "name":"히트 버스트",
-        "command":"RP+LK",
+        "name": "히트 버스트",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -42,7 +42,7 @@
       },
       {
         "name":"스피닝 미들 킥",
-        "command":"일어서며 AK",
+        "command":"일어나며 AK",
         "start_frame":"16",
         "guard_frame":"-12",
         "hit_frame":"+17g",
@@ -93,7 +93,7 @@
         "endAt": 437
       },
       {
-        "name":"판데모니움",
+        "name":"판데모니움~소울존",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"18",
         "guard_frame":"+14g",
@@ -186,7 +186,7 @@
         "endAt": 70
       },
       {
-        "name":"PK 콤보",
+        "name":"PK 콤보~섀도 스프린트",
         "command":"RPRK",
         "start_frame":"10",
         "guard_frame":"-8",
@@ -1642,7 +1642,7 @@
         "endAt": 359
       },
       {
-        "name":"트릭 뱅2",
+        "name":"트릭 뱅2~소울존",
         "command":"상대에게 등을 보일 때 →RKLPAK(↓~)",
         "start_frame":"16",
         "guard_frame":"-6",
@@ -1814,7 +1814,7 @@
     "sit":[
       {
         "name":"라이징 어퍼컷",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"14",
         "guard_frame":"-14",
         "hit_frame":"A",
@@ -1827,7 +1827,7 @@
       },
       {
         "name":"잭나이프 엘보",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
@@ -1840,7 +1840,7 @@
       },
       {
         "name":"트라이던트 킥",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"-8",
         "hit_frame":"0",
@@ -1853,7 +1853,7 @@
       },
       {
         "name":"트라이던트 킥~팬텀 할버드",
-        "command":"일어서며 LK 히트 혹은 가드 시 RP",
+        "command":"일어나며 LK 히트 혹은 가드 시 RP",
         "start_frame":"16",
         "guard_frame":"-14",
         "hit_frame":"T",
@@ -1866,7 +1866,7 @@
       },
       {
         "name":"섀도 스냅 킥",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-7",
         "hit_frame":"+7",
@@ -1879,7 +1879,7 @@
       },
       {
         "name":"스피닝 미들 킥",
-        "command":"일어서며 AK",
+        "command":"일어나며 AK",
         "start_frame":"16",
         "guard_frame":"-12",
         "hit_frame":"+7",
@@ -2204,7 +2204,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 453,
       "endAt": 458
     },
@@ -2216,7 +2216,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 463,
       "endAt": 467
     },

@@ -3,14 +3,16 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
         "name":"카빙 카메오",
@@ -21,7 +23,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"15,21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 4,
+        "endAt": 8
       },
       {
         "name":"뒤랑달",
@@ -32,7 +36,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"35",
-        "extra":"히트 발동기\n가드 대미지\n히트 시 히트 상태의 남은 시간 회복"
+        "extra":"히트 발동기\n가드 대미지\n히트 시 히트 상태의 남은 시간 회복",
+        "startAt": 9,
+        "endAt": 12
       },
       {
         "name":"하우브로데드",
@@ -43,7 +49,9 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 13,
+        "endAt": 17
       },
       {
         "name":"페일노트",
@@ -54,7 +62,9 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 18,
+        "endAt": 22
       },
       {
         "name":"플라잉 젠틀맨",
@@ -65,10 +75,12 @@
         "counter_frame":"+17g",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 22,
+        "endAt": 25
       },
       {
-        "name":"무슈 사무라이",
+        "name":"무슈 사무라이~이아이 스탠스",
         "command":"히트 상태에서 ↙AP",
         "start_frame":"28",
         "guard_frame":"+6",
@@ -76,7 +88,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비"
+        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비",
+        "startAt": 27,
+        "endAt": 31
       },
       {
         "name":"엑스칼리버",
@@ -87,10 +101,12 @@
         "counter_frame":"D",
         "range":"중단,특수 중단",
         "damage":"47,20",
-        "extra":"혹은 히트 상태에서 ↖AP\n히트 상태의 남은 시간을 소비"
+        "extra":"혹은 히트 상태에서 ↖AP\n히트 상태의 남은 시간을 소비",
+        "startAt": 32,
+        "endAt": 35
       },
       {
-        "name":"롱기누스",
+        "name":"롱기누스~이아이 스탠스",
         "command":"히트 상태에서 이아이 스탠스 도중 ↓RP",
         "start_frame":"23",
         "guard_frame":"+8",
@@ -98,7 +114,9 @@
         "counter_frame":"D",
         "range":"중단,특수 중단x4",
         "damage":"10,7x3,20",
-        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비"
+        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비",
+        "startAt": 36,
+        "endAt": 41
       },
       {
         "name":"엘리미나시옹 사무라이",
@@ -109,7 +127,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20,19",
-        "extra":"히트 시 잡기로"
+        "extra":"히트 시 잡기로",
+        "startAt": 42,
+        "endAt": 47
       }
     ],
     "general":[
@@ -122,7 +142,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"더블 카보숑 컷2",
@@ -133,7 +155,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,7",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"더블 카보숑 컷3",
@@ -144,7 +168,9 @@
         "counter_frame":"+3",
         "range":"상단x2",
         "damage":"5,7,5,10",
-        "extra":""
+        "extra":"",
+        "startAt": 64,
+        "endAt": 67
       },
       {
         "name":"베이직 에티켓",
@@ -155,7 +181,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,12",
-        "extra":""
+        "extra":"",
+        "startAt": 67,
+        "endAt": 69
       },
       {
         "name":"브리올레트 컷",
@@ -166,7 +194,9 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"5,12,20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 70,
+        "endAt": 73
       },
       {
         "name":"베이직 매너",
@@ -177,7 +207,9 @@
         "counter_frame":"-1",
         "range":"하단",
         "damage":"5,11",
-        "extra":""
+        "extra":"",
+        "startAt": 73,
+        "endAt": 76
       },
       {
         "name":"컷러리 에티켓1",
@@ -188,7 +220,9 @@
         "counter_frame":"-2",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 76,
+        "endAt": 78
       },
       {
         "name":"컷러리 에티켓2",
@@ -199,7 +233,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"10,12",
-        "extra":"→~입력 시 퍼퓨머로"
+        "extra":"→~입력 시 퍼퓨머로",
+        "startAt": 76,
+        "endAt": 78
       },
       {
         "name":"컷러리 에티켓2~퍼퓨머",
@@ -210,7 +246,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"10,12",
-        "extra":"퍼퓨머로"
+        "extra":"퍼퓨머로",
+        "startAt": 76,
+        "endAt": 78
       },
       {
         "name":"크라이베이비 소피아1",
@@ -221,10 +259,12 @@
         "counter_frame":"-2",
         "range":"중단x2",
         "damage":"10,5,5",
-        "extra":""
+        "extra":"",
+        "startAt": 79,
+        "endAt": 82
       },
       {
-        "name":"크라이베이비 소피아2",
+        "name":"크라이베이비 소피아2~이아이 스탠스",
         "command":"RPRP 히트 혹은 가드 시 RP",
         "start_frame":"12",
         "guard_frame":"-3",
@@ -232,7 +272,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"10,5,5,12",
-        "extra":"이아이 스탠스로\n가드 대미지"
+        "extra":"이아이 스탠스로\n가드 대미지",
+        "startAt": 79,
+        "endAt": 82
       },
       {
         "name":"굿 커뮤니케이션1",
@@ -243,7 +285,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 82,
+        "endAt": 85
       },
       {
         "name":"굿 커뮤니케이션2",
@@ -254,7 +298,9 @@
         "counter_frame":"+5",
         "range":"상단x2",
         "damage":"11,9,10",
-        "extra":""
+        "extra":"",
+        "startAt": 82,
+        "endAt": 85
       },
       {
         "name":"애스터리즘 오브 버네벌런스1",
@@ -265,7 +311,9 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"애스터리즘 오브 버네벌런스2",
@@ -276,7 +324,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15,17",
-        "extra":""
+        "extra":"",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"애스터리즘 오브 버네벌런스3",
@@ -287,7 +337,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,17,25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 87,
+        "endAt": 90
       },
       {
         "name":"에덴",
@@ -298,7 +350,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 91,
+        "endAt": 93
       },
       {
         "name":"이아이 스탠스",
@@ -309,7 +363,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"이아이 스탠스로\n이아이 스탠스 도중 ↙or AK입력 시 서 있는 상태로"
+        "extra":"이아이 스탠스로\n이아이 스탠스 도중 ↙or AK입력 시 서 있는 상태로",
+        "startAt": 94,
+        "endAt": 96
       },
       {
         "name":"고르라곤1",
@@ -320,7 +376,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 100
       },
       {
         "name":"고르라곤2",
@@ -331,7 +389,9 @@
         "counter_frame":"-4",
         "range":"상단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 100
       },
       {
         "name":"고르라곤3",
@@ -342,7 +402,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"10,10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 100
       },
       {
         "name":"고르라곤4",
@@ -353,7 +415,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,10,12,25",
-        "extra":""
+        "extra":"",
+        "startAt": 96,
+        "endAt": 100
       },
       {
         "name":"레디언트 컷",
@@ -364,7 +428,9 @@
         "counter_frame":"D",
         "range":"상단,중단x2",
         "damage":"10,10,7,5,20",
-        "extra":""
+        "extra":"",
+        "startAt": 100,
+        "endAt": 104
       },
       {
         "name":"퍼퓨머",
@@ -375,7 +441,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"퍼퓨머로\n퍼퓨머 도중 ↙입력 시 몸을 숙인 상태로\n5~10F 펀치 패링 효과"
+        "extra":"퍼퓨머로\n퍼퓨머 도중 ↙입력 시 몸을 숙인 상태로\n5~10F 펀치 패링 효과",
+        "startAt": 104,
+        "endAt": 106
       },
       {
         "name":"카빙 카메오1",
@@ -386,7 +454,9 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"카빙 카메오2",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 107,
+        "endAt": 111
       },
       {
         "name":"카빙 인타글리오",
@@ -408,7 +480,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,20",
-        "extra":"히트, 가드 시 AK 또는 ↓입력 시 이아이 스탠스로"
+        "extra":"히트, 가드 시 AK 또는 ↓입력 시 이아이 스탠스로",
+        "startAt": 112,
+        "endAt": 114
       },
       {
         "name":"뒤랑달",
@@ -419,7 +493,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"35",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"히트 발동기\n가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 115,
+        "endAt": 118
       },
       {
         "name":"트릴리언트 킥1",
@@ -430,7 +506,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 119,
+        "endAt": 121
       },
       {
         "name":"트릴리언트 킥2",
@@ -441,7 +519,9 @@
         "counter_frame":"+7",
         "range":"상단x2",
         "damage":"10,7,7",
-        "extra":""
+        "extra":"",
+        "startAt": 119,
+        "endAt": 121
       },
       {
         "name":"아케디아",
@@ -452,7 +532,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 122,
+        "endAt": 124
       },
       {
         "name":"이러데선스 오브 로열티1",
@@ -463,7 +545,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 129,
+        "endAt": 133
       },
       {
         "name":"이러데선스 오브 로열티2",
@@ -474,7 +558,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"10,14",
-        "extra":""
+        "extra":"",
+        "startAt": 129,
+        "endAt": 133
       },
       {
         "name":"이러데선스 오브 로열티3",
@@ -485,7 +571,9 @@
         "counter_frame":"D",
         "range":"특수 중단",
         "damage":"10,14,23",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 129,
+        "endAt": 133
       },
       {
         "name":"셀피시 미란다1",
@@ -496,10 +584,12 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 133,
+        "endAt": 136
       },
       {
-        "name":"셀피시 미란다2",
+        "name":"셀피시 미란다2~이아이 스탠스",
         "command":"↘RK 히트 혹은 가드 시 RP",
         "start_frame":"13",
         "guard_frame":"-3",
@@ -507,7 +597,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"15,16",
-        "extra":"이아이 스탠스로\n가드 대미지"
+        "extra":"이아이 스탠스로\n가드 대미지",
+        "startAt": 133,
+        "endAt": 136
       },
       {
         "name":"흘람레이",
@@ -518,7 +610,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"32",
-        "extra":""
+        "extra":"",
+        "startAt": 136,
+        "endAt": 139
       },
       {
         "name":"컨케이브 컷1",
@@ -529,7 +623,9 @@
         "counter_frame":"-6",
         "range":"하단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 143
       },
       {
         "name":"컨케이브 컷2",
@@ -540,7 +636,9 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"7,15",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 143
       },
       {
         "name":"하우브로데드",
@@ -551,7 +649,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 144,
+        "endAt": 147
       },
       {
         "name":"굿 매너",
@@ -562,7 +662,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"11",
-        "extra":""
+        "extra":"",
+        "startAt": 147,
+        "endAt": 150
       },
       {
         "name":"파인 살루트",
@@ -573,7 +675,9 @@
         "counter_frame":"-",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 150,
+        "endAt": 152
       },
       {
         "name":"길티 마리코",
@@ -584,7 +688,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12,3,4,4,7",
-        "extra":""
+        "extra":"",
+        "startAt": 153,
+        "endAt": 158
       },
       {
         "name":"이러데선스 오브 프라우어스",
@@ -595,7 +701,9 @@
         "counter_frame":"D",
         "range":"특수 중단",
         "damage":"21",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 158,
+        "endAt": 161
       },
       {
         "name":"에메랄드 컷1",
@@ -606,7 +714,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 162,
+        "endAt": 164
       },
       {
         "name":"에메랄드 컷2",
@@ -617,7 +727,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"9,9",
-        "extra":"→~입력 시 퍼퓨머로"
+        "extra":"→~입력 시 퍼퓨머로",
+        "startAt": 162,
+        "endAt": 164
       },
       {
         "name":"에메랄드 컷2~퍼퓨머",
@@ -628,7 +740,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"9,9",
-        "extra":"퍼퓨머로"
+        "extra":"퍼퓨머로",
+        "startAt": 162,
+        "endAt": 164
       },
       {
         "name":"폴라이트 그리팅스",
@@ -639,7 +753,9 @@
         "counter_frame":"T",
         "range":"상단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 165,
+        "endAt": 167
       },
       {
         "name":"웰컴 스윕",
@@ -650,7 +766,9 @@
         "counter_frame":"-",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 168,
+        "endAt": 170
       },
       {
         "name":"머스크-센티드 나타샤",
@@ -661,7 +779,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20,2,2",
-        "extra":""
+        "extra":"",
+        "startAt": 171,
+        "endAt": 176
       },
       {
         "name":"배너티 러브1",
@@ -672,7 +792,9 @@
         "counter_frame":"-3",
         "range":"중단",
         "damage":"11",
-        "extra":"→~입력 시 퍼퓨머로"
+        "extra":"→~입력 시 퍼퓨머로",
+        "startAt": 181,
+        "endAt": 185
       },
       {
         "name":"배너티 러브1~퍼퓨머",
@@ -683,7 +805,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"11",
-        "extra":"퍼퓨머로"
+        "extra":"퍼퓨머로",
+        "startAt": 181,
+        "endAt": 185
       },
       {
         "name":"배너티 러브2",
@@ -693,8 +817,10 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"11,16(,4,11)",
-        "extra":"정면 지상 히트 시 잡기로"
+        "damage":"11,16,4,11",
+        "extra":"정면 지상 히트 시 잡기로",
+        "startAt": 181,
+        "endAt": 185
       },
       {
         "name":"스트로빙 메모리즈",
@@ -705,7 +831,9 @@
         "counter_frame":"+14",
         "range":"상단",
         "damage":"0",
-        "extra":"카운터 히트 시 90% 콤보 대미지 보정\n히트 시 회복 가능 대미지 5"
+        "extra":"카운터 히트 시 90% 콤보 대미지 보정\n히트 시 회복 가능 대미지 5",
+        "startAt": 186,
+        "endAt": 188
       },
       {
         "name":"카발1",
@@ -716,7 +844,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"카발2",
@@ -727,7 +857,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,25",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"코디얼 서킷",
@@ -738,7 +870,9 @@
         "counter_frame":"+14",
         "range":"상단",
         "damage":"10",
-        "extra":"호밍기\n가드 대미지"
+        "extra":"호밍기\n가드 대미지",
+        "startAt": 196,
+        "endAt": 198
       },
       {
         "name":"페일노트",
@@ -749,7 +883,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n파워 크래시\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 200,
+        "endAt": 203
       },
       {
         "name":"던 스탤리언",
@@ -760,7 +896,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"24",
-        "extra":""
+        "extra":"",
+        "startAt": 204,
+        "endAt": 206
       },
       {
         "name":"칼리버너스",
@@ -771,7 +909,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"37",
-        "extra":"혹은 ↖AP\n가드 대미지"
+        "extra":"혹은 ↖AP\n가드 대미지",
+        "startAt": 208,
+        "endAt": 211
       },
       {
         "name":"엑스칼리버",
@@ -782,7 +922,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"47,20",
-        "extra":"혹은 히트 상태에서 ↖AP\n히트 상태의 남은 시간을 소비"
+        "extra":"혹은 히트 상태에서 ↖AP\n히트 상태의 남은 시간을 소비",
+        "startAt": 212,
+        "endAt": 216
       },
       {
         "name":"그린골렛1",
@@ -793,7 +935,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"9",
-        "extra":"혹은 ↖LP or ↑LP"
+        "extra":"혹은 ↖LP or ↑LP",
+        "startAt": 216,
+        "endAt": 219
       },
       {
         "name":"그린골렛2",
@@ -804,7 +948,9 @@
         "counter_frame":"+15g",
         "range":"중단",
         "damage":"9,21",
-        "extra":"토네이도\n↓~ or AK입력 시 캔슬하고 이아이 스탠스로"
+        "extra":"토네이도\n↓~ or AK입력 시 캔슬하고 이아이 스탠스로",
+        "startAt": 216,
+        "endAt": 219
       },
       {
         "name":"그린골렛2(캔슬)~이아이 스탠스",
@@ -815,7 +961,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"9",
-        "extra":"이아이 스탠스로"
+        "extra":"이아이 스탠스로",
+        "startAt": 216,
+        "endAt": 219
       },
       {
         "name":"마키즈 컷",
@@ -826,7 +974,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"15",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 220,
+        "endAt": 222
       },
       {
         "name":"피스풀 슈즈",
@@ -837,7 +987,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":"혹은 ↖LK or ↑LK"
+        "extra":"혹은 ↖LK or ↑LK",
+        "startAt": 223,
+        "endAt": 225
       },
       {
         "name":"셔토이언트 커리지",
@@ -847,8 +999,10 @@
         "hit_frame":"T",
         "counter_frame":"T",
         "range":"중단",
-        "damage":"12(,16)",
-        "extra":"토네이도\n↖RK or ↑RK"
+        "damage":"12,16",
+        "extra":"토네이도\n↖RK or ↑RK",
+        "startAt": 228,
+        "endAt": 232
       },
       {
         "name":"카른웨난",
@@ -859,7 +1013,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"24",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 232,
+        "endAt": 235
       },
       {
         "name":"애스터리즘 오브 버추",
@@ -870,7 +1026,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"가드 대미지\n↓~입력 시 히트, 가드 시 이아이 스탠스로[돈까스, 홈플러스, 콤파스]"
+        "extra":"가드 대미지\n↓~입력 시 히트, 가드 시 이아이 스탠스로[돈까스, 홈플러스, 콤파스]",
+        "startAt": 236,
+        "endAt": 238
       },
       {
         "name":"애스터리즘 오브 버추~이아이 스탠스",
@@ -881,10 +1039,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"가드 대미지\n이아이 스탠스로[돈까스, 홈플러스, 콤파스]"
+        "extra":"가드 대미지\n이아이 스탠스로[돈까스, 홈플러스, 콤파스]",
+        "startAt": 236,
+        "endAt": 238
       },
       {
-        "name":"아무르 샤프트",
+        "name":"아무르 샤프트~이아이 스탠스",
         "command":"↓↘→RP",
         "start_frame":"22",
         "guard_frame":"-3",
@@ -892,7 +1052,9 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"16",
-        "extra":"이아이 스탠스로\n가드 대미지"
+        "extra":"이아이 스탠스로\n가드 대미지",
+        "startAt": 239,
+        "endAt": 241
       },
       {
         "name":"몽주아 타케미카즈치",
@@ -903,7 +1065,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"50",
-        "extra":""
+        "extra":"",
+        "startAt": 244,
+        "endAt": 249
       },
       {
         "name":"10단 콤보1",
@@ -914,7 +1078,9 @@
         "counter_frame":"-2",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보2",
@@ -925,7 +1091,9 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"10,12",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보3",
@@ -936,7 +1104,9 @@
         "counter_frame":"-7",
         "range":"하단",
         "damage":"10,12,6",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보4",
@@ -947,7 +1117,9 @@
         "counter_frame":"-6",
         "range":"하단",
         "damage":"10,12,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보5",
@@ -958,7 +1130,9 @@
         "counter_frame":"-12",
         "range":"상단",
         "damage":"10,12,6,6,8",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보6",
@@ -969,7 +1143,9 @@
         "counter_frame":"-10",
         "range":"중단",
         "damage":"10,12,6,6,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보7",
@@ -980,7 +1156,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"10,12,6,6,8,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보8",
@@ -991,7 +1169,9 @@
         "counter_frame":"-2",
         "range":"중단",
         "damage":"10,12,6,6,8,8,8,8",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보9",
@@ -1002,7 +1182,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,12,6,6,8,8,8,8,10",
-        "extra":"히트 시 히트 상태의 남은 시간 회복"
+        "extra":"히트 시 히트 상태의 남은 시간 회복",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"10단 콤보10",
@@ -1013,7 +1195,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,12,6,6,8,8,8,8,10,25",
-        "extra":"히트 시 히트 상태의 남은 시간 회복"
+        "extra":"히트 시 히트 상태의 남은 시간 회복",
+        "startAt": 249,
+        "endAt": 256
       },
       {
         "name":"도발",
@@ -1024,7 +1208,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 257,
+        "endAt": 259
       },
       {
         "name":"기합 모으기",
@@ -1035,7 +1221,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 260,
+        "endAt": 263
       },
       {
         "name":"르블랑",
@@ -1046,7 +1234,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 264,
+        "endAt": 266
       },
       {
         "name":"댄디 블로",
@@ -1057,75 +1247,89 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":""
+        "extra":"",
+        "startAt": 249,
+        "endAt": 256
       }
     ],
     "sit":[
       {
         "name":"오벌 컷",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"15",
         "guard_frame":"-16",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 267,
+        "endAt": 271
       },
       {
         "name":"바게트 컷",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"14",
         "guard_frame":"-8",
         "hit_frame":"+6",
         "counter_frame":"A",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 275,
+        "endAt": 277
       },
       {
         "name":"이러데선스 오브 페이스1",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"15",
         "guard_frame":"-14",
         "hit_frame":"0",
         "counter_frame":"0",
         "range":"상단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 281,
+        "endAt": 284
       },
       {
         "name":"이러데선스 오브 페이스2",
-        "command":"일어서며 LKRP",
+        "command":"일어나며 LKRP",
         "start_frame":"15",
         "guard_frame":"-9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"특수 중단",
         "damage":"23",
-        "extra":"토네이도\n가드 대미지"
+        "extra":"토네이도\n가드 대미지",
+        "startAt": 281,
+        "endAt": 284
       },
       {
         "name":"프레이즈 스매시",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 284,
+        "endAt": 287
       },
       {
         "name":"필리 게이츠",
-        "command":"일어서며 AP",
+        "command":"일어나며 AP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"중단x2",
         "damage":"10,17",
-        "extra":"→~입력 시 퍼퓨머로"
+        "extra":"→~입력 시 퍼퓨머로",
+        "startAt": 287,
+        "endAt": 290
       },
       {
         "name":"샹그랄라",
@@ -1136,7 +1340,9 @@
         "counter_frame":"0",
         "range":"하단,상단",
         "damage":"10,10",
-        "extra":"()는 1타만 가드 시 프레임"
+        "extra":"()는 1타만 가드 시 프레임",
+        "startAt": 291,
+        "endAt": 293
       }
     ],
     "iai Stance":[
@@ -1149,7 +1355,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"이아이 스탠스로\n↑입력 시 워프하고 서 있는 상태로\n↙or AK입력 시 서 있는 상태로"
+        "extra":"이아이 스탠스로\n↑입력 시 워프하고 서 있는 상태로\n↙or AK입력 시 서 있는 상태로",
+        "startAt": 297,
+        "endAt": 299
       },
       {
         "name":"스푸마도르1",
@@ -1160,18 +1368,35 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 304,
+        "endAt": 308
       },
       {
         "name":"스푸마도르2",
         "command":"이아이 스탠스 도중 LPLP",
         "start_frame":"13",
-        "guard_frame":"-14(-11)",
-        "hit_frame":"+15g(+2)",
-        "counter_frame":"+15g(+2)",
+        "guard_frame":"-14",
+        "hit_frame":"+15g",
+        "counter_frame":"+15g",
         "range":"중단",
         "damage":"9,21",
-        "extra":"토네이도\n↓~ or AK입력 시 캔슬하고 이아이 스탠스로"
+        "extra":"토네이도\n↓~ or AK입력 시 캔슬하고 이아이 스탠스로",
+        "startAt": 304,
+        "endAt": 308
+      },
+      {
+        "name":"스푸마도르2(캔슬)~이아이 스탠스",
+        "command":"이아이 스탠스 도중 LPLP↓~(AK)",
+        "start_frame":"13",
+        "guard_frame":"-11",
+        "hit_frame":"+2",
+        "counter_frame":"+2",
+        "range":"중단",
+        "damage":"9,21",
+        "extra":"토네이도\n이아이 스탠스로",
+        "startAt": 304,
+        "endAt": 308
       },
       {
         "name":"클라렌트1",
@@ -1182,7 +1407,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,15",
-        "extra":""
+        "extra":"",
+        "startAt": 309,
+        "endAt": 313
       },
       {
         "name":"클라렌트2",
@@ -1193,7 +1420,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"9,15,23",
-        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 309,
+        "endAt": 313
       },
       {
         "name":"셔스티폴",
@@ -1204,7 +1433,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"9,23",
-        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 314,
+        "endAt": 317
       },
       {
         "name":"알마스",
@@ -1215,7 +1446,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":"토네이도\n가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"토네이도\n가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 318,
+        "endAt": 321
       },
       {
         "name":"시퀀스",
@@ -1224,9 +1457,11 @@
         "guard_frame":"-14",
         "hit_frame":"D",
         "counter_frame":"D",
-        "range":"중단",
+        "range":"중단x2",
         "damage":"13,25",
-        "extra":"파워 크래시\n히트 시 히트 상태의 남은 시간 회복\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n히트 시 히트 상태의 남은 시간 회복\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 324,
+        "endAt": 327
       },
       {
         "name":"모글레이1",
@@ -1237,7 +1472,9 @@
         "counter_frame":"+8",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 330,
+        "endAt": 333
       },
       {
         "name":"모글레이2",
@@ -1248,7 +1485,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"17,20",
-        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비"
+        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
+        "startAt": 330,
+        "endAt": 333
       },
       {
         "name":"오트클레르",
@@ -1259,10 +1498,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"가드 대미지\n히트 시 히트 상태의 남은 시간 회복"
+        "extra":"가드 대미지\n히트 시 히트 상태의 남은 시간 회복",
+        "startAt": 334,
+        "endAt": 337
       },
       {
-        "name":"롱고미니아드",
+        "name":"롱고미니아드~이아이 스탠스",
         "command":"이아이 스탠스 도중 ↓RP",
         "start_frame":"23",
         "guard_frame":"+4",
@@ -1270,10 +1511,12 @@
         "counter_frame":"D",
         "range":"중단,특수 중단x2",
         "damage":"10,7,20",
-        "extra":"이아이 스탠스로\n가드 대미지"
+        "extra":"이아이 스탠스로\n가드 대미지",
+        "startAt": 339,
+        "endAt": 342
       },
       {
-        "name":"롱기누스",
+        "name":"롱기누스~이아이 스탠스",
         "command":"히트 상태에서 이아이 스탠스 도중 ↓RP",
         "start_frame":"23",
         "guard_frame":"+8",
@@ -1281,7 +1524,9 @@
         "counter_frame":"D",
         "range":"중단,특수 중단x4",
         "damage":"10,7x3,20",
-        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비"
+        "extra":"이아이 스탠스로\n히트 상태의 남은 시간을 소비",
+        "startAt": 343,
+        "endAt": 347
       },
       {
         "name":"이스피 아벙뛰뤄즈",
@@ -1292,40 +1537,48 @@
         "counter_frame":"D",
         "range":"하단,하단",
         "damage":"10,20",
-        "extra":"히트 시 히트 상태의 남은 시간 회복"
+        "extra":"히트 시 히트 상태의 남은 시간 회복",
+        "startAt": 348,
+        "endAt": 351
       },
       {
         "name":"테이크 어 보우",
-        "command":"이아이 스탠스 도중 2",
+        "command":"이아이 스탠스 도중 ↓",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 363,
+        "endAt": 365
       },
       {
         "name":"무브 포워드",
-        "command":"이아이 스탠스 도중 6",
+        "command":"이아이 스탠스 도중 →",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"하단 흘리기 효과 있음"
+        "extra":"하단에 대한 완전 회피 효과 있음",
+        "startAt": 365,
+        "endAt": 368
       },
       {
         "name":"무브 백워드",
-        "command":"이아이 스탠스 도중 4",
+        "command":"이아이 스탠스 도중 ←",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 369,
+        "endAt": 371
       }
     ],
     "perfumer":[
@@ -1338,7 +1591,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"퍼퓨머로\n퍼퓨머 도중 ↘입력 시 몸을 숙인 상태로\n5~10F 펀치 패링 효과"
+        "extra":"퍼퓨머로\n퍼퓨머 도중 ↘입력 시 몸을 숙인 상태로\n5~10F 펀치 패링 효과",
+        "startAt": 375,
+        "endAt": 377
       },
       {
         "name":"마세라시옹",
@@ -1349,7 +1604,9 @@
         "counter_frame":"+14g",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 378,
+        "endAt": 380
       },
       {
         "name":"탑 노트1",
@@ -1360,10 +1617,12 @@
         "counter_frame":"+1",
         "range":"중단",
         "damage":"9",
-        "extra":""
+        "extra":"",
+        "startAt": 383,
+        "endAt": 386
       },
       {
-        "name":"탑 노트2",
+        "name":"탑 노트2~이아이 스탠스",
         "command":"퍼퓨머 도중 RPRP",
         "start_frame":"12",
         "guard_frame":"-4",
@@ -1371,7 +1630,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"9,13",
-        "extra":"이아이 스탠스로"
+        "extra":"이아이 스탠스로",
+        "startAt": 383,
+        "endAt": 386
       },
       {
         "name":"탑 노트3",
@@ -1382,7 +1643,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"9,13,20",
-        "extra":""
+        "extra":"",
+        "startAt": 383,
+        "endAt": 386
       },
       {
         "name":"라스트 노트",
@@ -1393,7 +1656,9 @@
         "counter_frame":"D",
         "range":"중단x3",
         "damage":"9,13,8,8,15",
-        "extra":""
+        "extra":"",
+        "startAt": 389,
+        "endAt": 392
       },
       {
         "name":"플라잉 젠틀맨",
@@ -1404,10 +1669,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 393,
+        "endAt": 396
       },
       {
-        "name":"코디얼 서킷(퍼퓨머)",
+        "name":"코디얼 서킷",
         "command":"퍼퓨머 도중 RK",
         "start_frame":"18",
         "guard_frame":"-2",
@@ -1415,7 +1682,9 @@
         "counter_frame":"+14",
         "range":"상단",
         "damage":"10",
-        "extra":"호밍기\n가드 대미지"
+        "extra":"호밍기\n가드 대미지",
+        "startAt": 401,
+        "endAt": 404
       },
       {
         "name":"헨그로엔",
@@ -1426,18 +1695,22 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 405,
+        "endAt": 408
       },
       {
         "name":"시야주",
-        "command":"퍼퓨머 도중 3",
+        "command":"퍼퓨머 도중 ↘",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 409,
+        "endAt": 411
       }
     ]
   },
@@ -1450,7 +1723,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 411,
+      "endAt": 416
     },
     {
       "name":"주 트 뵈",
@@ -1460,7 +1735,9 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 416,
+      "endAt": 421
     },
     {
       "name":"원나잇 미라클",
@@ -1470,7 +1747,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 422,
+      "endAt": 427
     },
     {
       "name":"주 트 뵈",
@@ -1480,7 +1759,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 427,
+      "endAt": 432
     },
     {
       "name":"페어월 인 타지마할",
@@ -1490,7 +1771,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 433,
+      "endAt": 437
     },
     {
       "name":"로맨싱 체이서",
@@ -1500,7 +1783,9 @@
       "after_break_frame":"-3",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 437,
+      "endAt": 442
     },
     {
       "name":"그웬",
@@ -1510,7 +1795,9 @@
       "after_break_frame":"-",
       "damage":"21",
       "range":"반격",
-      "extra":"토네이도\n히트 시 히트 상태의 남은 시간 회복"
+      "extra":"토네이도\n히트 시 히트 상태의 남은 시간 회복\n하단에 대한 완전 회피 효과 있음",
+      "startAt": 447,
+      "endAt": 450
     }
   ]
 }

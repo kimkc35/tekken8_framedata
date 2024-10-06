@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -93,7 +93,7 @@
         "endAt": 36
       },
       {
-        "name":"헤븐리 드래곤",
+        "name":"헤븐리 드래곤~드래곤 차지",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"14",
         "guard_frame":"+11",
@@ -472,7 +472,7 @@
         "endAt": 109
       },
       {
-        "name":"샤올린 스핀 킥스3~드래곤 차지로",
+        "name":"샤올린 스핀 킥스3~드래곤 차지",
         "command":"RKLKRK→~",
         "start_frame":"13",
         "guard_frame":"+8",
@@ -1642,7 +1642,7 @@
         "endAt": 369
       },
       {
-        "name":"로우 크러시",
+        "name":"로우 크러시~드래곤 차지",
         "command":"횡이동 중 LK",
         "start_frame":"18",
         "guard_frame":"-13",
@@ -1655,7 +1655,7 @@
         "endAt": 372
       },
       {
-        "name":"드래곤 저지먼트1",
+        "name":"드래곤 저지먼트1~드래곤 차지",
         "command":"횡이동 중 AP",
         "start_frame":"17",
         "guard_frame":"-4",
@@ -1801,7 +1801,7 @@
     "sit":[
       {
         "name":"플래시 피스트1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"13",
         "guard_frame":"-7",
         "hit_frame":"-1",
@@ -1814,7 +1814,7 @@
       },
       {
         "name":"플래시 피스트1~드래곤 차지",
-        "command":"일어서며 LP→~",
+        "command":"일어나며 LP→~",
         "start_frame":"13",
         "guard_frame":"-4",
         "hit_frame":"+2",
@@ -1827,7 +1827,7 @@
       },
       {
         "name":"플래시 피스트2",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"13",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -1840,7 +1840,7 @@
       },
       {
         "name":"드래곤 어퍼컷",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-18",
         "hit_frame":"A",
@@ -1852,8 +1852,8 @@
         "endAt": 330
       },
       {
-        "name":"사이드 킥",
-        "command":"일어서며 LK",
+        "name":"사이드 킥~드래곤 차지",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"+17g",
         "hit_frame":"+19",
@@ -1866,7 +1866,7 @@
       },
       {
         "name":"프런트 킥",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-4",
         "hit_frame":"+7",
@@ -1879,7 +1879,7 @@
       },
       {
         "name":"프런트 킥~드래곤 차지",
-        "command":"일어서며 RK→~",
+        "command":"일어나며 RK→~",
         "start_frame":"11",
         "guard_frame":"+5",
         "hit_frame":"+16g",
@@ -1892,7 +1892,7 @@
       },
       {
         "name":"프런트 킥 써머썰트 배리에이션",
-        "command":"일어서며 RKLK",
+        "command":"일어나며 RKLK",
         "start_frame":"11",
         "guard_frame":"-14",
         "hit_frame":"T",
@@ -1905,7 +1905,7 @@
       },
       {
         "name":"캐터펄트 킥",
-        "command":"일어서며 AK",
+        "command":"일어나며 AK",
         "start_frame":"14",
         "guard_frame":"-21",
         "hit_frame":"D",
@@ -1997,7 +1997,7 @@
         "endAt": 405
       },
       {
-        "name":"드래곤 너클",
+        "name":"드래곤 너클~드래곤 차지",
         "command":"드래곤 차지 도중 LP",
         "start_frame":"12",
         "guard_frame":"0",
@@ -2137,7 +2137,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 453,
       "endAt": 457
     },
@@ -2149,7 +2149,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 458,
       "endAt": 462
     },

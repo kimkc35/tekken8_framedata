@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -329,7 +329,7 @@
         "endAt": 105
       },
       {
-        "name":"정권~상단 뒤 돌려 차기",
+        "name":"정권~상단 뒤 돌려 차기~전심",
         "command":"RPRK",
         "start_frame":"10",
         "guard_frame":"-9",
@@ -1372,7 +1372,7 @@
     "sit":[
       {
         "name":"귀팔문1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"13",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1385,7 +1385,7 @@
       },
       {
         "name":"귀팔문2",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+3",
@@ -1398,7 +1398,7 @@
       },
       {
         "name":"귀팔문2~전심",
-        "command":"일어서며 LPRP→~",
+        "command":"일어나며 LPRP→~",
         "start_frame":"13",
         "guard_frame":"-9",
         "hit_frame":"+2",
@@ -1411,7 +1411,7 @@
       },
       {
         "name":"카자마류 육연격 개1",
-        "command":"일어서며 LPLK",
+        "command":"일어나며 LPLK",
         "start_frame":"13",
         "guard_frame":"-6",
         "hit_frame":"+4",
@@ -1424,7 +1424,7 @@
       },
       {
         "name":"카자마류 육연격 개2",
-        "command":"일어서며 LPLKRP",
+        "command":"일어나며 LPLKRP",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"-6",
@@ -1437,7 +1437,7 @@
       },
       {
         "name":"카자마류 육연격 개3",
-        "command":"일어서며 LPLKRPLP",
+        "command":"일어나며 LPLKRPLP",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"+3",
@@ -1450,7 +1450,7 @@
       },
       {
         "name":"카자마류 육연격 개4",
-        "command":"일어서며 LPLKRPLPRK",
+        "command":"일어나며 LPLKRPLPRK",
         "start_frame":"13",
         "guard_frame":"-31",
         "hit_frame":"+8",
@@ -1463,7 +1463,7 @@
       },
       {
         "name":"카자마류 육연격 개5",
-        "command":"일어서며 LPLKRPLPRKRP",
+        "command":"일어나며 LPLKRPLPRKRP",
         "start_frame":"13",
         "guard_frame":"-16",
         "hit_frame":"D",
@@ -1476,7 +1476,7 @@
       },
       {
         "name":"단중 찌르기~세로차기",
-        "command":"일어서며 LP[LKLK]",
+        "command":"일어나며 LP[LKLK]",
         "start_frame":"13",
         "guard_frame":"+6",
         "hit_frame":"+13",
@@ -1489,7 +1489,7 @@
       },
       {
         "name":"단중 찌르기~세로차기~브레이킹 스텝",
-        "command":"일어서며 LP[LKLK]",
+        "command":"일어나며 LP[LKLK]",
         "start_frame":"13",
         "guard_frame":"+2",
         "hit_frame":"+9",
@@ -1502,7 +1502,7 @@
       },
       {
         "name":"쫓아 찌르기",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"14",
         "guard_frame":"-12",
         "hit_frame":"A",
@@ -1515,7 +1515,7 @@
       },
       {
         "name":"당죽차기",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"-9",
         "hit_frame":"+10",
@@ -1528,7 +1528,7 @@
       },
       {
         "name":"이단 십자각1",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-3",
         "hit_frame":"+8",
@@ -1541,7 +1541,7 @@
       },
       {
         "name":"이단 십자각2",
-        "command":"일어서며 RKRK",
+        "command":"일어나며 RKRK",
         "start_frame":"11",
         "guard_frame":"-7",
         "hit_frame":"+4",
@@ -1814,7 +1814,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 409,
       "endAt": 413
     },
@@ -1826,7 +1826,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 413,
       "endAt": 417
     },

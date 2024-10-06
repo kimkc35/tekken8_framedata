@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -121,7 +121,7 @@
         "endAt": 64
       },
       {
-        "name":"취경~이즈모폐수",
+        "name":"취경~이즈모폐수~이즈모",
         "command":"LPLP",
         "start_frame":"10",
         "guard_frame":"-9",
@@ -160,7 +160,7 @@
         "endAt": 67
       },
       {
-        "name":"창련무~이즈모개수",
+        "name":"창련무~이즈모개수~이즈모",
         "command":"LPRPRP",
         "start_frame":"10",
         "guard_frame":"+6",
@@ -407,7 +407,7 @@
         "endAt": 126
       },
       {
-        "name":"이즈모폐수",
+        "name":"이즈모폐수~이즈모",
         "command":"→LP",
         "start_frame":"20",
         "guard_frame":"-9",
@@ -472,7 +472,7 @@
         "endAt": 149
       },
       {
-        "name":"신주~출운개수",
+        "name":"신주~출운개수~이즈모",
         "command":"→LKRP",
         "start_frame":"16",
         "guard_frame":"+6",
@@ -511,7 +511,7 @@
         "endAt": 167
       },
       {
-        "name":"감념상벽",
+        "name":"감념상벽~미아레",
         "command":"→AP",
         "start_frame":"12",
         "guard_frame":"+2",
@@ -1096,7 +1096,7 @@
         "endAt": 310
       },
       {
-        "name":"이즈모개수",
+        "name":"이즈모개수~이즈모",
         "command":"↑RP",
         "start_frame":"23",
         "guard_frame":"+6",
@@ -1174,7 +1174,7 @@
         "endAt": 331
       },
       {
-        "name":"봉선화2",
+        "name":"봉선화2~미아레",
         "command":"↗RKLK",
         "start_frame":"16",
         "guard_frame":"-12",
@@ -1182,7 +1182,7 @@
         "counter_frame":"T",
         "range":"중단x2",
         "damage":"10,8,14",
-        "extra":"토네이도\n히트시 미아레로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"토네이도\n히트 시 미아레로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 328,
         "endAt": 331
       },
@@ -1372,7 +1372,7 @@
     "sit":[
       {
         "name":"천관채화자경1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"12",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1385,7 +1385,7 @@
       },
       {
         "name":"천관채화자경2",
-        "command":"일어서며 LPLP",
+        "command":"일어나며 LPLP",
         "start_frame":"12",
         "guard_frame":"-9",
         "hit_frame":"+2",
@@ -1398,7 +1398,7 @@
       },
       {
         "name":"천관채화자경2~환일",
-        "command":"일어서며 LPLP",
+        "command":"일어나며 LPLP→~",
         "start_frame":"12",
         "guard_frame":"0",
         "hit_frame":"+11",
@@ -1411,7 +1411,7 @@
       },
       {
         "name":"천관채화자경2~미아레",
-        "command":"일어서며 LPLP",
+        "command":"일어나며 LPLP",
         "start_frame":"12",
         "guard_frame":"0",
         "hit_frame":"+11",
@@ -1424,7 +1424,7 @@
       },
       {
         "name":"천관채화자경3",
-        "command":"일어서며 LPLPLP",
+        "command":"일어나며 LPLPLP",
         "start_frame":"12",
         "guard_frame":"-13",
         "hit_frame":"D",
@@ -1437,7 +1437,7 @@
       },
       {
         "name":"천관채화연검",
-        "command":"일어서며 LPLPRP",
+        "command":"일어나며 LPLPRP",
         "start_frame":"12",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -1450,7 +1450,7 @@
       },
       {
         "name":"천관채화연축",
-        "command":"일어서며 LPLPRK",
+        "command":"일어나며 LPLPRK",
         "start_frame":"12",
         "guard_frame":"-8",
         "hit_frame":"D",
@@ -1463,7 +1463,7 @@
       },
       {
         "name":"토모에자쿠라1",
-        "command":"일어서며 LPRK",
+        "command":"일어나며 LPRK",
         "start_frame":"12",
         "guard_frame":"-11",
         "hit_frame":"0",
@@ -1476,7 +1476,7 @@
       },
       {
         "name":"토모에자쿠라2",
-        "command":"일어서며 LPRKRP",
+        "command":"일어나며 LPRKRP",
         "start_frame":"12",
         "guard_frame":"-16",
         "hit_frame":"0",
@@ -1489,7 +1489,7 @@
       },
       {
         "name":"토모에후지",
-        "command":"일어서며 LPRKAP",
+        "command":"일어나며 LPRKAP",
         "start_frame":"12",
         "guard_frame":"-20",
         "hit_frame":"D",
@@ -1502,7 +1502,7 @@
       },
       {
         "name":"백화왕1",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+5",
@@ -1515,7 +1515,7 @@
       },
       {
         "name":"백화왕2",
-        "command":"일어서며 RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"D",
@@ -1528,7 +1528,7 @@
       },
       {
         "name":"기왕",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"14",
         "guard_frame":"-13",
         "hit_frame":"A",
@@ -1541,7 +1541,7 @@
       },
       {
         "name":"일학",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-12",
         "hit_frame":"D",
@@ -1554,7 +1554,7 @@
       },
       {
         "name":"발 흘림",
-        "command":"일어서며 AP",
+        "command":"일어나며 AP",
         "start_frame":"21",
         "guard_frame":"-2",
         "hit_frame":"+5",
@@ -1567,7 +1567,7 @@
       },
       {
         "name":"유향월",
-        "command":"일어서며 AK",
+        "command":"일어나며 AK",
         "start_frame":"18",
         "guard_frame":"-21",
         "hit_frame":"A",
@@ -1658,7 +1658,7 @@
       },
       {
         "name":"10단 콤보1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"12",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1671,7 +1671,7 @@
       },
       {
         "name":"10단 콤보2",
-        "command":"일어서며 LPLP",
+        "command":"일어나며 LPLP",
         "start_frame":"12",
         "guard_frame":"-9",
         "hit_frame":"+2",
@@ -1684,7 +1684,7 @@
       },
       {
         "name":"10단 콤보3",
-        "command":"일어서며 LPLPLP+RK",
+        "command":"일어나며 LPLPLP+RK",
         "start_frame":"12",
         "guard_frame":"-12(-29)",
         "hit_frame":"-1",
@@ -1697,7 +1697,7 @@
       },
       {
         "name":"10단 콤보4",
-        "command":"일어서며 LPLPLP+RKRP",
+        "command":"일어나며 LPLPLP+RKRP",
         "start_frame":"12",
         "guard_frame":"-12",
         "hit_frame":"-1",
@@ -1710,7 +1710,7 @@
       },
       {
         "name":"10단 콤보5",
-        "command":"일어서며 LPLPLP+RKRPLP",
+        "command":"일어나며 LPLPLP+RKRPLP",
         "start_frame":"12",
         "guard_frame":"-18",
         "hit_frame":"-2",
@@ -1723,7 +1723,7 @@
       },
       {
         "name":"10단 콤보6",
-        "command":"일어서며 LPLPLP+RKRPLPRP",
+        "command":"일어나며 LPLPLP+RKRPLPRP",
         "start_frame":"12",
         "guard_frame":"-16",
         "hit_frame":"-11",
@@ -1736,7 +1736,7 @@
       },
       {
         "name":"10단 콤보7",
-        "command":"일어서며 LPLPLP+RKRPLPRPRK",
+        "command":"일어나며 LPLPLP+RKRPLPRPRK",
         "start_frame":"12",
         "guard_frame":"-37",
         "hit_frame":"-1",
@@ -1749,7 +1749,7 @@
       },
       {
         "name":"10단 콤보8",
-        "command":"일어서며 LPLPLP+RKRPLPRPRKRK",
+        "command":"일어나며 LPLPLP+RKRPLPRPRKRK",
         "start_frame":"12",
         "guard_frame":"-25",
         "hit_frame":"D",
@@ -1762,7 +1762,7 @@
       },
       {
         "name":"10단 콤보9",
-        "command":"일어서며 LPLPLP+RKRPLPRPRKRKLK",
+        "command":"일어나며 LPLPLP+RKRPLPRPRKRKLK",
         "start_frame":"12",
         "guard_frame":"-13",
         "hit_frame":"D",
@@ -2027,7 +2027,7 @@
         "endAt": 523
       },
       {
-        "name":"이즈모개수",
+        "name":"이즈모개수~이즈모",
         "command":"미아레 도중 AP",
         "start_frame":"23",
         "guard_frame":"+6",
@@ -2063,7 +2063,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 537,
       "endAt": 540
     },
@@ -2075,7 +2075,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 547,
       "endAt": 552
     },

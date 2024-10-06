@@ -399,78 +399,73 @@ class _MoveListState extends State<MoveList>{
   }
 
   void comparisonFilter(){
+
+    bool comparisionFunction(String itemString, ComparisonHeader comparisonHeader) {
+      try {
+        int.parse(comparisonHeader.controller.text);
+        if(itemString.contains("(")){
+          final int value1 = int.parse(itemString.split("(")[0]);
+          final int value2 = int.parse(itemString.split("(")[1].replaceAll(")", ""));
+          return comparison(value1.toString(), comparisonHeader) || comparison(value2.toString(), comparisonHeader);
+        }
+        return comparison(itemString, comparisonHeader);
+      } on FormatException {
+        return itemString.toLowerCase().contains(comparisonHeader.controller.text.toLowerCase());
+      }
+    }
+
     setState(() {
       for (var type in widget.character.types.keys) {
         if(startComparisonHeader.controller.text.isNotEmpty) {
           filtered[type] = filtered[type]!.where((item) {
-            try {
-              int.parse(startComparisonHeader.controller.text);
-              return comparison(item.startFrame, startComparisonHeader);
-            } on FormatException {
-              if (item.startFrame.toLowerCase().contains(startComparisonHeader.controller.text.toLowerCase())) return true;
-            }
-            return false;
+            return comparisionFunction(item.startFrame, startComparisonHeader);
           }).toList();
         }
         if(guardComparisonHeader.controller.text.isNotEmpty) {
           filtered[type] = filtered[type]!.where((item) {
-            try {
-              int.parse(guardComparisonHeader.controller.text);
-              return comparison(item.guardFrame, guardComparisonHeader);
-            } on FormatException {
-              if(item.guardFrame.toLowerCase().contains(guardComparisonHeader.controller.text.toLowerCase())) return true;
-            }
-            return false;
+            return comparisionFunction(item.guardFrame, guardComparisonHeader);
           }).toList();
         }
         if(hitComparisonHeader.controller.text.isNotEmpty) {
           filtered[type] = filtered[type]!.where((item) {
-            try {
-              int.parse(hitComparisonHeader.controller.text);
-              return comparison(item.hitFrame, hitComparisonHeader);
-            } on FormatException {
-              if (item.hitFrame.toLowerCase().contains(hitComparisonHeader.controller.text.toLowerCase())) return true;
-            }
-            return false;
+            return comparisionFunction(item.hitFrame, hitComparisonHeader);
           }).toList();
         }
         if(counterComparisonHeader.controller.text.isNotEmpty) {
           filtered[type] = filtered[type]!.where((item) {
-            try {
-              int.parse(counterComparisonHeader.controller.text);
-              return comparison(item.counterFrame, counterComparisonHeader);
-            } on FormatException {
-              if (item.counterFrame.toLowerCase().contains(counterComparisonHeader.controller.text.toLowerCase())) return true;
-            }
-            return false;
+            return comparisionFunction(item.counterFrame, counterComparisonHeader);
           }).toList();
         }
         if(damageComparisonHeader.controller.text.isNotEmpty){
           filtered[type] = filtered[type]!.where((item) {
             int damage = 0;
+            int damage2 = 0;
             item.damage.split(",").forEach((element) {
               try{
-                debugPrint(element);
                 damage += int.parse(element);
+                damage2 += int.parse(element);
               } on FormatException {
                 if(element.contains("x")){
                   final n = element.replaceAll("x", "*");
                   final p = Parser();
                   damage += int.parse(p.parse(n).evaluate(EvaluationType.REAL, ContextModel()).toInt().toString());
+                  damage2 += int.parse(p.parse(n).evaluate(EvaluationType.REAL, ContextModel()).toInt().toString());
                 }else if(element.contains("(")){
-                  final d = element.split("(")[0];
-                  damage += int.parse(d);
+                  final split = element.split("(");
+                  damage += int.parse(split[0]);
+                  damage2 += int.parse(split[1].replaceAll(")", ""));
                 }else{
                   damage += 0;
                 }
               }
             });
-            return comparison(damage.toString(), damageComparisonHeader);
+            return comparison(damage.toString(), damageComparisonHeader) || comparison(damage2.toString(), damageComparisonHeader);
           }).toList();
         }
       }
     });
   }
+
 
   bool comparison(String itemText, ComparisonHeader comparisonHeader){
     itemText = itemText.replaceAll("g", "");
@@ -542,16 +537,16 @@ class _MoveListState extends State<MoveList>{
 
     Widget comparisonHeaderMenuAnchor(ComparisonHeader comparisonHeader){
       return MenuAnchor(
+        alignmentOffset: Offset(-20, 0),
         menuChildren: [
           SizedBox(
-            width: 70,
+            width: 90,
             child: Row(
               children: [
                 SizedBox(
-                  width: 35,
+                  width: 45,
                   child: TextFormField(
                     controller: comparisonHeader.controller,
-                    maxLength: 3,
                     decoration: InputDecoration(
                       counter: SizedBox.shrink()
                     ),
@@ -562,7 +557,7 @@ class _MoveListState extends State<MoveList>{
                   ),
                 ),
                 SizedBox(
-                  width: 35,
+                  width: 45,
                   child: TextButton(
                       onPressed: (){
                         setState(() {
@@ -576,12 +571,9 @@ class _MoveListState extends State<MoveList>{
           )
         ],
         builder: (context, controller, child) => TextButton(onPressed: (){
-          if (controller.isOpen) {
-            controller.close();
-          } else {
-            controller.open();
-          }
-        }, child: Text(comparisonHeader.name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+            controller.isOpen ? controller.close() : controller.open();
+          },
+            child: Text(comparisonHeader.name,textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
       );
     }
 

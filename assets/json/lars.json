@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -54,7 +54,7 @@
         "endAt": 17
       },
       {
-        "name":"보우 쇼크",
+        "name":"보우 쇼크~사일런트 엔트리",
         "command":"다이나믹 엔트리 도중 LK",
         "start_frame":"22",
         "guard_frame":"+3",
@@ -80,7 +80,7 @@
         "endAt": 26
       },
       {
-        "name":"리벨리온",
+        "name":"리벨리온~사일런트 엔트리",
         "command":"히트 상태에서 →AK",
         "start_frame":"18",
         "guard_frame":"+5",
@@ -106,7 +106,7 @@
         "endAt": 37
       },
       {
-        "name":"썬더버드 디센트",
+        "name":"썬더버드 디센트~다이나믹 엔트리",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"18",
         "guard_frame":"+10",
@@ -212,7 +212,7 @@
         "endAt": 71
       },
       {
-        "name":"링 커런트2",
+        "name":"링 커런트2~리미티드 엔트리",
         "command":"RPLP",
         "start_frame":"10",
         "guard_frame":"-6",
@@ -992,7 +992,7 @@
         "endAt": 234
       },
       {
-        "name":"크로스 트랜지스터2",
+        "name":"크로스 트랜지스터2~다이나믹 엔트리",
         "command":"→→~RKRP",
         "start_frame":"21",
         "guard_frame":"-7",
@@ -1242,7 +1242,7 @@
     "sit":[
       {
         "name":"스트리머",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"15",
         "guard_frame":"-12",
         "hit_frame":"A",
@@ -1255,7 +1255,7 @@
       },
       {
         "name":"라이트닝 스타터",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"13",
         "guard_frame":"-8",
         "hit_frame":"+3",
@@ -1268,7 +1268,7 @@
       },
       {
         "name":"라이트닝 스타터~다이나믹 엔트리",
-        "command":"일어서며 RP↓~",
+        "command":"일어나며 RP↓~",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"-1",
@@ -1281,7 +1281,7 @@
       },
       {
         "name":"라이트닝 스타터~사일런트 엔트리",
-        "command":"일어서며 RP→~",
+        "command":"일어나며 RP→~",
         "start_frame":"13",
         "guard_frame":"-5",
         "hit_frame":"+6",
@@ -1294,7 +1294,7 @@
       },
       {
         "name":"멀티플라이드 포스",
-        "command":"일어서며 RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"+2",
@@ -1307,7 +1307,7 @@
       },
       {
         "name":"글라스 브레이커",
-        "command":"일어서며 RPLK",
+        "command":"일어나며 RPLK",
         "start_frame":"13",
         "guard_frame":"-15",
         "hit_frame":"-3",
@@ -1320,7 +1320,7 @@
       },
       {
         "name":"글라스 브레이커~리미티드 엔트리",
-        "command":"일어서며 RPLK↓~",
+        "command":"일어나며 RPLK↓~",
         "start_frame":"13",
         "guard_frame":"-11",
         "hit_frame":"+6",
@@ -1333,7 +1333,7 @@
       },
       {
         "name":"타워 캐논",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"20",
         "guard_frame":"0",
         "hit_frame":"D",
@@ -1346,7 +1346,7 @@
       },
       {
         "name":"타워 캐논~리미티드 엔트리",
-        "command":"일어서며 LK↓~",
+        "command":"일어나며 LK↓~",
         "start_frame":"20",
         "guard_frame":"+4",
         "hit_frame":"D",
@@ -1359,7 +1359,7 @@
       },
       {
         "name":"셸 스매시",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1477,7 +1477,7 @@
         "endAt": 307
       },
       {
-        "name":"보우 쇼크",
+        "name":"보우 쇼크~사일런트 엔트리",
         "command":"다이나믹 엔트리 도중 LK",
         "start_frame":"22",
         "guard_frame":"+5",
@@ -1725,7 +1725,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 380,
       "endAt": 385
     },
@@ -1737,7 +1737,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 385,
       "endAt": 390
     },

@@ -3,7 +3,7 @@
     "heat": [
       {
         "name": "히트 버스트",
-        "command": "RP+LK",
+        "command": "히트 발동 가능 상태에서 RP+LK",
         "start_frame": "16",
         "guard_frame": "+1",
         "hit_frame": "+2",
@@ -15,7 +15,7 @@
         "endAt": 5
       },
       {
-        "name": "퀵 트림",
+        "name": "퀵 트림~디스트럭티브 폼으로",
         "command": "LKRP",
         "start_frame": "13",
         "guard_frame": "-2",
@@ -41,7 +41,7 @@
         "endAt": 16
       },
       {
-        "name": "듀얼 세션",
+        "name": "듀얼 세션~디스트럭티브 폼으로",
         "command": "→RPLP",
         "start_frame": "17",
         "guard_frame": "-10",
@@ -54,7 +54,7 @@
         "endAt": 22
       },
       {
-        "name": "이미지 커터",
+        "name": "이미지 커터~디스트럭티브 폼으로",
         "command": "↗RP",
         "start_frame": "16",
         "guard_frame": "-2",
@@ -277,7 +277,7 @@
         "endAt": 103
       },
       {
-        "name": "퀵 트림2",
+        "name": "퀵 트림2~디스트럭티브 폼으로",
         "command": "LKRP",
         "start_frame": "13",
         "guard_frame": "-2",
@@ -290,7 +290,7 @@
         "endAt": 103
       },
       {
-        "name": "퀵 액세스",
+        "name": "퀵 액세스~디스트럭티브 폼으로",
         "command": "LK→RP",
         "start_frame": "13",
         "guard_frame": "-12",
@@ -342,7 +342,7 @@
         "endAt": 118
       },
       {
-        "name": "듀얼 세션2",
+        "name": "듀얼 세션2~디스트럭티브 폼으로",
         "command": "→RPLP",
         "start_frame": "17",
         "guard_frame": "-10",
@@ -394,7 +394,7 @@
         "endAt": 129
       },
       {
-        "name": "로스트 액세스2",
+        "name": "로스트 액세스2~디스트럭티브 폼으로",
         "command": "→LKRP",
         "start_frame": "14",
         "guard_frame": "-4",
@@ -407,7 +407,7 @@
         "endAt": 129
       },
       {
-        "name": "오토매틱 트랜스미션",
+        "name": "오토매틱 트랜스미션~디스트럭티브 폼으로",
         "command": "→LKAP",
         "start_frame": "14",
         "guard_frame": "-13",
@@ -511,7 +511,7 @@
         "endAt": 151
       },
       {
-        "name": "사이클론 믹서3",
+        "name": "사이클론 믹서3~디스트럭티브 폼으로",
         "command": "↘LPLPRP",
         "start_frame": "13",
         "guard_frame": "+6",
@@ -602,7 +602,7 @@
         "endAt": 167
       },
       {
-        "name": "퀵 슬라이더",
+        "name": "퀵 슬라이더~백업",
         "command": "↓LK",
         "start_frame": "23",
         "guard_frame": "-10",
@@ -862,7 +862,7 @@
         "endAt": 230
       },
       {
-        "name": "트랜스미션",
+        "name": "트랜스미션~디스트럭티브 폼으로",
         "command": "←AP",
         "start_frame": "19",
         "guard_frame": "-13",
@@ -979,7 +979,7 @@
         "endAt": 263
       },
       {
-        "name": "이미지 커터",
+        "name": "이미지 커터~디스트럭티브 폼으로",
         "command": "↗RP",
         "start_frame": "16",
         "guard_frame": "-2",
@@ -1463,7 +1463,7 @@
     "sit": [
       {
         "name": "스피어 피싱1",
-        "command": "일어서며 LP",
+        "command": "일어나며 LP",
         "start_frame": "13",
         "guard_frame": "-12",
         "hit_frame": "-1",
@@ -1476,7 +1476,7 @@
       },
       {
         "name": "스피어 피싱2",
-        "command": "일어서며 LPRP",
+        "command": "일어나며 LPRP",
         "start_frame": "13",
         "guard_frame": "-5",
         "hit_frame": "+6",
@@ -1489,7 +1489,7 @@
       },
       {
         "name": "스피어 피싱3",
-        "command": "일어서며 LPRPLK",
+        "command": "일어나며 LPRPLK",
         "start_frame": "13",
         "guard_frame": "-10",
         "hit_frame": "A",
@@ -1502,7 +1502,7 @@
       },
       {
         "name": "디지털 리프트",
-        "command": "일어서며 RP",
+        "command": "일어나며 RP",
         "start_frame": "17",
         "guard_frame": "-13(-7)",
         "hit_frame": "A",
@@ -1515,7 +1515,7 @@
       },
       {
         "name": "클락워크",
-        "command": "일어서며 LK",
+        "command": "일어나며 LK",
         "start_frame": "19",
         "guard_frame": "+4",
         "hit_frame": "+15",
@@ -1567,7 +1567,7 @@
       },
       {
         "name": "키 스매시",
-        "command": "일어서며 RK",
+        "command": "일어나며 RK",
         "start_frame": "11",
         "guard_frame": "-5",
         "hit_frame": "+6",
@@ -1580,7 +1580,7 @@
       },
       {
         "name": "큐트 벗 데들리",
-        "command": "일어서며 AP",
+        "command": "일어나며 AP",
         "start_frame": "20",
         "guard_frame": "-4",
         "hit_frame": "D",
@@ -1593,7 +1593,7 @@
       },
       {
         "name": "큐트 벗 데들리(홀드)",
-        "command": "일어서며 AP",
+        "command": "일어나며 AP",
         "start_frame": "39",
         "guard_frame": "0",
         "hit_frame": "D",
@@ -1960,7 +1960,7 @@
         "endAt": 517
       },
       {
-        "name": "어보트",
+        "name": "어보트~백업",
         "command": "부트 도중 ↓~ or ←~",
         "start_frame": "-",
         "guard_frame": "-",
@@ -2064,7 +2064,7 @@
         "endAt": 536
       },
       {
-        "name": "와이어 클리퍼",
+        "name": "와이어 클리퍼~디스트럭티브 폼으로",
         "command": "부트 도중 AP",
         "start_frame": "27",
         "guard_frame": "-",
@@ -2092,7 +2092,7 @@
         "endAt": 543
       },
       {
-        "name": "스러스터 레프트",
+        "name": "스러스터 레프트~디스트럭티브 폼으로",
         "command": "듀얼 부트 도중 LP",
         "start_frame": "24",
         "guard_frame": "+9",
@@ -2118,7 +2118,7 @@
         "endAt": 555
       },
       {
-        "name": "스러스터 라이트 - 버스트2",
+        "name": "스러스터 라이트 - 버스트2~디스트럭티브 폼으로",
         "command": "듀얼 부트 도중 RPLP",
         "start_frame": "16",
         "guard_frame": "-12",
@@ -2157,7 +2157,7 @@
         "endAt": 569
       },
       {
-        "name": "스러스터 드릴",
+        "name": "스러스터 드릴~디스트럭티브 폼으로",
         "command": "듀얼 부트 도중 AP",
         "start_frame": "12",
         "guard_frame": "0",
@@ -2299,7 +2299,7 @@
       "after_break_frame": "-7",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 617,
       "endAt": 622
     },
@@ -2311,7 +2311,7 @@
       "after_break_frame": "-5",
       "damage": "35",
       "range": "상단",
-      "extra": "",
+      "extra": "호밍기",
       "startAt": 628,
       "endAt": 633
     },

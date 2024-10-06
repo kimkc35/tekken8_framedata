@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -80,7 +80,7 @@
         "endAt": 36
       },
       {
-        "name":"울티모 아구아르",
+        "name":"울티모 아구아르~재규어 스프린트",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"17",
         "guard_frame":"+12",
@@ -941,7 +941,7 @@
       },
       {
         "name":"버닝 너클",
-        "command":"↑AP홀드",
+        "command":"↑AP 홀드",
         "start_frame":"67",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1005,7 +1005,7 @@
         "endAt": 290
       },
       {
-        "name":"솔 크러셔",
+        "name":"솔 크러셔~재규어 스프린트",
         "command":"↗AK",
         "start_frame":"22",
         "guard_frame":"-12",
@@ -1781,7 +1781,7 @@
       },
       {
         "name":"러닝 엘보 스매시(히트 상태)",
-        "command":"재규어 스프린트 도중LP",
+        "command":"히트 상태에서 재규어 스프린트 도중LP",
         "start_frame":"16",
         "guard_frame":"-8",
         "hit_frame":"T",
@@ -1868,7 +1868,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 517,
       "endAt": 521
     },
@@ -1880,7 +1880,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 522,
       "endAt": 526
     },
@@ -1892,7 +1892,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 530,
       "endAt": 534
     },
@@ -1904,7 +1904,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 536,
       "endAt": 540
     },
@@ -1993,7 +1993,7 @@
       "endAt": 585
     },
     {
-      "name":"스로 어웨이",
+      "name":"스로 어웨이~재규어 스프린트",
       "command":"←AP",
       "start_frame":"12",
       "break_command":"AP",
@@ -2005,7 +2005,7 @@
       "endAt": 590
     },
     {
-      "name":"스로 어웨이~백 스윙",
+      "name":"스로 어웨이~백 스윙~재규어 스프린트",
       "command":"←APAP",
       "start_frame":"12",
       "break_command":"x",

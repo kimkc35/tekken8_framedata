@@ -3,14 +3,16 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬"
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "startAt": 0,
+        "endAt": 3
       },
       {
         "name":"루파다",
@@ -21,7 +23,9 @@
         "counter_frame":"+17",
         "range":"중단",
         "damage":"10,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 4,
+        "endAt": 7
       },
       {
         "name":"샹고",
@@ -32,7 +36,9 @@
         "counter_frame":"+17",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 9,
+        "endAt": 12
       },
       {
         "name":"벵사웅 풀라다",
@@ -43,7 +49,9 @@
         "counter_frame":"+17",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 13,
+        "endAt": 16
       },
       {
         "name":"시바타 아르젠치",
@@ -54,7 +62,9 @@
         "counter_frame":"+17",
         "range":"중단",
         "damage":"14,25",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"",
+        "startAt": 17,
+        "endAt": 21
       },
       {
         "name":"빙가치바 장가",
@@ -65,10 +75,12 @@
         "counter_frame":"D",
         "range":"잡기",
         "damage":"30",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기\n혹은 네가치바 도중 AL\n잡기 풀기 불가능\n히트 대시 불가능",
+        "startAt": 22,
+        "endAt": 28
       },
       {
-        "name":"게헤이루 에시플로지부",
+        "name":"게헤이루 에시플로지부~바나네이라",
         "command":"히트 상태에서 AK",
         "start_frame":"20",
         "guard_frame":"+9",
@@ -76,10 +88,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"히트 발동기\n혹은 네가치바 도중 AL\n잡기 풀기 불가능\n히트 대시 불가능"
+        "extra":"토네이도\n바나네이라로\n히트 상태의 남은 시간을 소비",
+        "startAt": 29,
+        "endAt": 33
       },
       {
-        "name":"하부 지 아하이아 리베라두",
+        "name":"하부 지 아하이아 리베라두~네가치바",
         "command":"히트 상태에서 ↓↘→RK",
         "start_frame":"22",
         "guard_frame":"+9",
@@ -87,10 +101,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"45",
-        "extra":"토네이도\n바나네이라로\n히트 상태의 남은 시간을 소비"
+        "extra":"네가치바로\n히트 상태의 남은 시간을 소비",
+        "startAt": 34,
+        "endAt": 37
       },
       {
-        "name":"카베이리냐 장가다",
+        "name":"카베이리냐 장가다~네가치바",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"18",
         "guard_frame":"+6",
@@ -98,7 +114,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,9,26",
-        "extra":"바나네이라 도중, 네가치바 도중에도 사용 가능\n히트 시 잡기로\n가드 시 네가치바로"
+        "extra":"바나네이라 도중, 네가치바 도중에도 사용 가능\n히트 시 잡기로\n가드 시 네가치바로",
+        "startAt": 39,
+        "endAt": 44
       }
     ],
     "general":[
@@ -111,7 +129,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5",
-        "extra":""
+        "extra":"",
+        "startAt": 60,
+        "endAt": 62
       },
       {
         "name":"원투 갈로판치2",
@@ -122,18 +142,22 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,12",
-        "extra":"RK입력 시 몸을 숙인 상태로"
+        "extra":"→~입력 시 바나네이라로",
+        "startAt": 60,
+        "endAt": 62
       },
       {
         "name":"원투 갈로판치~바나네이라",
-        "command":"LPRP→",
+        "command":"LPRP→~",
         "start_frame":"10",
         "guard_frame":"-8",
         "hit_frame":"+3",
         "counter_frame":"+3",
         "range":"상단",
         "damage":"5,12",
-        "extra":""
+        "extra":"",
+        "startAt": 60,
+        "endAt": 62
       },
       {
         "name":"원투 갈로판치~바이슈 슈타르",
@@ -144,7 +168,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,12,2",
-        "extra":""
+        "extra":"RK입력 시 몸을 숙인 상태로",
+        "startAt": 63,
+        "endAt": 66
       },
       {
         "name":"원투 갈로판치~바이슈 슈타르~앉은 자세",
@@ -155,7 +181,9 @@
         "counter_frame":"+17",
         "range":"상단",
         "damage":"5,12",
-        "extra":""
+        "extra":"",
+        "startAt": 63,
+        "endAt": 66
       },
       {
         "name":"원투 갈로판치~아우투 슈타르",
@@ -166,10 +194,12 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,12,27",
-        "extra":"옆구르기 낙법 가능"
+        "extra":"옆구르기 낙법 가능",
+        "startAt": 67,
+        "endAt": 70
       },
       {
-        "name":"세우 가파뇨투",
+        "name":"세우 가파뇨투~네가치바",
         "command":"LPLK",
         "start_frame":"10",
         "guard_frame":"-14",
@@ -177,7 +207,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"5,16",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 71,
+        "endAt": 73
       },
       {
         "name":"콤보 푸라카웅1",
@@ -188,7 +220,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 76
       },
       {
         "name":"콤보 푸라카웅2",
@@ -199,7 +233,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"10,13",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 76
       },
       {
         "name":"콤보 푸라카웅3",
@@ -210,10 +246,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,13,21",
-        "extra":""
+        "extra":"",
+        "startAt": 74,
+        "endAt": 76
       },
       {
-        "name":"바치다 지 콤파수",
+        "name":"바치다 지 콤파수~바나네이라",
         "command":"RPLK",
         "start_frame":"12",
         "guard_frame":"-8",
@@ -221,7 +259,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"10,20",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 78,
+        "endAt": 80
       },
       {
         "name":"신셀루1",
@@ -232,10 +272,12 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 84,
+        "endAt": 86
       },
       {
-        "name":"신셀루2",
+        "name":"신셀루2~바나네이라",
         "command":"LKLK",
         "start_frame":"14",
         "guard_frame":"-3",
@@ -243,7 +285,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"12,22",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 84,
+        "endAt": 86
       },
       {
         "name":"루파다1",
@@ -254,7 +298,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 90,
+        "endAt": 94
       },
       {
         "name":"루파다2",
@@ -265,7 +311,9 @@
         "counter_frame":"+12",
         "range":"중단",
         "damage":"10,20",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 90,
+        "endAt": 94
       },
       {
         "name":"파이자웅",
@@ -276,7 +324,9 @@
         "counter_frame":"+13",
         "range":"중단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 95,
+        "endAt": 97
       },
       {
         "name":"벤타니아1",
@@ -287,7 +337,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 98,
+        "endAt": 101
       },
       {
         "name":"벤타니아2",
@@ -298,7 +350,9 @@
         "counter_frame":"A",
         "range":"하단",
         "damage":"15,17",
-        "extra":""
+        "extra":"",
+        "startAt": 98,
+        "endAt": 101
       },
       {
         "name":"콤부 오 푸남불루1",
@@ -309,7 +363,9 @@
         "counter_frame":"+7",
         "range":"상단",
         "damage":"16",
-        "extra":"호밍기"
+        "extra":"호밍기",
+        "startAt": 102,
+        "endAt": 104
       },
       {
         "name":"콤부 오 푸남불루2",
@@ -320,21 +376,25 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,25",
-        "extra":"→~입력 시 캔슬하고 바나네이라로"
+        "extra":"→~입력 시 캔슬하고 바나네이라로",
+        "startAt": 102,
+        "endAt": 104
       },
       {
-        "name":"콤부 오 푸남불루~바나네이라",
-        "command":"→LKRK→",
+        "name":"콤부 오 푸남불루(캔슬)~바나네이라",
+        "command":"→LKRK→~",
         "start_frame":"18",
         "guard_frame":"-17",
         "hit_frame":"-5",
         "counter_frame":"-5",
         "range":"상단",
         "damage":"16",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 102,
+        "endAt": 104
       },
       {
-        "name":"아우 지 소우1",
+        "name":"아우 지 소우1~바나네이라",
         "command":"→RK",
         "start_frame":"23",
         "guard_frame":"-8",
@@ -342,7 +402,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"13",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"아우 지 소우2",
@@ -353,7 +415,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"13,8",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 109
       },
       {
         "name":"아우 지 소우3",
@@ -364,10 +428,12 @@
         "counter_frame":"D",
         "range":"중단X2",
         "damage":"13,8,7,20",
-        "extra":""
+        "extra":"",
+        "startAt": 106,
+        "endAt": 109
       },
       {
-        "name":"아우 지 루아",
+        "name":"아우 지 루아~네가치바",
         "command":"→RKAK",
         "start_frame":"23",
         "guard_frame":"-24",
@@ -375,7 +441,9 @@
         "counter_frame":"D",
         "range":"하단X2",
         "damage":"13,7,7",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 110,
+        "endAt": 113
       },
       {
         "name":"바나네이라",
@@ -386,7 +454,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 115,
+        "endAt": 117
       },
       {
         "name":"샹고",
@@ -397,7 +467,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 발동기\n가드 대미지"
+        "extra":"히트 발동기\n가드 대미지",
+        "startAt": 118,
+        "endAt": 121
       },
       {
         "name":"제이제르1",
@@ -408,7 +480,9 @@
         "counter_frame":"+6",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 122,
+        "endAt": 125
       },
       {
         "name":"제이제르2",
@@ -419,7 +493,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"10,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 122,
+        "endAt": 125
       },
       {
         "name":"코토벨라다",
@@ -430,7 +506,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"19",
-        "extra":""
+        "extra":"",
+        "startAt": 125,
+        "endAt": 127
       },
       {
         "name":"비리바",
@@ -441,7 +519,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"17",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 128,
+        "endAt": 131
       },
       {
         "name":"샤파 바이샤",
@@ -452,7 +532,9 @@
         "counter_frame":"+13",
         "range":"하단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 132,
+        "endAt": 135
       },
       {
         "name":"아우 헤베르사웅",
@@ -463,7 +545,9 @@
         "counter_frame":"D",
         "range":"중단X2",
         "damage":"10,11",
-        "extra":""
+        "extra":"",
+        "startAt": 135,
+        "endAt": 138
       },
       {
         "name":"파우마리스 지루1",
@@ -474,10 +558,12 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 141,
+        "endAt": 144
       },
       {
-        "name":"파우마리스 지루2",
+        "name":"파우마리스 지루2~네가치바",
         "command":"↓RPLK",
         "start_frame":"17",
         "guard_frame":"-4",
@@ -485,7 +571,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"10,20",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 141,
+        "endAt": 144
       },
       {
         "name":"시즈무",
@@ -496,7 +584,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"17",
-        "extra":""
+        "extra":"",
+        "startAt": 145,
+        "endAt": 147
       },
       {
         "name":"아우 지 비쿠1",
@@ -507,7 +597,9 @@
         "counter_frame":"-5",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 148,
+        "endAt": 151
       },
       {
         "name":"아우 지 비쿠2",
@@ -518,7 +610,9 @@
         "counter_frame":"+12",
         "range":"중단",
         "damage":"10,20",
-        "extra":""
+        "extra":"",
+        "startAt": 148,
+        "endAt": 151
       },
       {
         "name":"네가치바",
@@ -529,7 +623,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로\n혹은 앉은 상태에서 AK"
+        "extra":"네가치바로\n혹은 앉은 상태에서 AK",
+        "startAt": 152,
+        "endAt": 154
       },
       {
         "name":"미라젱 토르시다1",
@@ -540,7 +636,9 @@
         "counter_frame":"-2",
         "range":"하단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 156,
+        "endAt": 159
       },
       {
         "name":"미라젱 토르시다2",
@@ -551,7 +649,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,23",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 156,
+        "endAt": 159
       },
       {
         "name":"하스테이라 포르치",
@@ -562,7 +662,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"21",
-        "extra":""
+        "extra":"",
+        "startAt": 160,
+        "endAt": 162
       },
       {
         "name":"하부 지 아하이아1",
@@ -573,7 +675,9 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 164,
+        "endAt": 167
       },
       {
         "name":"하부 지 아하이아2",
@@ -584,7 +688,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"27",
-        "extra":"가드 대미지\n히트 시 만징가 레벨 1space상승"
+        "extra":"가드 대미지\n히트 시 만징가 레벨 1 상승",
+        "startAt": 164,
+        "endAt": 167
       },
       {
         "name":"바루셀루스",
@@ -595,7 +701,9 @@
         "counter_frame":"+12",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 169,
+        "endAt": 171
       },
       {
         "name":"메이아루아 지 콤파수1",
@@ -606,7 +714,9 @@
         "counter_frame":"+1",
         "range":"중단X2",
         "damage":"12,12",
-        "extra":""
+        "extra":"",
+        "startAt": 175,
+        "endAt": 178
       },
       {
         "name":"메이아루아 지 콤파수2",
@@ -617,7 +727,9 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"12,12,10",
-        "extra":""
+        "extra":"",
+        "startAt": 175,
+        "endAt": 178
       },
       {
         "name":"메이아루아 지 콤파수3",
@@ -628,7 +740,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,12,10,26",
-        "extra":""
+        "extra":"",
+        "startAt": 175,
+        "endAt": 178
       },
       {
         "name":"가토",
@@ -639,10 +753,12 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 179,
+        "endAt": 182
       },
       {
-        "name":"가토~아우 두 소우1",
+        "name":"가토~아우 두 소우1~바나네이라",
         "command":"←LPRK",
         "start_frame":"14",
         "guard_frame":"-8",
@@ -650,7 +766,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15,10",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 179,
+        "endAt": 182
       },
       {
         "name":"가토~아우 두 소우2",
@@ -661,7 +779,9 @@
         "counter_frame":"-1",
         "range":"중단",
         "damage":"15,10,8",
-        "extra":""
+        "extra":"",
+        "startAt": 179,
+        "endAt": 182
       },
       {
         "name":"가토~아우 두 소우3",
@@ -672,10 +792,12 @@
         "counter_frame":"D",
         "range":"중단X2",
         "damage":"15,10,8,7,20",
-        "extra":""
+        "extra":"",
+        "startAt": 179,
+        "endAt": 182
       },
       {
-        "name":"가토~아우 지 루아",
+        "name":"가토~아우 지 루아~네가치바",
         "command":"←LPRKAK",
         "start_frame":"14",
         "guard_frame":"-24",
@@ -683,7 +805,9 @@
         "counter_frame":"D",
         "range":"하단X2",
         "damage":"15,10,7,7",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 183,
+        "endAt": 187
       },
       {
         "name":"고데미",
@@ -694,7 +818,9 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"고데미~콤부 라 피에르나1",
@@ -705,7 +831,9 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12,13",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"고데미~콤부 라 피에르나2",
@@ -716,7 +844,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"12,13,25",
-        "extra":""
+        "extra":"",
+        "startAt": 189,
+        "endAt": 192
       },
       {
         "name":"고데미~카우카녜이라",
@@ -727,7 +857,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,23",
-        "extra":""
+        "extra":"",
+        "startAt": 193,
+        "endAt": 196
       },
       {
         "name":"벤투",
@@ -738,7 +870,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 196,
+        "endAt": 199
       },
       {
         "name":"벤투~헬람파구",
@@ -749,7 +883,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,21",
-        "extra":"네가치볼"
+        "extra":"네가치볼",
+        "startAt": 196,
+        "endAt": 199
       },
       {
         "name":"아르마다",
@@ -760,7 +896,9 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 203,
+        "endAt": 206
       },
       {
         "name":"아르마다~마카쿠 엥 페",
@@ -771,10 +909,12 @@
         "counter_frame":"+8",
         "range":"중단X2",
         "damage":"14,6,6",
-        "extra":"→~입력 시 캔슬하고 바나네이라로"
+        "extra":"→~입력 시 캔슬하고 바나네이라로",
+        "startAt": 203,
+        "endAt": 206
       },
       {
-        "name":"아르마다~바나네이라",
+        "name":"아르마다(캔슬)~바나네이라",
         "command":"←RKRK→~",
         "start_frame":"21",
         "guard_frame":"-26",
@@ -782,7 +922,9 @@
         "counter_frame":"-18",
         "range":"상단",
         "damage":"14",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 203,
+        "endAt": 206
       },
       {
         "name":"콤부 마카쿠 엥 페",
@@ -793,7 +935,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,6,6,10",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 203,
+        "endAt": 206
       },
       {
         "name":"백 바나네이라",
@@ -804,7 +948,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 211,
+        "endAt": 214
       },
       {
         "name":"벵사웅 풀라다",
@@ -815,7 +961,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"히트 발동기\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"히트 발동기\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 215,
+        "endAt": 218
       },
       {
         "name":"루아 페르나",
@@ -826,7 +974,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 222,
+        "endAt": 225
       },
       {
         "name":"헤베르사웅 트라제이루",
@@ -837,7 +987,9 @@
         "counter_frame":"-6",
         "range":"중단",
         "damage":"12",
-        "extra":""
+        "extra":"",
+        "startAt": 226,
+        "endAt": 228
       },
       {
         "name":"아크로바시아",
@@ -848,7 +1000,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 229,
+        "endAt": 232
       },
       {
         "name":"지라르",
@@ -859,10 +1013,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"",
+        "startAt": 234,
+        "endAt": 236
       },
       {
-        "name":"지라르~바이샤 슈타르",
+        "name":"지라르~바이샤 슈타르~네가치바",
         "command":"↑[RKLK]",
         "start_frame":"44",
         "guard_frame":"-14",
@@ -870,7 +1026,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 234,
+        "endAt": 236
       },
       {
         "name":"지라르~아우투 슈타르",
@@ -881,7 +1039,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"27",
-        "extra":"옆구르기 낙법 가능"
+        "extra":"옆구르기 낙법 가능",
+        "startAt": 237,
+        "endAt": 240
       },
       {
         "name":"바소라",
@@ -892,7 +1052,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
-        "extra":""
+        "extra":"혹은 ↖AP",
+        "startAt": 240,
+        "endAt": 243
       },
       {
         "name":"이스칼라",
@@ -903,7 +1065,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"혹은 ↖AP"
+        "extra":"혹은 ↖RP or ↑RP",
+        "startAt": 244,
+        "endAt": 246
       },
       {
         "name":"아르마다 풀라다",
@@ -914,21 +1078,25 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"혹은 ↖RP or ↑RP"
+        "extra":"→~입력 시 바나네이라로",
+        "startAt": 247,
+        "endAt": 250
       },
       {
         "name":"아르마다 풀라다~바나네이라",
-        "command":"↗LK →~",
+        "command":"↗LK→~",
         "start_frame":"26",
         "guard_frame":"-14",
         "hit_frame":"-12",
         "counter_frame":"D",
         "range":"중단",
         "damage":"15",
-        "extra":"→~입력 시 바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 244,
+        "endAt": 246
       },
       {
-        "name":"아르마다 풀라다~비리바",
+        "name":"아르마다 풀라다~비리바~바나네이라",
         "command":"↗LKLK",
         "start_frame":"26",
         "guard_frame":"-18",
@@ -936,7 +1104,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"15,20",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 244,
+        "endAt": 246
       },
       {
         "name":"아르마다 풀라다~바이슈",
@@ -947,7 +1117,9 @@
         "counter_frame":"A",
         "range":"하단",
         "damage":"15,10",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 250,
+        "endAt": 253
       },
       {
         "name":"샤파 지라토리아",
@@ -958,10 +1130,12 @@
         "counter_frame":"+12",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 254,
+        "endAt": 257
       },
       {
-        "name":"메이아루아 풀란두",
+        "name":"메이아루아 풀란두~네가치바",
         "command":"↗AK",
         "start_frame":"17",
         "guard_frame":"-13",
@@ -969,7 +1143,9 @@
         "counter_frame":"D",
         "range":"중단X2",
         "damage":"10,20",
-        "extra":"호밍기\n히트 시 네가치바로"
+        "extra":"호밍기\n히트 시 네가치바로",
+        "startAt": 258,
+        "endAt": 260
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -980,10 +1156,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 ↖AK or ↑AK"
+        "extra":"혹은 ↖AK or ↑AK",
+        "startAt": 261,
+        "endAt": 264
       },
       {
-        "name":"테헤모투",
+        "name":"테헤모투~네가치바",
         "command":"→→~LK",
         "start_frame":"21",
         "guard_frame":"-14",
@@ -991,10 +1169,12 @@
         "counter_frame":"+15",
         "range":"하단",
         "damage":"20",
-        "extra":""
+        "extra":"히트 시 네가치바로",
+        "startAt": 264,
+        "endAt": 267
       },
       {
-        "name":"폴랴 아타키",
+        "name":"폴랴 아타키~바나네이라",
         "command":"→→~RK",
         "start_frame":"19",
         "guard_frame":"-12",
@@ -1002,7 +1182,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"히트 시 네가치바로"
+        "extra":"토네이도\n바나네이라로",
+        "startAt": 267,
+        "endAt": 270
       },
       {
         "name":"호다 지간치",
@@ -1013,18 +1195,22 @@
         "counter_frame":"D",
         "range":"중단X2",
         "damage":"10,20",
-        "extra":"토네이도\n바나네이라로"
+        "extra":"N→입력 시 캔슬하고 바나네이라로\n가드 대미지",
+        "startAt": 271,
+        "endAt": 273
       },
       {
-        "name":"호다 지간치~바나네이라",
-        "command":"→→~AKN →",
+        "name":"호다 지간치(캔슬)~바나네이라",
+        "command":"→→~AKN→",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"가드 대미지\nN→입력 시 캔슬하고 바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 271,
+        "endAt": 273
       },
       {
         "name":"푸마사",
@@ -1035,7 +1221,9 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"25,30",
-        "extra":"바나네이라로"
+        "extra":"←←입력 시 캔슬",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"푸마사(캔슬)",
@@ -1046,7 +1234,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"←←입력 시 캔슬"
+        "extra":"",
+        "startAt": 275,
+        "endAt": 278
       },
       {
         "name":"트로바웅",
@@ -1057,7 +1247,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":""
+        "extra":"혹은 ↖←LK\n가드 시 바나네이라로\n가드 대미지",
+        "startAt": 279,
+        "endAt": 282
       },
       {
         "name":"10단 콤보1",
@@ -1068,7 +1260,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"12",
-        "extra":"가드 시 바나네이라로\n가드 대미지"
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보2",
@@ -1079,7 +1273,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"12,16",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보3",
@@ -1090,7 +1286,9 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"12,16,7",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보4",
@@ -1101,7 +1299,9 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"12,16,7,8",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보5",
@@ -1112,7 +1312,9 @@
         "counter_frame":"-",
         "range":"중단X2",
         "damage":"12,16,7,8,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보6",
@@ -1123,7 +1325,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"12,16,7,8,6,6,10",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보7",
@@ -1134,7 +1338,9 @@
         "counter_frame":"-",
         "range":"상단X2",
         "damage":"12,16,7,8,6,6,10,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보8",
@@ -1145,7 +1351,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"12,16,7,8,6,6,10,6,6,15",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보9",
@@ -1156,7 +1364,9 @@
         "counter_frame":"-",
         "range":"중단",
         "damage":"12,16,7,8,6,6,10,6,6,15,10",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
         "name":"10단 콤보10",
@@ -1167,10 +1377,12 @@
         "counter_frame":"-",
         "range":"상단",
         "damage":"12,16,7,8,6,6,10,6,6,15,10,23",
-        "extra":""
+        "extra":"",
+        "startAt": 286,
+        "endAt": 294
       },
       {
-        "name":"플릭 플랙",
+        "name":"플릭 플랙~네가치바",
         "command":"↖←",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1178,7 +1390,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":""
+        "extra":"네가치바로",
+        "startAt": 295,
+        "endAt": 297
       },
       {
         "name":"기합 모으기",
@@ -1189,10 +1403,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로"
+        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트",
+        "startAt": 299,
+        "endAt": 302
       },
       {
-        "name":"트로카 라테라우",
+        "name":"트로카 라테라우~네가치바",
         "command":"횡이동 중 LK",
         "start_frame":"25",
         "guard_frame":"0",
@@ -1200,7 +1416,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"17",
-        "extra":"효과 지속 중에는 가드할 수 없음\n자동 카운터 히트"
+        "extra":"네가치바로\n↓~입력 시 캔슬하고 네가치바로",
+        "startAt": 336,
+        "endAt": 339
       },
       {
         "name":"트로카 라테라우~네가치바",
@@ -1211,7 +1429,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로\n↓~입력 시 캔슬하고 네가치바로"
+        "extra":"네가치바로",
+        "startAt": 332,
+        "endAt": 335
       },
       {
         "name":"바이샤 트로카",
@@ -1222,7 +1442,9 @@
         "counter_frame":"+3",
         "range":"하단X2",
         "damage":"7,10",
-        "extra":"네가치바로"
+        "extra":"",
+        "startAt": 339,
+        "endAt": 342
       },
       {
         "name":"파이스카",
@@ -1233,7 +1455,9 @@
         "counter_frame":"A",
         "range":"상단X2",
         "damage":"6,10",
-        "extra":""
+        "extra":"",
+        "startAt": 342,
+        "endAt": 345
       },
       {
         "name":"윌링 스프링 킥",
@@ -1244,130 +1468,154 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":", "
+        "extra":"",
+        "startAt": 346,
+        "endAt": 348
       }
     ],
     "sit":[
       {
         "name":"푸질라사웅1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"13",
         "guard_frame":"-6",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"상단",
         "damage":"6",
-        "extra":""
+        "extra":"",
+        "startAt": 303,
+        "endAt": 306
       },
       {
-        "name":"푸질라사웅2",
-        "command":"일어서며 LPLK",
+        "name":"푸질라사웅2~네가치바",
+        "command":"일어나며 LPLK",
         "start_frame":"13",
         "guard_frame":"-15",
         "hit_frame":"A",
         "counter_frame":"A",
         "range":"중단",
         "damage":"6,14",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 303,
+        "endAt": 306
       },
       {
         "name":"샤페우 지 코루",
-        "command":"일어서며 LPRK",
+        "command":"일어나며 LPRK",
         "start_frame":"13",
         "guard_frame":"-7",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"상단",
         "damage":"6,23",
-        "extra":""
+        "extra":"",
+        "startAt": 308,
+        "endAt": 310
       },
       {
         "name":"마샤두",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-18",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 311,
+        "endAt": 315
       },
       {
         "name":"라 피에르나",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"19",
         "guard_frame":"-13",
         "hit_frame":"A",
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 315,
+        "endAt": 319
       },
       {
         "name":"템페스타지1",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-4",
         "hit_frame":"+7",
         "counter_frame":"+7",
         "range":"중단",
         "damage":"13",
-        "extra":""
+        "extra":"",
+        "startAt": 320,
+        "endAt": 324
       },
       {
         "name":"템페스타지2",
-        "command":"일어서며 RKRK",
+        "command":"일어나며 RKRK",
         "start_frame":"11",
         "guard_frame":"-4",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"상단",
         "damage":"13,10",
-        "extra":""
+        "extra":"",
+        "startAt": 320,
+        "endAt": 324
       },
       {
         "name":"템페스타지3",
-        "command":"일어서며 RKRKRK",
+        "command":"일어나며 RKRKRK",
         "start_frame":"11",
         "guard_frame":"-9",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"중단X2",
         "damage":"13,10,6,6",
-        "extra":""
+        "extra":"",
+        "startAt": 320,
+        "endAt": 324
       },
       {
         "name":"템페스타지~바나네이라",
-        "command":"일어서며 RKRKRK→~",
+        "command":"일어나며 RKRKRK→~",
         "start_frame":"11",
         "guard_frame":"-28",
         "hit_frame":"-16",
         "counter_frame":"-16",
         "range":"상단",
         "damage":"13,10",
-        "extra":""
+        "extra":"",
+        "startAt": 320,
+        "endAt": 324
       },
       {
         "name":"템페스타지4",
-        "command":"일어서며 RKRKRKLK",
+        "command":"일어나며 RKRKRKLK",
         "start_frame":"11",
         "guard_frame":"+4",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"13,10,6,6,10",
-        "extra":""
+        "extra":"",
+        "startAt": 320,
+        "endAt": 324
       },
       {
-        "name":"두플루",
-        "command":"일어서며 AK",
+        "name":"두플루~네가치바",
+        "command":"일어나며 AK",
         "start_frame":"25",
         "guard_frame":"-9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 325,
+        "endAt": 328
       },
       {
         "name":"카파뇨투",
@@ -1378,10 +1626,12 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 329,
+        "endAt": 331
       },
       {
-        "name":"토르나다",
+        "name":"토르나다~바나네이라",
         "command":"몸을 숙인 상태에서 ↘RK",
         "start_frame":"24",
         "guard_frame":"-21",
@@ -1389,7 +1639,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"25",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 332,
+        "endAt": 335
       }
     ],
     "bananeira":[
@@ -1402,10 +1654,12 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 348,
+        "endAt": 350
       },
       {
-        "name":"고데미 트로보아다",
+        "name":"고데미 트로보아다~네가치바",
         "command":"바나네이라 도중 LP",
         "start_frame":"23",
         "guard_frame":"+6",
@@ -1413,7 +1667,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"가드 대미지\n네가치바로"
+        "extra":"가드 대미지\n네가치바로",
+        "startAt": 351,
+        "endAt": 354
       },
       {
         "name":"콤보 이스코라웅1",
@@ -1424,7 +1680,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15",
-        "extra":""
+        "extra":"",
+        "startAt": 354,
+        "endAt": 358
       },
       {
         "name":"콤보 이스코라웅2",
@@ -1435,10 +1693,12 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,23",
-        "extra":"→~입력 시 캔슬하고 바나네이라로\n히트 시 만징가 레벨 1space상승"
+        "extra":"→~입력 시 캔슬하고 바나네이라로\n히트 시 만징가 레벨 1 상승",
+        "startAt": 354,
+        "endAt": 358
       },
       {
-        "name":"콤보 이스코라웅~바나네이라",
+        "name":"콤보 이스코라웅(캔슬)~바나네이라",
         "command":"바나네이라 도중 RPLK→~",
         "start_frame":"17",
         "guard_frame":"-24",
@@ -1446,7 +1706,9 @@
         "counter_frame":"-8",
         "range":"중단",
         "damage":"15",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 354,
+        "endAt": 358
       },
       {
         "name":"엔슈하다1",
@@ -1457,7 +1719,9 @@
         "counter_frame":"+7",
         "range":"중단",
         "damage":"10",
-        "extra":""
+        "extra":"",
+        "startAt": 359,
+        "endAt": 362
       },
       {
         "name":"엔슈하다2",
@@ -1468,10 +1732,12 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"10,10",
-        "extra":""
+        "extra":"",
+        "startAt": 359,
+        "endAt": 362
       },
       {
-        "name":"엔슈하다3",
+        "name":"엔슈하다3~네가치바",
         "command":"바나네이라 도중 LKLKLK",
         "start_frame":"17",
         "guard_frame":"-5",
@@ -1479,10 +1745,12 @@
         "counter_frame":"+13",
         "range":"상단",
         "damage":"10,10,23",
-        "extra":"토네이도\n네가치바로"
+        "extra":"토네이도\n네가치바로",
+        "startAt": 359,
+        "endAt": 362
       },
       {
-        "name":"란사 지 브라수1",
+        "name":"란사 지 브라수1~바나네이라",
         "command":"바나네이라 도중 RK",
         "start_frame":"12",
         "guard_frame":"-3",
@@ -1490,7 +1758,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 363,
+        "endAt": 366
       },
       {
         "name":"란사 지 브라수2",
@@ -1501,7 +1771,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,21",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 363,
+        "endAt": 366
       },
       {
         "name":"사우투 요토리",
@@ -1512,7 +1784,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,20",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 366,
+        "endAt": 370
       },
       {
         "name":"카베사다 지레타",
@@ -1523,7 +1797,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"23",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가"
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 370,
+        "endAt": 373
       },
       {
         "name":"샤파 이스키반두",
@@ -1534,7 +1810,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20",
-        "extra":""
+        "extra":"",
+        "startAt": 374,
+        "endAt": 377
       },
       {
         "name":"바나네이라~앞이동",
@@ -1545,7 +1823,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 378,
+        "endAt": 381
       },
       {
         "name":"바나네이라~네가치바",
@@ -1556,7 +1836,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 381,
+        "endAt": 383
       }
     ],
     "negativa":[
@@ -1569,7 +1851,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로\n↙~ 혹은 ←~ 입력 시 가드 가능"
+        "extra":"네가치바로\n↙~ 혹은 ←~ 입력 시 가드 가능",
+        "startAt": 384,
+        "endAt": 386
       },
       {
         "name":"테하 가파뇨투1",
@@ -1580,7 +1864,9 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"7",
-        "extra":"↓~입력 시 몸을 숙인 상태로"
+        "extra":"↓~입력 시 몸을 숙인 상태로",
+        "startAt": 387,
+        "endAt": 390
       },
       {
         "name":"테하 가파뇨투~앉은 자세",
@@ -1591,10 +1877,12 @@
         "counter_frame":"0",
         "range":"하단",
         "damage":"7",
-        "extra":""
+        "extra":"",
+        "startAt": 387,
+        "endAt": 390
       },
       {
-        "name":"테하 가파뇨투2",
+        "name":"테하 가파뇨투2~네가치바",
         "command":"네가치바 도중 LPLK",
         "start_frame":"17",
         "guard_frame":"-14",
@@ -1602,7 +1890,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"7,17",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 387,
+        "endAt": 390
       },
       {
         "name":"마레 셰이아1",
@@ -1613,7 +1903,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"16",
-        "extra":""
+        "extra":"",
+        "startAt": 391,
+        "endAt": 395
       },
       {
         "name":"마레 셰이아2",
@@ -1624,7 +1916,9 @@
         "counter_frame":"+2",
         "range":"상단",
         "damage":"16,17",
-        "extra":"↓~입력 시 네가치바로"
+        "extra":"↓~입력 시 네가치바로",
+        "startAt": 391,
+        "endAt": 395
       },
       {
         "name":"마레 셰이아~네가치바",
@@ -1635,7 +1929,9 @@
         "counter_frame":"+10",
         "range":"상단",
         "damage":"16,17",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 391,
+        "endAt": 395
       },
       {
         "name":"마레 셰이아3",
@@ -1646,7 +1942,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,17,25",
-        "extra":""
+        "extra":"",
+        "startAt": 391,
+        "endAt": 395
       },
       {
         "name":"예만자1",
@@ -1657,7 +1955,9 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"12",
-        "extra":"클린 히트 효과 있음"
+        "extra":"클린 히트 효과 있음",
+        "startAt": 395,
+        "endAt": 399
       },
       {
         "name":"예만자2",
@@ -1668,7 +1968,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,18",
-        "extra":"히트 시 만징가 레벨 1space상승"
+        "extra":"히트 시 만징가 레벨 1 상승",
+        "startAt": 395,
+        "endAt": 399
       },
       {
         "name":"시바타 아르젠치1",
@@ -1679,7 +1981,9 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"14",
-        "extra":""
+        "extra":"",
+        "startAt": 400,
+        "endAt": 404
       },
       {
         "name":"시바타 아르젠치2",
@@ -1690,7 +1994,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,25",
-        "extra":"히트 발동기"
+        "extra":"히트 발동기",
+        "startAt": 400,
+        "endAt": 404
       },
       {
         "name":"카베사다 피샤",
@@ -1701,7 +2007,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 405,
+        "endAt": 408
       },
       {
         "name":"트로카 이 아타키",
@@ -1712,7 +2020,9 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"24",
-        "extra":"토네이도"
+        "extra":"토네이도",
+        "startAt": 408,
+        "endAt": 411
       },
       {
         "name":"네가치바~앞이동",
@@ -1723,7 +2033,9 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"네가치바로"
+        "extra":"네가치바로",
+        "startAt": 411,
+        "endAt": 414
       },
       {
         "name":"네가치바~바나네이라",
@@ -1734,75 +2046,89 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"바나네이라로"
+        "extra":"바나네이라로",
+        "startAt": 415,
+        "endAt": 417
       }
     ],
     "mandinga":[
       {
-        "name":"얀산 만징가(1)",
-        "command":"만징가 레벨 1,바나네이라 도중 AK",
+        "name":"얀산 만징가(만징가 레벨 1)",
+        "command":"만징가 레벨이 1일때 바나네이라 도중 AK",
         "start_frame":"21",
         "guard_frame":"-",
         "hit_frame":"+4",
         "counter_frame":"+4",
         "range":"하단,중단X2",
         "damage":"6,6,16",
-        "extra":""
+        "extra":"",
+        "startAt": 420,
+        "endAt": 4242
       },
       {
-        "name":"얀산 만징가(2)",
-        "command":"만징가 레벨 2,바나네이라 도중 AK",
+        "name":"얀산 만징가(만징가 레벨 2)",
+        "command":"만징가 레벨이 2일때 바나네이라 도중 AK",
         "start_frame":"21",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"하단,중단X2",
         "damage":"16,6,30",
-        "extra":""
+        "extra":"",
+        "startAt": 424,
+        "endAt": 428
       },
       {
-        "name":"오궁 만징가(1)",
-        "command":"만징가 레벨 1,바나네이라 도중 ←RK",
+        "name":"오궁 만징가(만징가 레벨 1)",
+        "command":"만징가 레벨이 1일때 바나네이라 도중 ←RK",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 429,
+        "endAt": 432
       },
       {
-        "name":"오궁 만징가(1)~네가치바",
-        "command":"만징가 레벨 1,바나네이라 도중 ←RK↓~",
+        "name":"오궁 만징가(만징가 레벨 1)~네가치바",
+        "command":"만징가 레벨이 1일때 바나네이라 도중 ←RK↓~",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 429,
+        "endAt": 432
       },
       {
-        "name":"오궁 만징가(2)",
-        "command":"만징가 레벨 2,바나네이라 도중 ←RK",
+        "name":"오궁 만징가(만징가 레벨 2)",
+        "command":"만징가 레벨이 2일때 바나네이라 도중 ←RK",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 433,
+        "endAt": 437
       },
       {
-        "name":"오궁 만징가(2)~네가치바",
-        "command":"만징가 레벨 2,바나네이라 도중 ←RK↓~",
+        "name":"오궁 만징가(만징가 레벨 2)~네가치바",
+        "command":"만징가 레벨이 2일때 바나네이라 도중 ←RK↓~",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지"
+        "extra":"가드 대미지",
+        "startAt": 433,
+        "endAt": 437
       }
     ]
   },
@@ -1815,7 +2141,9 @@
       "after_break_frame":"-",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 439,
+      "endAt": 443
     },
     {
       "name":"페스코수 아치라르",
@@ -1825,7 +2153,9 @@
       "after_break_frame":"-",
       "damage":"35",
       "range":"상단",
-      "extra":""
+      "extra":"호밍기",
+      "startAt": 444,
+      "endAt": 447
     },
     {
       "name":"아우마 아치라르",
@@ -1835,7 +2165,9 @@
       "after_break_frame":"-",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 449,
+      "endAt": 452
     },
     {
       "name":"치그리 스핀",
@@ -1845,7 +2177,9 @@
       "after_break_frame":"-",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 454,
+      "endAt": 458
     },
     {
       "name":"비라르 도이스",
@@ -1855,7 +2189,9 @@
       "after_break_frame":"-",
       "damage":"50",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 460,
+      "endAt": 463
     },
     {
       "name":"에스트렐라",
@@ -1865,17 +2201,21 @@
       "after_break_frame":"-",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 465,
+      "endAt": 470
     },
     {
-      "name":"바투카다",
+      "name":"바투카다~네가치바",
       "command":"바나네이라 도중 AL or AR",
       "start_frame":"23",
       "break_command":"x",
       "after_break_frame":"-",
       "damage":"26",
       "range":"상단",
-      "extra":"히트 시 네가치바로"
+      "extra":"히트 시 네가치바로",
+      "startAt": 471,
+      "endAt": 475
     },
     {
       "name":"비라르",
@@ -1885,7 +2225,9 @@
       "after_break_frame":"-",
       "damage":"40",
       "range":"상단",
-      "extra":""
+      "extra":"",
+      "startAt": 478,
+      "endAt": 482
     },
     {
       "name":"빙가치바 장가",
@@ -1895,7 +2237,9 @@
       "after_break_frame":"-",
       "damage":"30",
       "range":"중단",
-      "extra":"히트 발동기\n히트 대시 불가능"
+      "extra":"히트 발동기\n히트 대시 불가능",
+      "startAt": 483,
+      "endAt": 488
     },
     {
       "name":"빙가치바 푸네라우",
@@ -1905,7 +2249,9 @@
       "after_break_frame":"-",
       "damage":"35",
       "range":"중단",
-      "extra":""
+      "extra":"",
+      "startAt": 489,
+      "endAt": 494
     }
   ]
 }

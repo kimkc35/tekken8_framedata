@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -1253,7 +1253,7 @@
       },
       {
         "name":"메테오 스매시",
-        "command":"←LP+RK홀드",
+        "command":"←LP+RK 홀드",
         "start_frame":"53",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1959,7 +1959,7 @@
       },
       {
         "name":"네오 소울 이레이저 익시드",
-        "command":"스네이크 아이즈 보유 시AKRP홀드",
+        "command":"스네이크 아이즈 보유 시AKRP 홀드",
         "start_frame":"18(55)",
         "guard_frame":"+9",
         "hit_frame":"T",
@@ -2349,7 +2349,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 456,
       "endAt": 460
     },
@@ -2361,7 +2361,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 461,
       "endAt": 465
     },

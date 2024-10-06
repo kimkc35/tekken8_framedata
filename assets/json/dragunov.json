@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -505,7 +505,7 @@
         "hit_frame":"+1(D)",
         "counter_frame":"+1(D)",
         "range":"중단",
-        "damage":"11,14(,20)",
+        "damage":"11,14,20",
         "extra":"근거리 정면 히트 시 잡기로",
         "startAt": 129,
         "endAt": 133
@@ -1559,7 +1559,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"16,20(,20)",
+        "damage":"16,20,20",
         "extra":"정면 지상 히트 시 잡기로",
         "startAt": 375,
         "endAt": 379
@@ -1624,7 +1624,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"하단",
-        "damage":"8(,30)",
+        "damage":"8,30",
         "extra":"근거리 정면 히트 시 잡기로",
         "startAt": 399,
         "endAt": 402
@@ -1685,7 +1685,7 @@
     "sit":[
       {
         "name":"퀼리온1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"12",
         "guard_frame":"-3",
         "hit_frame":"+4",
@@ -1698,7 +1698,7 @@
       },
       {
         "name":"퀼리온1~스네이크",
-        "command":"일어서며 LP↘~",
+        "command":"일어나며 LP↘~",
         "start_frame":"12",
         "guard_frame":"-5",
         "hit_frame":"+2",
@@ -1711,7 +1711,7 @@
       },
       {
         "name":"퀼리온2",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"12",
         "guard_frame":"-7",
         "hit_frame":"+10",
@@ -1724,7 +1724,7 @@
       },
       {
         "name":"더블 힐트",
-        "command":"일어서며 LPLK",
+        "command":"일어나며 LPLK",
         "start_frame":"12",
         "guard_frame":"-13",
         "hit_frame":"D",
@@ -1737,7 +1737,7 @@
       },
       {
         "name":"발리스틱 어퍼",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-12",
         "hit_frame":"A",
@@ -1750,7 +1750,7 @@
       },
       {
         "name":"글레이셜 힐트",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -1763,7 +1763,7 @@
       },
       {
         "name":"젤리드 스매시",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-5",
         "hit_frame":"+6",
@@ -1776,7 +1776,7 @@
       },
       {
         "name":"프로스트 태클",
-        "command":"일어서며 AP",
+        "command":"일어나며 AP",
         "start_frame":"12",
         "guard_frame":"-14",
         "hit_frame":"D",
@@ -1801,7 +1801,7 @@
         "endAt": 368
       },
       {
-        "name":"헤일 슬라이서2",
+        "name":"헤일 슬라이서2~스네이크",
         "command":"몸을 숙인 상태에서 ↘LP 히트 시 RK",
         "start_frame":"16",
         "guard_frame":"-",
@@ -1814,7 +1814,7 @@
         "endAt": 368
       },
       {
-        "name":"헤일 슬라이서2(저스트)",
+        "name":"헤일 슬라이서2(저스트)~스네이크",
         "command":"몸을 숙인 상태에서 ↘LP 히트 시 RK(저스트)",
         "start_frame":"16",
         "guard_frame":"-",
@@ -1901,7 +1901,7 @@
         "hit_frame":"-",
         "counter_frame":"D",
         "range":"하단",
-        "damage":"20(,20)",
+        "damage":"20,20",
         "extra":"근거리 정면 히트 시 잡기로",
         "startAt": 456,
         "endAt": 460
@@ -1943,7 +1943,7 @@
       "after_break_frame":"-2",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 474,
       "endAt": 477
     },
@@ -1955,7 +1955,7 @@
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 479,
       "endAt": 482
     },

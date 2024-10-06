@@ -3,7 +3,7 @@
     "heat":[
       {
         "name":"히트 버스트",
-        "command":"RP+LK",
+        "command":"히트 발동 가능 상태에서 RP+LK",
         "start_frame":"16",
         "guard_frame":"+1",
         "hit_frame":"+2",
@@ -107,7 +107,7 @@
       },
       {
         "name":"신수염장멸파",
-        "command":"히트 상태에서 →→~AP홀드",
+        "command":"히트 상태에서 →→~AP 홀드",
         "start_frame":"39",
         "guard_frame":"+10g",
         "hit_frame":"D",
@@ -119,7 +119,7 @@
         "endAt": 36
       },
       {
-        "name":"응룡파산고",
+        "name":"응룡파산고~운수",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"20",
         "guard_frame":"+12",
@@ -132,7 +132,7 @@
         "endAt": 40
       },
       {
-        "name":"응룡파산고(서 있는 상태)",
+        "name":"응룡파산고~선 자세",
         "command":"히트 상태에서 RP+LK←~",
         "start_frame":"20",
         "guard_frame":"+7",
@@ -1684,7 +1684,7 @@
     "sit":[
       {
         "name":"질보련탄1",
-        "command":"일어서며 LP",
+        "command":"일어나며 LP",
         "start_frame":"13",
         "guard_frame":"-1",
         "hit_frame":"+5",
@@ -1697,7 +1697,7 @@
       },
       {
         "name":"질보련탄2",
-        "command":"일어서며 LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -1710,7 +1710,7 @@
       },
       {
         "name":"질보련탄3",
-        "command":"일어서며 LPRPLP",
+        "command":"일어나며 LPRPLP",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"D",
@@ -1723,7 +1723,7 @@
       },
       {
         "name":"질보갈복축",
-        "command":"일어서며 LPLK",
+        "command":"일어나며 LPLK",
         "start_frame":"13",
         "guard_frame":"-6",
         "hit_frame":"+4",
@@ -1736,7 +1736,7 @@
       },
       {
         "name":"금강도추",
-        "command":"일어서며 RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-7",
         "hit_frame":"+24g",
@@ -1749,7 +1749,7 @@
       },
       {
         "name":"천궁퇴",
-        "command":"일어서며 LK",
+        "command":"일어나며 LK",
         "start_frame":"15",
         "guard_frame":"-12",
         "hit_frame":"A",
@@ -1762,7 +1762,7 @@
       },
       {
         "name":"등각",
-        "command":"일어서며 RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-7",
         "hit_frame":"+7",
@@ -1775,7 +1775,7 @@
       },
       {
         "name":"호박장",
-        "command":"일어서며 AP",
+        "command":"일어나며 AP",
         "start_frame":"23",
         "guard_frame":"-9",
         "hit_frame":"+3",
@@ -2102,7 +2102,7 @@
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 487,
       "endAt": 490
     },
@@ -2114,7 +2114,7 @@
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
-      "extra":"",
+      "extra":"호밍기",
       "startAt": 491,
       "endAt": 495
     },
