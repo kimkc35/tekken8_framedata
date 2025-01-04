@@ -61,7 +61,7 @@
         "hit_frame":"+17g",
         "counter_frame":"+17g",
         "range":"중단",
-        "damage":"27",
+        "damage":"22",
         "extra":"히트 발동기\n가드 대미지[우종]",
         "startAt": 21,
         "endAt": 24
@@ -701,7 +701,7 @@
         "hit_frame":"-1",
         "counter_frame":"+13g",
         "range":"하단",
-        "damage":"17",
+        "damage":"14",
         "extra":"[연깍, 연깎]",
         "startAt": 176,
         "endAt": 178
@@ -1911,8 +1911,8 @@
         "command":"↓↘→RK",
         "start_frame":"19",
         "guard_frame":"+7",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "hit_frame":"+8",
+        "counter_frame":"+8",
         "range":"중단",
         "damage":"22",
         "extra":"히트 발동기\n가드 대미지[우종]",

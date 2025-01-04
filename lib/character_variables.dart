@@ -35,7 +35,8 @@ const Map<String, String> characterImageUrls = {
   "victor": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_lon.png",
   "xiaoyu": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_rat.png",
   "yoshimitsu": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_cml.png",
-  "zafina": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_crw.png"
+  "zafina": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_crw.png",
+  "heihachi": "https://tekkenwarehouse.com/wp-content/uploads/2024/09/T_UI_Makuai_Character_L_bee.png"
 };
 
 Character empty = Character(name: "", rageArts: MoveInfo(name: "", command: "", startFrame: "", guardFrame: "", hitFrame: "", counterFrame: "", range: "", damage: "", extra: ""), heatSystem: [], types: {}, typesKo: {});
@@ -48,8 +49,6 @@ Character alisa = Character(
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "destructive form" : "디스트럭티브 폼", "boot" : "부트", "dual boot" : "듀얼 부트", "backup" : "백업"},
   videoId: "vIYrz2ISyY4"
 );
-
-
 
 Character asuka = Character(
   name: "asuka",
@@ -369,12 +368,12 @@ Character zafina = Character(
 );
 
 Character eddy = Character(
-    name: "eddy",
-    heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"],
-    rageArts: MoveInfo(name: "인셴치 지 아셰", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 45, endAt: 59),
-    types: {"heat" : false, "general" : false, "sit" : false, "bananeira" : false, "negativa" : false, "mandinga" : false},
-    typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "bananeira" : "바나네이라", "negativa" : "네가치바", "mandinga" : "만징가"},
-    videoId: "bEKK2uh7ea8"
+  name: "eddy",
+  heatSystem: ["게헤이루 에시플로지부 사용 가능", "하부 지 아하이아 리베라두 사용 가능"],
+  rageArts: MoveInfo(name: "인셴치 지 아셰", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 45, endAt: 59),
+  types: {"heat" : false, "general" : false, "sit" : false, "bananeira" : false, "negativa" : false, "mandinga" : false},
+  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "bananeira" : "바나네이라", "negativa" : "네가치바", "mandinga" : "만징가"},
+  videoId: "bEKK2uh7ea8"
 );
 
 Character lidia = Character(
@@ -383,8 +382,25 @@ Character lidia = Character(
   rageArts: MoveInfo(name: "스칼렛 발러: 마샬 디보션", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 42, endAt: 56),
   types: {"heat" : false, "general" : false, "sit" : false, "horse stance" : false, "cat stance" : false, "wolf stance" : false, "heaven and earth" : false},
   typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "horse stance" : "말 자세", "cat stance" : "묘족 자세", "wolf stance" : "후랑 자세", "heaven and earth" : "천상천하 자세"},
-    videoId: "ZYSdvZ6qaEk"
+  videoId: "ZYSdvZ6qaEk"
 );
 
+Character heihachi = Character(
+  name: "heihachi",
+  heatSystem: ["최속뇌신권, 최속풍신권이 최속 입력이 아니더라도 사용 가능", "번개를 두른 강력한 기술을 사용 가능", "풍신호법으로 상중단 공격에 대한 반격기 효과 사용 가능", "특수한 강화 상태 「미시마류 최종오의 무의 경지」 사용 가능"],
+  rageArts: MoveInfo(name: "미시마류 오의 귀신풍뢰권", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 72, endAt: 87),
+  types: {"heat" : false, "general" : false, "sit" : false, "wind god step": false, "thunder god's kamae": false, "wind god's kamae": false, "warrior instinct": false},
+  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "wind god step": "풍신 스텝", "thunder god's kamae": "뇌신호법", "wind god's kamae": "풍신호법", "warrior instinct": "무의 경지"},
+  videoId: "VI5e0Nralcw"
+);
 
-final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, eddy, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lidia, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina];
+Character clive = Character(
+    name: "clive",
+    heatSystem: ["강력한 이프리트의 어빌리티를 사용 가능", "토르갈의 파상 공격이 파워 상승"],
+    rageArts: MoveInfo(name: "지옥의 화염", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대의 회복 가능 게이지를 없앰", startAt: 70, endAt: 87),
+    types: {"heat": false, "general": false, "sit": false, "zantetsuken": false, "wings of light": false, "phoenix shift": false, "updraft": false},
+    typesKo: {"heat": "히트", "general": "일반", "sit": "앉은 자세", "zantetsuken": "참철검", "wings of light": "바하무트 윙", "phoenix shift": "피닉스 시프트", "updraft": "업드래프트"},
+    videoId: "L9sqXtKD7KQ"
+);
+
+final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina, eddy, lidia, heihachi, clive];

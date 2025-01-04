@@ -1,5 +1,5 @@
 // import 'dart:developer';
-
+import 'dart:math' as math;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
@@ -24,7 +24,7 @@ import 'tipScreen.dart';
 import 'upgradeAlertWidget.dart';
 import 'package:firebase_core/firebase_core.dart' show Firebase;
 
-const bool isPro = true;
+const bool isPro = false;
 
 bool isFirst = true;
 
@@ -159,9 +159,13 @@ Future<void> initializeSetting() async{
     }
 
     for(var throwJson in characterJson['throws']){
-      throwInfoList.add(
-        ThrowInfo(name: throwJson['name'], command: throwJson['command'], startFrame: throwJson['start_frame'], breakCommand: throwJson['break_command'], afterBreakFrame: throwJson['after_break_frame'], range: throwJson['range'], damage: throwJson['damage'], extra: throwJson['extra'], startAt: throwJson['startAt'] ?? 0, endAt: throwJson['endAt'])
-      );
+      try {
+        throwInfoList.add(
+          ThrowInfo(name: throwJson['name'], command: throwJson['command'], startFrame: throwJson['start_frame'], breakCommand: throwJson['break_command'], afterBreakFrame: throwJson['after_break_frame'], range: throwJson['range'], damage: throwJson['damage'], extra: throwJson['extra'], startAt: throwJson['startAt'] ?? 0, endAt: throwJson['endAt'])
+        );
+      } catch(e) {
+        debugPrint("$throwJson에서 오류, $e");
+      }
     }
 
     character.moveInfoList = moveInfoList;
@@ -290,6 +294,54 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
   }
 }
 
+class PentagonPainter extends CustomPainter
+{
+  const PentagonPainter();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+
+    getPath(double x, double y){
+      Path path = Path()
+          ..moveTo(x/2, 0)
+          ..lineTo(x, 0)
+          ..lineTo(0, y)
+          ..lineTo(0, y/2)
+          ..lineTo(x/2, 0)
+          ..close();
+
+      return path;
+    }
+
+    Paint paint = Paint()
+      ..color = CustomThemeMode.currentThemeData.value.primaryColor
+      ..strokeWidth = 3
+    ..style = PaintingStyle.stroke;
+
+
+    // rotate the canvas
+    const degrees = 45;
+    const radians = degrees * math.pi / 180;
+    canvas.rotate(radians);
+
+    canvas.drawPath(getPath(200, 200), paint);
+
+    // draw the text
+    final textSpan = TextSpan(text: 'S1');
+    TextPainter(text: textSpan, textDirection: TextDirection.ltr)
+      ..layout(minWidth: 0, maxWidth: size.width)
+      ..paint(canvas, Offset(-20, -20));
+
+
+
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter old) {
+    return false;
+  }
+}
+
 class CharacterButton extends StatefulWidget {
 
   final Character character1, character2;
@@ -301,6 +353,7 @@ class CharacterButton extends StatefulWidget {
 }
 
 class _CharacterButtonState extends State<CharacterButton> {
+
   @override
   Widget build(BuildContext context) {
 
@@ -329,17 +382,18 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 60,
           child: ElevatedButton(
-              style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
-              onPressed: (){
-              widget.character2 != empty ?{
-              Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
-              }
+              style: ButtonStyle(
+
+                backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
+                onPressed: (){
+                widget.character2 != empty ?
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
               : ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character2.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
+                Text(widget.character2.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1)),
               ],
             )
           ),

@@ -74,7 +74,6 @@ class Character{
   final Map<String, String> typesKo;
   late final Map<String, List<MoveInfo>> moveInfoList;
   late final List<ThrowInfo> throwInfoList;
-  Map<String, String>? videoList = {};
   final String videoId;
 
   Character({

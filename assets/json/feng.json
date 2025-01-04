@@ -630,7 +630,7 @@
       {
         "name":"탄퇴",
         "command":"↘RK",
-        "start_frame":"13",
+        "start_frame":"15",
         "guard_frame":"-6",
         "hit_frame":"+5",
         "counter_frame":"+5",
@@ -643,7 +643,7 @@
       {
         "name":"천습포락1",
         "command":"↘RKRP",
-        "start_frame":"13",
+        "start_frame":"15",
         "guard_frame":"-11",
         "hit_frame":"+1",
         "counter_frame":"+8",
@@ -656,7 +656,7 @@
       {
         "name":"천습포락2",
         "command":"↘RKRPAP",
-        "start_frame":"13",
+        "start_frame":"15",
         "guard_frame":"-19",
         "hit_frame":"D",
         "counter_frame":"D",
@@ -669,7 +669,7 @@
       {
         "name":"쌍선각",
         "command":"↘RKLK",
-        "start_frame":"13",
+        "start_frame":"15",
         "guard_frame":"-4",
         "hit_frame":"+15g",
         "counter_frame":"D",
