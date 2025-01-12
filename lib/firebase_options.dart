@@ -80,6 +80,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '648481478664',
     projectId: 'tk8-framedata-pro',
     databaseURL: 'https://tk8-framedata-pro-default-rtdb.firebaseio.com',
-    storageBucket: 'tk8-framedata-pro.appspot.com',
+    storageBucket: 'tk8-framedata-pro.firebasestorage.app',
   );
 }
