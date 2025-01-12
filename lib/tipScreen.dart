@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -87,14 +88,14 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                                 filter = "likeCount";
                               });
                             }
-                          }, child: Text("인기순", style: TextStyle(color: filter == "likeCount" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor),)),
+                          }, child: Text("tip.mostPopular".tr(), style: TextStyle(color: filter == "likeCount" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor),)),
                           TextButton(onPressed: (){
                             if(filter != "date"){
                               setState(() {
                                 filter = "date";
                               });
                             }
-                          }, child: Text("최신순", style: TextStyle(color: filter == "date" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor)))
+                          }, child: Text("tip.latest".tr(), style: TextStyle(color: filter == "date" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor)))
                         ],
                       ),
                       Row(
@@ -103,7 +104,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                           Expanded(
                             child: TextField(
                               decoration: InputDecoration(
-                                hintText: "자신만의 팁을 공유해주세요!"
+                                hintText: "tip.hintText".tr()
                               ),
                               maxLines: null,
                               controller: textEditingController,
@@ -125,7 +126,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                             }) :
                             ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text("내용을 입력해 주세요."),
+                                  content: Text("tip.emptyTextError").tr(),
                                 )
                             );
                           }, icon: Icon(Icons.add)),
@@ -146,7 +147,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                     setState(() {
                     });
                   }
-                  return const Text('오류가 발생했습니다.');
+                  return const Text('tip.error').tr();
                 }
 
                 if(snapshot.hasData){
@@ -199,7 +200,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                                     }else{
                                       ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
-                                            content: Text("본인의 게시물엔 좋아요를 누를 수 없습니다."),
+                                            content: Text("tip.selfLikeError").tr(),
                                           )
                                       );
                                     }
@@ -227,7 +228,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                   );
                 }
 
-                return Center(child: Text("로딩중..."));
+                return Center(child: Text("tip.loading").tr());
 
 
               }),
@@ -242,7 +243,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("로그인이 되지 않았습니다."),
+          Text("tip.loginError").tr(),
           TextButton(
             onPressed: ()async{
               if(currentUser == null) kIsWeb ? await signInWithGoogleWeb() : await signInWithGoogle();
@@ -252,7 +253,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
             style: ButtonStyle(
               iconColor: MaterialStatePropertyAll(CustomThemeMode.currentThemeData.value.primaryColor)
             ),
-            child: Text("로그인"),
+            child: Text("main.drawer.login").tr(),
           )
         ],
       ),

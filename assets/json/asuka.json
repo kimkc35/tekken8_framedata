@@ -837,7 +837,7 @@
       },
       {
         "name":"제비꽃 베기",
-        "command":"←LP(카운터 히트)",
+        "command":"←LP 카운터 히트 시",
         "start_frame":"29",
         "guard_frame":"-",
         "hit_frame":"-",

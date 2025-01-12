@@ -1,21 +1,21 @@
 {
-  "flutter":{
-    "platforms":{
-      "android":{
-        "default":{
-          "appId":"1:648481478664:android:250596a9ea8d76786919bd",
-          "fileOutput":"android/app/google-services.json",
-          "projectId":"tk8-framedata-pro"
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "appId": "1:648481478664:android:a4d357679f10a2e76919bd",
+          "fileOutput": "android/app/google-services.json",
+          "projectId": "tk8-framedata-pro"
         }
       },
-      "dart":{
-        "lib/firebase_options.dart":{
-          "configurations":{
-            "android":"1:648481478664:android:250596a9ea8d76786919bd",
-            "android_vpro":"1:648481478664:android:734e178062681bfb6919bd",
-            "web":"1:648481478664:web:5bbd459cf3499cdb6919bd"
+      "dart": {
+        "lib/firebase_options.dart": {
+          "configurations": {
+            "android": "1:648481478664:android:a4d357679f10a2e76919bd",
+            "android_vpro": "1:648481478664:android:250596a9ea8d76786919bd",
+            "web": "1:648481478664:web:d51debef5b9b43a26919bd"
           },
-          "projectId":"tk8-framedata-pro"
+          "projectId": "tk8-framedata-pro"
         }
       }
     }

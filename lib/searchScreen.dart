@@ -1,11 +1,11 @@
 import 'dart:developer';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
 import 'package:html/dom.dart' as dom;
 import 'package:tekken8_framedata/main.dart';
-import 'package:tekken8_framedata/playerDetailsScreen.dart';
+import 'package:tekken8_framedata/profileScreen.dart';
 import 'modules.dart';
 
 class SearchPage extends StatefulWidget {
@@ -23,22 +23,32 @@ class _SearchPageState extends State<SearchPage> {
   Future<List<PlayerInfo>> search() async{
     List<PlayerInfo> playerInfoList = [];
 
-    if(searchController.text != ""){
-      final uri = Uri.https("tekkenstats.gg", "/search/", {'q': searchController.text});
-      setState(() {
-        searchController.text = "";
-        isSearching = true;
-      });
-      final response = await http.get(uri);
-      final dom.Document document = parser.parse(response.body);
-      final playerList = document.querySelectorAll('main > div > table > tbody > tr');
+    String formatString(String input) {
+      return '${input.substring(0, 4)}-${input.substring(4, 8)}-${input.substring(8, 12)}';
+    }
 
-      for (var player in playerList) {
-        final playerInfo = player.querySelectorAll('td');
-        final number = playerInfo[0].querySelector('a')?.attributes['href']!.replaceAll('https://tekkenstats.gg/player/', '');
-        playerInfoList.add(
-          PlayerInfo(polarisId: playerInfo[0].text, name: playerInfo[1].text, onlineId: playerInfo[2].text, platform: playerInfo[3].text.replaceAll("\n", "").replaceAll(" ", ""), number : number!)
-        );
+    if(searchController.text != ""){
+      try {
+        final uri = Uri.https(
+            "kekken.com", "/search", {'q': searchController.text});
+        setState(() {
+          searchController.text = "";
+          isSearching = true;
+        });
+        final response = await http.get(uri, headers: {"Accept": "text/vnd.turbo-stream.html"});
+        final dom.Document document = parser.parse(response.body);
+        final playerList = document.querySelectorAll('turbo-stream > template > div > div').last.querySelectorAll("a");
+
+
+        for (var player in playerList) {
+          final playerPolarisId = player.querySelector("svg") != null ? player.attributes['href'].toString().replaceAll("/@", "") : formatString(player.attributes['href'].toString().replaceAll("/@", ""));
+          final playerName = player.text.replaceAll("\n", "").trim();
+          final isVerified = player.querySelector("svg") != null ? true : false;
+
+          playerInfoList.add(PlayerInfo(name: playerName, isVerified: isVerified, polarisId: playerPolarisId));
+        }
+      }catch(e){
+        throw ErrorDescription(e.toString());
       }
 
       setState(() {
@@ -47,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
     }else{
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("검색어를 입력해 주세요."),
+          content: Text("searchProfile.noTextError").tr(),
         )
       );
     }
@@ -81,7 +91,7 @@ class _SearchPageState extends State<SearchPage> {
                         Expanded(
                           child: TextField(
                             decoration: InputDecoration(
-                                hintText: "플레이어 검색"
+                                hintText: "searchProfile.hintText".tr()
                             ),
                             maxLines: null,
                             controller: searchController,
@@ -106,36 +116,35 @@ class _SearchPageState extends State<SearchPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(width: 100, child: Text("폴라리스 ID", textAlign: TextAlign.center, style: headingStyle,)),
-              SizedBox(width: 80, child: Text("이름", textAlign: TextAlign.center, style: headingStyle)),
-              SizedBox(width: 100, child: Text("온라인 ID", textAlign: TextAlign.center, style: headingStyle)),
-              SizedBox(width: 70, child: Text("플랫폼", textAlign: TextAlign.center, style: headingStyle))
+              Expanded(flex: 2, child: Text("searchProfile.name".tr(), textAlign: TextAlign.center, style: headingStyle)),
+              Expanded(flex: 2, child: Text("searchProfile.polarisId".tr(), textAlign: TextAlign.center, style: headingStyle,)),
+              Expanded(flex: 1, child: Text("searchProfile.verified".tr(), textAlign: TextAlign.center, style: headingStyle)),
             ],
           ),
           SizedBox(height: 5,),
           Container(height: 1, color: Colors.grey,),
           SizedBox(height: 4,),
           Expanded(
-            child: isSearching ? Center(child: Text("검색중...")) : ListView.builder(
+            child: isSearching ? Center(child: Text("searchProfile.loading".tr())) : ListView.builder(
               itemBuilder: (context, index) {
                 return SizedBox(
                   height: 60,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SizedBox(
-                        width: 100,
+                      Expanded(flex: 2, child: Text(resultList[index].name, textAlign: TextAlign.center,)),
+                      Expanded(
+                        flex: 2,
                         child: GestureDetector(
-                          onTap: (){
-
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PlayerDetailsPage(playerInfo: resultList[index])));
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) =>
+                                    ProfilePage(playerInfo: resultList[index])));
                           },
                           child: Text(resultList[index].polarisId, textAlign: TextAlign.center, style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor),),
                         ),
                       ),
-                      SizedBox(width: 80, child: Text(resultList[index].name, textAlign: TextAlign.center,)),
-                      SizedBox(width: 100, child: Text(resultList[index].onlineId, textAlign: TextAlign.center,)),
-                      SizedBox(width: 70, child: Text(resultList[index].platform, textAlign: TextAlign.center,)),
+                      Expanded(flex: 1, child: resultList[index].isVerified ? Icon(Icons.check_circle, color: Colors.blue,) : SizedBox()),
                     ]
                   ),
                 );

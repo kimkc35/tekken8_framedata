@@ -1,7 +1,8 @@
 // import 'dart:developer';
-import 'dart:math' as math;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,18 +18,24 @@ import 'character_variables.dart';
 // import 'package:html/parser.dart' as parser;
 // import 'package:html/dom.dart' as dom;
 import 'dart:convert';
-import 'characterWidget.dart';
+import 'movesWidget.dart';
 import 'firebase_options.dart' ;
 import 'modules.dart';
 import 'tipScreen.dart';
 import 'upgradeAlertWidget.dart';
 import 'package:firebase_core/firebase_core.dart' show Firebase;
 
-const bool isPro = false;
+const bool isPro =
+  kIsWeb? true :
+  false;
 
 bool isFirst = true;
 
-String language = "ko";
+const firebaseScreenName = [
+  "home", "tip", "profile"
+];
+
+final BannerAd _banner = loadBannerAd()..load();
 
 late Map<String, dynamic> patchNotes;
 
@@ -38,42 +45,32 @@ const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
 
   await initializeSetting();
 
+  FirebaseAnalytics.instance.logScreenView(screenName: firebaseScreenName[0]);
+
   runApp(
-     MyApp()
+    EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('ko')],
+        path: 'assets/localizations',
+        fallbackLocale: Locale('en'),
+        child: MyApp()
+    ),
   );
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
-
-  @override
-  Widget build(BuildContext context) {
-    CustomThemeMode.instance;
-    return ValueListenableBuilder(
-      valueListenable: CustomThemeMode.currentThemeData,
-      builder: (context, value, child) {
-        return MaterialApp(
-          navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
-          theme: value,
-          home: Main(),
-        );
-      },
-    );
-  }
 }
 
 class CustomThemeMode {
@@ -108,6 +105,7 @@ class CustomThemeMode {
 
 class CustomThemeData {
   static final ThemeData oneMobile = ThemeData(
+
     buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
     fontFamily: Font.oneMobile.font,
     useMaterial3: false,
@@ -132,7 +130,8 @@ Future<void> initializeSetting() async{
     if(isPro){
       await Hive.initFlutter();
     }else{
-      await loadAd();
+      MobileAds.instance.initialize();
+      loadInterstitialAd();
     }
   }
 
@@ -177,25 +176,61 @@ Future<void> initializeSetting() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   CustomThemeMode.fontChanged.value = prefs.getBool("changeFont") ?? false;
   CustomThemeMode.initSetting();
-  language = prefs.getString('language') ?? "ko";
-  final initialBookmarkedList = prefs.getStringList('bookmarkedList');
+  //localization
+  // if(!prefs.containsKey("lang")){
+  //   final deviceLocales = PlatformDispatcher.instance.locales;
+  //   final currentLocale = deviceLocales[0].languageCode;
+  //
+  //   (currentLocale == "ko" || currentLocale == "en") ? prefs.setString("lang", currentLocale) : prefs.setString("lang", "en");
+  //   lang = prefs.getString("lang")!;
+  // }else{
+  //   lang = prefs.getString("lang")!;
+  // }
 
-  if (initialBookmarkedList != null) {
-    for(int i = 0; i < initialBookmarkedList.length; i++){
-      if(initialBookmarkedList[i].contains("url")){
-        initialBookmarkedList[i] = initialBookmarkedList[i].replaceAll("url", "number");
-        prefs.setStringList('bookmarkedList', initialBookmarkedList);
+  if(prefs.containsKey('bookmarkedList')){
+    final initialBookmarkedList = prefs.getStringList('bookmarkedList')!;
+    debugPrint(prefs.getStringList('bookmarkedList').toString());
+
+    for(String string in initialBookmarkedList) {
+      try{
+        bookmarkedList.add(PlayerInfo.fromJson(jsonDecode(string)));
+      }catch(e){
+        initialBookmarkedList.remove(string);
       }
     }
-  }
-
-  if(initialBookmarkedList != null){
-    for(String string in initialBookmarkedList) {
-      bookmarkedList.add(PlayerInfo.fromJson(jsonDecode(string)));
-    }
+    prefs.setStringList('bookmarkedList', initialBookmarkedList);
   }
 
   patchNotes = jsonDecode(await rootBundle.loadString("assets/internal/patch_note.json"));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+  @override
+  Widget build(BuildContext context) {
+    CustomThemeMode.instance;
+    return ValueListenableBuilder(
+      valueListenable: CustomThemeMode.currentThemeData,
+      builder: (context, value, child) {
+        return MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
+          theme: value,
+          home: Main(),
+        );
+      },
+    );
+  }
 }
 
 late TabController tabController;
@@ -213,9 +248,6 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
-    if(!isPro) {
-      loadAd();
-    }
 
     tabController = TabController(length: tabList.length, vsync: this);
     tabController.addListener(() {
@@ -285,60 +317,12 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
           ),
           bottomNavigationBar: !isPro ? Container(
             color: Colors.black,
-            width: banner.size.width.toDouble(),
-            height: banner.size.height.toDouble(),
-            child: AdWidget(ad: banner,),
+            width: _banner.size.width.toDouble(),
+            height: _banner.size.height.toDouble(),
+            child: AdWidget(ad: _banner,),
           ) : null
         ),
     );
-  }
-}
-
-class PentagonPainter extends CustomPainter
-{
-  const PentagonPainter();
-
-  @override
-  void paint(Canvas canvas, Size size) {
-
-    getPath(double x, double y){
-      Path path = Path()
-          ..moveTo(x/2, 0)
-          ..lineTo(x, 0)
-          ..lineTo(0, y)
-          ..lineTo(0, y/2)
-          ..lineTo(x/2, 0)
-          ..close();
-
-      return path;
-    }
-
-    Paint paint = Paint()
-      ..color = CustomThemeMode.currentThemeData.value.primaryColor
-      ..strokeWidth = 3
-    ..style = PaintingStyle.stroke;
-
-
-    // rotate the canvas
-    const degrees = 45;
-    const radians = degrees * math.pi / 180;
-    canvas.rotate(radians);
-
-    canvas.drawPath(getPath(200, 200), paint);
-
-    // draw the text
-    final textSpan = TextSpan(text: 'S1');
-    TextPainter(text: textSpan, textDirection: TextDirection.ltr)
-      ..layout(minWidth: 0, maxWidth: size.width)
-      ..paint(canvas, Offset(-20, -20));
-
-
-
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter old) {
-    return false;
   }
 }
 
@@ -388,7 +372,7 @@ class _CharacterButtonState extends State<CharacterButton> {
                 onPressed: (){
                 widget.character2 != empty ?
                 Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
-              : ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("제작중입니다.")));
+              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("main.empty").tr()));
             },
             child: Stack(
               alignment: Alignment.bottomCenter,

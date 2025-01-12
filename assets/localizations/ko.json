@@ -1,0 +1,93 @@
+{
+  "main": {
+    "empty": "현재 비어있습니다.",
+    "drawer": {
+      "login": "로그인",
+      "moveList": "기술 리스트",
+      "tips": "팁 게시판",
+      "searchProfile": "전적 검색"
+    }
+  },
+  "moves": {
+    "headers": {
+      "1": "기술명\n커맨드",
+      "2": "발생",
+      "3": "가드",
+      "4": "히트",
+      "5": "카운터",
+      "6": "판정",
+      "7": "대미지",
+      "8": "비고"
+    },
+    "range": {
+      "high": "상단",
+      "mid": "중단",
+      "low": "하단",
+      "unblockable": "가불"
+    },
+    "throwHeaders": {
+      "1": "기술명\n커맨드",
+      "2": "발생",
+      "3": "풀기",
+      "4": "풀기 후 F",
+      "5": "대미지",
+      "6": "판정",
+      "7": "비고"
+    }
+  },
+  "tip": {
+    "hintText": "자신만의 팁을 공유해 주세요!",
+    "emptyTextError": "내용을 입력해 주세요.",
+    "error": "에러가 발생했습니다.",
+    "selfLikeError": "본인의 게시물엔 좋아요를 누를 수 없습니다.",
+    "loading": "로딩중...",
+    "loginError": "로그인이 되지 않았습니다.",
+    "mostPopular": "인기순",
+    "latest": "최신순"
+  },
+  "searchProfile": {
+    "name": "이름",
+    "polarisId": "폴라리스 Id",
+    "verified": "인증",
+    "loading": "검색중...",
+    "hintText": "플레이어 검색",
+    "noTextError": "검색어를 입력해 주세요."
+  },
+  "profile": {
+    "tab1": "프로필",
+    "tab2": "전적",
+    "polarisId": "폴라리스 Id",
+    "winRate": "승률",
+    "prowess": "철권력",
+    "characters": "캐릭터",
+    "character": "캐릭터",
+    "matches": "매치 수",
+    "rank": "랭크",
+    "matchHistory": {
+      "hintText": "페이지",
+      "noPageError": "페이지를 입력해 주세요.",
+      "enterPageError": "1과 {} 사이의 페이지를 입력해 주세요."
+    }
+  },
+  "setting": {
+    "title": "설정",
+    "changeFont": "폰트 바꾸기",
+    "close": "닫기"
+  },
+  "bookmark": {
+    "title": "즐겨찾기 한 플레이어",
+    "noBookmarkedPlayer": "즐겨찾기 한 플레이어가 없습니다!"
+  },
+  "description": {
+    "title": "설명",
+    "context": "LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능\n\n표 상단 헤더를 클릭하여 필터링이 가능합니다.",
+    "close": "@:setting.close"
+  },
+  "memo": {
+    "hintText": "원하는 내용을 입력하세요!",
+    "close": "@:setting.close"
+  },
+  "patchNote": {
+    "title": "패치노트"
+  }
+}

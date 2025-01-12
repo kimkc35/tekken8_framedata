@@ -2,13 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 AdManagerInterstitialAd? interstitialAd;
-late BannerAd banner;
 
-Future<void> loadAd() async{
+void loadInterstitialAd() {
+  AdManagerInterstitialAd.load(
+      adUnitId: 'ca-app-pub-3256415400287290/6923530178',
+      request: const AdManagerAdRequest(),
+      adLoadCallback: AdManagerInterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          debugPrint('$ad loaded.');
+          interstitialAd = ad;
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          debugPrint('AdManagerInterstitialAd failed to load: $error');
+        },
+      )
+  );
+}
 
-  MobileAds.instance.initialize();
-
-   banner = BannerAd(
+BannerAd loadBannerAd() {
+   return BannerAd(
       adUnitId: 'ca-app-pub-3256415400287290/4169383092',
       size: AdSize.banner,
       request: const AdRequest(),
@@ -22,19 +34,5 @@ Future<void> loadAd() async{
         onAdClosed: (Ad ad) => print('Ad closed.'),
         onAdImpression: (Ad ad) => print('Ad impression.'),
       )
-  )..load();
-
-  AdManagerInterstitialAd.load(
-    adUnitId: 'ca-app-pub-3256415400287290/6923530178',
-    request: const AdManagerAdRequest(),
-    adLoadCallback: AdManagerInterstitialAdLoadCallback(
-      onAdLoaded: (ad) {
-        debugPrint('$ad loaded.');
-        interstitialAd = ad;
-      },
-      onAdFailedToLoad: (LoadAdError error) {
-        debugPrint('AdManagerInterstitialAd failed to load: $error');
-      },
-    )
   );
 }

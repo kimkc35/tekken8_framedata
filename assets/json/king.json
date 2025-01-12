@@ -1448,7 +1448,7 @@
       },
       {
         "name":"빅토리 팜",
-        "command":"횡이동 중RP",
+        "command":"횡이동 중 RP",
         "start_frame":"19",
         "guard_frame":"-5",
         "hit_frame":"D",
@@ -1461,7 +1461,7 @@
       },
       {
         "name":"데들리 부메랑",
-        "command":"횡이동 중AK",
+        "command":"횡이동 중 AK",
         "start_frame":"21",
         "guard_frame":"0",
         "hit_frame":"D",
@@ -1541,7 +1541,7 @@
     "sit":[
       {
         "name":"라운드 트립 촙1",
-        "command":"일어서며RP",
+        "command":"일어나며 RP",
         "start_frame":"14",
         "guard_frame":"-9",
         "hit_frame":"+1",
@@ -1554,7 +1554,7 @@
       },
       {
         "name":"라운드 트립 촙2",
-        "command":"일어서며RPRP",
+        "command":"일어나며 RPRP",
         "start_frame":"14",
         "guard_frame":"-12",
         "hit_frame":"+12g",
@@ -1567,7 +1567,7 @@
       },
       {
         "name":"토 스매시",
-        "command":"일어서며RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1580,7 +1580,7 @@
       },
       {
         "name":"스냅 어퍼컷",
-        "command":"일어서며AP",
+        "command":"일어나며 AP",
         "start_frame":"18",
         "guard_frame":"-10",
         "hit_frame":"A",
@@ -2594,7 +2594,7 @@
     },
     {
       "name":"리버스 스페셜 스트레치 봄",
-      "command":"횡이동 중AR",
+      "command":"횡이동 중 AR",
       "start_frame":"13",
       "break_command":"RP",
       "after_break_frame":"-2",

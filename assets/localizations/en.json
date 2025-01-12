@@ -1,0 +1,95 @@
+{
+  "main": {
+    "empty": "Empty.",
+    "drawer": {
+      "login": "Login",
+      "moveList": "Move List",
+      "tips": "Tip Board",
+      "searchProfile": "Search Player"
+    }
+  },
+  "moves": {
+    "headers": {
+      "1": "Name\nInput",
+      "2": "SF",
+      "3": "GF",
+      "4": "HF",
+      "5": "CF",
+      "6": "R",
+      "7": "D",
+      "8": "Extra"
+    },
+    "range": {
+      "high": "High",
+      "mid": "Mid",
+      "low": "Low",
+      "unblockable": "Unblockable"
+    },
+    "throwHeaders": {
+      "1": "Name\nInput",
+      "2": "SF",
+      "3": "TB",
+      "4": "FAT",
+      "5": "D",
+      "6": "R",
+      "7": "Extra"
+    }
+  },
+  "tip": {
+    "hintText": "Share your own tips!",
+    "emptyTextError": "Enter any text.",
+    "error": "Error occured.",
+    "selfLikeError": "You can't like your own tip.",
+    "loading": "Loading...",
+    "loginError": "You should login first.",
+    "mostPopular": "Most Popular",
+    "latest": "Latest"
+  },
+  "searchProfile": {
+    "name": "Name",
+    "polarisId": "Polaris Id",
+    "verified": "Verified",
+    "loading": "Searching...",
+    "hintText": "Search player",
+    "noTextError": "Enter any text."
+  },
+  "profile": {
+    "tab1": "Profile",
+    "tab2": "Match History",
+    "polarisId": "Polaris Id",
+    "winRate": "Win Rate",
+    "prowess": "Prowess",
+    "characters": "Characters",
+    "character": "Character",
+    "matches": "matches",
+    "rank": "Rank",
+    "firstPageError": "Fist page.",
+    "lastPageError": "Last page.",
+    "matchHistory": {
+      "hintText": "Page",
+      "noPageError": "Please enter the page",
+      "enterPageError": "Please enter the page number between 1 and {}"
+    }
+  },
+  "setting": {
+    "title": "Setting",
+    "changeFont": "Change Font",
+    "close": "Close"
+  },
+  "bookmark": {
+    "title": "Bookmarked Players",
+    "noBookmarkedPlayer": "There are no players you have bookmarked!"
+  },
+  "description": {
+    "title": "Description",
+    "context": "SF: Startup Frame\nGF: Guard Frame\nHF: Hit Frame\nCF: Counter Frame\nR: Range\nD: Damage\nTB: Throw Break\nFAT: Frame After Throw\n\nYou can filter with touch the headers.",
+    "close": "@:setting.close"
+  },
+  "memo": {
+    "hintText": "Enter any text you want!",
+    "close": "@:setting.close"
+  },
+  "patchNote": {
+    "title": "Patch Note"
+  }
+}

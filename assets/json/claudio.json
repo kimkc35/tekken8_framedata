@@ -1071,7 +1071,7 @@
       },
       {
         "name":"룩수리아",
-        "command":"횡이동 중RK",
+        "command":"횡이동 중 RK",
         "start_frame":"20",
         "guard_frame":"-12",
         "hit_frame":"+6",
@@ -1086,7 +1086,7 @@
     "sit":[
       {
         "name":"노블 스텝1",
-        "command":"일어서며LP",
+        "command":"일어나며 LP",
         "start_frame":"12",
         "guard_frame":"-4",
         "hit_frame":"+7",
@@ -1099,7 +1099,7 @@
       },
       {
         "name":"노블 스텝2",
-        "command":"일어서며LPLP",
+        "command":"일어나며 LPLP",
         "start_frame":"12",
         "guard_frame":"-12",
         "hit_frame":"+9",
@@ -1112,7 +1112,7 @@
       },
       {
         "name":"말레픽 드로우",
-        "command":"일어서며LPRP",
+        "command":"일어나며 LPRP",
         "start_frame":"12",
         "guard_frame":"-9",
         "hit_frame":"+4",
@@ -1125,7 +1125,7 @@
       },
       {
         "name":"실비아",
-        "command":"일어서며RP",
+        "command":"일어나며 RP",
         "start_frame":"15",
         "guard_frame":"-14",
         "hit_frame":"A",
@@ -1138,7 +1138,7 @@
       },
       {
         "name":"피어싱 윈드",
-        "command":"일어서며LK",
+        "command":"일어나며 LK",
         "start_frame":"16",
         "guard_frame":"-8",
         "hit_frame":"D",
@@ -1151,7 +1151,7 @@
       },
       {
         "name":"홀리 스매시",
-        "command":"일어서며RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1309,7 +1309,7 @@
       },
       {
         "name":"말레픽 드로우 버스트1",
-        "command":"스타버스트 상태에서 일어서며LP",
+        "command":"스타버스트 상태에서 일어나며 LP",
         "start_frame":"12",
         "guard_frame":"-4",
         "hit_frame":"+7",
@@ -1322,7 +1322,7 @@
       },
       {
         "name":"말레픽 드로우 버스트2",
-        "command":"스타버스트 상태에서 일어서며LPRP",
+        "command":"스타버스트 상태에서 일어나며 LPRP",
         "start_frame":"12",
         "guard_frame":"+6",
         "hit_frame":"D",

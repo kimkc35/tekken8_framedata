@@ -7,7 +7,7 @@ const Map<String, String> characterImageUrls = {
   "azucena": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_cat.png",
   "bryan": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_cht.png",
   "claudio": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_ctr.png",
-  "devil jin": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_swl.png",
+  "devil-jin": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_swl.png",
   "dragunov": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_kmd.png",
   "eddy": "https://tekkenwarehouse.com/wp-content/uploads/2024/04/Copy-of-T_UI_Makuai_Character_L_dog.png",
   "feng": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_klw.png",
@@ -36,7 +36,8 @@ const Map<String, String> characterImageUrls = {
   "xiaoyu": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_rat.png",
   "yoshimitsu": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_cml.png",
   "zafina": "https://tekkenwarehouse.com/wp-content/uploads/2024/02/T_UI_Makuai_Character_L_crw.png",
-  "heihachi": "https://tekkenwarehouse.com/wp-content/uploads/2024/09/T_UI_Makuai_Character_L_bee.png"
+  "heihachi": "https://tekkenwarehouse.com/wp-content/uploads/2024/09/T_UI_Makuai_Character_L_bee.png",
+  "clive": "https://tekkenwarehouse.com/wp-content/uploads/2024/12/T_UI_Makuai_Character_L_okm.png"
 };
 
 Character empty = Character(name: "", rageArts: MoveInfo(name: "", command: "", startFrame: "", guardFrame: "", hitFrame: "", counterFrame: "", range: "", damage: "", extra: ""), heatSystem: [], types: {}, typesKo: {});

@@ -1,6 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:tekken8_framedata/playerDetailsScreen.dart';
+import 'package:tekken8_framedata/profileScreen.dart';
 
 import 'main.dart';
 
@@ -51,12 +52,12 @@ Row actionBuilder({required BuildContext context,String? character}) {
                         },
                         controller: controller,
                         maxLines: null,
-                        decoration: const InputDecoration(
-                            hintText: "원하는 내용을 입력하세요!", border: null))),
+                        decoration: InputDecoration(
+                            hintText: "memo.hintText".tr(), border: null))),
                 actions: [
                   TextButton(
                       onPressed: () => Navigator.pop(context, 'Cancel'),
-                      child: Text('닫기'))
+                      child: Text('memo.close'.tr()))
                 ],
               )
             );
@@ -74,18 +75,18 @@ Widget firstAction(BuildContext context, double buttonSize) {
       onTap: () => showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("설명",
+            title: Text("description.title".tr(),
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,)),
-            content: Text(patchNotes["description"], style: TextStyle(height: 1.5, fontSize: 15),),
+            content: Text("description.context".tr(), style: TextStyle(height: 1.5, fontSize: 15),),
             actions: [
               TextButton(
                   onPressed: () => Navigator.pop(context, 'Cancel'),
-                  child: Text('닫기'))
+                  child: Text('description.close'.tr()))
             ],
           )),
-      child: Icon(Icons.abc, size: buttonSize),
+      child: Icon(Icons.question_mark, size: buttonSize,),
     );
   }else if(tabController.index == 1){
     return SizedBox.shrink();
@@ -94,24 +95,27 @@ Widget firstAction(BuildContext context, double buttonSize) {
     child: Icon(Icons.star, size: buttonSize,),
     onTap: () {
       showDialog(context: context, builder: (context) => AlertDialog(
-        title: Text("즐겨찾기 한 유저"),
-        content: bookmarkedList.isEmpty? Text("즐겨찾기 한 유저가 없습니다!") :
+        title: Text("bookmark.title".tr()),
+        content: bookmarkedList.isEmpty? Text("bookmark.noBookmarkedPlayer".tr()) :
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
           width: MediaQuery.of(context).size.width * 0.7,
           child: ListView.separated(
             itemBuilder: (context, index) => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PlayerDetailsPage(playerInfo: bookmarkedList[index]))),
-                  child: Text(bookmarkedList[index].polarisId, style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor)),
+                Expanded(flex:1, child: Text(bookmarkedList[index].name, overflow: TextOverflow.visible, textAlign: TextAlign.center,)),
+                Expanded(
+                  flex:1,
+                  child: GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(playerInfo: bookmarkedList[index]))),
+                    child: Text(bookmarkedList[index].polarisId, style: TextStyle(color: CustomThemeMode.currentThemeData.value.primaryColor)),
+                  ),
                 ),
-                Expanded(child: Text(bookmarkedList[index].name, overflow: TextOverflow.visible, textAlign: TextAlign.center,))
               ],
             ),
             separatorBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Container(height: 1, color: Colors.black,),
             ),
             itemCount: bookmarkedList.length
@@ -138,7 +142,7 @@ patchNoteWidget(BuildContext context) {
   }
 
   List<TextSpan> convertPatchNote(String character){
-    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} 패치노트\n")];
+    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title".tr()}\n")];
     final String text = replaceNumbers(patchNotes["characters"][character]);
       text.split("\n").forEach((element) {
         if(element.contains(":")){
@@ -205,25 +209,46 @@ patchNoteWidget(BuildContext context) {
 }
 
 AlertDialog settingDialog(BuildContext context){
+  TextEditingController localizationController = TextEditingController(text: context.locale.languageCode == "ko" ? "한국어" : "English");
 
-  return AlertDialog(title: Text(language == "ko"?"설정" : "Setting", style: TextStyle(fontSize: 20)),
+  return AlertDialog(title: Text('setting.title', style: TextStyle(fontSize: 20)).tr(),
     content: ValueListenableBuilder(
       valueListenable: CustomThemeMode.fontChanged,
       builder: (context, value, child) {
         return SingleChildScrollView(
-          child: Row(
+          child: Column(
             children: [
-              Text(language == 'ko' ? "폰트 바꾸기" : "Change Font"),
-              Switch(value: value, onChanged: (value) {
-                CustomThemeMode.changeFont();
-              })
+              Row(
+                children: [
+                  Text('setting.changeFont').tr(),
+                  Switch(value: value, onChanged: (value) {
+                    CustomThemeMode.changeFont();
+                  })
+                ],
+              ),
+              Row(
+                children: [
+                  DropdownMenu(
+                    dropdownMenuEntries: [
+                      DropdownMenuEntry(label: "English", value: "en"),
+                      DropdownMenuEntry(label: "한국어", value: "ko")
+                    ],
+                    controller: localizationController,
+                    initialSelection: context.locale.languageCode,
+                    onSelected: (value){
+                      context.setLocale(Locale(value!));
+                      // setLocale(context, value!);
+                    },
+                  )
+                ],
+              )
             ],
           ),
         );
       },
     ),
     actions: [
-      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text( language == "ko"? '닫기' : 'Close'))
+      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('setting.close').tr())
     ],
   );
 }

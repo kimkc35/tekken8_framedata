@@ -55,7 +55,7 @@
       },
       {
         "name":"스네이크 팽",
-        "command":"횡이동 중RPLP",
+        "command":"횡이동 중 RPLP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"+17g",
@@ -1773,7 +1773,7 @@
       },
       {
         "name":"헬레이저",
-        "command":"횡이동 중LP",
+        "command":"횡이동 중 LP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"+8",
@@ -1786,7 +1786,7 @@
       },
       {
         "name":"스네이크 팽1",
-        "command":"횡이동 중RP",
+        "command":"횡이동 중 RP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+1",
@@ -1799,7 +1799,7 @@
       },
       {
         "name":"스네이크 팽2",
-        "command":"횡이동 중RPLP",
+        "command":"횡이동 중 RPLP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"D",
@@ -1814,7 +1814,7 @@
     "sit":[
       {
         "name":"레프트 어퍼",
-        "command":"일어서며LP",
+        "command":"일어나며 LP",
         "start_frame":"15",
         "guard_frame":"-14",
         "hit_frame":"A",
@@ -1827,7 +1827,7 @@
       },
       {
         "name":"피셔맨즈 슬램",
-        "command":"일어서며RP",
+        "command":"일어나며 RP",
         "start_frame":"19",
         "guard_frame":"-10",
         "hit_frame":"A",
@@ -1840,7 +1840,7 @@
       },
       {
         "name":"피셔맨즈 슬램(저스트)",
-        "command":"일어서며RP",
+        "command":"일어나며 RP",
         "start_frame":"19",
         "guard_frame":"-10",
         "hit_frame":"A",
@@ -1853,7 +1853,7 @@
       },
       {
         "name":"하이 니 킥",
-        "command":"일어서며LK",
+        "command":"일어나며 LK",
         "start_frame":"12",
         "guard_frame":"-10",
         "hit_frame":"+4",
@@ -1866,7 +1866,7 @@
       },
       {
         "name":"더블 하이 니 킥",
-        "command":"일어서며LKRK",
+        "command":"일어나며 LKRK",
         "start_frame":"12",
         "guard_frame":"-10",
         "hit_frame":"+4",
@@ -1879,7 +1879,7 @@
       },
       {
         "name":"토 스매시",
-        "command":"일어서며RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",

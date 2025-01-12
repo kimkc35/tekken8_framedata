@@ -3,7 +3,7 @@
     "project_number": "648481478664",
     "firebase_url": "https://tk8-framedata-pro-default-rtdb.firebaseio.com",
     "project_id": "tk8-framedata-pro",
-    "storage_bucket": "tk8-framedata-pro.appspot.com"
+    "storage_bucket": "tk8-framedata-pro.firebasestorage.app"
   },
   "client": [
     {
@@ -64,7 +64,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-3256415400287290~8638261088"
     },
     {
       "client_info": {

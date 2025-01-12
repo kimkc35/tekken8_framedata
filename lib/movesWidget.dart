@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -11,27 +12,7 @@ import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'modules.dart';
 
-final BannerAd _banner = BannerAd(
-    adUnitId: 'ca-app-pub-3256415400287290/4169383092',
-    size: AdSize.banner,
-    request: const AdRequest(),
-    listener: BannerAdListener(
-      // Called when an ad is successfully received.
-      onAdLoaded: (Ad ad) => print('Ad loaded.'),
-      // Called when an ad request failed.
-      onAdFailedToLoad: (Ad ad, LoadAdError error) {
-        // Dispose the ad here to free resources.
-        ad.dispose();
-        print('Ad failed to load: $error');
-      },
-      // Called when an ad opens an overlay that covers the screen.
-      onAdOpened: (Ad ad) => print('Ad opened.'),
-      // Called when an ad removes an overlay that covers the screen.
-      onAdClosed: (Ad ad) => print('Ad closed.'),
-      // Called when an impression occurs on the ad.
-      onAdImpression: (Ad ad) => print('Ad impression.'),
-    )
-)..load();
+final BannerAd _banner = loadBannerAd()..load();
 
 bool heatSystemMenu = true;
 
@@ -311,6 +292,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
   }
 }
 
+
 class MoveList extends StatefulWidget {
 
   final Character character;
@@ -330,11 +312,11 @@ class _MoveListState extends State<MoveList>{
   final TextEditingController _damageController = TextEditingController();
   final TextEditingController _extraController = TextEditingController();
 
-  late final ComparisonHeader startComparisonHeader = ComparisonHeader(name: "발생", controller: _startFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader guardComparisonHeader = ComparisonHeader(name: "가드", controller: _guardFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader hitComparisonHeader = ComparisonHeader(name: "히트", controller: _hitFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader counterComparisonHeader = ComparisonHeader(name: "카운터", controller: _counterFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader damageComparisonHeader = ComparisonHeader(name: "대미지", controller: _damageController, state: ComparisonState.greater);
+  late final ComparisonHeader startComparisonHeader = ComparisonHeader(name: "moves.headers.2".tr(), controller: _startFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader guardComparisonHeader = ComparisonHeader(name: "moves.headers.3".tr(), controller: _guardFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader hitComparisonHeader = ComparisonHeader(name: "moves.headers.4".tr(), controller: _hitFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader counterComparisonHeader = ComparisonHeader(name: "moves.headers.5".tr(), controller: _counterFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader damageComparisonHeader = ComparisonHeader(name: "moves.headers.7".tr(), controller: _damageController, state: ComparisonState.greater);
 
   bool _high = false;
   bool _middle = false;
@@ -347,7 +329,7 @@ class _MoveListState extends State<MoveList>{
   late Map<String, List<MoveInfo>> filtered;
 
   void filter(){
-    filtered = widget.character.getMoveList();;
+    filtered = widget.character.getMoveList();
     setState(() {
       for (var type in widget.character.types.keys) {
         filtered[type] = filtered[type]!.where((item){
@@ -386,7 +368,7 @@ class _MoveListState extends State<MoveList>{
     setState(() {
       for (var type in widget.character.types.keys) {
         filtered[type] = filtered[type]!.where((item) {
-          if(_high && item.range.contains("상단") || _middle && item.range.contains("중단") || _low && item.range.contains("하단") || _unblockable && item.range.contains("가불")){
+          if(_high && item.range.contains("moves.range.high".tr()) || _middle && item.range.contains("moves.range.mid".tr()) || _low && item.range.contains("moves.range.low".tr()) || _unblockable && item.range.contains("moves.range.unblockabe".tr())){
             return true;
           }else if(!_high && !_middle && !_low && !_unblockable) {
             return true;
@@ -638,7 +620,7 @@ class _MoveListState extends State<MoveList>{
                                 setState(() {
                                   widget.character.types[type.key] = value!;
                                 });
-                              }, closeOnActivate: false, child: Text(language == "ko"? widget.character.typesKo[type.key]! : type.key)),
+                              }, closeOnActivate: false, child: Text(context.locale.languageCode == "ko"? widget.character.typesKo[type.key]! : generateTypes(type.key))),
                             ],
                           ],
                           builder: (context, controller, child)=> TextButton(onPressed: () {
@@ -646,7 +628,7 @@ class _MoveListState extends State<MoveList>{
                           }, child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("기술명\n커맨드", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
+                              Text("moves.headers.1".tr(), style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                               Icon(Icons.arrow_drop_down, color: Colors.black,),
                             ],
                           ),),
@@ -668,22 +650,22 @@ class _MoveListState extends State<MoveList>{
                             setState(() {
                               _high = value!;
                             });
-                          }, closeOnActivate: false, child: Text("상단")),
+                          }, closeOnActivate: false, child: Text("moves.range.high".tr())),
                           CheckboxMenuButton(value: _middle, onChanged: (value){
                             setState(() {
                               _middle = value!;
                             });
-                          }, closeOnActivate: false, child: Text("중단")),
+                          }, closeOnActivate: false, child: Text("moves.range.mid".tr())),
                           CheckboxMenuButton(value: _low, onChanged: (value){
                             setState(() {
                               _low = value!;
                             });
-                          }, closeOnActivate: false, child: Text("하단")),
+                          }, closeOnActivate: false, child: Text("moves.range.low".tr())),
                           CheckboxMenuButton(value: _unblockable, onChanged: (value){
                             setState(() {
                               _unblockable = value!;
                             });
-                          }, closeOnActivate: false, child: Text("가불"))
+                          }, closeOnActivate: false, child: Text("moves.range.unblockable".tr()))
                         ],
                         builder: (context, controller, child)=> TextButton(onPressed: () {
                           if (controller.isOpen) {
@@ -694,14 +676,14 @@ class _MoveListState extends State<MoveList>{
                         }, child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("판정", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
+                            Text("moves.headers.6".tr(), style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                           ],
                         ),),
                       ),),
                       line(),
                       Container(width: 50 + 10, child: comparisonHeaderMenuAnchor(damageComparisonHeader)),
                       line(),
-                      Container(width: 450, child: headerMenuAnchor(450, _extraController, "비고")),
+                      Container(width: 450, child: headerMenuAnchor(450, _extraController, "moves.headers.8".tr())),
                     ],
                   ),
                 ),
@@ -782,19 +764,19 @@ class _ThrowListState extends State<ThrowList>{
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
               child: Row(
                 children: [
-                  SizedBox(width: 150 + 5,child: Text('기술명\n커맨드',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 150 + 5,child: Text('moves.throwHeaders.1'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('발생',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.2'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 40 + 10,child: Text('풀기',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 40 + 10,child: Text('moves.throwHeaders.3'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('풀기\n후 F',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.4'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 50 + 10,child: Text('대미지',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 50 + 10,child: Text('moves.throwHeaders.5'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('판정',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.6'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  Expanded(child: Text('비고',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  Expanded(child: Text('moves.throwHeaders.7'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                 ],
               ),
             ),

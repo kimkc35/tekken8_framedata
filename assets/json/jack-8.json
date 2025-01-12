@@ -1697,7 +1697,7 @@
     "sit":[
       {
         "name":"길링 어퍼컷",
-        "command":"일어서며LP",
+        "command":"일어나며 LP",
         "start_frame":"15",
         "guard_frame":"-12",
         "hit_frame":"A",
@@ -1710,7 +1710,7 @@
       },
       {
         "name":"V-트윈1",
-        "command":"일어서며RP",
+        "command":"일어나며 RP",
         "start_frame":"14",
         "guard_frame":"-7",
         "hit_frame":"+4",
@@ -1723,7 +1723,7 @@
       },
       {
         "name":"V-트윈2",
-        "command":"일어서며RPLP",
+        "command":"일어나며 RPLP",
         "start_frame":"14",
         "guard_frame":"-14",
         "hit_frame":"D",
@@ -1736,7 +1736,7 @@
       },
       {
         "name":"V-데스블로",
-        "command":"일어서며RPRK",
+        "command":"일어나며 RPRK",
         "start_frame":"14",
         "guard_frame":"+4",
         "hit_frame":"D",
@@ -1749,7 +1749,7 @@
       },
       {
         "name":"토 스매시",
-        "command":"일어서며RK",
+        "command":"일어나며 RK",
         "start_frame":"11",
         "guard_frame":"-6",
         "hit_frame":"+5",
@@ -1762,7 +1762,7 @@
       },
       {
         "name":"더블 어퍼컷",
-        "command":"일어서며AP",
+        "command":"일어나며 AP",
         "start_frame":"20",
         "guard_frame":"-15",
         "hit_frame":"A",
@@ -1775,7 +1775,7 @@
       },
       {
         "name":"더블 해머 얼터네이트",
-        "command":"일어서며APAP",
+        "command":"일어나며 APAP",
         "start_frame":"20",
         "guard_frame":"-16",
         "hit_frame":"D",
@@ -1788,7 +1788,7 @@
       },
       {
         "name":"더블 해머 쓰래시",
-        "command":"일어서며APAPAP",
+        "command":"일어나며 APAPAP",
         "start_frame":"20",
         "guard_frame":"-23",
         "hit_frame":"D",

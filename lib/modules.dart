@@ -18,51 +18,54 @@ enum ComparisonState {
 }
 
 class PlayerInfo {
-  final String polarisId, name, onlineId, platform, number;
+  final String name, polarisId;
+  final bool isVerified;
 
-  PlayerInfo({required this.polarisId, required this.name, required this.onlineId, required this.platform, required this.number});
+  PlayerInfo({required this.name, required this.isVerified, required this.polarisId});
 
   PlayerInfo.fromJson(Map<String, dynamic> json):
-  polarisId = json['polarisId'],
   name = json['name'],
-  onlineId = json['onlineId'],
-  platform = json['platform'],
-  number = json['number'];
+  isVerified = json['isVerified'],
+  polarisId = json['polarisId'];
 
-  Map<String, dynamic> toJson() => {'polarisId' : polarisId, 'name': name, 'onlineId' : onlineId, 'platform' : platform, 'number' : number};
+  Map<String, dynamic> toJson() => {'name': name, 'isVerified': isVerified, 'polarisId': polarisId};
 }
 
-class PlayerDetails{
-  final Map<String, List<String>> stats;
+class PlayerProfile{
+  final String polarisId;
   final String prowess;
-  final String imgUrl;
-  final String rankPoint;
+  final String winRate;
+  final bool isVerified;
   final bool isBookmarked;
+  final List<CharacterWinRate> characterWinRateList;
 
-  PlayerDetails({required this.stats, required this.prowess, required this.imgUrl, required this.rankPoint, required this.isBookmarked});
+  PlayerProfile({required this.polarisId, required this.winRate, required this.prowess, required this.isVerified, required this.isBookmarked, required this.characterWinRateList});
 
 }
 
-class PlayHistory{
+class MatchHistory{
+  final DateTime date;
+  final String stage;
   final String player;
-  final String date;
   final String playerChar;
+  final String playerCharImgUrl;
   final String oppName;
   final String oppChar;
-  final String score;
-  final String type;
+  final String oppPolarisId;
+  final String oppCharImgUrl;
+  final String outcome;
 
-  PlayHistory({required this.player, required this.date, required this.playerChar, required this.oppName, required this.oppChar, required this.score, required this.type});
+  MatchHistory({required this.date, required this.stage, required this.player, required this.playerChar, required this.playerCharImgUrl, required this.oppName, required this.oppChar, required this.oppPolarisId, required this.oppCharImgUrl, required this.outcome});
 }
 
 class CharacterWinRate{
-  final String oppChar;
-  final String timeFaced;
-  final String timeWin;
-  final String timeLose;
+  final String charImgUrl;
+  final String char;
+  final String matches;
   final String winRate;
+  final String rankImgUrl;
 
-  CharacterWinRate({required this.oppChar, required this.timeFaced, required this.timeWin, required this.timeLose, required this.winRate});
+  CharacterWinRate({required this.charImgUrl, required this.char, required this.matches, required this.winRate, required this.rankImgUrl});
 
 }
 
@@ -129,4 +132,19 @@ class ComparisonHeader{
         state = ComparisonState.lesser;
     }
   }
+}
+
+
+String generateTypes(String keyOfType){
+  final strings = keyOfType.split(" ");
+  String resultString = "";
+
+  for(String string in strings){
+    resultString += string[0].toUpperCase();
+    final leftOvers = string.substring(1);
+    resultString += "$leftOvers ";
+  }
+
+  resultString = resultString.substring(0, resultString.length - 1);
+  return resultString;
 }

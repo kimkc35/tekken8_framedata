@@ -56,27 +56,27 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyAVsNmNWOf92n3fORCJMsVx7NF_MZ-Z6Dg',
-    appId: '1:648481478664:web:5bbd459cf3499cdb6919bd',
+    appId: '1:648481478664:web:d51debef5b9b43a26919bd',
     messagingSenderId: '648481478664',
     projectId: 'tk8-framedata-pro',
     authDomain: 'tk8-framedata-pro.firebaseapp.com',
     databaseURL: 'https://tk8-framedata-pro-default-rtdb.firebaseio.com',
-    storageBucket: 'tk8-framedata-pro.appspot.com',
-    measurementId: 'G-5XLFKGMZCQ',
+    storageBucket: 'tk8-framedata-pro.firebasestorage.app',
+    measurementId: 'G-SJ6Y10EPFS',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBwdg9HPq1EML2VPQT9eE2sI-8SNfkjBgo',
-    appId: '1:648481478664:android:250596a9ea8d76786919bd',
+    appId: '1:648481478664:android:a4d357679f10a2e76919bd',
     messagingSenderId: '648481478664',
     projectId: 'tk8-framedata-pro',
     databaseURL: 'https://tk8-framedata-pro-default-rtdb.firebaseio.com',
-    storageBucket: 'tk8-framedata-pro.appspot.com',
+    storageBucket: 'tk8-framedata-pro.firebasestorage.app',
   );
 
   static const FirebaseOptions android_vpro = FirebaseOptions(
     apiKey: 'AIzaSyBwdg9HPq1EML2VPQT9eE2sI-8SNfkjBgo',
-    appId: '1:648481478664:android:734e178062681bfb6919bd',
+    appId: '1:648481478664:android:250596a9ea8d76786919bd',
     messagingSenderId: '648481478664',
     projectId: 'tk8-framedata-pro',
     databaseURL: 'https://tk8-framedata-pro-default-rtdb.firebaseio.com',

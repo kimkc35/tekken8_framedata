@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -111,6 +112,77 @@ const TextScaler textScale = TextScaler.linear(0.9);
 
 int listLength = 0;
 
+String changeRange(String range){
+  String resultRange = range;
+  resultRange = resultRange.replaceAll("상단", "High");
+  resultRange = resultRange.replaceAll("중단", "Mid");
+  resultRange = resultRange.replaceAll("하단", "Low");
+  resultRange = resultRange.replaceAll("가불", "Unblockable");
+  resultRange = resultRange.replaceAll("잡기", "Throw");
+  resultRange = resultRange.replaceAll("연계", "Combo");
+  
+  return resultRange;
+}
+
+String changeCommand(String command, Character character){
+  const sticks = {
+    "→": "f",
+    "↘": "d/f",
+    "↓": "d",
+    "↙": "d/b",
+    "←": "b",
+    "↖": "u/b",
+    "↑": "u",
+    "↗": "u/f",
+    "N": "N"
+  };
+
+  const commands = {
+    "AP": "1+2",
+    "AK": "3+4",
+    "AL": "1+3",
+    "AR": "2+4",
+    "LP": "1",
+    "RP": "2",
+    "LK": "3",
+    "RK": "4",
+  };
+
+  String resultCommand = command;
+  for(var command in commands.entries){
+    resultCommand = resultCommand.replaceAll(RegExp('${command.key}(?!\\+)'), "${command.value},");
+    resultCommand = resultCommand.replaceAll(command.key, command.value);
+  }
+  for(var stick in sticks.entries){
+    resultCommand = resultCommand.replaceAllMapped(RegExp('^${stick.key}(\\d)'), (match) {
+      String matchedChar = match.group(1)!;
+      return '${stick.value}+$matchedChar';
+    });
+    resultCommand = resultCommand.replaceAll(RegExp('${stick.key}~'), "${stick.value}~");
+    resultCommand = resultCommand.replaceAll(stick.key, "${stick.value},");
+  }
+  resultCommand = resultCommand.replaceAll("횡이동 중", "SS");
+  resultCommand = resultCommand.replaceAll("달리는 도중", "While Running");
+  resultCommand = resultCommand.replaceAll("몸을 숙인 상태에서", "FC");
+  resultCommand = resultCommand.replaceAll("일어나며", "WS");
+  resultCommand = resultCommand.replaceAll("카운터 히트 시", "During Counter Attack");
+  resultCommand = resultCommand.replaceAll("히트 시", "During Attack");
+  resultCommand = resultCommand.replaceFirst("레이지 상태에서", "During Rage");
+  resultCommand = resultCommand.replaceFirst("히트 발동 가능 상태에서", "When Heat activation is availabe");
+  resultCommand = resultCommand.replaceFirst("히트 상태에서", "During Heat");
+  for(var type in character.typesKo.entries){
+    resultCommand = resultCommand.replaceAll(RegExp('^${type.value} 도중'), "During ${generateTypes(type.key)}");
+  }
+
+  if(resultCommand.endsWith(",")) resultCommand = resultCommand.substring(0, resultCommand.length - 1);
+  resultCommand = resultCommand.replaceAllMapped(RegExp(r',(\(|\]|\)\ )'), (match) {
+    String matchedChar = match.group(1)!;
+    return matchedChar;
+  });
+
+  return resultCommand;
+}
+
 //무브 리스트 생성
 List<DataCell> createMove(BuildContext context, Character character, MoveInfo moveInfo){
   TextStyle textStyleDefault = TextStyle(color: Colors.black, height: 1.2, ),
@@ -138,7 +210,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
   }
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("${moveInfo.name}\n${moveInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("${moveInfo.name}\n${context.locale.languageCode == "ko" ? moveInfo.command : changeCommand(moveInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(moveInfo.startFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(moveInfo.guardFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: Text.rich(TextSpan(children: [
@@ -197,7 +269,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
     ]else...[
       DataCell(SizedBox(width: listWidth, child: Text(moveInfo.counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
-    DataCell(SizedBox(width: 30, child: Text(moveInfo.range,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? moveInfo.range : changeRange(moveInfo.range),textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(SizedBox(width: 50, child: Text(moveInfo.damage,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -213,7 +285,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       textStylePunish = TextStyle( color: Colors.red,);
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${throwInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${context.locale.languageCode == "ko" ? throwInfo.command : changeCommand(throwInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(throwInfo.startFrame, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     DataCell(SizedBox(width: 40, child: Text(throwInfo.breakCommand, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
     if(throwInfo.afterBreakFrame.contains("+") && throwInfo.afterBreakFrame.contains("-") && throwInfo.afterBreakFrame != "-")...[ //풀기 후 F
@@ -230,7 +302,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       DataCell(SizedBox(width: 30, child: Text(throwInfo.afterBreakFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
     DataCell(SizedBox(width: 50, child: Text(throwInfo.damage, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
-    DataCell(SizedBox(width: 30, child: Text(throwInfo.range, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? throwInfo.range : changeRange(throwInfo.range), textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(throwInfo.extra, textAlign: TextAlign.start, textScaler: textScale, style: textStyleDefault),
