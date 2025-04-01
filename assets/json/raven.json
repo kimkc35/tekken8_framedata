@@ -974,7 +974,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 224,
         "endAt": 226
       },
@@ -2169,7 +2169,7 @@
       },
       {
         "name":"블라인드 폴",
-        "command":"소울존 도중 ↓~ or ↑~",
+        "command":"소울존 도중 ↓~ 혹은 ↑~",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -2200,7 +2200,7 @@
       "name":"그레이브 디거",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2212,7 +2212,7 @@
       "name":"샐러맨더",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2222,7 +2222,7 @@
     },
     {
       "name":"넥 링어",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2234,7 +2234,7 @@
     },
     {
       "name":"스위프트 어쌔신",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2246,7 +2246,7 @@
     },
     {
       "name":"다크 매터",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2282,13 +2282,13 @@
     },
     {
       "name":"우츠세미 이스케이프",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~10",
       "break_command":"-",
       "after_break_frame":"-",
       "damage":"-",
       "range":"반격",
-      "extra":"혹은 상대에게 등을 보일 때 상대의 공격에 맞춰서 ←AL or ←AR\n성공 시에는 자신에게 대미지(회복 가능)",
+      "extra":"혹은 상대에게 등을 보일 때 상대의 공격에 맞춰서 ←AL 혹은 ←AR\n성공 시에는 자신에게 대미지(회복 가능)",
       "startAt": 493,
       "endAt": 495
     },

@@ -389,7 +389,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ←AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
+        "extra":"혹은 ←AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL 혹은 AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
         "startAt": 94,
         "endAt": 97
       },
@@ -1253,7 +1253,7 @@
       },
       {
         "name":"독무",
-        "command":"독 모으기 도중 LP or RP",
+        "command":"독 모으기 도중 LP 혹은 RP",
         "start_frame":"21",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1266,7 +1266,7 @@
       },
       {
         "name":"해독",
-        "command":"독 모으기 도중 LK or RK",
+        "command":"독 모으기 도중 LK 혹은 RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -1403,7 +1403,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 8 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 8 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1416,7 +1416,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 10 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1429,7 +1429,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 10 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1442,7 +1442,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 10 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1455,7 +1455,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 10 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1468,7 +1468,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 인법만국 도중 ←LK or ←RK\n혹은 일어나며 LPLP←LK or LPLP←RK\n자신에게 10 대미지",
+        "extra":"혹은 인법만국 도중 ←LK 혹은 ←RK\n혹은 일어나며 LPLP←LK 혹은 LPLP←RK\n자신에게 10 대미지",
         "startAt": 256,
         "endAt": 259
       },
@@ -1572,7 +1572,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 ↖LP or ↑LP",
+        "extra":"혹은 ↖LP 혹은 ↑LP",
         "startAt": 288,
         "endAt": 291
       },
@@ -1611,7 +1611,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"21",
-        "extra":"호밍기\n혹은 ↖RK or ↑RK",
+        "extra":"호밍기\n혹은 ↖RK 혹은 ↑RK",
         "startAt": 299,
         "endAt": 301
       },
@@ -2917,7 +2917,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ←AK 혹은 상대에게 등을 보일 때 AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL or AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
+        "extra":"혹은 ←AK 혹은 상대에게 등을 보일 때 AK\n무상 자세로\n회복 가능 게이지가 있다면 체력 회복\nAL 혹은 AR입력 시 뒤돌아 잡기\nAK입력 시 상대에게 등을 보이는 상태로",
         "startAt": 553,
         "endAt": 556
       },
@@ -2990,7 +2990,7 @@
       },
       {
         "name":"지뢰선~지뢰인 자세",
-        "command":"지뢰인 자세 도중 LK or RK",
+        "command":"지뢰인 자세 도중 LK 혹은 RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -3833,7 +3833,7 @@
       "name":"의장참담",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -3845,7 +3845,7 @@
       "name":"물방울",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
@@ -3855,7 +3855,7 @@
     },
     {
       "name":"지옥차",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -3867,7 +3867,7 @@
     },
     {
       "name":"낙화낭자",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -3879,7 +3879,7 @@
     },
     {
       "name":"인법풍진",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",

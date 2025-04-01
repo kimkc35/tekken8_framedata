@@ -778,7 +778,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "22",
-        "extra": "혹은 ↖LK or ↑LK",
+        "extra": "혹은 ↖LK 혹은 ↑LK",
         "startAt": 185,
         "endAt": 188
       },
@@ -791,7 +791,7 @@
         "counter_frame": "A",
         "range": "중단",
         "damage": "13",
-        "extra": "혹은 ↖RK or ↑RK",
+        "extra": "혹은 ↖RK 혹은 ↑RK",
         "startAt": 188,
         "endAt": 190
       },
@@ -1313,7 +1313,7 @@
       "name": "데저트 팽",
       "command": "AL",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
@@ -1325,7 +1325,7 @@
       "name": "알데바란",
       "command": "AR",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
@@ -1335,7 +1335,7 @@
     },
     {
       "name": "캐즘 드롭",
-      "command": "상대 왼쪽에서 AL or AR",
+      "command": "상대 왼쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "LP",
       "after_break_frame": "-3",
@@ -1347,7 +1347,7 @@
     },
     {
       "name": "액셀 스피너",
-      "command": "상대 오른쪽에서 AL or AR",
+      "command": "상대 오른쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "RP",
       "after_break_frame": "-3",
@@ -1359,7 +1359,7 @@
     },
     {
       "name": "사일런트 데스",
-      "command": "상대 뒤에서 AL or AR",
+      "command": "상대 뒤에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "x",
       "after_break_frame": "-",
@@ -1383,7 +1383,7 @@
     },
     {
       "name": "사일런트 데스 트랩",
-      "command": "상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command": "상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame": "5~12",
       "break_command": "x",
       "after_break_frame": "-",

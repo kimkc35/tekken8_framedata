@@ -1000,7 +1000,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 207,
         "endAt": 209
       },
@@ -1013,7 +1013,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 211,
         "endAt": 214
       },
@@ -1550,7 +1550,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↘~ or ↖~ or ↑~ or ↗~입력 시 서 있는 상태로",
+        "extra":"↘~ 혹은 ↖~ 혹은 ↑~ 혹은 ↗~입력 시 서 있는 상태로",
         "startAt": 292,
         "endAt": 294
       },
@@ -1838,7 +1838,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↙~ or ↖~ or ↑~ or ↗~입력 시 서 있는 상태로",
+        "extra":"↙~ 혹은 ↖~ 혹은 ↑~ 혹은 ↗~입력 시 서 있는 상태로",
         "startAt": 358,
         "endAt": 360
       },
@@ -1970,7 +1970,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↙~ or ↖~ or ↑~ or ↗~입력 시 서 있는 상태로",
+        "extra":"↙~ 혹은 ↖~ 혹은 ↑~ 혹은 ↗~입력 시 서 있는 상태로",
         "startAt": 395,
         "endAt": 397
       },
@@ -2280,7 +2280,7 @@
       "name":"디아블로스",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-4",
       "damage":"35",
       "range":"상단",
@@ -2292,7 +2292,7 @@
       "name":"악카주~맨티스 자세",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-4",
       "damage":"35",
       "range":"상단",
@@ -2302,7 +2302,7 @@
     },
     {
       "name":"라바수",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2314,7 +2314,7 @@
     },
     {
       "name":"라바투",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2326,7 +2326,7 @@
     },
     {
       "name":"남타르",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2350,7 +2350,7 @@
     },
     {
       "name":"리벤지 핸드",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"6~29",
       "break_command":"x",
       "after_break_frame":"-",

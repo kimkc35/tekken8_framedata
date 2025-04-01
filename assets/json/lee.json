@@ -1325,7 +1325,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 249,
         "endAt": 252
       },
@@ -1912,7 +1912,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 몸을 숙인 상태에서 ↖~ or ↑~RK\nLK입력 시 히트맨으로",
+        "extra":"혹은 몸을 숙인 상태에서 ↖~ 혹은 ↑~RK\nLK입력 시 히트맨으로",
         "startAt": 335,
         "endAt": 338
       },
@@ -1925,7 +1925,7 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"30,20",
-        "extra":"혹은 몸을 숙인 상태에서 ↖~ or ↑~AK",
+        "extra":"혹은 몸을 숙인 상태에서 ↖~ 혹은 ↑~AK",
         "startAt": 339,
         "endAt": 342
       },
@@ -2226,7 +2226,7 @@
       "name":"포럼 드롭",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2238,7 +2238,7 @@
       "name":"액슬 스로",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2248,7 +2248,7 @@
     },
     {
       "name":"리 해러스먼트",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2260,7 +2260,7 @@
     },
     {
       "name":"리 스터너",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2272,7 +2272,7 @@
     },
     {
       "name":"페이스 크러셔",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2296,13 +2296,13 @@
     },
     {
       "name":"미스트 일루전 ",
-      "command":"상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~15",
       "break_command":"x",
       "after_break_frame":"-",
       "damage":"-",
       "range":"반격",
-      "extra":"혹은 히트맨 도중 4 AL or 4 AR\n공격을 흘렸을 때 RK입력 시 추가 공격",
+      "extra":"혹은 히트맨 도중 4 AL 혹은 4 AR\n공격을 흘렸을 때 RK입력 시 추가 공격",
       "startAt": 478,
       "endAt": 481
     },

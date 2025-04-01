@@ -2568,7 +2568,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"14",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 480,
         "endAt": 483
       },
@@ -2659,7 +2659,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"혹은 ↖공중에서 LK or ↑공중에서 LK\n↓~입력 시 봉황으로",
+        "extra":"혹은 ↖공중에서 LK 혹은 ↑공중에서 LK\n↓~입력 시 봉황으로",
         "startAt": 492,
         "endAt": 495
       },
@@ -2685,7 +2685,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 ↖공중에서 RK or ↑공중에서 RK",
+        "extra":"혹은 ↖공중에서 RK 혹은 ↑공중에서 RK",
         "startAt": 496,
         "endAt": 499
       },
@@ -2698,7 +2698,7 @@
         "counter_frame":"D",
         "range":"하단",
         "damage":"19",
-        "extra":"혹은 ↖착지할 때 LK or ↑착지할 때 LK",
+        "extra":"혹은 ↖착지할 때 LK 혹은 ↑착지할 때 LK",
         "startAt": 502,
         "endAt": 505
       }
@@ -2709,7 +2709,7 @@
       "name":"요신도파",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2721,7 +2721,7 @@
       "name":"유수락",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2731,7 +2731,7 @@
     },
     {
       "name":"선모",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2743,7 +2743,7 @@
     },
     {
       "name":"이선모",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2755,7 +2755,7 @@
     },
     {
       "name":"배념퇴락",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2803,9 +2803,9 @@
     },
     {
       "name":"배신전무",
-      "command":"상대에게 등을 보일 때 →AL or AR",
+      "command":"상대에게 등을 보일 때 →AL 혹은 AR",
       "start_frame":"31",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2827,9 +2827,9 @@
     },
     {
       "name":"봉황전무",
-      "command":"봉황 도중 AL or AR",
+      "command":"봉황 도중 AL 혹은 AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2851,7 +2851,7 @@
     },
     {
       "name":"상·중단 흘리기",
-      "command":"상대의 공격에 맞춰서 ←AL or AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 AR",
       "start_frame":"5~10",
       "break_command":"-",
       "after_break_frame":"-",
@@ -2875,7 +2875,7 @@
     },
     {
       "name":"뒤자세~하단 흘리기",
-      "command":"상대에게 등을 보일 때 상대의 하단 공격에 맞춰서 ↓AL or AR",
+      "command":"상대에게 등을 보일 때 상대의 하단 공격에 맞춰서 ↓AL 혹은 AR",
       "start_frame":"1~15",
       "break_command":"-,",
       "after_break_frame":"-",

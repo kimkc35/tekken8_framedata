@@ -1026,7 +1026,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 228,
         "endAt": 230
       },
@@ -1810,7 +1810,7 @@
       "name":"선풍 차기",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
@@ -1822,7 +1822,7 @@
       "name":"번개",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1832,7 +1832,7 @@
     },
     {
       "name":"천칭던지기",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -1844,7 +1844,7 @@
     },
     {
       "name":"양어깨 비틀기",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -1856,7 +1856,7 @@
     },
     {
       "name":"허리 옮겨 치기",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -1904,7 +1904,7 @@
     },
     {
       "name":"받아 넘기기",
-      "command":"상대 공격에 맞춰 ←AL or ←AR",
+      "command":"상대 공격에 맞춰 ←AL 혹은 ←AR",
       "start_frame":"-",
       "break_command":"-",
       "after_break_frame":"-",

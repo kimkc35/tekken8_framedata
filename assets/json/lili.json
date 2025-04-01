@@ -922,7 +922,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"21",
-        "extra":"혹은 →RP or ↑RP",
+        "extra":"혹은 →RP 혹은 ↑RP",
         "startAt": 195,
         "endAt": 198
       },
@@ -1520,7 +1520,7 @@
         "counter_frame":"+11g",
         "range":"중단",
         "damage":"18",
-        "extra":"←LK or ←RK 입력 시 파이스티 래빗으로",
+        "extra":"←LK 혹은 ←RK 입력 시 파이스티 래빗으로",
         "startAt": 315,
         "endAt": 318
       },
@@ -1901,7 +1901,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↓↘~입력 시 동작을 캔슬하고 직접 몸을 숙인 상태로\n←LK or ←RK 입력 시 파이스티 래빗으로",
+        "extra":"↓↘~입력 시 동작을 캔슬하고 직접 몸을 숙인 상태로\n←LK 혹은 ←RK 입력 시 파이스티 래빗으로",
         "startAt": 388,
         "endAt": 389
       },
@@ -2031,7 +2031,7 @@
         "counter_frame":"+17g",
         "range":"상단x2",
         "damage":"6,20",
-        "extra":"←LK or ←RK 입력 시 파이스티 래빗으로\n()는 이행 시 프레임",
+        "extra":"←LK 혹은 ←RK 입력 시 파이스티 래빗으로\n()는 이행 시 프레임",
         "startAt": 410,
         "endAt": 412
       }
@@ -2148,7 +2148,7 @@
       "name":"키스 오브 디보션",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2160,7 +2160,7 @@
       "name":"팜 파탈",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2170,7 +2170,7 @@
     },
     {
       "name":"솔레이유",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2182,7 +2182,7 @@
     },
     {
       "name":"모나코 믹서",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2194,7 +2194,7 @@
     },
     {
       "name":"래비징 뷰티",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2218,7 +2218,7 @@
     },
     {
       "name":"라플레시아",
-      "command":"상대가 벽에 부딪혔을 때 AL or AR",
+      "command":"상대가 벽에 부딪혔을 때 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"AP",
       "after_break_frame":"-3",
@@ -2230,7 +2230,7 @@
     },
     {
       "name":"어택 리버설",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~15",
       "break_command":"-",
       "after_break_frame":"-,",

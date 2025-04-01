@@ -15,17 +15,17 @@
         "endAt": 2
       },
       {
-        "name":"목욕재계",
-        "command":"→AP",
+        "name":"일모경",
+        "command":"→→~RPLP",
         "start_frame":"15",
-        "guard_frame":"-9",
+        "guard_frame":"-5",
         "hit_frame":"+17g",
         "counter_frame":"+17g",
         "range":"상단",
-        "damage":"26",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워 상승(가드 대미지 증가)\n히트 발동 시 나니와의 기염을 획득",
-        "startAt": 3,
-        "endAt": 6
+        "damage":"16,21",
+        "extra":"히트 발동기",
+        "startAt": 327,
+        "endAt": 330
       },
       {
         "name":"운작퇴",
@@ -177,8 +177,8 @@
         "command":"LPRPRK",
         "start_frame":"10",
         "guard_frame":"-12",
-        "hit_frame":"+12g",
-        "counter_frame":"+12g",
+        "hit_frame":"D",
+        "counter_frame":"D",
         "range":"중단",
         "damage":"5,8,18",
         "extra":"",
@@ -268,11 +268,11 @@
         "command":"RPLK",
         "start_frame":"12",
         "guard_frame":"-17",
-        "hit_frame":"+14g",
-        "counter_frame":"+14g",
+        "hit_frame":"D",
+        "counter_frame":"D",
         "range":"중단",
-        "damage":"9,16",
-        "extra":"",
+        "damage":"9,20",
+        "extra":"[월 블래스트]",
         "startAt": 70,
         "endAt": 73
       },
@@ -454,7 +454,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"↓~입력 시 캔슬하고 몸을 숙인 상태로",
+        "extra":"↓~입력 시 캔슬하고 몸을 숙인 상태로[귀살]",
         "startAt": 109,
         "endAt": 111
       },
@@ -467,7 +467,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"20",
-        "extra":"나니와의 기염을 획득",
+        "extra":"나니와의 기염을 획득[귀살]",
         "startAt": 112,
         "endAt": 115
       },
@@ -532,7 +532,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"26",
-        "extra":"히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워 상승(가드 대미지 증가)\n히트 발동 시 나니와의 기염을 획득",
+        "extra":"파워 크래시\n상대의 공격을 받아내면 파워 상승(가드 대미지 증가)\n히트 발동 시 나니와의 기염을 획득",
         "startAt": 127,
         "endAt": 130
       },
@@ -648,8 +648,8 @@
         "hit_frame":"+9",
         "counter_frame":"+9",
         "range":"중단",
-        "damage":"18",
-        "extra":"히트 발동기\n히트 발동 시 나니와의 기염을 획득",
+        "damage":"20",
+        "extra":"월 블래스트\n공중에서 히트 시 플로어 블래스트\n히트 발동기\n히트 발동 시 나니와의 기염을 획득",
         "startAt": 159,
         "endAt": 162
       },
@@ -1109,6 +1109,39 @@
         "endAt": 290
       },
       {
+        "name":"이쿠타마 배쉬1",
+        "command":"↗LP",
+        "start_frame":"13",
+        "guard_frame":"-7",
+        "hit_frame":"+3",
+        "counter_frame":"+3",
+        "range":"상단",
+        "damage":"12",
+        "extra":""
+      },
+      {
+        "name":"이쿠타마 배쉬2",
+        "command":"↗LPRP",
+        "start_frame":"13",
+        "guard_frame":"-11",
+        "hit_frame":"+13g",
+        "counter_frame":"+13g",
+        "range":"중단",
+        "damage":"12,19",
+        "extra":"월 블래스트\n상대의 반시계 방향 횡이동에 민감하게 반응\n↓~ 입력 시 캔슬하고 몸을 숙이는 상태로"
+      },
+      {
+        "name":"이쿠타마 배쉬2~캔슬",
+        "command":"↗LPRP↓~",
+        "start_frame":"13",
+        "guard_frame":"-15",
+        "hit_frame":"-3",
+        "counter_frame":"-3",
+        "range":"상단",
+        "damage":"12",
+        "extra":""
+      },
+      {
         "name":"난월",
         "command":"↗RP",
         "start_frame":"14",
@@ -1130,7 +1163,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 297,
         "endAt": 300
       },
@@ -1143,7 +1176,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 319,
         "endAt": 321
       },
@@ -1182,7 +1215,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"16,21",
-        "extra":"",
+        "extra":"히트 발동기",
         "startAt": 327,
         "endAt": 330
       },
@@ -1391,7 +1424,7 @@
         "hit_frame":"+17g",
         "counter_frame":"+17g",
         "range":"상단",
-        "damage":"18,8",
+        "damage":"18,12",
         "extra":"정면 지상 히트 시 당겨 수입도로",
         "startAt": 397,
         "endAt": 400
@@ -1763,17 +1796,39 @@
     ],
     "naniwa gusto":[
       {
+        "name":"귀신 죽이기 마츠리",
+        "command":"나니와의 기염 보유 시 →RP 히트 시 AP",
+        "start_frame":"17",
+        "guard_frame":"-8",
+        "hit_frame":"T",
+        "counter_frame":"T",
+        "range":"중단",
+        "damage":"10,15",
+        "extra":""
+      },
+      {
         "name":"스미요시 강타 마츠리",
         "command":"나니와의 기염 보유 시 ↑AP",
         "start_frame":"31",
         "guard_frame":"+8",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "hit_frame":"A",
+        "counter_frame":"A",
         "range":"중단",
-        "damage":"24",
+        "damage":"33",
         "extra":"나니와의 기염을 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n가드 대미지",
         "startAt": 380,
         "endAt": 382
+      },
+      {
+        "name":"이쿠타마 배쉬 마츠리",
+        "command":"나니와의 기염 보유 시 ↗LPRP",
+        "start_frame":"13",
+        "guard_frame":"-11",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"12,24",
+        "extra":"월 블래스트\n상대의 반시계 방향 횡이동에 민감하게 반응\n↓~ 입력 시 캔슬하고 몸을 숙이는 상태로"
       },
       {
         "name":"천신 승타 마츠리",
@@ -1808,7 +1863,7 @@
       "name":"합기던지기",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-2",
       "damage":"35",
       "range":"상단",
@@ -1820,7 +1875,7 @@
       "name":"형태꿰기",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-2",
       "damage":"35",
       "range":"상단",
@@ -1830,7 +1885,7 @@
     },
     {
       "name":"거미 휘감기",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -1842,7 +1897,7 @@
     },
     {
       "name":"풍차",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -1854,7 +1909,7 @@
     },
     {
       "name":"십자 업어떨어뜨리기",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -1866,7 +1921,7 @@
     },
     {
       "name":"당겨 수입도",
-      "command":"→AL or →AR",
+      "command":"→AL 혹은 →AR",
       "start_frame":"19",
       "break_command":"x",
       "after_break_frame":"-",
@@ -1938,7 +1993,7 @@
     },
     {
       "name":"수경",
-      "command":"←AL or ←AR",
+      "command":"←AL 혹은 ←AR",
       "start_frame":"5~53",
       "break_command":"x",
       "after_break_frame":"-",

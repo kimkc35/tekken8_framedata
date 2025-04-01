@@ -987,7 +987,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"운족으로\n운족 감 도중 ↓LK or ↑LK입력 시 운족 교로",
+        "extra":"운족으로\n운족 감 도중 ↓LK 혹은 ↑LK입력 시 운족 교로",
         "startAt": 224,
         "endAt": 227
       },
@@ -1052,7 +1052,7 @@
         "counter_frame":"+17",
         "range":"상단",
         "damage":"15",
-        "extra":"혹은 ↖LP or ↑LP\n히트 시 금강벽으로",
+        "extra":"혹은 ↖LP 혹은 ↑LP\n히트 시 금강벽으로",
         "startAt": 250,
         "endAt": 253
       },
@@ -1091,7 +1091,7 @@
         "counter_frame":"T",
         "range":"중단",
         "damage":"15",
-        "extra":"토네이도\n혹은 ↖RK or ↑RK",
+        "extra":"토네이도\n혹은 ↖RK 혹은 ↑RK",
         "startAt": 257,
         "endAt": 260
       },
@@ -1104,7 +1104,7 @@
         "counter_frame":"-1",
         "range":"중단x2",
         "damage":"10x2",
-        "extra":"혹은 ↖AK or ↑AK",
+        "extra":"혹은 ↖AK 혹은 ↑AK",
         "startAt": 261,
         "endAt": 263
       },
@@ -1494,7 +1494,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ↖← or 운족 도중 ↖AP\n↘~입력 시 풍신 스텝으로",
+        "extra":"혹은 ↖← 혹은 운족 도중 ↖AP\n↘~입력 시 풍신 스텝으로",
         "startAt": 302,
         "endAt": 305
       },
@@ -2453,7 +2453,7 @@
       "name":"월화빙인",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2465,7 +2465,7 @@
       "name":"재신일각",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2475,7 +2475,7 @@
     },
     {
       "name":"월화빙인",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2487,7 +2487,7 @@
     },
     {
       "name":"재신일각",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2499,7 +2499,7 @@
     },
     {
       "name":"항삼세",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2535,7 +2535,7 @@
     },
     {
       "name":"장례 바람",
-      "command":"선체 도중 AL or AR",
+      "command":"선체 도중 AL 혹은 AR",
       "start_frame":"16",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2547,7 +2547,7 @@
     },
     {
       "name":"지천뢰굉",
-      "command":"금강벽 도중 AL or AR",
+      "command":"금강벽 도중 AL 혹은 AR",
       "start_frame":"16",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2559,7 +2559,7 @@
     },
     {
       "name":"다테나시~금강벽",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"3~9",
       "break_command":"x",
       "after_break_frame":"-",

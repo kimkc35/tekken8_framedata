@@ -1026,7 +1026,7 @@
         "counter_frame": "+3",
         "range": "중단",
         "damage": "18",
-        "extra": "혹은 ↖LP or ↑LP\n상단 흘리기 효과 있음(2~17F)",
+        "extra": "혹은 ↖LP 혹은 ↑LP\n상단 흘리기 효과 있음(2~17F)",
         "startAt": 257,
         "endAt": 259
       },
@@ -2373,7 +2373,7 @@
       "name": "설월화",
       "command": "AL",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
@@ -2385,7 +2385,7 @@
       "name": "고산수",
       "command": "AR",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
@@ -2395,7 +2395,7 @@
     },
     {
       "name": "설월화",
-      "command": "상대 왼쪽에서 AL or AR",
+      "command": "상대 왼쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "LP",
       "after_break_frame": "-3",
@@ -2407,7 +2407,7 @@
     },
     {
       "name": "고산수",
-      "command": "상대 오른쪽에서 AL or AR",
+      "command": "상대 오른쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "RP",
       "after_break_frame": "-3",
@@ -2419,7 +2419,7 @@
     },
     {
       "name": "야습",
-      "command": "상대 뒤에서 AL or AR",
+      "command": "상대 뒤에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "x",
       "after_break_frame": "-",
@@ -2455,7 +2455,7 @@
     },
     {
       "name": "올려 받기",
-      "command": "상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command": "상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame": "2~10F",
       "break_command": "-",
       "after_break_frame": "-",
@@ -2467,7 +2467,7 @@
     },
     {
       "name": "올려 받기(파워 상승)",
-      "command": "상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command": "상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame": "2~10F",
       "break_command": "-",
       "after_break_frame": "-",

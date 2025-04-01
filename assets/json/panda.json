@@ -36,7 +36,7 @@
         "counter_frame": "+17g",
         "range": "중단",
         "damage": "24",
-        "extra": "히트 발동기\n파워 크래시\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n()는 이행 시 프레임\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "extra": "히트 발동기\n파워 크래시\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)\n()는 이행 시 프레임\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
         "startAt": 10,
         "endAt": 13
       },
@@ -49,7 +49,7 @@
         "counter_frame": "+17g",
         "range": "상단,중단",
         "damage": "10,20",
-        "extra": "히트 발동기\n호밍기\n가드 대미지\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra": "히트 발동기\n호밍기\n가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 14,
         "endAt": 17
       },
@@ -62,7 +62,7 @@
         "counter_frame": "+17g",
         "range": "중단",
         "damage": "30",
-        "extra": "히트 발동기\n가드 대미지\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra": "히트 발동기\n가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 18,
         "endAt": 21
       },
@@ -101,7 +101,7 @@
         "counter_frame": "D",
         "range": "중단x2",
         "damage": "22,40",
-        "extra": "혹은 히트 상태에서 헌팅 도중 RP+LK\n→~입력 시 베어 롤로\n↓~ or AK입력 시 헌팅으로",
+        "extra": "혹은 히트 상태에서 헌팅 도중 RP+LK\n→~입력 시 베어 롤로\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 30,
         "endAt": 34
       },
@@ -480,7 +480,7 @@
         "counter_frame": "+13",
         "range": "중단",
         "damage": "11,20",
-        "extra": "홀드 가능\n↓~ or AK입력 시 헌팅으로",
+        "extra": "홀드 가능\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 112,
         "endAt": 114
       },
@@ -493,7 +493,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "11,20",
-        "extra": "가드 대미지\n↓~ or AK입력 시 헌팅으로",
+        "extra": "가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 114,
         "endAt": 117
       },
@@ -506,7 +506,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "11,30",
-        "extra": "가드 대미지\n파워 크래시로 받아내기 불가능\n히트 상태 지속 중에는 필요한 홀드 시간이 짧아짐(히트 상태의 남은 시간을 소비)\n↓~ or AK입력 시 헌팅으로",
+        "extra": "가드 대미지\n파워 크래시로 받아내기 불가능\n히트 상태 지속 중에는 필요한 홀드 시간이 짧아짐(히트 상태의 남은 시간을 소비)\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 118,
         "endAt": 121
       },
@@ -519,7 +519,7 @@
         "counter_frame": "-1",
         "range": "하단",
         "damage": "10",
-        "extra": "↓~ or AK입력 시 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 123,
         "endAt": 125
       },
@@ -649,7 +649,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "24",
-        "extra": "히트 발동기\n파워 크래시\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "extra": "히트 발동기\n파워 크래시\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
         "startAt": 154,
         "endAt": 157
       },
@@ -688,7 +688,7 @@
         "counter_frame": "+8",
         "range": "상단",
         "damage": "12,14",
-        "extra": "↓~ or AK입력 시 헌팅으로\n→~입력 시 베어 롤로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로\n→~입력 시 베어 롤로",
         "startAt": 158,
         "endAt": 161
       },
@@ -766,7 +766,7 @@
         "counter_frame": "D",
         "range": "상단,중단",
         "damage": "10,20",
-        "extra": "히트 발동기\n호밍기\n가드 대미지\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
+        "extra": "히트 발동기\n호밍기\n가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음)",
         "startAt": 166,
         "endAt": 169
       },
@@ -792,7 +792,7 @@
         "counter_frame": "D",
         "range": "가불",
         "damage": "25",
-        "extra": "↓~ or AK입력 시 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 174,
         "endAt": 177
       },
@@ -818,7 +818,7 @@
         "counter_frame": "D",
         "range": "하단",
         "damage": "25",
-        "extra": "↓~ or AK입력 시 캔슬하고 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 캔슬하고 헌팅으로",
         "startAt": 184,
         "endAt": 186
       },
@@ -831,7 +831,7 @@
         "counter_frame": "+3",
         "range": "중단",
         "damage": "24",
-        "extra": "↓~ or AK입력 시 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 193,
         "endAt": 195
       },
@@ -870,7 +870,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "20",
-        "extra": "혹은 ↖LP or ↑LP\n가드 대미지",
+        "extra": "혹은 ↖LP 혹은 ↑LP\n가드 대미지",
         "startAt": 200,
         "endAt": 203
       },
@@ -883,7 +883,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "27",
-        "extra": "호밍기\n혹은 ↖RP or ↑RP",
+        "extra": "호밍기\n혹은 ↖RP 혹은 ↑RP",
         "startAt": 206,
         "endAt": 209
       },
@@ -922,7 +922,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "13,13,22",
-        "extra": "↓~ or AK입력 시 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 209,
         "endAt": 212
       },
@@ -1065,7 +1065,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "30",
-        "extra": "히트 발동기\n가드 대미지\n↓~ or AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음",
+        "extra": "히트 발동기\n가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로(히트 발동 시, 히트 대시 발동 시에는 이행하지 않음",
         "startAt": 243,
         "endAt": 246
       },
@@ -1210,7 +1210,7 @@
         "counter_frame": "+18g",
         "range": "중단",
         "damage": "13,20",
-        "extra": "토네이도\n홀드 가능\n↓~ or AK입력 시 헌팅으로",
+        "extra": "토네이도\n홀드 가능\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 255,
         "endAt": 258
       },
@@ -1223,7 +1223,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "13,28",
-        "extra": "토네이도\n가드 대미지\n↓~ or AK입력 시 헌팅으로",
+        "extra": "토네이도\n가드 대미지\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 262,
         "endAt": 264
       },
@@ -1236,7 +1236,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "13,38",
-        "extra": "토네이도\n가드 대미지\n파워 크래시로 받아내기 불가능\n히트 상태 지속 중에는 필요한 홀드 시간이 짧아짐(히트 상태의 남은 시간을 소비)\n↓~ or AK입력 시 헌팅으로",
+        "extra": "토네이도\n가드 대미지\n파워 크래시로 받아내기 불가능\n히트 상태 지속 중에는 필요한 홀드 시간이 짧아짐(히트 상태의 남은 시간을 소비)\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 265,
         "endAt": 269
       },
@@ -1602,7 +1602,7 @@
         "counter_frame": "D",
         "range": "하단",
         "damage": "16",
-        "extra": "↓~ or AK입력 시 헌팅으로",
+        "extra": "↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 350,
         "endAt": 353
       },
@@ -1621,7 +1621,7 @@
       },
       {
         "name": "헌팅 롤 오버",
-        "command": "헌팅 도중 LK or RK",
+        "command": "헌팅 도중 LK 혹은 RK",
         "start_frame": "-",
         "guard_frame": "-",
         "hit_frame": "-",
@@ -1680,7 +1680,7 @@
         "counter_frame": "-",
         "range": "-",
         "damage": "-",
-        "extra": "혹은 베어시트 도중 ←~\n↓~ or AK입력 시 헌팅으로",
+        "extra": "혹은 베어시트 도중 ←~\n↓~ 혹은 AK입력 시 헌팅으로",
         "startAt": 366,
         "endAt": 369
       }
@@ -1885,7 +1885,7 @@
       },
       {
         "name": "헌팅",
-        "command": "베어 롤 도중 ↓~ or AK",
+        "command": "베어 롤 도중 ↓~ 혹은 AK",
         "start_frame": "-",
         "guard_frame": "-",
         "hit_frame": "-",
@@ -1903,7 +1903,7 @@
       "name": "베어스 바이트",
       "command": "AL",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
@@ -1915,7 +1915,7 @@
       "name": "베어 허그",
       "command": "AR",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
@@ -1925,7 +1925,7 @@
     },
     {
       "name": "베어 슬램",
-      "command": "상대 왼쪽에서 AL or AR",
+      "command": "상대 왼쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "LP",
       "after_break_frame": "-3",
@@ -1937,7 +1937,7 @@
     },
     {
       "name": "초크 슬램",
-      "command": "상대 오른쪽에서 AL or AR",
+      "command": "상대 오른쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "RP",
       "after_break_frame": "-3",
@@ -1949,7 +1949,7 @@
     },
     {
       "name": "스윙 스웡",
-      "command": "상대 뒤에서 AL or AR",
+      "command": "상대 뒤에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "x",
       "after_break_frame": "-",

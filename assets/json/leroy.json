@@ -220,7 +220,7 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,9,17",
-        "extra":"강한 반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 연환권 섬으로",
+        "extra":"강한 반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP 혹은 RP를 입력하면 연환권 섬으로",
         "startAt": 64,
         "endAt": 67
       },
@@ -298,7 +298,7 @@
         "counter_frame":"+4",
         "range":"상단",
         "damage":"10,12,17",
-        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 연환권 섬으로",
+        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP 혹은 RP를 입력하면 연환권 섬으로",
         "startAt": 81,
         "endAt": 84
       },
@@ -1078,7 +1078,7 @@
         "counter_frame":"+5",
         "range":"상단",
         "damage":"17",
-        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 연환권 섬으로",
+        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP 혹은 RP를 입력하면 연환권 섬으로",
         "startAt": 239,
         "endAt": 241
       },
@@ -1104,7 +1104,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 246,
         "endAt": 249
       },
@@ -1117,7 +1117,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 249,
         "endAt": 25
       },
@@ -1247,7 +1247,7 @@
         "counter_frame":"D",
         "range":"가불",
         "damage":"80",
-        "extra":"강한 반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 연환권 섬으로",
+        "extra":"강한 반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP 혹은 RP를 입력하면 연환권 섬으로",
         "startAt": 278,
         "endAt": 282
       },
@@ -1403,7 +1403,7 @@
         "counter_frame":"20",
         "range":"하단",
         "damage":"-",
-        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP or RP를 입력하면 연환권 섬으로",
+        "extra":"반격기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)\n반격기 성공 후 LP 혹은 RP를 입력하면 연환권 섬으로",
         "startAt": 299,
         "endAt": 303
       },
@@ -1875,7 +1875,7 @@
       "name":"파안련환권",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1887,7 +1887,7 @@
       "name":"염전장",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1897,7 +1897,7 @@
     },
     {
       "name":"파안련환권",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -1909,7 +1909,7 @@
     },
     {
       "name":"염전장",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -1921,7 +1921,7 @@
     },
     {
       "name":"용선락습",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -1957,7 +1957,7 @@
     },
     {
       "name":"연환권 섬",
-      "command":"쌍룡문 성공 후 LP or RP",
+      "command":"쌍룡문 성공 후 LP 혹은 RP",
       "start_frame":"-",
       "break_command":"-",
       "after_break_frame":"-",
@@ -1969,7 +1969,7 @@
     },
     {
       "name":"연환권 섬(히트 상태)",
-      "command":"히트 상태에서 쌍룡문 성공 후 LP or RP",
+      "command":"히트 상태에서 쌍룡문 성공 후 LP 혹은 RP",
       "start_frame":"-",
       "break_command":"-",
       "after_break_frame":"-",
@@ -1993,7 +1993,7 @@
     },
     {
       "name": "연환권 섬(저스트)",
-      "command": "쌍룡문(저스트) 성공 후 LP or RP",
+      "command": "쌍룡문(저스트) 성공 후 LP 혹은 RP",
       "start_frame": "-",
       "break_command": "-",
       "after_break_frame": "-",

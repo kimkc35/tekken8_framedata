@@ -133,7 +133,7 @@
       },
       {
         "name": "부싯돌",
-        "command": "히트 상태에서 풍신호법 도중 AL or AR",
+        "command": "히트 상태에서 풍신호법 도중 AL 혹은 AR",
         "start_frame": "18",
         "guard_frame": "-",
         "hit_frame": "+8",
@@ -278,7 +278,7 @@
       },
       {
         "name": "귀곡강장파 연1(캔슬)~횡이동",
-        "command": "LPRP[RPLP]↓~ or ↑~",
+        "command": "LPRP[RPLP]↓~ 혹은 ↑~",
         "start_frame": "10",
         "guard_frame": "-16",
         "hit_frame": "-5",
@@ -538,7 +538,7 @@
       },
       {
         "name": "격강장파 연1(캔슬)~횡이동",
-        "command": "→[RPLP]↓~ or ↑~",
+        "command": "→[RPLP]↓~ 혹은 ↑~",
         "start_frame": "-",
         "guard_frame": "-",
         "hit_frame": "-",
@@ -1078,7 +1078,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "25",
-        "extra": "파워 크래시\n혹은 ↖LP or ↑LP\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "extra": "파워 크래시\n혹은 ↖LP 혹은 ↑LP\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
         "startAt": 244,
         "endAt": 247
       },
@@ -1117,7 +1117,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "17",
-        "extra": "혹은 ↖LK or ↑LK",
+        "extra": "혹은 ↖LK 혹은 ↑LK",
         "startAt": 252,
         "endAt": 256
       },
@@ -1143,7 +1143,7 @@
         "counter_frame": "D",
         "range": "중단",
         "damage": "17",
-        "extra": "호밍기\n혹은 ↖RK or ↑RK",
+        "extra": "호밍기\n혹은 ↖RK 혹은 ↑RK",
         "startAt": 256,
         "endAt": 259
       },
@@ -1818,7 +1818,7 @@
       },
       {
         "name": "뇌방주수",
-        "command": "뇌신호법 도중 AL or AR",
+        "command": "뇌신호법 도중 AL 혹은 AR",
         "start_frame": "15",
         "guard_frame": "-",
         "hit_frame": "D",
@@ -1950,7 +1950,7 @@
       },
       {
         "name": "부싯돌",
-        "command": "풍신호법 도중 AL or AR",
+        "command": "풍신호법 도중 AL 혹은 AR",
         "start_frame": "18",
         "guard_frame": "-",
         "hit_frame": "+7",
@@ -1963,7 +1963,7 @@
       },
       {
         "name": "부싯돌",
-        "command": "히트 상태에서 풍신호법 도중 AL or AR",
+        "command": "히트 상태에서 풍신호법 도중 AL 혹은 AR",
         "start_frame": "18",
         "guard_frame": "-",
         "hit_frame": "+8",
@@ -2204,7 +2204,7 @@
       "name": "맨손 조르기",
       "command": "AL",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
@@ -2216,7 +2216,7 @@
       "name": "금강떨구기",
       "command": "AR",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "0",
       "damage": "35",
       "range": "상단",
@@ -2226,7 +2226,7 @@
     },
     {
       "name": "단두수",
-      "command": "상대 왼쪽에서 AL or AR",
+      "command": "상대 왼쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "LP",
       "after_break_frame": "-3",
@@ -2238,7 +2238,7 @@
     },
     {
       "name": "나락",
-      "command": "상대 오른쪽에서 AL or AR",
+      "command": "상대 오른쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "RP",
       "after_break_frame": "-3",
@@ -2250,7 +2250,7 @@
     },
     {
       "name": "인왕 부수기",
-      "command": "상대 뒤에서 AL or AR",
+      "command": "상대 뒤에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "x",
       "after_break_frame": "-",

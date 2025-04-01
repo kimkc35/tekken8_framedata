@@ -1143,7 +1143,7 @@
         "counter_frame":"+4",
         "range":"중단",
         "damage":"12",
-        "extra":"↖LP or ↑LP",
+        "extra":"↖LP 혹은 ↑LP",
         "startAt": 265,
         "endAt": 267
       },
@@ -1169,7 +1169,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16",
-        "extra":"↖LK or ↑LK",
+        "extra":"↖LK 혹은 ↑LK",
         "startAt": 270,
         "endAt": 273
       },
@@ -1182,7 +1182,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"13",
-        "extra":"↖RK or ↑RK",
+        "extra":"↖RK 혹은 ↑RK",
         "startAt": 274,
         "endAt": 276
       },
@@ -2098,7 +2098,7 @@
       "name":"호천장",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2110,7 +2110,7 @@
       "name":"사교장파",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2120,7 +2120,7 @@
     },
     {
       "name":"붕격파",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2132,7 +2132,7 @@
     },
     {
       "name":"단인공무",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2144,7 +2144,7 @@
     },
     {
       "name":"회두포주",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2180,7 +2180,7 @@
     },
     {
       "name":"반격기",
-      "command":"상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~10",
       "break_command":"x",
       "after_break_frame":"-",

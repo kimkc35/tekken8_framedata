@@ -896,7 +896,7 @@
         "counter_frame":"A",
         "range":"중단x2",
         "damage":"12,14",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 202,
         "endAt": 206
       },
@@ -909,7 +909,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"20",
-        "extra":"혹은 ↖RK or ↑RK",
+        "extra":"혹은 ↖RK 혹은 ↑RK",
         "startAt": 207,
         "endAt": 210
       },
@@ -922,7 +922,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"혹은 ↖AK or ↑AK",
+        "extra":"혹은 ↖AK 혹은 ↑AK",
         "startAt": 211,
         "endAt": 214
       },
@@ -1721,7 +1721,7 @@
       "name":"호스틸 테이크다운",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1733,7 +1733,7 @@
       "name":"레이징 썬더",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1743,7 +1743,7 @@
     },
     {
       "name":"택티컬 니",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -1755,7 +1755,7 @@
     },
     {
       "name":"리썰 포스",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -1767,7 +1767,7 @@
     },
     {
       "name":"스위프트 사일런스",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",

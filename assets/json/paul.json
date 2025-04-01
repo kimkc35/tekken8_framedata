@@ -1940,7 +1940,7 @@
       "name": "왼 한판 업어치기",
       "command": "AL",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-6",
       "damage": "35",
       "range": "상단",
@@ -1952,7 +1952,7 @@
       "name": "팔 잡아 역십자",
       "command": "AR",
       "start_frame": "12",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-3",
       "damage": "35",
       "range": "상단",
@@ -1962,7 +1962,7 @@
     },
     {
       "name": "팔대돌리기",
-      "command": "상대 왼쪽에서 AL or AR",
+      "command": "상대 왼쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "LP",
       "after_break_frame": "-3",
@@ -1974,7 +1974,7 @@
     },
     {
       "name": "밭다리후리기",
-      "command": "상대 오른쪽에서 AL or AR",
+      "command": "상대 오른쪽에서 AL 혹은 AR",
       "start_frame": "12",
       "break_command": "RP",
       "after_break_frame": "-3",
@@ -2033,7 +2033,7 @@
       "endAt": 413
     },
     {
-      "name": "금강붕격(저스트 or 히트 상태)",
+      "name": "금강붕격(저스트 혹은 히트 상태)",
       "command": "↘AL↓↘→RP",
       "start_frame": "12",
       "break_command": "LP",
@@ -2096,7 +2096,7 @@
       "name": "얼티밋 펀치",
       "command": "LPRPLPRP 혹은 RPLPRPLP",
       "start_frame": "-",
-      "break_command": "LP or RP",
+      "break_command": "LP 혹은 RP",
       "after_break_frame": "-",
       "damage": "5,5,5,15",
       "range": "상단",
@@ -2130,7 +2130,7 @@
     },
     {
       "name": "반격기",
-      "command": "←AL or ←AR",
+      "command": "←AL 혹은 ←AR",
       "start_frame": "-",
       "break_command": "x",
       "after_break_frame": "-",

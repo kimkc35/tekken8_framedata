@@ -101,13 +101,13 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹 인으로\n히트 상태의 남은 시간을 소비\nLK or RK를 떼지 않고 ←~입력 시 스웨이, ↑~ or ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
+        "extra":"더킹 인으로\n히트 상태의 남은 시간을 소비\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
         "startAt": 38,
         "endAt": 41
       },
       {
         "name":"투-페이스드(2)",
-        "command":"히트 상태에서 더킹 인 도중 AL or AR",
+        "command":"히트 상태에서 더킹 인 도중 AL 혹은 AR",
         "start_frame":"18",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -415,7 +415,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹 레프트로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
+        "extra":"더킹 레프트로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
         "startAt": 121,
         "endAt": 123
       },
@@ -428,7 +428,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹 라이트로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~입력 시 더킹 레프트(라이트)",
+        "extra":"더킹 라이트로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~입력 시 더킹 레프트(라이트)",
         "startAt": 124,
         "endAt": 126
       },
@@ -551,14 +551,14 @@
       },
       {
         "name":"더킹",
-        "command":"→LK or →RK",
+        "command":"→LK 혹은 →RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹으로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, ↑~ or ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
+        "extra":"더킹으로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
         "startAt": 145,
         "endAt": 147
       },
@@ -902,14 +902,14 @@
       },
       {
         "name":"스웨이",
-        "command":"←LK or ←RK",
+        "command":"←LK 혹은 ←RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"스웨이으로\nLK or RK를 떼지 않고 →~입력 시 더킹, ↑~ or ↓~입력 시 더킹 레프트(라이트)",
+        "extra":"스웨이으로\nLK 혹은 RK를 떼지 않고 →~입력 시 더킹, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트)",
         "startAt": 218,
         "endAt": 220
       },
@@ -1524,7 +1524,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹 레프트로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
+        "extra":"더킹 레프트로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
         "startAt": 326,
         "endAt": 329
       },
@@ -1680,7 +1680,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹 라이트로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
+        "extra":"더킹 라이트로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↓~입력 시 더킹 레프트(라이트)",
         "startAt": 348,
         "endAt": 350
       },
@@ -1805,7 +1805,7 @@
       },
       {
         "name":"사이클론 레프트 (라이트)",
-        "command":"퀵 스핀 도중 ↑~ or ↓~",
+        "command":"퀵 스핀 도중 ↑~ 혹은 ↓~",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -1818,7 +1818,7 @@
       },
       {
         "name":"더블 사이클론 펀치",
-        "command":"퀵 스핀 도중 ↑~ or ↓~LP",
+        "command":"퀵 스핀 도중 ↑~ 혹은 ↓~LP",
         "start_frame":"12",
         "guard_frame":"-3",
         "hit_frame":"D",
@@ -1831,7 +1831,7 @@
       },
       {
         "name":"더블 사이클론 니 펀치",
-        "command":"퀵 스핀 도중 ↑~ or ↓~LP",
+        "command":"퀵 스핀 도중 ↑~ 혹은 ↓~LP",
         "start_frame":"22",
         "guard_frame":"-12",
         "hit_frame":"D",
@@ -1844,7 +1844,7 @@
       },
       {
         "name":"스핀~피카부",
-        "command":"퀵 스핀 도중 ↑~ or ↓~→~",
+        "command":"퀵 스핀 도중 ↑~ 혹은 ↓~→~",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
@@ -1859,14 +1859,14 @@
     "ducking/ducking in":[
       {
         "name":"더킹",
-        "command":"→LK or →RK",
+        "command":"→LK 혹은 →RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"더킹으로\nLK or RK를 떼지 않고 ←~입력 시 스웨이, ↑~ or ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
+        "extra":"더킹으로\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
         "startAt": 391,
         "endAt": 392
       },
@@ -1905,7 +1905,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"21",
-        "extra":"가드 대미지\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~ or ↓~입력 시 더킹 레프트(라이트)[이글훅]",
+        "extra":"가드 대미지\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트)[이글훅]",
         "startAt": 403,
         "endAt": 405
       },
@@ -1963,14 +1963,14 @@
       },
       {
         "name":"더킹 인",
-        "command":"→LK 홀드→~ or →RK 홀드→~",
+        "command":"→LK 홀드→~ 혹은 →RK 홀드→~",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"LK or RK를 떼지 않고 ←~입력 시 스웨이, ↑~ or ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
+        "extra":"LK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트), ↙~입력 시 캔슬",
         "startAt": 411,
         "endAt": 414
       },
@@ -2009,7 +2009,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"28",
-        "extra":"가드 대미지\nLK or RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~ or ↓~입력 시 더킹 레프트(라이트)[초이글훅]",
+        "extra":"가드 대미지\nLK 혹은 RK를 떼지 않고 ←~입력 시 스웨이, →~입력 시 더킹, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트)[초이글훅]",
         "startAt": 425,
         "endAt": 429
       }
@@ -2331,14 +2331,14 @@
     "swaying":[
       {
         "name":"스웨이",
-        "command":"←LK or ←RK",
+        "command":"←LK 혹은 ←RK",
         "start_frame":"-",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"스웨이으로\nLK or RK를 떼지 않고 →~입력 시 더킹, ↑~ or ↓~입력 시 더킹 레프트(라이트)",
+        "extra":"스웨이으로\nLK 혹은 RK를 떼지 않고 →~입력 시 더킹, ↑~ 혹은 ↓~입력 시 더킹 레프트(라이트)",
         "startAt": 488,
         "endAt": 489
       },
@@ -2377,7 +2377,7 @@
         "counter_frame":"+1",
         "range":"상단",
         "damage":"-",
-        "extra":"잡기 풀기 AP\n스웨이 도중 AP←~ or ↑~ or ↓~입력 시 다른 방향으로 잡음",
+        "extra":"잡기 풀기 AP\n스웨이 도중 AP←~ 혹은 ↑~ 혹은 ↓~입력 시 다른 방향으로 잡음",
         "startAt": 499,
         "endAt": 501
       }
@@ -2652,7 +2652,7 @@
       "name":"거트 렌처",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2664,7 +2664,7 @@
       "name":"브레인 펄버라이저",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -2674,7 +2674,7 @@
     },
     {
       "name":"초크 슬램",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2686,7 +2686,7 @@
     },
     {
       "name":"스로 다운",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2698,7 +2698,7 @@
     },
     {
       "name":"스쿨야드 불리",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2734,13 +2734,13 @@
     },
     {
       "name":"패리",
-      "command":"상대의 펀치 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 펀치 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~12",
       "break_command":"x",
       "after_break_frame":"-",
       "damage":"-",
       "range":"반격",
-      "extra":"혹은 플리커 자세 도중 ←AL or ←AR\n공격을 흘렸을 때 LP입력 시 추가 공격",
+      "extra":"혹은 플리커 자세 도중 ←AL 혹은 ←AR\n공격을 흘렸을 때 LP입력 시 추가 공격",
       "startAt": 583,
       "endAt": 585
     },
@@ -2770,7 +2770,7 @@
     },
     {
       "name":"투-페이스드",
-      "command":"히트 상태에서 더킹 인 도중 AL or AR",
+      "command":"히트 상태에서 더킹 인 도중 AL 혹은 AR",
       "start_frame":"18",
       "break_command":"x",
       "after_break_frame":"-",

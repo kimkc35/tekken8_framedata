@@ -493,7 +493,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"10,15",
-        "extra":"토네이도\n히트 시 ↖~ or ↑~ or ↗~입력 시 비공으로",
+        "extra":"토네이도\n히트 시 ↖~ 혹은 ↑~ 혹은 ↗~입력 시 비공으로",
         "startAt": 153,
         "endAt": 156
       },
@@ -571,7 +571,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"12,10,20",
-        "extra":"토네이도\n히트 시 ↖~ or ↑~ or ↗~입력 시 비공으로",
+        "extra":"토네이도\n히트 시 ↖~ 혹은 ↑~ 혹은 ↗~입력 시 비공으로",
         "startAt": 166,
         "endAt": 170
       },
@@ -844,7 +844,7 @@
         "counter_frame":"A",
         "range":"중단",
         "damage":"22",
-        "extra":"토네이도\n혹은 ↖RK\n히트 시 ↖~ or ↑~입력 시 비공으로",
+        "extra":"토네이도\n혹은 ↖RK\n히트 시 ↖~ 혹은 ↑~입력 시 비공으로",
         "startAt": 229,
         "endAt": 232
       },
@@ -883,7 +883,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"25",
-        "extra":"호밍기\n혹은 ↖RP or ↑RP",
+        "extra":"호밍기\n혹은 ↖RP 혹은 ↑RP",
         "startAt": 242,
         "endAt": 244
       },
@@ -1734,7 +1734,7 @@
       "name":"돌아차기",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
@@ -1746,7 +1746,7 @@
       "name":"죄참",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"35",
       "range":"상단",
@@ -1756,7 +1756,7 @@
     },
     {
       "name":"천칭 던지기",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -1768,7 +1768,7 @@
     },
     {
       "name":"양어깨 비틀기",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -1780,7 +1780,7 @@
     },
     {
       "name":"허리 옮겨 치기",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -1840,7 +1840,7 @@
     },
     {
       "name":"역린",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"3~13",
       "break_command":"x",
       "after_break_frame":"-",

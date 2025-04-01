@@ -23,7 +23,7 @@
         "counter_frame":"+17g",
         "range":"상단",
         "damage":"15,22",
-        "extra":"히트 발동기\n가드 대미지\n↓~ or ↑~입력 시 횡이동으로",
+        "extra":"히트 발동기\n가드 대미지\n↓~ 혹은 ↑~입력 시 횡이동으로",
         "startAt": 4,
         "endAt": 7
       },
@@ -142,7 +142,7 @@
         "counter_frame":"+8",
         "range":"상단",
         "damage":"5,10",
-        "extra":"↓~ or ↑~입력 시 횡이동으로",
+        "extra":"↓~ 혹은 ↑~입력 시 횡이동으로",
         "startAt": 51,
         "endAt": 53
       },
@@ -545,7 +545,7 @@
         "counter_frame":"+5",
         "range":"중단",
         "damage":"15",
-        "extra":"↓~ or ↑~입력 시 횡이동으로",
+        "extra":"↓~ 혹은 ↑~입력 시 횡이동으로",
         "startAt": 122,
         "endAt": 126
       },
@@ -610,7 +610,7 @@
         "counter_frame":"+9",
         "range":"상단",
         "damage":"13,10",
-        "extra":"LPRP로 시작하는 공격으로 이어짐\n↓~ or ↑~입력 시 횡이동으로\n→~입력 시 더킹 스텝으로",
+        "extra":"LPRP로 시작하는 공격으로 이어짐\n↓~ 혹은 ↑~입력 시 횡이동으로\n→~입력 시 더킹 스텝으로",
         "startAt": 131,
         "endAt": 133
       },
@@ -675,7 +675,7 @@
         "counter_frame":"+3",
         "range":"상단",
         "damage":"13,10",
-        "extra":"↓~ or ↑~입력 시 캔슬하고 횡이동으로",
+        "extra":"↓~ 혹은 ↑~입력 시 캔슬하고 횡이동으로",
         "startAt": 136,
         "endAt": 140
       },
@@ -714,7 +714,7 @@
         "counter_frame":"+12",
         "range":"상단",
         "damage":"13,9",
-        "extra":"↓~ or ↑~입력 시 횡이동으로\n→~입력 시 더킹 스텝으로\n←~입력 시 스웨이로",
+        "extra":"↓~ 혹은 ↑~입력 시 횡이동으로\n→~입력 시 더킹 스텝으로\n←~입력 시 스웨이로",
         "startAt": 142,
         "endAt": 145
       },
@@ -1117,7 +1117,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,16,20",
-        "extra":"↓~ or ↑~입력 시 캔슬하고 횡이동으로",
+        "extra":"↓~ 혹은 ↑~입력 시 캔슬하고 횡이동으로",
         "startAt": 205,
         "endAt": 207
       },
@@ -1338,7 +1338,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"18",
-        "extra":"혹은 ↖LK or ↑LK",
+        "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 267,
         "endAt": 269
       },
@@ -2096,7 +2096,7 @@
       "name":"암 그랩 플립",
       "command":"AL",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"-6",
       "damage":"35",
       "range":"상단",
@@ -2108,7 +2108,7 @@
       "name":"오버 더 백 토스",
       "command":"AR",
       "start_frame":"12",
-      "break_command":"LP or RP",
+      "break_command":"LP 혹은 RP",
       "after_break_frame":"0",
       "damage":"35",
       "range":"상단",
@@ -2142,7 +2142,7 @@
     },
     {
       "name":"니바",
-      "command":"상대 왼쪽에서 AL or AR",
+      "command":"상대 왼쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-3",
@@ -2154,7 +2154,7 @@
     },
     {
       "name":"해머 스로",
-      "command":"상대 오른쪽에서 AL or AR",
+      "command":"상대 오른쪽에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-3",
@@ -2166,7 +2166,7 @@
     },
     {
       "name":"리핑 트라이앵글 홀드",
-      "command":"상대 뒤에서 AL or AR",
+      "command":"상대 뒤에서 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2226,7 +2226,7 @@
     },
     {
       "name":"어택 리버설",
-      "command":"상대의 공격에 맞춰서 ←AL or ←AR",
+      "command":"상대의 공격에 맞춰서 ←AL 혹은 ←AR",
       "start_frame":"5~10",
       "break_command":"x",
       "after_break_frame":"-",
@@ -2250,7 +2250,7 @@
     },
     {
       "name":"백핸드 슬랩",
-      "command":"→AR or ↓↘→AR",
+      "command":"→AR 혹은 ↓↘→AR",
       "start_frame":"13",
       "break_command":"RP",
       "after_break_frame":"-2",
@@ -2358,7 +2358,7 @@
     },
     {
       "name":"크랩 홀드",
-      "command":"→AL or ↓↘→AL",
+      "command":"→AL 혹은 ↓↘→AL",
       "start_frame":"13",
       "break_command":"LP",
       "after_break_frame":"-2",
@@ -2430,7 +2430,7 @@
     },
     {
       "name":"비트레이어",
-      "command":"↓↙←~AL or ↓↙←~AR",
+      "command":"↓↙←~AL 혹은 ↓↙←~AR",
       "start_frame":"12",
       "break_command":"x",
       "after_break_frame":"-",
