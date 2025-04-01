@@ -44,7 +44,7 @@
         "name": "프로미넌스",
         "command": "→AP",
         "start_frame": "16",
-        "guard_frame": "-8",
+        "guard_frame": "-12",
         "hit_frame": "+17g",
         "counter_frame": "+17g",
         "range": "중단x2",
@@ -1194,7 +1194,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단x3",
-        "damage": "7,7,25",
+        "damage": "7,7,20",
         "extra": "파워 크래시\n월 블래스트\n가드 대미지 있음\n방어 행동 관통 효과 있음",
         "startAt": 219,
         "endAt": 222

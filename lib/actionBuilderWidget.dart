@@ -141,34 +141,36 @@ patchNoteWidget(BuildContext context) {
     return result;
   }
 
-  List<TextSpan> convertPatchNote(String character){
+  List<TextSpan> convertPatchNote(String? character){
     List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title".tr()}\n")];
-    final String text = replaceNumbers(patchNotes["characters"][character]);
+    if(character != null){
+      final String text = replaceNumbers(patchNotes["characters"][character]);
       text.split("\n").forEach((element) {
         if(element.contains(":")){
           RegExp regexp = RegExp(r'^(.*?)(:.*)');
           Match? match = regexp.firstMatch(element);
           final command = match!.group(1);
-          final patch = match.group(2).toString();
+          final patch = match.group(2).toString().replaceAll(" - ", "\n - ");
           result.add(
-            TextSpan(text: "- ")
+              TextSpan(text: "■ ")
           );
           result.add(
-            TextSpan(text: command, style: patch.contains("(하향)") ? TextStyle(color: Colors.red) : patch.contains("(상향)") ? TextStyle(color: Colors.green) : patch.contains("(조정)") ? TextStyle(color: Colors.amber) : TextStyle())
+              TextSpan(text: command, style: patch.contains("(하향)") ? TextStyle(color: Colors.red) : patch.contains("(상향)") ? TextStyle(color: Colors.green) : patch.contains("(조정)") ? TextStyle(color: Colors.amber) : TextStyle())
           );
           result.add(
-            TextSpan(text: "$patch\n")
+              TextSpan(text: "$patch\n")
           );
         }else{
           result.add(
-            TextSpan(text: "$element\n")
+              TextSpan(text: "$element\n")
           );
         }
       });
+    }
     return result;
   }
 
-  return showDialog<String>(
+  return showDialog(
     context: context,
     builder: (context) => StatefulBuilder(
       builder: (context, setState) {
@@ -193,15 +195,14 @@ patchNoteWidget(BuildContext context) {
               child: Text.rich(
                 TextSpan(
                   style: TextStyle(height: 1.4),
-                  children: convertPatchNote(patchNoteController.text.toLowerCase(),
-                  )
+                  children: convertPatchNote(patchNoteController.text.toLowerCase())
                 ),
               )
           ),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
-                child: Text('닫기'))
+                child: Text('setting.close').tr())
           ],
         );
       },

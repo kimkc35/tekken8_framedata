@@ -95,10 +95,8 @@ class CustomThemeMode {
         currentThemeData.value = CustomThemeData.tenada;
         preferences.setBool("changeFont", fontChanged.value);
         break;
-      default:
-    }
+      }
   }
-
   CustomThemeMode._internal();
 }
 
@@ -348,7 +346,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           width: 150,
           height: 60,
           child: ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
+            style: ButtonStyle(backgroundColor: WidgetStateColor.resolveWith((states) => Colors.black), ),
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character1,)));
             },
@@ -367,7 +365,7 @@ class _CharacterButtonState extends State<CharacterButton> {
           child: ElevatedButton(
               style: ButtonStyle(
 
-                backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black), ),
+                backgroundColor: WidgetStateColor.resolveWith((states) => Colors.black), ),
                 onPressed: (){
                 widget.character2 != empty ?
                 Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))

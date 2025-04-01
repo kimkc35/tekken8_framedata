@@ -800,7 +800,7 @@
         "name":"낙장소퇴1",
         "command":"↓RP",
         "start_frame":"15",
-        "guard_frame":"-15",
+        "guard_frame":"-13",
         "hit_frame":"-2",
         "counter_frame":"+3",
         "range":"하단",

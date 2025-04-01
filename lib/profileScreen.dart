@@ -117,7 +117,7 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
     final uri = Uri.https('kekken.com', '/@${widget.playerInfo.polarisId.replaceAll("-", "")}');
     final response = await http.get(uri);
     dom.Document document = parser.parse(response.body);
-    final infoList = document.querySelector("div[class='grid mb-6 p-3 grid-cols-3 gap-4 justify-items-stretch font-medium text-gray-600 divide-x divide-gray-100 border-y border-gray-100 text-center']")!.querySelectorAll("div");
+    final infoList = document.querySelector("div[class='grid grid-cols-6 justify-items-stretch font-medium text-gray-600 divide-y md:divide-y-0 md:divide-x divide-gray-100 border-y border-gray-100 text-center']")!.querySelectorAll("div");
     RegExp regExp = RegExp(r'^[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}$');
     final polarisId = regExp.hasMatch(widget.playerInfo.polarisId) ? widget.playerInfo.polarisId : infoList[0].querySelectorAll('p').last.text.replaceAll('\n', '').trim();
     final winRate = infoList[1].querySelectorAll("p").last.text.replaceAll("\n", "").trim();
@@ -649,7 +649,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
     for (var matchHistory in pageMatchHistoryList) {
       final info = matchHistory.querySelectorAll("td");
 
-      final dateString = info[0].querySelector("span")!.attributes["title"]!;
+      final dateString = info[0].querySelectorAll("span").last.attributes["title"]!;
       List<int> dateList = dateString.split(RegExp(r'[- :]+')).map((e) => int.parse(e)).toList();
       final date = DateTime(dateList[0], dateList[1], dateList[2], dateList[3], dateList[4]);
 

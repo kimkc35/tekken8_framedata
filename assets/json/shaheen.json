@@ -433,6 +433,18 @@
         "endAt": 106
       },
       {
+        "name": "왼어퍼",
+        "command": "↘LP",
+        "start_frame": "13",
+        "guard_frame": "-1",
+        "hit_frame": "+5",
+        "counter_frame": "+5",
+        "range": "중단",
+        "damage": "12",
+        "extra": "",
+        "startAt": 0
+      },
+      {
         "name": "라이징 팔콘",
         "command": "↘RP",
         "start_frame": "15",

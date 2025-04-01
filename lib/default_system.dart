@@ -33,7 +33,6 @@ Container heatSystemContexts(List<String> addition){
 }
 
 memo (BuildContext context, Character character, Info info) {
-  debugPrint("${info.name} : ${info.startAt}, ${info.endAt}");
 
   TextEditingController controller = TextEditingController();
 
@@ -53,11 +52,11 @@ memo (BuildContext context, Character character, Info info) {
   playYoutubePlayer(){
     return showDialog(context: context, builder: (BuildContext context) {
       return PopScope(
-        onPopInvoked: (didPop) {
+        onPopInvokedWithResult: (b, r) {
           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
         },
         child:
-        character.videoId == ""
+        (character.videoId == "" || info.endAt == null)
            ? AlertDialog(content: Text("영상이 없습니다."),) :
         Dialog(
           insetPadding: EdgeInsets.zero,

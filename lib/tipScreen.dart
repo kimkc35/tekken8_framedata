@@ -251,7 +251,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
               });
             },
             style: ButtonStyle(
-              iconColor: MaterialStatePropertyAll(CustomThemeMode.currentThemeData.value.primaryColor)
+              iconColor: WidgetStatePropertyAll(CustomThemeMode.currentThemeData.value.primaryColor)
             ),
             child: Text("main.drawer.login").tr(),
           )

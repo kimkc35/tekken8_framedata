@@ -56,7 +56,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = _searchController.text.substring(0, _searchController.text.length - 1);
                 _searchText = _searchController.text;
@@ -72,7 +72,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = _searchController.text + inputText;
                 _searchText = _searchController.text;
@@ -88,7 +88,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
           padding: const EdgeInsets.all(4.0),
           child: SizedBox(
             height: 40,
-            child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+            child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
               setState(() {
                 _searchController.text = "";
                 _searchText = _searchController.text;
@@ -104,7 +104,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
         padding: const EdgeInsets.all(4.0),
         child: SizedBox(
           height: 40,
-          child: TextButton(style: ButtonStyle(side: MaterialStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
+          child: TextButton(style: ButtonStyle(side: WidgetStateBorderSide.resolveWith((states) => const BorderSide(color: Colors.pink))),onPressed: (){
             setState(() {
               _searchController.text = _searchController.text + content;
               _searchText = _searchController.text;
@@ -118,7 +118,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (b, r) {
         _searchText = "";
         _searchController.text = "";
         if(!isPro) interstitialAd?.show();
@@ -139,7 +139,7 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
                 Navigator.pop(context);
               },
               child: (
-                  const ButtonBar(
+                  const OverflowBar(
                     children: [
                       Text("FRAME\nDATA")
                     ],
@@ -711,12 +711,12 @@ class _MoveListState extends State<MoveList>{
                     ],
                     rows: [
                       if(_searchText.isEmpty || widget.character.rageArts.toString().toLowerCase().contains(_searchText.toLowerCase()))
-                        DataRow(color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts))), //레이지 아츠
+                        DataRow(color: WidgetStateColor.resolveWith((states) => const Color(0xffd5d5d5)) ,cells : (createMove(context, widget.character, widget.character.rageArts))), //레이지 아츠
                       for(String type in widget.character.types.keys)...[
                         if(widget.character.types[type] == true || widget.character.types.values.every((element) => element == false))...[
                           for(MoveInfo data in filtered[type]!)...[
                             if(listLength % 2 == 1)...[
-                              DataRow(cells : (createMove(context, widget.character, data)), color: MaterialStateColor.resolveWith((states) =>
+                              DataRow(cells : (createMove(context, widget.character, data)), color: WidgetStateColor.resolveWith((states) =>
                               const Color(0xffd5d5d5)))
                             ]else if(listLength % 2 == 0)...[
                               DataRow(cells : (createMove(context, widget.character, data)))
@@ -799,7 +799,7 @@ class _ThrowListState extends State<ThrowList>{
               rows: [
                 for(int i = 0; i < widget.character.throwInfoList.length; i++)...[
                   if(i % 2 == 0)...[
-                    DataRow(cells: createThrow(context, widget.character, widget.character.throwInfoList[i]), color: MaterialStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
+                    DataRow(cells: createThrow(context, widget.character, widget.character.throwInfoList[i]), color: WidgetStateColor.resolveWith((states) => const Color(0xffd5d5d5)))
                   ]else...[
                     DataRow(cells: createThrow(context, widget.character, widget.character.throwInfoList[i]))
                   ]
