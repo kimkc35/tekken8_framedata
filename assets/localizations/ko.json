@@ -80,7 +80,7 @@
   },
   "description": {
     "title": "설명",
-    "context": "LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, T: 토네이도, A: 공중, g:가드 가능\n\n표 상단 헤더를 클릭하여 필터링이 가능합니다.",
+    "context": "LP: 왼손, RP: 오른손\nLK: 왼발, RK: 오른발\nAL: LP+LK, AR: RP+RK\nAP: 양손, AK: 양발\nD: 다운, CD: 콤보 가능 다운\nT: 토네이도, A: 공중, g:가드 가능\n\n파란 셀: 뺑글이\n노란 셀: 시즌2 추가 기술\n표 상단 헤더를 클릭하여 필터링이 가능합니다.",
     "close": "@:setting.close"
   },
   "memo": {

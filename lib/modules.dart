@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 enum Font {
+  oneMobileTitle("OneMobileTitle"),
   oneMobile("OneMobile"),
   tenada("Tenada");
 
@@ -94,25 +95,29 @@ class Character{
 
 }
 
+Map<String, Color> cellColors = {"blue": Color(0xff79e1ff), "grey": Color(0xffd5d5d5), "yellow": Color(0xffFFFF00)};
+
 class Info{
   final String name;
   int startAt;
   int? endAt;
+  final String? color;
+  final String? extraVideo;
 
-  Info({required this.name, this.startAt = 0, this.endAt});
+  Info({required this.name, this.startAt = 0, this.endAt, this.color, this.extraVideo});
 }
 
 class MoveInfo extends Info{
   final String command, startFrame, guardFrame, hitFrame, counterFrame, range, damage, extra;
 
-  MoveInfo({required super.name, required this.command, required this.startFrame, required this.guardFrame, required this.hitFrame, required this.counterFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt});
+  MoveInfo({required super.name, required this.command, required this.startFrame, required this.guardFrame, required this.hitFrame, required this.counterFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt, super.color, super.extraVideo});
 
 }
 
 class ThrowInfo extends Info{
   final String command, startFrame, breakCommand, afterBreakFrame, range, damage, extra;
 
-  ThrowInfo({required super.name, required this.command, required this.startFrame, required this.breakCommand, required this.afterBreakFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt});
+  ThrowInfo({required super.name, required this.command, required this.startFrame, required this.breakCommand, required this.afterBreakFrame, required this.range, required this.damage, required this.extra, super.startAt, super.endAt, super.color, super.extraVideo});
 }
 
 class ComparisonHeader{

@@ -15,12 +15,26 @@
         "endAt": 3
       },
       {
+        "name":"어메이징 스와이프",
+        "command":"히트맨 도중 LPLPLP",
+        "start_frame":"12",
+        "guard_frame":"-7",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
+        "range":"상단",
+        "damage":"7,7,20",
+        "extra":"히트 발동기",
+        "color": "yellow",
+        "startAt": 391,
+        "endAt": 394
+      },
+      {
         "name":"머신건 킥스 카디널",
         "command":"RKRKRK(저스트)",
         "start_frame":"11",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"14,5,12",
         "extra":"히트 발동기\n히트 상태의 남은 시간을 소비\n가드 대미지",
@@ -28,12 +42,26 @@
         "endAt": 8
       },
       {
+        "name":"머큐리 드라이브",
+        "command":"↘LKRPLK",
+        "start_frame":"14",
+        "guard_frame":"-14",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
+        "range":"중단",
+        "damage":"13,13,20",
+        "extra":"히트 발동기",
+        "color": "yellow",
+        "startAt": 172,
+        "endAt": 175
+      },
+      {
         "name":"패뷸러스 윕",
         "command":"↘RKRK",
         "start_frame":"13",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"13,20",
         "extra":"히트 발동기",
@@ -41,25 +69,12 @@
         "endAt": 14
       },
       {
-        "name":"실버 레볼루션",
-        "command":"←AK",
-        "start_frame":"20",
-        "guard_frame":"-7",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
-        "range":"상단",
-        "damage":"23",
-        "extra":"히트 발동기\n파워 크래시",
-        "startAt": 16,
-        "endAt": 20
-      },
-      {
         "name":"펄스 블래스트",
         "command":"→→~LK",
         "start_frame":"14",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"26",
         "extra":"히트 발동기",
@@ -67,17 +82,52 @@
         "endAt": 24
       },
       {
-        "name":"실버 슬래시",
-        "command":"히트맨 도중 ↑LK",
-        "start_frame":"20",
-        "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "name":"펄스 블래스트",
+        "command":"히트 상태에서 ↘AK",
+        "start_frame":"16",
+        "guard_frame":"0",
+        "hit_frame":"D",
+        "counter_frame":"D",
         "range":"중단",
-        "damage":"24",
-        "extra":"히트 발동기\n가드 대미지\n↓~입력 시 직접 몸을 숙인 상태로",
-        "startAt": 29,
-        "endAt": 33
+        "damage":"35",
+        "extra":"월 블래스트\n호밍기\n히트 상태의 남은 시간을 소비\n→입력 시 미스트 스텝으로",
+        "color": "yellow"
+      },
+      {
+        "name":"펄스 블래스트~미스트 스텝",
+        "command":"히트 상태에서 ↘AK→",
+        "start_frame":"16",
+        "guard_frame":"0",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"35",
+        "extra":"월 블래스트\n호밍기\n히트 상태의 남은 시간을 소비\n미스트 스텝으로",
+        "color": "yellow"
+      },
+      {
+        "name":"펄스 블래스트",
+        "command":"히트 상태에서 ↓AP",
+        "start_frame":"18",
+        "guard_frame":"+6",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"30",
+        "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\nAK입력 시 히트맨으로",
+        "color": "yellow"
+      },
+      {
+        "name":"펄스 블래스트~히트맨",
+        "command":"히트 상태에서 ↓APAK",
+        "start_frame":"18",
+        "guard_frame":"+8",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"30",
+        "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\n히트맨으로",
+        "color": "yellow"
       },
       {
         "name":"페러다임 브레이커",
@@ -508,7 +558,8 @@
         "damage":"14,5,12",
         "extra":"히트 발동기\n히트 상태의 남은 시간을 소비\n히트 상태 지속 중에는 저스트 입력 불필요(히트 상태의 남은 시간을 소비,저스트 성공으로 남은 시간 회복)\n가드 대미지",
         "startAt": 121,
-        "endAt": 126
+        "endAt": 126,
+        "color": "blue"
       },
       {
         "name":"리 써머썰트",
@@ -726,7 +777,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"13,25",
+        "damage":"13,27",
         "extra":"토네이도\n히트 상태의 남은 시간을 소비\n히트 상태 지속 중에는 저스트 입력 불필요(히트 상태의 남은 시간을 소비,저스트 성공으로 남은 시간 회복)\n가드 대미지",
         "startAt": 155,
         "endAt": 158
@@ -813,12 +864,12 @@
         "name":"머큐리 드라이브1",
         "command":"↘LKRP",
         "start_frame":"15",
-        "guard_frame":"-6",
+        "guard_frame":"-10",
         "hit_frame":"+5",
         "counter_frame":"+5",
         "range":"상단",
         "damage":"13,13",
-        "extra":"",
+        "extra":"강제 가드",
         "startAt": 172,
         "endAt": 175
       },
@@ -992,19 +1043,6 @@
         "endAt": 194
       },
       {
-        "name":"실버 사이클론",
-        "command":"↓AK",
-        "start_frame":"60",
-        "guard_frame":"-",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"가불",
-        "damage":"60",
-        "extra":"AK입력 시 캔슬하고 히트맨으로",
-        "startAt": 196,
-        "endAt": 199
-      },
-      {
         "name":"범프 킥",
         "command":"↙LK",
         "start_frame":"20",
@@ -1171,7 +1209,8 @@
         "damage":"9,16,21",
         "extra":"",
         "startAt": 220,
-        "endAt": 223
+        "endAt": 223,
+        "color": "blue"
       },
       {
         "name":"스팅잉 러시1",
@@ -1194,7 +1233,7 @@
         "hit_frame":"-1",
         "counter_frame":"-1",
         "range":"상단",
-        "damage":"9,12",
+        "damage":"9,9",
         "extra":"→~입력 시 미스트 스텝으로",
         "startAt": 223,
         "endAt": 226
@@ -1220,7 +1259,7 @@
         "hit_frame":"+7",
         "counter_frame":"A",
         "range":"중단",
-        "damage":"20",
+        "damage":"17",
         "extra":"LK입력 시 히트맨으로",
         "startAt": 227,
         "endAt": 229
@@ -1265,6 +1304,19 @@
         "endAt": 236
       },
       {
+        "name":"실버 사이클론",
+        "command":"↖AK",
+        "start_frame":"60",
+        "guard_frame":"-",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"가불",
+        "damage":"60",
+        "extra":"시즌 1 ↓AK\nAK입력 시 캔슬하고 히트맨으로",
+        "startAt": 196,
+        "endAt": 199
+      },
+      {
         "name":"페이크",
         "command":"↑LK",
         "start_frame":"-",
@@ -1273,7 +1325,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"-",
-        "extra":"↓~입력 시 직접 몸을 숙인 상태로\nAK입력 시 히트맨으로",
+        "extra":"↓~입력 시 앉은 상태로\nAK입력 시 히트맨으로",
         "startAt": 240,
         "endAt": 242
       },
@@ -1358,7 +1410,7 @@
       {
         "name":"저슬 울프",
         "command":"→→~RP",
-        "start_frame":"20",
+        "start_frame":"15",
         "guard_frame":"+2",
         "hit_frame":"+18g",
         "counter_frame":"T",
@@ -1371,7 +1423,7 @@
       {
         "name":"저슬 울프~미스트 스텝",
         "command":"→→~RP→~",
-        "start_frame":"20",
+        "start_frame":"15",
         "guard_frame":"+5",
         "hit_frame":"+21g",
         "counter_frame":"T",
@@ -1384,7 +1436,7 @@
       {
         "name":"주슬 울프 카디널",
         "command":"→→~RP(빠르게 입력)",
-        "start_frame":"18",
+        "start_frame":"15",
         "guard_frame":"+2",
         "hit_frame":"+18g",
         "counter_frame":"T",
@@ -1415,7 +1467,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"26",
+        "damage":"23",
         "extra":"히트 발동기",
         "startAt": 266,
         "endAt": 269
@@ -1434,19 +1486,6 @@
         "endAt": 272
       },
       {
-        "name":"블레이징 킥",
-        "command":"↓↙~RK",
-        "start_frame":"22",
-        "guard_frame":"-17",
-        "hit_frame":"A",
-        "counter_frame":"A",
-        "range":"중단",
-        "damage":"24",
-        "extra":"토네이도",
-        "startAt": 273,
-        "endAt": 276
-      },
-      {
         "name":"리 커터",
         "command":"←←~RK",
         "start_frame":"19",
@@ -1457,7 +1496,8 @@
         "damage":"23",
         "extra":"호밍기\n가드 대미지\nLK입력 시 히트맨으로",
         "startAt": 278,
-        "endAt": 281
+        "endAt": 281,
+        "color": "blue"
       },
       {
         "name":"리 커터~히트맨",
@@ -1510,6 +1550,19 @@
         "extra":"가드 대미지\n히트맨으로",
         "startAt": 281,
         "endAt": 284
+      },
+      {
+        "name":"블레이징 킥",
+        "command":"↓↘→RK",
+        "start_frame":"22",
+        "guard_frame":"-17",
+        "hit_frame":"A",
+        "counter_frame":"A",
+        "range":"중단",
+        "damage":"24",
+        "extra":"토네이도",
+        "startAt": 273,
+        "endAt": 276
       },
       {
         "name":"10단 콤보1",
@@ -1756,7 +1809,7 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"12",
-        "extra":"",
+        "extra":"[힐부]",
         "startAt": 309,
         "endAt": 312
       },
@@ -1764,12 +1817,12 @@
         "name":"로켓 힐2",
         "command":"일어나며 RPLK",
         "start_frame":"14",
-        "guard_frame":"-13",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "guard_frame":"-14",
+        "hit_frame":"T",
+        "counter_frame":"T",
         "range":"중단",
         "damage":"12,24",
-        "extra":"토네이도",
+        "extra":"토네이도[힐부]",
         "startAt": 309,
         "endAt": 312
       },
@@ -1782,9 +1835,10 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"12,23",
-        "extra":"",
+        "extra":"[힐부]",
         "startAt": 314,
-        "endAt": 317
+        "endAt": 317,
+        "color": "blue"
       },
       {
         "name":"인피니티 킥 체인1",
@@ -1895,7 +1949,7 @@
         "command":"몸을 숙인 상태에서 ↘RK",
         "start_frame":"16",
         "guard_frame":"-14",
-        "hit_frame":"-3",
+        "hit_frame":"+3",
         "counter_frame":"D",
         "range":"하단",
         "damage":"17",
@@ -1947,11 +2001,11 @@
         "command":"몸을 숙인 상태에서 ↘↓↘~LK",
         "start_frame":"18",
         "guard_frame":"-15",
-        "hit_frame":"+3",
+        "hit_frame":"+5",
         "counter_frame":"D",
         "range":"하단",
         "damage":"20",
-        "extra":"",
+        "extra":"[슬라이드]",
         "startAt": 346,
         "endAt": 348
       },
@@ -1960,11 +2014,11 @@
         "command":"몸을 숙인 상태에서 ↘↓↘LK(동시에)",
         "start_frame":"18",
         "guard_frame":"-15",
-        "hit_frame":"+3",
+        "hit_frame":"+5",
         "counter_frame":"D",
         "range":"하단",
-        "damage":"23",
-        "extra":"혹은 빠르게 입력\n히트 상태의 남은 시간을 소비\n히트 상태 지속 중에는 저스트 입력 불필요(히트 상태의 남은 시간을 소비,저스트 성공으로 남은 시간 회복)",
+        "damage":"26",
+        "extra":"혹은 빠르게 입력\n히트 상태의 남은 시간을 소비\n히트 상태 지속 중에는 저스트 입력 불필요(히트 상태의 남은 시간을 소비,저스트 성공으로 남은 시간 회복)[슬라이드]",
         "startAt": 353,
         "endAt": 355
       }
@@ -2014,10 +2068,10 @@
         "command":"미스트 스텝 도중 AK",
         "start_frame":"25",
         "guard_frame":"-15",
-        "hit_frame":"+3",
+        "hit_frame":"+5",
         "counter_frame":"D",
         "range":"하단",
-        "damage":"17",
+        "damage":"20",
         "extra":"",
         "startAt": 364,
         "endAt": 367
@@ -2040,11 +2094,11 @@
         "command":"미스트 스텝 도중 ←NRK",
         "start_frame":"21",
         "guard_frame":"-13",
-        "hit_frame":"+3",
+        "hit_frame":"+5",
         "counter_frame":"+12",
         "range":"하단",
-        "damage":"18",
-        "extra":"",
+        "damage":"20",
+        "extra":"카운터 시 보정 70%",
         "startAt": 372,
         "endAt": 374
       }
@@ -2165,7 +2219,8 @@
         "damage":"21,20",
         "extra":"파워 크래시\n호밍기\n가드 대미지\n근거리 정면 히트 시 잡기로",
         "startAt": 404,
-        "endAt": 408
+        "endAt": 408,
+        "color": "blue"
       },
       {
         "name":"신 슬라이서",
@@ -2201,8 +2256,8 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"24",
-        "extra":"히트 발동기\n가드 대미지\n↓~입력 시 직접 몸을 숙인 상태로",
+        "damage":"32",
+        "extra":"가드 대미지\n↓~입력 시 앉은 상태로",
         "startAt": 417,
         "endAt": 421
       },
@@ -2210,12 +2265,12 @@
         "name":"실버 서클",
         "command":"히트맨 도중 ↑RK",
         "start_frame":"26",
-        "guard_frame":"-5",
-        "hit_frame":"+13",
+        "guard_frame":"+5",
+        "hit_frame":"+8",
         "counter_frame":"+13",
         "range":"중단",
         "damage":"20",
-        "extra":"",
+        "extra":"가드 대미지",
         "startAt": 421,
         "endAt": 424
       }

@@ -10,7 +10,7 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬\n스네이크 아이즈를 획득",
+        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬\n스네이크 아이를 획득",
         "startAt": 0,
         "endAt": 2
       },
@@ -19,11 +19,11 @@
         "command":"LPRPRK",
         "start_frame":"10",
         "guard_frame":"-5",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"5,8,24",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 3,
         "endAt": 7
       },
@@ -32,11 +32,11 @@
         "command":"↙AP",
         "start_frame":"15",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단,상단",
         "damage":"8,16",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 8,
         "endAt": 11
       },
@@ -45,24 +45,24 @@
         "command":"→→~RP",
         "start_frame":"13",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"29",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지[마하 펀치]",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득\n가드 대미지[마하 펀치]",
         "startAt": 13,
         "endAt": 16
       },
       {
         "name":"스네이크 팽",
-        "command":"횡이동 중 RPLP",
+        "command":"횡이동 도중 RPLP",
         "start_frame":"17",
         "guard_frame":"-5",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"15,20",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 17,
         "endAt": 20
       },
@@ -71,11 +71,11 @@
         "command":"슬리더 스텝 중 AP",
         "start_frame":"15",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득\n가드 대미지",
         "startAt": 22,
         "endAt": 25
       },
@@ -155,7 +155,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"5,8,24",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 59,
         "endAt": 62
       },
@@ -433,7 +433,7 @@
         "endAt": 120
       },
       {
-        "name":"더블 스핀 토마호크1",
+        "name":"바이퍼 바이트1",
         "command":"RK",
         "start_frame":"12",
         "guard_frame":"-7",
@@ -441,12 +441,23 @@
         "counter_frame":"+6",
         "range":"상단",
         "damage":"15",
-        "extra":"",
+        "extra":"[스나이퍼 체인]",
         "startAt": 121,
         "endAt": 124
       },
       {
-        "name":"더블 스핀 토마호크2",
+        "name":"바이퍼 바이트2",
+        "command":"RKLP",
+        "start_frame":"12",
+        "guard_frame":"-1",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
+        "range":"상단",
+        "damage":"15,15",
+        "extra":"[스나이퍼 체인]"
+      },
+      {
+        "name":"더블 스핀 토마호크1",
         "command":"RKLK",
         "start_frame":"12",
         "guard_frame":"-10",
@@ -459,7 +470,7 @@
         "endAt": 124
       },
       {
-        "name":"더블 스핀 토마호크3",
+        "name":"더블 스핀 토마호크2",
         "command":"RKLKRK",
         "start_frame":"12",
         "guard_frame":"-12",
@@ -467,6 +478,19 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"15,12,16",
+        "extra":"홀드하면 파워가 상승하고 가드 대미지 추가",
+        "startAt": 121,
+        "endAt": 124
+      },
+      {
+        "name":"더블 스핀 토마호크2(홀드)",
+        "command":"RKLKRK 홀드",
+        "start_frame":"40",
+        "guard_frame":"-12",
+        "hit_frame":"D",
+        "counter_frame":"CD",
+        "range":"중단",
+        "damage":"15,12,25",
         "extra":"홀드하면 파워가 상승하고 가드 대미지 추가",
         "startAt": 121,
         "endAt": 124
@@ -589,7 +613,7 @@
         "endAt": 145
       },
       {
-        "name":"라이트 레프트~스핀 킥~스네이크 아이즈",
+        "name":"라이트 레프트~스핀 킥~스네이크 아이",
         "command":"→RPLPRK히트 시AP",
         "start_frame":"15",
         "guard_frame":"-",
@@ -597,7 +621,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"10,12,20",
-        "extra":"스네이크 아이즈를 획득[브살문]",
+        "extra":"스네이크 아이를 획득[브살문]",
         "startAt": 142,
         "endAt": 145
       },
@@ -619,8 +643,8 @@
         "command":"→RK",
         "start_frame":"18",
         "guard_frame":"-9",
-        "hit_frame":"0",
-        "counter_frame":"0",
+        "hit_frame":"+1",
+        "counter_frame":"+1",
         "range":"중단",
         "damage":"10",
         "extra":"",
@@ -644,12 +668,12 @@
         "name":"사이드스텝 엘보",
         "command":"→AP",
         "start_frame":"20",
-        "guard_frame":"-9",
+        "guard_frame":"+1",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"22",
-        "extra":"파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "extra":"가드 대미지",
         "startAt": 153,
         "endAt": 155
       },
@@ -818,7 +842,7 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"17",
-        "extra":"",
+        "extra":"↓~입력 시 직접 앉은 상태로",
         "startAt": 187,
         "endAt": 190
       },
@@ -862,7 +886,7 @@
         "endAt": 190
       },
       {
-        "name":"퀵 로우 스크류 펀치~스네이크 아이즈",
+        "name":"퀵 로우 스크류 펀치~스네이크 아이",
         "command":"↓LKRP히트 시AP",
         "start_frame":"16",
         "guard_frame":"-",
@@ -870,7 +894,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"10,22",
-        "extra":"스네이크 아이즈를 획득",
+        "extra":"스네이크 아이를 획득",
         "startAt": 187,
         "endAt": 190
       },
@@ -1013,7 +1037,7 @@
         "counter_frame":"+4",
         "range":"중단,상단",
         "damage":"8,16",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 217,
         "endAt": 220
       },
@@ -1132,7 +1156,8 @@
         "damage":"18,21",
         "extra":"→RK입력 시 1타 캔슬",
         "startAt": 237,
-        "endAt": 240
+        "endAt": 240,
+        "color": "blue"
       },
       {
         "name":"프런트 킥",
@@ -1408,17 +1433,15 @@
         "endAt": 271
       },
       {
-        "name":"롤링 드라이버",
-        "command":"↗LK",
-        "start_frame":"27",
-        "guard_frame":"-2",
-        "hit_frame":"+15",
-        "counter_frame":"+15",
+        "name":"버서커 발리",
+        "command":"↗LP",
+        "start_frame":"20",
+        "guard_frame":"-13",
+        "hit_frame":"D",
+        "counter_frame":"D",
         "range":"중단",
-        "damage":"15",
-        "extra":"",
-        "startAt": 272,
-        "endAt": 274
+        "damage":"6",
+        "extra":"파워 크래시\n히트 시 스네이크 아이를 획득\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가[매드 맨즈 블로]"
       },
       {
         "name":"블러디 워1",
@@ -1473,6 +1496,19 @@
         "endAt": 278
       },
       {
+        "name":"롤링 드라이버",
+        "command":"↗LK",
+        "start_frame":"27",
+        "guard_frame":"-2",
+        "hit_frame":"+15",
+        "counter_frame":"+15",
+        "range":"중단",
+        "damage":"15",
+        "extra":"",
+        "startAt": 272,
+        "endAt": 274
+      },
+      {
         "name":"오비탈 힐 킥",
         "command":"↗RK",
         "start_frame":"24",
@@ -1486,7 +1522,7 @@
         "endAt": 281
       },
       {
-        "name":"불릿 니~스네이크 아이즈",
+        "name":"불릿 니~스네이크 아이",
         "command":"↗AK",
         "start_frame":"16",
         "guard_frame":"-7",
@@ -1494,7 +1530,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"22",
-        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득",
+        "extra":"토네이도\n히트 시 스네이크 아이를 획득",
         "startAt": 282,
         "endAt": 285
       },
@@ -1520,7 +1556,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"29",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지[마하 펀치]",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득\n가드 대미지[마하 펀치]",
         "startAt": 290,
         "endAt": 293
       },
@@ -1538,7 +1574,7 @@
         "endAt": 298
       },
       {
-        "name":"슬래시 킥~스네이크 아이즈",
+        "name":"슬래시 킥~스네이크 아이",
         "command":"→→~LK히트 시AP",
         "start_frame":"22",
         "guard_frame":"-",
@@ -1546,7 +1582,7 @@
         "counter_frame":"-",
         "range":"-",
         "damage":"25",
-        "extra":"스네이크 아이즈를 획득",
+        "extra":"스네이크 아이를 획득",
         "startAt": 295,
         "endAt": 298
       },
@@ -1754,7 +1790,7 @@
         "counter_frame":"+16",
         "range":"-",
         "damage":"0",
-        "extra":"스네이크 아이즈를 획득",
+        "extra":"스네이크 아이를 획득",
         "startAt": 330,
         "endAt": 333
       },
@@ -1773,7 +1809,7 @@
       },
       {
         "name":"헬레이저",
-        "command":"횡이동 중 LP",
+        "command":"횡이동 도중 LP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"+8",
@@ -1786,7 +1822,7 @@
       },
       {
         "name":"스네이크 팽1",
-        "command":"횡이동 중 RP",
+        "command":"횡이동 도중 RP",
         "start_frame":"17",
         "guard_frame":"-9",
         "hit_frame":"+1",
@@ -1799,14 +1835,14 @@
       },
       {
         "name":"스네이크 팽2",
-        "command":"횡이동 중 RPLP",
+        "command":"횡이동 도중 RPLP",
         "start_frame":"17",
         "guard_frame":"-5",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"15,20",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득",
         "startAt": 369,
         "endAt": 373
       }
@@ -1933,7 +1969,7 @@
     "snake eyes":[
       {
         "name":"네오 소울 이레이저1",
-        "command":"스네이크 아이즈 보유 시AK",
+        "command":"스네이크 아이 보유 시 AK",
         "start_frame":"18",
         "guard_frame":"-13",
         "hit_frame":"+8",
@@ -1946,33 +1982,33 @@
       },
       {
         "name":"네오 소울 이레이저2",
-        "command":"스네이크 아이즈 보유 시AKRP",
+        "command":"스네이크 아이 보유 시 AKRP",
         "start_frame":"18",
         "guard_frame":"-1",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,20",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
         "startAt": 376,
         "endAt": 378
       },
       {
         "name":"네오 소울 이레이저 익시드",
-        "command":"스네이크 아이즈 보유 시AKRP 홀드",
+        "command":"스네이크 아이 보유 시 AKRP 홀드",
         "start_frame":"18(55)",
         "guard_frame":"+9",
         "hit_frame":"T",
         "counter_frame":"T",
         "range":"중단",
         "damage":"20,30",
-        "extra":"토네이도\n스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "extra":"토네이도\n스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
         "startAt": 379,
         "endAt": 384
       },
       {
         "name":"네오 인시너레이터1",
-        "command":"스네이크 아이즈 보유 시→RP",
+        "command":"스네이크 아이 보유 시 →RP",
         "start_frame":"15",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -1985,7 +2021,7 @@
       },
       {
         "name":"네오 인시너레이터2",
-        "command":"스네이크 아이즈 보유 시→RPLP",
+        "command":"스네이크 아이 보유 시 →RPLP",
         "start_frame":"15",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -1998,20 +2034,20 @@
       },
       {
         "name":"네오 인시너레이터3",
-        "command":"스네이크 아이즈 보유 시→RPLPRP",
+        "command":"스네이크 아이 보유 시 →RPLPRP",
         "start_frame":"15",
         "guard_frame":"-2",
         "hit_frame":"+9",
         "counter_frame":"+3",
         "range":"중단",
         "damage":"10,12,5",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
         "startAt": 385,
         "endAt": 389
       },
       {
         "name":"네오 인시너레이터4",
-        "command":"스네이크 아이즈 보유 시→RPLPRPLK",
+        "command":"스네이크 아이 보유 시 →RPLPRPLK",
         "start_frame":"15",
         "guard_frame":"-3",
         "hit_frame":"+11g",
@@ -2024,7 +2060,7 @@
       },
       {
         "name":"네오 인시너레이터5",
-        "command":"스네이크 아이즈 보유 시→RPLPRPLKRP",
+        "command":"스네이크 아이 보유 시 →RPLPRPLKRP",
         "start_frame":"15",
         "guard_frame":"-10",
         "hit_frame":"D",
@@ -2036,8 +2072,20 @@
         "endAt": 389
       },
       {
+        "name":"네오 마더 스트라이크",
+        "command":"스네이크 아이 보유 시 ←AP",
+        "start_frame":"20",
+        "guard_frame":"+7",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단x2",
+        "damage":"9,15",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지\n↓~입력 시 직접 앉은 상태로",
+        "color": "yellow"
+      },
+      {
         "name":"네오 블러디 워1",
-        "command":"스네이크 아이즈 보유 시↗RP",
+        "command":"스네이크 아이 보유 시 ↗RP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -2050,7 +2098,7 @@
       },
       {
         "name":"네오 블러디 워2",
-        "command":"스네이크 아이즈 보유 시↗RPRP",
+        "command":"스네이크 아이 보유 시 ↗RPRP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -2063,7 +2111,7 @@
       },
       {
         "name":"네오 블러디 워3",
-        "command":"스네이크 아이즈 보유 시↗RPRPRP",
+        "command":"스네이크 아이 보유 시 ↗RPRPRP",
         "start_frame":"13",
         "guard_frame":"-10",
         "hit_frame":"+1",
@@ -2076,33 +2124,33 @@
       },
       {
         "name":"네오 블러디 워4",
-        "command":"스네이크 아이즈 보유 시↗RPRPRPRP",
+        "command":"스네이크 아이 보유 시 ↗RPRPRPRP",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"-1",
         "counter_frame":"-1",
         "range":"중단",
         "damage":"6,4,4,9",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지\n반격 불가능",
         "startAt": 390,
         "endAt": 394
       },
       {
         "name":"네오 블러디 워5",
-        "command":"스네이크 아이즈 보유 시↗RPRPRPRPRP",
+        "command":"스네이크 아이 보유 시 ↗RPRPRPRPRP",
         "start_frame":"13",
         "guard_frame":"-12",
         "hit_frame":"-2",
         "counter_frame":"-2",
         "range":"중단",
         "damage":"6,4,4,9,9",
-        "extra":"가드 대미지",
+        "extra":"가드 대미지\n반격 불가능",
         "startAt": 390,
         "endAt": 394
       },
       {
         "name":"네오 블러디 워6",
-        "command":"스네이크 아이즈 보유 시↗RPRPRPRPRPLK",
+        "command":"스네이크 아이 보유 시 ↗RPRPRPRPRPLK",
         "start_frame":"13",
         "guard_frame":"-15",
         "hit_frame":"D",
@@ -2115,16 +2163,30 @@
       },
       {
         "name":"네오 마크 브레이커",
-        "command":"스네이크 아이즈 보유 시→→~AP",
+        "command":"스네이크 아이 보유 시 →→~AP",
         "start_frame":"13",
         "guard_frame":"+5",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"36",
-        "extra":"스네이크 아이즈를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지[네오 마하 펀치]",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지[네오 마하 펀치]",
         "startAt": 396,
         "endAt": 399
+      },
+      {
+        "name":"네오 그림 리퍼",
+        "command":"스네이크 아이 보유 시 몸을 숙인 상태에서 ↘LK",
+        "start_frame":"20",
+        "guard_frame":"-13",
+        "hit_frame":"+7",
+        "counter_frame":"D",
+        "range":"하단",
+        "damage":"24",
+        "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
+        "startAt": 396,
+        "endAt": 399,
+        "color": "blue"
       }
     ],
     "slither step":[
@@ -2181,7 +2243,7 @@
         "endAt": 411
       },
       {
-        "name":"크로스 불릿-스네이크 아이즈",
+        "name":"크로스 불릿-스네이크 아이",
         "command":"↓↘→RPRK",
         "start_frame":"15",
         "guard_frame":"-10",
@@ -2189,7 +2251,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"16,22",
-        "extra":"토네이도\n히트 시 스네이크 아이즈를 획득",
+        "extra":"토네이도\n히트 시 스네이크 아이를 획득",
         "startAt": 415,
         "endAt": 417
       },
@@ -2254,7 +2316,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"28",
-        "extra":"히트 발동기\n히트 발동 시 스네이크 아이즈를 획득\n가드 대미지",
+        "extra":"히트 발동기\n히트 발동 시 스네이크 아이를 획득\n가드 대미지",
         "startAt": 431,
         "endAt": 434
       }
@@ -2438,26 +2500,26 @@
       "endAt": 494
     },
     {
-      "name":"패리~마크 브레이커~스네이크 아이즈",
+      "name":"패리~마크 브레이커~스네이크 아이",
       "command":"패리 성공 후 RP",
       "start_frame":"13",
       "break_command":"-",
       "after_break_frame":"-",
       "damage":"30",
       "range":"상단",
-      "extra":"RP를 입력하면 추가타[패리~마하 펀치~스네이크 아이즈]",
+      "extra":"RP를 입력하면 추가타[패리~마하 펀치~스네이크 아이]",
       "startAt": 496,
       "endAt": 499
     },
     {
       "name":"이모탈 페이백",
-      "command":"스네이크 아이즈 보유 시 상대의 공격에 맞춰서 →→~AP",
+      "command":"스네이크 아이 보유 시 상대의 공격에 맞춰서 →→~AP",
       "start_frame":"5~14",
       "break_command":"-",
       "after_break_frame":"-",
       "damage":"36",
       "range":"상단",
-      "extra":"히트 시 스네이크 아이즈를 획득\n가드 대미지",
+      "extra":"히트 시 스네이크 아이를 획득\n가드 대미지",
       "startAt": 500,
       "endAt": 503
     }

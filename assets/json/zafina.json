@@ -10,7 +10,7 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 캔슬",
+        "extra":"스케어크로 자세 도중에도 사용 가능\n아나세마 상태로\n파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 캔슬",
         "startAt": 0,
         "endAt": 3
       },
@@ -19,11 +19,11 @@
         "command":"→AP",
         "start_frame":"19",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단x2",
         "damage":"16,22",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 4,
         "endAt": 7
       },
@@ -32,11 +32,11 @@
         "command":"↘RKLP",
         "start_frame":"14",
         "guard_frame":"-12",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"14,22",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)\n↓~입력 시 캔슬하고 몸을 숙인 상태로",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)\n↓~입력 시 캔슬하고 몸을 숙인 상태로",
         "startAt": 8,
         "endAt": 12
       },
@@ -45,11 +45,11 @@
         "command":"스케어크로 자세 도중 RPLP",
         "start_frame":"14",
         "guard_frame":"-6",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"17,25",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 12,
         "endAt": 16
       },
@@ -58,11 +58,11 @@
         "command":"타란튤라 자세 도중 ↘LP",
         "start_frame":"19",
         "guard_frame":"-7",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 17,
         "endAt": 21
       },
@@ -71,11 +71,11 @@
         "command":"맨티스 자세 도중 ↘LP",
         "start_frame":"24",
         "guard_frame":"+6",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 22,
         "endAt": 26
       },
@@ -91,19 +91,6 @@
         "extra":"히트 시 잡기로",
         "startAt": 27,
         "endAt": 31
-      },
-      {
-        "name":"맬리스 오브 아자젤",
-        "command":"히트 상태에서 스케어크로 자세 도중 RP+LK",
-        "start_frame":"19",
-        "guard_frame":"-14",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"하단",
-        "damage":"10,20",
-        "extra":"",
-        "startAt": 33,
-        "endAt": 38
       }
     ],
     "general":[
@@ -134,7 +121,7 @@
         "endAt": 57
       },
       {
-        "name":"레프트 라이트 스케어크로~스케어크로 자세",
+        "name":"레프트 라이트 스케어크로~스케어크로",
         "command":"LPRPLK",
         "start_frame":"10",
         "guard_frame":"0",
@@ -160,7 +147,7 @@
         "endAt": 60
       },
       {
-        "name":"안주~스케어크로 자세",
+        "name":"안주~스케어크로",
         "command":"LPLK",
         "start_frame":"10",
         "guard_frame":"-2",
@@ -190,7 +177,7 @@
         "command":"LPRK",
         "start_frame":"10",
         "guard_frame":"-5",
-        "hit_frame":"+22g",
+        "hit_frame":"+8",
         "counter_frame":"D",
         "range":"중단",
         "damage":"5,17",
@@ -277,7 +264,7 @@
         "endAt": 74
       },
       {
-        "name":"샤루르~스케어크로 자세",
+        "name":"샤루르~스케어크로",
         "command":"LK",
         "start_frame":"13",
         "guard_frame":"0",
@@ -368,7 +355,7 @@
         "endAt": 86
       },
       {
-        "name":"에티무2~스케어크로 자세",
+        "name":"에티무2~스케어크로",
         "command":"→RPLK",
         "start_frame":"19",
         "guard_frame":"0",
@@ -407,15 +394,15 @@
         "endAt": 80
       },
       {
-        "name":"스케어크로 사이드 킥~스케어크로 자세",
+        "name":"스케어크로 사이드 킥~스케어크로",
         "command":"→LK",
-        "start_frame":"21",
+        "start_frame":"17",
         "guard_frame":"+3",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"28",
-        "extra":"스케어크로 자세로\n←~입력 시 서 있는 상태로",
+        "extra":"스케어크로 자세로\n←~입력 시 서 있는 상태로\n상대방의 시계 횡에 민감하게 반응하는 성능을 지님",
         "startAt": 87,
         "endAt": 90
       },
@@ -454,7 +441,7 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"16,22",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 96,
         "endAt": 100
       },
@@ -485,25 +472,50 @@
         "endAt": 104
       },
       {
-        "name":"블러디 사이프-엑시큐션",
+        "name":"블러디 사이프-엑시큐션~스케어크로",
         "command":"↘LPRPLP",
         "start_frame":"13",
-        "guard_frame":"-13",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "guard_frame":"-12",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
         "range":"중단",
-        "damage":"10,16,20",
+        "damage":"10,16,16",
+        "extra":"스케어크로 자세로\n←~입력 시 선 자세로",
+        "startAt": 101,
+        "endAt": 104
+      },
+      {
+        "name":"블러디 사이프-엑시큐션",
+        "command":"↘LPRPLP←~",
+        "start_frame":"13",
+        "guard_frame":"-12",
+        "hit_frame":"+4",
+        "counter_frame":"+4",
+        "range":"중단",
+        "damage":"10,16,16",
         "extra":"",
         "startAt": 101,
         "endAt": 104
+      },
+      {
+        "name":"칼라미티 트리펙타",
+        "command":"↘LPRP 히트 혹은 가드 시 AP",
+        "start_frame":"13",
+        "guard_frame":"-9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"특수 중단x3",
+        "damage":"10,16,10,10,20",
+        "extra":"월 블래스트\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "color": "yellow"
       },
       {
         "name":"샤프 샴시르",
         "command":"↘LPRK",
         "start_frame":"13",
         "guard_frame":"-6",
-        "hit_frame":"+12g",
-        "counter_frame":"+12g",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
         "range":"상단",
         "damage":"10,18",
         "extra":"",
@@ -524,7 +536,7 @@
         "endAt": 111
       },
       {
-        "name":"듀얼링 시미터즈1~스케어크로 자세",
+        "name":"듀얼링 시미터즈1~스케어크로",
         "command":"↘LK",
         "start_frame":"15",
         "guard_frame":"-5",
@@ -591,13 +603,13 @@
       {
         "name":"미아즈마 베어러2",
         "command":"↘RKLP",
-        "start_frame":"14",
-        "guard_frame":"-12",
+        "start_frame":"13",
+        "guard_frame":"-9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,22",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)\n↓~입력 시 캔슬하고 몸을 숙이는 상태로",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)\n↓~입력 시 캔슬하고 몸을 숙이는 상태로",
         "startAt": 119,
         "endAt": 122
       },
@@ -626,19 +638,6 @@
         "extra":"토네이도",
         "startAt": 134,
         "endAt": 137
-      },
-      {
-        "name":"쿠르",
-        "command":"↘RP+LK",
-        "start_frame":"36",
-        "guard_frame":"-9",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"중단",
-        "damage":"20",
-        "extra":"호밍기",
-        "startAt": 138,
-        "endAt": 141
       },
       {
         "name":"닝기슈지다1",
@@ -787,8 +786,8 @@
         "name":"백핸드 쓰러스트",
         "command":"↙RP",
         "start_frame":"13",
-        "guard_frame":"-9",
-        "hit_frame":"+#",
+        "guard_frame":"-13",
+        "hit_frame":"+3",
         "counter_frame":"D",
         "range":"중단",
         "damage":"17",
@@ -797,7 +796,43 @@
         "endAt": 164
       },
       {
-        "name":"아키나케스~스케어크로 자세",
+        "name":"슐샤가~스케어크로",
+        "command":"↙RPLP",
+        "start_frame":"13",
+        "guard_frame":"-9",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
+        "range":"중단",
+        "damage":"17,16",
+        "extra":"스케어크로 자세로\n←~입력 시 서 있는 상태로",
+        "color": "yellow"
+      },
+      {
+        "name":"슐르샤가",
+        "command":"↙RPLP←~",
+        "start_frame":"13",
+        "guard_frame":"-12",
+        "hit_frame":"+4",
+        "counter_frame":"+4",
+        "range":"중단",
+        "damage":"17,16",
+        "extra":"",
+        "color": "yellow"
+      },
+      {
+        "name":"칼라미티 볼텍스",
+        "command":"↙RP 히트 혹은 가드 시 AP",
+        "start_frame":"13",
+        "guard_frame":"-9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"특수 중단x3",
+        "damage":"17,10,10,20",
+        "extra":"월 블래스트\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "color": "yellow"
+      },
+      {
+        "name":"아키나케스~스케어크로",
         "command":"↙LK",
         "start_frame":"18",
         "guard_frame":"-8",
@@ -902,14 +937,14 @@
       },
       {
         "name":"커스드 클로2",
-        "command":"←LP 정면 히트 시 AP",
+        "command":"←LP 정면 히트 시 LP",
         "start_frame":"18",
         "guard_frame":"-",
         "hit_frame":"-",
         "counter_frame":"-",
-        "range":"연계",
+        "range":"잡기",
         "damage":"50",
-        "extra":"히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"시즌 1 ←LP 정면 히트 시 AP\n히트 시 아나세마 상태로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 184,
         "endAt": 188
       },
@@ -918,8 +953,8 @@
         "command":"←RP",
         "start_frame":"22",
         "guard_frame":"-5",
-        "hit_frame":"+12",
-        "counter_frame":"+12",
+        "hit_frame":"+14",
+        "counter_frame":"+14",
         "range":"상단",
         "damage":"22",
         "extra":"호밍기",
@@ -966,17 +1001,30 @@
         "endAt": 200
       },
       {
+        "name":"이블 레이저",
+        "command":"←AP",
+        "start_frame":"22",
+        "guard_frame":"-6",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"27",
+        "extra":"월 블래스트\n호밍기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "color": "yellow"
+      },
+      {
         "name":"스피어 오브 알루",
-        "command":"←RP+LK",
+        "command":"↖AP",
         "start_frame":"64",
         "guard_frame":"-",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"가불",
         "damage":"40",
-        "extra":"",
+        "extra":"시즌 1 ←RP+LK",
         "startAt": 200,
-        "endAt": 204
+        "endAt": 204,
+        "color": "blue"
       },
       {
         "name":"라피스 대거",
@@ -992,6 +1040,20 @@
         "endAt": 206
       },
       {
+        "name":"쿠르",
+        "command":"↗RP",
+        "start_frame":"36",
+        "guard_frame":"-9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"20",
+        "extra":"시즌 1 ↘RP+LK\n호밍기",
+        "startAt": 138,
+        "endAt": 141,
+        "color": "blue"
+      },
+      {
         "name":"아랄리",
         "command":"↗LK",
         "start_frame":"22",
@@ -999,10 +1061,11 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"25",
+        "damage":"19",
         "extra":"혹은 ↖LK 혹은 ↑LK",
         "startAt": 207,
-        "endAt": 209
+        "endAt": 209,
+        "color": "blue"
       },
       {
         "name":"라합",
@@ -1031,7 +1094,7 @@
         "endAt": 219
       },
       {
-        "name":"사가리스 스매시1~스케어크로 자세",
+        "name":"사가리스 스매시1~스케어크로",
         "command":"→→~LK",
         "start_frame":"20",
         "guard_frame":"+4",
@@ -1062,9 +1125,9 @@
         "start_frame":"17",
         "guard_frame":"-8",
         "hit_frame":"D",
-        "counter_frame":"D",
+        "counter_frame":"+6g",
         "range":"중단",
-        "damage":"20",
+        "damage":"16",
         "extra":"호밍기",
         "startAt": 226,
         "endAt": 228
@@ -1125,14 +1188,15 @@
         "name":"티아마츠~타란튤라 자세",
         "command":"→→→~AP",
         "start_frame":"20",
-        "guard_frame":"+8",
+        "guard_frame":"+6",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
         "damage":"20",
         "extra":"가드 대미지\n타란튤라 자세로",
         "startAt": 238,
-        "endAt": 241
+        "endAt": 241,
+        "color": "blue"
       },
       {
         "name":"타란튤라 다이브",
@@ -1422,7 +1486,7 @@
       },
       {
         "name":"아드라멜렉",
-        "command":"횡이동 중 AP",
+        "command":"횡이동 도중 AP",
         "start_frame":"17",
         "guard_frame":"-2",
         "hit_frame":"+8",
@@ -1488,14 +1552,14 @@
         "endAt": 275
       },
       {
-        "name":"샤르가즈~스케어크로 자세",
+        "name":"샤르가즈~스케어크로",
         "command":"일어나며 LK",
         "start_frame":"12",
         "guard_frame":"0",
         "hit_frame":"+9",
         "counter_frame":"+9",
         "range":"중단",
-        "damage":"20",
+        "damage":"16",
         "extra":"스케어크로 자세로\n←~입력 시 서 있는 상태로",
         "startAt": 276,
         "endAt": 278
@@ -1555,7 +1619,7 @@
         "endAt": 294
       },
       {
-        "name":"스케어크로 나이트메어1~스케어크로 자세",
+        "name":"스케어크로 나이트메어1~스케어크로",
         "command":"스케어크로 자세 도중 LP",
         "start_frame":"10",
         "guard_frame":"-2",
@@ -1581,7 +1645,7 @@
         "endAt": 299
       },
       {
-        "name":"바이널 베놈1~스케어크로 자세",
+        "name":"바이널 베놈1~스케어크로",
         "command":"스케어크로 자세 도중 RP",
         "start_frame":"14",
         "guard_frame":"-7",
@@ -1602,7 +1666,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"17,25",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 299,
         "endAt": 303
       },
@@ -1620,7 +1684,7 @@
         "endAt": 307
       },
       {
-        "name":"기잘1~스케어크로 자세",
+        "name":"기잘1~스케어크로",
         "command":"스케어크로 자세 도중 LK",
         "start_frame":"13",
         "guard_frame":"-6",
@@ -1633,7 +1697,7 @@
         "endAt": 311
       },
       {
-        "name":"기잘2~스케어크로 자세",
+        "name":"기잘2~스케어크로",
         "command":"스케어크로 자세 도중 LKLK",
         "start_frame":"13",
         "guard_frame":"0",
@@ -1682,7 +1746,8 @@
         "damage":"10,20",
         "extra":"",
         "startAt": 319,
-        "endAt": 322
+        "endAt": 322,
+        "color": "blue"
       },
       {
         "name":"다크 라이징",
@@ -1692,23 +1757,10 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단x2",
-        "damage":"10,20",
-        "extra":"토네이도\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "damage":"10,30",
+        "extra":"토네이도\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 322,
         "endAt": 325
-      },
-      {
-        "name":"다크 라이징(히트 상태)",
-        "command":"히트 상태에서 스케어크로 자세 도중 ↘LP",
-        "start_frame":"18",
-        "guard_frame":"-9",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"중단x2",
-        "damage":"10,20",
-        "extra":"토네이도\n파워 크래시\n가드 대미지\n히트 상태의 남은 시간을 소비",
-        "startAt": 331,
-        "endAt": 334
       },
       {
         "name":"압주 어비스",
@@ -1750,7 +1802,7 @@
         "endAt": 343
       },
       {
-        "name":"상기가 시클1~스케어크로 자세",
+        "name":"상기가 시클1~스케어크로",
         "command":"스케어크로 자세 도중 ↓LK",
         "start_frame":"18",
         "guard_frame":"-6",
@@ -1763,7 +1815,7 @@
         "endAt": 348
       },
       {
-        "name":"상기가 시클2~스케어크로 자세",
+        "name":"상기가 시클2~스케어크로",
         "command":"스케어크로 자세 도중 ↓LKLK",
         "start_frame":"18",
         "guard_frame":"+3",
@@ -1818,12 +1870,12 @@
         "name":"이난나즈 퓨리",
         "command":"스케어크로 자세 도중 ←AP",
         "start_frame":"16",
-        "guard_frame":"-17",
-        "hit_frame":"+3",
-        "counter_frame":"D",
+        "guard_frame":"-18",
+        "hit_frame":"+23g",
+        "counter_frame":"+23g",
         "range":"하단",
-        "damage":"16",
-        "extra":"[오징어]",
+        "damage":"20",
+        "extra":"히트 시 아나세마 상태로\n히트 상태 이외에는 자신에게 대미지(회복 가능)[오징어]",
         "startAt": 355,
         "endAt": 358
       }
@@ -1859,9 +1911,9 @@
         "name":"타란튤라 커틀러스",
         "command":"타란튤라 자세 도중 RP",
         "start_frame":"34",
-        "guard_frame":"-9",
-        "hit_frame":"A",
-        "counter_frame":"A",
+        "guard_frame":"-13",
+        "hit_frame":"D",
+        "counter_frame":"D",
         "range":"중단",
         "damage":"24",
         "extra":"토네이도",
@@ -1873,8 +1925,8 @@
         "command":"타란튤라 자세 도중 LK",
         "start_frame":"14",
         "guard_frame":"-7",
-        "hit_frame":"D",
-        "counter_frame":"D",
+        "hit_frame":"+5",
+        "counter_frame":"+19",
         "range":"중단",
         "damage":"16",
         "extra":"타란튤라 자세로",
@@ -1916,7 +1968,7 @@
         "counter_frame":"D",
         "range":"중단x2",
         "damage":"7,20",
-        "extra":"",
+        "extra":"호밍기",
         "startAt": 376,
         "endAt": 379
       },
@@ -1929,22 +1981,9 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 생태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 381,
         "endAt": 385
-      },
-      {
-        "name":"프리미티브 그럿지(히트 상태)",
-        "command":"히트 상태에서 타란튤라 자세 도중 ↘LP",
-        "start_frame":"19",
-        "guard_frame":"+6",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"중단",
-        "damage":"30",
-        "extra":"파워 크래시\n가드 대미지\n히트 상태의 남은 시간을 소비",
-        "startAt": 386,
-        "endAt": 389
       },
       {
         "name":"타란튤라 시미터~맨티스 자세로",
@@ -1988,7 +2027,7 @@
         "endAt": 400
       },
       {
-        "name":"버터플라이 캡처 콤보~스케어크로 자세",
+        "name":"버터플라이 캡처 콤보~스케어크로",
         "command":"맨티스 자세 도중 LPLK",
         "start_frame":"13",
         "guard_frame":"0",
@@ -2001,7 +2040,7 @@
         "endAt": 400
       },
       {
-        "name":"버터플라이 캡처 콤보~선 자세",
+        "name":"버터플라이 캡처 콤보",
         "command":"맨티스 자세 도중 LPLK←~",
         "start_frame":"13",
         "guard_frame":"-8",
@@ -2144,30 +2183,30 @@
         "endAt": 421
       },
       {
-        "name":"비셔스 클로",
+        "name":"비셔스 클로~스케어크로",
         "command":"맨티스 자세 도중 ↘LP",
-        "start_frame":"24",
-        "guard_frame":"+6",
+        "start_frame":"20",
+        "guard_frame":"+10",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"히트 발동기\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n스케어크로 자세로(히트 대시, 히트 발동 시에는 이행하지 않음)\n←~입력 시 선 자세로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
         "startAt": 422,
         "endAt": 425
       },
       {
-        "name":"비셔스 클로(히트 상태)",
-        "command":"히트 상태에서 맨티스 자세 도중 ↘LP",
-        "start_frame":"24",
+        "name":"비셔스 클로",
+        "command":"맨티스 자세 도중 ↘LP←~",
+        "start_frame":"20",
         "guard_frame":"+6",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"30",
-        "extra":"파워 크래시\n가드 대미지\n히트 상태의 남은 시간을 소비",
-        "startAt": 426,
-        "endAt": 4230
+        "extra":"히트 발동기\n히트 시 아나세마 상태로\n가드 대미지\n스케어크로 자세로(히트 대시, 히트 발동 시에는 이행하지 않음)\n←~입력 시 선 자세로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+        "startAt": 422,
+        "endAt": 425
       },
       {
         "name":"엔릴",
@@ -2273,6 +2312,56 @@
         "startAt": 452,
         "endAt": 454
       }
+    ],
+    "anathema": [
+      {
+        "name":"아나세마틱 클로",
+        "command":"아나세마 상태에서 ←LP 정면 히트 시 AP",
+        "start_frame":"18",
+        "guard_frame":"-",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"잡기",
+        "damage":"59",
+        "extra":"아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
+        "color": "yellow"
+      },
+      {
+        "name":"아나세마틱 스톰프",
+        "command":"아나세마 상태에서 ←LK 히트 혹은 가드 시 AP",
+        "start_frame":"24",
+        "guard_frame":"-9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단x2",
+        "damage":"13,8,20",
+        "extra":"1타 가드 시 강제 가드\n월 블래스트\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
+        "color": "yellow"
+      },
+      {
+        "name":"아나세마틱 레이저",
+        "command":"아나세마 상태에서 ←AP 히트 혹은 가드 시 AP",
+        "start_frame":"19",
+        "guard_frame":"+4",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단x2",
+        "damage":"13,5,15",
+        "extra":"1타 가드 시 강제 가드\n월 블래스트\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
+        "color": "yellow"
+      },
+      {
+        "name":"아나세마틱 말리스",
+        "command":"아나세마 상태에서 스케어크로 자세 도중 ↘AK",
+        "start_frame":"19",
+        "guard_frame":"-14",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단x2",
+        "damage":"6,15,6,14",
+        "extra":"1타 가드 시 강제 가드\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
+        "color": "yellow"
+      }
     ]
   },
   "throws":[
@@ -2356,7 +2445,7 @@
       "after_break_frame":"-",
       "damage":"40",
       "range":"반격",
-      "extra":"파워 크래시\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
+      "extra":"파워 크래시\n히트 시 아나세마 상태로\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
       "startAt": 489,
       "endAt": 493
     }

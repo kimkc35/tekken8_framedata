@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+// import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,30 +14,12 @@ TextStyle headerStyle = TextStyle(color: Colors.black);
 
 const TextScaler headerScale = TextScaler.linear(0.8);
 
-Container heatSystemContexts(List<String> addition){
-  return Container(
-    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Text("1. 모든 공격에 가드 대미지 효과가 붙음 (공통)", style: contextStyle),
-        Text("2. 콤보나 공격의 기점이 되는 히트 대시 발동 가능(발동 후 히트 상태 종료) (공통)", style: contextStyle),
-        Text("3. 대미지가 높은 큰 기술 히트 스매시 발동 가능(발동 후 히트 상태 종료) (공통)", style: contextStyle),
-        for(var i = 0; i < addition.length; i++)...[
-          Text("${i + 4}. ${addition[i]}", style: contextStyle,)
-        ]
-      ],
-    ),
-  );
-}
-
 memo (BuildContext context, Character character, Info info) {
 
   TextEditingController controller = TextEditingController();
 
   YoutubePlayerController youtubeController = YoutubePlayerController(
-    initialVideoId: character.videoId,
+    initialVideoId: info.extraVideo ?? character.videoId,
     flags: YoutubePlayerFlags(
         forceHD: true,
         loop: true,
@@ -56,7 +38,7 @@ memo (BuildContext context, Character character, Info info) {
           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
         },
         child:
-        (character.videoId == "" || info.endAt == null)
+        (character.videoId == "" || info.endAt == null || info.extraVideo == null)
            ? AlertDialog(content: Text("영상이 없습니다."),) :
         Dialog(
           insetPadding: EdgeInsets.zero,
@@ -209,7 +191,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
   }
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("${moveInfo.name}\n${context.locale.languageCode == "ko" ? moveInfo.command : changeCommand(moveInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
+    DataCell(Container(padding: EdgeInsets.all(7),width: 150, child: Text("${moveInfo.name}\n${moveInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(moveInfo.startFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(moveInfo.guardFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: Text.rich(TextSpan(children: [
@@ -268,7 +250,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
     ]else...[
       DataCell(SizedBox(width: listWidth, child: Text(moveInfo.counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
-    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? moveInfo.range : changeRange(moveInfo.range),textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(moveInfo.range,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(SizedBox(width: 50, child: Text(moveInfo.damage,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -284,7 +266,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       textStylePunish = TextStyle( color: Colors.red,);
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${context.locale.languageCode == "ko" ? throwInfo.command : changeCommand(throwInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${throwInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(throwInfo.startFrame, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     DataCell(SizedBox(width: 40, child: Text(throwInfo.breakCommand, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
     if(throwInfo.afterBreakFrame.contains("+") && throwInfo.afterBreakFrame.contains("-") && throwInfo.afterBreakFrame != "-")...[ //풀기 후 F
@@ -301,7 +283,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       DataCell(SizedBox(width: 30, child: Text(throwInfo.afterBreakFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
     DataCell(SizedBox(width: 50, child: Text(throwInfo.damage, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
-    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? throwInfo.range : changeRange(throwInfo.range), textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(throwInfo.range, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(throwInfo.extra, textAlign: TextAlign.start, textScaler: textScale, style: textStyleDefault),

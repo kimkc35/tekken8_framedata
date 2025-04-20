@@ -10,7 +10,7 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "extra":"재규어 스프린트 도중에도 사용 가능\n파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
         "startAt": 0,
         "endAt": 4
       },
@@ -19,8 +19,8 @@
         "command":"→RPLP",
         "start_frame":"15",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"12,25",
         "extra":"히트 발동기",
@@ -32,8 +32,8 @@
         "command":"→RP+LK",
         "start_frame":"20",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"27",
         "extra":"히트 발동기",
@@ -88,7 +88,7 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,40",
-        "extra":"가드 시 재규어 스프린트로",
+        "extra":"재규어 스프린트 도중에도 사용 가능\n가드 시 재규어 스프린트로",
         "startAt": 37,
         "endAt": 42
       }
@@ -210,6 +210,66 @@
         "extra":"",
         "startAt": 93,
         "endAt": 95
+      },
+      {
+        "name":"스탬피드 크러쉬1",
+        "command":"LK",
+        "start_frame":"15",
+        "guard_frame":"-9",
+        "hit_frame":"+2",
+        "counter_frame":"+2",
+        "range":"상단",
+        "damage":"17",
+        "extra":"",
+        "color": "yellow"
+      },
+      {
+        "name":"스탬피드 크러쉬2",
+        "command":"LKRP",
+        "start_frame":"15",
+        "guard_frame":"-9",
+        "hit_frame":"+5",
+        "counter_frame":"+5",
+        "range":"중단",
+        "damage":"17,18",
+        "extra":"",
+        "color": "yellow"
+      },
+      {
+        "name":"스탬피드 크러쉬3",
+        "command":"LKRPRP",
+        "start_frame":"15",
+        "guard_frame":"-13",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"17,18,24",
+        "extra":"히트 시 재규어 스프린트로(←~입력 시 이행하지 않음)\n홀드 가능",
+        "color": "yellow"
+      },
+      {
+        "name":"스탬피드 크러쉬3(홀드)",
+        "command":"LKRPRP 홀드",
+        "start_frame":"15",
+        "guard_frame":"+9",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"17,18,30",
+        "extra":"히트 혹은 가드 시 재규어 스프린트로(←~입력 시 이행하지 않음)",
+        "color": "yellow"
+      },
+      {
+        "name":"스탬피드 크러쉬3(홀드)",
+        "command":"LKRPRP 홀드←~",
+        "start_frame":"15",
+        "guard_frame":"+4",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"17,18,30",
+        "extra":"히트 혹은 가드 시 재규어 스프린트로(←~입력 시 이행하지 않음)",
+        "color": "yellow"
       },
       {
         "name":"헤드 스피너1",
@@ -636,7 +696,7 @@
         "counter_frame":"-9",
         "range":"하단",
         "damage":"14",
-        "extra":"혹은 몸을 숙인 상태에서↘RK\n혹은 두 발짝 이상 달리는 도중→~RK",
+        "extra":"혹은 몸을 숙인 상태에서↘RK\n혹은 두 발짝 이상 달리는 도중→~RK[아리킥]",
         "startAt": 189,
         "endAt": 193
       },
@@ -649,7 +709,7 @@
         "counter_frame":"-9",
         "range":"하단",
         "damage":"14,7",
-        "extra":"",
+        "extra":"[아리킥]",
         "startAt": 189,
         "endAt": 193
       },
@@ -657,12 +717,12 @@
         "name":"스태거 킥스3",
         "command":"↓AKRKRK",
         "start_frame":"16",
-        "guard_frame":"-29",
-        "hit_frame":"+7",
-        "counter_frame":"+7",
+        "guard_frame":"-25",
+        "hit_frame":"-9",
+        "counter_frame":"-9",
         "range":"하단",
         "damage":"14,7,7",
-        "extra":"",
+        "extra":"[아리킥]",
         "startAt": 189,
         "endAt": 193
       },
@@ -766,7 +826,7 @@
         "counter_frame":"+8",
         "range":"중단",
         "damage":"15,20",
-        "extra":"히트 발동기\n파워 크래시\n정면 지상 히트 시 잡기로(히트 대시 발동 시에는 이행하지 않음)\n잡기 성립 시 히트 발동\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
+        "extra":"히트 발동기\n파워 크래시\n정면 지상 히트 시 잡기로(히트 대시 발동 시에는 이행하지 않음)\n잡기 성립 시 히트 발동\n잡기 도중 AK 입력 시 재규어 스프린트로\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
         "startAt": 217,
         "endAt": 221
       },
@@ -1448,7 +1508,7 @@
       },
       {
         "name":"빅토리 팜",
-        "command":"횡이동 중 RP",
+        "command":"횡이동 도중 RP",
         "start_frame":"19",
         "guard_frame":"-5",
         "hit_frame":"D",
@@ -1461,7 +1521,7 @@
       },
       {
         "name":"데들리 부메랑",
-        "command":"횡이동 중 AK",
+        "command":"횡이동 도중 AK",
         "start_frame":"21",
         "guard_frame":"0",
         "hit_frame":"D",
@@ -1561,7 +1621,7 @@
         "counter_frame":"+12g",
         "range":"중단",
         "damage":"11,25",
-        "extra":"",
+        "extra":"월 블래스트\n히트 시 재규어 스프린트로(←~입력 시 이행하지 않음)",
         "startAt": 398,
         "endAt": 401
       },
@@ -1593,7 +1653,7 @@
       },
       {
         "name":"레그 브레이커",
-        "command":"몸을 숙인 상태에서↘LP",
+        "command":"몸을 숙인 상태에서 ↘LP",
         "start_frame":"32",
         "guard_frame":"-12",
         "hit_frame":"T",
@@ -1606,7 +1666,7 @@
       },
       {
         "name":"보디 블로",
-        "command":"몸을 숙인 상태에서↘RP",
+        "command":"몸을 숙인 상태에서 ↘RP",
         "start_frame":"15",
         "guard_frame":"-14",
         "hit_frame":"D",
@@ -1675,7 +1735,7 @@
       },
       {
         "name":"재규어 스텝~훅",
-        "command":"재규어 스텝 도중LP",
+        "command":"재규어 스텝 도중 LP",
         "start_frame":"17",
         "guard_frame":"-7",
         "hit_frame":"D",
@@ -1688,7 +1748,7 @@
       },
       {
         "name":"재규어 스텝~해머",
-        "command":"재규어 스텝 도중RP",
+        "command":"재규어 스텝 도중 RP",
         "start_frame":"11",
         "guard_frame":"-9",
         "hit_frame":"+12",
@@ -1701,7 +1761,7 @@
       },
       {
         "name":"재규어 스텝~소뱃",
-        "command":"재규어 스텝 도중LK",
+        "command":"재규어 스텝 도중 LK",
         "start_frame":"22",
         "guard_frame":"-5",
         "hit_frame":"D",
@@ -1710,11 +1770,12 @@
         "damage":"23",
         "extra":"",
         "startAt": 467,
-        "endAt": 470
+        "endAt": 470,
+        "color": "blue"
       },
       {
         "name":"재규어 스텝~소뱃 & 프레스",
-        "command":"재규어 스텝 도중LKRP+LK",
+        "command":"재규어 스텝 도중 LKRP+LK",
         "start_frame":"22",
         "guard_frame":"-16",
         "hit_frame":"D",
@@ -1727,7 +1788,7 @@
       },
       {
         "name":"재규어 스텝~하이 킥",
-        "command":"재규어 스텝 도중RK",
+        "command":"재규어 스텝 도중 RK",
         "start_frame":"17",
         "guard_frame":"+8",
         "hit_frame":"D",
@@ -1740,7 +1801,7 @@
       },
       {
         "name":"재규어 스텝~미드 킥",
-        "command":"재규어 스텝 도중↘RK",
+        "command":"재규어 스텝 도중 ↘RK",
         "start_frame":"17",
         "guard_frame":"-17",
         "hit_frame":"D",
@@ -1768,7 +1829,7 @@
       },
       {
         "name":"러닝 엘보 스매시",
-        "command":"재규어 스프린트 도중LP",
+        "command":"재규어 스프린트 도중 LP",
         "start_frame":"16",
         "guard_frame":"-8",
         "hit_frame":"D",
@@ -1781,7 +1842,7 @@
       },
       {
         "name":"러닝 엘보 스매시(히트 상태)",
-        "command":"히트 상태에서 재규어 스프린트 도중LP",
+        "command":"히트 상태에서 재규어 스프린트 도중 LP",
         "start_frame":"16",
         "guard_frame":"-8",
         "hit_frame":"T",
@@ -1794,20 +1855,35 @@
       },
       {
         "name":"재규어 액스",
-        "command":"재규어 스프린트 도중RP",
+        "command":"재규어 스프린트 도중 RP",
         "start_frame":"18",
         "guard_frame":"+3",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"26",
+        "damage":"24",
         "extra":"가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)",
-        "startAt": 491,
-        "endAt": 494
+        "startAt": 496,
+        "endAt": 499,
+        "color": "blue"
+      },
+      {
+        "name":"재규어 액스(히트 상태)",
+        "command":"히트 상태에서 재규어 스프린트 도중 RP",
+        "start_frame":"18",
+        "guard_frame":"+8",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"상단",
+        "damage":"28",
+        "extra":"가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)",
+        "startAt": 496,
+        "endAt": 499,
+        "color": "blue"
       },
       {
         "name":"스프린트 K.",
-        "command":"재규어 스프린트 도중LK",
+        "command":"재규어 스프린트 도중 LK",
         "start_frame":"22",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -1820,7 +1896,7 @@
       },
       {
         "name":"대싱 로우 드롭 킥",
-        "command":"재규어 스프린트 도중RK",
+        "command":"재규어 스프린트 도중 RK",
         "start_frame":"20",
         "guard_frame":"-21",
         "hit_frame":"0",
@@ -1833,7 +1909,7 @@
       },
       {
         "name":"래피드 킹 온슬로트",
-        "command":"재규어 스프린트 도중AL 혹은 AR",
+        "command":"재규어 스프린트 도중 AL 혹은 AR",
         "start_frame":"23",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1846,14 +1922,14 @@
       },
       {
         "name":"다이빙 보디 프레스",
-        "command":"재규어 스프린트 도중RP+LK",
+        "command":"재규어 스프린트 도중 AP",
         "start_frame":"21",
         "guard_frame":"-16",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
         "damage":"20,15",
-        "extra":"근거리 정면 히트 시 잡기로",
+        "extra":"시즌 1 재규어 스프린트 도중 RP+LK\n근거리 정면 히트 시 잡기로",
         "startAt": 513,
         "endAt": 517
       }
@@ -1988,7 +2064,7 @@
       "after_break_frame":"-6",
       "damage":"40",
       "range":"상단",
-      "extra":"당하는 쪽이 AK(저스트)를 입력하면 리버스 피겨 포 레그 락이 됨.",
+      "extra":"",
       "startAt": 578,
       "endAt": 585
     },
@@ -2000,7 +2076,7 @@
       "after_break_frame":"-3",
       "damage":"0",
       "range":"상단",
-      "extra":"재규어 스프린트로\n→→~입력 시 서 있는 상태로",
+      "extra":"재규어 스프린트로\n→→~입력 시 서 있는 상태로\n벽꽝 시 콤보 대미지 70%로 조정",
       "startAt": 586,
       "endAt": 590
     },
@@ -2012,7 +2088,7 @@
       "after_break_frame":"-3",
       "damage":"0",
       "range":"상단",
-      "extra":"재규어 스프린트로\n→→~입력 시 서 있는 상태로",
+      "extra":"재규어 스프린트로\n→→~입력 시 서 있는 상태로\n벽꽝 시 콤보 대미지 70%로 조정",
       "startAt": 591,
       "endAt": 597
     },
@@ -2048,7 +2124,7 @@
       "after_break_frame":"-5",
       "damage":"45",
       "range":"상단",
-      "extra":"빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복",
+      "extra":"빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복\n히트 상태 지속 중에는 호밍기",
       "startAt": 611,
       "endAt": 615
     },
@@ -2106,9 +2182,9 @@
       "start_frame":"10",
       "break_command":"LP",
       "after_break_frame":"-6",
-      "damage":"70",
+      "damage":"50",
       "range":"상단",
-      "extra":"당하는 쪽은 옆구르기 낙법으로 대미지 경감 가능\n빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복",
+      "extra":"당하는 쪽은 옆구르기 낙법으로 대미지 경감 가능\n빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복\n히트 상태 지속 중에는 호밍기",
       "startAt": 644,
       "endAt": 650
     },
@@ -2120,7 +2196,7 @@
       "after_break_frame":"-13",
       "damage":"55",
       "range":"상단",
-      "extra":"빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복",
+      "extra":"빠르게 입력하면 파워 상승\n히트 상태의 남은 시간 회복\n히트 상태 지속 중에는 호밍기",
       "startAt": 651,
       "endAt": 656
     },
@@ -2594,7 +2670,7 @@
     },
     {
       "name":"리버스 스페셜 스트레치 봄",
-      "command":"횡이동 중 AR",
+      "command":"횡이동 도중 AR",
       "start_frame":"13",
       "break_command":"RP",
       "after_break_frame":"-2",
@@ -2678,13 +2754,13 @@
     },
     {
       "name":"스탠딩 힐 홀드",
-      "command":"→N↓↘~RP+LK",
+      "command":"→N↓↘~AR",
       "start_frame":"12",
       "break_command":"RP",
       "after_break_frame":"-2",
       "damage":"25",
       "range":"상단",
-      "extra":"",
+      "extra":"시즌 1 →N↓↘~RP+LK",
       "startAt": 989,
       "endAt": 995
     },
@@ -2750,13 +2826,13 @@
     },
     {
       "name":"암 브레이커",
-      "command":"→N↓↘~LP+RK",
+      "command":"→N↓↘~AL",
       "start_frame":"12",
       "break_command":"LP",
       "after_break_frame":"-2",
       "damage":"20",
       "range":"상단",
-      "extra":"",
+      "extra":"시즌 1 →N↓↘~LP+RK",
       "startAt": 1042,
       "endAt": 1046
     },
@@ -2844,13 +2920,13 @@
     },
     {
       "name":"코브라 클러치",
-      "command":"재규어 스텝 도중 LP+RK 혹은 RP+LK",
+      "command":"재규어 스텝 도중 AL 혹은 AR",
       "start_frame":"12",
       "break_command":"LP 혹은 RP",
       "after_break_frame":"-3",
       "damage":"20",
       "range":"상단",
-      "extra":"",
+      "extra":"시즌 1 재규어 스텝 도중 LP+RK 혹은 RP+LK",
       "startAt": 1101,
       "endAt": 1105
     },

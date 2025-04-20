@@ -82,7 +82,7 @@
   },
   "description": {
     "title": "Description",
-    "context": "SF: Startup Frame\nGF: Guard Frame\nHF: Hit Frame\nCF: Counter Frame\nR: Range\nD: Damage\nTB: Throw Break\nFAT: Frame After Throw\n\nYou can filter with touch the headers.",
+    "context": "SF: Startup Frame\nGF: Guard Frame\nHF: Hit Frame\nCF: Counter Frame\nR: Range\nD: Damage\nTB: Throw Break\nFAT: Frame After Throw\n\nBlue Cell: Tailspin\nYellow Cell: Added Season 2\nYou can filter with touch the headers.",
     "close": "@:setting.close"
   },
   "memo": {

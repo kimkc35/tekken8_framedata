@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_localization/easy_localization.dart';
+// import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:intl/intl.dart';
 //import 'package:flutter_radar_chart/flutter_radar_chart.dart';
 //import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -57,7 +58,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
     isBookmarkedNotifier.value = bookmarkedList.contains(widget.playerInfo);
     return Scaffold(
       appBar: AppBar(
-        bottom: PreferredSize(preferredSize: Size(0, 50), child: TabBar(controller: tabController, tabs: [Tab(text: "profile.tab1".tr(),), Tab(text: "profile.tab2".tr(),)],)),
+        bottom: PreferredSize(preferredSize: Size(0, 50), child: TabBar(controller: tabController, tabs: [Tab(text: "profile.tab1",), Tab(text: "profile.tab2",)],)),
         title: Row(children: [
           Text(widget.playerInfo.name),
           SizedBox(width: 5,),
@@ -173,21 +174,21 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
                   children: [
                     Column(
                       children: [
-                        Text("profile.polarisId").tr(),
+                        Text("profile.polarisId"),
                         SizedBox(height: 10,),
                         Text(data.polarisId, style: TextStyle(fontSize: 15)),
                       ],
                     ),
                     Column(
                       children: [
-                        Text("profile.winRate").tr(),
+                        Text("profile.winRate"),
                         SizedBox(height: 10,),
                         Text(data.winRate, style: TextStyle(fontSize: 15, color: double.parse(data.winRate.replaceAll("%", "")) >= 50 ? Colors.green : Colors.red)),
                       ],
                     ),
                     Column(
                       children: [
-                        Text("profile.prowess").tr(),
+                        Text("profile.prowess"),
                         SizedBox(height: 10,),
                         Text(data.prowess, style: TextStyle(fontSize: 15),),
                       ],
@@ -196,7 +197,7 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
                 ),
               ),
               SizedBox(height: 20,),
-              Align(alignment: Alignment.centerLeft ,child: Text("profile.characters", style: TextStyle(fontSize: 25)).tr()),
+              Align(alignment: Alignment.centerLeft ,child: Text("profile.characters", style: TextStyle(fontSize: 25))),
               SizedBox(height: 10,),
               Container(
                 decoration: BoxDecoration(color:Color(0xFFE6E6E6), border: Border.symmetric(horizontal: BorderSide(color: Color(0xffD8D8D8)))),
@@ -204,10 +205,10 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(flex:3, child: Text("profile.character", textAlign: TextAlign.center).tr()),
-                    Expanded(flex:2, child: Text("profile.matches", textAlign: TextAlign.center).tr()),
-                    Expanded(flex:2, child: Text("profile.winRate", textAlign: TextAlign.center).tr()),
-                    Expanded(flex:2, child: Text("profile.rank", textAlign: TextAlign.center).tr())
+                    Expanded(flex:3, child: Text("profile.character", textAlign: TextAlign.center)),
+                    Expanded(flex:2, child: Text("profile.matches", textAlign: TextAlign.center)),
+                    Expanded(flex:2, child: Text("profile.winRate", textAlign: TextAlign.center)),
+                    Expanded(flex:2, child: Text("profile.rank", textAlign: TextAlign.center))
                   ],
                 ),
               ),
@@ -246,7 +247,7 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
       }else if(snapshot.hasError){
         return Center(child: Text("Error! ${snapshot.error}"));
       }
-      return Center(child: Text("tip.loading").tr());
+      return Center(child: Text("tip.loading"));
     });
     // return FutureBuilder(
     //     future: details(),
@@ -613,7 +614,7 @@ class _ProfileTabState extends State<ProfileTab> with AutomaticKeepAliveClientMi
 //             }else if(snapshot.hasError){
 //               return Text(snapshot.error.toString());
 //             }
-//             return Center(child: Text("tip.loading".tr()));
+//             return Center(child: Text("tip.loading"));
 //           },
 //       ),
 //     );
@@ -746,7 +747,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
                               padding: EdgeInsets.all(8.0),
                               child: Column(
                                 children: [
-                                  Align(alignment: Alignment.centerLeft, child: Text(context.locale.languageCode == "en" ? DateFormat('yyyy-MM-dd HH:mm').format(data[index].date) : DateFormat('yyyy-MM-dd HH:mm').format(data[index].date.add(Duration(hours: 9))), textAlign: TextAlign.start,)),
+                                  Align(alignment: Alignment.centerLeft, child: Text(DateFormat('yyyy-MM-dd HH:mm').format(data[index].date.add(Duration(hours: 9))), textAlign: TextAlign.start,)),
                                   Expanded(
                                     child: Align(
                                       alignment: Alignment.center,
@@ -787,7 +788,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
                         currentPage > 1 ?currentPage--
                             : ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text("profile.firstPageError").tr(),
+                              content: Text("profile.firstPageError"),
                             )
                         );
                       });
@@ -802,7 +803,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
                       width: 80,
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: "profile.matchHistory.hintText".tr()
+                          hintText: "profile.matchHistory.hintText"
                         ),
                         style: TextStyle(
                           fontSize: 12
@@ -829,7 +830,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
                           currentPage < lastPage! ?currentPage++
                               : ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text("profile.lastPageError").tr(),
+                                content: Text("profile.lastPageError"),
                               )
                           );
                         });
@@ -841,7 +842,7 @@ class _HistoryTabState extends State<HistoryTab> with AutomaticKeepAliveClientMi
               return Text(snapshot.error.toString());
             }
           }
-          return Center(child: Text("tip.loading".tr()));
+          return Center(child: Text("tip.loading"));
         },
       ),
     );

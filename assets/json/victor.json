@@ -10,7 +10,7 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"12",
-        "extra":"파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
+        "extra":"퍼퓨머 도중에도 사용 가능\n파워 크래시\n히트 상태의 남은 시간을 소비\n←←입력 시 공격 캔슬",
         "startAt": 0,
         "endAt": 3
       },
@@ -19,8 +19,8 @@
         "command":"→RKLP",
         "start_frame":"14",
         "guard_frame":"-4",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"상단",
         "damage":"15,21",
         "extra":"히트 발동기",
@@ -32,8 +32,8 @@
         "command":"→AP",
         "start_frame":"24",
         "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"35",
         "extra":"히트 발동기\n가드 대미지\n히트 시 히트 상태의 남은 시간 회복",
@@ -45,8 +45,8 @@
         "command":"↓RP",
         "start_frame":"18",
         "guard_frame":"0",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"21",
         "extra":"히트 발동기\n가드 대미지",
@@ -54,25 +54,12 @@
         "endAt": 17
       },
       {
-        "name":"페일노트",
-        "command":"←AP",
-        "start_frame":"19",
-        "guard_frame":"-9",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
-        "range":"상단",
-        "damage":"25",
-        "extra":"히트 발동기\n파워 크래시\n가드 대미지\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
-        "startAt": 18,
-        "endAt": 22
-      },
-      {
         "name":"플라잉 젠틀맨",
         "command":"퍼퓨머 도중 LK",
         "start_frame":"15",
         "guard_frame":"-8",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"21",
         "extra":"히트 발동기",
@@ -80,10 +67,22 @@
         "endAt": 25
       },
       {
+        "name":"파셀랑드",
+        "command":"이아이 스탠스 도중 ↓LP",
+        "start_frame":"18",
+        "guard_frame":"-2",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
+        "range":"중단",
+        "damage":"30",
+        "extra":"히트 발동기\n가드 대미지",
+        "color": "yellow"
+      },
+      {
         "name":"무슈 사무라이~이아이 스탠스",
         "command":"히트 상태에서 ↙AP",
         "start_frame":"28",
-        "guard_frame":"+6",
+        "guard_frame":"+9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
@@ -122,12 +121,12 @@
         "name":"엘리미나시옹 사무라이",
         "command":"히트 상태에서 RP+LK",
         "start_frame":"20",
-        "guard_frame":"-15",
+        "guard_frame":"-14",
         "hit_frame":"D",
         "counter_frame":"D",
-        "range":"하단",
+        "range":"하단,잡ㅈ기",
         "damage":"20,19",
-        "extra":"히트 시 잡기로",
+        "extra":"월 블래스트\n퍼퓨머 도중에도 사용 가능\n히트 시 잡기로",
         "startAt": 42,
         "endAt": 47
       }
@@ -167,10 +166,24 @@
         "hit_frame":"+3",
         "counter_frame":"+3",
         "range":"상단x2",
-        "damage":"5,7,5,10",
-        "extra":"",
+        "damage":"5,5,5,7",
+        "extra":"→~입력 시 퍼퓨머로",
         "startAt": 64,
         "endAt": 67
+      },
+      {
+        "name":"더블 카보숑 컷3~퍼퓨머",
+        "command":"LPLPRP→~",
+        "start_frame":"10",
+        "guard_frame":"-8",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
+        "range":"상단x2",
+        "damage":"5,5,5,7",
+        "extra":"퍼퓨머로",
+        "startAt": 64,
+        "endAt": 67,
+        "color": "yellow"
       },
       {
         "name":"베이직 에티켓",
@@ -254,7 +267,7 @@
         "name":"크라이베이비 소피아1",
         "command":"RPRP",
         "start_frame":"12",
-        "guard_frame":"-12",
+        "guard_frame":"-10",
         "hit_frame":"-2",
         "counter_frame":"-2",
         "range":"중단x2",
@@ -274,7 +287,8 @@
         "damage":"10,5,5,12",
         "extra":"이아이 스탠스로\n가드 대미지",
         "startAt": 79,
-        "endAt": 82
+        "endAt": 82,
+        "color": "blue"
       },
       {
         "name":"굿 커뮤니케이션1",
@@ -345,7 +359,7 @@
         "name":"에덴",
         "command":"AP",
         "start_frame":"15",
-        "guard_frame":"-8",
+        "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"D",
         "range":"중단",
@@ -488,11 +502,11 @@
         "name":"뒤랑달",
         "command":"→AP",
         "start_frame":"24",
-        "guard_frame":"-9",
+        "guard_frame":"+3",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"35",
+        "damage":"30",
         "extra":"히트 발동기\n가드 대미지\n히트 상태의 남은 시간을 소비",
         "startAt": 115,
         "endAt": 118
@@ -599,7 +613,8 @@
         "damage":"15,16",
         "extra":"이아이 스탠스로\n가드 대미지",
         "startAt": 133,
-        "endAt": 136
+        "endAt": 136,
+        "color": "blue"
       },
       {
         "name":"흘람레이",
@@ -609,7 +624,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"32",
+        "damage":"28",
         "extra":"",
         "startAt": 136,
         "endAt": 139
@@ -670,8 +685,8 @@
         "name":"파인 살루트",
         "command":"↓RK",
         "start_frame":"16",
-        "guard_frame":"-14",
-        "hit_frame":"-3",
+        "guard_frame":"-13",
+        "hit_frame":"-2",
         "counter_frame":"-",
         "range":"하단",
         "damage":"10",
@@ -748,8 +763,8 @@
         "name":"폴라이트 그리팅스",
         "command":"↙LK",
         "start_frame":"19",
-        "guard_frame":"-8",
-        "hit_frame":"D",
+        "guard_frame":"-11",
+        "hit_frame":"T",
         "counter_frame":"T",
         "range":"상단",
         "damage":"20",
@@ -825,13 +840,13 @@
       {
         "name":"스트로빙 메모리즈",
         "command":"←RP",
-        "start_frame":"12",
+        "start_frame":"10",
         "guard_frame":"-9",
         "hit_frame":"+2",
         "counter_frame":"+14",
         "range":"상단",
         "damage":"0",
-        "extra":"카운터 히트 시 90% 콤보 대미지 보정\n히트 시 회복 가능 대미지 5",
+        "extra":"혹은 퍼퓨머 도중 ←RP\n카운터 히트 시 90% 콤보 대미지 보정\n히트 시 회복 가능 대미지 5\n이 기술로는 K.O. 불가능",
         "startAt": 186,
         "endAt": 188
       },
@@ -867,7 +882,7 @@
         "start_frame":"18",
         "guard_frame":"-2",
         "hit_frame":"+13g",
-        "counter_frame":"+14",
+        "counter_frame":"+13",
         "range":"상단",
         "damage":"10",
         "extra":"호밍기\n가드 대미지",
@@ -908,7 +923,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"37",
+        "damage":"32",
         "extra":"혹은 ↖AP\n가드 대미지",
         "startAt": 208,
         "endAt": 211
@@ -921,7 +936,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"47,20",
+        "damage":"32,20",
         "extra":"혹은 히트 상태에서 ↖AP\n히트 상태의 남은 시간을 소비",
         "startAt": 212,
         "endAt": 216
@@ -948,7 +963,7 @@
         "counter_frame":"+15g",
         "range":"중단",
         "damage":"9,21",
-        "extra":"토네이도\n↓~ 혹은 AK입력 시 캔슬하고 이아이 스탠스로",
+        "extra":"월 블래스트\n토네이도\n↓~ 혹은 AK입력 시 캔슬하고 이아이 스탠스로\n→~입력 시 퍼퓨머로",
         "startAt": 216,
         "endAt": 219
       },
@@ -961,9 +976,23 @@
         "counter_frame":"+3",
         "range":"중단",
         "damage":"9",
-        "extra":"이아이 스탠스로",
+        "extra":"월 블래스트\n이아이 스탠스로",
         "startAt": 216,
         "endAt": 219
+      },
+      {
+        "name":"그린골렛2~퍼퓨머",
+        "command":"↗LPLP→~",
+        "start_frame":"13",
+        "guard_frame":"-10",
+        "hit_frame":"+19g",
+        "counter_frame":"+19g",
+        "range":"중단",
+        "damage":"9,21",
+        "extra":"월 블래스트\n토네이도\n퍼퓨머로",
+        "startAt": 216,
+        "endAt": 219,
+        "color": "yellow"
       },
       {
         "name":"마키즈 컷",
@@ -1044,6 +1073,18 @@
         "endAt": 238
       },
       {
+        "name":"티어 드롭 컷",
+        "command":"→→→~AP",
+        "start_frame":"18",
+        "guard_frame":"-14",
+        "hit_frame":"+4",
+        "counter_frame":"+15g",
+        "range":"하단x2",
+        "damage":"10,14",
+        "extra":"히트 시 이아이 스탠스로[공참 하단]",
+        "color": "yellow"
+      },
+      {
         "name":"아무르 샤프트~이아이 스탠스",
         "command":"↓↘→RP",
         "start_frame":"22",
@@ -1054,7 +1095,8 @@
         "damage":"16",
         "extra":"이아이 스탠스로\n가드 대미지",
         "startAt": 239,
-        "endAt": 241
+        "endAt": 241,
+        "color": "blue"
       },
       {
         "name":"몽주아 타케미카즈치",
@@ -1240,7 +1282,7 @@
       },
       {
         "name":"댄디 블로",
-        "command":"횡이동 중 AP",
+        "command":"횡이동 도중 AP",
         "start_frame":"18",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -1282,7 +1324,7 @@
       {
         "name":"이러데선스 오브 페이스1",
         "command":"일어나며 LK",
-        "start_frame":"15",
+        "start_frame":"14",
         "guard_frame":"-14",
         "hit_frame":"0",
         "counter_frame":"0",
@@ -1326,7 +1368,7 @@
         "hit_frame":"+8",
         "counter_frame":"+8",
         "range":"중단x2",
-        "damage":"10,17",
+        "damage":"10,12",
         "extra":"→~입력 시 퍼퓨머로",
         "startAt": 287,
         "endAt": 290
@@ -1340,9 +1382,23 @@
         "counter_frame":"0",
         "range":"하단,상단",
         "damage":"10,10",
-        "extra":"()는 1타만 가드 시 프레임",
+        "extra":"()는 1타만 가드 시 프레임\n→~입력 시 퍼퓨머로",
         "startAt": 291,
         "endAt": 293
+      },
+      {
+        "name":"샹그랄라~퍼퓨머",
+        "command":"몸을 숙인 상태에서 AP→~",
+        "start_frame":"16",
+        "guard_frame":"-7(-17)",
+        "hit_frame":"+6",
+        "counter_frame":"+6",
+        "range":"하단,상단",
+        "damage":"10,10",
+        "extra":"()는 1타만 가드 시 프레임\n퍼퓨머로",
+        "startAt": 291,
+        "endAt": 293,
+        "color": "yellow"
       }
     ],
     "iai Stance":[
@@ -1381,7 +1437,7 @@
         "counter_frame":"+15g",
         "range":"중단",
         "damage":"9,21",
-        "extra":"토네이도\n↓~ 혹은 AK입력 시 캔슬하고 이아이 스탠스로",
+        "extra":"월 블래스트\n토네이도\n↓~ 혹은 AK입력 시 캔슬하고 이아이 스탠스로\n→~입력 시 퍼퓨머로",
         "startAt": 304,
         "endAt": 308
       },
@@ -1394,9 +1450,23 @@
         "counter_frame":"+2",
         "range":"중단",
         "damage":"9,21",
-        "extra":"토네이도\n이아이 스탠스로",
+        "extra":"월 블래스트\n토네이도\n이아이 스탠스로",
         "startAt": 304,
         "endAt": 308
+      },
+      {
+        "name":"스푸마도르2~퍼퓨머",
+        "command":"이아이 스탠스 도중 LPLP→~",
+        "start_frame":"13",
+        "guard_frame":"-10",
+        "hit_frame":"+19g",
+        "counter_frame":"+19g",
+        "range":"중단",
+        "damage":"9,21",
+        "extra":"월 블래스트\n토네이도\n퍼퓨머로",
+        "startAt": 304,
+        "endAt": 308,
+        "color": "yellow"
       },
       {
         "name":"클라렌트1",
@@ -1433,7 +1503,7 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"9,23",
-        "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
+        "extra":"호밍기\n가드 대미지\n히트 상태의 남은 시간을 소비",
         "startAt": 314,
         "endAt": 317
       },
@@ -1441,7 +1511,7 @@
         "name":"알마스",
         "command":"이아이 스탠스 도중 RP",
         "start_frame":"16",
-        "guard_frame":"-7",
+        "guard_frame":"-9",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
@@ -1454,7 +1524,7 @@
         "name":"시퀀스",
         "command":"이아이 스탠스 도중 LK",
         "start_frame":"17",
-        "guard_frame":"-14",
+        "guard_frame":"-13",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단x2",
@@ -1487,7 +1557,8 @@
         "damage":"17,20",
         "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
         "startAt": 330,
-        "endAt": 333
+        "endAt": 333,
+        "color": "blue"
       },
       {
         "name":"오트클레르",
@@ -1498,9 +1569,21 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"30",
-        "extra":"가드 대미지\n히트 시 히트 상태의 남은 시간 회복",
+        "extra":"호밍기\n가드 대미지\n히트 시 히트 상태의 남은 시간 회복",
         "startAt": 334,
         "endAt": 337
+      },
+      {
+        "name":"파셀랑드",
+        "command":"이아이 스탠스 도중 ↓LP",
+        "start_frame":"18",
+        "guard_frame":"-2",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"30",
+        "extra":"히트 발동기\n가드 대미지",
+        "color": "yellow"
       },
       {
         "name":"롱고미니아드~이아이 스탠스",
@@ -1603,7 +1686,7 @@
         "hit_frame":"+4",
         "counter_frame":"+14g",
         "range":"하단",
-        "damage":"17",
+        "damage":"15",
         "extra":"",
         "startAt": 378,
         "endAt": 380
@@ -1645,7 +1728,8 @@
         "damage":"9,13,20",
         "extra":"",
         "startAt": 383,
-        "endAt": 386
+        "endAt": 386,
+        "color": "blue"
       },
       {
         "name":"라스트 노트",
@@ -1695,9 +1779,35 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"25",
-        "extra":"가드 대미지",
+        "extra":"월 블래스트\n가드 대미지\n↓~ 혹은 AK 입력 시 이아이 스탠스로",
         "startAt": 405,
         "endAt": 408
+      },
+      {
+        "name":"헨그로엔~이아이 스탠스",
+        "command":"퍼퓨머 도중 AP↓~ 혹은 APAK",
+        "start_frame":"25",
+        "guard_frame":"+6",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"25",
+        "extra":"월 블래스트\n가드 대미지\n이아이 스탠스로",
+        "startAt": 405,
+        "endAt": 408,
+        "color": "yellow"
+      },
+      {
+        "name":"이아이 스탠스로",
+        "command":"퍼퓨머 도중 AK",
+        "start_frame":"-",
+        "guard_frame":"-",
+        "hit_frame":"-",
+        "counter_frame":"-",
+        "range":"-",
+        "damage":"-",
+        "extra":"",
+        "color": "yellow"
       },
       {
         "name":"시야주",

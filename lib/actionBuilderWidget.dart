@@ -1,71 +1,74 @@
-import 'package:easy_localization/easy_localization.dart';
+// import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:tekken8_framedata/profileScreen.dart';
 
 import 'main.dart';
 
-const double buttonSize = 34;
+const double buttonSize = 30;
 
-Row actionBuilder({required BuildContext context,String? character}) {
-
-  return Row(
-    children: [
-      firstAction(context, buttonSize),
-      GestureDetector(
-        onTap: () => patchNoteWidget(context),
-        child: const Icon(Icons.article, size: buttonSize),
-      ),
-      if (character == null) ...[
+Padding actionBuilder({required BuildContext context,String? character}) {
+  return Padding(
+    padding: const EdgeInsets.only(right: 5),
+    child: Row(
+      spacing: 5,
+      children: [
+        firstAction(context, buttonSize),
         GestureDetector(
-          onTap: () => showDialog<String>(
-              context: context,
-              builder: (context) => settingDialog(context)),
-          child: const Icon(Icons.settings, size: buttonSize),
-        )
-      ] else if (isPro) ...[
-        GestureDetector(
-          onTap: () {
-            TextEditingController controller = TextEditingController();
-
-            final currentBox = Hive.box(character);
-            if (currentBox.containsKey(character)) {
-              controller.text = currentBox.get(character);
-            }
-
-            showDialog<String>(
-              context: context,
-              builder: (BuildContext context) => AlertDialog(
-                title: Text(
-                  character.toUpperCase(),
-                  style: TextStyle(color: Colors.black),
-                  textScaler: TextScaler.linear(1.2),
-                ),
-                contentTextStyle: TextStyle(
-                  height: 1.5,
-                  color: Colors.black,
-                ),
-                content: SingleChildScrollView(
-                    child: TextField(
-                        onChanged: (value) {
-                          currentBox.put(character, value);
-                        },
-                        controller: controller,
-                        maxLines: null,
-                        decoration: InputDecoration(
-                            hintText: "memo.hintText".tr(), border: null))),
-                actions: [
-                  TextButton(
-                      onPressed: () => Navigator.pop(context, 'Cancel'),
-                      child: Text('memo.close'.tr()))
-                ],
-              )
-            );
-          },
-          child: Icon(Icons.edit_note, size: buttonSize),
+          onTap: () => patchNoteWidget(context),
+          child: const Icon(Icons.article, size: buttonSize),
         ),
-      ]
-    ],
+        if (character == null) ...[
+          GestureDetector(
+            onTap: () => showDialog<String>(
+                context: context,
+                builder: (context) => settingDialog(context)),
+            child: const Icon(Icons.settings, size: buttonSize),
+          )
+        ] else if (isPro) ...[
+          GestureDetector(
+            onTap: () {
+              TextEditingController controller = TextEditingController();
+
+              final currentBox = Hive.box(character);
+              if (currentBox.containsKey(character)) {
+                controller.text = currentBox.get(character);
+              }
+
+              showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: Text(
+                    character.toUpperCase(),
+                    style: TextStyle(color: Colors.black),
+                    textScaler: TextScaler.linear(1.2),
+                  ),
+                  contentTextStyle: TextStyle(
+                    height: 1.5,
+                    color: Colors.black,
+                  ),
+                  content: SingleChildScrollView(
+                      child: TextField(
+                          onChanged: (value) {
+                            currentBox.put(character, value);
+                          },
+                          controller: controller,
+                          maxLines: null,
+                          decoration: InputDecoration(
+                              hintText: "memo.hintText", border: null))),
+                  actions: [
+                    TextButton(
+                        onPressed: () => Navigator.pop(context, 'Cancel'),
+                        child: Text('memo.close'))
+                  ],
+                )
+              );
+            },
+            child: Icon(Icons.edit_note, size: buttonSize),
+          ),
+        ]
+      ],
+    ),
   );
 }
 
@@ -75,15 +78,15 @@ Widget firstAction(BuildContext context, double buttonSize) {
       onTap: () => showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("description.title".tr(),
+            title: Text("description.title",
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,)),
-            content: Text("description.context".tr(), style: TextStyle(height: 1.5, fontSize: 15),),
+            content: Text("description.context", style: TextStyle(height: 1.5, fontSize: 15),),
             actions: [
               TextButton(
                   onPressed: () => Navigator.pop(context, 'Cancel'),
-                  child: Text('description.close'.tr()))
+                  child: Text('description.close'))
             ],
           )),
       child: Icon(Icons.question_mark, size: buttonSize,),
@@ -95,8 +98,8 @@ Widget firstAction(BuildContext context, double buttonSize) {
     child: Icon(Icons.star, size: buttonSize,),
     onTap: () {
       showDialog(context: context, builder: (context) => AlertDialog(
-        title: Text("bookmark.title".tr()),
-        content: bookmarkedList.isEmpty? Text("bookmark.noBookmarkedPlayer".tr()) :
+        title: Text("bookmark.title"),
+        content: bookmarkedList.isEmpty? Text("bookmark.noBookmarkedPlayer") :
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
           width: MediaQuery.of(context).size.width * 0.7,
@@ -142,7 +145,7 @@ patchNoteWidget(BuildContext context) {
   }
 
   List<TextSpan> convertPatchNote(String? character){
-    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title".tr()}\n")];
+    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title"}\n")];
     if(character != null){
       final String text = replaceNumbers(patchNotes["characters"][character]);
       text.split("\n").forEach((element) {
@@ -202,7 +205,7 @@ patchNoteWidget(BuildContext context) {
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
-                child: Text('setting.close').tr())
+                child: Text('setting.close'))
           ],
         );
       },
@@ -210,9 +213,9 @@ patchNoteWidget(BuildContext context) {
 }
 
 AlertDialog settingDialog(BuildContext context){
-  TextEditingController localizationController = TextEditingController(text: context.locale.languageCode == "ko" ? "한국어" : "English");
+  // TextEditingController localizationController = TextEditingController(text: context.locale.languageCode == "ko" ? "한국어" : "English");
 
-  return AlertDialog(title: Text('setting.title', style: TextStyle(fontSize: 20)).tr(),
+  return AlertDialog(title: Text('setting.title', style: TextStyle(fontSize: 20)),
     content: ValueListenableBuilder(
       valueListenable: CustomThemeMode.fontChanged,
       builder: (context, value, child) {
@@ -221,35 +224,35 @@ AlertDialog settingDialog(BuildContext context){
             children: [
               Row(
                 children: [
-                  Text('setting.changeFont').tr(),
+                  Text('setting.changeFont'),
                   Switch(value: value, onChanged: (value) {
                     CustomThemeMode.changeFont();
                   })
                 ],
               ),
-              Row(
-                children: [
-                  DropdownMenu(
-                    dropdownMenuEntries: [
-                      DropdownMenuEntry(label: "English", value: "en"),
-                      DropdownMenuEntry(label: "한국어", value: "ko")
-                    ],
-                    controller: localizationController,
-                    initialSelection: context.locale.languageCode,
-                    onSelected: (value){
-                      context.setLocale(Locale(value!));
-                      // setLocale(context, value!);
-                    },
-                  )
-                ],
-              )
+              // Row(
+              //   children: [
+              //     DropdownMenu(
+              //       dropdownMenuEntries: [
+              //         DropdownMenuEntry(label: "English", value: "en"),
+              //         DropdownMenuEntry(label: "한국어", value: "ko")
+              //       ],
+              //       controller: localizationController,
+              //       initialSelection: context.locale.languageCode,
+              //       onSelected: (value){
+              //         context.setLocale(Locale(value!));
+              //         // setLocale(context, value!);
+              //       },
+              //     )
+              //   ],
+              // )
             ],
           ),
         );
       },
     ),
     actions: [
-      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('setting.close').tr())
+      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('setting.close'))
     ],
   );
 }

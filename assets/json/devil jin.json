@@ -19,8 +19,8 @@
         "command":"←RPLK",
         "start_frame":"14",
         "guard_frame":"-14",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"11,23",
         "extra":"히트 발동기",
@@ -32,8 +32,8 @@
         "command":"←LK",
         "start_frame":"29",
         "guard_frame":"-18",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"24",
         "extra":"히트 발동기",
@@ -45,8 +45,8 @@
         "command":"↗RK",
         "start_frame":"18",
         "guard_frame":"-8",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"21",
         "extra":"히트 발동기",
@@ -58,8 +58,8 @@
         "command":"→→~RP",
         "start_frame":"15",
         "guard_frame":"-8",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"24",
         "extra":"히트 발동기\n가드 대미지",
@@ -71,8 +71,8 @@
         "command":"모닝 크로우 도중 RPRP",
         "start_frame":"15",
         "guard_frame":"-14",
-        "hit_frame":"+17g",
-        "counter_frame":"+17g",
+        "hit_frame":"+9",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"12,20",
         "extra":"히트 발동기\n호밍기",
@@ -119,8 +119,20 @@
         "endAt": 37
       },
       {
+        "name":"나락멸사옥",
+        "command":"히트 상태에서 →N↓↘RK 히트 시 LK",
+        "start_frame":"16",
+        "guard_frame":"-",
+        "hit_frame":"-",
+        "counter_frame":"-",
+        "range":"특수 중단",
+        "damage":"7,18",
+        "extra":"토네이도\n히트 상태의 남은 시간을 소비",
+        "color": "yellow"
+      },
+      {
         "name":"원광멸초파",
-        "command":"→N↓↘APAP",
+        "command":"히트 상태에서 →N↓↘APAP",
         "start_frame":"26",
         "guard_frame":"+2",
         "hit_frame":"D",
@@ -130,6 +142,18 @@
         "extra":"토네이도\n호밍기\n히트 상태의 남은 시간을 소비",
         "startAt": 44,
         "endAt": 48
+      },
+      {
+        "name":"감념멸장옥",
+        "command":"히트 상태에서 모닝 크로우 도중 AP",
+        "start_frame":"20",
+        "guard_frame":"-",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"가불",
+        "damage":"39",
+        "extra":"시즌 1 히트 상태에서 모닝 크로우 도중 RP+LK\n히트 시 잡기로\n히트 상태의 남은 시간을 소비",
+        "color": "yellow"
       },
       {
         "name":"흉옥라선~모닝 크로우",
@@ -143,19 +167,6 @@
         "extra":"히트 시 잡기로\n가드 시 모닝 크로우로",
         "startAt": 49,
         "endAt": 54
-      },
-      {
-        "name":"감념멸장옥",
-        "command":"히트 상태에서 모닝 크로우 도중 RP+LK",
-        "start_frame":"20",
-        "guard_frame":"-",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"가불",
-        "damage":"12,27",
-        "extra":"히트 시 잡기로",
-        "startAt": 55,
-        "endAt": 60
       }
     ],
     "general":[
@@ -519,20 +530,57 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"11,20",
-        "extra":"",
+        "extra":"1타 히트 시 확정",
         "startAt": 158,
         "endAt": 161
+      },
+      {
+        "name":"악귀현현",
+        "command":"↘LPRK",
+        "start_frame":"13",
+        "guard_frame":"-13",
+        "hit_frame":"+16g",
+        "counter_frame":"+16g",
+        "range":"중단",
+        "damage":"11,23",
+        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로\n카운터 히트 시 확정",
+        "color": "yellow"
+      },
+      {
+        "name":"악귀현현~모닝 크로우",
+        "command":"↘LPRK",
+        "start_frame":"13",
+        "guard_frame":"-13",
+        "hit_frame":"+16g",
+        "counter_frame":"+16g",
+        "range":"중단",
+        "damage":"11,23",
+        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로",
+        "color": "yellow"
       },
       {
         "name":"흑파화치기",
         "command":"↘RP",
         "start_frame":"15",
         "guard_frame":"-9",
-        "hit_frame":"+6(+14)",
-        "counter_frame":"+9(+17)",
+        "hit_frame":"+6",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"17",
         "extra":"히트 시 →~입력 시 모닝 크로우로",
+        "startAt": 163,
+        "endAt": 165
+      },
+      {
+        "name":"흑파화치기~모닝 크로우",
+        "command":"↘RP 히트 시 →~",
+        "start_frame":"15",
+        "guard_frame":"-9",
+        "hit_frame":"+14",
+        "counter_frame":"+17",
+        "range":"중단",
+        "damage":"17",
+        "extra":"모닝 크로우로",
         "startAt": 163,
         "endAt": 165
       },
@@ -693,6 +741,19 @@
         "endAt": 194
       },
       {
+        "name":"뇌홍파",
+        "command":"↙LP+RK",
+        "start_frame":"32",
+        "guard_frame":"-",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"가불",
+        "damage":"40",
+        "extra":"",
+        "startAt": 225,
+        "endAt": 228
+      },
+      {
         "name":"사독기장1",
         "command":"←LP",
         "start_frame":"12",
@@ -800,7 +861,7 @@
         "name":"황혼 치기",
         "command":"←AP",
         "start_frame":"20",
-        "guard_frame":"-1",
+        "guard_frame":"+3",
         "hit_frame":"+7",
         "counter_frame":"D",
         "range":"중단",
@@ -821,19 +882,6 @@
         "extra":"",
         "startAt": 221,
         "endAt": 224
-      },
-      {
-        "name":"뇌홍파",
-        "command":"↖AP",
-        "start_frame":"32",
-        "guard_frame":"-",
-        "hit_frame":"D",
-        "counter_frame":"D",
-        "range":"가불",
-        "damage":"40",
-        "extra":"",
-        "startAt": 225,
-        "endAt": 228
       },
       {
         "name":"윤회",
@@ -872,7 +920,8 @@
         "damage":"10",
         "extra":"히트 혹은 가드 시 모닝 크로우로\n가드 대미지",
         "startAt": 238,
-        "endAt": 240
+        "endAt": 240,
+        "color": "blue"
       },
       {
         "name":"참수도",
@@ -1021,14 +1070,28 @@
         "name":"나찰문 섬",
         "command":"←→RPLK",
         "start_frame":"15",
-        "guard_frame":"-9",
-        "hit_frame":"+9",
-        "counter_frame":"+9",
+        "guard_frame":"-5",
+        "hit_frame":"+16g",
+        "counter_frame":"+16g",
         "range":"상단",
         "damage":"12,21",
-        "extra":"[나살문]",
+        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로[나살문]",
         "startAt": 281,
         "endAt": 283
+      },
+      {
+        "name":"나찰문 섬",
+        "command":"←→RPLK",
+        "start_frame":"15",
+        "guard_frame":"-5",
+        "hit_frame":"+14g",
+        "counter_frame":"+14g",
+        "range":"상단",
+        "damage":"12,21",
+        "extra":"월 블래스트\n모닝 크로우로[나살문]",
+        "startAt": 281,
+        "endAt": 283,
+        "color": "yellow"
       },
       {
         "name":"명쇄염옥1",
@@ -1201,7 +1264,7 @@
       },
       {
         "name":"데빌 트위스터",
-        "command":"횡이동 중 RP",
+        "command":"횡이동 도중 RP",
         "start_frame":"17",
         "guard_frame":"-22",
         "hit_frame":"A",
@@ -1214,7 +1277,7 @@
       },
       {
         "name":"헬즈 게이트",
-        "command":"횡이동 중 RP 지상 히트 시 ↑~",
+        "command":"횡이동 도중 RP 지상 히트 시 ↑~",
         "start_frame":"17",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1277,18 +1340,32 @@
         "damage":"12,10",
         "extra":"히트 혹은 가드 시 모닝 크로우로\n가드 대미지",
         "startAt": 306,
-        "endAt": 309
+        "endAt": 309,
+        "color": "blue"
       },
       {
         "name":"독각파화",
         "command":"일어나며 LPRP",
         "start_frame":"13",
         "guard_frame":"-11",
-        "hit_frame":"+6(+14)",
-        "counter_frame":"+9(+17)",
+        "hit_frame":"+6",
+        "counter_frame":"+9",
         "range":"중단",
         "damage":"12,15",
         "extra":"히트 시 →~입력 시 모닝 크로우로",
+        "startAt": 310,
+        "endAt": 313
+      },
+      {
+        "name":"독각파화~모닝 크로우",
+        "command":"일어나며 LPRP 히트 시 →~",
+        "start_frame":"13",
+        "guard_frame":"-11",
+        "hit_frame":"+14",
+        "counter_frame":"+17",
+        "range":"중단",
+        "damage":"12,15",
+        "extra":"모닝 크로우로",
         "startAt": 310,
         "endAt": 313
       },
@@ -1349,8 +1426,8 @@
         "command":"일어나며 RKRK",
         "start_frame":"11",
         "guard_frame":"-16",
-        "hit_frame":"+4",
-        "counter_frame":"+4",
+        "hit_frame":"+7",
+        "counter_frame":"+7",
         "range":"중단",
         "damage":"10,20",
         "extra":"",
@@ -1468,7 +1545,7 @@
         "command":"→N↓↘~RKRK",
         "start_frame":"16",
         "guard_frame":"-16",
-        "hit_frame":"+4",
+        "hit_frame":"+7",
         "counter_frame":"D",
         "range":"중단",
         "damage":"10,28",
@@ -1493,7 +1570,7 @@
         "name":"원광륜",
         "command":"→N↓↘AP",
         "start_frame":"26",
-        "guard_frame":"-9",
+        "guard_frame":"-5",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
@@ -1528,7 +1605,8 @@
         "damage":"20",
         "extra":"",
         "startAt": 402,
-        "endAt": 406
+        "endAt": 406,
+        "color": "blue"
       },
       {
         "name":"열반적정",
@@ -1557,7 +1635,7 @@
         "endAt": 416
       },
       {
-        "name":"흉성1",
+        "name":"명재단석1",
         "command":"비공 도중 RK",
         "start_frame":"20",
         "guard_frame":"-29",
@@ -1570,10 +1648,22 @@
         "endAt": 425
       },
       {
-        "name":"흉성2",
-        "command":"비공 도중 RK 히트 시 RP",
+        "name":"명재단석2",
+        "command":"비공 도중 RKLP",
         "start_frame":"20",
-        "guard_frame":"-",
+        "guard_frame":"+1",
+        "hit_frame":"A",
+        "counter_frame":"A",
+        "range":"상단",
+        "damage":"10,20",
+        "extra":"",
+        "color": "blue"
+      },
+      {
+        "name":"액성1",
+        "command":"비공 도중 RKRP",
+        "start_frame":"20",
+        "guard_frame":"-27",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
@@ -1583,8 +1673,20 @@
         "endAt": 425
       },
       {
-        "name":"흉성3",
-        "command":"비공 도중 RK 히트 시 RPAP",
+        "name":"액성2",
+        "command":"비공 도중 RKRPLP↗~",
+        "start_frame":"20",
+        "guard_frame":"-16",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단,잡기",
+        "damage":"10,14,10,6",
+        "extra":"",
+        "color": "yellow"
+      },
+      {
+        "name":"흉성",
+        "command":"비공 도중 RKRP 히트 시 AP",
         "start_frame":"20",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1654,8 +1756,8 @@
         "command":"모닝 크로우 도중 RP",
         "start_frame":"15",
         "guard_frame":"-13",
-        "hit_frame":"-5",
-        "counter_frame":"-5",
+        "hit_frame":"-1",
+        "counter_frame":"-1",
         "range":"중단",
         "damage":"12",
         "extra":"호밍기",
@@ -1680,7 +1782,7 @@
         "command":"모닝 크로우 도중 LK",
         "start_frame":"23",
         "guard_frame":"-7",
-        "hit_frame":"D",
+        "hit_frame":"T",
         "counter_frame":"T",
         "range":"특수 중단",
         "damage":"26",
@@ -1689,7 +1791,7 @@
         "endAt": 463
       },
       {
-        "name":"흉성1",
+        "name":"명재단석1",
         "command":"모닝 크로우 도중 RK",
         "start_frame":"20",
         "guard_frame":"-29",
@@ -1702,10 +1804,22 @@
         "endAt": 469
       },
       {
-        "name":"흉성2",
-        "command":"모닝 크로우 도중 RK 히트 시 RP",
+        "name":"명재단석2",
+        "command":"모닝 크로우 도중 RKLP",
         "start_frame":"20",
-        "guard_frame":"-",
+        "guard_frame":"+1",
+        "hit_frame":"A",
+        "counter_frame":"A",
+        "range":"상단",
+        "damage":"10,20",
+        "extra":"",
+        "color": "blue"
+      },
+      {
+        "name":"액성1",
+        "command":"모닝 크로우 도중 RKRP",
+        "start_frame":"20",
+        "guard_frame":"-27",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
@@ -1715,8 +1829,20 @@
         "endAt": 469
       },
       {
-        "name":"흉성3",
-        "command":"모닝 크로우 도중 RK 히트 시 RPAP",
+        "name":"액성2",
+        "command":"모닝 크로우 도중 RKRPLP↗~",
+        "start_frame":"20",
+        "guard_frame":"-16",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단,잡기",
+        "damage":"10,14,10,6",
+        "extra":"",
+        "color": "yellow"
+      },
+      {
+        "name":"흉성",
+        "command":"모닝 크로우 도중 RKRP 히트 시 AP",
         "start_frame":"20",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1726,6 +1852,18 @@
         "extra":"",
         "startAt": 465,
         "endAt": 469
+      },
+      {
+        "name":"감념장파",
+        "command":"모닝 크로우 도중 AP",
+        "start_frame":"20",
+        "guard_frame":"-",
+        "hit_frame":"+5",
+        "counter_frame":"+5",
+        "range":"가불",
+        "damage":"12",
+        "extra":"",
+        "color": "yellow"
       }
     ]
   },

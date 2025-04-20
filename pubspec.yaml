@@ -2,7 +2,7 @@ name: tekken8_framedata
 description: tk8 framedata.
 publish_to: 'none'
 
-version: 13.1.0+147
+version: 14.0.0+150
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -32,7 +32,7 @@ dependencies:
   firebase_analytics: ^11.4.0
   cached_network_image: ^3.4.0
   intl: ^0.19.0
-  easy_localization: ^3.0.7
+#  easy_localization: ^3.0.7
 
 
 dev_dependencies:
@@ -57,11 +57,15 @@ flutter:
     - family: OneMobile
       fonts:
         - asset: assets/fonts/ONE Mobile Bold.ttf
+    - family: OneMobileTitle
+      fonts:
+        - asset: assets/fonts/One Mobile Title.ttf
   assets:
     - assets/internal/patch_note.json
     - assets/json/
     - assets/icons/
     - assets/localizations/
+    - assets/images/
 
   uses-material-design: true
 

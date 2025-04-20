@@ -1,6 +1,6 @@
 // import 'dart:developer';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_localization/easy_localization.dart';
+// // import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  // await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
@@ -62,13 +62,16 @@ Future main() async{
 
   FirebaseAnalytics.instance.logScreenView(screenName: firebaseScreenName[0]);
 
+  // runApp(
+  //   EasyLocalization(
+  //       supportedLocales: [Locale('en'), Locale('ko')],
+  //       path: 'assets/localizations',
+  //       fallbackLocale: Locale('en'),
+  //       child: MyApp()
+  //   ),
+  // );
   runApp(
-    EasyLocalization(
-        supportedLocales: [Locale('en'), Locale('ko')],
-        path: 'assets/localizations',
-        fallbackLocale: Locale('en'),
-        child: MyApp()
-    ),
+    MyApp()
   );
 }
 
@@ -111,7 +114,7 @@ class CustomThemeData {
 
   static final ThemeData tenada = ThemeData(
     buttonTheme: ButtonThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.black)),
-    fontFamily: Font.tenada.font,
+    fontFamily: Font.oneMobileTitle.font,
     useMaterial3: false,
     primarySwatch: Colors.pink,
   );
@@ -146,7 +149,7 @@ Future<void> initializeSetting() async{
       for(var moveJson in characterJson['moves'][type]){
         try {
           moveInfoList[type]!.add(
-              MoveInfo(name: moveJson['name'], command: moveJson['command'], startFrame: moveJson['start_frame'], guardFrame: moveJson["guard_frame"], hitFrame: moveJson['hit_frame'], counterFrame: moveJson['counter_frame'], range: moveJson['range'], damage: moveJson['damage'], extra: moveJson['extra'], startAt: moveJson['startAt'] ?? 0, endAt: moveJson['endAt'])
+              MoveInfo(name: moveJson['name'], command: moveJson['command'], startFrame: moveJson['start_frame'], guardFrame: moveJson["guard_frame"], hitFrame: moveJson['hit_frame'], counterFrame: moveJson['counter_frame'], range: moveJson['range'], damage: moveJson['damage'], extra: moveJson['extra'], startAt: moveJson['startAt'] ?? 0, endAt: moveJson['endAt'], color: moveJson['color'], extraVideo: moveJson['extraVideo'])
           );
         } catch(e) {
           debugPrint("$moveJson에서 오류, $e");
@@ -157,7 +160,7 @@ Future<void> initializeSetting() async{
     for(var throwJson in characterJson['throws']){
       try {
         throwInfoList.add(
-          ThrowInfo(name: throwJson['name'], command: throwJson['command'], startFrame: throwJson['start_frame'], breakCommand: throwJson['break_command'], afterBreakFrame: throwJson['after_break_frame'], range: throwJson['range'], damage: throwJson['damage'], extra: throwJson['extra'], startAt: throwJson['startAt'] ?? 0, endAt: throwJson['endAt'])
+          ThrowInfo(name: throwJson['name'], command: throwJson['command'], startFrame: throwJson['start_frame'], breakCommand: throwJson['break_command'], afterBreakFrame: throwJson['after_break_frame'], range: throwJson['range'], damage: throwJson['damage'], extra: throwJson['extra'], startAt: throwJson['startAt'] ?? 0, endAt: throwJson['endAt'], color: throwJson['color'], extraVideo: throwJson['extraVideo'])
         );
       } catch(e) {
         debugPrint("$throwJson에서 오류, $e");
@@ -218,9 +221,9 @@ class _MyAppState extends State<MyApp> {
       valueListenable: CustomThemeMode.currentThemeData,
       builder: (context, value, child) {
         return MaterialApp(
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
+          // localizationsDelegates: context.localizationDelegates,
+          // supportedLocales: context.supportedLocales,
+          // locale: context.locale,
           navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
           theme: value,
           home: Main(),
@@ -256,7 +259,14 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
 
   List<Widget> tabList = [
     Container(
-      color: const Color(0xff333333),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage('assets/images/background.jpg'), fit: BoxFit.fill)
+        // gradient: RadialGradient(
+        //   colors: [Color(0xff345c6d), Color(0xff020108)],
+        //   stops: [0, 1],
+        //   radius: 0.9
+        // )
+      ),
       width: double.infinity,
       height: double.infinity,
       child: Center(
@@ -300,7 +310,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin{
             },
           ),
           elevation: 0.0,
-          title: Text("FRAMEDATA"),
+          title: Text("FRAMEDATA", style: TextStyle(fontFamily: "Tenada"),),
           centerTitle: true,
             actions: [
               actionBuilder(context: context)
@@ -353,7 +363,7 @@ class _CharacterButtonState extends State<CharacterButton> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character1.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1))
+                Text(widget.character1.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1), style: TextStyle(fontFamily: "Tenada"))
               ],
             )
           ),
@@ -364,17 +374,16 @@ class _CharacterButtonState extends State<CharacterButton> {
           height: 60,
           child: ElevatedButton(
               style: ButtonStyle(
-
                 backgroundColor: WidgetStateColor.resolveWith((states) => Colors.black), ),
                 onPressed: (){
                 widget.character2 != empty ?
                 Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
-              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("main.empty").tr()));
+              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("main.empty")));
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Text(widget.character2.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1)),
+                Text(widget.character2.name.toUpperCase(), textAlign: TextAlign.center, textScaler: const TextScaler.linear(1), style: TextStyle(fontFamily: "Tenada"),),
               ],
             )
           ),
