@@ -1,4 +1,4 @@
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -88,14 +88,14 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                                 filter = "likeCount";
                               });
                             }
-                          }, child: Text("tip.mostPopular", style: TextStyle(color: filter == "likeCount" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor),)),
+                          }, child: Text("tip.mostPopular".tr(), style: TextStyle(color: filter == "likeCount" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor),)),
                           TextButton(onPressed: (){
                             if(filter != "date"){
                               setState(() {
                                 filter = "date";
                               });
                             }
-                          }, child: Text("tip.latest", style: TextStyle(color: filter == "date" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor)))
+                          }, child: Text("tip.latest".tr(), style: TextStyle(color: filter == "date" ? CustomThemeMode.currentThemeData.value.primaryColor : CustomThemeMode.currentThemeData.value.secondaryHeaderColor)))
                         ],
                       ),
                       Row(
@@ -104,7 +104,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                           Expanded(
                             child: TextField(
                               decoration: InputDecoration(
-                                hintText: "tip.hintText"
+                                hintText: "tip.hintText".tr()
                               ),
                               maxLines: null,
                               controller: textEditingController,
@@ -126,7 +126,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                             }) :
                             ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text("tip.emptyTextError"),
+                                  content: Text("tip.emptyTextError").tr(),
                                 )
                             );
                           }, icon: Icon(Icons.add)),
@@ -147,7 +147,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                     setState(() {
                     });
                   }
-                  return const Text('tip.error');
+                  return const Text('tip.error').tr();
                 }
 
                 if(snapshot.hasData){
@@ -200,7 +200,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                                     }else{
                                       ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
-                                            content: Text("tip.selfLikeError"),
+                                            content: Text("tip.selfLikeError").tr(),
                                           )
                                       );
                                     }
@@ -228,7 +228,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
                   );
                 }
 
-                return Center(child: Text("tip.loading"));
+                return Center(child: Text("tip.loading").tr());
 
 
               }),
@@ -243,7 +243,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("tip.loginError"),
+          Text("tip.loginError").tr(),
           TextButton(
             onPressed: ()async{
               if(currentUser == null) kIsWeb ? await signInWithGoogleWeb() : await signInWithGoogle();
@@ -253,7 +253,7 @@ class TipPageState extends State<TipPage> with TickerProviderStateMixin{
             style: ButtonStyle(
               iconColor: WidgetStatePropertyAll(CustomThemeMode.currentThemeData.value.primaryColor)
             ),
-            child: Text("main.drawer.login"),
+            child: Text("main.drawer.login").tr(),
           )
         ],
       ),

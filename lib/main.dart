@@ -1,6 +1,6 @@
 // import 'dart:developer';
 import 'package:cached_network_image/cached_network_image.dart';
-// // import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ const sticks = {"c1" : "↙", "c2" : "↓", "c3" : "↘", "c4" : "←", "c5" : "
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  // await EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
@@ -62,16 +62,13 @@ Future main() async{
 
   FirebaseAnalytics.instance.logScreenView(screenName: firebaseScreenName[0]);
 
-  // runApp(
-  //   EasyLocalization(
-  //       supportedLocales: [Locale('en'), Locale('ko')],
-  //       path: 'assets/localizations',
-  //       fallbackLocale: Locale('en'),
-  //       child: MyApp()
-  //   ),
-  // );
   runApp(
-    MyApp()
+    EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('ko')],
+        path: 'assets/localizations',
+        fallbackLocale: Locale('en'),
+        child: MyApp()
+    ),
   );
 }
 
@@ -221,9 +218,9 @@ class _MyAppState extends State<MyApp> {
       valueListenable: CustomThemeMode.currentThemeData,
       builder: (context, value, child) {
         return MaterialApp(
-          // localizationsDelegates: context.localizationDelegates,
-          // supportedLocales: context.supportedLocales,
-          // locale: context.locale,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           navigatorObservers: <NavigatorObserver>[FirebaseAnalyticsObserver(analytics: analytics)],
           theme: value,
           home: Main(),
@@ -378,7 +375,7 @@ class _CharacterButtonState extends State<CharacterButton> {
                 onPressed: (){
                 widget.character2 != empty ?
                 Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterPage(character: widget.character2)))
-              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("main.empty")));
+              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("main.empty").tr()));
             },
             child: Stack(
               alignment: Alignment.bottomCenter,

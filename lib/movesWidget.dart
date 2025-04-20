@@ -1,4 +1,4 @@
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -311,11 +311,11 @@ class _MoveListState extends State<MoveList>{
   final TextEditingController _damageController = TextEditingController();
   final TextEditingController _extraController = TextEditingController();
 
-  late final ComparisonHeader startComparisonHeader = ComparisonHeader(name: "moves.headers.2", controller: _startFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader guardComparisonHeader = ComparisonHeader(name: "moves.headers.3", controller: _guardFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader hitComparisonHeader = ComparisonHeader(name: "moves.headers.4", controller: _hitFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader counterComparisonHeader = ComparisonHeader(name: "moves.headers.5", controller: _counterFrameController, state: ComparisonState.greater);
-  late final ComparisonHeader damageComparisonHeader = ComparisonHeader(name: "moves.headers.7", controller: _damageController, state: ComparisonState.greater);
+  late final ComparisonHeader startComparisonHeader = ComparisonHeader(name: "moves.headers.2".tr(), controller: _startFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader guardComparisonHeader = ComparisonHeader(name: "moves.headers.3".tr(), controller: _guardFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader hitComparisonHeader = ComparisonHeader(name: "moves.headers.4".tr(), controller: _hitFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader counterComparisonHeader = ComparisonHeader(name: "moves.headers.5".tr(), controller: _counterFrameController, state: ComparisonState.greater);
+  late final ComparisonHeader damageComparisonHeader = ComparisonHeader(name: "moves.headers.7".tr(), controller: _damageController, state: ComparisonState.greater);
 
   bool _high = false;
   bool _middle = false;
@@ -367,7 +367,7 @@ class _MoveListState extends State<MoveList>{
     setState(() {
       for (var type in widget.character.types.keys) {
         filtered[type] = filtered[type]!.where((item) {
-          if(_high && item.range.contains("moves.range.high") || _middle && item.range.contains("moves.range.mid") || _low && item.range.contains("moves.range.low") || _unblockable && item.range.contains("moves.range.unblockabe")){
+          if(_high && item.range.contains("moves.range.high".tr()) || _middle && item.range.contains("moves.range.mid".tr()) || _low && item.range.contains("moves.range.low".tr()) || _unblockable && item.range.contains("moves.range.unblockabe".tr())){
             return true;
           }else if(!_high && !_middle && !_low && !_unblockable) {
             return true;
@@ -658,7 +658,7 @@ class _MoveListState extends State<MoveList>{
                                 setState(() {
                                   widget.character.types[type.key] = value!;
                                 });
-                              }, closeOnActivate: false, child: Text(widget.character.typesKo[type.key]!)),
+                              }, closeOnActivate: false, child: Text(context.locale.languageCode == "ko"? widget.character.typesKo[type.key]! : generateTypes(type.key))),
                             ],
                           ],
                           builder: (context, controller, child)=> TextButton(onPressed: () {
@@ -666,7 +666,7 @@ class _MoveListState extends State<MoveList>{
                           }, child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("moves.headers.1", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
+                              Text("moves.headers.1".tr(), style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                               Icon(Icons.arrow_drop_down, color: Colors.black,),
                             ],
                           ),),
@@ -688,22 +688,22 @@ class _MoveListState extends State<MoveList>{
                             setState(() {
                               _high = value!;
                             });
-                          }, closeOnActivate: false, child: Text("moves.range.high")),
+                          }, closeOnActivate: false, child: Text("moves.range.high".tr())),
                           CheckboxMenuButton(value: _middle, onChanged: (value){
                             setState(() {
                               _middle = value!;
                             });
-                          }, closeOnActivate: false, child: Text("moves.range.mid")),
+                          }, closeOnActivate: false, child: Text("moves.range.mid".tr())),
                           CheckboxMenuButton(value: _low, onChanged: (value){
                             setState(() {
                               _low = value!;
                             });
-                          }, closeOnActivate: false, child: Text("moves.range.low")),
+                          }, closeOnActivate: false, child: Text("moves.range.low".tr())),
                           CheckboxMenuButton(value: _unblockable, onChanged: (value){
                             setState(() {
                               _unblockable = value!;
                             });
-                          }, closeOnActivate: false, child: Text("moves.range.unblockable"))
+                          }, closeOnActivate: false, child: Text("moves.range.unblockable".tr()))
                         ],
                         builder: (context, controller, child)=> TextButton(onPressed: () {
                           if (controller.isOpen) {
@@ -714,14 +714,14 @@ class _MoveListState extends State<MoveList>{
                         }, child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("moves.headers.6", style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
+                            Text("moves.headers.6".tr(), style: headerStyle, textScaler: headerScale, textAlign: TextAlign.center),
                           ],
                         ),),
                       ),),
                       line(),
                       Container(width: 50 + 10, child: comparisonHeaderMenuAnchor(damageComparisonHeader)),
                       line(),
-                      Container(width: 450, child: headerMenuAnchor(450, _extraController, "moves.headers.8")),
+                      Container(width: 450, child: headerMenuAnchor(450, _extraController, "moves.headers.8".tr())),
                     ],
                   ),
                 ),
@@ -807,19 +807,19 @@ class _ThrowListState extends State<ThrowList>{
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black)), color: Color(0xfffafafa)),
               child: Row(
                 children: [
-                  SizedBox(width: 150 + 5,child: Text('moves.throwHeaders.1',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 150 + 5,child: Text('moves.throwHeaders.1'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.2',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.2'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 40 + 10,child: Text('moves.throwHeaders.3',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 40 + 10,child: Text('moves.throwHeaders.3'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.4',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.4'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 50 + 10,child: Text('moves.throwHeaders.5',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 50 + 10,child: Text('moves.throwHeaders.5'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.6',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  SizedBox(width: 30 + 10,child: Text('moves.throwHeaders.6'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                   line(),
-                  Expanded(child: Text('moves.throwHeaders.7',textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
+                  Expanded(child: Text('moves.throwHeaders.7'.tr(),textAlign: TextAlign.center, style: headerStyle, textScaler: headerScale)),
                 ],
               ),
             ),

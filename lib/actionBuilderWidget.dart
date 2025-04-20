@@ -1,4 +1,4 @@
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:tekken8_framedata/profileScreen.dart';
@@ -55,11 +55,11 @@ Padding actionBuilder({required BuildContext context,String? character}) {
                           controller: controller,
                           maxLines: null,
                           decoration: InputDecoration(
-                              hintText: "memo.hintText", border: null))),
+                              hintText: "memo.hintText".tr(), border: null))),
                   actions: [
                     TextButton(
                         onPressed: () => Navigator.pop(context, 'Cancel'),
-                        child: Text('memo.close'))
+                        child: Text('memo.close'.tr()))
                   ],
                 )
               );
@@ -78,15 +78,15 @@ Widget firstAction(BuildContext context, double buttonSize) {
       onTap: () => showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("description.title",
+            title: Text("description.title".tr(),
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,)),
-            content: Text("description.context", style: TextStyle(height: 1.5, fontSize: 15),),
+            content: Text("description.context".tr(), style: TextStyle(height: 1.5, fontSize: 15),),
             actions: [
               TextButton(
                   onPressed: () => Navigator.pop(context, 'Cancel'),
-                  child: Text('description.close'))
+                  child: Text('description.close'.tr()))
             ],
           )),
       child: Icon(Icons.question_mark, size: buttonSize,),
@@ -98,8 +98,8 @@ Widget firstAction(BuildContext context, double buttonSize) {
     child: Icon(Icons.star, size: buttonSize,),
     onTap: () {
       showDialog(context: context, builder: (context) => AlertDialog(
-        title: Text("bookmark.title"),
-        content: bookmarkedList.isEmpty? Text("bookmark.noBookmarkedPlayer") :
+        title: Text("bookmark.title".tr()),
+        content: bookmarkedList.isEmpty? Text("bookmark.noBookmarkedPlayer".tr()) :
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
           width: MediaQuery.of(context).size.width * 0.7,
@@ -145,7 +145,7 @@ patchNoteWidget(BuildContext context) {
   }
 
   List<TextSpan> convertPatchNote(String? character){
-    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title"}\n")];
+    List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title".tr()}\n")];
     if(character != null){
       final String text = replaceNumbers(patchNotes["characters"][character]);
       text.split("\n").forEach((element) {
@@ -205,7 +205,7 @@ patchNoteWidget(BuildContext context) {
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
-                child: Text('setting.close'))
+                child: Text('setting.close').tr())
           ],
         );
       },
@@ -213,9 +213,9 @@ patchNoteWidget(BuildContext context) {
 }
 
 AlertDialog settingDialog(BuildContext context){
-  // TextEditingController localizationController = TextEditingController(text: context.locale.languageCode == "ko" ? "한국어" : "English");
+  TextEditingController localizationController = TextEditingController(text: context.locale.languageCode == "ko" ? "한국어" : "English");
 
-  return AlertDialog(title: Text('setting.title', style: TextStyle(fontSize: 20)),
+  return AlertDialog(title: Text('setting.title', style: TextStyle(fontSize: 20)).tr(),
     content: ValueListenableBuilder(
       valueListenable: CustomThemeMode.fontChanged,
       builder: (context, value, child) {
@@ -224,35 +224,35 @@ AlertDialog settingDialog(BuildContext context){
             children: [
               Row(
                 children: [
-                  Text('setting.changeFont'),
+                  Text('setting.changeFont').tr(),
                   Switch(value: value, onChanged: (value) {
                     CustomThemeMode.changeFont();
                   })
                 ],
               ),
-              // Row(
-              //   children: [
-              //     DropdownMenu(
-              //       dropdownMenuEntries: [
-              //         DropdownMenuEntry(label: "English", value: "en"),
-              //         DropdownMenuEntry(label: "한국어", value: "ko")
-              //       ],
-              //       controller: localizationController,
-              //       initialSelection: context.locale.languageCode,
-              //       onSelected: (value){
-              //         context.setLocale(Locale(value!));
-              //         // setLocale(context, value!);
-              //       },
-              //     )
-              //   ],
-              // )
+              Row(
+                children: [
+                  DropdownMenu(
+                    dropdownMenuEntries: [
+                      DropdownMenuEntry(label: "English", value: "en"),
+                      DropdownMenuEntry(label: "한국어", value: "ko")
+                    ],
+                    controller: localizationController,
+                    initialSelection: context.locale.languageCode,
+                    onSelected: (value){
+                      context.setLocale(Locale(value!));
+                      // setLocale(context, value!);
+                    },
+                  )
+                ],
+              )
             ],
           ),
         );
       },
     ),
     actions: [
-      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('setting.close'))
+      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: Text('setting.close').tr())
     ],
   );
 }

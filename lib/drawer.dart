@@ -1,4 +1,4 @@
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -96,16 +96,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         child: Row(
           children: [
             profileContainer(Image.asset("assets/icons/${isPro? "pro" : "free"}.png")),
-            Text("main.drawer.login")
+            Text("main.drawer.login").tr()
           ],
         ),
       );
     }
 
     final tabNameList = [
-      "main.drawer.moveList",
-      "main.drawer.tips",
-      "main.drawer.searchProfile"
+      "main.drawer.moveList".tr(),
+      "main.drawer.tips".tr(),
+      "main.drawer.searchProfile".tr()
     ];
 
     drawerTabButton(String name, int index){

@@ -1,4 +1,4 @@
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -191,7 +191,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
   }
 
   return [
-    DataCell(Container(padding: EdgeInsets.all(7),width: 150, child: Text("${moveInfo.name}\n${moveInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
+    DataCell(Container(padding: EdgeInsets.all(7),width: 150, child: Text("${moveInfo.name}\n${context.locale.languageCode == "ko" ? moveInfo.command : changeCommand(moveInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, moveInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(moveInfo.startFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     if(moveInfo.guardFrame.contains("("))...[
       DataCell(SizedBox(width: listWidth, child: Text.rich(TextSpan(children: [
@@ -250,7 +250,7 @@ List<DataCell> createMove(BuildContext context, Character character, MoveInfo mo
     ]else...[
       DataCell(SizedBox(width: listWidth, child: Text(moveInfo.counterFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
-    DataCell(SizedBox(width: 30, child: Text(moveInfo.range,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? moveInfo.range : changeRange(moveInfo.range),textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(SizedBox(width: 50, child: Text(moveInfo.damage,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -266,7 +266,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       textStylePunish = TextStyle( color: Colors.red,);
 
   return [
-    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${throwInfo.command}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
+    DataCell(SizedBox(width: 150, child: Text("${throwInfo.name}\n${context.locale.languageCode == "ko" ? throwInfo.command : changeCommand(throwInfo.command, character)}", textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault,)), onTap: () {if(isPro)memo(context, character, throwInfo);}), //기술명, 커맨드
     DataCell(SizedBox(width: 30, child: Text(throwInfo.startFrame, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //발생
     DataCell(SizedBox(width: 40, child: Text(throwInfo.breakCommand, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //풀기
     if(throwInfo.afterBreakFrame.contains("+") && throwInfo.afterBreakFrame.contains("-") && throwInfo.afterBreakFrame != "-")...[ //풀기 후 F
@@ -283,7 +283,7 @@ List<DataCell> createThrow(BuildContext context, Character character, ThrowInfo 
       DataCell(SizedBox(width: 30, child: Text(throwInfo.afterBreakFrame,textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault)))
     ],
     DataCell(SizedBox(width: 50, child: Text(throwInfo.damage, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //대미지
-    DataCell(SizedBox(width: 30, child: Text(throwInfo.range, textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
+    DataCell(SizedBox(width: 30, child: Text(context.locale.languageCode == "ko" ? throwInfo.range : changeRange(throwInfo.range), textAlign: TextAlign.center, textScaler: textScale, style: textStyleDefault))), //판정
     DataCell(Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(throwInfo.extra, textAlign: TextAlign.start, textScaler: textScale, style: textStyleDefault),

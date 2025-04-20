@@ -1,5 +1,5 @@
 import 'dart:developer';
-// import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
@@ -57,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
     }else{
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("searchProfile.noTextError"),
+          content: Text("searchProfile.noTextError").tr(),
         )
       );
     }
@@ -91,7 +91,7 @@ class _SearchPageState extends State<SearchPage> {
                         Expanded(
                           child: TextField(
                             decoration: InputDecoration(
-                                hintText: "searchProfile.hintText"
+                                hintText: "searchProfile.hintText".tr()
                             ),
                             maxLines: null,
                             controller: searchController,
@@ -116,16 +116,16 @@ class _SearchPageState extends State<SearchPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Expanded(flex: 2, child: Text("searchProfile.name", textAlign: TextAlign.center, style: headingStyle)),
-              Expanded(flex: 2, child: Text("searchProfile.polarisId", textAlign: TextAlign.center, style: headingStyle,)),
-              Expanded(flex: 1, child: Text("searchProfile.verified", textAlign: TextAlign.center, style: headingStyle)),
+              Expanded(flex: 2, child: Text("searchProfile.name".tr(), textAlign: TextAlign.center, style: headingStyle)),
+              Expanded(flex: 2, child: Text("searchProfile.polarisId".tr(), textAlign: TextAlign.center, style: headingStyle,)),
+              Expanded(flex: 1, child: Text("searchProfile.verified".tr(), textAlign: TextAlign.center, style: headingStyle)),
             ],
           ),
           SizedBox(height: 5,),
           Container(height: 1, color: Colors.grey,),
           SizedBox(height: 4,),
           Expanded(
-            child: isSearching ? Center(child: Text("searchProfile.loading")) : ListView.builder(
+            child: isSearching ? Center(child: Text("searchProfile.loading".tr())) : ListView.builder(
               itemBuilder: (context, index) {
                 return SizedBox(
                   height: 60,
