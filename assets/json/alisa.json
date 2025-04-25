@@ -106,7 +106,7 @@
         "endAt": 42
       },
       {
-        "name": "이머전시 헬로월드",
+        "name": "이머전시 헬로 월드",
         "command": "히트 상태에서 →→~RPAP",
         "start_frame": "16",
         "guard_frame": "+3",
@@ -115,7 +115,8 @@
         "range": "중단x5",
         "damage": "3x4,16",
         "extra": "월 블래스트\n디스트럭티브 폼으로\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "dD045LgotkU"
       },
       {
         "name": "퀵-픽스 프로토콜",
@@ -1983,7 +1984,8 @@
         "range": "-",
         "damage": "-",
         "extra": "듀얼 부트로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "C9jusPctqvs"
       },
       {
         "name": "레트로 로켓",
@@ -2289,7 +2291,7 @@
         "endAt": 588
       },
       {
-        "name": "헬로월드",
+        "name": "헬로 월드",
         "command": "듀얼 부트 도중 →AP",
         "start_frame": "17",
         "guard_frame": "+7",
@@ -2298,7 +2300,8 @@
         "range": "중단x3",
         "damage": "3,3,16",
         "extra": "월 블래스트\n디스트럭티브 폼으로\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "jtc9gRB0esg"
       }
     ],
     "backup": [

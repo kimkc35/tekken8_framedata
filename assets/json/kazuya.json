@@ -455,7 +455,8 @@
         "range":"상단",
         "damage":"17",
         "extra":"월 블래스트\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "y9CKVvKKTiA"
       },
       {
         "name":"흉첨승권",
@@ -857,7 +858,8 @@
         "range":"중단",
         "damage":"20",
         "extra":"호밍기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "79Tz2tgBRCo"
       },
       {
         "name":"열화각",
@@ -1285,7 +1287,8 @@
         "range":"중단",
         "damage":"14",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "47tei-2WIJ8"
       },
       {
         "name":"발권국2",
@@ -1298,7 +1301,8 @@
         "damage":"14",
         "extra":"1타 히트 시 확정",
         "color": "yellow",
-        "뺑글이": ""
+        "뺑글이": "",
+        "extraVideo": "47tei-2WIJ8"
       },
       {
         "name":"파군",
@@ -1654,10 +1658,11 @@
         "range":"중단",
         "damage":"20,20",
         "extra":"호밍기\n히트 상태의 남은 시간을 소비\n히트 시 히트 상태의 남은 시간을 회복",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "fCRXZM3UjIA"
       },
       {
-        "name":"인페르노(데빌)",
+        "name":"인페르노",
         "command":"↖AP",
         "start_frame":"41",
         "guard_frame":"-",

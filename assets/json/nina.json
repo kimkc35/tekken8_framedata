@@ -37,7 +37,8 @@
         "range":"중단",
         "damage":"12,22",
         "extra":"1타 히트 시 확정\n월 블래스트\n히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8IIZsh13fTQ"
       },
       {
         "name":"리버버레이션 팜 봄",
@@ -611,7 +612,8 @@
         "range":"중단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "RmqbmK2ipyI"
       },
       {
         "name":"임팩트 팜 봄2",
@@ -623,7 +625,8 @@
         "range":"중단",
         "damage":"12,22",
         "extra":"1타 히트 시 확정\n월 블래스트\n히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "RmqbmK2ipyI"
       },
       {
         "name":"퀵 키스 샷",
@@ -635,7 +638,8 @@
         "range":"특수 중단x2",
         "damage":"12,12x2",
         "extra":"1타 카운터 히트 시 확정\n월 블래스트\n히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_hdQCAuK6qU"
       },
       {
         "name":"어퍼컷",
@@ -1872,7 +1876,8 @@
         "range":"특수 중단x2",
         "damage":"22,8x2",
         "extra":"1타 히트 시 확정\n월 블래스트\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "PANb4EyrrkA"
       },
       {
         "name":"트위스트 잽",

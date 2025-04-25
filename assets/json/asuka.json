@@ -1133,7 +1133,8 @@
         "range":"상단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "JZ5sDW3JTzw"
       },
       {
         "name":"이쿠타마 배쉬2",
@@ -1145,7 +1146,8 @@
         "range":"중단",
         "damage":"12,19",
         "extra":"월 블래스트\n상대의 반시계 방향 횡이동에 민감하게 반응\n↓~ 입력 시 캔슬하고 몸을 숙이는 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "JZ5sDW3JTzw"
       },
       {
         "name":"이쿠타마 배쉬2~캔슬",
@@ -1157,7 +1159,8 @@
         "range":"상단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "JZ5sDW3JTzw"
       },
       {
         "name":"난월",
@@ -1824,7 +1827,8 @@
         "range":"중단",
         "damage":"10,15",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "kQkjlhDiGU0"
       },
       {
         "name":"스미요시 강타 마츠리",
@@ -1849,7 +1853,8 @@
         "range":"중단",
         "damage":"12,24",
         "extra":"월 블래스트\n상대의 반시계 방향 횡이동에 민감하게 반응\n↓~ 입력 시 캔슬하고 몸을 숙이는 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "__cFe8CHkoM"
       },
       {
         "name":"천신 승타 마츠리",

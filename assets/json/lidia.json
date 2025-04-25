@@ -443,8 +443,7 @@
         "range": "중단",
         "damage": "12",
         "extra": "",
-        "startAt": 129,
-        "endAt": 132
+        "extraVideo": "RDnQttVlBYg"
       },
       {
         "name": "자화지정2",
@@ -456,7 +455,8 @@
         "range": "중단",
         "damage": "12,22",
         "extra": "토네이도\n히트 혹은 가드 시 전호후랑 자세로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "RDnQttVlBYg"
       },
       {
         "name": "뛰어 중단 앞차기",
@@ -860,6 +860,8 @@
         "range": "하단,잡기",
         "damage": "24,19",
         "extra": "[나락]",
+        "startAt": 212,
+        "endAt": 216,
         "color": "yellow"
       },
       {
@@ -872,6 +874,8 @@
         "range": "하단,잡기",
         "damage": "24,21",
         "extra": "[나락]",
+        "startAt": 212,
+        "endAt": 216,
         "color": "yellow"
       },
       {
@@ -884,6 +888,8 @@
         "range": "하단,잡기",
         "damage": "24,27",
         "extra": "상대방의 회복 가능 게이지 소멸[나락]",
+        "startAt": 212,
+        "endAt": 216,
         "color": "yellow"
       },
       {
@@ -909,6 +915,8 @@
         "range": "중단",
         "damage": "15",
         "extra": "↓↘→AP입력 시 파워 상승",
+        "startAt": 319,
+        "endAt": 322,
         "color": "yellow"
       },
       {
@@ -921,6 +929,8 @@
         "range": "중단",
         "damage": "15,22",
         "extra": "토네이도\n히트 혹은 가드 시 전호후랑 자세로\n홀드 가능",
+        "startAt": 319,
+        "endAt": 322,
         "color": "yellow"
       },
       {
@@ -933,6 +943,8 @@
         "range": "중단",
         "damage": "15,26",
         "extra": "월 블래스트\n토네이도\n히트 혹은 가드 시 전호후랑 자세로",
+        "startAt": 319,
+        "endAt": 322,
         "color": "yellow"
       },
       {
@@ -1062,6 +1074,8 @@
         "range": "중단",
         "damage": "16,16,21",
         "extra": "월 블래스트\n천상천하 레벨에 따라 대미지 증가",
+        "startAt": 240,
+        "endAt": 243,
         "color": "yellow"
       },
       {
@@ -1074,6 +1088,8 @@
         "range": "중단",
         "damage": "16,16,23",
         "extra": "월 블래스트\n천상천하 레벨에 따라 대미지 증가",
+        "startAt": 240,
+        "endAt": 243,
         "color": "yellow"
       },
       {
@@ -1086,6 +1102,8 @@
         "range": "중단",
         "damage": "16,16,29",
         "extra": "월 블래스트\n천상천하 레벨에 따라 대미지 증가",
+        "startAt": 240,
+        "endAt": 243,
         "color": "yellow"
       },
       {
@@ -1540,6 +1558,8 @@
         "range": "중단",
         "damage": "18,26",
         "extra": "월 블래스트\n토네이도\n히트 혹은 가드 시 전호후랑 자세로",
+        "startAt": 319,
+        "endAt": 322,
         "color": "yellow"
       },
       {
@@ -1999,7 +2019,8 @@
         "range": "상단",
         "damage": "28",
         "extra": "호밍기\n히트 혹은 가드 시 전호후랑 자세로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "pYKlFlXk5VU"
       },
       {
         "name": "말 자세~전호후랑 자세",
@@ -2353,6 +2374,8 @@
         "range": "중단",
         "damage": "10,22",
         "extra": "[자세나락]",
+        "startAt": 464,
+        "endAt": 468,
         "color": "yellow"
       },
       {
@@ -2365,6 +2388,8 @@
         "range": "중단",
         "damage": "10,24",
         "extra": "[자세나락]",
+        "startAt": 464,
+        "endAt": 468,
         "color": "yellow"
       },
       {
@@ -2377,6 +2402,8 @@
         "range": "중단",
         "damage": "10,28",
         "extra": "[자세나락]",
+        "startAt": 464,
+        "endAt": 468,
         "color": "yellow"
       },
       {
@@ -2634,6 +2661,8 @@
       "damage": "42",
       "range": "상단",
       "extra": "천상천하 레벨에 따라 대미지 증가",
+      "startAt": 520,
+      "endAt": 524,
       "color": "yellow"
     },
     {
@@ -2645,6 +2674,8 @@
       "damage": "44",
       "range": "상단",
       "extra": "천상천하 레벨에 따라 대미지 증가",
+      "startAt": 520,
+      "endAt": 524,
       "color": "yellow"
     },
     {
@@ -2656,6 +2687,8 @@
       "damage": "50",
       "range": "상단",
       "extra": "천상천하 레벨에 따라 대미지 증가\n상대방의 상대방의 회복 가능 게이지 소멸",
+      "startAt": 520,
+      "endAt": 524,
       "color": "yellow"
     },
     {

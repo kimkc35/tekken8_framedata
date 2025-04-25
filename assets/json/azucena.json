@@ -1708,7 +1708,8 @@
         "extra":"히트 시 리베르타도르로",
         "startAt": 348,
         "endAt": 350,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "SmMNys_CH8g"
       }
     ],
     "libertador":[
@@ -1919,7 +1920,8 @@
         "range":"중단",
         "damage":"25",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "Cob8ram18Oo"
       },
       {
         "name":"블렌드 코르타르1",

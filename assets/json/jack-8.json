@@ -89,7 +89,8 @@
         "range":"중단",
         "damage":"30",
         "extra":"히트 상태의 남은 시간을 소비\n↓~입력 시 감마 하울로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "HE_5c-rMUfs"
       },
       {
         "name":"메카 테라펄서",
@@ -101,7 +102,8 @@
         "range":"중단",
         "damage":"16",
         "extra":"혹은 ↖LK 혹은 ↑LK\n히트 시 감마 하울로\n히트 상태의 남은 시간을 소비\n이 기술로는 K.O. 불가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "Gzg3PLSRmYU"
       },
       {
         "name":"메테오 레이드",
@@ -195,6 +197,32 @@
         "extra":"",
         "startAt": 62,
         "endAt": 66
+      },
+      {
+        "name":"잽 엘보~플라잉 포트리스",
+        "command":"RPLP↗~",
+        "start_frame":"11",
+        "guard_frame":"+1",
+        "hit_frame":"+6",
+        "counter_frame":"+6",
+        "range":"중단",
+        "damage":"10,12",
+        "extra":"",
+        "color": "yellow",
+        "extraVideo": "s-Xy4Jqy4NY"
+      },
+      {
+        "name":"잽 엘보~메이크 썸 노이즈",
+        "command":"RPLP↗~AP",
+        "start_frame":"11",
+        "guard_frame":"+5",
+        "hit_frame":"+17g",
+        "counter_frame":"+17g",
+        "range":"중단",
+        "damage":"10,12,17",
+        "extra":"가드 대미지\n히트 혹은 가드 시 감마 하울로[박수]",
+        "color": "yellow",
+        "extraVideo": "W5O_QX9hArI"
       },
       {
         "name":"잽 엘보 스매시",
@@ -2068,10 +2096,11 @@
         "range":"-",
         "damage":"28",
         "extra":"감마 하울로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "d4euKe8uqkY"
       },
       {
-        "name":"아토믹 숄더 태클~플라잉 포트리스(홀드)",
+        "name":"아토믹 숄더 태클(홀드)~플라잉 포트리스",
         "command":"몸을 숙인 상태에서 ↘AK 홀드 ↗~",
         "start_frame":"30",
         "guard_frame":"+4",
@@ -2080,7 +2109,8 @@
         "range":"-",
         "damage":"32",
         "extra":"감마 하울로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "d4euKe8uqkY"
       },
       {
         "name":"아토믹 숄더 태클~메이크 썸 노이즈",
@@ -2092,7 +2122,8 @@
         "range":"중단",
         "damage":"28,17",
         "extra":"가드 대미지\n히트 혹은 가드 시 감마 하울로[박수]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "1ZDAJBa12J0"
       },
       {
         "name":"펄버라이저1",
@@ -2395,7 +2426,8 @@
         "range":"-",
         "damage":"-",
         "extra":"감마 하울로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "7oobT67N6uI"
       },
       {
         "name":"브레이크아웃 포트리스",
@@ -2433,7 +2465,8 @@
         "range":"중단",
         "damage":"20",
         "extra":"가드 대미지\n히트 혹은 가드 시 감마 하울로[박수]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "9Zkuuhx7u5Q"
       }
     ],
     "gamma charge":[

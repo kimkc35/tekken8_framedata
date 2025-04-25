@@ -50,7 +50,8 @@
         "range": "중단",
         "damage": "15,25",
         "extra": "히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "7WfqWiDaV-4"
       },
       {
         "name": "래피드 베어",
@@ -75,9 +76,8 @@
         "range": "중단",
         "damage": "21",
         "extra": "히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
-        "startAt": 335,
-        "endAt": 338,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "g3_0thd8Fe0"
       },
       {
         "name": "판다 슈팅 스타",
@@ -1027,8 +1027,7 @@
         "range": "중단",
         "damage": "15",
         "extra": "",
-        "startAt": 231,
-        "endAt": 234
+        "extraVideo": "7WfqWiDaV-4"
       },
       {
         "name": "그리즐리 클로스2",
@@ -1040,9 +1039,8 @@
         "range": "중단",
         "damage": "15,25",
         "extra": "히트 발동기",
-        "startAt": 231,
-        "endAt": 234,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "7WfqWiDaV-4"
       },
       {
         "name": "그리즐리 클로스 스매시",
@@ -1578,9 +1576,8 @@
         "range": "중단",
         "damage": "21",
         "extra": "히트 발동기\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
-        "startAt": 335,
-        "endAt": 338,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "g3_0thd8Fe0"
       },
       {
         "name": "헌팅 힙 스매시",
@@ -1605,7 +1602,8 @@
         "range": "중단",
         "damage": "27",
         "extra": "월 블래스트\n호밍기\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "hy3ThlqjEBM"
       },
       {
         "name": "빅 트리",

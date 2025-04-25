@@ -131,7 +131,7 @@ Widget firstAction(BuildContext context, double buttonSize) {
 }
 
 patchNoteWidget(BuildContext context) {
-  TextEditingController patchNoteController = TextEditingController(text: patchNotes["characters"].entries.firstWhere((e) => e.value != "").key.toUpperCase());
+  TextEditingController patchNoteController = TextEditingController();
 
   Size screenSize = MediaQuery.of(context).size;
 
@@ -144,9 +144,9 @@ patchNoteWidget(BuildContext context) {
     return result;
   }
 
-  List<TextSpan> convertPatchNote(String? character){
+  List<TextSpan> convertPatchNote(String character){
     List<TextSpan> result = [TextSpan(text: "${patchNotes["version"]} ${"patchNote.title".tr()}\n")];
-    if(character != null){
+    if(character.isNotEmpty){
       final String text = replaceNumbers(patchNotes["characters"][character]);
       text.split("\n").forEach((element) {
         if(element.contains(":")){
@@ -175,32 +175,31 @@ patchNoteWidget(BuildContext context) {
 
   return showDialog(
     context: context,
-    builder: (context) => StatefulBuilder(
+    builder: (context) {
+      return StatefulBuilder(
       builder: (context, setState) {
         return AlertDialog(
-          title: Row(
-            children: [
-              DropdownMenu(
-                menuHeight: screenSize.height * 0.4,
-                onSelected: (value) => setState((){
-                }),
-                hintText: "캐릭터",
-                controller: patchNoteController,
-                  dropdownMenuEntries: [
-                    for(MapEntry<String, dynamic> character in patchNotes["characters"].entries)...[
-                      if(character.value != "") DropdownMenuEntry(value: character.key, label: character.key.toUpperCase())
-                    ]
-                  ]
-              ),
-            ],
+          title: DropdownMenu(
+            menuHeight: screenSize.height * 0.4,
+            onSelected: (value) => setState(() {}),
+            hintText: "캐릭터",
+            controller: patchNoteController,
+            dropdownMenuEntries: [
+              for(MapEntry<String,
+                  dynamic> character in patchNotes["characters"].entries)...[
+                if(character.value != "") DropdownMenuEntry(
+                    value: character.key, label: character.key.toUpperCase())
+              ]
+            ]
           ),
           content: SingleChildScrollView(
-              child: Text.rich(
-                TextSpan(
+            child: Text.rich(
+              TextSpan(
                   style: TextStyle(height: 1.4),
-                  children: convertPatchNote(patchNoteController.text.toLowerCase())
-                ),
-              )
+                  children: convertPatchNote(
+                      patchNoteController.text.toLowerCase())
+              ),
+            )
           ),
           actions: [
             TextButton(
@@ -209,7 +208,9 @@ patchNoteWidget(BuildContext context) {
           ],
         );
       },
-        ));
+    );
+   }
+ );
 }
 
 AlertDialog settingDialog(BuildContext context){

@@ -106,7 +106,7 @@
         "endAt": 37
       },
       {
-        "name": "후킹 배터리 램",
+        "name": "악뢰파쇄충",
         "command": "히트 상태에서 ←LKLKRP",
         "start_frame": "14",
         "guard_frame": "0",
@@ -115,7 +115,8 @@
         "range": "특수 중단",
         "damage": "14,25,20",
         "extra": "월 블래스트\n토네이도\n호킹기\n가드 대미지\n방어 행동 관통 효과 있음\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "yUyHSBcjQbo"
       },
       {
         "name": "현공굉퇴격",
@@ -1255,7 +1256,7 @@
         "endAt": 277
       },
       {
-        "name": "로어링 스톤헤드",
+        "name": "굉 박치기",
         "command": "→→→~AP",
         "start_frame": "15",
         "guard_frame": "+3",
@@ -1264,10 +1265,11 @@
         "range": "중단",
         "damage": "20",
         "extra": "→~입력 시 뇌신호법으로\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "L5PhaDoBcHU"
       },
       {
-        "name": "로어링 스톤헤드~뇌신호법",
+        "name": "굉 박치기~뇌신호법",
         "command": "→→→~AP",
         "start_frame": "15",
         "guard_frame": "+8",
@@ -1276,7 +1278,8 @@
         "range": "중단",
         "damage": "20",
         "extra": "뇌신호법으로\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "L5PhaDoBcHU"
       },
       {
         "name": "10단 콤보1",

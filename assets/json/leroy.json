@@ -1483,7 +1483,8 @@
         "range":"중단x2",
         "damage":"7,20",
         "extra":"혹은 천마 도중 AK\n독보로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "JyodIGf4uyI"
       },
       {
         "name":"열진권1",
@@ -1641,7 +1642,7 @@
         "counter_frame":"0",
         "range":"중단",
         "damage":"17",
-        "extra":"흘리기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복",
+        "extra":"흘리기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)",
         "startAt": 338,
         "endAt": 341
       },
@@ -1654,8 +1655,9 @@
         "counter_frame":"D",
         "range":"상단",
         "damage":"17,17",
-        "extra":"흘리기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복",
-        "color": "yellow"
+        "extra":"흘리기 효과 있음(히트 상태 지속 중에 성공하면 히트 상태의 남은 시간 회복)",
+        "color": "yellow",
+        "extraVideo": "n7qbWZM16Yo"
       },
       {
         "name":"양악파쇄1",

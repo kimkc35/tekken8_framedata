@@ -89,9 +89,8 @@
         "range": "중단x2",
         "damage": "15,25",
         "extra": "플로어 블래스트\n히트 상태의 남은 시간을 소비\n히트 혹은 가드 시 스텔스 스텝으로",
-        "startAt": 29,
-        "endAt": 33,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "MUuDublUUqo"
       },
       {
         "name": "룸 알 무자파",
@@ -574,7 +573,8 @@
         "range": "하단",
         "damage": "16",
         "extra": "히트 상태 유지 중에는 히트 상태의 남은 시간을 회복",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "-6CIOjpp_xs"
       },
       {
         "name": "거트 임팩트",

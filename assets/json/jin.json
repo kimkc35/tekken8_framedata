@@ -15,7 +15,7 @@
         "endAt": 4
       },
       {
-        "name":"왼 돌려 찌르기~흑익사장2",
+        "name":"왼 돌려 찌르기~흑익사장",
         "command":"전심 도중 LPRP",
         "start_frame":"16",
         "guard_frame":"-14",
@@ -24,7 +24,8 @@
         "range":"중단",
         "damage":"14,21",
         "extra":"히트 발동기\n가드 대미지\n↘~입력 시 캔슬하고 브레이킹 스텝 이행",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "4YFDzdIDNCU"
       },
       {
         "name":"정중선 마구 찌르기",
@@ -101,7 +102,8 @@
         "range":"중단",
         "damage":"20",
         "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\n히트 혹은 가드 시 데빌 스텝으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "PLl0lar0IX4"
       },
       {
         "name":"각성 뇌신권",
@@ -638,7 +640,8 @@
         "damage":"12,20",
         "extra":"월 블래스트\n가드 대미지\n1타 히트 시 확정",
         "color": "yellow",
-        "뺑글이": ""
+        "뺑글이": "",
+        "extraVideo": "gQ0nNEmkm3k"
       },
       {
         "name":"왼 중단 돌려차기",
@@ -1723,8 +1726,7 @@
         "range":"중단",
         "damage":"14",
         "extra":"",
-        "startAt": 356,
-        "endAt": 360
+        "extraVideo": "4YFDzdIDNCU"
       },
       {
         "name":"왼 돌려 찌르기~흑익사장2",
@@ -1735,9 +1737,20 @@
         "counter_frame":"D",
         "range":"중단",
         "damage":"14,21",
-        "extra":"히트 발동기\n가드 대미지\n↘~입력 시 캔슬하고 브레이킹 스텝 이행",
-        "startAt": 356,
-        "endAt": 360
+        "extra":"히트 발동기\n가드 대미지\n↘~입력 시 캔슬하고 브레이킹 스텝으로",
+        "extraVideo": "4YFDzdIDNCU"
+      },
+      {
+        "name":"왼 돌려 찌르기~흑익사장2(캔슬)~브레이킹 스텝",
+        "command":"전심 도중 LPRP↘~",
+        "start_frame":"16",
+        "guard_frame":"-14",
+        "hit_frame":"-22",
+        "counter_frame":"-22",
+        "range":"중단",
+        "damage":"14",
+        "extra":"브레이킹 스텝으로",
+        "extraVideo": "4YFDzdIDNCU"
       },
       {
         "name":"카자마류 연격 방원각",
@@ -1820,7 +1833,7 @@
       },
       {
         "name":"하단 수도 치기~인과폭심각~브레이킹 스텝",
-        "command":"전심 도중 AP",
+        "command":"전심 도중 AP↘~",
         "start_frame":"24",
         "guard_frame":"-14",
         "hit_frame":"+5",

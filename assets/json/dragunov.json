@@ -76,7 +76,8 @@
         "range":"중단",
         "damage":"28",
         "extra":"히트 발동기[드산고]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ezL_HX9dVXY"
       },
       {
         "name":"러시안 훅 스페셜~앰부시 태클",
@@ -1042,8 +1043,7 @@
         "range":"상단",
         "damage":"17",
         "extra":"호밍기\n정면 지상 카운터 히트 시 잡기로",
-        "startAt": 222,
-        "endAt": 224
+        "extraVideo": "ou0RJGgpVcc"
       },
       {
         "name":"서레이티드 엣지(카운터)",
@@ -1055,7 +1055,8 @@
         "range":"상단,잡기",
         "damage":"20,20",
         "extra":"상대의 상대방의 회복 가능 게이지 소멸",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ou0RJGgpVcc"
       },
       {
         "name":"툰드라 스트라이크1",
@@ -1171,7 +1172,8 @@
         "range":"상단,잡기",
         "damage":"20",
         "extra":"히트 상태 지속 중에는 저스트 입력 불필요(히트 상태의 남은 시간을 소비)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "Y7527xGiW64"
       },
       {
         "name":"카운터스트라이크",
@@ -1835,8 +1837,7 @@
         "range":"중단",
         "damage":"28",
         "extra":"[드산고]",
-        "startAt": 362,
-        "endAt": 364
+        "extraVideo": "ezL_HX9dVXY"
       },
       {
         "name":"헤일 슬라이서1",
@@ -1904,7 +1905,8 @@
         "extra":"혹은 ↑AK 혹은 ↓AK\n피전 롤로",
         "startAt": 394,
         "endAt": 396,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "Fui_SFBUzKU"
       },
       {
         "name":"프로즌 스키테",
@@ -1916,7 +1918,8 @@
         "range":"중단",
         "damage":"24",
         "extra":"월 블래스트",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "EVViEBiFpCs"
       },
       {
         "name":"프로즌 힐 훅",
@@ -1928,7 +1931,8 @@
         "damage":"21,20",
         "range":"하단,잡기",
         "extra":"호밍기\n정면 지상 히트 시 클리핑 힐 훅으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "0GYJIrd76Ok"
       },
       {
         "name":"피전 롤~앰부시 태클",

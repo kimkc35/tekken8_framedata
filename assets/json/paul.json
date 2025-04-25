@@ -102,7 +102,8 @@
         "range": "중단",
         "damage": "14,36",
         "extra": "1타 히트 시 확정\n월 블래스트\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_fR4Hb4AWto"
       },
       {
         "name": "만성진룡파",
@@ -925,9 +926,8 @@
         "range": "중단",
         "damage": "30",
         "extra": "월 블래스트\n호밍기",
-        "startAt": 197,
-        "endAt": 200,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8CRn92cIeJ8"
       },
       {
         "name": "낙월",
@@ -1807,7 +1807,6 @@
       }
     ],
     "deep dive": [
-
       {
         "name": "이중 잠복",
         "command": "↘AK",
@@ -1818,9 +1817,8 @@
         "range": "-",
         "damage": "-",
         "extra": "혹은 잠복 스텝 도중 ↘ 혹은 스웨이 도중 ↘\n이중 잠복으로",
-        "startAt": 337,
-        "endAt": 339,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "Rzpz8QIZsRw"
       },
       {
         "name": "강부",
@@ -1833,7 +1831,8 @@
         "damage": "19",
         "extra": "호밍기",
         "color": "yellow",
-        "뺑": ""
+        "뺑": "",
+        "extraVideo": "1gBryAjOopg"
       },
       {
         "name": "강풍란격1",
@@ -1884,7 +1883,8 @@
         "range": "하단",
         "damage": "19",
         "extra": "클린 히트 효과 있음[폴체트]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "QbEzhib4zO8"
       },
       {
         "name": "영월(클린 히트)",
@@ -1896,7 +1896,8 @@
         "range": "하단",
         "damage": "22",
         "extra": "클린 히트 효과 있음[폴체트]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "QbEzhib4zO8"
       },
       {
         "name": "미월",

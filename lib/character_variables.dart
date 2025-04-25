@@ -363,8 +363,8 @@ Character zafina = Character(
   name: "zafina",
   heatSystem: ["아나세마 상태의 기술 사용 가능", "아자젤의 힘(체력 소비 기술)이 발동했을 때 체력을 소비하지 않음"],
   rageArts: MoveInfo(name: "셈퍼 어바러스 어젯", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "혹은 레이지 상태에서 스케어크로 자세 도중 ${sticks["c3"]}AP 레이지 아츠\n히트 시 상대방의 회복 가능 게이지 소멸", startAt: 39, endAt: 53),
-  types: {"heat" : false, "general" : false, "sit" : false, "scarecrow stance" : false, "tarantula stance" : false, "mantis stance" : false},
-  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "scarecrow stance" : "스케어크로 자세", "tarantula stance" : "타란튤라 자세", "mantis stance" : "맨티스 자세"},
+  types: {"heat" : false, "general" : false, "sit" : false, "scarecrow stance" : false, "tarantula stance" : false, "mantis stance" : false, "anathema": false},
+  typesKo: {"heat" : "히트", "general" : "일반", "sit" : "앉은 자세", "scarecrow stance" : "스케어크로 자세", "tarantula stance" : "타란튤라 자세", "mantis stance" : "맨티스 자세", "anathema": "아나세마"},
   videoId: "vshwmLE3bpo"
 );
 
@@ -407,10 +407,10 @@ Character clive = Character(
 Character anna = Character(
     name: "anna",
     heatSystem: ["일부 사격기 파워 상승", "러블리 톰에 의한 공격 파생이 증가"],
-    rageArts: MoveInfo(name: "섬 라이크 잇 러프!", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대방의 회복 가능 게이지 소멸", startAt: 59, endAt: 74),
+    rageArts: MoveInfo(name: "섬 라이크 잇 러프!", command: "레이지 상태에서 ${sticks["c3"]}AP", startFrame: "20", guardFrame: "-15", hitFrame: "D", counterFrame: "D", range: "중단", damage: "55", extra: "레이지 아츠\n히트 시 상대방의 회복 가능 게이지 소멸", startAt: 58, endAt: 73),
     types: {"heat": false, "general": false, "sit": false, "hammer chance": false, "chaos judgement": false, "pleasure time": false},
     typesKo: {"heat": "히트", "general": "일반", "sit": "앉은 자세", "hammer chance": "해머 찬스", "chaos judgement": "카오스 저지먼트", "pleasure time": "플레져 타임"},
-    videoId: "NTlQhe60gXs"
+    videoId: "CvmIUTSgPNA"
 );
 
 final characterList = [alisa, asuka, azucena, bryan, claudio, devilJin, dragunov, feng, hwoarang, jack8, jin, jun, kazuya, king, kuma, lars, law, lee, leo, leroy, lili, nina, panda, paul, raven, reina, shaheen, steve, victor, xiaoyu, yoshimitsu, zafina, eddy, lidia, heihachi, clive, anna];

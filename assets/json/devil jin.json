@@ -128,7 +128,8 @@
         "range":"특수 중단",
         "damage":"7,18",
         "extra":"토네이도\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "CZW70nJV-sY"
       },
       {
         "name":"원광멸초파",
@@ -153,7 +154,8 @@
         "range":"가불",
         "damage":"39",
         "extra":"시즌 1 히트 상태에서 모닝 크로우 도중 RP+LK\n히트 시 잡기로\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "TWokMGSQT08"
       },
       {
         "name":"흉옥라선~모닝 크로우",
@@ -543,20 +545,22 @@
         "counter_frame":"+16g",
         "range":"중단",
         "damage":"11,23",
-        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로\n카운터 히트 시 확정",
-        "color": "yellow"
+        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로\n1타 카운터 히트 시 확정",
+        "color": "yellow",
+        "extraVideo": "csm-iIwZxkA"
       },
       {
         "name":"악귀현현~모닝 크로우",
-        "command":"↘LPRK",
+        "command":"↘LPRK 히트 시 →~",
         "start_frame":"13",
         "guard_frame":"-13",
         "hit_frame":"+16g",
         "counter_frame":"+16g",
         "range":"중단",
         "damage":"11,23",
-        "extra":"월 블래스트\n히트 시 →~입력 시 모닝 크로우로",
-        "color": "yellow"
+        "extra":"월 블래스트\n모닝 크로우로",
+        "color": "yellow",
+        "extraVideo": "csm-iIwZxkA"
       },
       {
         "name":"흑파화치기",
@@ -1080,8 +1084,8 @@
         "endAt": 283
       },
       {
-        "name":"나찰문 섬",
-        "command":"←→RPLK",
+        "name":"나찰문 섬~모닝 크로우",
+        "command":"←→RPLK→~",
         "start_frame":"15",
         "guard_frame":"-5",
         "hit_frame":"+14g",
@@ -1669,11 +1673,23 @@
         "range":"중단",
         "damage":"10,14",
         "extra":"",
-        "startAt": 420,
-        "endAt": 425
+        "extraVideo": "yJgPlC5tIr8"
       },
       {
         "name":"액성2",
+        "command":"비공 도중 RKRPLP",
+        "start_frame":"20",
+        "guard_frame":"-16",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"10,14,10",
+        "extra":"↗~입력 시 잡기로",
+        "color": "yellow",
+        "extraVideo": "yJgPlC5tIr8"
+      },
+      {
+        "name":"액성2~잡기",
         "command":"비공 도중 RKRPLP↗~",
         "start_frame":"20",
         "guard_frame":"-16",
@@ -1682,7 +1698,8 @@
         "range":"중단,잡기",
         "damage":"10,14,10,6",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "yJgPlC5tIr8"
       },
       {
         "name":"흉성",
@@ -1825,11 +1842,23 @@
         "range":"중단",
         "damage":"10,14",
         "extra":"",
-        "startAt": 465,
-        "endAt": 469
+        "extraVideo": "fc8JxOXAza0"
       },
       {
         "name":"액성2",
+        "command":"모닝 크로우 도중 RKRPLP",
+        "start_frame":"20",
+        "guard_frame":"-16",
+        "hit_frame":"D",
+        "counter_frame":"D",
+        "range":"중단",
+        "damage":"10,14,10",
+        "extra":"↗~입력 시 잡기로",
+        "color": "yellow",
+        "extraVideo": "fc8JxOXAza0"
+      },
+      {
+        "name":"액성2~잡기",
         "command":"모닝 크로우 도중 RKRPLP↗~",
         "start_frame":"20",
         "guard_frame":"-16",
@@ -1838,7 +1867,8 @@
         "range":"중단,잡기",
         "damage":"10,14,10,6",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "fc8JxOXAza0"
       },
       {
         "name":"흉성",
@@ -1863,7 +1893,8 @@
         "range":"가불",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "cy8s1id6KAM"
       }
     ]
   },

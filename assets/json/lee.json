@@ -25,8 +25,7 @@
         "damage":"7,7,20",
         "extra":"히트 발동기",
         "color": "yellow",
-        "startAt": 391,
-        "endAt": 394
+        "extraVideo": "vUg29BnHGFw"
       },
       {
         "name":"머신건 킥스 카디널",
@@ -52,8 +51,7 @@
         "damage":"13,13,20",
         "extra":"히트 발동기",
         "color": "yellow",
-        "startAt": 172,
-        "endAt": 175
+        "extraVideo": "KiTvPITcAP8"
       },
       {
         "name":"패뷸러스 윕",
@@ -91,7 +89,8 @@
         "range":"중단",
         "damage":"35",
         "extra":"월 블래스트\n호밍기\n히트 상태의 남은 시간을 소비\n→입력 시 미스트 스텝으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "7YDMmaLDA-M"
       },
       {
         "name":"펄스 블래스트~미스트 스텝",
@@ -103,10 +102,11 @@
         "range":"중단",
         "damage":"35",
         "extra":"월 블래스트\n호밍기\n히트 상태의 남은 시간을 소비\n미스트 스텝으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "7YDMmaLDA-M"
       },
       {
-        "name":"펄스 블래스트",
+        "name":"팬텀 로즈",
         "command":"히트 상태에서 ↓AP",
         "start_frame":"18",
         "guard_frame":"+6",
@@ -115,10 +115,11 @@
         "range":"중단",
         "damage":"30",
         "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\nAK입력 시 히트맨으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "AOidSLd6feo"
       },
       {
-        "name":"펄스 블래스트~히트맨",
+        "name":"팬텀 로즈~히트맨",
         "command":"히트 상태에서 ↓APAK",
         "start_frame":"18",
         "guard_frame":"+8",
@@ -127,7 +128,8 @@
         "range":"중단",
         "damage":"30",
         "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\n히트맨으로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "AOidSLd6feo"
       },
       {
         "name":"페러다임 브레이커",
@@ -870,8 +872,7 @@
         "range":"상단",
         "damage":"13,13",
         "extra":"강제 가드",
-        "startAt": 172,
-        "endAt": 175
+        "extraVideo": "KiTvPITcAP8"
       },
       {
         "name":"머큐리 드라이브2",
@@ -883,8 +884,7 @@
         "range":"중단",
         "damage":"13,13,20",
         "extra":"",
-        "startAt": 172,
-        "endAt": 175
+        "extraVideo": "KiTvPITcAP8"
       },
       {
         "name":"패뷸러스 윕1",
@@ -2140,8 +2140,7 @@
         "range":"상단",
         "damage":"7,7",
         "extra":"히트맨으로\n→~입력 시 캔슬하고 미스트 스텝으로",
-        "startAt": 391,
-        "endAt": 394
+        "extraVideo": "vUg29BnHGFw"
       },
       {
         "name":"어메이징 스와이프1(캔슬)~미스트 스텝",
@@ -2153,8 +2152,7 @@
         "range":"상단",
         "damage":"7",
         "extra":"미스트 스텝으로",
-        "startAt": 391,
-        "endAt": 394
+        "extraVideo": "vUg29BnHGFw"
       },
       {
         "name":"어메이징 스와이프2",
@@ -2166,8 +2164,7 @@
         "range":"상단",
         "damage":"7,7,20",
         "extra":"",
-        "startAt": 391,
-        "endAt": 394
+        "extraVideo": "vUg29BnHGFw"
       },
       {
         "name":"엑설런트 콤보",

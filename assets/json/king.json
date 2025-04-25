@@ -221,7 +221,8 @@
         "range":"상단",
         "damage":"17",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "P-zuGUs1Pmo"
       },
       {
         "name":"스탬피드 크러쉬2",
@@ -233,7 +234,8 @@
         "range":"중단",
         "damage":"17,18",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "P-zuGUs1Pmo"
       },
       {
         "name":"스탬피드 크러쉬3",
@@ -245,7 +247,8 @@
         "range":"중단",
         "damage":"17,18,24",
         "extra":"히트 시 재규어 스프린트로(←~입력 시 이행하지 않음)\n홀드 가능",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "P-zuGUs1Pmo"
       },
       {
         "name":"스탬피드 크러쉬3(홀드)",
@@ -257,7 +260,8 @@
         "range":"중단",
         "damage":"17,18,30",
         "extra":"히트 혹은 가드 시 재규어 스프린트로(←~입력 시 이행하지 않음)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "u05sRPZAdBQ"
       },
       {
         "name":"스탬피드 크러쉬3(홀드)",
@@ -269,7 +273,8 @@
         "range":"중단",
         "damage":"17,18,30",
         "extra":"히트 혹은 가드 시 재규어 스프린트로(←~입력 시 이행하지 않음)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "u05sRPZAdBQ"
       },
       {
         "name":"헤드 스피너1",

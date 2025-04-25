@@ -141,7 +141,8 @@
         "range":"중단,특수 중단",
         "damage":"20,10",
         "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "3tbQ68SZxuw"
       },
       {
         "name":"스택 업 리벨리온",
@@ -153,7 +154,8 @@
         "range":"하단,특수 중단",
         "damage":"11,10",
         "extra":"→~입력 시 사일런트 엔트리로\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "CB4ACqvMIkc"
       }
     ],
     "general":[
@@ -544,7 +546,8 @@
         "range":"중단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "B3wy9nZNABU"
       },
       {
         "name":"라이트닝 배러지2",
@@ -556,7 +559,8 @@
         "range":"상단",
         "damage":"12,12",
         "extra":"↓~입력 시 다이나믹 엔트리로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "B3wy9nZNABU"
       },
       {
         "name":"라이트닝 배러지2~다이나믹 엔트리",
@@ -568,7 +572,8 @@
         "range":"상단",
         "damage":"12,12",
         "extra":"↓~입력 시 다이나믹 엔트리로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "B3wy9nZNABU"
       },
       {
         "name":"라이트닝 배러지3",
@@ -580,10 +585,11 @@
         "range":"상단",
         "damage":"12,12,25",
         "extra":"↓~입력 시 다이나믹 엔트리로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "B3wy9nZNABU"
       },
       {
-        "name":"라이트닝 배러지3",
+        "name":"라이트닝 스파크",
         "command":"↘LPLK",
         "start_frame":"13",
         "guard_frame":"-12",
@@ -592,7 +598,8 @@
         "range":"중단",
         "damage":"12,20",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "NcyZZmWcsJk"
       },
       {
         "name":"플래시 불릿~사이런트 엔트리",
@@ -959,7 +966,7 @@
         "endAt": 171
       },
       {
-        "name":"마그네틱 니 블래스트",
+        "name":"마그네틱 니 블라스트",
         "command":"←RK 정면 지상 히트 시 AP",
         "start_frame":"15",
         "guard_frame":"-8",
@@ -968,7 +975,8 @@
         "range":"중단",
         "damage":"23,15",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "j_SCMVYuUbA"
       },
       {
         "name":"윈드 라이거",
@@ -1179,7 +1187,7 @@
         "endAt": 249
       },
       {
-        "name":"플래시 블라이드",
+        "name":"플래시 블레이드",
         "command":"→→→~LP",
         "start_frame":"18",
         "guard_frame":"+5",
@@ -1189,7 +1197,8 @@
         "damage":"23",
         "extra":"월 블래스트\n사일런트 엔트리로\n←~입력 시 서 있는 상태로",
         "color": "yellow",
-        "뺑글이": ""
+        "뺑글이": "",
+        "extraVideo": "lNBrS9_VluQ"
       },
       {
         "name":"레드 스프라이트",

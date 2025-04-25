@@ -624,7 +624,8 @@
         "range":"중단",
         "damage":"10",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "VbQJP3pqMlI"
       },
       {
         "name":"블라스트 클로2",
@@ -636,7 +637,8 @@
         "range":"상단",
         "damage":"10,24",
         "extra":"1타 히트 시 확정\n월 블래스트\n히트 상태 지속 중에는 파워 상승\n히트 상태의 남은 시간을 소비(히트 시 히트 상태의 남은 시간을 회복)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "VbQJP3pqMlI"
       },
       {
         "name":"블라스트 클로2(파워 상승)",
@@ -648,7 +650,8 @@
         "range":"상단",
         "damage":"10,27",
         "extra":"1타 히트 시 확정\n월 블래스트\n히트 상태의 남은 시간을 소비(히트 시 히트 상태의 남은 시간을 회복)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "VbQJP3pqMlI"
       },
       {
         "name":"드래곤 레이즈",
@@ -933,7 +936,8 @@
         "range":"중단,상단,중단",
         "damage":"8,8,8",
         "extra":"드래곤 차지로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "CRxujTv6mow"
       },
       {
         "name":"드래곤 저지먼트2",
@@ -945,7 +949,8 @@
         "range":"중단",
         "damage":"8,8,8,28",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "CRxujTv6mow"
       },
       {
         "name":"드래곤 스톰1",
@@ -1309,7 +1314,8 @@
         "damage":"21",
         "extra":"월 블래스트\n가드 대미지\n히트 상태 지속 중에는 파워 상승\n히트 상태의 남은 시간을 소비(히트 시 히트 상태의 남은 시간을 회복)",
         "color": "yellow",
-        "뺑글이": ""
+        "뺑글이": "",
+        "extraVideo": "NZDfV8EcPGI"
       },
       {
         "name":"게일 클로(파워 상승)",
@@ -1322,7 +1328,8 @@
         "damage":"24",
         "extra":"월 블래스트\n가드 대미지\n히트 상태 지속 중에는 파워 상승\n히트 상태의 남은 시간을 소비(히트 시 히트 상태의 남은 시간을 회복)",
         "color": "yellow",
-        "뺑글이": ""
+        "뺑글이": "",
+        "extraVideo": "NZDfV8EcPGI"
       },
       {
         "name":"드래곤즈 퓨리",
@@ -1490,7 +1497,8 @@
         "range":"중단",
         "damage":"30",
         "extra":"가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "i9AumrCD7AE"
       },
       {
         "name":"드래곤즈 리프 샷",

@@ -76,7 +76,8 @@
         "range":"중단",
         "damage":"30",
         "extra":"히트 발동기\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "3XcJlv4Z6n4"
       },
       {
         "name":"무슈 사무라이~이아이 스탠스",
@@ -1082,7 +1083,8 @@
         "range":"하단x2",
         "damage":"10,14",
         "extra":"히트 시 이아이 스탠스로[공참 하단]",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "WXYe6GQKaNw"
       },
       {
         "name":"아무르 샤프트~이아이 스탠스",
@@ -1583,7 +1585,8 @@
         "range":"중단",
         "damage":"30",
         "extra":"히트 발동기\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "3XcJlv4Z6n4"
       },
       {
         "name":"롱고미니아드~이아이 스탠스",
@@ -1798,7 +1801,7 @@
         "color": "yellow"
       },
       {
-        "name":"이아이 스탠스로",
+        "name":"이아이 스탠스",
         "command":"퍼퓨머 도중 AK",
         "start_frame":"-",
         "guard_frame":"-",
@@ -1807,7 +1810,8 @@
         "range":"-",
         "damage":"-",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "DQEKxesmEs0"
       },
       {
         "name":"시야주",

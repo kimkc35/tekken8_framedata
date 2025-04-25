@@ -507,7 +507,8 @@
         "range":"특수 중단x3",
         "damage":"10,16,10,10,20",
         "extra":"월 블래스트\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "vmtD8yM1yzo"
       },
       {
         "name":"샤프 샴시르",
@@ -796,7 +797,7 @@
         "endAt": 164
       },
       {
-        "name":"슐샤가~스케어크로",
+        "name":"슐르샤가~스케어크로",
         "command":"↙RPLP",
         "start_frame":"13",
         "guard_frame":"-9",
@@ -805,7 +806,8 @@
         "range":"중단",
         "damage":"17,16",
         "extra":"스케어크로 자세로\n←~입력 시 서 있는 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8nzcbJv0nUI"
       },
       {
         "name":"슐르샤가",
@@ -817,7 +819,8 @@
         "range":"중단",
         "damage":"17,16",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8nzcbJv0nUI"
       },
       {
         "name":"칼라미티 볼텍스",
@@ -829,7 +832,8 @@
         "range":"특수 중단x3",
         "damage":"17,10,10,20",
         "extra":"월 블래스트\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "gbeQIzfwJNQ"
       },
       {
         "name":"아키나케스~스케어크로",
@@ -1010,7 +1014,8 @@
         "range":"중단",
         "damage":"27",
         "extra":"월 블래스트\n호밍기\n히트 시 아나세마 상태로\n가드 대미지\n히트 상태 이외에는 자신에게 대미지(회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "TygaUtdezT8"
       },
       {
         "name":"스피어 오브 알루",
@@ -2324,7 +2329,8 @@
         "range":"잡기",
         "damage":"59",
         "extra":"아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "2uNSFG6s-Q0"
       },
       {
         "name":"아나세마틱 스톰프",
@@ -2336,7 +2342,8 @@
         "range":"중단x2",
         "damage":"13,8,20",
         "extra":"1타 가드 시 강제 가드\n월 블래스트\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "KlWNwW-1wNE"
       },
       {
         "name":"아나세마틱 레이저",
@@ -2348,7 +2355,8 @@
         "range":"중단x2",
         "damage":"13,5,15",
         "extra":"1타 가드 시 강제 가드\n월 블래스트\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "AaAbCg5t3Pg"
       },
       {
         "name":"아나세마틱 말리스",
@@ -2360,7 +2368,8 @@
         "range":"중단x2",
         "damage":"6,15,6,14",
         "extra":"1타 가드 시 강제 가드\n가드 대미지\n아나세마 상태를 해제(히트 상태 지속 중에는 히트 상태의 남은 시간을 소비)\n체력이 적으면 적을수록 대미지 증가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "C3HFekKUszI"
       }
     ]
   },

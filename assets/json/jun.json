@@ -102,7 +102,8 @@
         "range":"하단,중단",
         "damage":"14,35",
         "extra":"히트 상태의 남은 시간을 소비\n상대의 시계 횡이동에 민감하게 반응하는 성능을 지님\n히트 시 회복 가능 게이지 회복\n히트 시 카자마의 신기 6 증가\n가드 시 카자마의 신기 5 증가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "G39BNxNp9TU"
       }
     ],
     "general":[
@@ -2115,7 +2116,8 @@
         "range":"중단",
         "damage":"38",
         "extra":"토네이도\n가드 대미지\n자신에게 대미지(일부 회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ILtpsIjm7js"
       },
       {
         "name":"별뢰 씻기",
@@ -2127,7 +2129,8 @@
         "range":"중단",
         "damage":"15,30",
         "extra":"가드 대미지\n자신에게 대미지(일부 회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "NKkS6eq-FIA"
       },
       {
         "name":"천소모",
@@ -2139,7 +2142,8 @@
         "range":"특수 중단",
         "damage":"38",
         "extra":"히트 발동기\n가드 대미지\n자신에게 대미지(일부 회복 가능)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "0R05ca8wy9U"
       }
     ]
   },

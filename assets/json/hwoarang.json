@@ -691,7 +691,7 @@
         "endAt": 180
       },
       {
-        "name":"다크 핼버드",
+        "name":"다크 할버드",
         "command":"↓AK",
         "start_frame":"19",
         "guard_frame":"-14",
@@ -700,7 +700,8 @@
         "range":"상단",
         "damage":"7,22",
         "extra":"호밍기\n히트 시 오른 플라밍고로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "hbnivd9-Xvs"
       },
       {
         "name":"스윕 킥",
@@ -790,7 +791,8 @@
         "range":"상단",
         "damage":"18",
         "extra":"상대의 반시계 횡이동에 민감하게 반응하는 성능을 지님\n원잽 동시 히트 시 +23",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "jH00WC6UbL8"
       },
       {
         "name":"레프트 플라즈마 블레이드",
@@ -1181,7 +1183,8 @@
         "range":"중단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "5jarmKAYkps"
       },
       {
         "name":"트윈 머스탱2",
@@ -1193,7 +1196,8 @@
         "range":"중단",
         "damage":"12,18",
         "extra":"오른 플라밍고로\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "5jarmKAYkps"
       },
       {
         "name":"촌산 스핀1",
@@ -1808,7 +1812,8 @@
         "range":"상단",
         "damage":"18",
         "extra":"상대의 시계 횡이동에 민감하게 반응하는 성능을 지님\n오른 자세로\n원잽 동시 히트 시 +23",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "KkOkg8MSebo"
       },
       {
         "name":"블래스트 피스트~오른 자세",
@@ -2461,7 +2466,8 @@
         "range":"중단",
         "damage":"17",
         "extra":"오른 자세로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "qDHzaDCGTzo"
       },
       {
         "name":"더블 팔랑크스2",
@@ -2473,7 +2479,8 @@
         "range":"중단",
         "damage":"17,21",
         "extra":"월 블래스트\n토네이도\n왼 플라밍고로\n1타 카운터 히트 시 확정\n히트 상태에서 1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "qDHzaDCGTzo"
       },
       {
         "name":"플라밍고 스위치~레프트 플라밍고",

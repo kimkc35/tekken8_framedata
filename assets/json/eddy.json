@@ -50,7 +50,8 @@
         "range":"상단",
         "damage":"12,25",
         "extra":"히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ygSKrYpPxME"
       },
       {
         "name":"시바타 아르젠치",
@@ -1077,7 +1078,8 @@
         "range":"중단",
         "damage":"12",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_a9xnrzOzro"
       },
       {
         "name":"오숏시2",
@@ -1089,7 +1091,8 @@
         "range":"중단",
         "damage":"12,23",
         "extra":"히트 시 만징가 레벨 1 상승\n→~입력 시 캔슬하고 바나네이라로\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_a9xnrzOzro"
       },
       {
         "name":"오숏시2(캔슬)~바나네이라",
@@ -1101,7 +1104,8 @@
         "range":"-",
         "damage":"12",
         "extra":"히트 시 만징가 레벨 1 상승\n바나네이라로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_a9xnrzOzro"
       },
       {
         "name":"오슌",
@@ -1113,7 +1117,8 @@
         "range":"상단",
         "damage":"12,25",
         "extra":"히트 발동기",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ygSKrYpPxME"
       },
       {
         "name":"이스칼라",
@@ -1322,7 +1327,8 @@
         "range":"상단",
         "damage":"25",
         "extra":"월 블래스트\n호밍기\n가드 대미지\n히트 시 만징가 레벨 1 상승",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "wmpuBZSltnA"
       },
       {
         "name":"10단 콤보1",

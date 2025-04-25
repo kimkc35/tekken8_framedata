@@ -38,7 +38,7 @@ memo (BuildContext context, Character character, Info info) {
           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
         },
         child:
-        (character.videoId == "" || info.endAt == null || info.extraVideo == null)
+        (character.videoId == "" || info.endAt == null && info.extraVideo == null)
            ? AlertDialog(content: Text("영상이 없습니다."),) :
         Dialog(
           insetPadding: EdgeInsets.zero,

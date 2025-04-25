@@ -89,9 +89,8 @@
         "range":"하단",
         "damage":"45",
         "extra":"시즌 1 히트스매시\n플로어 블래스트\n호밍기\n히트 시 잡기로\n히트 상태의 남은 시간을 소비\n뒤돈 자세로",
-        "startAt": 35,
-        "endAt": 39,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ldc2Sv7LtEE"
       },
       {
         "name":"화이트 스완 메조 포르테(1타 헛침)",
@@ -103,9 +102,8 @@
         "range":"하단",
         "damage":"10,10,15,20",
         "extra":"시즌 1 히트스매시\n플로어 블래스트\n호밍기\n히트 시 잡기로\n히트 상태의 남은 시간을 소비\n뒤돈 자세로",
-        "startAt": 35,
-        "endAt": 39,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ldc2Sv7LtEE"
       },
       {
         "name":"르 로제 밀레네르 메조 포르테",
@@ -117,8 +115,8 @@
         "range":"상단,잡기",
         "damage":"15,40",
         "extra":"월 블래스트\n파이스티 래빗 도중에도 사용 가능\n히트 시 잡기로",
-        "startAt": 29,
-        "endAt": 34
+        "color": "yellow",
+        "extraVideo": "VBJb7Q8ltP4"
       },
       {
         "name":"로사 기간테이아 메조 포르테",
@@ -613,7 +611,9 @@
         "range":"상단",
         "damage":"16,10",
         "extra":"파이스티 래빗으로",
-        "color": "yellow"
+        "color": "yellow",
+        "startAt": 136,
+        "endAt": 139
       },
       {
         "name":"빌러디 매스커레이드 피톤3",
@@ -1238,7 +1238,8 @@
         "range":"상단x2",
         "damage":"12,15",
         "extra":"월 블래스트\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "-XLPHoULt1s"
       },
       {
         "name":"10단 콤보(1)1",

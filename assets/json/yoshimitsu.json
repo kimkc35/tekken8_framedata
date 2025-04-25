@@ -1665,7 +1665,8 @@
         "range":"중단",
         "damage":"10",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "WnbKsb7BSTU"
       },
       {
         "name":"카이샤쿠 겹치기2",
@@ -1677,7 +1678,8 @@
         "range":"중단",
         "damage":"10,17(22)",
         "extra":"상대의 반시계 횡이동에 민감하게 반응하는 성능을 지님\n히트 시 지뢰인 자세로\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "WnbKsb7BSTU"
       },
       {
         "name":"쿠라마일도",
@@ -2995,7 +2997,8 @@
         "range":"중단",
         "damage":"20(23)",
         "extra":"히트 혹은 가드 시 지뢰인 자세로\n납도 자세 도중 혹은 히트 상태 지속 중에는 파워 상승(히트 시 체력 회복, 히트 상태의 남은 시간을 소비)\n()는 파워 상승 시 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "d7FSIz479Iw"
       },
       {
         "name":"이카루가1",

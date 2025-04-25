@@ -128,7 +128,8 @@
         "range":"중단",
         "damage":"17,28",
         "extra":"월 블래스트\n히트 상태의 남은 시간을 소비\n가드 시 운족 교로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "F6bv8QMfNo8"
       },
       {
         "name":"오기 금강천괴",
@@ -140,7 +141,8 @@
         "range":"하단,잡기",
         "damage":"12,23",
         "extra":"히트 시 잡기로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "sOhaC6-bs1o"
       },
       {
         "name":"일철",
@@ -2181,7 +2183,8 @@
         "range":"하단",
         "damage":"20",
         "extra":"히트 시 선체로(←~입력 시 이행하지 않음)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "qFpJcgCTX-c"
       },
       {
         "name":"운풍 뛰어 만자",
@@ -2193,7 +2196,8 @@
         "range":"하단",
         "damage":"20",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "qFpJcgCTX-c"
       },
       {
         "name":"선체",

@@ -846,7 +846,8 @@
         "range":"중단",
         "damage":"10,12,14",
         "extra":"히트 시 스타버스트 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "d0cw-LqEM7E"
       },
       {
         "name":"딜레이드 라이징 토 킥",
@@ -910,7 +911,8 @@
         "range":"중단",
         "damage":"8",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "xZAOcBz6-gk"
       },
       {
         "name":"플루가트리오2",
@@ -922,7 +924,8 @@
         "range":"중단x2",
         "damage":"8,4,13",
         "extra":"토네이도\n가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "xZAOcBz6-gk"
       },
       {
         "name":"플루가트리오2(홀드)",
@@ -934,7 +937,8 @@
         "range":"중단",
         "damage":"14,20",
         "extra":"토네이도\n가드 대미지\n방어 행동 관통 효과 있음\n히트 혹은 가드 시 스타버스트 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "KwsmXc-jQYU"
       },
       {
         "name":"인비디아",
@@ -1353,7 +1357,8 @@
         "range":"중단",
         "damage":"8,4,20",
         "extra":"토네이도\n가드 대미지\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "_DUalvC7DIc"
       },
       {
         "name": "플루가트리오 버스트(홀드)",
@@ -1365,7 +1370,8 @@
         "range":"중단x2",
         "damage":"8,4,25",
         "extra":"토네이도\n가드 대미지\n방어 행동 관통 효과 있음\n스타버스트 상태를 해제(히트 상태의 남은 시간을 소비)",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "BzN-oSSBxN0"
       },
       {
         "name":"아니마",

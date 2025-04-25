@@ -76,9 +76,8 @@
         "range":"중단",
         "damage":"26",
         "extra":"히트 발동기",
-        "startAt": 239,
-        "endAt": 242,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "BbdQ2v1y1kU"
       },
       {
         "name":"티폰 팽 팬텀",
@@ -1094,8 +1093,7 @@
         "range":"중단",
         "damage":"26",
         "extra":"히트 발동기",
-        "startAt": 239,
-        "endAt": 242
+        "extraVideo": "BbdQ2v1y1kU"
       },
       {
         "name":"서든 스트라이크",
@@ -1705,7 +1703,8 @@
         "range":"하단",
         "damage":"20",
         "extra":"히트 시 바인드 폴로\n히트 시 ↓~입력 시 앉은 상태로 바인드 폴로\n히트 시 ←~입력 시 블라인드 레브린스로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "oRMvRguLmFs"
       },
       {
         "name":"시노비 사이클론",
@@ -2245,7 +2244,8 @@
         "range":"-",
         "damage":"-",
         "extra":"섀도우 스프린트로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "k5BVwzF8HfU"
       },
       {
         "name":"블라인드 폴",

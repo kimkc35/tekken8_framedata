@@ -115,7 +115,8 @@
         "range":"중단",
         "damage":"10,23",
         "extra":"히트 상태의 남은 시간을 소비\n1타 가드 시 잽으로 끊기 가능",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "BR_QAxAAm-w"
       },
       {
         "name":"신수염장멸파",
@@ -1104,7 +1105,8 @@
         "range":"상단",
         "damage":"10,19",
         "extra":"히트 혹은 가드 시 ↘~입력 시 잔영으로\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8M9xaraCnAI"
       },
       {
         "name":"측복련탄~잔영",
@@ -1116,7 +1118,8 @@
         "range":"상단",
         "damage":"10,19",
         "extra":"잔영으로\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "8M9xaraCnAI"
       },
       {
         "name":"악촌고",

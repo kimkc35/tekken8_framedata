@@ -1237,7 +1237,8 @@
         "range": "상단",
         "damage": "5",
         "extra": "가드 대미지\n원거리 히트 혹은 가드 시 잡기로\nN→~입력 시 캔슬하고 피닉스 쉬프트로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "V4FP7b2AmSk"
       },
       {
         "name": "가루다 엔블레이즈(원거리 히트 혹은 가드)",
@@ -1249,7 +1250,8 @@
         "range": "상단",
         "damage": "5,10",
         "extra": "가드 대미지\n원거리 히트 혹은 가드 시 잡기로\nN→~입력 시 캔슬하고 피닉스 쉬프트로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "V4FP7b2AmSk"
       },
       {
         "name": "런지",
@@ -1287,7 +1289,8 @@
         "range": "중단",
         "damage": "22",
         "extra": "가드 대미지",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "CHKFpXgBGF8"
       },
       {
         "name": "번개 심판",
@@ -1299,7 +1302,8 @@
         "range": "중단,잡기",
         "damage": "26,34",
         "extra": "정면 지상 히트 시 잡기로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "ODqJ184N-ns"
       },
       {
         "name": "10단 콤보1",

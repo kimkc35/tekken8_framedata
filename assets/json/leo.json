@@ -1916,7 +1916,8 @@
         "range":"하단",
         "damage":"8,13,14",
         "extra":"월 블래스트\n혹은 히트 상태에서 금계독립 도중 RKAP(히트 상태의 남은 시간을 소비)\n히트 상태의 남은 시간을 소비",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "fUt-6BAxhzU"
       }
     ],
     "jin bu":[
@@ -2076,7 +2077,8 @@
         "damage":"12,17",
         "extra":"1타 히트 시 확정\n월 블래스트\n↓~입력 시 부보로",
         "color": "yellow",
-        "뺑": ""
+        "뺑": "",
+        "extraVideo": "LWo4fe3NOAc"
       },
       {
         "name":"백사련퇴~부보",
@@ -2088,7 +2090,8 @@
         "range":"상단",
         "damage":"12,17",
         "extra":"1타 히트 시 확정\n월 블래스트\n부보로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "LWo4fe3NOAc"
       },
       {
         "name":"횡권",
@@ -2284,7 +2287,8 @@
         "range":"하단x2",
         "damage":"7,13",
         "extra":"",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "yGthZyKVfYA"
       },
       {
         "name":"통배식",

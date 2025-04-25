@@ -612,7 +612,8 @@
         "range":"상단",
         "damage":"15,25",
         "extra":"월 블래스트\n1타 히트 시 확정",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "58B5QNlBLsI"
       },
       {
         "name":"복봉렬도",
@@ -1903,7 +1904,8 @@
         "range":"중단",
         "damage":"25",
         "extra":"월 블래스트\n파워 크래시\n상대의 공격을 받아내면 파워가 상승하고 가드 대미지 추가",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "I-osROT0o5k"
       },
       {
         "name":"곽산은침~봉황",
@@ -2507,7 +2509,8 @@
         "range":"하단",
         "damage":"8",
         "extra":"상대에게 등을 보이는 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "doj02l_br68"
       },
       {
         "name":"삽보도권2~뒤돈 자세",
@@ -2519,7 +2522,8 @@
         "range":"하단",
         "damage":"8, 10",
         "extra":"상대에게 등을 보이는 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "doj02l_br68"
       },
       {
         "name":"전선소퇴1~봉황",
@@ -2557,8 +2561,7 @@
         "range":"-",
         "damage":"-",
         "extra":"↓~입력 시 봉황으로",
-        "startAt": 458,
-        "endAt": 461
+        "extraVideo": "h_Y6mWQXLsg"
       },
       {
         "name":"앞구르기~천궁퇴",
@@ -2570,9 +2573,8 @@
         "range":"중단x3",
         "damage":"8,8,14",
         "extra":"",
-        "startAt": 118,
-        "endAt": 121,
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "h_Y6mWQXLsg"
       },
       {
         "name":"엎드리기",

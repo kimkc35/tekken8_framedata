@@ -2081,7 +2081,8 @@
         "range":"중단x2",
         "damage":"9,15",
         "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지\n↓~입력 시 직접 앉은 상태로",
-        "color": "yellow"
+        "color": "yellow",
+        "extraVideo": "q2DYPXnlawg"
       },
       {
         "name":"네오 블러디 워1",
@@ -2186,7 +2187,8 @@
         "extra":"스네이크 아이를 소비(히트 상태 지속 중에는 히트 상태의 남은 시간을 대신 소비)\n가드 대미지",
         "startAt": 396,
         "endAt": 399,
-        "color": "blue"
+        "color": "yellow",
+        "extraVideo": "Vk3PIsBOn40"
       }
     ],
     "slither step":[
