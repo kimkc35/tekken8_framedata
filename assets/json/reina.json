@@ -1930,7 +1930,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"27",
+        "damage":"23",
         "extra":"가드 대미지",
         "startAt": 373,
         "endAt": 375
@@ -2168,7 +2168,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"30",
+        "damage":"23",
         "extra":"히트 발동기\n가드 대미지\n↓~입력 시 캔슬하고 몸을 숙인 상태로",
         "startAt": 418,
         "endAt": 422

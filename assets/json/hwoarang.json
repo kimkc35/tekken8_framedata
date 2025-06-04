@@ -696,7 +696,7 @@
         "start_frame":"19",
         "guard_frame":"-14",
         "hit_frame":"+6",
-        "counter_frame":"+32g",
+        "counter_frame":"+6",
         "range":"상단",
         "damage":"7,22",
         "extra":"호밍기\n히트 시 오른 플라밍고로",

@@ -2075,7 +2075,7 @@
         "name":"네오 마더 스트라이크",
         "command":"스네이크 아이 보유 시 ←AP",
         "start_frame":"20",
-        "guard_frame":"+7",
+        "guard_frame":"+4",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단x2",

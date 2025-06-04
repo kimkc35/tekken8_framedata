@@ -1080,7 +1080,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": "27",
+        "damage": "23",
         "extra": "가드 대미지",
         "startAt": 233,
         "endAt": 236
@@ -1270,9 +1270,9 @@
       },
       {
         "name": "굉 박치기~뇌신호법",
-        "command": "→→→~AP",
+        "command": "→→→~AP→~",
         "start_frame": "15",
-        "guard_frame": "+8",
+        "guard_frame": "+6",
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
@@ -2183,7 +2183,7 @@
         "hit_frame": "A",
         "counter_frame": "A",
         "range": "중단",
-        "damage": "30",
+        "damage": "22",
         "extra": "토네이도\n가드 대미지",
         "startAt": 451,
         "endAt": 454
@@ -2202,6 +2202,32 @@
         "endAt": 457
       },
       {
+        "name": "구극 굉 박치기",
+        "command": "최종 오의 상태에서 →→→~AP",
+        "start_frame": "15",
+        "guard_frame": "+6",
+        "hit_frame": "D",
+        "counter_frame": "D",
+        "range": "중단",
+        "damage": "20",
+        "extra": "→~입력 시 뇌신호법으로\n가드 대미지\n히트 시 상대방의 회복 가능 게이지를 소멸",
+        "color": "yellow",
+        "extraVideo": "L5PhaDoBcHU"
+      },
+      {
+        "name": "구극 굉 박치기",
+        "command": "최종 오의 상태에서 →→→~AP→~",
+        "start_frame": "15",
+        "guard_frame": "+6",
+        "hit_frame": "D",
+        "counter_frame": "D",
+        "range": "중단",
+        "damage": "20",
+        "extra": "뇌신호법으로\n가드 대미지\n히트 시 상대방의 회복 가능 게이지를 소멸",
+        "color": "yellow",
+        "extraVideo": "L5PhaDoBcHU"
+      },
+      {
         "name": "구극 나락쓸기1",
         "command": "최종 오의 상태에서 →N↓↘~RK",
         "start_frame": "16",
@@ -2209,7 +2235,7 @@
         "hit_frame": "+8",
         "counter_frame": "+8",
         "range": "하단",
-        "damage": "17",
+        "damage": "15",
         "extra": "혹은 무의 경지 상태에서 뇌신호법 도중 RK\n가드 대미지\n나락쓸기에서 시작되는 기술로 파생 가능",
         "startAt": 458,
         "endAt": 461
@@ -2222,7 +2248,7 @@
         "hit_frame": "+3",
         "counter_frame": "+3",
         "range": "하단",
-        "damage": "17,10",
+        "damage": "15,10",
         "extra": "",
         "startAt": 458,
         "endAt": 461
@@ -2235,7 +2261,7 @@
         "hit_frame": "+3",
         "counter_frame": "+3",
         "range": "하단",
-        "damage": "17,10,8",
+        "damage": "15,10,8",
         "extra": "",
         "startAt": 458,
         "endAt": 461
@@ -2248,7 +2274,7 @@
         "hit_frame": "D",
         "counter_frame": "D",
         "range": "중단",
-        "damage": "42",
+        "damage": "38",
         "extra": "가드 대미지\n방어 행동 관통 효과 있음",
         "startAt": 462,
         "endAt": 465
@@ -2261,7 +2287,7 @@
         "hit_frame": "T",
         "counter_frame": "T",
         "range": "상단",
-        "damage": "24",
+        "damage": "20",
         "extra": "토네이도\n가드 대미지\n방어 행동 관통 효과 있음",
         "startAt": 466,
         "endAt": 470

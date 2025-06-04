@@ -139,7 +139,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"하단",
-        "damage":"15,22",
+        "damage":"15,25",
         "extra":"혹은 히트 상태에서 히트맨 도중 RP+LK\n히트 시 잡기로",
         "startAt": 37,
         "endAt": 41
@@ -1233,7 +1233,7 @@
         "hit_frame":"-1",
         "counter_frame":"-1",
         "range":"상단",
-        "damage":"9,9",
+        "damage":"9,12",
         "extra":"→~입력 시 미스트 스텝으로",
         "startAt": 223,
         "endAt": 226
@@ -1259,7 +1259,7 @@
         "hit_frame":"+7",
         "counter_frame":"A",
         "range":"중단",
-        "damage":"17",
+        "damage":"20",
         "extra":"LK입력 시 히트맨으로",
         "startAt": 227,
         "endAt": 229
@@ -1817,7 +1817,7 @@
         "name":"로켓 힐2",
         "command":"일어나며 RPLK",
         "start_frame":"14",
-        "guard_frame":"-14",
+        "guard_frame":"-13",
         "hit_frame":"T",
         "counter_frame":"T",
         "range":"중단",

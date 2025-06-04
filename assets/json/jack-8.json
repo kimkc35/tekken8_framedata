@@ -661,7 +661,7 @@
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"상단",
-        "damage":"13,40",
+        "damage":"13,32",
         "extra":"토네이도\n↓~입력 시 감마 하울로\n히트 혹은 가드 시 감마 차지를 획득",
         "startAt": 171,
         "endAt": 176
@@ -1220,7 +1220,7 @@
         "hit_frame":"-",
         "counter_frame":"-",
         "range":"상단",
-        "damage":"35",
+        "damage":"32",
         "extra":"토네이도\n↖LP 홀드 혹은 ↑LP 홀드\n공중에 있는 상대에게만 히트함\n↓~입력 시 감마 하울로\n히트 혹은 가드 시 감마 차지를 획득",
         "startAt": 294,
         "endAt": 298

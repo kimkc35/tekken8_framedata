@@ -25,7 +25,7 @@ import 'upgradeAlertWidget.dart';
 import 'package:firebase_core/firebase_core.dart' show Firebase;
 
 const bool isPro =
-  kIsWeb? false :
+  kIsWeb? true :
   true;
 
 bool isFirst = true;

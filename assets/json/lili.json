@@ -929,7 +929,7 @@
       },
       {
         "name":"래싱 아이리스",
-        "command":"→→~AP",
+        "command":"↑AP",
         "start_frame":"18",
         "guard_frame":"-9",
         "hit_frame":"D",
@@ -942,13 +942,13 @@
       },
       {
         "name":"래싱 아이리스(홀드)",
-        "command":"→→~AP 홀드",
+        "command":"↑AP 홀드",
         "start_frame":"18",
         "guard_frame":"+12g",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"38",
+        "damage":"30",
         "extra":"호밍기",
         "startAt": 231,
         "endAt": 234,
@@ -956,7 +956,7 @@
       },
       {
         "name":"래싱 아이리스 포르테",
-        "command":"→→~AP 홀드(최대)",
+        "command":"↑AP 홀드(최대)",
         "start_frame":"18",
         "guard_frame":"-",
         "hit_frame":"D",
@@ -1236,7 +1236,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단x2",
-        "damage":"12,15",
+        "damage":"9,16",
         "extra":"월 블래스트\n가드 대미지",
         "color": "yellow",
         "extraVideo": "-XLPHoULt1s"
@@ -1904,7 +1904,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"25",
+        "damage":"24",
         "extra":"",
         "startAt": 301,
         "endAt": 304
@@ -2010,7 +2010,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"12,30",
+        "damage":"12,26",
         "extra":"가드 대미지\n히트 상태 지속 중에는 파워 상승(히트 상태의 남은 시간을 소비)",
         "startAt": 395,
         "endAt": 398
@@ -2023,7 +2023,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"중단",
-        "damage":"12,36",
+        "damage":"12,30",
         "extra":"가드 대미지\n히트 상태의 남은 시간을 소비",
         "startAt": 395,
         "endAt": 398
@@ -2088,7 +2088,7 @@
         "hit_frame":"+17g",
         "counter_frame":"+17g",
         "range":"상단x2",
-        "damage":"6,20",
+        "damage":"6,19",
         "extra":"월 블래스트\n←LK 혹은 ←RK 입력 시 파이스티 래빗으로",
         "startAt": 410,
         "endAt": 412,

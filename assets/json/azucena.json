@@ -1111,7 +1111,7 @@
         "name":"에스프레소 아그레시온2~리베르타도르",
         "command":"→→→~LK 히트 또는 가드 시 RP→~",
         "start_frame":"15",
-        "guard_frame":"+5",
+        "guard_frame":"+3",
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",

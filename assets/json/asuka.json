@@ -561,8 +561,7 @@
         "damage":"27",
         "extra":"히트 시 나니와의 기염을 획득\n가드 대미지",
         "startAt": 132,
-        "endAt": 135,
-        "color": "blue"
+        "endAt": 135
       },
       {
         "name":"후축퇴",
@@ -1327,7 +1326,7 @@
         "hit_frame":"D",
         "counter_frame":"D",
         "range":"상단",
-        "damage":"30",
+        "damage":"27",
         "extra":"호밍기\n가드 대미지\n나니와의 기염보유 시 파워 상승",
         "startAt": 355,
         "endAt": 357

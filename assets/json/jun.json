@@ -2114,7 +2114,7 @@
         "hit_frame":"T",
         "counter_frame":"T",
         "range":"중단",
-        "damage":"38",
+        "damage":"32",
         "extra":"토네이도\n가드 대미지\n자신에게 대미지(일부 회복 가능)",
         "color": "yellow",
         "extraVideo": "ILtpsIjm7js"

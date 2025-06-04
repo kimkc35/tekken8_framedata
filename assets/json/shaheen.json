@@ -1048,7 +1048,7 @@
         "name": "하붑",
         "command": "횡이동 도중 AP",
         "start_frame": "19",
-        "guard_frame": "+5",
+        "guard_frame": "+3",
         "hit_frame": "+22g",
         "counter_frame": "D",
         "range": "하단",
